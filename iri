@@ -1,0 +1,14 @@
+Controle de Estoque de materiais de Construção:
+
+- Inserir produto no estoque;
+- Inserir fornecedor;
+- Cadastrar funcionario;
+- Iniciar uma venda:
+  - Produtos a serem vendidos;
+  - Retirar do estoque;
+  - Nome do funcionario;
+  - Valor total da venda;
+- Buscar produto;
+- Total vendido no dia;
+- Lucro do mes;
+ 
