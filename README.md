@@ -1,6 +1,10 @@
+Carlos Silva    - joga pubg
+Fabricio Rocha - joga cs
+Gustavo Nunes - faz nada
 Controle de Estoque de materiais de Construção:
 
 -------- ESTOQUE --------------
+
 - Inserir produto no estoque:
   Inserir produto dono e vendedor pode inserir, contera o nome do produto, do fornecedor e do funcionario.
   
@@ -8,12 +12,15 @@ Controle de Estoque de materiais de Construção:
   Somente o dono pode inserir forecedor novo.
   
 - Visualizar produtos no estoque;
+
 ---------------------------------
+
 ------- Administração -----------  
 - Cadastrar funcionario;
   Somente do dono pode Cadastrar um novo funcionario.
   
 - Remover Funcionario;
+
 ------- VENDA -------------------
 - Iniciar uma venda:
   - Produtos a serem vendidos;
