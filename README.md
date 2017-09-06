@@ -11,7 +11,7 @@ Controle de Estoque de materiais de Construção:
 - Inserir produto no estoque:
   Inserir produto dono e vendedor pode inserir, contera o nome do produto, do fornecedor e do funcionario.
   
-- Inserir fornecedor;
+- Inserir fornecedor:
   Somente o dono pode inserir forecedor novo.
   
 - Visualizar produtos no estoque;
@@ -32,8 +32,8 @@ Controle de Estoque de materiais de Construção:
   - Nome do funcionario;
   - Valor total da venda;
   
-- Buscar produto;
-  Numero do produto ou nome para busca;
+- Buscar produto:
+  Numero do produto ou nome para busca.
   
 - Total vendido no dia;
 ----------------------------------
