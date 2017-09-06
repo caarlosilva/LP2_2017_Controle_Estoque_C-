@@ -1,6 +1,9 @@
 Carlos Silva    - joga pubg
+
 Fabricio Rocha - joga cs
+
 Gustavo Nunes - faz nada
+
 Controle de Estoque de materiais de Construção:
 
 -------- ESTOQUE --------------
@@ -13,6 +16,7 @@ Controle de Estoque de materiais de Construção:
   
 - Visualizar produtos no estoque;
 
+  
 ---------------------------------
 
 ------- Administração -----------  
@@ -33,3 +37,21 @@ Controle de Estoque de materiais de Construção:
   
 - Total vendido no dia;
 ----------------------------------
+
+------------CADASTROS------------
+
+PRODUTOS:
+  -Código;
+  -Descrição/nome;
+  -Preço.
+  
+CLIENTES(OPCIONAL):
+  -Nome;
+  -Endereço;
+  -CPF;
+  -Telefone(s).
+ 
+FUNCIONARIOS:
+  -Código;
+  -Nome;
+  -(LOGIN E SENHA).
