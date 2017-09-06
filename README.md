@@ -33,7 +33,7 @@ Controle de Estoque de materiais de Construção:
   - Valor total da venda;
   
 - Buscar produto:
-  Numero do produto ou nome para busca.
+  - Numero do produto ou nome para busca.
   
 - Total vendido no dia;
 ----------------------------------
