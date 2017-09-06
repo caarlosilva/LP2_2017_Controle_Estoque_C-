@@ -1,6 +1,6 @@
-Carlos Silva    - joga pubg
+Carlos Silva   - joga pubg
 Fabricio Rocha - joga cs
-Gustavo Nunes - faz nada
+Gustavo Nunes  - faz nada
 Controle de Estoque de materiais de Construção:
 
 -------- ESTOQUE --------------
@@ -11,25 +11,25 @@ Controle de Estoque de materiais de Construção:
 - Inserir fornecedor;
   Somente o dono pode inserir forecedor novo.
   
-- Visualizar produtos no estoque;
+- Visualizar produtos no estoque.
 
 ---------------------------------
 
 ------- Administração -----------  
-- Cadastrar funcionario;
+- Cadastrar funcionario:
   Somente do dono pode Cadastrar um novo funcionario.
   
-- Remover Funcionario;
+- Remover Funcionario.
 
 ------- VENDA -------------------
 - Iniciar uma venda:
   - Produtos a serem vendidos;
   - Retirar do estoque;
   - Nome do funcionario;
-  - Valor total da venda;
+  - Valor total da venda.
   
-- Buscar produto;
-  Numero do produto ou nome para busca;
+- Buscar produto:
+  Numero do produto ou nome para busca.
   
-- Total vendido no dia;
+- Total vendido no dia.
 ----------------------------------
