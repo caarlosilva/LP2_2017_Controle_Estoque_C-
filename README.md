@@ -31,6 +31,7 @@ Controle de Estoque de materiais de Construção:
   - Retirar do estoque;
   - Nome do funcionario;
   - Valor total da venda;
+  - Emissão de nota fiscal com todos os dados acima.
   
 - Buscar produto:
   - Numero do produto ou nome para busca.
