@@ -1,1 +1,10 @@
 D:\LP2\Git\ControlX\ControlX\bin\Debug\ControlX.exe.config
+D:\LP2\Git\ControlX\ControlX\bin\Debug\ControlX.exe
+D:\LP2\Git\ControlX\ControlX\bin\Debug\ControlX.pdb
+D:\LP2\Git\ControlX\ControlX\obj\Debug\ControlX.csprojResolveAssemblyReference.cache
+D:\LP2\Git\ControlX\ControlX\obj\Debug\ControlX.Form1.resources
+D:\LP2\Git\ControlX\ControlX\obj\Debug\ControlX.Properties.Resources.resources
+D:\LP2\Git\ControlX\ControlX\obj\Debug\ControlX.csproj.GenerateResource.Cache
+D:\LP2\Git\ControlX\ControlX\obj\Debug\ControlX.exe
+D:\LP2\Git\ControlX\ControlX\obj\Debug\ControlX.pdb
+D:\LP2\Git\ControlX\ControlX\obj\Debug\ControlX.formCadastroProd.resources

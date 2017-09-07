@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ControlX
 {
-    public partial class Form1 : Form
+    public partial class formCadastroProd : Form
     {
-        public Form1()
+        public formCadastroProd()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
