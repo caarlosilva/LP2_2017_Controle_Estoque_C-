@@ -40,19 +40,18 @@ Controle de Estoque de materiais de Construção:
 ----------------------------------
 
 ------------CADASTROS------------
-
-PRODUTOS:
+- PRODUTOS:
   -Código;
   -Descrição/nome;
   -Preço.
   
-CLIENTES(OPCIONAL):
+- CLIENTES(OPCIONAL):
   -Nome;
   -Endereço;
   -CPF;
   -Telefone(s).
  
-FUNCIONARIOS:
+- FUNCIONARIOS:
   -Código;
   -Nome;
-  -(LOGIN E SENHA).
+  -(LOGIN E SENHA). 
