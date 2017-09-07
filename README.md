@@ -1,8 +1,8 @@
-Carlos Silva    - joga pubg
+Carlos Silva   - joga pubg
 
 Fabricio Rocha - joga cs
 
-Gustavo Nunes - faz nada
+Gustavo Nunes  - faz nada
 
 Controle de Estoque de materiais de Construção:
 
