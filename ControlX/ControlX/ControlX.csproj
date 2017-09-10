@@ -53,11 +53,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="formCadastro.cs">
+    <Compile Include="formCadastroProd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formCadastro.Designer.cs">
-      <DependentUpon>formCadastro.cs</DependentUpon>
+    <Compile Include="formCadastroProd.Designer.cs">
+      <DependentUpon>formCadastroProd.cs</DependentUpon>
     </Compile>
     <Compile Include="Fornecedor.cs" />
     <Compile Include="IDatabase.cs" />
@@ -67,8 +67,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formCadastro.resx">
-      <DependentUpon>formCadastro.cs</DependentUpon>
+    <EmbeddedResource Include="formCadastroProd.resx">
+      <DependentUpon>formCadastroProd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
