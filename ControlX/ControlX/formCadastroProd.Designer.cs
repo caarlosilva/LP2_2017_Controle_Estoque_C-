@@ -35,8 +35,9 @@
             this.lbId = new System.Windows.Forms.Label();
             this.txPreco = new System.Windows.Forms.TextBox();
             this.pnCadastro = new System.Windows.Forms.Panel();
-            this.pnBtCad = new System.Windows.Forms.Panel();
             this.lbIdProduto = new System.Windows.Forms.Label();
+            this.pnBtCad = new System.Windows.Forms.Panel();
+            this.btCancelar = new System.Windows.Forms.Button();
             this.pnCadastro.SuspendLayout();
             this.pnBtCad.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +45,7 @@
             // btCadastrar
             // 
             this.btCadastrar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCadastrar.Location = new System.Drawing.Point(26, 2);
+            this.btCadastrar.Location = new System.Drawing.Point(128, 3);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(75, 23);
             this.btCadastrar.TabIndex = 0;
@@ -57,9 +58,9 @@
             this.lbNome.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNome.Location = new System.Drawing.Point(16, 22);
             this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(40, 13);
+            this.lbNome.Size = new System.Drawing.Size(45, 13);
             this.lbNome.TabIndex = 1;
-            this.lbNome.Text = "Nome";
+            this.lbNome.Text = "Nome:";
             // 
             // lbPreco
             // 
@@ -67,9 +68,9 @@
             this.lbPreco.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPreco.Location = new System.Drawing.Point(16, 61);
             this.lbPreco.Name = "lbPreco";
-            this.lbPreco.Size = new System.Drawing.Size(39, 13);
+            this.lbPreco.Size = new System.Drawing.Size(44, 13);
             this.lbPreco.TabIndex = 2;
-            this.lbPreco.Text = "Preço";
+            this.lbPreco.Text = "Preço:";
             // 
             // txNome
             // 
@@ -83,11 +84,11 @@
             // 
             this.lbId.AutoSize = true;
             this.lbId.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbId.Location = new System.Drawing.Point(352, 22);
+            this.lbId.Location = new System.Drawing.Point(357, 22);
             this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(21, 13);
+            this.lbId.Size = new System.Drawing.Size(26, 13);
             this.lbId.TabIndex = 5;
-            this.lbId.Text = "ID";
+            this.lbId.Text = "ID:";
             // 
             // txPreco
             // 
@@ -111,14 +112,6 @@
             this.pnCadastro.Size = new System.Drawing.Size(444, 92);
             this.pnCadastro.TabIndex = 7;
             // 
-            // pnBtCad
-            // 
-            this.pnBtCad.Controls.Add(this.btCadastrar);
-            this.pnBtCad.Location = new System.Drawing.Point(329, 59);
-            this.pnBtCad.Name = "pnBtCad";
-            this.pnBtCad.Size = new System.Drawing.Size(105, 28);
-            this.pnBtCad.TabIndex = 8;
-            // 
             // lbIdProduto
             // 
             this.lbIdProduto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -127,8 +120,28 @@
             this.lbIdProduto.Name = "lbIdProduto";
             this.lbIdProduto.Size = new System.Drawing.Size(50, 21);
             this.lbIdProduto.TabIndex = 9;
-            this.lbIdProduto.Text = "0001";
             this.lbIdProduto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnBtCad
+            // 
+            this.pnBtCad.Controls.Add(this.btCancelar);
+            this.pnBtCad.Controls.Add(this.btCadastrar);
+            this.pnBtCad.Location = new System.Drawing.Point(227, 59);
+            this.pnBtCad.Name = "pnBtCad";
+            this.pnBtCad.Size = new System.Drawing.Size(207, 28);
+            this.pnBtCad.TabIndex = 8;
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(43, 3);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btCancelar.TabIndex = 1;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.button1_Click);
             // 
             // formCadastroProd
             // 
@@ -157,5 +170,6 @@
         private System.Windows.Forms.Panel pnCadastro;
         private System.Windows.Forms.Panel pnBtCad;
         private System.Windows.Forms.Label lbIdProduto;
+        private System.Windows.Forms.Button btCancelar;
     }
 }
