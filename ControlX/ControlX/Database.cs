@@ -9,31 +9,38 @@ namespace ControlX
     class Database : IDatabase
     {
 
-        private Dictionary<int, Produto> produtos = new Dictionary<int, Produto> ();
+        private static Dictionary<int, Produto> produtos = new Dictionary<int, Produto> ();
 
-        public void Adicionar()
+        public void Adicionar(Produto p)
+        {
+            produtos.Add(p.Id, p);
+        }
+
+        public void Atualizar(Produto p)
         {
             throw new NotImplementedException();
         }
 
-        public void Atualizar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Produto Imprimir(long idProduto)
+        public Produto Ler(long idProduto)
         {
             throw new NotImplementedException();
         }
 
         public List<Produto> ListAll()
         {
-            throw new NotImplementedException();
+            return ListByName("");
         }
 
         public List<Produto> ListByName(string name)
         {
-            throw new NotImplementedException();
+            List<Produto> ps = new List<Produto>();
+
+            foreach (KeyValuePair<int, Produto> k in produtos)
+            {
+                if (k.Value.Nome.Contains(name))
+                    ps.Add(k.Value);
+            }
+            return ps;
         }
 
         public void Remover(long idProduto)

@@ -51,6 +51,7 @@
             this.btCadastrar.TabIndex = 0;
             this.btCadastrar.Text = "Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = true;
+            this.btCadastrar.Click += new System.EventHandler(this.btCadastrar_Click);
             // 
             // lbNome
             // 

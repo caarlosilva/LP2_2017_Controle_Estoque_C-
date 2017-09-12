@@ -21,5 +21,24 @@ namespace ControlX
         {
             new formCadastroProd().ShowDialog(this);
         }
+
+        private void Fill()
+        {
+            IDatabase db = new Database();
+            List<Produto> ps = db.ListAll();
+
+            dgvEstoque.Rows.Clear();
+            foreach (Produto p in ps)
+            {
+                dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco);
+            }
+        
+        
+        }
+
+        private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
+        {
+            Fill();
+        }
     }
 }

@@ -72,5 +72,9 @@ namespace ControlX
             this.Preco = preco;
             this.Fornecedor = fornecedor;
         }
+        public Produto()
+        {
+
+        }
     }
 }

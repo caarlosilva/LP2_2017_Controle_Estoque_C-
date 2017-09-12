@@ -8,11 +8,11 @@ namespace ControlX
 {
     interface IDatabase
     {
-        void Adicionar();
+        void Adicionar(Produto p);
 
-        void Atualizar();
+        void Atualizar(Produto p);
 
-        Produto Imprimir(long idProduto);
+        Produto Ler(long idProduto);
 
         void Remover(long idProduto);
 
