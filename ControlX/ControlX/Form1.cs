@@ -40,5 +40,12 @@ namespace ControlX
         {
             Fill();
         }
+
+        private void btDel_Click(object sender, EventArgs e)
+        {
+
+            dgvEstoque.Rows.RemoveAt(dgvEstoque.CurrentCell.RowIndex);   
+
+        }
     }
 }

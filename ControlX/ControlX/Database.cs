@@ -21,6 +21,11 @@ namespace ControlX
             throw new NotImplementedException();
         }
 
+        public Produto getProduto(int i)
+        {
+            return produtos[i];
+        }
+
         public Produto Ler(long idProduto)
         {
             throw new NotImplementedException();
