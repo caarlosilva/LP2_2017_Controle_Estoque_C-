@@ -11,6 +11,7 @@ namespace ControlX
         private string nome;
         private int id;
         private double preco;
+        private int qntd;
         Fornecedor fornecedor = new Fornecedor();
 
         public string Nome
@@ -65,12 +66,26 @@ namespace ControlX
             }
         }
 
-        public Produto(string nome, int id, double preco, Fornecedor fornecedor)
+        public int Qntd
+        {
+            get
+            {
+                return qntd;
+            }
+
+            set
+            {
+               qntd = value;
+            }
+        }
+
+        public Produto(string nome, int id, double preco, int qntd, Fornecedor fornecedor)
         {
             this.Nome = nome;
             this.Id = id;
             this.Preco = preco;
             this.Fornecedor = fornecedor;
+            this.Qntd = qntd;
         }
         public Produto()
         {

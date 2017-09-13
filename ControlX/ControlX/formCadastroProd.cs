@@ -40,6 +40,7 @@ namespace ControlX
             nProduto.Nome = txNome.Text;
             nProduto.Preco = double.Parse(txPreco.Text);
             nProduto.Id = int.Parse(lbIdProduto.Text);
+            nProduto.Qntd = int.Parse(txQntd.Text);
             
             produtos.Add(nProduto.Id, nProduto);
             db1.Adicionar(nProduto);

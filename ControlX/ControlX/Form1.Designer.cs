@@ -33,14 +33,15 @@
             this.txPesquisar = new System.Windows.Forms.TextBox();
             this.pnPesquisa = new System.Windows.Forms.Panel();
             this.dgvEstoque = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbEstoque = new System.Windows.Forms.GroupBox();
             this.btAdd = new System.Windows.Forms.Button();
             this.btDel = new System.Windows.Forms.Button();
             this.btEdit = new System.Windows.Forms.Button();
             this.pnButtons = new System.Windows.Forms.Panel();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
             this.gbEstoque.SuspendLayout();
@@ -83,36 +84,13 @@
             this.dgvEstoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
             this.colNome,
-            this.colPreco});
+            this.colPreco,
+            this.colQtd});
             this.dgvEstoque.Location = new System.Drawing.Point(6, 19);
             this.dgvEstoque.Name = "dgvEstoque";
             this.dgvEstoque.ReadOnly = true;
             this.dgvEstoque.Size = new System.Drawing.Size(654, 309);
             this.dgvEstoque.TabIndex = 3;
-            // 
-            // colId
-            // 
-            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colId.FillWeight = 15F;
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            // 
-            // colNome
-            // 
-            this.colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colNome.FillWeight = 150F;
-            this.colNome.HeaderText = "Nome";
-            this.colNome.Name = "colNome";
-            this.colNome.ReadOnly = true;
-            // 
-            // colPreco
-            // 
-            this.colPreco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPreco.FillWeight = 30F;
-            this.colPreco.HeaderText = "Preço";
-            this.colPreco.Name = "colPreco";
-            this.colPreco.ReadOnly = true;
             // 
             // gbEstoque
             // 
@@ -168,6 +146,37 @@
             this.pnButtons.Size = new System.Drawing.Size(666, 29);
             this.pnButtons.TabIndex = 8;
             // 
+            // colId
+            // 
+            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colId.FillWeight = 15F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            // 
+            // colNome
+            // 
+            this.colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNome.HeaderText = "Nome";
+            this.colNome.Name = "colNome";
+            this.colNome.ReadOnly = true;
+            // 
+            // colPreco
+            // 
+            this.colPreco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPreco.FillWeight = 30F;
+            this.colPreco.HeaderText = "Preço";
+            this.colPreco.Name = "colPreco";
+            this.colPreco.ReadOnly = true;
+            // 
+            // colQtd
+            // 
+            this.colQtd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colQtd.FillWeight = 50F;
+            this.colQtd.HeaderText = "Quantidade";
+            this.colQtd.Name = "colQtd";
+            this.colQtd.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +211,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPreco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQtd;
     }
 }
 

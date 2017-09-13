@@ -32,7 +32,7 @@ namespace ControlX
             dgvEstoque.Rows.Clear();
             foreach (Produto p in ps)
             {
-                dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco);
+                dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
             }
         
         
@@ -47,7 +47,7 @@ namespace ControlX
             dgvEstoque.Rows.Clear();
             foreach (Produto p in ps)
             {
-                dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco);
+                dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
             }
 
         }
