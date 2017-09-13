@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ControlX
 {
     public partial class Form1 : Form
@@ -39,7 +40,16 @@ namespace ControlX
 
         private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
         {
-            Fill();
+                 
+            IDatabase db = new Database();
+            List<Produto> ps = db.ListByName(txPesquisar.Text);
+
+            dgvEstoque.Rows.Clear();
+            foreach (Produto p in ps)
+            {
+                dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco);
+            }
+
         }
 
         private void btDel_Click(object sender, EventArgs e)
