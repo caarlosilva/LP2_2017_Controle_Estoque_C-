@@ -1,3 +1,6 @@
+COMMIT -- >  SYNC -->  PUSH (<-- REPEAT)
+
+
 Carlos Silva   - joga pubg
 
 Fabricio Rocha - joga cs
