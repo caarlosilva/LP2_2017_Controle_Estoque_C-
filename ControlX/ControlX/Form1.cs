@@ -61,5 +61,10 @@ namespace ControlX
             data.Remover(a);
             Fill();
         }
+
+        private void btEdit_Click(object sender, EventArgs e)
+        {
+            new formCadastroProd().ShowDialog(this);
+        }
     }
 }
