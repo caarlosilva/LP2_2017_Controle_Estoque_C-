@@ -52,5 +52,9 @@ namespace ControlX
         {
             throw new NotImplementedException();
         }
+        public void Remover(int idProduto)
+        {
+            produtos.Remove(idProduto);
+        }
     }
 }

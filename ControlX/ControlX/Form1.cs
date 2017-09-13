@@ -20,6 +20,7 @@ namespace ControlX
         private void button1_Click(object sender, EventArgs e)
         {
             new formCadastroProd().ShowDialog(this);
+            Fill();
         }
 
         private void Fill()
@@ -44,8 +45,11 @@ namespace ControlX
         private void btDel_Click(object sender, EventArgs e)
         {
 
-            dgvEstoque.Rows.RemoveAt(dgvEstoque.CurrentCell.RowIndex);   
-
+            Database data = new Database();
+            //dgvEstoque.Rows.RemoveAt(dgvEstoque.CurrentCell.RowIndex);          
+            int a = int.Parse(dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
+            data.Remover(a);
+            Fill();
         }
     }
 }
