@@ -33,15 +33,16 @@
             this.txPesquisar = new System.Windows.Forms.TextBox();
             this.pnPesquisa = new System.Windows.Forms.Panel();
             this.dgvEstoque = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbEstoque = new System.Windows.Forms.GroupBox();
             this.btAdd = new System.Windows.Forms.Button();
             this.btDel = new System.Windows.Forms.Button();
             this.btEdit = new System.Windows.Forms.Button();
             this.pnButtons = new System.Windows.Forms.Panel();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btView = new System.Windows.Forms.Button();
             this.pnPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
             this.gbEstoque.SuspendLayout();
@@ -92,60 +93,6 @@
             this.dgvEstoque.Size = new System.Drawing.Size(654, 309);
             this.dgvEstoque.TabIndex = 3;
             // 
-            // gbEstoque
-            // 
-            this.gbEstoque.Controls.Add(this.dgvEstoque);
-            this.gbEstoque.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbEstoque.Location = new System.Drawing.Point(12, 48);
-            this.gbEstoque.Name = "gbEstoque";
-            this.gbEstoque.Size = new System.Drawing.Size(666, 334);
-            this.gbEstoque.TabIndex = 4;
-            this.gbEstoque.TabStop = false;
-            this.gbEstoque.Text = "Estoque";
-            // 
-            // btAdd
-            // 
-            this.btAdd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Location = new System.Drawing.Point(585, 3);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(75, 23);
-            this.btAdd.TabIndex = 5;
-            this.btAdd.Text = "Adicionar";
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btDel
-            // 
-            this.btDel.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDel.Location = new System.Drawing.Point(423, 3);
-            this.btDel.Name = "btDel";
-            this.btDel.Size = new System.Drawing.Size(75, 23);
-            this.btDel.TabIndex = 6;
-            this.btDel.Text = "Remover";
-            this.btDel.UseVisualStyleBackColor = true;
-            this.btDel.Click += new System.EventHandler(this.btDel_Click);
-            // 
-            // btEdit
-            // 
-            this.btEdit.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEdit.Location = new System.Drawing.Point(504, 3);
-            this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(75, 23);
-            this.btEdit.TabIndex = 7;
-            this.btEdit.Text = "Editar";
-            this.btEdit.UseVisualStyleBackColor = true;
-            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
-            // 
-            // pnButtons
-            // 
-            this.pnButtons.Controls.Add(this.btAdd);
-            this.pnButtons.Controls.Add(this.btEdit);
-            this.pnButtons.Controls.Add(this.btDel);
-            this.pnButtons.Location = new System.Drawing.Point(12, 388);
-            this.pnButtons.Name = "pnButtons";
-            this.pnButtons.Size = new System.Drawing.Size(666, 29);
-            this.pnButtons.TabIndex = 8;
-            // 
             // colId
             // 
             this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -176,6 +123,70 @@
             this.colQtd.HeaderText = "Quantidade";
             this.colQtd.Name = "colQtd";
             this.colQtd.ReadOnly = true;
+            // 
+            // gbEstoque
+            // 
+            this.gbEstoque.Controls.Add(this.dgvEstoque);
+            this.gbEstoque.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbEstoque.Location = new System.Drawing.Point(12, 48);
+            this.gbEstoque.Name = "gbEstoque";
+            this.gbEstoque.Size = new System.Drawing.Size(666, 334);
+            this.gbEstoque.TabIndex = 4;
+            this.gbEstoque.TabStop = false;
+            this.gbEstoque.Text = "Estoque";
+            // 
+            // btAdd
+            // 
+            this.btAdd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Location = new System.Drawing.Point(585, 3);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(75, 23);
+            this.btAdd.TabIndex = 5;
+            this.btAdd.Text = "Adicionar";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btDel
+            // 
+            this.btDel.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDel.Location = new System.Drawing.Point(342, 3);
+            this.btDel.Name = "btDel";
+            this.btDel.Size = new System.Drawing.Size(75, 23);
+            this.btDel.TabIndex = 6;
+            this.btDel.Text = "Remover";
+            this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
+            // 
+            // btEdit
+            // 
+            this.btEdit.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEdit.Location = new System.Drawing.Point(504, 3);
+            this.btEdit.Name = "btEdit";
+            this.btEdit.Size = new System.Drawing.Size(75, 23);
+            this.btEdit.TabIndex = 7;
+            this.btEdit.Text = "Editar";
+            this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
+            // 
+            // pnButtons
+            // 
+            this.pnButtons.Controls.Add(this.btView);
+            this.pnButtons.Controls.Add(this.btAdd);
+            this.pnButtons.Controls.Add(this.btEdit);
+            this.pnButtons.Controls.Add(this.btDel);
+            this.pnButtons.Location = new System.Drawing.Point(12, 388);
+            this.pnButtons.Name = "pnButtons";
+            this.pnButtons.Size = new System.Drawing.Size(666, 29);
+            this.pnButtons.TabIndex = 8;
+            // 
+            // btView
+            // 
+            this.btView.Location = new System.Drawing.Point(423, 3);
+            this.btView.Name = "btView";
+            this.btView.Size = new System.Drawing.Size(75, 23);
+            this.btView.TabIndex = 8;
+            this.btView.Text = "Visualizar";
+            this.btView.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -212,6 +223,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPreco;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQtd;
+        private System.Windows.Forms.Button btView;
     }
 }
 
