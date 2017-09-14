@@ -35,11 +35,11 @@
             this.lbId = new System.Windows.Forms.Label();
             this.txPreco = new System.Windows.Forms.TextBox();
             this.pnCadastro = new System.Windows.Forms.Panel();
+            this.lbQntd = new System.Windows.Forms.Label();
+            this.txQntd = new System.Windows.Forms.TextBox();
             this.lbIdProduto = new System.Windows.Forms.Label();
             this.pnBtCad = new System.Windows.Forms.Panel();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.txQntd = new System.Windows.Forms.TextBox();
-            this.lbQntd = new System.Windows.Forms.Label();
             this.pnCadastro.SuspendLayout();
             this.pnBtCad.SuspendLayout();
             this.SuspendLayout();
@@ -117,6 +117,22 @@
             this.pnCadastro.Size = new System.Drawing.Size(464, 92);
             this.pnCadastro.TabIndex = 7;
             // 
+            // lbQntd
+            // 
+            this.lbQntd.AutoSize = true;
+            this.lbQntd.Location = new System.Drawing.Point(147, 61);
+            this.lbQntd.Name = "lbQntd";
+            this.lbQntd.Size = new System.Drawing.Size(42, 13);
+            this.lbQntd.TabIndex = 11;
+            this.lbQntd.Text = "Quant.:";
+            // 
+            // txQntd
+            // 
+            this.txQntd.Location = new System.Drawing.Point(194, 58);
+            this.txQntd.Name = "txQntd";
+            this.txQntd.Size = new System.Drawing.Size(76, 20);
+            this.txQntd.TabIndex = 10;
+            // 
             // lbIdProduto
             // 
             this.lbIdProduto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -148,22 +164,6 @@
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txQntd
-            // 
-            this.txQntd.Location = new System.Drawing.Point(194, 58);
-            this.txQntd.Name = "txQntd";
-            this.txQntd.Size = new System.Drawing.Size(76, 20);
-            this.txQntd.TabIndex = 10;
-            // 
-            // lbQntd
-            // 
-            this.lbQntd.AutoSize = true;
-            this.lbQntd.Location = new System.Drawing.Point(147, 61);
-            this.lbQntd.Name = "lbQntd";
-            this.lbQntd.Size = new System.Drawing.Size(42, 13);
-            this.lbQntd.TabIndex = 11;
-            this.lbQntd.Text = "Quant.:";
-            // 
             // formCadastroProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,18 +181,17 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btCadastrar;
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.Label lbPreco;
-        private System.Windows.Forms.TextBox txNome;
         private System.Windows.Forms.Label lbId;
-        private System.Windows.Forms.TextBox txPreco;
         private System.Windows.Forms.Panel pnCadastro;
         private System.Windows.Forms.Panel pnBtCad;
-        private System.Windows.Forms.Label lbIdProduto;
-        private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Label lbQntd;
-        private System.Windows.Forms.TextBox txQntd;
+        public System.Windows.Forms.TextBox txNome;
+        public System.Windows.Forms.Button btCadastrar;
+        public System.Windows.Forms.TextBox txPreco;
+        public System.Windows.Forms.Label lbIdProduto;
+        public System.Windows.Forms.Button btCancelar;
+        public System.Windows.Forms.TextBox txQntd;
     }
 }

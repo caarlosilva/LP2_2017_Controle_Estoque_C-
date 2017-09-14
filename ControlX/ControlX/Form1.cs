@@ -64,7 +64,13 @@ namespace ControlX
 
         private void btEdit_Click(object sender, EventArgs e)
         {
-            new formCadastroProd().ShowDialog(this);
+            formCadastroProd form = new formCadastroProd();
+            form.txNome.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[1].Value.ToString());
+            form.txPreco.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[2].Value.ToString());
+            form.txQntd.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[3].Value.ToString());
+            form.lbIdProduto.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
+            form.btCadastrar.Text = "Salvar";
+            form.ShowDialog(this);
         }
     }
 }
