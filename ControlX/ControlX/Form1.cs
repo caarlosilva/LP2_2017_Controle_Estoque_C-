@@ -81,13 +81,19 @@ namespace ControlX
 
         private void btView_Click(object sender, EventArgs e)
         {
-            //Falta deixar os boteos sem poder editar.
             formCadastroProd form = new formCadastroProd();
-            form.txNome.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[1].Value.ToString());//Falta deixar os boteos sem poder editar.
+            //Os text não pode ser editado.
+            form.txNome.ReadOnly = true;
+            form.txPreco.ReadOnly = true;
+            form.txQntd.ReadOnly = true;
+            //O Botao Enabled = false deita o botao desativado.
+            form.btCadastrar.Enabled = false;
+            //Enviando informacao para os label e botton.
+            form.txNome.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[1].Value.ToString());
             form.txPreco.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[2].Value.ToString());
             form.txQntd.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[3].Value.ToString());
             form.lbIdProduto.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
-            form.btCadastrar.Text = "Continuar";//Deixa esse botao sem poder clicar também se possivel.
+            form.btCadastrar.Text = "Continuar";
             form.ShowDialog(this);
             Fill();
         }
