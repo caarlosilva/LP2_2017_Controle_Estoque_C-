@@ -42,9 +42,10 @@ namespace ControlX
             nProduto.Id = int.Parse(lbIdProduto.Text);
             nProduto.Qntd = int.Parse(txQntd.Text);
             
-            produtos.Add(nProduto.Id, nProduto);
-            db1.Adicionar(nProduto);
             
+            db1.Adicionar(nProduto);
+            produtos.Add(nProduto.Id, nProduto);
+
             this.Close();
            
         }
