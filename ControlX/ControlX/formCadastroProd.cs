@@ -41,10 +41,14 @@ namespace ControlX
             nProduto.Preco = double.Parse(txPreco.Text);
             nProduto.Id = int.Parse(lbIdProduto.Text);
             nProduto.Qntd = int.Parse(txQntd.Text);
-            
-            
-            db1.Adicionar(nProduto);
-            produtos.Add(nProduto.Id, nProduto);
+
+            if (btCadastrar.Text != "Salvar")
+            {
+                db1.Adicionar(nProduto);
+                produtos.Add(nProduto.Id, nProduto);
+            }
+            if (btCadastrar.Text == "Salvar")
+                db1.Atualizar(nProduto);
 
             this.Close();
            

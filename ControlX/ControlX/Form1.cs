@@ -71,6 +71,7 @@ namespace ControlX
             form.lbIdProduto.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
             form.btCadastrar.Text = "Salvar";
             form.ShowDialog(this);
+            Fill();
         }
     }
 }

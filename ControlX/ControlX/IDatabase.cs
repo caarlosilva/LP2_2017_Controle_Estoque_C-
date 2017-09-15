@@ -12,9 +12,9 @@ namespace ControlX
 
         void Atualizar(Produto p);
 
-        Produto Ler(long idProduto);
+        Produto Ler(int idProduto);
 
-        void Remover(long idProduto);
+        void Remover(int idProduto);
 
         List<Produto> ListAll();
 

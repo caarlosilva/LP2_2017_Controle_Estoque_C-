@@ -18,7 +18,7 @@ namespace ControlX
 
         public void Atualizar(Produto p)
         {
-            throw new NotImplementedException();
+            produtos[p.Id] = p; 
         }
 
         public Produto getProduto(int i)
@@ -26,7 +26,7 @@ namespace ControlX
             return produtos[i];
         }
 
-        public Produto Ler(long idProduto)
+        public Produto Ler(int idProduto)
         {
             throw new NotImplementedException();
         }
@@ -48,10 +48,6 @@ namespace ControlX
             return ps;
         }
 
-        public void Remover(long idProduto)
-        {
-            throw new NotImplementedException();
-        }
         public void Remover(int idProduto)
         {
             produtos.Remove(idProduto);
