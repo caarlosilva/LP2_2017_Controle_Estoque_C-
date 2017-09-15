@@ -187,6 +187,7 @@
             this.btView.TabIndex = 8;
             this.btView.Text = "Visualizar";
             this.btView.UseVisualStyleBackColor = true;
+            this.btView.Click += new System.EventHandler(this.btView_Click);
             // 
             // Form1
             // 
