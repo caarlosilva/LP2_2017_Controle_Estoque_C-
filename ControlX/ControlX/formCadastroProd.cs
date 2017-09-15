@@ -34,23 +34,35 @@ namespace ControlX
             this.Dispose();
         }
 
-        private void btCadastrar_Click(object sender, EventArgs e)
+        private bool isComplete()
         {
-                      
-            nProduto.Nome = txNome.Text;
-            nProduto.Preco = double.Parse(txPreco.Text);
-            nProduto.Id = int.Parse(lbIdProduto.Text);
-            nProduto.Qntd = int.Parse(txQntd.Text);
+            if (txNome.Text.Trim() == "" || txPreco.Text.Trim() == "" || txQntd.Text.Trim() == "")
+                return false;
+            else
+                return true;
+        }
 
-            if (btCadastrar.Text != "Salvar")
+        private void btCadastrar_Click(object sender, EventArgs e)
+        {            
+            if (isComplete())
             {
-                db1.Adicionar(nProduto);
-                produtos.Add(nProduto.Id, nProduto);
-            }
-            else if (btCadastrar.Text == "Salvar")
-                db1.Atualizar(nProduto);
+                nProduto.Nome = txNome.Text;
+                nProduto.Preco = double.Parse(txPreco.Text);
+                nProduto.Id = int.Parse(lbIdProduto.Text);
+                nProduto.Qntd = int.Parse(txQntd.Text);
 
-            this.Close();
+                if (btCadastrar.Text != "Salvar")
+                {
+                    db1.Adicionar(nProduto);
+                    produtos.Add(nProduto.Id, nProduto);
+                }
+                else if (btCadastrar.Text == "Salvar")
+                    db1.Atualizar(nProduto);
+            }
+            else
+                MessageBox.Show("Escreve direito vacilão", "Menssagem para vacilão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            this.Dispose();
            
         }
     }
