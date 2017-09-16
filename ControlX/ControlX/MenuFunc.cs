@@ -16,5 +16,16 @@ namespace ControlX
         {
             InitializeComponent();
         }
+
+        private void btControleEstoq_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Form1().Show();
+        }
+
+        private void btSair_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+        }
     }
 }

@@ -63,3 +63,4 @@ C:\Users\Fabricio\Source\Repos\LP2 - Projetoo\ControlX\ControlX\obj\Debug\Contro
 C:\Users\Fabricio\Source\Repos\LP2 - Projetoo\ControlX\ControlX\obj\Debug\ControlX.csproj.GenerateResource.Cache
 C:\Users\Fabricio\Source\Repos\LP2 - Projetoo\ControlX\ControlX\obj\Debug\ControlX.MenuFunc.resources
 C:\Users\Fabricio\Source\Repos\LP2 - Projetoo\ControlX\ControlX\obj\Debug\ControlX.MenuAdmin.resources
+C:\Users\Fabricio\Source\Repos\LP2 - Projetoo\ControlX\ControlX\obj\Debug\ControlX.Login.resources

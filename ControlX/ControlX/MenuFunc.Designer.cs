@@ -62,6 +62,7 @@
             this.btControleEstoq.TabIndex = 2;
             this.btControleEstoq.Text = "Controle de Estoque";
             this.btControleEstoq.UseVisualStyleBackColor = true;
+            this.btControleEstoq.Click += new System.EventHandler(this.btControleEstoq_Click);
             // 
             // btSair
             // 
@@ -71,6 +72,7 @@
             this.btSair.TabIndex = 3;
             this.btSair.Text = "Sair";
             this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
             // MenuFunc
             // 
