@@ -51,3 +51,13 @@ C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj
 C:\Users\Fabricio\Source\LP2 Novo\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\ControlX.exe.config
 C:\Users\Fabricio\Source\LP2 Novo\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.exe
 C:\Users\Fabricio\Source\LP2 Novo\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.pdb
+C:\Users\Fabricio\Source\Repos\LP2 - Projetoo\ControlX\ControlX\bin\Debug\ControlX.exe.config
+C:\Users\Fabricio\Source\Repos\LP2 - Projetoo\ControlX\ControlX\obj\Debug\ControlX.exe
+C:\Users\Fabricio\Source\Repos\LP2 - Projetoo\ControlX\ControlX\obj\Debug\ControlX.pdb
+C:\Users\Fabricio\Source\Repos\LP2 - Projetoo\ControlX\ControlX\bin\Debug\ControlX.exe
+C:\Users\Fabricio\Source\Repos\LP2 - Projetoo\ControlX\ControlX\bin\Debug\ControlX.pdb
+C:\Users\Fabricio\Source\Repos\LP2 - Projetoo\ControlX\ControlX\obj\Debug\ControlX.csprojResolveAssemblyReference.cache
+C:\Users\Fabricio\Source\Repos\LP2 - Projetoo\ControlX\ControlX\obj\Debug\ControlX.Form1.resources
+C:\Users\Fabricio\Source\Repos\LP2 - Projetoo\ControlX\ControlX\obj\Debug\ControlX.formCadastroProd.resources
+C:\Users\Fabricio\Source\Repos\LP2 - Projetoo\ControlX\ControlX\obj\Debug\ControlX.Properties.Resources.resources
+C:\Users\Fabricio\Source\Repos\LP2 - Projetoo\ControlX\ControlX\obj\Debug\ControlX.csproj.GenerateResource.Cache
