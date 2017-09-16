@@ -26,6 +26,7 @@ namespace ControlX
                 count++;
             }
             lbIdProduto.Text = "" + (count+=1);
+            btComplete();
             
         }
 
@@ -33,24 +34,22 @@ namespace ControlX
         {
             this.Dispose();
         }
-
-        private bool isComplete()
+        
+        private void btComplete()
         {
             if (txNome.Text.Trim() == "" || txPreco.Text.Trim() == "" || txQntd.Text.Trim() == "")
-                return false;
+                btCadastrar.Enabled = false;
             else
-                return true;
+                btCadastrar.Enabled = true;
         }
 
         private void btCadastrar_Click(object sender, EventArgs e)
-        {            
-            if (isComplete())
-            {
+        {
                 nProduto.Nome = txNome.Text;
                 nProduto.Preco = double.Parse(txPreco.Text);
                 nProduto.Id = int.Parse(lbIdProduto.Text);
                 nProduto.Qntd = int.Parse(txQntd.Text);
-
+                btComplete();
                 if (btCadastrar.Text != "Salvar")
                 {
                     db1.Adicionar(nProduto);
@@ -58,12 +57,24 @@ namespace ControlX
                 }
                 else if (btCadastrar.Text == "Salvar")
                     db1.Atualizar(nProduto);
-            }
-            else
-                MessageBox.Show("Escreve direito vacilão", "Menssagem para vacilão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
+            
+            this.Dispose();           
+        }
 
-            this.Dispose();
-           
+        private void txNome_TextChanged(object sender, EventArgs e)
+        {
+            btComplete();
+        }
+
+        private void txPreco_TextChanged(object sender, EventArgs e)
+        {
+            btComplete();
+        }
+
+        private void txQntd_TextChanged(object sender, EventArgs e)
+        {
+            btComplete();
         }
     }
 }

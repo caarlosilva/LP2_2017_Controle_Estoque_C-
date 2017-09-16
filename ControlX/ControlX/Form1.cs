@@ -16,12 +16,15 @@ namespace ControlX
         public Form1()
         {
             InitializeComponent();
+            bottonEnable();
+            Fill();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             new formCadastroProd().ShowDialog(this);
             Fill();
+            bottonEnable();
         }
 
         private void Fill()
@@ -36,6 +39,22 @@ namespace ControlX
             }
         
         
+        }
+
+        private void bottonEnable()
+        {
+            if (dgvEstoque.CurrentCell == null)
+            {
+                btDel.Enabled = false;
+                btEdit.Enabled = false;
+                btView.Enabled = false;
+            }
+            else
+            {
+                btDel.Enabled = true;
+                btEdit.Enabled = true;
+                btView.Enabled = true;
+            }
         }
 
         private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
@@ -59,6 +78,7 @@ namespace ControlX
             int a = int.Parse(dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
             data.Remover(a);
             Fill();
+            bottonEnable();
         }
 
         private void btEdit_Click(object sender, EventArgs e)
