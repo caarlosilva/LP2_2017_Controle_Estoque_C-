@@ -101,7 +101,8 @@
             this.txPreco.Name = "txPreco";
             this.txPreco.Size = new System.Drawing.Size(81, 21);
             this.txPreco.TabIndex = 6;
-            this.txPreco.TextChanged += new System.EventHandler(this.txPreco_TextChanged);
+            this.txPreco.TextChanged += new System.EventHandler(this.txNome_TextChanged);
+            this.txPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPreco_KeyPress);
             // 
             // pnCadastro
             // 
@@ -134,7 +135,8 @@
             this.txQntd.Name = "txQntd";
             this.txQntd.Size = new System.Drawing.Size(76, 20);
             this.txQntd.TabIndex = 10;
-            this.txQntd.TextChanged += new System.EventHandler(this.txQntd_TextChanged);
+            this.txQntd.TextChanged += new System.EventHandler(this.txNome_TextChanged);
+            this.txQntd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPreco_KeyPress);
             // 
             // lbIdProduto
             // 

@@ -67,14 +67,10 @@ namespace ControlX
             btComplete();
         }
 
-        private void txPreco_TextChanged(object sender, EventArgs e)
+        private void txPreco_KeyPress(object sender, KeyPressEventArgs e)
         {
-            btComplete();
-        }
-
-        private void txQntd_TextChanged(object sender, EventArgs e)
-        {
-            btComplete();
+            if ((Char.IsLetter(e.KeyChar)))
+                e.Handled = true;
         }
     }
 }
