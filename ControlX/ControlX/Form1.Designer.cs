@@ -43,6 +43,7 @@
             this.btEdit = new System.Windows.Forms.Button();
             this.pnButtons = new System.Windows.Forms.Panel();
             this.btView = new System.Windows.Forms.Button();
+            this.btMenuPrincipal = new System.Windows.Forms.Button();
             this.pnPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
             this.gbEstoque.SuspendLayout();
@@ -170,6 +171,7 @@
             // 
             // pnButtons
             // 
+            this.pnButtons.Controls.Add(this.btMenuPrincipal);
             this.pnButtons.Controls.Add(this.btView);
             this.pnButtons.Controls.Add(this.btAdd);
             this.pnButtons.Controls.Add(this.btEdit);
@@ -188,6 +190,17 @@
             this.btView.Text = "Visualizar";
             this.btView.UseVisualStyleBackColor = true;
             this.btView.Click += new System.EventHandler(this.btView_Click);
+            // 
+            // btMenuPrincipal
+            // 
+            this.btMenuPrincipal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btMenuPrincipal.Location = new System.Drawing.Point(6, 3);
+            this.btMenuPrincipal.Name = "btMenuPrincipal";
+            this.btMenuPrincipal.Size = new System.Drawing.Size(101, 23);
+            this.btMenuPrincipal.TabIndex = 9;
+            this.btMenuPrincipal.Text = "Menu Principal";
+            this.btMenuPrincipal.UseVisualStyleBackColor = true;
+            this.btMenuPrincipal.Click += new System.EventHandler(this.btMenuPrincipal_Click);
             // 
             // Form1
             // 
@@ -225,6 +238,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPreco;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQtd;
         private System.Windows.Forms.Button btView;
+        private System.Windows.Forms.Button btMenuPrincipal;
     }
 }
 

@@ -118,5 +118,11 @@ namespace ControlX
             form.ShowDialog(this);
             Fill();
         }
+
+        private void btMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            new MenuAdmin().Show();
+            this.Dispose();
+        }
     }
 }
