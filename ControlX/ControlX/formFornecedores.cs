@@ -20,7 +20,6 @@ namespace ControlX
         private void btMenu_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            new formMenu().ShowDialog();
         }
 
         private void btAdicionar_Click(object sender, EventArgs e)

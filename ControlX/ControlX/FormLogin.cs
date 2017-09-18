@@ -19,6 +19,7 @@ namespace ControlX
 
         private void btSair_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Process.GetCurrentProcess().Close();
             this.Close();
         }
     }

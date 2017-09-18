@@ -23,12 +23,13 @@ namespace ControlX
         {
             this.Hide();
             new formEstoque().ShowDialog();
+            this.Show();
         }
 
         private void btSair_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            new formLogin().ShowDialog();
+            new formLogin().ShowDialog();            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -40,6 +41,7 @@ namespace ControlX
         {
             this.Hide();
             new formFornecedores().ShowDialog();
+            this.Show();
         }
 
         private void picLogo_Click(object sender, EventArgs e)

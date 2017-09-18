@@ -78,3 +78,17 @@ X:\Arquivos de Programas\Git\ControlX\ControlX\ControlX\obj\Debug\ControlX.formF
 X:\Arquivos de Programas\Git\ControlX\ControlX\ControlX\obj\Debug\ControlX.formLogin.resources
 X:\Arquivos de Programas\Git\ControlX\ControlX\ControlX\obj\Debug\ControlX.formMenu.resources
 X:\Arquivos de Programas\Git\ControlX\ControlX\ControlX\obj\Debug\ControlX.formCadastroForn.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\bin\Debug\ControlX.exe.config
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\bin\Debug\ControlX.exe
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\bin\Debug\ControlX.pdb
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.csprojResolveAssemblyReference.cache
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.formCadastroForn.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.formEstoque.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.formCadastroProd.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.formFornecedores.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.formLogin.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.formMenu.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.Properties.Resources.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.csproj.GenerateResource.Cache
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.exe
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.pdb

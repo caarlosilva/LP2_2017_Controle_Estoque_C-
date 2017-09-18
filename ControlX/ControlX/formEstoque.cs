@@ -138,8 +138,7 @@ namespace ControlX
 
         private void btMenuPrincipal_Click(object sender, EventArgs e)
         {
-            new formMenu().Show();
-            this.Dispose();
+            this.Close();
         }
     }
 }
