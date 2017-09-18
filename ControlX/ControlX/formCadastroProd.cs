@@ -26,7 +26,7 @@ namespace ControlX
                 count++;
             }
             */
-            lbIdProduto.Text = "" + (produtos.Count);
+            lbIdProduto.Text = "" + (produtos.Count + 1);
             btComplete();
             
         }

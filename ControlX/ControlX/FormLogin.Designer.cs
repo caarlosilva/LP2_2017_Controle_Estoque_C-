@@ -119,15 +119,18 @@
             this.panel2.Size = new System.Drawing.Size(203, 29);
             this.panel2.TabIndex = 7;
             // 
-            // Login
+            // formLogin
             // 
+            this.AcceptButton = this.btLogar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(227, 124);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Login";
+            this.MaximizeBox = false;
+            this.Name = "formLogin";
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -33,6 +33,10 @@
             this.txPesquisar = new System.Windows.Forms.TextBox();
             this.pnPesquisa = new System.Windows.Forms.Panel();
             this.dgvEstoque = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbEstoque = new System.Windows.Forms.GroupBox();
             this.btAdd = new System.Windows.Forms.Button();
             this.btDel = new System.Windows.Forms.Button();
@@ -40,18 +44,18 @@
             this.pnButtons = new System.Windows.Forms.Panel();
             this.btMenu = new System.Windows.Forms.Button();
             this.btView = new System.Windows.Forms.Button();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnMenu = new System.Windows.Forms.Panel();
             this.pnPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
             this.gbEstoque.SuspendLayout();
             this.pnButtons.SuspendLayout();
+            this.pnMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbFiltro
             // 
+            this.lbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFiltro.AutoSize = true;
             this.lbFiltro.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFiltro.Location = new System.Drawing.Point(9, 9);
@@ -62,6 +66,8 @@
             // 
             // txPesquisar
             // 
+            this.txPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txPesquisar.Location = new System.Drawing.Point(47, 6);
             this.txPesquisar.Name = "txPesquisar";
@@ -71,6 +77,8 @@
             // 
             // pnPesquisa
             // 
+            this.pnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnPesquisa.Controls.Add(this.txPesquisar);
             this.pnPesquisa.Controls.Add(this.lbFiltro);
             this.pnPesquisa.Location = new System.Drawing.Point(12, 12);
@@ -82,6 +90,9 @@
             // 
             this.dgvEstoque.AllowUserToAddRows = false;
             this.dgvEstoque.AllowUserToDeleteRows = false;
+            this.dgvEstoque.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
@@ -93,84 +104,6 @@
             this.dgvEstoque.ReadOnly = true;
             this.dgvEstoque.Size = new System.Drawing.Size(654, 309);
             this.dgvEstoque.TabIndex = 3;
-            // 
-            // gbEstoque
-            // 
-            this.gbEstoque.Controls.Add(this.dgvEstoque);
-            this.gbEstoque.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbEstoque.Location = new System.Drawing.Point(12, 48);
-            this.gbEstoque.Name = "gbEstoque";
-            this.gbEstoque.Size = new System.Drawing.Size(666, 334);
-            this.gbEstoque.TabIndex = 4;
-            this.gbEstoque.TabStop = false;
-            this.gbEstoque.Text = "Estoque";
-            // 
-            // btAdd
-            // 
-            this.btAdd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Location = new System.Drawing.Point(588, 3);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(75, 23);
-            this.btAdd.TabIndex = 0;
-            this.btAdd.Text = "Adicionar";
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btDel
-            // 
-            this.btDel.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDel.Location = new System.Drawing.Point(345, 3);
-            this.btDel.Name = "btDel";
-            this.btDel.Size = new System.Drawing.Size(75, 23);
-            this.btDel.TabIndex = 3;
-            this.btDel.Text = "Remover";
-            this.btDel.UseVisualStyleBackColor = true;
-            this.btDel.Click += new System.EventHandler(this.btDel_Click);
-            // 
-            // btEdit
-            // 
-            this.btEdit.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEdit.Location = new System.Drawing.Point(507, 3);
-            this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(75, 23);
-            this.btEdit.TabIndex = 1;
-            this.btEdit.Text = "Editar";
-            this.btEdit.UseVisualStyleBackColor = true;
-            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
-            // 
-            // pnButtons
-            // 
-            this.pnButtons.Controls.Add(this.btMenu);
-            this.pnButtons.Controls.Add(this.btView);
-            this.pnButtons.Controls.Add(this.btAdd);
-            this.pnButtons.Controls.Add(this.btEdit);
-            this.pnButtons.Controls.Add(this.btDel);
-            this.pnButtons.Location = new System.Drawing.Point(12, 388);
-            this.pnButtons.Name = "pnButtons";
-            this.pnButtons.Size = new System.Drawing.Size(666, 29);
-            this.pnButtons.TabIndex = 8;
-            // 
-            // btMenu
-            // 
-            this.btMenu.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btMenu.Location = new System.Drawing.Point(6, 3);
-            this.btMenu.Name = "btMenu";
-            this.btMenu.Size = new System.Drawing.Size(70, 23);
-            this.btMenu.TabIndex = 4;
-            this.btMenu.Text = "Menu";
-            this.btMenu.UseVisualStyleBackColor = true;
-            this.btMenu.Click += new System.EventHandler(this.btMenuPrincipal_Click);
-            // 
-            // btView
-            // 
-            this.btView.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btView.Location = new System.Drawing.Point(426, 3);
-            this.btView.Name = "btView";
-            this.btView.Size = new System.Drawing.Size(75, 23);
-            this.btView.TabIndex = 2;
-            this.btView.Text = "Visualizar";
-            this.btView.UseVisualStyleBackColor = true;
-            this.btView.Click += new System.EventHandler(this.btView_Click);
             // 
             // colId
             // 
@@ -205,14 +138,112 @@
             this.colQtd.Name = "colQtd";
             this.colQtd.ReadOnly = true;
             // 
+            // gbEstoque
+            // 
+            this.gbEstoque.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbEstoque.Controls.Add(this.dgvEstoque);
+            this.gbEstoque.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbEstoque.Location = new System.Drawing.Point(12, 48);
+            this.gbEstoque.Name = "gbEstoque";
+            this.gbEstoque.Size = new System.Drawing.Size(666, 334);
+            this.gbEstoque.TabIndex = 4;
+            this.gbEstoque.TabStop = false;
+            this.gbEstoque.Text = "Estoque";
+            // 
+            // btAdd
+            // 
+            this.btAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btAdd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Location = new System.Drawing.Point(248, 3);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(75, 23);
+            this.btAdd.TabIndex = 0;
+            this.btAdd.Text = "Adicionar";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btDel
+            // 
+            this.btDel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btDel.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDel.Location = new System.Drawing.Point(5, 3);
+            this.btDel.Name = "btDel";
+            this.btDel.Size = new System.Drawing.Size(75, 23);
+            this.btDel.TabIndex = 3;
+            this.btDel.Text = "Remover";
+            this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
+            // 
+            // btEdit
+            // 
+            this.btEdit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btEdit.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEdit.Location = new System.Drawing.Point(167, 3);
+            this.btEdit.Name = "btEdit";
+            this.btEdit.Size = new System.Drawing.Size(75, 23);
+            this.btEdit.TabIndex = 1;
+            this.btEdit.Text = "Editar";
+            this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
+            // 
+            // pnButtons
+            // 
+            this.pnButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnButtons.Controls.Add(this.btView);
+            this.pnButtons.Controls.Add(this.btAdd);
+            this.pnButtons.Controls.Add(this.btEdit);
+            this.pnButtons.Controls.Add(this.btDel);
+            this.pnButtons.Location = new System.Drawing.Point(352, 388);
+            this.pnButtons.Name = "pnButtons";
+            this.pnButtons.Size = new System.Drawing.Size(326, 29);
+            this.pnButtons.TabIndex = 8;
+            // 
+            // btMenu
+            // 
+            this.btMenu.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btMenu.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btMenu.Location = new System.Drawing.Point(6, 3);
+            this.btMenu.Name = "btMenu";
+            this.btMenu.Size = new System.Drawing.Size(70, 23);
+            this.btMenu.TabIndex = 4;
+            this.btMenu.Text = "Menu";
+            this.btMenu.UseVisualStyleBackColor = true;
+            this.btMenu.Click += new System.EventHandler(this.btMenuPrincipal_Click);
+            // 
+            // btView
+            // 
+            this.btView.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btView.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btView.Location = new System.Drawing.Point(86, 3);
+            this.btView.Name = "btView";
+            this.btView.Size = new System.Drawing.Size(75, 23);
+            this.btView.TabIndex = 2;
+            this.btView.Text = "Visualizar";
+            this.btView.UseVisualStyleBackColor = true;
+            this.btView.Click += new System.EventHandler(this.btView_Click);
+            // 
+            // pnMenu
+            // 
+            this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnMenu.Controls.Add(this.btMenu);
+            this.pnMenu.Location = new System.Drawing.Point(12, 388);
+            this.pnMenu.Name = "pnMenu";
+            this.pnMenu.Size = new System.Drawing.Size(83, 29);
+            this.pnMenu.TabIndex = 9;
+            // 
             // formEstoque
             // 
+            this.AcceptButton = this.btAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 429);
+            this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.pnButtons);
             this.Controls.Add(this.gbEstoque);
             this.Controls.Add(this.pnPesquisa);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formEstoque";
             this.Text = "Estoque";
@@ -221,6 +252,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).EndInit();
             this.gbEstoque.ResumeLayout(false);
             this.pnButtons.ResumeLayout(false);
+            this.pnMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -242,6 +274,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPreco;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQtd;
+        private System.Windows.Forms.Panel pnMenu;
     }
 }
 

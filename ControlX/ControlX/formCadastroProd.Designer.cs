@@ -97,6 +97,9 @@
             // 
             // pnCadastro
             // 
+            this.pnCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnCadastro.Controls.Add(this.lbQntd);
             this.pnCadastro.Controls.Add(this.txQntd);
             this.pnCadastro.Controls.Add(this.lbIdProduto);
@@ -150,6 +153,7 @@
             // 
             // btCancelar
             // 
+            this.btCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btCancelar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.Location = new System.Drawing.Point(18, 2);
             this.btCancelar.Name = "btCancelar";
@@ -172,11 +176,16 @@
             // 
             // formCadastroProd
             // 
+            this.AcceptButton = this.btCadastrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btCancelar;
             this.ClientSize = new System.Drawing.Size(469, 111);
             this.Controls.Add(this.pnCadastro);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "formCadastroProd";
             this.ShowIcon = false;
             this.Text = "Cadastrar Produto";

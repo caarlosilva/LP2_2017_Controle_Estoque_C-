@@ -48,5 +48,10 @@ namespace ControlX
         {
 
         }
+
+        private void ronaldoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

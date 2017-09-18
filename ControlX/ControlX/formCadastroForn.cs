@@ -12,9 +12,11 @@ namespace ControlX
 {
     public partial class formCadastroForn : Form
     {
+
         public formCadastroForn()
         {
             InitializeComponent();
+            
         }
 
         private void BuscaCPF()
@@ -58,6 +60,11 @@ namespace ControlX
         {
             if (txCEP.TextLength == 9)
                 BuscaCPF();
+        }
+
+        private void btCadastrar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

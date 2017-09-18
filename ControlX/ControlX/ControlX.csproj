@@ -110,6 +110,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="formCadastroForn.pt-BR.resx">
+      <DependentUpon>formCadastroForn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formCadastroForn.resx">
       <DependentUpon>formCadastroForn.cs</DependentUpon>
     </EmbeddedResource>
