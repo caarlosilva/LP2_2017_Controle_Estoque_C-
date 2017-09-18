@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCadastroProd));
             this.btCadastrar = new System.Windows.Forms.Button();
             this.lbNome = new System.Windows.Forms.Label();
             this.lbPreco = new System.Windows.Forms.Label();
             this.txNome = new System.Windows.Forms.TextBox();
             this.lbId = new System.Windows.Forms.Label();
-            this.txPreco = new System.Windows.Forms.TextBox();
             this.pnCadastro = new System.Windows.Forms.Panel();
             this.lbQntd = new System.Windows.Forms.Label();
             this.txQntd = new System.Windows.Forms.TextBox();
             this.lbIdProduto = new System.Windows.Forms.Label();
             this.pnBtCad = new System.Windows.Forms.Panel();
             this.btCancelar = new System.Windows.Forms.Button();
+            this.txPreco = new System.Windows.Forms.TextBox();
             this.pnCadastro.SuspendLayout();
             this.pnBtCad.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +82,7 @@
             this.txNome.Location = new System.Drawing.Point(45, 19);
             this.txNome.Name = "txNome";
             this.txNome.Size = new System.Drawing.Size(278, 21);
-            this.txNome.TabIndex = 3;
+            this.txNome.TabIndex = 0;
             this.txNome.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // lbId
@@ -93,16 +94,6 @@
             this.lbId.Size = new System.Drawing.Size(26, 13);
             this.lbId.TabIndex = 5;
             this.lbId.Text = "ID:";
-            // 
-            // txPreco
-            // 
-            this.txPreco.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txPreco.Location = new System.Drawing.Point(45, 58);
-            this.txPreco.Name = "txPreco";
-            this.txPreco.Size = new System.Drawing.Size(81, 21);
-            this.txPreco.TabIndex = 6;
-            this.txPreco.TextChanged += new System.EventHandler(this.txNome_TextChanged);
-            this.txPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPreco_KeyPress);
             // 
             // pnCadastro
             // 
@@ -134,7 +125,7 @@
             this.txQntd.Location = new System.Drawing.Point(194, 58);
             this.txQntd.Name = "txQntd";
             this.txQntd.Size = new System.Drawing.Size(76, 20);
-            this.txQntd.TabIndex = 10;
+            this.txQntd.TabIndex = 2;
             this.txQntd.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             this.txQntd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPreco_KeyPress);
             // 
@@ -169,12 +160,23 @@
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txPreco
+            // 
+            this.txPreco.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txPreco.Location = new System.Drawing.Point(45, 58);
+            this.txPreco.Name = "txPreco";
+            this.txPreco.Size = new System.Drawing.Size(81, 21);
+            this.txPreco.TabIndex = 1;
+            this.txPreco.TextChanged += new System.EventHandler(this.txNome_TextChanged);
+            this.txPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPreco_KeyPress);
+            // 
             // formCadastroProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 111);
             this.Controls.Add(this.pnCadastro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroProd";
             this.ShowIcon = false;
             this.Text = "Cadastrar Produto";
@@ -194,9 +196,9 @@
         private System.Windows.Forms.Label lbQntd;
         public System.Windows.Forms.TextBox txNome;
         public System.Windows.Forms.Button btCadastrar;
-        public System.Windows.Forms.TextBox txPreco;
         public System.Windows.Forms.Label lbIdProduto;
         public System.Windows.Forms.Button btCancelar;
         public System.Windows.Forms.TextBox txQntd;
+        public System.Windows.Forms.TextBox txPreco;
     }
 }

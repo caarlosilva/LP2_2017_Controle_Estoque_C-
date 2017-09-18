@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ControlX
 {
-    public partial class Login : Form
+    public partial class formLogin : Form
     {
-        public Login()
+        public formLogin()
         {
             InitializeComponent();
         }

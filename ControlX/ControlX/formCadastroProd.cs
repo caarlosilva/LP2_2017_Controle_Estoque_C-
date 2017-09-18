@@ -20,12 +20,13 @@ namespace ControlX
         public formCadastroProd()
         {
             InitializeComponent();
-            int count = 0;
+            /*int count = 0;
             foreach (KeyValuePair<int, Produto> k in produtos)
             {
                 count++;
             }
-            lbIdProduto.Text = "" + (count+=1);
+            */
+            lbIdProduto.Text = "" + (produtos.Count);
             btComplete();
             
         }
@@ -69,8 +70,14 @@ namespace ControlX
 
         private void txPreco_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((Char.IsLetter(e.KeyChar)))
+            //if ((Char.IsLetter(e.KeyChar)))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
                 e.Handled = true;
+
+            if (e.KeyChar == ',')   //Se o usuario inserir uma virgula
+                if (txPreco.Text.Contains(",") || txPreco.Text.Equals(""))//Checa se o usuario ja inseriu uma virgula previamente
+                    e.Handled = true; // Caso ja exista uma virgula, outra não será aceita
+            
         }
     }
 }

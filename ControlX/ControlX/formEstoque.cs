@@ -11,20 +11,22 @@ using System.Windows.Forms;
 
 namespace ControlX
 {
-    public partial class Form1 : Form
+    public partial class formEstoque : Form
     {
-        public Form1()
+        private static Dictionary<int, Produto> produtos = new Dictionary<int, Produto>();
+        private Database db1 = new Database();
+
+        public formEstoque()
         {
             InitializeComponent();
-            bottonEnable();
             Fill();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             new formCadastroProd().ShowDialog(this);
             Fill();
-            bottonEnable();
         }
 
         private void Fill()
@@ -37,13 +39,14 @@ namespace ControlX
             {
                 dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
             }
-        
-        
+
+            buttonEnable();
         }
 
-        private void bottonEnable()
+        private void buttonEnable()
         {
-            if (dgvEstoque.CurrentCell == null)
+
+            if (dgvEstoque.RowCount == 0)
             {
                 btDel.Enabled = false;
                 btEdit.Enabled = false;
@@ -76,9 +79,23 @@ namespace ControlX
 
             Database data = new Database();
             int a = int.Parse(dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
-            data.Remover(a);
-            Fill();
-            bottonEnable();
+            //Caixa de aviso caso deseja ou não apagar
+            DialogResult result = MessageBox.Show("Tem certeza que deseja remover esse item do seu estoque?", 
+                "Aviso!",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //Caso clique em sim
+            if (result == DialogResult.Yes)
+            {           
+                data.Remover(a);
+                Fill();
+                buttonEnable();
+            }
+            else if (result == DialogResult.No)
+            {
+                 
+            }
+
+
         }
 
         private void btEdit_Click(object sender, EventArgs e)
@@ -102,7 +119,7 @@ namespace ControlX
         private void btView_Click(object sender, EventArgs e)
         {
             formCadastroProd form = new formCadastroProd();
-            //Os text não pode ser editado.
+            //Os texts não pode ser editado.
             form.txNome.ReadOnly = true;
             form.txPreco.ReadOnly = true;
             form.txQntd.ReadOnly = true;
@@ -112,7 +129,7 @@ namespace ControlX
             form.txQntd.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[3].Value.ToString());
             form.lbIdProduto.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
             //Deixa o botão Cadastrar oculto.
-            form.btCadastrar.Hide();
+            form.btCadastrar.Enabled = false;
             //Modifica o texto do botão Cancelar.
             form.btCancelar.Text = "Voltar";
             form.ShowDialog(this);
@@ -121,7 +138,7 @@ namespace ControlX
 
         private void btMenuPrincipal_Click(object sender, EventArgs e)
         {
-            new MenuAdmin().Show();
+            new formMenu().Show();
             this.Dispose();
         }
     }

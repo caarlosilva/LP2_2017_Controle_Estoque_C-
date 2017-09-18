@@ -1,6 +1,6 @@
 ﻿namespace ControlX
 {
-    partial class Form1
+    partial class formEstoque
     {
         /// <summary>
         /// Required designer variable.
@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formEstoque));
             this.lbFiltro = new System.Windows.Forms.Label();
             this.txPesquisar = new System.Windows.Forms.TextBox();
             this.pnPesquisa = new System.Windows.Forms.Panel();
             this.dgvEstoque = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbEstoque = new System.Windows.Forms.GroupBox();
             this.btAdd = new System.Windows.Forms.Button();
             this.btDel = new System.Windows.Forms.Button();
             this.btEdit = new System.Windows.Forms.Button();
             this.pnButtons = new System.Windows.Forms.Panel();
+            this.btMenu = new System.Windows.Forms.Button();
             this.btView = new System.Windows.Forms.Button();
-            this.btMenuPrincipal = new System.Windows.Forms.Button();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
             this.gbEstoque.SuspendLayout();
@@ -66,7 +66,7 @@
             this.txPesquisar.Location = new System.Drawing.Point(47, 6);
             this.txPesquisar.Name = "txPesquisar";
             this.txPesquisar.Size = new System.Drawing.Size(613, 21);
-            this.txPesquisar.TabIndex = 1;
+            this.txPesquisar.TabIndex = 0;
             this.txPesquisar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txPesquisar_KeyUp);
             // 
             // pnPesquisa
@@ -94,37 +94,6 @@
             this.dgvEstoque.Size = new System.Drawing.Size(654, 309);
             this.dgvEstoque.TabIndex = 3;
             // 
-            // colId
-            // 
-            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colId.FillWeight = 15F;
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            // 
-            // colNome
-            // 
-            this.colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colNome.HeaderText = "Nome";
-            this.colNome.Name = "colNome";
-            this.colNome.ReadOnly = true;
-            // 
-            // colPreco
-            // 
-            this.colPreco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPreco.FillWeight = 30F;
-            this.colPreco.HeaderText = "Preço";
-            this.colPreco.Name = "colPreco";
-            this.colPreco.ReadOnly = true;
-            // 
-            // colQtd
-            // 
-            this.colQtd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colQtd.FillWeight = 50F;
-            this.colQtd.HeaderText = "Quantidade";
-            this.colQtd.Name = "colQtd";
-            this.colQtd.ReadOnly = true;
-            // 
             // gbEstoque
             // 
             this.gbEstoque.Controls.Add(this.dgvEstoque);
@@ -139,10 +108,10 @@
             // btAdd
             // 
             this.btAdd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Location = new System.Drawing.Point(585, 3);
+            this.btAdd.Location = new System.Drawing.Point(588, 3);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(75, 23);
-            this.btAdd.TabIndex = 5;
+            this.btAdd.TabIndex = 0;
             this.btAdd.Text = "Adicionar";
             this.btAdd.UseVisualStyleBackColor = true;
             this.btAdd.Click += new System.EventHandler(this.button1_Click);
@@ -150,10 +119,10 @@
             // btDel
             // 
             this.btDel.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDel.Location = new System.Drawing.Point(342, 3);
+            this.btDel.Location = new System.Drawing.Point(345, 3);
             this.btDel.Name = "btDel";
             this.btDel.Size = new System.Drawing.Size(75, 23);
-            this.btDel.TabIndex = 6;
+            this.btDel.TabIndex = 3;
             this.btDel.Text = "Remover";
             this.btDel.UseVisualStyleBackColor = true;
             this.btDel.Click += new System.EventHandler(this.btDel_Click);
@@ -161,17 +130,17 @@
             // btEdit
             // 
             this.btEdit.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEdit.Location = new System.Drawing.Point(504, 3);
+            this.btEdit.Location = new System.Drawing.Point(507, 3);
             this.btEdit.Name = "btEdit";
             this.btEdit.Size = new System.Drawing.Size(75, 23);
-            this.btEdit.TabIndex = 7;
+            this.btEdit.TabIndex = 1;
             this.btEdit.Text = "Editar";
             this.btEdit.UseVisualStyleBackColor = true;
             this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // pnButtons
             // 
-            this.pnButtons.Controls.Add(this.btMenuPrincipal);
+            this.pnButtons.Controls.Add(this.btMenu);
             this.pnButtons.Controls.Add(this.btView);
             this.pnButtons.Controls.Add(this.btAdd);
             this.pnButtons.Controls.Add(this.btEdit);
@@ -181,28 +150,62 @@
             this.pnButtons.Size = new System.Drawing.Size(666, 29);
             this.pnButtons.TabIndex = 8;
             // 
+            // btMenu
+            // 
+            this.btMenu.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btMenu.Location = new System.Drawing.Point(6, 3);
+            this.btMenu.Name = "btMenu";
+            this.btMenu.Size = new System.Drawing.Size(70, 23);
+            this.btMenu.TabIndex = 4;
+            this.btMenu.Text = "Menu";
+            this.btMenu.UseVisualStyleBackColor = true;
+            this.btMenu.Click += new System.EventHandler(this.btMenuPrincipal_Click);
+            // 
             // btView
             // 
-            this.btView.Location = new System.Drawing.Point(423, 3);
+            this.btView.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btView.Location = new System.Drawing.Point(426, 3);
             this.btView.Name = "btView";
             this.btView.Size = new System.Drawing.Size(75, 23);
-            this.btView.TabIndex = 8;
+            this.btView.TabIndex = 2;
             this.btView.Text = "Visualizar";
             this.btView.UseVisualStyleBackColor = true;
             this.btView.Click += new System.EventHandler(this.btView_Click);
             // 
-            // btMenuPrincipal
+            // colId
             // 
-            this.btMenuPrincipal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btMenuPrincipal.Location = new System.Drawing.Point(6, 3);
-            this.btMenuPrincipal.Name = "btMenuPrincipal";
-            this.btMenuPrincipal.Size = new System.Drawing.Size(101, 23);
-            this.btMenuPrincipal.TabIndex = 9;
-            this.btMenuPrincipal.Text = "Menu Principal";
-            this.btMenuPrincipal.UseVisualStyleBackColor = true;
-            this.btMenuPrincipal.Click += new System.EventHandler(this.btMenuPrincipal_Click);
+            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colId.FillWeight = 15F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.ToolTipText = "Numero de identificação gerado no cadastro";
             // 
-            // Form1
+            // colNome
+            // 
+            this.colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNome.FillWeight = 120F;
+            this.colNome.HeaderText = "Nome";
+            this.colNome.Name = "colNome";
+            this.colNome.ReadOnly = true;
+            // 
+            // colPreco
+            // 
+            this.colPreco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPreco.FillWeight = 50F;
+            this.colPreco.HeaderText = "Preço";
+            this.colPreco.Name = "colPreco";
+            this.colPreco.ReadOnly = true;
+            // 
+            // colQtd
+            // 
+            this.colQtd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colQtd.FillWeight = 30F;
+            this.colQtd.HeaderText = "Quantidade";
+            this.colQtd.Name = "colQtd";
+            this.colQtd.ReadOnly = true;
+            // 
+            // formEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,8 +214,8 @@
             this.Controls.Add(this.gbEstoque);
             this.Controls.Add(this.pnPesquisa);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
-            this.Text = "Controle de Estoque";
+            this.Name = "formEstoque";
+            this.Text = "Estoque";
             this.pnPesquisa.ResumeLayout(false);
             this.pnPesquisa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).EndInit();
@@ -233,12 +236,12 @@
         private System.Windows.Forms.Button btDel;
         private System.Windows.Forms.Button btEdit;
         private System.Windows.Forms.Panel pnButtons;
+        private System.Windows.Forms.Button btView;
+        private System.Windows.Forms.Button btMenu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPreco;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQtd;
-        private System.Windows.Forms.Button btView;
-        private System.Windows.Forms.Button btMenuPrincipal;
     }
 }
 
