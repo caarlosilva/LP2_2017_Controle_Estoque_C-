@@ -20,12 +20,6 @@ namespace ControlX
         public formCadastroProd()
         {
             InitializeComponent();
-            /*int count = 0;
-            foreach (KeyValuePair<int, Produto> k in produtos)
-            {
-                count++;
-            }
-            */
             lbIdProduto.Text = "" + (produtos.Count + 1);
             btComplete();
             

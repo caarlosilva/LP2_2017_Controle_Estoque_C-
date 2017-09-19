@@ -31,15 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formFornecedores));
             this.btMenu = new System.Windows.Forms.Button();
             this.pnFiltro = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txPesquisar = new System.Windows.Forms.TextBox();
             this.lbFiltro = new System.Windows.Forms.Label();
             this.pnBtns = new System.Windows.Forms.Panel();
-            this.btRemover = new System.Windows.Forms.Button();
-            this.btEditar = new System.Windows.Forms.Button();
-            this.btVisualizar = new System.Windows.Forms.Button();
-            this.btAdicionar = new System.Windows.Forms.Button();
+            this.btDel = new System.Windows.Forms.Button();
+            this.btEdit = new System.Windows.Forms.Button();
+            this.btView = new System.Windows.Forms.Button();
+            this.btAdd = new System.Windows.Forms.Button();
             this.gbFornecedores = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvFornecedor = new System.Windows.Forms.DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +47,7 @@
             this.pnFiltro.SuspendLayout();
             this.pnBtns.SuspendLayout();
             this.gbFornecedores.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
             this.pnMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,21 +66,21 @@
             // 
             this.pnFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnFiltro.Controls.Add(this.textBox1);
+            this.pnFiltro.Controls.Add(this.txPesquisar);
             this.pnFiltro.Controls.Add(this.lbFiltro);
             this.pnFiltro.Location = new System.Drawing.Point(12, 12);
             this.pnFiltro.Name = "pnFiltro";
             this.pnFiltro.Size = new System.Drawing.Size(666, 30);
             this.pnFiltro.TabIndex = 1;
             // 
-            // textBox1
+            // txPesquisar
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(47, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(613, 21);
-            this.textBox1.TabIndex = 0;
+            this.txPesquisar.Location = new System.Drawing.Point(47, 6);
+            this.txPesquisar.Name = "txPesquisar";
+            this.txPesquisar.Size = new System.Drawing.Size(613, 21);
+            this.txPesquisar.TabIndex = 0;
             // 
             // lbFiltro
             // 
@@ -96,62 +96,62 @@
             // pnBtns
             // 
             this.pnBtns.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnBtns.Controls.Add(this.btRemover);
-            this.pnBtns.Controls.Add(this.btEditar);
-            this.pnBtns.Controls.Add(this.btVisualizar);
-            this.pnBtns.Controls.Add(this.btAdicionar);
+            this.pnBtns.Controls.Add(this.btDel);
+            this.pnBtns.Controls.Add(this.btEdit);
+            this.pnBtns.Controls.Add(this.btView);
+            this.pnBtns.Controls.Add(this.btAdd);
             this.pnBtns.Location = new System.Drawing.Point(338, 388);
             this.pnBtns.Name = "pnBtns";
             this.pnBtns.Size = new System.Drawing.Size(340, 29);
             this.pnBtns.TabIndex = 3;
             // 
-            // btRemover
+            // btDel
             // 
-            this.btRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btRemover.Location = new System.Drawing.Point(18, 3);
-            this.btRemover.Name = "btRemover";
-            this.btRemover.Size = new System.Drawing.Size(75, 23);
-            this.btRemover.TabIndex = 3;
-            this.btRemover.Text = "Remover";
-            this.btRemover.UseVisualStyleBackColor = true;
+            this.btDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btDel.Location = new System.Drawing.Point(18, 3);
+            this.btDel.Name = "btDel";
+            this.btDel.Size = new System.Drawing.Size(75, 23);
+            this.btDel.TabIndex = 3;
+            this.btDel.Text = "Remover";
+            this.btDel.UseVisualStyleBackColor = true;
             // 
-            // btEditar
+            // btEdit
             // 
-            this.btEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btEditar.Location = new System.Drawing.Point(180, 3);
-            this.btEditar.Name = "btEditar";
-            this.btEditar.Size = new System.Drawing.Size(75, 23);
-            this.btEditar.TabIndex = 1;
-            this.btEditar.Text = "Editar";
-            this.btEditar.UseVisualStyleBackColor = true;
+            this.btEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btEdit.Location = new System.Drawing.Point(180, 3);
+            this.btEdit.Name = "btEdit";
+            this.btEdit.Size = new System.Drawing.Size(75, 23);
+            this.btEdit.TabIndex = 1;
+            this.btEdit.Text = "Editar";
+            this.btEdit.UseVisualStyleBackColor = true;
             // 
-            // btVisualizar
+            // btView
             // 
-            this.btVisualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btVisualizar.Location = new System.Drawing.Point(99, 3);
-            this.btVisualizar.Name = "btVisualizar";
-            this.btVisualizar.Size = new System.Drawing.Size(75, 23);
-            this.btVisualizar.TabIndex = 2;
-            this.btVisualizar.Text = "Visualizar";
-            this.btVisualizar.UseVisualStyleBackColor = true;
+            this.btView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btView.Location = new System.Drawing.Point(99, 3);
+            this.btView.Name = "btView";
+            this.btView.Size = new System.Drawing.Size(75, 23);
+            this.btView.TabIndex = 2;
+            this.btView.Text = "Visualizar";
+            this.btView.UseVisualStyleBackColor = true;
             // 
-            // btAdicionar
+            // btAdd
             // 
-            this.btAdicionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btAdicionar.Location = new System.Drawing.Point(261, 3);
-            this.btAdicionar.Name = "btAdicionar";
-            this.btAdicionar.Size = new System.Drawing.Size(75, 23);
-            this.btAdicionar.TabIndex = 0;
-            this.btAdicionar.Text = "Adicionar";
-            this.btAdicionar.UseVisualStyleBackColor = true;
-            this.btAdicionar.Click += new System.EventHandler(this.btAdicionar_Click);
+            this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btAdd.Location = new System.Drawing.Point(261, 3);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(75, 23);
+            this.btAdd.TabIndex = 0;
+            this.btAdd.Text = "Adicionar";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdicionar_Click);
             // 
             // gbFornecedores
             // 
             this.gbFornecedores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbFornecedores.Controls.Add(this.dataGridView1);
+            this.gbFornecedores.Controls.Add(this.dgvFornecedor);
             this.gbFornecedores.Location = new System.Drawing.Point(12, 48);
             this.gbFornecedores.Name = "gbFornecedores";
             this.gbFornecedores.Size = new System.Drawing.Size(666, 334);
@@ -159,23 +159,23 @@
             this.gbFornecedores.TabStop = false;
             this.gbFornecedores.Text = "Fornecedores";
             // 
-            // dataGridView1
+            // dgvFornecedor
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvFornecedor.AllowUserToAddRows = false;
+            this.dgvFornecedor.AllowUserToDeleteRows = false;
+            this.dgvFornecedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
             this.colNome,
             this.colCNPJ});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(654, 309);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvFornecedor.Location = new System.Drawing.Point(6, 19);
+            this.dgvFornecedor.Name = "dgvFornecedor";
+            this.dgvFornecedor.ReadOnly = true;
+            this.dgvFornecedor.Size = new System.Drawing.Size(654, 309);
+            this.dgvFornecedor.TabIndex = 0;
             // 
             // colID
             // 
@@ -211,7 +211,7 @@
             // 
             // formFornecedores
             // 
-            this.AcceptButton = this.btAdicionar;
+            this.AcceptButton = this.btAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 429);
@@ -228,7 +228,7 @@
             this.pnFiltro.PerformLayout();
             this.pnBtns.ResumeLayout(false);
             this.gbFornecedores.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).EndInit();
             this.pnMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -239,17 +239,17 @@
         private System.Windows.Forms.Button btMenu;
         private System.Windows.Forms.Panel pnFiltro;
         private System.Windows.Forms.Panel pnBtns;
-        private System.Windows.Forms.Button btAdicionar;
-        private System.Windows.Forms.Button btEditar;
-        private System.Windows.Forms.Button btVisualizar;
-        private System.Windows.Forms.Button btRemover;
+        private System.Windows.Forms.Button btEdit;
+        private System.Windows.Forms.Button btView;
+        private System.Windows.Forms.Button btDel;
         private System.Windows.Forms.Label lbFiltro;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txPesquisar;
         private System.Windows.Forms.GroupBox gbFornecedores;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvFornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCNPJ;
         private System.Windows.Forms.Panel pnMenu;
+        protected internal System.Windows.Forms.Button btAdd;
     }
 }

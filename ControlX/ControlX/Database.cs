@@ -10,15 +10,26 @@ namespace ControlX
     {
 
         private static Dictionary<int, Produto> produtos = new Dictionary<int, Produto> ();
+        private static Dictionary<int, Fornecedor> fornecedor = new Dictionary<int, Fornecedor>();
 
         public void Adicionar(Produto p)
         {
             produtos.Add(p.Id, p);
         }
 
+        public void Adicionar(Fornecedor p)
+        {
+            fornecedor.Add(p.Id, p);
+        }
+
         public void Atualizar(Produto p)
         {
             produtos[p.Id] = p; 
+        }
+
+        public void Atualizar(Fornecedor p)
+        {
+            fornecedor[p.Id] = p;
         }
 
         public Produto getProduto(int i)
@@ -51,6 +62,11 @@ namespace ControlX
         public void Remover(int idProduto)
         {
             produtos.Remove(idProduto);
+        }
+
+        public void Remover(Fornecedor f)
+        {
+            fornecedor.Remove(f.Id);
         }
     }
 }

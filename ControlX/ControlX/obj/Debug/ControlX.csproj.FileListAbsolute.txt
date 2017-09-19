@@ -99,3 +99,6 @@ C:\Users\IFSP\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\De
 C:\Users\IFSP\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\pt-BR\ControlX.resources.dll
 C:\Users\IFSP\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formCadastroForn.pt-BR.resources
 C:\Users\IFSP\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\pt-BR\ControlX.resources.dll
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\bin\Debug\pt-BR\ControlX.resources.dll
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.formCadastroForn.pt-BR.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\pt-BR\ControlX.resources.dll
