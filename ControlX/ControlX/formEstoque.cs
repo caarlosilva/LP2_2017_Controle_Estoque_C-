@@ -14,7 +14,6 @@ namespace ControlX
     public partial class formEstoque : Form
     {
         private static Dictionary<int, Produto> produtos = new Dictionary<int, Produto>();
-        private Database db1 = new Database();
 
         public formEstoque()
         {

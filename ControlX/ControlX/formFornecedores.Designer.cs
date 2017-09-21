@@ -114,6 +114,7 @@
             this.btDel.TabIndex = 3;
             this.btDel.Text = "Remover";
             this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
             // 
             // btEdit
             // 

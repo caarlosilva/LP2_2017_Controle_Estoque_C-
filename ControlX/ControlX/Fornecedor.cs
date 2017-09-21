@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace ControlX
 {
-    class Fornecedor : Database
+    class Fornecedor
     {
         private int id;
         private long cnpj;
         private long telefone1;
         private long telefone2;
         private long cep;
+        private long num;
         private string rua;
         private string comp;
         private string bairro;
@@ -25,7 +26,7 @@ namespace ControlX
 
         }
 
-        public Fornecedor(int id, long cpnj, long telefone1, long telefone2, long cep, string rua, string comp, string bairro, string cidade, string estado, string nome)
+        public Fornecedor(int id, long cpnj, long telefone1, long telefone2, long cep, long num, string rua, string comp, string bairro, string cidade, string estado, string nome)
         {
             this.id = id;
             this.cnpj = cpnj;
@@ -38,6 +39,7 @@ namespace ControlX
             this.cidade = cidade;
             this.estado = estado;
             this.nome = nome;
+            this.num = num;
         }
 
         public int Id { get => id; set => id = value; }
@@ -51,5 +53,6 @@ namespace ControlX
         public string Cidade { get => cidade; set => cidade = value; }
         public string Estado { get => estado; set => estado = value; }
         public string Nome { get => nome; set => nome = value; }
+        public long Num { get => num; set => num = value; }
     }
 }

@@ -23,7 +23,7 @@ namespace ControlX
         private void Fill()
         {
             IDatabase db = new Database();
-            List<Fornecedor> ps = new List<Fornecedor>();//ERRO AQUI
+            List<Fornecedor> ps = db.ListAllF(); ;
             
             dgvFornecedor.Rows.Clear();
             foreach (Fornecedor p in ps)
@@ -60,6 +60,28 @@ namespace ControlX
         {
             new formCadastroForn().ShowDialog(this);            
             Fill();
+        }
+
+        private void btDel_Click(object sender, EventArgs e)
+        {
+            Database data = new Database();
+            Fornecedor a = new Fornecedor();
+            a.Id =  int.Parse(dgvFornecedor.Rows[dgvFornecedor.CurrentRow.Index].Cells[0].Value.ToString());
+            //Caixa de aviso caso deseja ou não apagar
+            DialogResult result = MessageBox.Show("Tem certeza que deseja remover esse item do seu estoque?",
+                "Aviso!",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //Caso clique em sim
+            if (result == DialogResult.Yes)
+            {
+                data.Remover(a);
+                Fill();
+                buttonEnable();
+            }
+            else if (result == DialogResult.No)
+            {
+
+            }
         }
     }
 }

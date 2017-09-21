@@ -19,5 +19,17 @@ namespace ControlX
         List<Produto> ListAll();
 
         List<Produto> ListByName(string name);
+
+        //FORNECEDOR
+
+        void Adicionar(Fornecedor p);
+
+        void Atualizar(Fornecedor p);
+
+        void Remover(Fornecedor p);
+
+        List<Fornecedor> ListAllF();
+
+        List<Fornecedor> ListByNameF(string name);
     }
 }

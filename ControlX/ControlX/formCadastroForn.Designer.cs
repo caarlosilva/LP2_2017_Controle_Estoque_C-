@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCadastroForn));
             this.lbNome = new System.Windows.Forms.Label();
             this.pnCadForn = new System.Windows.Forms.Panel();
-            this.txCNPJ = new System.Windows.Forms.MaskedTextBox();
             this.txTel2 = new System.Windows.Forms.MaskedTextBox();
             this.txTel1 = new System.Windows.Forms.MaskedTextBox();
             this.txCEP = new System.Windows.Forms.MaskedTextBox();
@@ -39,7 +38,7 @@
             this.txCidade = new System.Windows.Forms.TextBox();
             this.txBairro = new System.Windows.Forms.TextBox();
             this.txCompl = new System.Windows.Forms.TextBox();
-            this.txEndereco = new System.Windows.Forms.TextBox();
+            this.txRua = new System.Windows.Forms.TextBox();
             this.txNum = new System.Windows.Forms.TextBox();
             this.lbNum = new System.Windows.Forms.Label();
             this.lbEstado = new System.Windows.Forms.Label();
@@ -57,6 +56,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btCadastrar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
+            this.txCNPJ = new System.Windows.Forms.MaskedTextBox();
             this.pnCadForn.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +77,7 @@
             this.pnCadForn.Controls.Add(this.txCidade);
             this.pnCadForn.Controls.Add(this.txBairro);
             this.pnCadForn.Controls.Add(this.txCompl);
-            this.pnCadForn.Controls.Add(this.txEndereco);
+            this.pnCadForn.Controls.Add(this.txRua);
             this.pnCadForn.Controls.Add(this.txNum);
             this.pnCadForn.Controls.Add(this.lbNum);
             this.pnCadForn.Controls.Add(this.lbEstado);
@@ -94,11 +94,6 @@
             this.pnCadForn.Controls.Add(this.txNome);
             this.pnCadForn.Controls.Add(this.lbNome);
             this.pnCadForn.Name = "pnCadForn";
-            // 
-            // txCNPJ
-            // 
-            resources.ApplyResources(this.txCNPJ, "txCNPJ");
-            this.txCNPJ.Name = "txCNPJ";
             // 
             // txTel2
             // 
@@ -138,10 +133,10 @@
             resources.ApplyResources(this.txCompl, "txCompl");
             this.txCompl.Name = "txCompl";
             // 
-            // txEndereco
+            // txRua
             // 
-            resources.ApplyResources(this.txEndereco, "txEndereco");
-            this.txEndereco.Name = "txEndereco";
+            resources.ApplyResources(this.txRua, "txRua");
+            this.txRua.Name = "txRua";
             // 
             // txNum
             // 
@@ -236,6 +231,11 @@
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
+            // txCNPJ
+            // 
+            resources.ApplyResources(this.txCNPJ, "txCNPJ");
+            this.txCNPJ.Name = "txCNPJ";
+            // 
             // formCadastroForn
             // 
             this.AcceptButton = this.btCadastrar;
@@ -272,7 +272,7 @@
         private System.Windows.Forms.TextBox txCidade;
         private System.Windows.Forms.TextBox txBairro;
         private System.Windows.Forms.TextBox txCompl;
-        private System.Windows.Forms.TextBox txEndereco;
+        private System.Windows.Forms.TextBox txRua;
         private System.Windows.Forms.TextBox txNum;
         private System.Windows.Forms.Label lbNum;
         private System.Windows.Forms.Label lbEstado;
@@ -281,10 +281,10 @@
         private System.Windows.Forms.Label lbCompl;
         private System.Windows.Forms.Label lbEndereco;
         private System.Windows.Forms.Label lbCEP;
-        private System.Windows.Forms.MaskedTextBox txCNPJ;
         private System.Windows.Forms.MaskedTextBox txTel2;
         private System.Windows.Forms.MaskedTextBox txTel1;
         private System.Windows.Forms.MaskedTextBox txCEP;
         private System.Windows.Forms.Panel pnCadForn;
+        private System.Windows.Forms.MaskedTextBox txCNPJ;
     }
 }

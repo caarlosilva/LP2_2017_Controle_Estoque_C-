@@ -37,6 +37,11 @@ namespace ControlX
             return produtos[i];
         }
 
+        public Fornecedor getFornecedor(int i)
+        {
+            return fornecedor[i];
+        }
+
         public Produto Ler(int idProduto)
         {
             throw new NotImplementedException();
@@ -47,11 +52,28 @@ namespace ControlX
             return ListByName("");
         }
 
+        public List<Fornecedor> ListAllF()
+        {
+            return ListByNameF("");
+        }
+
         public List<Produto> ListByName(string name)
         {
             List<Produto> ps = new List<Produto>();
 
             foreach (KeyValuePair<int, Produto> k in produtos)
+            {
+                if (k.Value.Nome.Contains(name))
+                    ps.Add(k.Value);
+            }
+            return ps;
+        }
+
+        public List<Fornecedor> ListByNameF(string name)
+        {
+            List<Fornecedor> ps = new List<Fornecedor>();
+
+            foreach (KeyValuePair<int, Fornecedor> k in fornecedor)
             {
                 if (k.Value.Nome.Contains(name))
                     ps.Add(k.Value);
