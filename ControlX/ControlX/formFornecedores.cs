@@ -23,7 +23,7 @@ namespace ControlX
         private void Fill()
         {
             IDatabase db = new Database();
-            List<Fornecedor> ps = db.ListAllF(); ;
+            List<Fornecedor> ps = db.ListAllF();            
             
             dgvFornecedor.Rows.Clear();
             foreach (Fornecedor p in ps)
@@ -82,6 +82,28 @@ namespace ControlX
             {
 
             }
+            Fill();
+        }
+
+        private void btEdit_Click(object sender, EventArgs e)
+        {
+            formCadastroForn form = new formCadastroForn();
+            int id = int.Parse(dgvFornecedor.Rows[dgvFornecedor.CurrentRow.Index].Cells[0].Value.ToString());
+            form.lbIdForn.Text = Convert.ToString(fornecedor[id].Id);
+            form.txNome.Text = fornecedor[id].Nome;
+            form.txBairro.Text = fornecedor[id].Bairro;
+            form.txRua.Text = fornecedor[id].Rua;
+            form.txNum.Text = Convert.ToString(fornecedor[id].Num);
+            form.txCidade.Text = fornecedor[id].Cidade;
+            form.txCEP.Text = Convert.ToString(fornecedor[id].Cep);
+            form.txCNPJ.Text = Convert.ToString(fornecedor[id].Cnpj);
+            form.txTel1.Text = Convert.ToString(fornecedor[id].Telefone1);
+            form.txTel2.Text = Convert.ToString(fornecedor[id].Telefone2);
+            form.txEstado.Text = fornecedor[id].Estado;
+            form.txCompl.Text = fornecedor[id].Comp;
+            form.btCadastrar.Text = "Salvar";//Não esta funcionando
+            form.btCadastrar.Enabled = false;
+            form.ShowDialog(this);
         }
     }
 }

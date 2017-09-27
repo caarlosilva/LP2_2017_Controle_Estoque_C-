@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCadastroForn));
             this.lbNome = new System.Windows.Forms.Label();
             this.pnCadForn = new System.Windows.Forms.Panel();
+            this.txCNPJ = new System.Windows.Forms.MaskedTextBox();
             this.txTel2 = new System.Windows.Forms.MaskedTextBox();
             this.txTel1 = new System.Windows.Forms.MaskedTextBox();
             this.txCEP = new System.Windows.Forms.MaskedTextBox();
@@ -56,7 +57,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btCadastrar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.txCNPJ = new System.Windows.Forms.MaskedTextBox();
             this.pnCadForn.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -94,6 +94,11 @@
             this.pnCadForn.Controls.Add(this.txNome);
             this.pnCadForn.Controls.Add(this.lbNome);
             this.pnCadForn.Name = "pnCadForn";
+            // 
+            // txCNPJ
+            // 
+            resources.ApplyResources(this.txCNPJ, "txCNPJ");
+            this.txCNPJ.Name = "txCNPJ";
             // 
             // txTel2
             // 
@@ -231,11 +236,6 @@
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
-            // txCNPJ
-            // 
-            resources.ApplyResources(this.txCNPJ, "txCNPJ");
-            this.txCNPJ.Name = "txCNPJ";
-            // 
             // formCadastroForn
             // 
             this.AcceptButton = this.btCadastrar;
@@ -259,21 +259,11 @@
         #endregion
 
         private System.Windows.Forms.Label lbNome;
-        private System.Windows.Forms.TextBox txNome;
-        private System.Windows.Forms.Label lbIdForn;
         private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.Label lbCNPJ;
         private System.Windows.Forms.Label lbTel2;
         private System.Windows.Forms.Label lbTel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btCadastrar;
-        private System.Windows.Forms.Button btCancelar;
-        private System.Windows.Forms.TextBox txEstado;
-        private System.Windows.Forms.TextBox txCidade;
-        private System.Windows.Forms.TextBox txBairro;
-        private System.Windows.Forms.TextBox txCompl;
-        private System.Windows.Forms.TextBox txRua;
-        private System.Windows.Forms.TextBox txNum;
         private System.Windows.Forms.Label lbNum;
         private System.Windows.Forms.Label lbEstado;
         private System.Windows.Forms.Label lbCidade;
@@ -281,10 +271,20 @@
         private System.Windows.Forms.Label lbCompl;
         private System.Windows.Forms.Label lbEndereco;
         private System.Windows.Forms.Label lbCEP;
-        private System.Windows.Forms.MaskedTextBox txTel2;
-        private System.Windows.Forms.MaskedTextBox txTel1;
-        private System.Windows.Forms.MaskedTextBox txCEP;
         private System.Windows.Forms.Panel pnCadForn;
-        private System.Windows.Forms.MaskedTextBox txCNPJ;
+        public System.Windows.Forms.TextBox txNome;
+        public System.Windows.Forms.Label lbIdForn;
+        public System.Windows.Forms.Button btCadastrar;
+        public System.Windows.Forms.Button btCancelar;
+        public System.Windows.Forms.TextBox txEstado;
+        public System.Windows.Forms.TextBox txCidade;
+        public System.Windows.Forms.TextBox txBairro;
+        public System.Windows.Forms.TextBox txCompl;
+        public System.Windows.Forms.TextBox txRua;
+        public System.Windows.Forms.TextBox txNum;
+        public System.Windows.Forms.MaskedTextBox txTel2;
+        public System.Windows.Forms.MaskedTextBox txTel1;
+        public System.Windows.Forms.MaskedTextBox txCEP;
+        public System.Windows.Forms.MaskedTextBox txCNPJ;
     }
 }

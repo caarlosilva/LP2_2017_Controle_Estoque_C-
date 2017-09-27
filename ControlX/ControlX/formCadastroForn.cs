@@ -107,12 +107,10 @@ namespace ControlX
             if (txTel2.Text == null)
                 nFornecedor.Telefone2 = 0;
 
-            else if (btCadastrar.Text != "Salvar")
-            {
-                db1.Adicionar(nFornecedor);
-                fornecedor.Add(nFornecedor.Id, nFornecedor);
-            }
-            else if (btCadastrar.Text == "Salvar")
+            if (btCadastrar.Text == "Cadastrar")
+               db1.Adicionar(nFornecedor);
+
+            if (btCadastrar.Text == "Salvar")
                 db1.Atualizar(nFornecedor);
             this.Close();
 

@@ -125,6 +125,7 @@
             this.btEdit.TabIndex = 1;
             this.btEdit.Text = "Editar";
             this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btView
             // 
