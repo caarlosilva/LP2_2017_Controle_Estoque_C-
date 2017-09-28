@@ -104,3 +104,5 @@ C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\ob
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\pt-BR\ControlX.resources.dll
 C:\Users\IFSP\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\MySql.Data.dll
 C:\Users\IFSP\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\MySql.Data.xml
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\bin\Debug\MySql.Data.dll
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\bin\Debug\MySql.Data.xml

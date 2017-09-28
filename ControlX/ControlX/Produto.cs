@@ -52,6 +52,7 @@ namespace ControlX
                 preco = value;
             }
         }
+        
 
         internal Fornecedor Fornecedor
         {

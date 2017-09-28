@@ -42,8 +42,8 @@
             this.btDel = new System.Windows.Forms.Button();
             this.btEdit = new System.Windows.Forms.Button();
             this.pnButtons = new System.Windows.Forms.Panel();
-            this.btMenu = new System.Windows.Forms.Button();
             this.btView = new System.Windows.Forms.Button();
+            this.btMenu = new System.Windows.Forms.Button();
             this.pnMenu = new System.Windows.Forms.Panel();
             this.pnPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
@@ -200,18 +200,6 @@
             this.pnButtons.Size = new System.Drawing.Size(326, 29);
             this.pnButtons.TabIndex = 8;
             // 
-            // btMenu
-            // 
-            this.btMenu.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btMenu.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btMenu.Location = new System.Drawing.Point(6, 3);
-            this.btMenu.Name = "btMenu";
-            this.btMenu.Size = new System.Drawing.Size(70, 23);
-            this.btMenu.TabIndex = 4;
-            this.btMenu.Text = "Menu";
-            this.btMenu.UseVisualStyleBackColor = true;
-            this.btMenu.Click += new System.EventHandler(this.btMenuPrincipal_Click);
-            // 
             // btView
             // 
             this.btView.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -223,6 +211,18 @@
             this.btView.Text = "Visualizar";
             this.btView.UseVisualStyleBackColor = true;
             this.btView.Click += new System.EventHandler(this.btView_Click);
+            // 
+            // btMenu
+            // 
+            this.btMenu.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btMenu.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btMenu.Location = new System.Drawing.Point(6, 3);
+            this.btMenu.Name = "btMenu";
+            this.btMenu.Size = new System.Drawing.Size(70, 23);
+            this.btMenu.TabIndex = 4;
+            this.btMenu.Text = "Menu";
+            this.btMenu.UseVisualStyleBackColor = true;
+            this.btMenu.Click += new System.EventHandler(this.btMenuPrincipal_Click);
             // 
             // pnMenu
             // 

@@ -19,8 +19,7 @@ namespace ControlX
 
         public formCadastroProd()
         {
-            InitializeComponent();
-            lbIdProduto.Text = "" + (produtos.Count + 1);
+            InitializeComponent();            
             btComplete();
             
         }

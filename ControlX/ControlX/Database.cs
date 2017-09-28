@@ -12,8 +12,6 @@ namespace ControlX
         private static Dictionary<int, Produto> produtos = new Dictionary<int, Produto> ();
         private static Dictionary<int, Fornecedor> fornecedor = new Dictionary<int, Fornecedor> ();
 
-
-
         public void Adicionar(Produto p)
         {
             MySqlConnection conn = new MySqlConnection();
@@ -25,7 +23,7 @@ namespace ControlX
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
-            //produtos.Add(p.Id, p);
+            
         }
 
         public void Adicionar(Fornecedor p)
@@ -42,9 +40,7 @@ namespace ControlX
             string qry = string.Format("UPDATE produtos SET nome = '{0}', preco = {1}, qntd = {2} where id = {3}", p.Nome, p.Preco, p.Qntd, p.Id );
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.ExecuteNonQuery();
-            conn.Close();
-
-            //produtos[p.Id] = p; 
+            conn.Close();                         
         }
 
         public void Atualizar(Fornecedor p)
@@ -73,39 +69,6 @@ namespace ControlX
             conn.ConnectionString = "Server = localhost; Database = controlx; Uid = root; Pwd = ;";
             if (conn.State != System.Data.ConnectionState.Open)
                 conn.Open();
-            string qry = string.Format("SELECT id, nome, preco, qntd FROM produtos;");
-            MySqlCommand cmd = new MySqlCommand(qry, conn);
-            MySqlDataReader dr = cmd.ExecuteReader();
-
-
-            List<Produto> ps = new List<Produto>();
-
-            while (dr.Read())
-            {
-                Produto p = new Produto();
-                p.Id = dr.GetInt32(0);
-                p.Nome = dr.GetString(1);
-                p.Preco = dr.GetDouble(2);
-                p.Qntd = dr.GetInt32(3);
-                ps.Add(p);
-            }
-            dr.Close();
-            conn.Close();
-            return ps;
-            //return ListByName("");
-        }
-
-        public List<Fornecedor> ListAllF()
-        {
-            return ListByNameF("");
-        }
-
-        public List<Produto> ListByName(string name)
-        {
-            MySqlConnection conn = new MySqlConnection();
-            conn.ConnectionString = "Server = localhost; Database = controlx; Uid = root; Pwd = ;";
-            if (conn.State != System.Data.ConnectionState.Open)
-                conn.Open();
             string qry = string.Format("SELECT id, nome, preco, qntd FROM produtos");
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             MySqlDataReader dr = cmd.ExecuteReader();
@@ -120,18 +83,45 @@ namespace ControlX
                 p.Nome = dr.GetString(1);
                 p.Preco = dr.GetDouble(2);
                 p.Qntd = dr.GetInt32(3);
-
+                ps.Add(p);
+                
             }
-            /* foreach (KeyValuePair<int, Produto> k in produtos)
-             {
-                 if (k.Value.Nome.Contains(name))
-                     ps.Add(k.Value);
-             }
-             */
             dr.Close();
             conn.Close();
             return ps;
-        
+        }
+
+        public List<Fornecedor> ListAllF()
+        {
+            return ListByNameF("");
+        }
+
+        public List<Produto> ListByName(string name)
+        {
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = "Server = localhost; Database = controlx; Uid = root; Pwd = ;";
+            if (conn.State != System.Data.ConnectionState.Open)
+                conn.Open();
+
+            string qry = string.Format("SELECT id, nome, preco, qntd FROM produtos");
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+
+            List<Produto> ps = new List<Produto>();
+
+            while (dr.Read())
+            {
+                Produto p = new Produto();
+                p.Id = dr.GetInt32(0);
+                p.Nome = dr.GetString(1);
+                p.Preco = dr.GetDouble(2);
+                p.Qntd = dr.GetInt32(3);
+                
+            }
+            dr.Close();
+            conn.Close();
+            return ps;        
         }
 
         public List<Fornecedor> ListByNameF(string name)
@@ -156,12 +146,18 @@ namespace ControlX
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
-            //produtos.Remove(idProduto);
         }
 
         public void Remover(Fornecedor f)
         {
-            fornecedor.Remove(f.Id);
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = "Server = localhost; Database = controlx; Uid = root; Pwd = ;";
+            if (conn.State != System.Data.ConnectionState.Open)
+                conn.Open();
+            string qry = string.Format("DELETE FROM produtos where id = {0}", f.Id);
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }

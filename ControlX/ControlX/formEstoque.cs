@@ -14,6 +14,7 @@ namespace ControlX
     public partial class formEstoque : Form
     {
         private static Dictionary<int, Produto> produtos = new Dictionary<int, Produto>();
+        private int count = 0;
 
         public formEstoque()
         {
@@ -24,7 +25,11 @@ namespace ControlX
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new formCadastroProd().ShowDialog(this);
+            formCadastroProd form =  new formCadastroProd();
+
+            form.lbIdProduto.Text = "" + (count + 1);
+
+            form.ShowDialog(this);
             Fill();
         }
 
@@ -32,11 +37,13 @@ namespace ControlX
         {
             IDatabase db = new Database();
             List<Produto> ps = db.ListAll();
-
+            
             dgvEstoque.Rows.Clear();
             foreach (Produto p in ps)
             {
                 dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
+                if (count < p.Id)
+                    count = p.Id;
             }
 
             buttonEnable();
