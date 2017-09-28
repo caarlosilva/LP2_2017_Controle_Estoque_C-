@@ -13,7 +13,7 @@ namespace ControlX
     public partial class formCadastroProd : Form
     {
         private static Dictionary <int, Produto> produtos = new Dictionary<int, Produto>();
-        private Database db1 = new Database();
+        private IDatabase db1 = new Database();
         private Produto nProduto = new Produto();
        
 
@@ -42,13 +42,13 @@ namespace ControlX
         {
                 nProduto.Nome = txNome.Text;
                 nProduto.Preco = double.Parse(txPreco.Text);
-                nProduto.Id = int.Parse(lbIdProduto.Text);
+                //nProduto.Id = int.Parse(lbIdProduto.Text);
                 nProduto.Qntd = int.Parse(txQntd.Text);
                 btComplete();
                 if (btCadastrar.Text != "Salvar")
                 {
                     db1.Adicionar(nProduto);
-                    produtos.Add(nProduto.Id, nProduto);
+                    //produtos.Add(nProduto.Id, nProduto);
                 }
                 else if (btCadastrar.Text == "Salvar")
                     db1.Atualizar(nProduto);
