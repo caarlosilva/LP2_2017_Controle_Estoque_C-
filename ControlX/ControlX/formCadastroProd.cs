@@ -48,7 +48,7 @@ namespace ControlX
                 if (btCadastrar.Text != "Salvar")
                 {
                     db1.Adicionar(nProduto);
-                    produtos.Add(nProduto.Id, nProduto);
+                    //produtos.Add(nProduto.Id, nProduto);
                 }
                 else if (btCadastrar.Text == "Salvar")
                     db1.Atualizar(nProduto);

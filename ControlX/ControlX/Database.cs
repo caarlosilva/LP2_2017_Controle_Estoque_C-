@@ -8,9 +8,8 @@ namespace ControlX
 {
     class Database : IDatabase
     {
-
         private static Dictionary<int, Produto> produtos = new Dictionary<int, Produto> ();
-        private static Dictionary<int, Fornecedor> fornecedor = new Dictionary<int, Fornecedor>();
+        private static Dictionary<int, Fornecedor> fornecedor = new Dictionary<int, Fornecedor> ();
 
         public void Adicionar(Produto p)
         {

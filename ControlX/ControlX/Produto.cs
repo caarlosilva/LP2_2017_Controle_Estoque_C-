@@ -81,11 +81,11 @@ namespace ControlX
 
         public Produto(string nome, int id, double preco, int qntd, Fornecedor fornecedor)
         {
-            this.Nome = nome;
-            this.Id = id;
-            this.Preco = preco;
-            this.Fornecedor = fornecedor;
-            this.Qntd = qntd;
+            Nome = nome;
+            Id = id;
+            Preco = preco;
+            Fornecedor = fornecedor;
+            Qntd = qntd;
         }
         public Produto()
         {

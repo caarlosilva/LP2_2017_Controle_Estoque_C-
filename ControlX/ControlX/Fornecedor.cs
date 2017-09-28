@@ -28,18 +28,18 @@ namespace ControlX
 
         public Fornecedor(int id, long cpnj, long telefone1, long telefone2, long cep, long num, string rua, string comp, string bairro, string cidade, string estado, string nome)
         {
-            this.id = id;
-            this.cnpj = cpnj;
-            this.telefone1 = telefone1;
-            this.telefone2 = telefone2;
-            this.cep = cep;
-            this.rua = rua;
-            this.comp = comp;
-            this.bairro = bairro;
-            this.cidade = cidade;
-            this.estado = estado;
-            this.nome = nome;
-            this.num = num;
+            Id = id;
+            Cnpj = cpnj;
+            Telefone1 = telefone1;
+            Telefone2 = telefone2;
+            Cep = cep;
+            Rua = rua;
+            Comp = comp;
+            Bairro = bairro;
+            Cidade = cidade;
+            Estado = estado;
+            Nome = nome;
+            Num = num;
         }
 
         public int Id { get => id; set => id = value; }

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace ControlX
 {
     public partial class formFornecedores : Form
-    {
+    {        
         private static Dictionary<int, Fornecedor> fornecedor = new Dictionary<int, Fornecedor>();
 
         public formFornecedores()
