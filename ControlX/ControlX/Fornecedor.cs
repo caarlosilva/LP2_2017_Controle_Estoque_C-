@@ -9,6 +9,7 @@ namespace ControlX
     class Fornecedor
     {
         private int id;
+        private string nome;
         private long cnpj;
         private long telefone1;
         private long telefone2;
@@ -19,7 +20,163 @@ namespace ControlX
         private string bairro;
         private string cidade;
         private string estado;
-        private string nome;
+
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public long Cnpj
+        {
+            get
+            {
+                return cnpj;
+            }
+
+            set
+            {
+                cnpj = value;
+            }
+        }
+
+        public long Telefone1
+        {
+            get
+            {
+                return telefone1;
+            }
+
+            set
+            {
+                telefone1 = value;
+            }
+        }
+
+        public long Telefone2
+        {
+            get
+            {
+                return telefone2;
+            }
+
+            set
+            {
+                telefone2 = value;
+            }
+        }
+
+        public long Cep
+        {
+            get
+            {
+                return cep;
+            }
+
+            set
+            {
+                cep = value;
+            }
+        }
+
+        public long Num
+        {
+            get
+            {
+                return num;
+            }
+
+            set
+            {
+                num = value;
+            }
+        }
+
+        public string Rua
+        {
+            get
+            {
+                return rua;
+            }
+
+            set
+            {
+                rua = value;
+            }
+        }
+
+        public string Comp
+        {
+            get
+            {
+                return comp;
+            }
+
+            set
+            {
+                comp = value;
+            }
+        }
+
+        public string Bairro
+        {
+            get
+            {
+                return bairro;
+            }
+
+            set
+            {
+                bairro = value;
+            }
+        }
+
+        public string Cidade
+        {
+            get
+            {
+                return cidade;
+            }
+
+            set
+            {
+                cidade = value;
+            }
+        }
+
+        public string Estado
+        {
+            get
+            {
+                return estado;
+            }
+
+            set
+            {
+                estado = value;
+            }
+        }
+
+        public string Nome
+        {
+            get
+            {
+                return nome;
+            }
+
+            set
+            {
+                nome = value;
+            }
+        }
 
         public Fornecedor()
         {
@@ -28,31 +185,33 @@ namespace ControlX
 
         public Fornecedor(int id, long cpnj, long telefone1, long telefone2, long cep, long num, string rua, string comp, string bairro, string cidade, string estado, string nome)
         {
-            this.id = id;
-            this.cnpj = cpnj;
-            this.telefone1 = telefone1;
-            this.telefone2 = telefone2;
-            this.cep = cep;
-            this.rua = rua;
-            this.comp = comp;
-            this.bairro = bairro;
-            this.cidade = cidade;
-            this.estado = estado;
-            this.nome = nome;
-            this.num = num;
+            this.Id = id;
+            this.Cnpj = cpnj;
+            this.Telefone1 = telefone1;
+            this.Telefone2 = telefone2;
+            this.Cep = cep;
+            this.Rua = rua;
+            this.Comp = comp;
+            this.Bairro = bairro;
+            this.Cidade = cidade;
+            this.Estado = estado;
+            this.Nome = nome;
+            this.Num = num;
         }
 
-        public int Id { get => id; set => id = value; }
-        public long Cnpj { get => cnpj; set => cnpj = value; }
-        public long Telefone1 { get => telefone1; set => telefone1 = value; }
-        public long Telefone2 { get => telefone2; set => telefone2 = value; }
-        public long Cep { get => cep; set => cep = value; }
-        public string Rua { get => rua; set => rua = value; }
-        public string Comp { get => comp; set => comp = value; }
-        public string Bairro { get => bairro; set => bairro = value; }
-        public string Cidade { get => cidade; set => cidade = value; }
-        public string Estado { get => estado; set => estado = value; }
-        public string Nome { get => nome; set => nome = value; }
-        public long Num { get => num; set => num = value; }
+        public Fornecedor(int id, long cpnj, long telefone1, long cep, long num, string rua, string comp, string bairro, string cidade, string estado, string nome)
+        {
+            this.Id = id;
+            this.Cnpj = cpnj;
+            this.Telefone1 = telefone1;
+            this.Cep = cep;
+            this.Rua = rua;
+            this.Bairro = bairro;
+            this.Cidade = cidade;
+            this.Estado = estado;
+            this.Nome = nome;
+            this.Num = num;
+        }
+
     }
 }
