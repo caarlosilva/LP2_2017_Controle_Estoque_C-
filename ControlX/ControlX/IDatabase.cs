@@ -12,7 +12,7 @@ namespace ControlX
 
         void Atualizar(Produto p);
 
-        Produto Ler(int idProduto);
+        Produto getProduto(int i);
 
         void Remover(int idProduto);
 
@@ -25,6 +25,8 @@ namespace ControlX
         void Adicionar(Fornecedor p);
 
         void Atualizar(Fornecedor p);
+
+        Fornecedor getFornecedor(int i);
 
         void Remover(Fornecedor p);
 

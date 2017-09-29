@@ -23,6 +23,8 @@ namespace ControlX
         }
         //
 
+        //METODOS PRODUTO
+
         public void Adicionar(Produto p)
         {
             MySqlConnection conn = OpenDB();
@@ -31,11 +33,6 @@ namespace ControlX
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
-        }
-
-        public void Adicionar(Fornecedor p)
-        {
-            fornecedor.Add(p.Id, p);
         }
 
         public void Atualizar(Produto p)
@@ -48,24 +45,9 @@ namespace ControlX
             conn.Close();                         
         }
 
-        public void Atualizar(Fornecedor p)
-        {
-            fornecedor[p.Id] = p;
-        }
-
         public Produto getProduto(int i)
         {
             return produtos[i];
-        }
-
-        public Fornecedor getFornecedor(int i)
-        {
-            return fornecedor[i];
-        }
-
-        public Produto Ler(int idProduto)
-        {
-            throw new NotImplementedException();
         }
 
         public List<Produto> ListAll()
@@ -94,11 +76,6 @@ namespace ControlX
             return ps;
         }
 
-        public List<Fornecedor> ListAllF()
-        {
-            return ListByNameF("");
-        }
-
         public List<Produto> ListByName(string name)
         {
             MySqlConnection conn = OpenDB();
@@ -124,6 +101,39 @@ namespace ControlX
             return ps;        
         }
 
+        public void Remover(int idProduto)
+        {
+            MySqlConnection conn = OpenDB();
+
+            string qry = string.Format("DELETE FROM produtos where id = {0}", idProduto);
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+
+        //METODOS FORNECEDOR
+
+        public void Adicionar(Fornecedor p)
+        {
+            fornecedor.Add(p.Id, p);
+        }
+
+        public void Atualizar(Fornecedor p)
+        {
+            fornecedor[p.Id] = p;
+        }
+
+        public Fornecedor getFornecedor(int i)
+        {
+            return fornecedor[i];
+        }
+
+        public List<Fornecedor> ListAllF()
+        {
+            return ListByNameF("");
+        }
+
         public List<Fornecedor> ListByNameF(string name)
         {
             List<Fornecedor> ps = new List<Fornecedor>();
@@ -134,16 +144,6 @@ namespace ControlX
                     ps.Add(k.Value);
             }
             return ps;
-        }
-
-        public void Remover(int idProduto)
-        {
-            MySqlConnection conn = OpenDB();
-
-            string qry = string.Format("DELETE FROM produtos where id = {0}", idProduto);
-            MySqlCommand cmd = new MySqlCommand(qry, conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
         }
 
         public void Remover(Fornecedor f)
