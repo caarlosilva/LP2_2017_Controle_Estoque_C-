@@ -6,36 +6,36 @@ Carlos Silva  - Fabricio Rocha - Gustavo Nunes
 ControlX -> Control de Controle(Estoque, produtos,enfim , do estabelecimento) e X, como a incógnita, uma variável,
 mostrando de que é possível utilizar esse Software em vários tipos de Estabelecimento.
 
-Sistema de controle de Estoque, Compra e Venda.
+- Sistema de controle de Estoque, Compra e Venda.
 
 ---------- PRODUTO/ESTOQUE --------------
 
-Cadastrar produto (ADMIN)
+- Cadastrar produto (ADMIN):
   -id(auto incremento)
   -nome
   -preço
   -qtd
   -fornecedor
   
-Realizar venda (ADMIN,USER)
+  - Realizar venda (ADMIN,USER):
   -id produto ou cópdigo de barras????
   -qtd
   -...
   
- Realizar compra/atualizar qtd estoque(ADMIN,USER)
+ - Realizar compra/atualizar qtd estoque(ADMIN,USER):
   -id produto
   -qtd
   -fornecedor
   
 ---------- FORNECEDOR --------------
 
-Inserir fornecedor(ADMIN)
+- Inserir fornecedor(ADMIN)
   -id(auto incremento)
   -nome
   -cnpj
   -telefone1
   -telefone2(opcional)
-  -endereço
+  -endereço""
     -cep(com busca no WS dos Correios)
     -rua
     -numero
@@ -44,14 +44,14 @@ Inserir fornecedor(ADMIN)
     -estado
     -complemento(opcional)
     
-Visualizar produtos por fornecedor
+- Visualizar produtos por fornecedor
 
   
 ---------------------------------
 
 ---------- USUÁRIOS -------------- 
 
-Cadastrar funcionarios(ADMIN)
+- Cadastrar funcionarios(ADMIN)
   -id(auto incremento)
   -cpf
   -nome
@@ -68,11 +68,11 @@ Cadastrar funcionarios(ADMIN)
   -login(id do funcionário)
   -senha(cpf??)
   
-Remover Funcionario;
+- Remover Funcionario;
 
 ------- VENDA -------------------
 
-Realizar venda(ADMIN, USER)
+- Realizar venda(ADMIN, USER)
   - Produtos a serem vendidos;
   - Retirar do estoque;
   - Nome do funcionario;
