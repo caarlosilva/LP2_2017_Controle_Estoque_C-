@@ -172,5 +172,17 @@ namespace ControlX
             form.ShowDialog(this);
             Fill();
         }
+
+        private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
+        {
+            IDatabase db = new Database();
+            List<Fornecedor> ps = db.ListByNameF(txPesquisar.Text);
+
+            dgvFornecedor.Rows.Clear();
+            foreach (Fornecedor p in ps)
+            {
+                dgvFornecedor.Rows.Add(p.Id, p.Nome, p.Cnpj);
+            }
+        }
     }
 }

@@ -129,6 +129,7 @@ namespace ControlX
             form.txNome.ReadOnly = true;
             form.txPreco.ReadOnly = true;
             form.txQntd.ReadOnly = true;
+            form.cbFornecedor.Enabled = false;
             //Enviando informacao para os label e botton.
             form.txNome.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[1].Value.ToString());
             form.txPreco.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[2].Value.ToString());
@@ -137,7 +138,7 @@ namespace ControlX
             //Deixa o botão Cadastrar oculto.
             form.btCadastrar.Enabled = false;
             //Modifica o texto do botão Cancelar.
-            form.btCancelar.Text = "Voltar";
+            form.btCancelar.Text = "Voltar";            
             form.ShowDialog(this);
             Fill();
         }

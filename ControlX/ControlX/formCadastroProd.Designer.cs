@@ -35,6 +35,8 @@
             this.txNome = new System.Windows.Forms.TextBox();
             this.lbId = new System.Windows.Forms.Label();
             this.pnCadastro = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbFornecedor = new System.Windows.Forms.ComboBox();
             this.lbQntd = new System.Windows.Forms.Label();
             this.txQntd = new System.Windows.Forms.TextBox();
             this.lbIdProduto = new System.Windows.Forms.Label();
@@ -48,7 +50,7 @@
             // btCadastrar
             // 
             this.btCadastrar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCadastrar.Location = new System.Drawing.Point(94, 2);
+            this.btCadastrar.Location = new System.Drawing.Point(84, 2);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(75, 23);
             this.btCadastrar.TabIndex = 0;
@@ -100,6 +102,8 @@
             this.pnCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnCadastro.Controls.Add(this.label1);
+            this.pnCadastro.Controls.Add(this.cbFornecedor);
             this.pnCadastro.Controls.Add(this.lbQntd);
             this.pnCadastro.Controls.Add(this.txQntd);
             this.pnCadastro.Controls.Add(this.lbIdProduto);
@@ -111,13 +115,30 @@
             this.pnCadastro.Controls.Add(this.lbPreco);
             this.pnCadastro.Location = new System.Drawing.Point(4, 12);
             this.pnCadastro.Name = "pnCadastro";
-            this.pnCadastro.Size = new System.Drawing.Size(464, 92);
+            this.pnCadastro.Size = new System.Drawing.Size(464, 121);
             this.pnCadastro.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(267, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Fornecedor:";
+            // 
+            // cbFornecedor
+            // 
+            this.cbFornecedor.FormattingEnabled = true;
+            this.cbFornecedor.Location = new System.Drawing.Point(333, 58);
+            this.cbFornecedor.Name = "cbFornecedor";
+            this.cbFornecedor.Size = new System.Drawing.Size(126, 21);
+            this.cbFornecedor.TabIndex = 12;
             // 
             // lbQntd
             // 
             this.lbQntd.AutoSize = true;
-            this.lbQntd.Location = new System.Drawing.Point(147, 61);
+            this.lbQntd.Location = new System.Drawing.Point(136, 61);
             this.lbQntd.Name = "lbQntd";
             this.lbQntd.Size = new System.Drawing.Size(42, 13);
             this.lbQntd.TabIndex = 11;
@@ -125,7 +146,7 @@
             // 
             // txQntd
             // 
-            this.txQntd.Location = new System.Drawing.Point(194, 58);
+            this.txQntd.Location = new System.Drawing.Point(183, 58);
             this.txQntd.Name = "txQntd";
             this.txQntd.Size = new System.Drawing.Size(76, 20);
             this.txQntd.TabIndex = 2;
@@ -146,7 +167,7 @@
             // 
             this.pnBtCad.Controls.Add(this.btCancelar);
             this.pnBtCad.Controls.Add(this.btCadastrar);
-            this.pnBtCad.Location = new System.Drawing.Point(278, 58);
+            this.pnBtCad.Location = new System.Drawing.Point(45, 90);
             this.pnBtCad.Name = "pnBtCad";
             this.pnBtCad.Size = new System.Drawing.Size(173, 28);
             this.pnBtCad.TabIndex = 8;
@@ -155,7 +176,7 @@
             // 
             this.btCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btCancelar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(18, 2);
+            this.btCancelar.Location = new System.Drawing.Point(3, 2);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 23);
             this.btCancelar.TabIndex = 1;
@@ -180,7 +201,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btCancelar;
-            this.ClientSize = new System.Drawing.Size(469, 111);
+            this.ClientSize = new System.Drawing.Size(469, 140);
             this.Controls.Add(this.pnCadastro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -209,5 +230,7 @@
         public System.Windows.Forms.Button btCancelar;
         public System.Windows.Forms.TextBox txQntd;
         public System.Windows.Forms.TextBox txPreco;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ComboBox cbFornecedor;
     }
 }

@@ -11,17 +11,26 @@ using System.Windows.Forms;
 namespace ControlX
 {
     public partial class formCadastroProd : Form
-    {
-        private static Dictionary <int, Produto> produtos = new Dictionary<int, Produto>();
+    {        
         private IDatabase db1 = new Database();
         private Produto nProduto = new Produto();
-       
-
+        
         public formCadastroProd()
         {
             InitializeComponent();            
             btComplete();
-            
+            iniComboBox();
+        }
+
+        private void iniComboBox()
+        {
+            List<Fornecedor> produto = db1.ListAllF();
+            cbFornecedor.DataSource = produto;
+            foreach (Fornecedor p in produto)
+            {
+                cbFornecedor.DisplayMember = "nome";
+                cbFornecedor.ValueMember = "id";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,24 +48,21 @@ namespace ControlX
 
         private void btCadastrar_Click(object sender, EventArgs e)
         {
-                nProduto.Nome = txNome.Text;
-                nProduto.Preco = double.Parse(txPreco.Text);
+            nProduto.Nome = txNome.Text;
+            nProduto.Preco = double.Parse(txPreco.Text);
                 
-                nProduto.Qntd = int.Parse(txQntd.Text);
-                btComplete();
-                if (btCadastrar.Text != "Salvar")
-                {
-                    db1.Adicionar(nProduto);
-                    //produtos.Add(nProduto.Id, nProduto);
-                }
-                else if (btCadastrar.Text == "Salvar")
-                {
+            nProduto.Qntd = int.Parse(txQntd.Text);
+            btComplete();
+            if (btCadastrar.Text != "Salvar")
+            {
+               db1.Adicionar(nProduto);                    
+            }
+            else if (btCadastrar.Text == "Salvar")
+            {
                 nProduto.Id = int.Parse(lbIdProduto.Text);
                 db1.Atualizar(nProduto);
             }
-                   
-            
-            
+
             this.Dispose();           
         }
 

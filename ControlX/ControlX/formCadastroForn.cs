@@ -90,14 +90,6 @@ namespace ControlX
             txTel2.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             txCEP.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
         }
-        private void MaskOn()
-        {
-            //Rertorna a Mascara dos TextBox
-            txCNPJ.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
-            txTel1.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
-            txTel2.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
-            txCEP.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
-        }
 
         private void btCadastrar_Click(object sender, EventArgs e)
         {

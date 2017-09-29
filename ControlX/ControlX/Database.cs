@@ -119,8 +119,7 @@ namespace ControlX
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-
-        //NAO ESTA FUNCIONANDO
+               
         public void Atualizar(Fornecedor p)
         {
             MySqlConnection conn = OpenDB();
@@ -172,11 +171,9 @@ namespace ControlX
         {
             MySqlConnection conn = OpenDB();
 
-            string qry = string.Format("SELECT id, nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado FROM fornecedores WHERE nome LIKE '{0}%", name);
+            string qry = string.Format("SELECT id, nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado FROM fornecedores WHERE nome LIKE '{0}%'", name);
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             MySqlDataReader dr = cmd.ExecuteReader();
-
-
             List<Fornecedor> ps = new List<Fornecedor>();
 
             while (dr.Read())

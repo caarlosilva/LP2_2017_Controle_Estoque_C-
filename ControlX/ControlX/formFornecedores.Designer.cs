@@ -81,6 +81,7 @@
             this.txPesquisar.Name = "txPesquisar";
             this.txPesquisar.Size = new System.Drawing.Size(613, 21);
             this.txPesquisar.TabIndex = 0;
+            this.txPesquisar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txPesquisar_KeyUp);
             // 
             // lbFiltro
             // 
