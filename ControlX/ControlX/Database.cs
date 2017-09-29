@@ -28,7 +28,7 @@ namespace ControlX
         {
             MySqlConnection conn = OpenDB();
 
-            string sql = String.Format("INSERT INTO produtos(nome, preco, qntd) values ('{0}','{1}','{2}')", p.Nome, p.Preco, p.Qntd);
+            string sql = String.Format("INSERT INTO produtos(nome, preco, qntd, idFornecedor) values ('{0}','{1}','{2}','{3}')", p.Nome, p.Preco, p.Qntd, p.IdFornecedor);
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -114,7 +114,7 @@ namespace ControlX
         {
             MySqlConnection conn = OpenDB();
 
-            string sql = String.Format("INSERT INTO fornecedores(nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado) values ('{0}', {1}, {2}, {3}, {4}, {5},'{6}','{7}','{8}','{9}','{10}')", p.Nome, p.Cnpj, p.Telefone1, p.Telefone2, p.Cep, p.Num, p.Rua, p.Comp, p.Bairro, p.Cidade, p.Estado);
+            string sql = String.Format("INSERT INTO fornecedor(nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado) values ('{0}', {1}, {2}, {3}, {4}, {5},'{6}','{7}','{8}','{9}','{10}')", p.Nome, p.Cnpj, p.Telefone1, p.Telefone2, p.Cep, p.Num, p.Rua, p.Comp, p.Bairro, p.Cidade, p.Estado);
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -124,7 +124,7 @@ namespace ControlX
         {
             MySqlConnection conn = OpenDB();
 
-            string qry = string.Format("UPDATE fornecedores SET nome = '{0}', cnpj = {1}, tel1 = {2}, tel2 = {3}, cep = {4}, num = {5}, rua = '{6}', comp = '{7}', bairro = '{8}', cidade = '{9}', estado = '{10}' WHERE id = {11}", p.Nome, p.Cnpj, p.Telefone1, p.Telefone2, p.Cep, p.Num, p.Rua, p.Comp, p.Bairro, p.Cidade, p.Estado, p.Id);
+            string qry = string.Format("UPDATE fornecedor SET nome = '{0}', cnpj = {1}, tel1 = {2}, tel2 = {3}, cep = {4}, num = {5}, rua = '{6}', comp = '{7}', bairro = '{8}', cidade = '{9}', estado = '{10}' WHERE id = {11}", p.Nome, p.Cnpj, p.Telefone1, p.Telefone2, p.Cep, p.Num, p.Rua, p.Comp, p.Bairro, p.Cidade, p.Estado, p.Id);
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -139,7 +139,7 @@ namespace ControlX
         {
             MySqlConnection conn = OpenDB();
 
-            string qry = string.Format("SELECT id, nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado FROM fornecedores");
+            string qry = string.Format("SELECT id, nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado FROM fornecedor");
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -151,10 +151,10 @@ namespace ControlX
                 Fornecedor p = new Fornecedor();
                 p.Id = dr.GetInt32(0);
                 p.Nome = dr.GetString(1);
-                p.Cnpj = dr.GetInt64(2);
+                p.Cnpj = long.Parse(dr.GetString(2));
                 p.Telefone1 = dr.GetInt64(3);
                 p.Telefone2 = dr.GetInt64(4);
-                p.Cep = dr.GetInt64(5);
+                p.Cep = long.Parse(dr.GetString(5));
                 p.Num = dr.GetInt32(6);
                 p.Rua = dr.GetString(7);
                 p.Comp = dr.GetString(8);
@@ -171,7 +171,7 @@ namespace ControlX
         {
             MySqlConnection conn = OpenDB();
 
-            string qry = string.Format("SELECT id, nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado FROM fornecedores WHERE nome LIKE '{0}%'", name);
+            string qry = string.Format("SELECT id, nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado FROM fornecedor WHERE nome LIKE '{0}%'", name);
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             MySqlDataReader dr = cmd.ExecuteReader();
             List<Fornecedor> ps = new List<Fornecedor>();
@@ -202,7 +202,7 @@ namespace ControlX
         {
             MySqlConnection conn = OpenDB();
 
-            string qry = string.Format("DELETE FROM fornecedores WHERE id = {0}", f.Id);
+            string qry = string.Format("DELETE FROM fornecedor WHERE id = {0}", f.Id);
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.ExecuteNonQuery();
             conn.Close();

@@ -29,7 +29,7 @@ namespace ControlX
             foreach (Fornecedor p in produto)
             {
                 cbFornecedor.DisplayMember = "nome";
-                cbFornecedor.ValueMember = "id";
+                cbFornecedor.ValueMember = "Id";
             }
         }
 
@@ -49,14 +49,17 @@ namespace ControlX
         private void btCadastrar_Click(object sender, EventArgs e)
         {
             nProduto.Nome = txNome.Text;
-            nProduto.Preco = double.Parse(txPreco.Text);
-                
+            nProduto.Preco = double.Parse(txPreco.Text);                
             nProduto.Qntd = int.Parse(txQntd.Text);
+            nProduto.IdFornecedor = int.Parse(cbFornecedor.SelectedValue.ToString());
+            
             btComplete();
+
             if (btCadastrar.Text != "Salvar")
             {
                db1.Adicionar(nProduto);                    
             }
+
             else if (btCadastrar.Text == "Salvar")
             {
                 nProduto.Id = int.Parse(lbIdProduto.Text);
@@ -72,15 +75,13 @@ namespace ControlX
         }
 
         private void txPreco_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //if ((Char.IsLetter(e.KeyChar)))
+        {            
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
                 e.Handled = true;
 
             if (e.KeyChar == ',')   //Se o usuario inserir uma virgula
                 if (txPreco.Text.Contains(",") || txPreco.Text.Equals(""))//Checa se o usuario ja inseriu uma virgula previamente
-                    e.Handled = true; // Caso ja exista uma virgula, outra não será aceita
-            
+                    e.Handled = true; // Caso ja exista uma virgula, outra não será aceita            
         }
     }
 }

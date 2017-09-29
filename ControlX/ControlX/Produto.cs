@@ -12,7 +12,7 @@ namespace ControlX
         private int id;
         private double preco;
         private int qntd;
-        Fornecedor fornecedor = new Fornecedor();
+        private int idFornecedor;
 
         public string Nome
         {
@@ -52,18 +52,18 @@ namespace ControlX
                 preco = value;
             }
         }
-        
 
-        internal Fornecedor Fornecedor
+
+        public int IdFornecedor
         {
             get
             {
-                return fornecedor;
+                return idFornecedor;
             }
 
             set
             {
-                fornecedor = value;
+                idFornecedor = value;
             }
         }
 
@@ -80,12 +80,12 @@ namespace ControlX
             }
         }
 
-        public Produto(string nome, int id, double preco, int qntd, Fornecedor fornecedor)
+        public Produto(string nome, int id, double preco, int qntd, int idFornecedor)
         {
             Nome = nome;
             Id = id;
             Preco = preco;
-            Fornecedor = fornecedor;
+            IdFornecedor = idFornecedor;
             Qntd = qntd;
         }
         public Produto()

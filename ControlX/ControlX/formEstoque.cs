@@ -135,6 +135,8 @@ namespace ControlX
             form.txPreco.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[2].Value.ToString());
             form.txQntd.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[3].Value.ToString());
             form.lbIdProduto.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
+            int idP = Convert.ToInt32(dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
+            
             //Deixa o botão Cadastrar oculto.
             form.btCadastrar.Enabled = false;
             //Modifica o texto do botão Cancelar.
