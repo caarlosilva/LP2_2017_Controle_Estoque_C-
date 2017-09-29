@@ -11,38 +11,38 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 ---------- PRODUTO/ESTOQUE --------------
 
 - Cadastrar produto (ADMIN):
-  -id(auto incremento)
-  -nome
-  -preço
-  -qtd
-  -fornecedor
+  - id(auto incremento)
+  - nome
+  - preço
+  - qtd
+  - fornecedor
   
   - Realizar venda (ADMIN,USER):
-  -id produto ou cópdigo de barras????
-  -qtd
+  - id produto ou cópdigo de barras????
+  - qtd
   -...
   
  - Realizar compra/atualizar qtd estoque(ADMIN,USER):
-  -id produto
-  -qtd
-  -fornecedor
+  - id produto
+  - qtd
+  - fornecedor
   
 ---------- FORNECEDOR --------------
 
 - Inserir fornecedor(ADMIN)
-  -id(auto incremento)
-  -nome
-  -cnpj
-  -telefone1
-  -telefone2(opcional)
-  -endereço""
-    -cep(com busca no WS dos Correios)
-    -rua
-    -numero
-    -bairro
-    -cidade
-    -estado
-    -complemento(opcional)
+  - id(auto incremento)
+  - nome
+  - cnpj
+  - telefone1
+  - telefone2(opcional)
+  - endereço:
+    - cep(com busca no WS dos Correios)
+    - rua
+    - numero
+    - bairro
+    - cidade
+    - estado
+    - complemento(opcional)
     
 - Visualizar produtos por fornecedor
 
@@ -52,21 +52,21 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 ---------- USUÁRIOS -------------- 
 
 - Cadastrar funcionarios(ADMIN)
-  -id(auto incremento)
-  -cpf
-  -nome
-  -data de nascimento
-  -telefone
-  -endereço
-    -cep(com busca no WS dos Correios)
-    -rua
-    -numero
-    -bairro
-    -cidade
-    -estado
-    -complemento(opcional)
-  -login(id do funcionário)
-  -senha(cpf??)
+  - id(auto incremento)
+  - cpf
+  - nome
+  - data de nascimento
+  - telefone
+  - endereço:
+    - cep(com busca no WS dos Correios)
+    - rua
+    - numero
+    - bairro
+    - cidade
+    - estado
+    - complemento(opcional)
+  - login(id do funcionário)
+  - senha(cpf??)
   
 - Remover Funcionario;
 
