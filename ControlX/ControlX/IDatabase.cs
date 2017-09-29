@@ -26,7 +26,7 @@ namespace ControlX
 
         void Atualizar(Fornecedor p);
 
-        Fornecedor getFornecedor(int i);
+        Fornecedor getFornecedor(Fornecedor p);
 
         void Remover(Fornecedor p);
 

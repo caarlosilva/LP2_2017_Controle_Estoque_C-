@@ -22,7 +22,7 @@ namespace ControlX
             return conn;
         }
 
-        //METODOS PRODUTO
+        //INICIO METODOS PRODUTO
 
         public void Adicionar(Produto p)
         {
@@ -67,8 +67,7 @@ namespace ControlX
                 p.Nome = dr.GetString(1);
                 p.Preco = dr.GetDouble(2);
                 p.Qntd = dr.GetInt32(3);
-                ps.Add(p);
-                
+                ps.Add(p);  
             }
             conn.Close();
             return ps;
@@ -109,37 +108,96 @@ namespace ControlX
         }
         //FIM METODOS PRODUTO
 
-        //METODOS FORNECEDOR
+        //INICIO METODOS FORNECEDOR
 
         public void Adicionar(Fornecedor p)
         {
-            fornecedor.Add(p.Id, p);
+            MySqlConnection conn = OpenDB();
+
+            string sql = String.Format("INSERT INTO fornecedores(nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado) values ('{0}', {1}, {2}, {3}, {4}, {5},'{6}','{7}','{8}','{9}','{10}')", p.Nome, p.Cnpj, p.Telefone1, p.Telefone2, p.Cep, p.Num, p.Rua, p.Comp, p.Bairro, p.Cidade, p.Estado);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
+        //NAO ESTA FUNCIONANDO
         public void Atualizar(Fornecedor p)
         {
-            fornecedor[p.Id] = p;
+            MySqlConnection conn = OpenDB();
+
+            string qry = string.Format("UPDATE produtos SET nome = '{0}', cnpj = {1}, tel1 = {2}, tel2 = {3}, cep = {4}, num = {5}, rua = '{6}', comp = '{7}', bairro = '{8}', cidade = '{9}', estado = '{10}' WHERE id = {11}", p.Nome, p.Cnpj, p.Telefone1, p.Telefone2, p.Cep, p.Num, p.Rua, p.Comp, p.Bairro, p.Cidade, p.Estado, p.Id);
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
-        public Fornecedor getFornecedor(int i)
+        public Fornecedor getFornecedor(Fornecedor p)
         {
-            return fornecedor[i];
+            return p;
         }
 
         public List<Fornecedor> ListAllF()
         {
-            return ListByNameF("");
+            MySqlConnection conn = OpenDB();
+
+            string qry = string.Format("SELECT id, nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado FROM fornecedores");
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+
+            List<Fornecedor> ps = new List<Fornecedor>();
+
+            while (dr.Read())
+            {
+                Fornecedor p = new Fornecedor();
+                p.Id = dr.GetInt32(0);
+                p.Nome = dr.GetString(1);
+                p.Cnpj = dr.GetInt64(2);
+                p.Telefone1 = dr.GetInt64(3);
+                p.Telefone2 = dr.GetInt64(4);
+                p.Cep = dr.GetInt64(5);
+                p.Num = dr.GetInt32(6);
+                p.Rua = dr.GetString(7);
+                p.Comp = dr.GetString(8);
+                p.Bairro = dr.GetString(9);
+                p.Cidade = dr.GetString(10);
+                p.Estado = dr.GetString(11);
+                ps.Add(p);
+            }
+            conn.Close();
+            return ps;
         }
 
         public List<Fornecedor> ListByNameF(string name)
         {
+            MySqlConnection conn = OpenDB();
+
+            string qry = string.Format("SELECT id, nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado FROM fornecedores WHERE nome LIKE '{0}%", name);
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+
             List<Fornecedor> ps = new List<Fornecedor>();
 
-            foreach (KeyValuePair<int, Fornecedor> k in fornecedor)
+            while (dr.Read())
             {
-                if (k.Value.Nome.Contains(name))
-                    ps.Add(k.Value);
+                Fornecedor p = new Fornecedor();
+                p.Id = dr.GetInt32(0);
+                p.Nome = dr.GetString(1);
+                p.Cnpj = dr.GetInt64(2);
+                p.Telefone1 = dr.GetInt64(3);
+                p.Telefone2 = dr.GetInt64(4);
+                p.Cep = dr.GetInt64(5);
+                p.Num = dr.GetInt32(6);
+                p.Rua = dr.GetString(7);
+                p.Comp = dr.GetString(8);
+                p.Bairro = dr.GetString(9);
+                p.Cidade = dr.GetString(10);
+                p.Estado = dr.GetString(11);
+                ps.Add(p);
+
             }
+            conn.Close();
             return ps;
         }
 
@@ -147,7 +205,7 @@ namespace ControlX
         {
             MySqlConnection conn = OpenDB();
 
-            string qry = string.Format("DELETE FROM produtos where id = {0}", f.Id);
+            string qry = string.Format("DELETE FROM fornecedores WHERE id = {0}", f.Id);
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
