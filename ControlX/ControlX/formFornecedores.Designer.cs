@@ -136,6 +136,7 @@
             this.btView.TabIndex = 2;
             this.btView.Text = "Visualizar";
             this.btView.UseVisualStyleBackColor = true;
+            this.btView.Click += new System.EventHandler(this.btView_Click);
             // 
             // btAdd
             // 

@@ -99,21 +99,25 @@
             // 
             resources.ApplyResources(this.txCNPJ, "txCNPJ");
             this.txCNPJ.Name = "txCNPJ";
+            this.txCNPJ.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txTel2
             // 
             resources.ApplyResources(this.txTel2, "txTel2");
             this.txTel2.Name = "txTel2";
+            this.txTel2.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txTel1
             // 
             resources.ApplyResources(this.txTel1, "txTel1");
             this.txTel1.Name = "txTel1";
+            this.txTel1.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txCEP
             // 
             resources.ApplyResources(this.txCEP, "txCEP");
             this.txCEP.Name = "txCEP";
+            this.txCEP.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             this.txCEP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txCEP_KeyPress);
             this.txCEP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txCEP_KeyUp);
             this.txCEP.Leave += new System.EventHandler(this.txCEP_Leave);
@@ -122,31 +126,37 @@
             // 
             resources.ApplyResources(this.txEstado, "txEstado");
             this.txEstado.Name = "txEstado";
+            this.txEstado.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txCidade
             // 
             resources.ApplyResources(this.txCidade, "txCidade");
             this.txCidade.Name = "txCidade";
+            this.txCidade.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txBairro
             // 
             resources.ApplyResources(this.txBairro, "txBairro");
             this.txBairro.Name = "txBairro";
+            this.txBairro.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txCompl
             // 
             resources.ApplyResources(this.txCompl, "txCompl");
             this.txCompl.Name = "txCompl";
+            this.txCompl.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txRua
             // 
             resources.ApplyResources(this.txRua, "txRua");
             this.txRua.Name = "txRua";
+            this.txRua.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txNum
             // 
             resources.ApplyResources(this.txNum, "txNum");
             this.txNum.Name = "txNum";
+            this.txNum.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // lbNum
             // 
@@ -213,6 +223,7 @@
             // 
             resources.ApplyResources(this.txNome, "txNome");
             this.txNome.Name = "txNome";
+            this.txNome.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // panel2
             // 
@@ -271,7 +282,6 @@
         private System.Windows.Forms.Label lbCompl;
         private System.Windows.Forms.Label lbEndereco;
         private System.Windows.Forms.Label lbCEP;
-        private System.Windows.Forms.Panel pnCadForn;
         public System.Windows.Forms.TextBox txNome;
         public System.Windows.Forms.Label lbIdForn;
         public System.Windows.Forms.Button btCadastrar;
@@ -286,5 +296,6 @@
         public System.Windows.Forms.MaskedTextBox txTel1;
         public System.Windows.Forms.MaskedTextBox txCEP;
         public System.Windows.Forms.MaskedTextBox txCNPJ;
+        public System.Windows.Forms.Panel pnCadForn;
     }
 }

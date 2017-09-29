@@ -20,9 +20,8 @@ namespace ControlX
         public formCadastroForn()
         {
             InitializeComponent();
+            btComplete();
             lbIdForn.Text = "" + (fornecedor.Count + 1);
-            //btComplete(this.Controls);
-
         }
 
         private void BuscaCPF()
@@ -44,9 +43,19 @@ namespace ControlX
             }
         }
 
-        private void btComplete(Control tx)
+        private void btComplete()
         {
-            //
+            /*foreach (Control c in pnCadForn.Controls)
+            {
+                if (c is TextBox)
+                    if (((TextBox)c).Text.Trim() != "")
+                        btCadastrar.Enabled = false;
+                else if(c is MaskedTextBox)
+                     if (((MaskedTextBox)c).Text.Trim() != "")
+                        btCadastrar.Enabled = false;
+                else
+                        btCadastrar.Enabled = true;
+            }*/
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
@@ -103,16 +112,13 @@ namespace ControlX
             nFornecedor.Cidade = txCidade.Text;
             nFornecedor.Estado = txEstado.Text;
             nFornecedor.Comp = txCompl.Text;
-            nFornecedor.Telefone1 = long.Parse(txTel1.Text);
-            if (txTel2.Text.Trim() != "")
-                nFornecedor.Telefone2 = 0;
-            else
-                nFornecedor.Telefone2 = long.Parse(txTel2.Text);
-
+            nFornecedor.Telefone1 = long.Parse(txTel1.Text);            
+            nFornecedor.Telefone2 = (txTel2.Text == "")? 0 : long.Parse(txTel2.Text);
+            btComplete();
             if (btCadastrar.Text == "Cadastrar")
                db1.Adicionar(nFornecedor);
 
-            if (btCadastrar.Text == "Salvar")
+            else if (btCadastrar.Text == "Salvar")
                 db1.Atualizar(nFornecedor);
             this.Close();
 
@@ -120,7 +126,7 @@ namespace ControlX
 
         private void txNome_TextChanged(object sender, EventArgs e)
         {
-            //btComplete(this.Controls);
+            btComplete();
         }
     }
 }

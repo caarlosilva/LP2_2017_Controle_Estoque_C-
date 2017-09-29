@@ -33,6 +33,21 @@ namespace ControlX
             buttonEnable();
         }
 
+        public static IEnumerable<Control> GetAllControls(Control root)
+        {
+            var stack = new Stack<Control>();
+            stack.Push(root);
+
+            while (stack.Any())
+            {
+                var next = stack.Pop();
+                foreach (Control child in next.Controls)
+                    stack.Push(child);
+
+                yield return next;
+            }
+        }
+
         private void buttonEnable()
         {
 
@@ -112,6 +127,48 @@ namespace ControlX
                 }
             }
             form.btCadastrar.Text = "Salvar";
+            form.ShowDialog(this);
+            Fill();
+        }
+
+        private void btView_Click(object sender, EventArgs e)
+        {
+            IDatabase db = new Database();
+            List<Fornecedor> fornecedor = db.ListAllF();
+            formCadastroForn form = new formCadastroForn();
+
+            int id = int.Parse(dgvFornecedor.Rows[dgvFornecedor.CurrentRow.Index].Cells[0].Value.ToString());
+            form.lbIdForn.Text = Convert.ToString(id);
+
+            foreach (TextBox textbox in form.pnCadForn.Controls.OfType<TextBox>())
+            {
+                textbox.ReadOnly = true;                
+            }
+
+            foreach (MaskedTextBox textbox in form.pnCadForn.Controls.OfType<MaskedTextBox>())
+            {
+                textbox.ReadOnly = true;
+            }
+
+            foreach (Fornecedor f in fornecedor)
+            {
+                if (f.Id == id)
+                {
+                    form.txNome.Text = f.Nome;
+                    form.txBairro.Text = f.Bairro;
+                    form.txRua.Text = f.Rua;
+                    form.txNum.Text = Convert.ToString(f.Num);
+                    form.txCidade.Text = f.Cidade;
+                    form.txCEP.Text = Convert.ToString(f.Cep);
+                    form.txCNPJ.Text = Convert.ToString(f.Cnpj);
+                    form.txTel1.Text = Convert.ToString(f.Telefone1);
+                    form.txTel2.Text = Convert.ToString(f.Telefone2);
+                    form.txEstado.Text = f.Estado;
+                    form.txCompl.Text = f.Comp;
+                }
+            }
+            form.btCadastrar.Enabled = false;
+            form.btCadastrar.Text = "Sair";
             form.ShowDialog(this);
             Fill();
         }
