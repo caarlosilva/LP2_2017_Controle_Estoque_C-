@@ -9,21 +9,28 @@ namespace ControlX
 {
     class Database : IDatabase
     {
-        private static Dictionary<int, Produto> produtos = new Dictionary<int, Produto> ();
-        private static Dictionary<int, Fornecedor> fornecedor = new Dictionary<int, Fornecedor> ();
+        private static Dictionary<int, Produto> produtos = new Dictionary<int, Produto>();
+        private static Dictionary<int, Fornecedor> fornecedor = new Dictionary<int, Fornecedor>();
 
-        public void Adicionar(Produto p)
+        //Open Database
+        public MySqlConnection OpenDB()
         {
             MySqlConnection conn = new MySqlConnection();
             conn.ConnectionString = "Server = localhost; Database = controlx; Uid = root; Pwd = ;";
-            if(conn.State != System.Data.ConnectionState.Open)
+            if (conn.State != System.Data.ConnectionState.Open)
                 conn.Open();
+            return conn;
+        }
+        //
+
+        public void Adicionar(Produto p)
+        {
+            MySqlConnection conn = OpenDB();
 
             string sql = String.Format("INSERT INTO produtos(nome, preco, qntd) values ('{0}','{1}','{2}')", p.Nome, p.Preco, p.Qntd);
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
-            
         }
 
         public void Adicionar(Fornecedor p)
@@ -33,10 +40,8 @@ namespace ControlX
 
         public void Atualizar(Produto p)
         {
-            MySqlConnection conn = new MySqlConnection();
-            conn.ConnectionString = "Server = localhost; Database = controlx; Uid = root; Pwd = ;";
-            if (conn.State != System.Data.ConnectionState.Open)
-                conn.Open();
+            MySqlConnection conn = OpenDB();
+
             string qry = string.Format("UPDATE produtos SET nome = '{0}', preco = {1}, qntd = {2} where id = {3}", p.Nome, p.Preco, p.Qntd, p.Id );
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.ExecuteNonQuery();
@@ -65,10 +70,8 @@ namespace ControlX
 
         public List<Produto> ListAll()
         {
-            MySqlConnection conn = new MySqlConnection();
-            conn.ConnectionString = "Server = localhost; Database = controlx; Uid = root; Pwd = ;";
-            if (conn.State != System.Data.ConnectionState.Open)
-                conn.Open();
+            MySqlConnection conn = OpenDB();
+
             string qry = string.Format("SELECT id, nome, preco, qntd FROM produtos");
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             MySqlDataReader dr = cmd.ExecuteReader();
@@ -98,10 +101,7 @@ namespace ControlX
 
         public List<Produto> ListByName(string name)
         {
-            MySqlConnection conn = new MySqlConnection();
-            conn.ConnectionString = "Server = localhost; Database = controlx; Uid = root; Pwd = ;";
-            if (conn.State != System.Data.ConnectionState.Open)
-                conn.Open();
+            MySqlConnection conn = OpenDB();
 
             string qry = string.Format("SELECT id, nome, preco, qntd FROM produtos");
             MySqlCommand cmd = new MySqlCommand(qry, conn);
@@ -138,10 +138,8 @@ namespace ControlX
 
         public void Remover(int idProduto)
         {
-            MySqlConnection conn = new MySqlConnection();
-            conn.ConnectionString = "Server = localhost; Database = controlx; Uid = root; Pwd = ;";
-            if (conn.State != System.Data.ConnectionState.Open)
-                conn.Open();
+            MySqlConnection conn = OpenDB();
+
             string qry = string.Format("DELETE FROM produtos where id = {0}", idProduto);
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.ExecuteNonQuery();
@@ -150,10 +148,8 @@ namespace ControlX
 
         public void Remover(Fornecedor f)
         {
-            MySqlConnection conn = new MySqlConnection();
-            conn.ConnectionString = "Server = localhost; Database = controlx; Uid = root; Pwd = ;";
-            if (conn.State != System.Data.ConnectionState.Open)
-                conn.Open();
+            MySqlConnection conn = OpenDB();
+
             string qry = string.Format("DELETE FROM produtos where id = {0}", f.Id);
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.ExecuteNonQuery();
