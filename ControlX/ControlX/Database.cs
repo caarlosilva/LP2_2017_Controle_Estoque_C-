@@ -21,7 +21,6 @@ namespace ControlX
                 conn.Open();
             return conn;
         }
-        //
 
         //METODOS PRODUTO
 
@@ -71,7 +70,6 @@ namespace ControlX
                 ps.Add(p);
                 
             }
-            dr.Close();
             conn.Close();
             return ps;
         }
@@ -80,7 +78,7 @@ namespace ControlX
         {
             MySqlConnection conn = OpenDB();
 
-            string qry = string.Format("SELECT id, nome, preco, qntd FROM produtos");
+            string qry = string.Format("SELECT id, nome, preco, qntd FROM produtos WHERE nome LIKE '{0}%';", name);
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -94,9 +92,8 @@ namespace ControlX
                 p.Nome = dr.GetString(1);
                 p.Preco = dr.GetDouble(2);
                 p.Qntd = dr.GetInt32(3);
-                
+                ps.Add(p);
             }
-            dr.Close();
             conn.Close();
             return ps;        
         }
@@ -110,7 +107,7 @@ namespace ControlX
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-
+        //FIM METODOS PRODUTO
 
         //METODOS FORNECEDOR
 
@@ -155,5 +152,6 @@ namespace ControlX
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        //FIM METODOS FORNECEDOR
     }
 }
