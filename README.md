@@ -1,35 +1,78 @@
 COMMIT -- >  SYNC -->  PUSH (<-- REPEAT)
 
 
-Carlos Silva   - joga pubg
+Carlos Silva  - Fabricio Rocha - Gustavo Nunes
 
-Fabricio Rocha - joga cs
+ControlX -> Control de Controle(Estoque, produtos,enfim , do estabelecimento) e X, como a incógnita, uma variável,
+mostrando de que é possível utilizar esse Software em vários tipos de Estabelecimento.
 
-Gustavo Nunes  - faz nada
+Sistema de controle de Estoque, Compra e Venda.
 
-Controle de Estoque de materiais de Construção:
+---------- PRODUTO/ESTOQUE --------------
 
--------- ESTOQUE --------------
-
-- Inserir produto no estoque:
-  Inserir produto dono e vendedor pode inserir, contera o nome do produto, do fornecedor e do funcionario.
+Cadastrar produto (ADMIN)
+  -id(auto incremento)
+  -nome
+  -preço
+  -qtd
+  -fornecedor
   
-- Inserir fornecedor:
-  Somente o dono pode inserir forecedor novo.
+Realizar venda (ADMIN,USER)
+  -id produto ou cópdigo de barras????
+  -qtd
+  -...
   
-- Visualizar produtos no estoque;
+ Realizar compra/atualizar qtd estoque(ADMIN,USER)
+  -id produto
+  -qtd
+  -fornecedor
+  
+---------- FORNECEDOR --------------
+
+Inserir fornecedor(ADMIN)
+  -id(auto incremento)
+  -nome
+  -cnpj
+  -telefone1
+  -telefone2(opcional)
+  -endereço
+    -cep(com busca no WS dos Correios)
+    -rua
+    -numero
+    -bairro
+    -cidade
+    -estado
+    -complemento(opcional)
+    
+Visualizar produtos por fornecedor
 
   
 ---------------------------------
 
-------- Administração -----------  
-- Cadastrar funcionario;
-  Somente do dono pode Cadastrar um novo funcionario.
+---------- USUÁRIOS -------------- 
+
+Cadastrar funcionarios(ADMIN)
+  -id(auto incremento)
+  -cpf
+  -nome
+  -data de nascimento
+  -telefone
+  -endereço
+    -cep(com busca no WS dos Correios)
+    -rua
+    -numero
+    -bairro
+    -cidade
+    -estado
+    -complemento(opcional)
+  -login(id do funcionário)
+  -senha(cpf??)
   
-- Remover Funcionario;
+Remover Funcionario;
 
 ------- VENDA -------------------
-- Iniciar uma venda:
+
+Realizar venda(ADMIN, USER)
   - Produtos a serem vendidos;
   - Retirar do estoque;
   - Nome do funcionario;
@@ -42,19 +85,4 @@ Controle de Estoque de materiais de Construção:
 - Total vendido no dia;
 ----------------------------------
 
-------------CADASTROS------------
-- PRODUTOS:
-  - Código;
-  - Descrição/nome;
-  - Preço.
-  
-- CLIENTES(OPCIONAL):
-  - Nome;
-  - Endereço;
-  - CPF;
-  - Telefone(s).
- 
-- FUNCIONARIOS:
-  - Código;
-  - Nome;
-  - (LOGIN E SENHA). 
+
