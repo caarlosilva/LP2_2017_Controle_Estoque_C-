@@ -104,8 +104,10 @@ namespace ControlX
             nFornecedor.Estado = txEstado.Text;
             nFornecedor.Comp = txCompl.Text;
             nFornecedor.Telefone1 = long.Parse(txTel1.Text);
-            if (txTel2.Text == null)
+            if (txTel2.Text.Trim() != "")
                 nFornecedor.Telefone2 = 0;
+            else
+                nFornecedor.Telefone2 = long.Parse(txTel2.Text);
 
             if (btCadastrar.Text == "Cadastrar")
                db1.Adicionar(nFornecedor);

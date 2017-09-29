@@ -125,14 +125,14 @@ namespace ControlX
         {
             MySqlConnection conn = OpenDB();
 
-            string qry = string.Format("UPDATE produtos SET nome = '{0}', cnpj = {1}, tel1 = {2}, tel2 = {3}, cep = {4}, num = {5}, rua = '{6}', comp = '{7}', bairro = '{8}', cidade = '{9}', estado = '{10}' WHERE id = {11}", p.Nome, p.Cnpj, p.Telefone1, p.Telefone2, p.Cep, p.Num, p.Rua, p.Comp, p.Bairro, p.Cidade, p.Estado, p.Id);
+            string qry = string.Format("UPDATE fornecedores SET nome = '{0}', cnpj = {1}, tel1 = {2}, tel2 = {3}, cep = {4}, num = {5}, rua = '{6}', comp = '{7}', bairro = '{8}', cidade = '{9}', estado = '{10}' WHERE id = {11}", p.Nome, p.Cnpj, p.Telefone1, p.Telefone2, p.Cep, p.Num, p.Rua, p.Comp, p.Bairro, p.Cidade, p.Estado, p.Id);
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
         }
 
         public Fornecedor getFornecedor(Fornecedor p)
-        {
+        {            
             return p;
         }
 

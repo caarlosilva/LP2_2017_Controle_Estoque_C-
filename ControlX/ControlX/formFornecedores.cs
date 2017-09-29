@@ -12,8 +12,7 @@ namespace ControlX
 {
     public partial class formFornecedores : Form
     {        
-        private static Dictionary<int, Fornecedor> fornecedor = new Dictionary<int, Fornecedor>();
-
+        
         public formFornecedores()
         {
             InitializeComponent();
@@ -87,23 +86,34 @@ namespace ControlX
 
         private void btEdit_Click(object sender, EventArgs e)
         {
+            IDatabase db = new Database();
+            List<Fornecedor> fornecedor = db.ListAllF();
+                        
+
             formCadastroForn form = new formCadastroForn();
             int id = int.Parse(dgvFornecedor.Rows[dgvFornecedor.CurrentRow.Index].Cells[0].Value.ToString());
-            form.lbIdForn.Text = Convert.ToString(fornecedor[id].Id);
-            form.txNome.Text = fornecedor[id].Nome;
-            form.txBairro.Text = fornecedor[id].Bairro;
-            form.txRua.Text = fornecedor[id].Rua;
-            form.txNum.Text = Convert.ToString(fornecedor[id].Num);
-            form.txCidade.Text = fornecedor[id].Cidade;
-            form.txCEP.Text = Convert.ToString(fornecedor[id].Cep);
-            form.txCNPJ.Text = Convert.ToString(fornecedor[id].Cnpj);
-            form.txTel1.Text = Convert.ToString(fornecedor[id].Telefone1);
-            form.txTel2.Text = Convert.ToString(fornecedor[id].Telefone2);
-            form.txEstado.Text = fornecedor[id].Estado;
-            form.txCompl.Text = fornecedor[id].Comp;
-            form.btCadastrar.Text = "Salvar";//Não esta funcionando
-            form.btCadastrar.Enabled = false;
+            form.lbIdForn.Text = Convert.ToString(id);
+            
+            foreach(Fornecedor f in fornecedor)
+            {
+                if(f.Id == id)
+                {
+                    form.txNome.Text = f.Nome;
+                    form.txBairro.Text = f.Bairro;
+                    form.txRua.Text = f.Rua;
+                    form.txNum.Text = Convert.ToString(f.Num);
+                    form.txCidade.Text = f.Cidade;
+                    form.txCEP.Text = Convert.ToString(f.Cep);
+                    form.txCNPJ.Text = Convert.ToString(f.Cnpj);
+                    form.txTel1.Text = Convert.ToString(f.Telefone1);
+                    form.txTel2.Text = Convert.ToString(f.Telefone2);
+                    form.txEstado.Text = f.Estado;
+                    form.txCompl.Text = f.Comp;
+                }
+            }
+            form.btCadastrar.Text = "Salvar";
             form.ShowDialog(this);
+            Fill();
         }
     }
 }
