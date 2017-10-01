@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace ControlX
@@ -163,6 +164,7 @@ namespace ControlX
                 p.Estado = dr.GetString(11);
                 ps.Add(p);
             }
+            dr.Close();
             conn.Close();
             return ps;
         }
@@ -194,6 +196,7 @@ namespace ControlX
                 ps.Add(p);
 
             }
+            dr.Close();
             conn.Close();
             return ps;
         }
@@ -202,9 +205,23 @@ namespace ControlX
         {
             MySqlConnection conn = OpenDB();
 
-            string qry = string.Format("DELETE FROM fornecedor WHERE id = {0}", f.Id);
-            MySqlCommand cmd = new MySqlCommand(qry, conn);
-            cmd.ExecuteNonQuery();
+            //VERIFICA SE O FORNECEDOR ESTÁ SENDO USADO POR UM PRODUTO
+            string forn = string.Format("SELECT idFornecedor FROM produtos WHERE idFornecedor = {0};", f.Id);
+            MySqlCommand cmdread = new MySqlCommand(forn, conn);
+            MySqlDataReader dr = cmdread.ExecuteReader();
+            if (dr.Read())
+            {
+                //SE ESTIVER EM USO
+                MessageBox.Show("Um produto está cadastrado com este fornecedor. Remova-o primeiro.", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                //SE NÃO ESTIVER EM USO
+                dr.Close();
+                string qry = string.Format("DELETE FROM fornecedor WHERE id = {0}", f.Id);
+                MySqlCommand cmd = new MySqlCommand(qry, conn);
+                cmd.ExecuteNonQuery();
+            }
             conn.Close();
         }
         //FIM METODOS FORNECEDOR

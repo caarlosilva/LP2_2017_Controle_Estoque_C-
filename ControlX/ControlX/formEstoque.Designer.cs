@@ -162,7 +162,7 @@
             this.btAdd.TabIndex = 0;
             this.btAdd.Text = "Adicionar";
             this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.button1_Click);
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // btDel
             // 

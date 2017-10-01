@@ -94,7 +94,6 @@ namespace ControlX
         private void btCadastrar_Click(object sender, EventArgs e)
         {
             MaskOff();
-            nFornecedor.Id = int.Parse(lbIdForn.Text);
             nFornecedor.Nome = txNome.Text;
             nFornecedor.Cnpj = long.Parse(txCNPJ.Text);
             nFornecedor.Cep = long.Parse(txCEP.Text);

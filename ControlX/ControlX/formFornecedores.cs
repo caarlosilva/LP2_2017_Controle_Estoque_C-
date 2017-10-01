@@ -11,8 +11,9 @@ using System.Windows.Forms;
 namespace ControlX
 {
     public partial class formFornecedores : Form
-    {        
-        
+    {
+
+        private int count = 0;
         public formFornecedores()
         {
             InitializeComponent();
@@ -28,6 +29,8 @@ namespace ControlX
             foreach (Fornecedor p in ps)
             {
                 dgvFornecedor.Rows.Add(p.Id, p.Nome, p.Cnpj);
+                if (count < p.Id)
+                    count = p.Id;
             }
 
             buttonEnable();
@@ -72,7 +75,11 @@ namespace ControlX
 
         private void btAdicionar_Click(object sender, EventArgs e)
         {
-            new formCadastroForn().ShowDialog(this);            
+            formCadastroForn form = new formCadastroForn();
+
+            form.lbIdForn.Text = "" + (count + 1);
+
+            form.ShowDialog(this);
             Fill();
         }
 

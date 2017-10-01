@@ -83,5 +83,6 @@ namespace ControlX
                 if (txPreco.Text.Contains(",") || txPreco.Text.Equals(""))//Checa se o usuario ja inseriu uma virgula previamente
                     e.Handled = true; // Caso ja exista uma virgula, outra não será aceita            
         }
+
     }
 }

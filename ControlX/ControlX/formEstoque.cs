@@ -23,7 +23,7 @@ namespace ControlX
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btAdd_Click(object sender, EventArgs e)
         {
             formCadastroProd form =  new formCadastroProd();
 
@@ -91,7 +91,7 @@ namespace ControlX
             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             //Caso clique em sim
             if (result == DialogResult.Yes)
-            {           
+            {
                 data.Remover(a);
                 Fill();
                 buttonEnable();
