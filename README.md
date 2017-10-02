@@ -42,6 +42,7 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
   - Produto
     - Id
     - Nome
+    - Quantidade(qtd)
   - (qtd <= 1)
   - Fornecedor
     - Id
