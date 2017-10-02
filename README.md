@@ -22,7 +22,7 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
   - qtd
   -...
   
- - Realizar compra/atualizar qtd estoque(ADMIN,USER):
+- Realizar compra/atualizar qtd estoque(ADMIN,USER):
   - id produto
   - qtd
   - preço(preco * qtd)
