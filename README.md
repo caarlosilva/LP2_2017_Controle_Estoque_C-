@@ -32,9 +32,9 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
       - id
       - nome
 
--- "No form de vender fazer uma List<Produtos> para colocar dentro da lista os produtos
+"No form de vender fazer uma List<Produtos> para colocar dentro da lista os produtos
   a serem vendidos. E dois datagridview para listar todos os produtos e os produtos
-  que serão adicionados a venda." --
+  que serão adicionados a venda."
   
 - Realizar pedido para novos estoques(ADMIN):
   - Produto
@@ -47,7 +47,9 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
   - Nova qtd a ser pedida.
   - (Fornecedor)Telefone(os dois se necessario)
   - (Fornecedor)Endereço
--- "Mostrar um tipo de relatorio com tudo acima." --
+  
+  
+"Mostrar um tipo de relatorio com tudo acima."
   
 ---------- FORNECEDOR --------------
 
