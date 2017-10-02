@@ -16,11 +16,7 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
   - preço
   - qtd
   - fornecedor
-  
-  - Realizar venda (ADMIN,USER):
-  - id produto ou cópdigo de barras????
-  - qtd 
-  
+
 - Realizar venda/atualizar qtd estoque(ADMIN,USER):
 
 
