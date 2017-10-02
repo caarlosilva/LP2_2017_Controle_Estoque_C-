@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formFornecedores));
             this.btMenu = new System.Windows.Forms.Button();
             this.pnFiltro = new System.Windows.Forms.Panel();
@@ -40,10 +41,11 @@
             this.btAdd = new System.Windows.Forms.Button();
             this.gbFornecedores = new System.Windows.Forms.GroupBox();
             this.dgvFornecedor = new System.Windows.Forms.DataGridView();
+            this.pnMenu = new System.Windows.Forms.Panel();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnMenu = new System.Windows.Forms.Panel();
+            this.colCidadeEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnFiltro.SuspendLayout();
             this.pnBtns.SuspendLayout();
             this.gbFornecedores.SuspendLayout();
@@ -174,12 +176,22 @@
             this.dgvFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
             this.colNome,
-            this.colCNPJ});
+            this.colCNPJ,
+            this.colCidadeEstado});
             this.dgvFornecedor.Location = new System.Drawing.Point(6, 19);
             this.dgvFornecedor.Name = "dgvFornecedor";
             this.dgvFornecedor.ReadOnly = true;
             this.dgvFornecedor.Size = new System.Drawing.Size(654, 309);
             this.dgvFornecedor.TabIndex = 0;
+            // 
+            // pnMenu
+            // 
+            this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnMenu.Controls.Add(this.btMenu);
+            this.pnMenu.Location = new System.Drawing.Point(12, 388);
+            this.pnMenu.Name = "pnMenu";
+            this.pnMenu.Size = new System.Drawing.Size(98, 29);
+            this.pnMenu.TabIndex = 5;
             // 
             // colID
             // 
@@ -192,6 +204,7 @@
             // colNome
             // 
             this.colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNome.FillWeight = 90F;
             this.colNome.HeaderText = "Nome";
             this.colNome.Name = "colNome";
             this.colNome.ReadOnly = true;
@@ -199,19 +212,21 @@
             // colCNPJ
             // 
             this.colCNPJ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle1.Format = "00,000,000/0000-00";
+            dataGridViewCellStyle1.NullValue = "00,000,000/0000-00";
+            this.colCNPJ.DefaultCellStyle = dataGridViewCellStyle1;
             this.colCNPJ.FillWeight = 50F;
             this.colCNPJ.HeaderText = "CNPJ";
             this.colCNPJ.Name = "colCNPJ";
             this.colCNPJ.ReadOnly = true;
             // 
-            // pnMenu
+            // colCidadeEstado
             // 
-            this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnMenu.Controls.Add(this.btMenu);
-            this.pnMenu.Location = new System.Drawing.Point(12, 388);
-            this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(98, 29);
-            this.pnMenu.TabIndex = 5;
+            this.colCidadeEstado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCidadeEstado.FillWeight = 70F;
+            this.colCidadeEstado.HeaderText = "Localização";
+            this.colCidadeEstado.Name = "colCidadeEstado";
+            this.colCidadeEstado.ReadOnly = true;
             // 
             // formFornecedores
             // 
@@ -250,10 +265,11 @@
         private System.Windows.Forms.TextBox txPesquisar;
         private System.Windows.Forms.GroupBox gbFornecedores;
         private System.Windows.Forms.DataGridView dgvFornecedor;
+        private System.Windows.Forms.Panel pnMenu;
+        protected internal System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCNPJ;
-        private System.Windows.Forms.Panel pnMenu;
-        protected internal System.Windows.Forms.Button btAdd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCidadeEstado;
     }
 }

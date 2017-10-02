@@ -20,6 +20,10 @@ namespace ControlX
 
         List<Produto> ListByName(string name);
 
+        List<Produto> ListByName(int id);
+
+        int GetIdProduto();
+
         //FORNECEDOR
 
         void Adicionar(Fornecedor p);
@@ -33,5 +37,7 @@ namespace ControlX
         List<Fornecedor> ListAllF();
 
         List<Fornecedor> ListByNameF(string name);
+
+        int GetIdFornecedor();
     }
 }

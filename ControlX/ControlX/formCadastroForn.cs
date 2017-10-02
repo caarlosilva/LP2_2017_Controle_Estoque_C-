@@ -12,8 +12,8 @@ namespace ControlX
 {
     public partial class formCadastroForn : Form
     {
-        private static Dictionary<int, Fornecedor> fornecedor = new Dictionary<int, Fornecedor>();
-        private Database db1 = new Database();
+        //private static Dictionary<int, Fornecedor> fornecedor = new Dictionary<int, Fornecedor>();
+        private IDatabase db1 = new Database();
         private Fornecedor nFornecedor = new Fornecedor();
 
 
@@ -21,7 +21,6 @@ namespace ControlX
         {
             InitializeComponent();
             btComplete();
-            lbIdForn.Text = "" + (fornecedor.Count + 1);
         }
 
         private void BuscaCPF()
@@ -107,9 +106,10 @@ namespace ControlX
             nFornecedor.Telefone2 = (txTel2.Text == "")? 0 : long.Parse(txTel2.Text);
             btComplete();
             if (btCadastrar.Text == "Cadastrar")
-               db1.Adicionar(nFornecedor);
+                db1.Adicionar(nFornecedor);
 
             else if (btCadastrar.Text == "Salvar")
+                nFornecedor.Id = int.Parse(lbIdForn.Text);
                 db1.Atualizar(nFornecedor);
             this.Close();
 

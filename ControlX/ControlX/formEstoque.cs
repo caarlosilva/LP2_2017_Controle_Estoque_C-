@@ -13,8 +13,8 @@ namespace ControlX
 {
     public partial class formEstoque : Form
     {
-        private static Dictionary<int, Produto> produtos = new Dictionary<int, Produto>();
-        private int count = 0;
+        //private static Dictionary<int, Produto> produtos = new Dictionary<int, Produto>();
+        private int idProduto;
 
         public formEstoque()
         {
@@ -24,10 +24,11 @@ namespace ControlX
         }
 
         private void btAdd_Click(object sender, EventArgs e)
-        {
+        {          
             formCadastroProd form =  new formCadastroProd();
-
-            form.lbIdProduto.Text = "" + (count + 1);
+            IDatabase db = new Database();
+            idProduto = db.GetIdProduto();
+            form.lbIdProduto.Text = "" + idProduto;
 
             form.ShowDialog(this);
             Fill();
@@ -42,8 +43,6 @@ namespace ControlX
             foreach (Produto p in ps)
             {
                 dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
-                if (count < p.Id)
-                    count = p.Id;
             }
 
             buttonEnable();
@@ -68,16 +67,26 @@ namespace ControlX
 
         private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
         {
-                 
             IDatabase db = new Database();
-            List<Produto> ps = db.ListByName(txPesquisar.Text);
-
-            dgvEstoque.Rows.Clear();
-            foreach (Produto p in ps)
+            if (rbNome.Checked)
             {
-                dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
+                List<Produto> ps = db.ListByName(txPesquisar.Text);
+                dgvEstoque.Rows.Clear();
+                foreach (Produto p in ps)
+                {
+                    dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
+                }
             }
 
+            else
+            {
+                List<Produto> ps = db.ListByName(int.Parse(txPesquisar.Text));
+                dgvEstoque.Rows.Clear();
+                foreach (Produto p in ps)
+                {
+                    dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
+                }
+            }
         }
 
         private void btDel_Click(object sender, EventArgs e)
@@ -125,12 +134,12 @@ namespace ControlX
         private void btView_Click(object sender, EventArgs e)
         {
             formCadastroProd form = new formCadastroProd();
-            //Os texts não pode ser editado.
+            //Os texts não podem ser editado.
             form.txNome.ReadOnly = true;
             form.txPreco.ReadOnly = true;
             form.txQntd.ReadOnly = true;
             form.cbFornecedor.Enabled = false;
-            //Enviando informacao para os label e botton.
+            //Enviando informacões para os labels e bottons.
             form.txNome.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[1].Value.ToString());
             form.txPreco.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[2].Value.ToString());
             form.txQntd.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[3].Value.ToString());
@@ -148,6 +157,12 @@ namespace ControlX
         private void btMenuPrincipal_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txPesquisar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && rbId.Checked)
+                e.Handled = true;
         }
     }
 }

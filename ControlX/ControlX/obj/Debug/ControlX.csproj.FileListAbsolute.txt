@@ -144,3 +144,8 @@ C:\Users\Fabricio\Source\Repos\LP2 - Projeto\ControlX\ControlX\obj\Debug\Control
 C:\Users\Fabricio\Source\Repos\LP2 - Projeto\ControlX\ControlX\obj\Debug\ControlX.formCadastroForn.pt-BR.resources
 C:\Users\Fabricio\Source\Repos\LP2 - Projeto\ControlX\ControlX\obj\Debug\ControlX.csproj.GenerateResource.Cache
 C:\Users\Fabricio\Source\Repos\LP2 - Projeto\ControlX\ControlX\obj\Debug\pt-BR\ControlX.resources.dll
+X:\Arquivos de Programas\Git\ControlX\ControlX\ControlX\bin\Debug\pt-BR\ControlX.resources.dll
+X:\Arquivos de Programas\Git\ControlX\ControlX\ControlX\bin\Debug\MySql.Data.dll
+X:\Arquivos de Programas\Git\ControlX\ControlX\ControlX\bin\Debug\MySql.Data.xml
+X:\Arquivos de Programas\Git\ControlX\ControlX\ControlX\obj\Debug\ControlX.formCadastroForn.pt-BR.resources
+X:\Arquivos de Programas\Git\ControlX\ControlX\ControlX\obj\Debug\pt-BR\ControlX.resources.dll

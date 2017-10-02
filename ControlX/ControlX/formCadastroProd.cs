@@ -14,7 +14,8 @@ namespace ControlX
     {        
         private IDatabase db1 = new Database();
         private Produto nProduto = new Produto();
-        
+
+
         public formCadastroProd()
         {
             InitializeComponent();            
@@ -24,11 +25,11 @@ namespace ControlX
 
         private void iniComboBox()
         {
-            List<Fornecedor> produto = db1.ListAllF();
-            cbFornecedor.DataSource = produto;
-            foreach (Fornecedor p in produto)
+            List<Fornecedor> fornecedores = db1.ListAllF();
+            cbFornecedor.DataSource = fornecedores;
+            foreach (Fornecedor p in fornecedores)
             {
-                cbFornecedor.DisplayMember = "nome";
+                cbFornecedor.DisplayMember ="Nome";
                 cbFornecedor.ValueMember = "Id";
             }
         }
@@ -52,7 +53,7 @@ namespace ControlX
             nProduto.Preco = double.Parse(txPreco.Text);                
             nProduto.Qntd = int.Parse(txQntd.Text);
             nProduto.IdFornecedor = int.Parse(cbFornecedor.SelectedValue.ToString());
-            
+
             btComplete();
 
             if (btCadastrar.Text != "Salvar")
@@ -83,6 +84,5 @@ namespace ControlX
                 if (txPreco.Text.Contains(",") || txPreco.Text.Equals(""))//Checa se o usuario ja inseriu uma virgula previamente
                     e.Handled = true; // Caso ja exista uma virgula, outra não será aceita            
         }
-
     }
 }

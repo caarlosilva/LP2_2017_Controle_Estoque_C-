@@ -13,7 +13,7 @@ namespace ControlX
     public partial class formFornecedores : Form
     {
 
-        private int count = 0;
+        private int idFornecedor;
         public formFornecedores()
         {
             InitializeComponent();
@@ -28,9 +28,8 @@ namespace ControlX
             dgvFornecedor.Rows.Clear();
             foreach (Fornecedor p in ps)
             {
-                dgvFornecedor.Rows.Add(p.Id, p.Nome, p.Cnpj);
-                if (count < p.Id)
-                    count = p.Id;
+                dgvFornecedor.Rows.Add(p.Id, p.Nome, p.Cnpj, p.Cidade + " - " + p.Estado);
+
             }
 
             buttonEnable();
@@ -76,8 +75,9 @@ namespace ControlX
         private void btAdicionar_Click(object sender, EventArgs e)
         {
             formCadastroForn form = new formCadastroForn();
-
-            form.lbIdForn.Text = "" + (count + 1);
+            IDatabase db = new Database();
+            idFornecedor = db.GetIdFornecedor();
+            form.lbIdForn.Text = "" + idFornecedor;
 
             form.ShowDialog(this);
             Fill();
@@ -89,7 +89,7 @@ namespace ControlX
             Fornecedor a = new Fornecedor();
             a.Id =  int.Parse(dgvFornecedor.Rows[dgvFornecedor.CurrentRow.Index].Cells[0].Value.ToString());
             //Caixa de aviso caso deseja ou não apagar
-            DialogResult result = MessageBox.Show("Tem certeza que deseja remover esse item do seu estoque?",
+            DialogResult result = MessageBox.Show("Tem certeza que deseja remover esse fornecedor da sua lista?",
                 "Aviso!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             //Caso clique em sim
@@ -175,7 +175,7 @@ namespace ControlX
                 }
             }
             form.btCadastrar.Enabled = false;
-            form.btCadastrar.Text = "Sair";
+            form.btCancelar.Text = "Voltar";
             form.ShowDialog(this);
             Fill();
         }
