@@ -22,6 +22,8 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
   - qtd 
   
 - Realizar venda/atualizar qtd estoque(ADMIN,USER):
+
+
 "Criar uma tabela no venda para vendas de produtos."
   - Produto
     - Id
