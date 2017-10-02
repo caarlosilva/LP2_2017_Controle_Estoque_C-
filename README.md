@@ -25,7 +25,8 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
  - Realizar compra/atualizar qtd estoque(ADMIN,USER):
   - id produto
   - qtd
-  - fornecedor
+  - preço(preco * qtd)
+  - fornecedor(Só para salvar o nome do fornecedor desse produto)
   
 ---------- FORNECEDOR --------------
 
