@@ -68,24 +68,12 @@ namespace ControlX
         private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
         {
             IDatabase db = new Database();
-            if (rbNome.Checked)
-            {
-                List<Produto> ps = db.ListByName(txPesquisar.Text);
-                dgvEstoque.Rows.Clear();
-                foreach (Produto p in ps)
-                {
-                    dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
-                }
-            }
+            List<Produto> ps = (rbNome.Checked) ? db.ListByName(txPesquisar.Text) : (txPesquisar.Text.Trim() == "")? db.ListAll() : db.ListByName(int.Parse(txPesquisar.Text));
 
-            else
+            dgvEstoque.Rows.Clear();            
+            foreach (Produto p in ps)
             {
-                List<Produto> ps = db.ListByName(int.Parse(txPesquisar.Text));
-                dgvEstoque.Rows.Clear();
-                foreach (Produto p in ps)
-                {
-                    dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
-                }
+                dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
             }
         }
 

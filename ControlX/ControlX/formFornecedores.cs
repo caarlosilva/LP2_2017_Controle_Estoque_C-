@@ -188,7 +188,7 @@ namespace ControlX
             dgvFornecedor.Rows.Clear();
             foreach (Fornecedor p in ps)
             {
-                dgvFornecedor.Rows.Add(p.Id, p.Nome, p.Cnpj);
+                dgvFornecedor.Rows.Add(p.Id, p.Nome, p.Cnpj, p.Cidade + "-" + p.Estado);
             }
         }
     }
