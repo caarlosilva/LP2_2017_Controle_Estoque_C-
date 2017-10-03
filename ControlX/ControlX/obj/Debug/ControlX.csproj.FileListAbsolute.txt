@@ -149,3 +149,22 @@ X:\Arquivos de Programas\Git\ControlX\ControlX\ControlX\bin\Debug\MySql.Data.dll
 X:\Arquivos de Programas\Git\ControlX\ControlX\ControlX\bin\Debug\MySql.Data.xml
 X:\Arquivos de Programas\Git\ControlX\ControlX\ControlX\obj\Debug\ControlX.formCadastroForn.pt-BR.resources
 X:\Arquivos de Programas\Git\ControlX\ControlX\ControlX\obj\Debug\pt-BR\ControlX.resources.dll
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\ControlX.exe.config
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.exe
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.pdb
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\ControlX.exe
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\ControlX.pdb
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\pt-BR\ControlX.resources.dll
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\MySql.Data.dll
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\MySql.Data.xml
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.csprojResolveAssemblyReference.cache
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formCadastroForn.resources
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formEstoque.resources
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formCadastroProd.resources
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formFornecedores.resources
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formLogin.resources
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formMenu.resources
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.Properties.Resources.resources
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formCadastroForn.pt-BR.resources
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.csproj.GenerateResource.Cache
+C:\Users\IFSP-\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\pt-BR\ControlX.resources.dll

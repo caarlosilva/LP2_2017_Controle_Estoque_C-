@@ -134,6 +134,7 @@
             this.cbFornecedor.Name = "cbFornecedor";
             this.cbFornecedor.Size = new System.Drawing.Size(146, 21);
             this.cbFornecedor.TabIndex = 12;
+            this.cbFornecedor.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cbFornecedor_Format);
             // 
             // lbQntd
             // 

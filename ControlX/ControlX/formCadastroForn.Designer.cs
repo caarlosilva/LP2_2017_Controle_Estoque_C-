@@ -222,6 +222,7 @@
             // txNome
             // 
             resources.ApplyResources(this.txNome, "txNome");
+            this.txNome.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txNome.Name = "txNome";
             this.txNome.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 

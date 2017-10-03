@@ -12,8 +12,17 @@ namespace ControlX
         private int id;
         private double preco;
         private int qntd;
-        private int idFornecedor;
-        //private Fornecedor fornecedor = new Fornecedor();
+        
+        //private int idFornecedor;
+        private Fornecedor fornecedor = new Fornecedor();
+
+        public string FornecedorFullName
+        {
+            get
+            {
+                return Fornecedor.Id + " - " + Fornecedor.Nome; 
+            }
+        }
 
         public string Nome
         {
@@ -67,7 +76,20 @@ namespace ControlX
             }
         }
 
-        public int IdFornecedor
+        public Fornecedor Fornecedor
+        {
+            get
+            {
+                return fornecedor;
+            }
+
+            set
+            {
+                fornecedor = value;
+            }
+        }
+
+        /*public int IdFornecedor
         {
             get
             {
@@ -78,20 +100,20 @@ namespace ControlX
             {
                 idFornecedor = value;
             }
-        }
+        }*/
 
         public Produto()
         {
 
         }
 
-        public Produto(string nome, int id, double preco, int qntd, int idFornecedor)
+        public Produto(string nome, int id, double preco, int qntd, Fornecedor f)
         {
             this.nome = nome;
             this.id = id;
             this.preco = preco;
             this.qntd = qntd;
-            this.idFornecedor = idFornecedor;
+            this.Fornecedor = f;
         }
     }
 }

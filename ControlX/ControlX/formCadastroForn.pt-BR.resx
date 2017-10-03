@@ -127,12 +127,6 @@
   <data name="lbEndereco.Text" xml:space="preserve">
     <value>Rua:</value>
   </data>
-  <data name="lbTel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 13</value>
-  </data>
-  <data name="lbTel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 13</value>
-  </data>
   <data name="pnCadForn.Size" type="System.Drawing.Size, System.Drawing">
     <value>375, 295</value>
   </data>

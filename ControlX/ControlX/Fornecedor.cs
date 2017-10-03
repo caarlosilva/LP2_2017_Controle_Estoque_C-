@@ -20,7 +20,14 @@ namespace ControlX
         private string bairro;
         private string cidade;
         private string estado;
-        //private List<Produto> produtos = new List<Produto>();
+
+        public string FornecedorFullName
+        {
+            get
+            {
+                return Id + " - " + Nome;
+            }
+        }
 
         public int Id
         {

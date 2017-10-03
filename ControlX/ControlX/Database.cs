@@ -10,14 +10,12 @@ namespace ControlX
 {
     class Database : IDatabase
     {
-        private static Dictionary<int, Produto> produtos = new Dictionary<int, Produto>();
-        private static Dictionary<int, Fornecedor> fornecedor = new Dictionary<int, Fornecedor>();
 
         //Open Database
         public MySqlConnection OpenDB()
         {
             MySqlConnection conn = new MySqlConnection();
-            conn.ConnectionString = "Server = localhost; Database = controlx; Uid = root; Pwd = ;";
+            conn.ConnectionString = "Server = localhost; Database = controlx; Uid = root; Pwd =ifsp;";
             if (conn.State != System.Data.ConnectionState.Open)
                 conn.Open();
             return conn;
@@ -29,14 +27,14 @@ namespace ControlX
         {
             MySqlConnection conn = OpenDB();
 
-            // CONVERSÃO DA VIRGULA PARA PONTO, O BD SEPARA AS CASAS DECIMAIS POR '.' E O VS POR ',' .
+            // CONVERSÃO DA VIRGULA PARA PONTO, O BD SEPARA AS CASAS DECIMAIS POR '.' E O VS POR ','.
             string preco = Convert.ToString(p.Preco);
             if (preco.ToString().Contains(","))
             {
                 preco = preco.Replace(",", ".");
             }
 
-            string sql = string.Format("INSERT INTO produtos(nome, preco, qntd, idFornecedor) values ('{0}',{1},{2},{3})", p.Nome, preco, p.Qntd, p.IdFornecedor);
+            string sql = string.Format("INSERT INTO produtos(nome, preco, qntd, idFornecedor) values ('{0}',{1},{2},{3})", p.Nome, preco, p.Qntd, p.Fornecedor.Id);
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -51,22 +49,19 @@ namespace ControlX
             {
                 preco = preco.Replace(",", ".");
             }
-            string qry = string.Format("UPDATE produtos SET nome = '{0}', preco = {1}, qntd = {2} where id = {3}", p.Nome, preco, p.Qntd, p.Id );
+            string qry = string.Format("UPDATE produtos SET nome = '{0}', preco = {1}, qntd = {2}, idFornecedor = {4} where id = {3}", p.Nome, preco, p.Qntd, p.Id, p.Fornecedor.Id );
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.ExecuteNonQuery();
             conn.Close();                         
         }
 
-        public Produto getProduto(int i)
-        {
-            return produtos[i];
-        }
+        
 
         public List<Produto> ListAll()
         {
             MySqlConnection conn = OpenDB();
 
-            string qry = string.Format("SELECT id, nome, preco, qntd FROM produtos");
+            string qry = string.Format("SELECT id, nome, preco, qntd, idFornecedor FROM produtos");
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -80,6 +75,7 @@ namespace ControlX
                 p.Nome = dr.GetString(1);
                 p.Preco = dr.GetDouble(2);
                 p.Qntd = dr.GetInt32(3);
+                p.Fornecedor.Id = dr.GetInt32(4);
                 ps.Add(p);  
             }
             conn.Close();
@@ -89,8 +85,12 @@ namespace ControlX
         public List<Produto> ListByName(int id)
         {
                 MySqlConnection conn = OpenDB();
-                string qry = string.Format("SELECT id, nome, preco, qntd FROM produtos WHERE id = {0};", id);
+                string qry = string.Format("SELECT id, nome, preco, qntd, idFornecedor FROM produtos WHERE id = @id_produto;");
                 MySqlCommand cmd = new MySqlCommand(qry, conn);
+
+                cmd.Parameters.AddWithValue("@id_produto", id);
+
+
                 MySqlDataReader dr = cmd.ExecuteReader();
 
                 List<Produto> ps = new List<Produto>();
@@ -102,6 +102,7 @@ namespace ControlX
                     p.Nome = dr.GetString(1);
                     p.Preco = dr.GetDouble(2);
                     p.Qntd = dr.GetInt32(3);
+                    p.Fornecedor.Id = dr.GetInt32(4);
                     ps.Add(p);
                 }
                 conn.Close();
@@ -287,6 +288,11 @@ namespace ControlX
             int idFornecedor = dr.GetInt32(0);
             conn.Close();
             return idFornecedor;
+        }
+
+        public Produto getProduto(int i)
+        {
+            throw new NotImplementedException();
         }
         //FIM METODOS FORNECEDOR
     }

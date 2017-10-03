@@ -28,8 +28,8 @@ namespace ControlX
             List<Fornecedor> fornecedores = db1.ListAllF();
             cbFornecedor.DataSource = fornecedores;
             foreach (Fornecedor p in fornecedores)
-            {
-                cbFornecedor.DisplayMember ="Nome";
+            {                
+                cbFornecedor.DisplayMember = "FornecedorFullName";
                 cbFornecedor.ValueMember = "Id";
             }
         }
@@ -41,7 +41,7 @@ namespace ControlX
         
         private void btComplete()
         {
-            if (txNome.Text.Trim() == "" || txPreco.Text.Trim() == "" || txQntd.Text.Trim() == "")
+            if (txNome.Text.Trim() == "" || txPreco.Text.Trim() == "" || txQntd.Text.Trim() == "" || cbFornecedor.Text.Trim() == "")
                 btCadastrar.Enabled = false;
             else
                 btCadastrar.Enabled = true;
@@ -52,7 +52,7 @@ namespace ControlX
             nProduto.Nome = txNome.Text;
             nProduto.Preco = double.Parse(txPreco.Text);                
             nProduto.Qntd = int.Parse(txQntd.Text);
-            nProduto.IdFornecedor = int.Parse(cbFornecedor.SelectedValue.ToString());
+            nProduto.Fornecedor.Id = int.Parse(cbFornecedor.SelectedValue.ToString());
 
             btComplete();
 
@@ -72,6 +72,7 @@ namespace ControlX
 
         private void txNome_TextChanged(object sender, EventArgs e)
         {
+
             btComplete();
         }
 
@@ -83,6 +84,11 @@ namespace ControlX
             if (e.KeyChar == ',')   //Se o usuario inserir uma virgula
                 if (txPreco.Text.Contains(",") || txPreco.Text.Equals(""))//Checa se o usuario ja inseriu uma virgula previamente
                     e.Handled = true; // Caso ja exista uma virgula, outra não será aceita            
+        }
+
+        private void cbFornecedor_Format(object sender, ListControlConvertEventArgs e)
+        {
+
         }
     }
 }
