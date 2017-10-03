@@ -251,23 +251,28 @@ namespace ControlX
         {
             MySqlConnection conn = OpenDB();
 
-            //VERIFICA SE O FORNECEDOR ESTÁ SENDO USADO POR UM PRODUTO
-            string forn = string.Format("SELECT idFornecedor FROM produtos WHERE idFornecedor = {0};", f.Id);
-            MySqlCommand cmdread = new MySqlCommand(forn, conn);
-            MySqlDataReader dr = cmdread.ExecuteReader();
-            if (dr.Read())
+            //PROCURA PRODUTOS COM ID DO FORNECEDOR
+            string qry = string.Format("SELECT idFornecedor FROM produtos WHERE idFornecedor = {0}", f.Id);
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            //DELETA PRODUTOS COM O ID DO FORNECEDOR
+            string qry1 = string.Format("DELETE FROM produtos WHERE idFornecedor = {0}", f.Id);
+            MySqlCommand cmd1 = new MySqlCommand(qry1, conn);
+
+            //VERIFICA SE EXISTE PRODUTOS DESTE FORNECEDOR
+            while (dr.Read())
             {
-                //SE ESTIVER EM USO
-                MessageBox.Show("Existem produtos cadastrados com este fornecedor. Remova-o primeiro.", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                //SE NÃO ESTIVER EM USO
                 dr.Close();
-                string qry = string.Format("DELETE FROM fornecedor WHERE id = {0}", f.Id);
-                MySqlCommand cmd = new MySqlCommand(qry, conn);
-                cmd.ExecuteNonQuery();
+                cmd1.ExecuteNonQuery();
+                dr = cmd.ExecuteReader();
             }
+            dr.Close();
+
+
+            string qry2 = string.Format("DELETE FROM fornecedor WHERE id = {0}", f.Id);
+            MySqlCommand cmd2 = new MySqlCommand(qry2, conn);
+            cmd2.ExecuteNonQuery();
             conn.Close();
         }
 

@@ -89,7 +89,7 @@ namespace ControlX
             Fornecedor a = new Fornecedor();
             a.Id =  int.Parse(dgvFornecedor.Rows[dgvFornecedor.CurrentRow.Index].Cells[0].Value.ToString());
             //Caixa de aviso caso deseja ou não apagar
-            DialogResult result = MessageBox.Show("Tem certeza que deseja remover esse fornecedor da sua lista?",
+            DialogResult result = MessageBox.Show("Esta ação também irá remover todos os produtos deste fornecedor. Tem certeza que deseja remove-lo?",
                 "Aviso!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             //Caso clique em sim
