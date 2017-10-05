@@ -53,5 +53,12 @@ namespace ControlX
         {
 
         }
+
+        private void btVender_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new formVender().ShowDialog();
+            this.Show();
+        }
     }
 }

@@ -95,6 +95,12 @@
     <Compile Include="formFornecedores.Designer.cs">
       <DependentUpon>formFornecedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVender.designer.cs">
+      <DependentUpon>FormVender.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fornecedor.cs" />
     <Compile Include="IDao.cs" />
     <Compile Include="formLogin.cs">
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formMenu.resx">
       <DependentUpon>formMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVender.resx">
+      <DependentUpon>FormVender.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
