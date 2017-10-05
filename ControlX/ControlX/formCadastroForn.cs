@@ -44,7 +44,7 @@ namespace ControlX
 
         private void btComplete()
         {
-            /*foreach (Control c in pnCadForn.Controls)
+            foreach (Control c in pnCadForn.Controls)
             {
                 if (c is TextBox)
                     if (((TextBox)c).Text.Trim() != "")
@@ -54,7 +54,7 @@ namespace ControlX
                         btCadastrar.Enabled = false;
                 else
                         btCadastrar.Enabled = true;
-            }*/
+            }
         }
 
         private void btCancelar_Click(object sender, EventArgs e)

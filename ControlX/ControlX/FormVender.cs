@@ -35,11 +35,6 @@ namespace ControlX
             txNome.AutoCompleteCustomSource = col;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btMenu_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -66,6 +61,41 @@ namespace ControlX
                     txQntd.Text = Convert.ToString(p.Qntd);
                 }
             
+        }
+
+        private void btPesquisar_Click(object sender, EventArgs e)
+        {
+
+            formEstoque formSearch = new formEstoque();
+            /*formSearch.btView.Enabled = false;
+            formSearch.btDel.Enabled = false;
+            formSearch.btEdit.Enabled = false;
+            */
+            formSearch.pnButtons.Visible = false;
+            //formSearch.pnPesquisa.Visible = false;
+            formSearch.btMenu.Text = "Voltar";
+            formSearch.ShowDialog(this);
+
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbId_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnForm_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
