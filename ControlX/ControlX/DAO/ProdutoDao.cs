@@ -105,7 +105,7 @@ namespace ControlX.DAO
 
         public List<object> ListByName(string name)
         {
-            string qry = string.Format("SELECT id, nome, preco, qntd FROM produtos WHERE nome LIKE '%{0}%';", name);
+            string qry = string.Format("SELECT * FROM produtos WHERE nome LIKE '%{0}%';", name);
 
             DataSet ds = db.ExecuteQuery(qry);
 

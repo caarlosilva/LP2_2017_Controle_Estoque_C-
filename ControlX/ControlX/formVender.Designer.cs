@@ -134,7 +134,6 @@
             // 
             // txNome
             // 
-            this.txNome.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txNome.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txNome.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -143,6 +142,7 @@
             this.txNome.Name = "txNome";
             this.txNome.Size = new System.Drawing.Size(113, 21);
             this.txNome.TabIndex = 24;
+            this.txNome.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // lbNome
             // 

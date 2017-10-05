@@ -22,6 +22,7 @@ namespace ControlX
         {
             txNome.AutoCompleteMode = AutoCompleteMode.Suggest;
             txNome.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
             AutoCompleteStringCollection col = new AutoCompleteStringCollection();
             IDao db = new DAO.ProdutoDao();
             List<Object> ps = db.ListAll();
@@ -50,6 +51,21 @@ namespace ControlX
             txId.Text = "";
             txPreco.Text = "";
             txQntd.Text = "";
+        }
+
+        private void txNome_TextChanged(object sender, EventArgs e)
+        {
+            IDao db = new DAO.ProdutoDao();
+            List<Object> produto = db.ListByName(txNome.Text.Trim());
+
+            foreach (Produto p in produto)
+                if (txNome.Text.Trim() == p.Nome)
+                {
+                    txId.Text = Convert.ToString(p.Id);
+                    txPreco.Text = Convert.ToString(p.Preco);
+                    txQntd.Text = Convert.ToString(p.Qntd);
+                }
+            
         }
     }
 }
