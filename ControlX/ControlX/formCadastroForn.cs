@@ -13,7 +13,7 @@ namespace ControlX
     public partial class formCadastroForn : Form
     {
         //private static Dictionary<int, Fornecedor> fornecedor = new Dictionary<int, Fornecedor>();
-        private IDatabase db1 = new Database();
+        private IDao db1 = new DAO.FornecedorDao();
         private Fornecedor nFornecedor = new Fornecedor();
 
 

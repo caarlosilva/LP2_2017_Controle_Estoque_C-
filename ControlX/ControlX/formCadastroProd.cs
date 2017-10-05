@@ -11,8 +11,8 @@ using System.Windows.Forms;
 namespace ControlX
 {
     public partial class formCadastroProd : Form
-    {        
-        private IDatabase db1 = new Database();
+    {
+        private IDao db1 = new DAO.ProdutoDao();
         private Produto nProduto = new Produto();
 
 
@@ -25,10 +25,12 @@ namespace ControlX
 
         private void iniComboBox()
         {
-            List<Fornecedor> fornecedores = db1.ListAllF();
-            cbFornecedor.DataSource = fornecedores;
-            foreach (Fornecedor p in fornecedores)
-            {                
+
+            IDao db2 = new DAO.FornecedorDao();
+            List<Object> forn = db2.ListAll();
+            cbFornecedor.DataSource = forn;
+            foreach (Object p in forn)
+            {
                 cbFornecedor.DisplayMember = "FornecedorFullName";
                 cbFornecedor.ValueMember = "Id";
             }

@@ -48,7 +48,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -64,6 +67,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\FornecedorDao.cs" />
+    <Compile Include="DAO\ProdutoDao.cs" />
+    <Compile Include="DAO\UsuarioDao.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="formCadastroForn.cs">
       <SubType>Form</SubType>
@@ -90,7 +96,7 @@
       <DependentUpon>formFornecedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Fornecedor.cs" />
-    <Compile Include="IDatabase.cs" />
+    <Compile Include="IDao.cs" />
     <Compile Include="formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -26,8 +26,8 @@ namespace ControlX
         private void btAdd_Click(object sender, EventArgs e)
         {          
             formCadastroProd form =  new formCadastroProd();
-            IDatabase db = new Database();
-            idProduto = db.GetIdProduto();
+            IDao db = new DAO.ProdutoDao();
+            idProduto = db.GetId();
             form.lbIdProduto.Text = "" + idProduto;
 
             form.ShowDialog(this);
@@ -36,8 +36,8 @@ namespace ControlX
 
         private void Fill()
         {
-            IDatabase db = new Database();
-            List<Produto> ps = db.ListAll();
+            IDao db = new DAO.ProdutoDao();
+            List<Object> ps = db.ListAll();
             
             dgvEstoque.Rows.Clear();
             foreach (Produto p in ps)
@@ -67,8 +67,8 @@ namespace ControlX
 
         private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
         {
-            IDatabase db = new Database();
-            List<Produto> ps = (rbNome.Checked) ? db.ListByName(txPesquisar.Text) : (txPesquisar.Text.Trim() == "")? db.ListAll() : db.ListByName(int.Parse(txPesquisar.Text));
+            IDao db = new DAO.ProdutoDao();
+            List<Object> ps = (rbNome.Checked) ? db.ListByName(txPesquisar.Text) : (txPesquisar.Text.Trim() == "")? db.ListAll() : db.ListByName(int.Parse(txPesquisar.Text));
 
             dgvEstoque.Rows.Clear();            
             foreach (Produto p in ps)
@@ -80,7 +80,7 @@ namespace ControlX
         private void btDel_Click(object sender, EventArgs e)
         {
 
-            Database data = new Database();
+            IDao data = new DAO.ProdutoDao();
             int a = int.Parse(dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
             //Caixa de aviso caso deseja ou não apagar
             DialogResult result = MessageBox.Show("Tem certeza que deseja remover esse item do seu estoque?", 
@@ -115,9 +115,9 @@ namespace ControlX
             form.txQntd.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[3].Value.ToString());
             form.lbIdProduto.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
             int idP = Convert.ToInt32(form.lbIdProduto.Text);
-            IDatabase db = new Database();
+            IDao db = new DAO.ProdutoDao();
 
-            List<Produto> p = db.ListByName(idP);
+            List<Object> p = db.ListByName(idP);
 
 
             foreach (Produto produto in p)
@@ -144,9 +144,9 @@ namespace ControlX
             form.txQntd.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[3].Value.ToString());
             form.lbIdProduto.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
             int idP = Convert.ToInt32(form.lbIdProduto.Text);
-            IDatabase db = new Database();
-            
-            List<Produto> p = db.ListByName(idP);
+            IDao db = new DAO.ProdutoDao();
+
+            List<Object> p = db.ListByName(idP);
             
 
             foreach(Produto produto in p)

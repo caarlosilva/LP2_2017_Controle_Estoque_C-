@@ -22,8 +22,8 @@ namespace ControlX
 
         private void Fill()
         {
-            IDatabase db = new Database();
-            List<Fornecedor> ps = db.ListAllF();            
+            IDao db = new DAO.FornecedorDao();
+            List<Object> ps = db.ListAll();            
             
             dgvFornecedor.Rows.Clear();
             foreach (Fornecedor p in ps)
@@ -75,8 +75,8 @@ namespace ControlX
         private void btAdicionar_Click(object sender, EventArgs e)
         {
             formCadastroForn form = new formCadastroForn();
-            IDatabase db = new Database();
-            idFornecedor = db.GetIdFornecedor();
+            IDao db = new DAO.FornecedorDao();
+            idFornecedor = db.GetId();
             form.lbIdForn.Text = "" + idFornecedor;
 
             form.ShowDialog(this);
@@ -85,7 +85,7 @@ namespace ControlX
 
         private void btDel_Click(object sender, EventArgs e)
         {
-            Database data = new Database();
+            IDao data = new DAO.FornecedorDao();
             Fornecedor a = new Fornecedor();
             a.Id =  int.Parse(dgvFornecedor.Rows[dgvFornecedor.CurrentRow.Index].Cells[0].Value.ToString());
             //Caixa de aviso caso deseja ou não apagar
@@ -95,7 +95,7 @@ namespace ControlX
             //Caso clique em sim
             if (result == DialogResult.Yes)
             {
-                data.Remover(a);
+                data.Remover(a.Id);
                 Fill();
                 buttonEnable();
             }
@@ -108,8 +108,8 @@ namespace ControlX
 
         private void btEdit_Click(object sender, EventArgs e)
         {
-            IDatabase db = new Database();
-            List<Fornecedor> fornecedor = db.ListAllF();
+            IDao db = new DAO.FornecedorDao();
+            List<Object> fornecedor = db.ListAll();
                         
 
             formCadastroForn form = new formCadastroForn();
@@ -140,8 +140,8 @@ namespace ControlX
 
         private void btView_Click(object sender, EventArgs e)
         {
-            IDatabase db = new Database();
-            List<Fornecedor> fornecedor = db.ListAllF();
+            IDao db = new DAO.FornecedorDao();
+            List<Object> fornecedor = db.ListAll();
             formCadastroForn form = new formCadastroForn();
 
             int id = int.Parse(dgvFornecedor.Rows[dgvFornecedor.CurrentRow.Index].Cells[0].Value.ToString());
@@ -182,8 +182,8 @@ namespace ControlX
 
         private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
         {
-            IDatabase db = new Database();
-            List<Fornecedor> ps = db.ListByNameF(txPesquisar.Text);
+            IDao db = new DAO.FornecedorDao();
+            List<Object> ps = db.ListByName(txPesquisar.Text);
 
             dgvFornecedor.Rows.Clear();
             foreach (Fornecedor p in ps)
