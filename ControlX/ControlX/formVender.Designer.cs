@@ -35,6 +35,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btDelItemVenda = new System.Windows.Forms.Button();
             this.pnCabecalho = new System.Windows.Forms.Panel();
+            this.txQntdVenda = new System.Windows.Forms.TextBox();
+            this.lbPrecoShow = new System.Windows.Forms.Label();
+            this.lbQntdEstoqueShow = new System.Windows.Forms.Label();
+            this.lbQntdVenda = new System.Windows.Forms.Label();
             this.pnBtCad = new System.Windows.Forms.Panel();
             this.btPesquisar = new System.Windows.Forms.Button();
             this.btLimpar = new System.Windows.Forms.Button();
@@ -46,6 +50,8 @@
             this.lbQntdEstoque = new System.Windows.Forms.Label();
             this.lbPreco = new System.Windows.Forms.Label();
             this.pnTotal = new System.Windows.Forms.Panel();
+            this.lbReais = new System.Windows.Forms.Label();
+            this.lbValorTotal = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
             this.gpVendas = new System.Windows.Forms.GroupBox();
             this.dgvVendas = new System.Windows.Forms.DataGridView();
@@ -58,12 +64,6 @@
             this.pnBtVender = new System.Windows.Forms.Panel();
             this.btVender = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.lbQntdVenda = new System.Windows.Forms.Label();
-            this.lbQntdEstoqueShow = new System.Windows.Forms.Label();
-            this.lbPrecoShow = new System.Windows.Forms.Label();
-            this.txQntdVenda = new System.Windows.Forms.TextBox();
-            this.lbValorTotal = new System.Windows.Forms.Label();
-            this.lbReais = new System.Windows.Forms.Label();
             this.pnForm.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnCabecalho.SuspendLayout();
@@ -101,7 +101,7 @@
             // 
             // btDelItemVenda
             // 
-            this.btDelItemVenda.Location = new System.Drawing.Point(5, 3);
+            this.btDelItemVenda.Location = new System.Drawing.Point(0, 3);
             this.btDelItemVenda.Name = "btDelItemVenda";
             this.btDelItemVenda.Size = new System.Drawing.Size(75, 23);
             this.btDelItemVenda.TabIndex = 0;
@@ -127,6 +127,45 @@
             this.pnCabecalho.Name = "pnCabecalho";
             this.pnCabecalho.Size = new System.Drawing.Size(406, 120);
             this.pnCabecalho.TabIndex = 16;
+            // 
+            // txQntdVenda
+            // 
+            this.txQntdVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txQntdVenda.Location = new System.Drawing.Point(345, 54);
+            this.txQntdVenda.Name = "txQntdVenda";
+            this.txQntdVenda.Size = new System.Drawing.Size(53, 21);
+            this.txQntdVenda.TabIndex = 32;
+            this.txQntdVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txQntdVenda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txQntdVenda_KeyPress);
+            // 
+            // lbPrecoShow
+            // 
+            this.lbPrecoShow.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lbPrecoShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbPrecoShow.Location = new System.Drawing.Point(56, 53);
+            this.lbPrecoShow.Name = "lbPrecoShow";
+            this.lbPrecoShow.Size = new System.Drawing.Size(70, 21);
+            this.lbPrecoShow.TabIndex = 31;
+            this.lbPrecoShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbQntdEstoqueShow
+            // 
+            this.lbQntdEstoqueShow.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lbQntdEstoqueShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbQntdEstoqueShow.Location = new System.Drawing.Point(219, 53);
+            this.lbQntdEstoqueShow.Name = "lbQntdEstoqueShow";
+            this.lbQntdEstoqueShow.Size = new System.Drawing.Size(50, 21);
+            this.lbQntdEstoqueShow.TabIndex = 30;
+            this.lbQntdEstoqueShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbQntdVenda
+            // 
+            this.lbQntdVenda.AutoSize = true;
+            this.lbQntdVenda.Location = new System.Drawing.Point(275, 57);
+            this.lbQntdVenda.Name = "lbQntdVenda";
+            this.lbQntdVenda.Size = new System.Drawing.Size(72, 13);
+            this.lbQntdVenda.TabIndex = 29;
+            this.lbQntdVenda.Text = "Qtd Venda:";
             // 
             // pnBtCad
             // 
@@ -253,11 +292,29 @@
             this.pnTotal.Size = new System.Drawing.Size(171, 26);
             this.pnTotal.TabIndex = 15;
             // 
+            // lbReais
+            // 
+            this.lbReais.Location = new System.Drawing.Point(43, 1);
+            this.lbReais.Name = "lbReais";
+            this.lbReais.Size = new System.Drawing.Size(27, 21);
+            this.lbReais.TabIndex = 16;
+            this.lbReais.Text = "R$";
+            this.lbReais.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbValorTotal
+            // 
+            this.lbValorTotal.BackColor = System.Drawing.SystemColors.Control;
+            this.lbValorTotal.Location = new System.Drawing.Point(71, 2);
+            this.lbValorTotal.Name = "lbValorTotal";
+            this.lbValorTotal.Size = new System.Drawing.Size(90, 21);
+            this.lbValorTotal.TabIndex = 15;
+            this.lbValorTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lbTotal
             // 
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.Location = new System.Drawing.Point(3, 4);
+            this.lbTotal.Location = new System.Drawing.Point(3, 5);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(40, 13);
             this.lbTotal.TabIndex = 14;
@@ -383,60 +440,6 @@
             this.btCancelar.Text = "Limpar Venda";
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
-            // 
-            // lbQntdVenda
-            // 
-            this.lbQntdVenda.AutoSize = true;
-            this.lbQntdVenda.Location = new System.Drawing.Point(275, 57);
-            this.lbQntdVenda.Name = "lbQntdVenda";
-            this.lbQntdVenda.Size = new System.Drawing.Size(72, 13);
-            this.lbQntdVenda.TabIndex = 29;
-            this.lbQntdVenda.Text = "Qtd Venda:";
-            // 
-            // lbQntdEstoqueShow
-            // 
-            this.lbQntdEstoqueShow.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbQntdEstoqueShow.Location = new System.Drawing.Point(219, 53);
-            this.lbQntdEstoqueShow.Name = "lbQntdEstoqueShow";
-            this.lbQntdEstoqueShow.Size = new System.Drawing.Size(50, 21);
-            this.lbQntdEstoqueShow.TabIndex = 30;
-            this.lbQntdEstoqueShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbPrecoShow
-            // 
-            this.lbPrecoShow.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbPrecoShow.Location = new System.Drawing.Point(56, 53);
-            this.lbPrecoShow.Name = "lbPrecoShow";
-            this.lbPrecoShow.Size = new System.Drawing.Size(70, 21);
-            this.lbPrecoShow.TabIndex = 31;
-            this.lbPrecoShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txQntdVenda
-            // 
-            this.txQntdVenda.Location = new System.Drawing.Point(345, 54);
-            this.txQntdVenda.Name = "txQntdVenda";
-            this.txQntdVenda.Size = new System.Drawing.Size(53, 21);
-            this.txQntdVenda.TabIndex = 32;
-            this.txQntdVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txQntdVenda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txQntdVenda_KeyPress);
-            // 
-            // lbValorTotal
-            // 
-            this.lbValorTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbValorTotal.Location = new System.Drawing.Point(71, 2);
-            this.lbValorTotal.Name = "lbValorTotal";
-            this.lbValorTotal.Size = new System.Drawing.Size(90, 21);
-            this.lbValorTotal.TabIndex = 15;
-            this.lbValorTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbReais
-            // 
-            this.lbReais.Location = new System.Drawing.Point(43, 0);
-            this.lbReais.Name = "lbReais";
-            this.lbReais.Size = new System.Drawing.Size(35, 21);
-            this.lbReais.TabIndex = 16;
-            this.lbReais.Text = "R$";
-            this.lbReais.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormVender
             // 
