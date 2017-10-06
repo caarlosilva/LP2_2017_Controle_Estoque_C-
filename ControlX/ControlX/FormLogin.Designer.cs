@@ -37,8 +37,12 @@
             this.txSenha = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbUser = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.SuspendLayout();
             // 
             // btSair
@@ -59,82 +63,109 @@
             this.btLogar.Name = "btLogar";
             this.btLogar.Size = new System.Drawing.Size(75, 23);
             this.btLogar.TabIndex = 0;
-            this.btLogar.Text = "Logar";
+            this.btLogar.Text = "Entrar";
             this.btLogar.UseVisualStyleBackColor = true;
+            this.btLogar.Click += new System.EventHandler(this.btLogar_Click);
             // 
             // lbUsuario
             // 
             this.lbUsuario.AutoSize = true;
-            this.lbUsuario.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsuario.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUsuario.Location = new System.Drawing.Point(12, 10);
             this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(61, 13);
+            this.lbUsuario.Size = new System.Drawing.Size(63, 14);
             this.lbUsuario.TabIndex = 2;
-            this.lbUsuario.Text = "Usuario:";
+            this.lbUsuario.Text = "Usuário:";
             // 
             // lbSenha
             // 
             this.lbSenha.AutoSize = true;
-            this.lbSenha.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSenha.Location = new System.Drawing.Point(16, 43);
+            this.lbSenha.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSenha.Location = new System.Drawing.Point(12, 46);
             this.lbSenha.Name = "lbSenha";
-            this.lbSenha.Size = new System.Drawing.Size(51, 13);
+            this.lbSenha.Size = new System.Drawing.Size(53, 14);
             this.lbSenha.TabIndex = 3;
             this.lbSenha.Text = "Senha:";
             // 
             // txUsuario
             // 
-            this.txUsuario.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txUsuario.Location = new System.Drawing.Point(83, 9);
+            this.txUsuario.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txUsuario.Location = new System.Drawing.Point(79, 10);
             this.txUsuario.Name = "txUsuario";
-            this.txUsuario.Size = new System.Drawing.Size(100, 21);
+            this.txUsuario.Size = new System.Drawing.Size(186, 23);
             this.txUsuario.TabIndex = 0;
+            this.txUsuario.Text = "Admin";
             // 
             // txSenha
             // 
-            this.txSenha.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txSenha.Location = new System.Drawing.Point(83, 42);
+            this.txSenha.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txSenha.Location = new System.Drawing.Point(79, 43);
             this.txSenha.Name = "txSenha";
             this.txSenha.PasswordChar = '*';
-            this.txSenha.Size = new System.Drawing.Size(100, 21);
+            this.txSenha.Size = new System.Drawing.Size(186, 22);
             this.txSenha.TabIndex = 1;
+            this.txSenha.Text = "admin";
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pbUser);
             this.panel1.Controls.Add(this.txUsuario);
             this.panel1.Controls.Add(this.txSenha);
             this.panel1.Controls.Add(this.lbUsuario);
             this.panel1.Controls.Add(this.lbSenha);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(203, 71);
+            this.panel1.Size = new System.Drawing.Size(307, 71);
             this.panel1.TabIndex = 6;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btLogar);
             this.panel2.Controls.Add(this.btSair);
-            this.panel2.Location = new System.Drawing.Point(12, 89);
+            this.panel2.Location = new System.Drawing.Point(62, 93);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(203, 29);
             this.panel2.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ControlX.Properties.Resources.pwd;
+            this.pictureBox1.Location = new System.Drawing.Point(271, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbUser
+            // 
+            this.pbUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbUser.Image = global::ControlX.Properties.Resources.user1;
+            this.pbUser.Location = new System.Drawing.Point(271, 3);
+            this.pbUser.Name = "pbUser";
+            this.pbUser.Size = new System.Drawing.Size(32, 32);
+            this.pbUser.TabIndex = 8;
+            this.pbUser.TabStop = false;
             // 
             // formLogin
             // 
             this.AcceptButton = this.btLogar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(227, 124);
+            this.ClientSize = new System.Drawing.Size(331, 134);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "formLogin";
-            this.Text = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ControlX - Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -149,5 +180,7 @@
         private System.Windows.Forms.TextBox txSenha;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pbUser;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

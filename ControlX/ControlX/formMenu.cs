@@ -28,8 +28,7 @@ namespace ControlX
 
         private void btSair_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            new formLogin().ShowDialog();            
+            this.Dispose();          
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -57,7 +56,7 @@ namespace ControlX
         private void btVender_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new formVender().ShowDialog();
+            new FormVender().ShowDialog();
             this.Show();
         }
     }

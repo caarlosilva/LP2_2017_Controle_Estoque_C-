@@ -1,6 +1,6 @@
 ﻿namespace ControlX
 {
-    partial class formVender
+    partial class FormVender
     {
         /// <summary>
         /// Required designer variable.
@@ -28,38 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formVender));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVender));
             this.pnForm = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btDelItemVenda = new System.Windows.Forms.Button();
             this.pnCabecalho = new System.Windows.Forms.Panel();
             this.pnBtCad = new System.Windows.Forms.Panel();
+            this.btPesquisar = new System.Windows.Forms.Button();
             this.btLimpar = new System.Windows.Forms.Button();
             this.btAdd = new System.Windows.Forms.Button();
             this.txId = new System.Windows.Forms.TextBox();
             this.lbId = new System.Windows.Forms.Label();
             this.txNome = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
-            this.lbQntd = new System.Windows.Forms.Label();
-            this.txQntd = new System.Windows.Forms.TextBox();
-            this.txPreco = new System.Windows.Forms.TextBox();
+            this.lbQntdEstoque = new System.Windows.Forms.Label();
             this.lbPreco = new System.Windows.Forms.Label();
             this.pnTotal = new System.Windows.Forms.Panel();
-            this.txTotal = new System.Windows.Forms.TextBox();
             this.lbTotal = new System.Windows.Forms.Label();
             this.gpVendas = new System.Windows.Forms.GroupBox();
             this.dgvVendas = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coLPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnMenu = new System.Windows.Forms.Panel();
             this.btMenu = new System.Windows.Forms.Button();
             this.pnBtVender = new System.Windows.Forms.Panel();
             this.btVender = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.btPesquisar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btDelItemVenda = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coLPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbQntdVenda = new System.Windows.Forms.Label();
+            this.lbQntdEstoqueShow = new System.Windows.Forms.Label();
+            this.lbPrecoShow = new System.Windows.Forms.Label();
+            this.txQntdVenda = new System.Windows.Forms.TextBox();
+            this.lbValorTotal = new System.Windows.Forms.Label();
+            this.lbReais = new System.Windows.Forms.Label();
             this.pnForm.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.pnCabecalho.SuspendLayout();
             this.pnBtCad.SuspendLayout();
             this.pnTotal.SuspendLayout();
@@ -67,7 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             this.pnMenu.SuspendLayout();
             this.pnBtVender.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnForm
@@ -86,17 +91,37 @@
             this.pnForm.TabIndex = 8;
             this.pnForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnForm_Paint);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btDelItemVenda);
+            this.panel1.Location = new System.Drawing.Point(331, 341);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(83, 26);
+            this.panel1.TabIndex = 17;
+            // 
+            // btDelItemVenda
+            // 
+            this.btDelItemVenda.Location = new System.Drawing.Point(5, 3);
+            this.btDelItemVenda.Name = "btDelItemVenda";
+            this.btDelItemVenda.Size = new System.Drawing.Size(75, 23);
+            this.btDelItemVenda.TabIndex = 0;
+            this.btDelItemVenda.Text = "Remover";
+            this.btDelItemVenda.UseVisualStyleBackColor = true;
+            this.btDelItemVenda.Click += new System.EventHandler(this.btDelItemVenda_Click);
+            // 
             // pnCabecalho
             // 
             this.pnCabecalho.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnCabecalho.Controls.Add(this.txQntdVenda);
+            this.pnCabecalho.Controls.Add(this.lbPrecoShow);
+            this.pnCabecalho.Controls.Add(this.lbQntdEstoqueShow);
+            this.pnCabecalho.Controls.Add(this.lbQntdVenda);
             this.pnCabecalho.Controls.Add(this.pnBtCad);
             this.pnCabecalho.Controls.Add(this.txId);
             this.pnCabecalho.Controls.Add(this.lbId);
             this.pnCabecalho.Controls.Add(this.txNome);
             this.pnCabecalho.Controls.Add(this.lbNome);
-            this.pnCabecalho.Controls.Add(this.lbQntd);
-            this.pnCabecalho.Controls.Add(this.txQntd);
-            this.pnCabecalho.Controls.Add(this.txPreco);
+            this.pnCabecalho.Controls.Add(this.lbQntdEstoque);
             this.pnCabecalho.Controls.Add(this.lbPreco);
             this.pnCabecalho.Location = new System.Drawing.Point(8, 9);
             this.pnCabecalho.Name = "pnCabecalho";
@@ -112,6 +137,24 @@
             this.pnBtCad.Name = "pnBtCad";
             this.pnBtCad.Size = new System.Drawing.Size(249, 28);
             this.pnBtCad.TabIndex = 28;
+            // 
+            // btPesquisar
+            // 
+            this.btPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.btPesquisar.BackgroundImage = global::ControlX.Properties.Resources.search;
+            this.btPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btPesquisar.Cursor = System.Windows.Forms.Cursors.Help;
+            this.btPesquisar.FlatAppearance.BorderSize = 0;
+            this.btPesquisar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPesquisar.Location = new System.Drawing.Point(214, 3);
+            this.btPesquisar.Name = "btPesquisar";
+            this.btPesquisar.Size = new System.Drawing.Size(23, 22);
+            this.btPesquisar.TabIndex = 2;
+            this.btPesquisar.UseVisualStyleBackColor = false;
+            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
             // 
             // btLimpar
             // 
@@ -144,6 +187,7 @@
             this.txId.Name = "txId";
             this.txId.Size = new System.Drawing.Size(66, 21);
             this.txId.TabIndex = 1;
+            this.txId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txId_KeyPress);
             // 
             // lbId
             // 
@@ -178,35 +222,15 @@
             this.lbNome.TabIndex = 25;
             this.lbNome.Text = "Nome:";
             // 
-            // lbQntd
+            // lbQntdEstoque
             // 
-            this.lbQntd.AutoSize = true;
-            this.lbQntd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQntd.Location = new System.Drawing.Point(227, 57);
-            this.lbQntd.Name = "lbQntd";
-            this.lbQntd.Size = new System.Drawing.Size(77, 13);
-            this.lbQntd.TabIndex = 23;
-            this.lbQntd.Text = "Quantidade:";
-            // 
-            // txQntd
-            // 
-            this.txQntd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txQntd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txQntd.Location = new System.Drawing.Point(310, 55);
-            this.txQntd.Name = "txQntd";
-            this.txQntd.Size = new System.Drawing.Size(88, 21);
-            this.txQntd.TabIndex = 2;
-            // 
-            // txPreco
-            // 
-            this.txPreco.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.txPreco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txPreco.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txPreco.Location = new System.Drawing.Point(46, 53);
-            this.txPreco.Name = "txPreco";
-            this.txPreco.ReadOnly = true;
-            this.txPreco.Size = new System.Drawing.Size(94, 21);
-            this.txPreco.TabIndex = 20;
+            this.lbQntdEstoque.AutoSize = true;
+            this.lbQntdEstoque.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQntdEstoque.Location = new System.Drawing.Point(132, 55);
+            this.lbQntdEstoque.Name = "lbQntdEstoque";
+            this.lbQntdEstoque.Size = new System.Drawing.Size(81, 13);
+            this.lbQntdEstoque.TabIndex = 23;
+            this.lbQntdEstoque.Text = "Qtd Estoque:";
             // 
             // lbPreco
             // 
@@ -221,24 +245,13 @@
             // pnTotal
             // 
             this.pnTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnTotal.Controls.Add(this.txTotal);
+            this.pnTotal.Controls.Add(this.lbReais);
+            this.pnTotal.Controls.Add(this.lbValorTotal);
             this.pnTotal.Controls.Add(this.lbTotal);
             this.pnTotal.Location = new System.Drawing.Point(18, 341);
             this.pnTotal.Name = "pnTotal";
-            this.pnTotal.Size = new System.Drawing.Size(166, 26);
+            this.pnTotal.Size = new System.Drawing.Size(171, 26);
             this.pnTotal.TabIndex = 15;
-            // 
-            // txTotal
-            // 
-            this.txTotal.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txTotal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txTotal.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.txTotal.Location = new System.Drawing.Point(49, 2);
-            this.txTotal.Name = "txTotal";
-            this.txTotal.ReadOnly = true;
-            this.txTotal.Size = new System.Drawing.Size(112, 21);
-            this.txTotal.TabIndex = 15;
             // 
             // lbTotal
             // 
@@ -267,6 +280,9 @@
             // 
             this.dgvVendas.AllowUserToAddRows = false;
             this.dgvVendas.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.NullValue = null;
+            this.dgvVendas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvVendas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -281,92 +297,6 @@
             this.dgvVendas.ReadOnly = true;
             this.dgvVendas.Size = new System.Drawing.Size(391, 175);
             this.dgvVendas.TabIndex = 0;
-            // 
-            // pnMenu
-            // 
-            this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnMenu.Controls.Add(this.btMenu);
-            this.pnMenu.Location = new System.Drawing.Point(16, 371);
-            this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(98, 29);
-            this.pnMenu.TabIndex = 11;
-            // 
-            // btMenu
-            // 
-            this.btMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btMenu.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btMenu.Location = new System.Drawing.Point(5, 3);
-            this.btMenu.Name = "btMenu";
-            this.btMenu.Size = new System.Drawing.Size(70, 23);
-            this.btMenu.TabIndex = 0;
-            this.btMenu.Text = "Menu";
-            this.btMenu.UseVisualStyleBackColor = true;
-            this.btMenu.Click += new System.EventHandler(this.btMenu_Click);
-            // 
-            // pnBtVender
-            // 
-            this.pnBtVender.Controls.Add(this.btVender);
-            this.pnBtVender.Controls.Add(this.btCancelar);
-            this.pnBtVender.Location = new System.Drawing.Point(240, 371);
-            this.pnBtVender.Name = "pnBtVender";
-            this.pnBtVender.Size = new System.Drawing.Size(174, 29);
-            this.pnBtVender.TabIndex = 10;
-            // 
-            // btVender
-            // 
-            this.btVender.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btVender.Location = new System.Drawing.Point(96, 3);
-            this.btVender.Name = "btVender";
-            this.btVender.Size = new System.Drawing.Size(75, 23);
-            this.btVender.TabIndex = 1;
-            this.btVender.Text = "Finalizar";
-            this.btVender.UseVisualStyleBackColor = true;
-            // 
-            // btCancelar
-            // 
-            this.btCancelar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(2, 3);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btCancelar.TabIndex = 0;
-            this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = true;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
-            // 
-            // btPesquisar
-            // 
-            this.btPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.btPesquisar.BackgroundImage = global::ControlX.Properties.Resources.search;
-            this.btPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btPesquisar.Cursor = System.Windows.Forms.Cursors.Help;
-            this.btPesquisar.FlatAppearance.BorderSize = 0;
-            this.btPesquisar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPesquisar.Location = new System.Drawing.Point(214, 3);
-            this.btPesquisar.Name = "btPesquisar";
-            this.btPesquisar.Size = new System.Drawing.Size(23, 22);
-            this.btPesquisar.TabIndex = 2;
-            this.btPesquisar.UseVisualStyleBackColor = false;
-            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btDelItemVenda);
-            this.panel1.Location = new System.Drawing.Point(331, 341);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(83, 26);
-            this.panel1.TabIndex = 17;
-            // 
-            // btDelItemVenda
-            // 
-            this.btDelItemVenda.Location = new System.Drawing.Point(5, 3);
-            this.btDelItemVenda.Name = "btDelItemVenda";
-            this.btDelItemVenda.Size = new System.Drawing.Size(75, 23);
-            this.btDelItemVenda.TabIndex = 0;
-            this.btDelItemVenda.Text = "Remover";
-            this.btDelItemVenda.UseVisualStyleBackColor = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -395,12 +325,120 @@
             // coLPreco
             // 
             this.coLPreco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.coLPreco.DefaultCellStyle = dataGridViewCellStyle2;
             this.coLPreco.FillWeight = 30F;
             this.coLPreco.HeaderText = "Preço Total";
             this.coLPreco.Name = "coLPreco";
             this.coLPreco.ReadOnly = true;
             // 
-            // formVender
+            // pnMenu
+            // 
+            this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnMenu.Controls.Add(this.btMenu);
+            this.pnMenu.Location = new System.Drawing.Point(16, 371);
+            this.pnMenu.Name = "pnMenu";
+            this.pnMenu.Size = new System.Drawing.Size(98, 29);
+            this.pnMenu.TabIndex = 11;
+            // 
+            // btMenu
+            // 
+            this.btMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btMenu.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btMenu.Location = new System.Drawing.Point(5, 3);
+            this.btMenu.Name = "btMenu";
+            this.btMenu.Size = new System.Drawing.Size(70, 23);
+            this.btMenu.TabIndex = 0;
+            this.btMenu.Text = "Menu";
+            this.btMenu.UseVisualStyleBackColor = true;
+            this.btMenu.Click += new System.EventHandler(this.btMenu_Click);
+            // 
+            // pnBtVender
+            // 
+            this.pnBtVender.Controls.Add(this.btVender);
+            this.pnBtVender.Controls.Add(this.btCancelar);
+            this.pnBtVender.Location = new System.Drawing.Point(207, 371);
+            this.pnBtVender.Name = "pnBtVender";
+            this.pnBtVender.Size = new System.Drawing.Size(207, 29);
+            this.pnBtVender.TabIndex = 10;
+            // 
+            // btVender
+            // 
+            this.btVender.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btVender.Location = new System.Drawing.Point(124, 3);
+            this.btVender.Name = "btVender";
+            this.btVender.Size = new System.Drawing.Size(75, 23);
+            this.btVender.TabIndex = 1;
+            this.btVender.Text = "Finalizar";
+            this.btVender.UseVisualStyleBackColor = true;
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(2, 3);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(104, 23);
+            this.btCancelar.TabIndex = 0;
+            this.btCancelar.Text = "Limpar Venda";
+            this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
+            // lbQntdVenda
+            // 
+            this.lbQntdVenda.AutoSize = true;
+            this.lbQntdVenda.Location = new System.Drawing.Point(275, 57);
+            this.lbQntdVenda.Name = "lbQntdVenda";
+            this.lbQntdVenda.Size = new System.Drawing.Size(72, 13);
+            this.lbQntdVenda.TabIndex = 29;
+            this.lbQntdVenda.Text = "Qtd Venda:";
+            // 
+            // lbQntdEstoqueShow
+            // 
+            this.lbQntdEstoqueShow.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbQntdEstoqueShow.Location = new System.Drawing.Point(219, 53);
+            this.lbQntdEstoqueShow.Name = "lbQntdEstoqueShow";
+            this.lbQntdEstoqueShow.Size = new System.Drawing.Size(50, 21);
+            this.lbQntdEstoqueShow.TabIndex = 30;
+            this.lbQntdEstoqueShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbPrecoShow
+            // 
+            this.lbPrecoShow.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbPrecoShow.Location = new System.Drawing.Point(56, 53);
+            this.lbPrecoShow.Name = "lbPrecoShow";
+            this.lbPrecoShow.Size = new System.Drawing.Size(70, 21);
+            this.lbPrecoShow.TabIndex = 31;
+            this.lbPrecoShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txQntdVenda
+            // 
+            this.txQntdVenda.Location = new System.Drawing.Point(345, 54);
+            this.txQntdVenda.Name = "txQntdVenda";
+            this.txQntdVenda.Size = new System.Drawing.Size(53, 21);
+            this.txQntdVenda.TabIndex = 32;
+            this.txQntdVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txQntdVenda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txQntdVenda_KeyPress);
+            // 
+            // lbValorTotal
+            // 
+            this.lbValorTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbValorTotal.Location = new System.Drawing.Point(71, 2);
+            this.lbValorTotal.Name = "lbValorTotal";
+            this.lbValorTotal.Size = new System.Drawing.Size(90, 21);
+            this.lbValorTotal.TabIndex = 15;
+            this.lbValorTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbReais
+            // 
+            this.lbReais.Location = new System.Drawing.Point(43, 0);
+            this.lbReais.Name = "lbReais";
+            this.lbReais.Size = new System.Drawing.Size(35, 21);
+            this.lbReais.TabIndex = 16;
+            this.lbReais.Text = "R$";
+            this.lbReais.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FormVender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -410,9 +448,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "formVender";
+            this.Name = "FormVender";
             this.Text = "ControlX - Vendas";
             this.pnForm.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.pnCabecalho.ResumeLayout(false);
             this.pnCabecalho.PerformLayout();
             this.pnBtCad.ResumeLayout(false);
@@ -422,7 +461,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).EndInit();
             this.pnMenu.ResumeLayout(false);
             this.pnBtVender.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -435,14 +473,11 @@
         private System.Windows.Forms.Panel pnMenu;
         private System.Windows.Forms.Button btMenu;
         private System.Windows.Forms.Panel pnTotal;
-        private System.Windows.Forms.TextBox txTotal;
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.GroupBox gpVendas;
         private System.Windows.Forms.DataGridView dgvVendas;
         private System.Windows.Forms.Panel pnCabecalho;
-        private System.Windows.Forms.Label lbQntd;
-        public System.Windows.Forms.TextBox txQntd;
-        public System.Windows.Forms.TextBox txPreco;
+        private System.Windows.Forms.Label lbQntdEstoque;
         private System.Windows.Forms.Label lbPreco;
         public System.Windows.Forms.TextBox txNome;
         private System.Windows.Forms.Label lbNome;
@@ -458,5 +493,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn coLPreco;
+        private System.Windows.Forms.Label lbQntdVenda;
+        private System.Windows.Forms.Label lbQntdEstoqueShow;
+        private System.Windows.Forms.TextBox txQntdVenda;
+        private System.Windows.Forms.Label lbPrecoShow;
+        private System.Windows.Forms.Label lbValorTotal;
+        private System.Windows.Forms.Label lbReais;
     }
 }

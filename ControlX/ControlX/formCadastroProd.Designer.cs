@@ -50,7 +50,7 @@
             // btCadastrar
             // 
             this.btCadastrar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCadastrar.Location = new System.Drawing.Point(98, 2);
+            this.btCadastrar.Location = new System.Drawing.Point(108, 2);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(87, 23);
             this.btCadastrar.TabIndex = 0;
@@ -168,7 +168,7 @@
             // 
             this.pnBtCad.Controls.Add(this.btCancelar);
             this.pnBtCad.Controls.Add(this.btCadastrar);
-            this.pnBtCad.Location = new System.Drawing.Point(52, 90);
+            this.pnBtCad.Location = new System.Drawing.Point(339, 93);
             this.pnBtCad.Name = "pnBtCad";
             this.pnBtCad.Size = new System.Drawing.Size(202, 28);
             this.pnBtCad.TabIndex = 8;
@@ -177,14 +177,14 @@
             // 
             this.btCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btCancelar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(3, 2);
+            this.btCancelar.Location = new System.Drawing.Point(8, 1);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(87, 23);
             this.btCancelar.TabIndex = 1;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btCancelar.UseVisualStyleBackColor = true;
-            this.btCancelar.Click += new System.EventHandler(this.button1_Click);
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // txPreco
             // 

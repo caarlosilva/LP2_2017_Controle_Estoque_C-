@@ -22,5 +22,13 @@ namespace ControlX
             System.Diagnostics.Process.GetCurrentProcess().Close();
             this.Close();
         }
+
+        private void btLogar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new formMenu().ShowDialog();
+            this.Show();
+            txSenha.Text = "";
+        }
     }
 }

@@ -124,9 +124,6 @@
   <data name="&gt;&gt;txCidade.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;txBairro.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="txEstado.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 21</value>
   </data>
@@ -182,9 +179,6 @@
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;lbTel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -205,6 +199,9 @@
   </data>
   <data name="&gt;&gt;lbCidade.ZOrder" xml:space="preserve">
     <value>12</value>
+  </data>
+  <data name="btCadastrar.Text" xml:space="preserve">
+    <value>Cadastrar</value>
   </data>
   <data name="txCNPJ.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1461,14 +1458,14 @@
   <data name="&gt;&gt;txTel1.Name" xml:space="preserve">
     <value>txTel1</value>
   </data>
-  <data name="txBairro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 21</value>
-  </data>
   <data name="lbBairro.Text" xml:space="preserve">
     <value>Bairro:</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="lbCompl.Text" xml:space="preserve">
+    <value>Complemento:</value>
   </data>
   <data name="&gt;&gt;lbEstado.Parent" xml:space="preserve">
     <value>pnCadForn</value>
@@ -1500,8 +1497,8 @@
   <data name="txTel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>121, 74</value>
   </data>
-  <data name="lbCompl.Text" xml:space="preserve">
-    <value>Complemento:</value>
+  <data name="&gt;&gt;txRua.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txNome.Name" xml:space="preserve">
     <value>txNome</value>
@@ -1533,8 +1530,8 @@
   <data name="lbCNPJ.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;btCancelar.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="txBairro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 21</value>
   </data>
   <data name="&gt;&gt;txCidade.Name" xml:space="preserve">
     <value>txCidade</value>
@@ -1614,11 +1611,11 @@
   <data name="&gt;&gt;lbEndereco.Parent" xml:space="preserve">
     <value>pnCadForn</value>
   </data>
-  <data name="&gt;&gt;txRua.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;lbId.Parent" xml:space="preserve">
     <value>pnCadForn</value>
+  </data>
+  <data name="&gt;&gt;txNum.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="&gt;&gt;lbBairro.ZOrder" xml:space="preserve">
     <value>13</value>
@@ -1674,11 +1671,14 @@
   <data name="&gt;&gt;txNum.Parent" xml:space="preserve">
     <value>pnCadForn</value>
   </data>
+  <data name="&gt;&gt;txNome.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
   <data name="&gt;&gt;txRua.Name" xml:space="preserve">
     <value>txRua</value>
   </data>
-  <data name="&gt;&gt;lbTel1.Parent" xml:space="preserve">
-    <value>pnCadForn</value>
+  <data name="&gt;&gt;btCancelar.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="lbId.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 13</value>
@@ -1812,8 +1812,8 @@
   <data name="&gt;&gt;lbNome.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btCadastrar.Text" xml:space="preserve">
-    <value>Cadastrar</value>
+  <data name="&gt;&gt;lbTel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txTel1.Parent" xml:space="preserve">
     <value>pnCadForn</value>
@@ -1860,8 +1860,8 @@
   <data name="lbEstado.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;txNome.ZOrder" xml:space="preserve">
-    <value>22</value>
+  <data name="&gt;&gt;txBairro.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;lbTel2.Parent" xml:space="preserve">
     <value>pnCadForn</value>
@@ -1932,8 +1932,8 @@
   <data name="lbNum.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;txNum.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="&gt;&gt;lbTel1.Parent" xml:space="preserve">
+    <value>pnCadForn</value>
   </data>
   <data name="&gt;&gt;lbCidade.Parent" xml:space="preserve">
     <value>pnCadForn</value>

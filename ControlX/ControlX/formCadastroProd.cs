@@ -18,8 +18,12 @@ namespace ControlX
 
         public formCadastroProd()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            //btComplete é o método que acionará ou não o Botão de salvar, evitando causar
+            //excessões caso mandemos um valor NULL onde não deveria           
             btComplete();
+            //iniComboBox tem como função inicializar o combo box de Fornecedor com *pasmem*
+            //os Fornecedores
             iniComboBox();
         }
 
@@ -28,17 +32,22 @@ namespace ControlX
 
             IDao db2 = new DAO.FornecedorDao();
             List<Object> forn = db2.ListAll();
+            //Pegamos a lista fornecida pelo ListAll, que contém todos os Fornecedores
+            //E colocamos como 'fonte' do combobox essa lista
             cbFornecedor.DataSource = forn;
+            //Precisamos depois colocar 'valores' para cada 'item' desse combo box, pois precisaremos
+            //Saber qual fornecedor o devido produto terá
             foreach (Object p in forn)
             {
+                //DisplayMember será a Property do que será mostrado no ComboBox, colocamos a Property
+                //'FornecedorFullName', que retorna as propertys 'Id' e 'Nome' concatenados
                 cbFornecedor.DisplayMember = "FornecedorFullName";
+                //E para cada item mostrado, o seu 'valor' será o Id desse fornecedor
                 cbFornecedor.ValueMember = "Id";
+                //Ex.: Mostraremos o Fornecedor 'Jorge Cutigi' que possui Id 13
+                //O Combo Box então mostrará '13 - Jorge Cutigi', e caso for selecionado
+                //O seu Id '13' será o valor que o combo box terá em seu ValueMember
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
         }
         
         private void btComplete()
@@ -91,6 +100,11 @@ namespace ControlX
         private void cbFornecedor_Format(object sender, ListControlConvertEventArgs e)
         {
 
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
