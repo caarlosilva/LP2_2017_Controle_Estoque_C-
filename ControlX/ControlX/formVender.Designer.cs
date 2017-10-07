@@ -131,7 +131,7 @@
             // txQntdVenda
             // 
             this.txQntdVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txQntdVenda.Location = new System.Drawing.Point(345, 54);
+            this.txQntdVenda.Location = new System.Drawing.Point(345, 53);
             this.txQntdVenda.Name = "txQntdVenda";
             this.txQntdVenda.Size = new System.Drawing.Size(53, 21);
             this.txQntdVenda.TabIndex = 32;
