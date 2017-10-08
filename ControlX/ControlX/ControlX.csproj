@@ -67,6 +67,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CV\formComprar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\formComprar.Designer.cs">
+      <DependentUpon>formComprar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\formComprarProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\formComprarProd.Designer.cs">
+      <DependentUpon>formComprarProd.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\FornecedorDao.cs" />
     <Compile Include="DAO\ProdutoDao.cs" />
     <Compile Include="DAO\UsuarioDao.cs" />
@@ -76,48 +88,48 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Controle e Visao\formCadastroForn.cs">
+    <Compile Include="CV\formCadastroForn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controle e Visao\formCadastroForn.Designer.cs">
+    <Compile Include="CV\formCadastroForn.Designer.cs">
       <DependentUpon>formCadastroForn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controle e Visao\formEstoque.cs">
+    <Compile Include="CV\formEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controle e Visao\formEstoque.Designer.cs">
+    <Compile Include="CV\formEstoque.Designer.cs">
       <DependentUpon>formEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controle e Visao\formCadastroProd.cs">
+    <Compile Include="CV\formCadastroProd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controle e Visao\formCadastroProd.Designer.cs">
+    <Compile Include="CV\formCadastroProd.Designer.cs">
       <DependentUpon>formCadastroProd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controle e Visao\formFornecedores.cs">
+    <Compile Include="CV\formFornecedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controle e Visao\formFornecedores.Designer.cs">
+    <Compile Include="CV\formFornecedores.Designer.cs">
       <DependentUpon>formFornecedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controle e Visao\FormVender.cs">
+    <Compile Include="CV\FormVender.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controle e Visao\formVender.designer.cs">
+    <Compile Include="CV\formVender.designer.cs">
       <DependentUpon>FormVender.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Fornecedor.cs" />
     <Compile Include="DAO\IDao.cs" />
-    <Compile Include="Controle e Visao\formLogin.cs">
+    <Compile Include="CV\formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controle e Visao\formLogin.Designer.cs">
+    <Compile Include="CV\formLogin.Designer.cs">
       <DependentUpon>formLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controle e Visao\formMenu.cs">
+    <Compile Include="CV\formMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controle e Visao\formMenu.Designer.cs">
+    <Compile Include="CV\formMenu.Designer.cs">
       <DependentUpon>formMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Produto.cs" />
@@ -128,28 +140,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controle e Visao\formCadastroForn.pt-BR.resx">
+    <EmbeddedResource Include="CV\formCadastroForn.pt-BR.resx">
       <DependentUpon>formCadastroForn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controle e Visao\formCadastroForn.resx">
+    <EmbeddedResource Include="CV\formCadastroForn.resx">
       <DependentUpon>formCadastroForn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controle e Visao\formEstoque.resx">
+    <EmbeddedResource Include="CV\formComprar.resx">
+      <DependentUpon>formComprar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\formComprarProd.resx">
+      <DependentUpon>formComprarProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\formEstoque.resx">
       <DependentUpon>formEstoque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controle e Visao\formCadastroProd.resx">
+    <EmbeddedResource Include="CV\formCadastroProd.resx">
       <DependentUpon>formCadastroProd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controle e Visao\formFornecedores.resx">
+    <EmbeddedResource Include="CV\formFornecedores.resx">
       <DependentUpon>formFornecedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controle e Visao\formLogin.resx">
+    <EmbeddedResource Include="CV\formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controle e Visao\formMenu.resx">
+    <EmbeddedResource Include="CV\formMenu.resx">
       <DependentUpon>formMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controle e Visao\FormVender.resx">
+    <EmbeddedResource Include="CV\FormVender.resx">
       <DependentUpon>FormVender.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

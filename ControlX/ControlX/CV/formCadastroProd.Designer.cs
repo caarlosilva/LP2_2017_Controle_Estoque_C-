@@ -210,7 +210,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "formCadastroProd";
-            this.ShowIcon = false;
             this.Text = "Cadastrar Produto";
             this.pnCadastro.ResumeLayout(false);
             this.pnCadastro.PerformLayout();

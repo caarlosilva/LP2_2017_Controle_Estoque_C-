@@ -100,8 +100,6 @@ namespace ControlX
             {
                  
             }
-
-
         }
 
         private void btEdit_Click(object sender, EventArgs e)
@@ -180,5 +178,6 @@ namespace ControlX
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && rbId.Checked)
                 e.Handled = true;
         }
+
     }
 }

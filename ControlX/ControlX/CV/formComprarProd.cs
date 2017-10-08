@@ -10,17 +10,14 @@ using System.Windows.Forms;
 
 namespace ControlX
 {
-    public partial class formCadastroProd : Form
+    public partial class formEditComprar : Form
     {
         private IDao db1 = new DAO.ProdutoDao();
         private Produto nProduto = new Produto();
 
-
-        public formCadastroProd()
+        public formEditComprar()
         {
             InitializeComponent();
-            //btComplete é o método que acionará ou não o Botão de salvar, evitando causar
-            //excessões caso mandemos um valor NULL onde não deveria           
             btComplete();
             //iniComboBox tem como função inicializar o combo box de Fornecedor com *pasmem*
             //os Fornecedores
@@ -49,62 +46,46 @@ namespace ControlX
                 //O seu Id '13' será o valor que o combo box terá em seu ValueMember
             }
         }
-        
+
         private void btComplete()
         {
-            if (txNome.Text.Trim() == "" || txPreco.Text.Trim() == "" || txQntd.Text.Trim() == "" || cbFornecedor.Text.Trim() == "")
-                btCadastrar.Enabled = false;
+            if (txQntdCompra.Text.Trim() == "")
+                btComprar.Enabled = false;
             else
-                btCadastrar.Enabled = true;
+                btComprar.Enabled = true;
         }
 
-        private void btCadastrar_Click(object sender, EventArgs e)
+        private void btComprar_Click(object sender, EventArgs e)
         {
+            int q1 = int.Parse(txQntd.Text);
+            int q2 = int.Parse(txQntdCompra.Text);
             nProduto.Nome = txNome.Text;
-            nProduto.Preco = double.Parse(txPreco.Text);                
-            nProduto.Qntd = int.Parse(txQntd.Text);
+            nProduto.Preco = double.Parse(txPreco.Text);
+            nProduto.Qntd = q1 + q2;
             nProduto.Fornecedor.Id = int.Parse(cbFornecedor.SelectedValue.ToString());
 
             btComplete();
 
-            if (btCadastrar.Text != "Salvar")
-            {
-               db1.Adicionar(nProduto);                    
-            }
+            nProduto.Id = int.Parse(lbIdProduto.Text);
+            db1.Atualizar(nProduto);
 
-            else if (btCadastrar.Text == "Salvar")
-            {
-                nProduto.Id = int.Parse(lbIdProduto.Text);
-                db1.Atualizar(nProduto);
-            }
-
-            this.Dispose();           
-        }
-
-        private void txNome_TextChanged(object sender, EventArgs e)
-        {
-
-            btComplete();
-        }
-
-        private void txPreco_KeyPress(object sender, KeyPressEventArgs e)
-        {            
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
-                e.Handled = true;
-
-            if (e.KeyChar == ',')   //Se o usuario inserir uma virgula
-                if (txPreco.Text.Contains(",") || txPreco.Text.Equals(""))//Checa se o usuario ja inseriu uma virgula previamente
-                    e.Handled = true; // Caso ja exista uma virgula, outra não será aceita            
-        }
-
-        private void cbFornecedor_Format(object sender, ListControlConvertEventArgs e)
-        {
-
+            this.Dispose();
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void txQntdCompra_TextChanged(object sender, EventArgs e)
+        {
+            btComplete();
+        }
+
+        private void txQntdCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

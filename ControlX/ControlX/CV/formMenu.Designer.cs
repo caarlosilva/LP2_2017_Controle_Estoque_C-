@@ -116,6 +116,7 @@
             this.btComprar.TabIndex = 3;
             this.btComprar.Text = "Comprar";
             this.btComprar.UseVisualStyleBackColor = true;
+            this.btComprar.Click += new System.EventHandler(this.btComprar_Click);
             // 
             // lbMensagem
             // 
@@ -123,7 +124,7 @@
             this.lbMensagem.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensagem.Location = new System.Drawing.Point(3, 9);
             this.lbMensagem.Name = "lbMensagem";
-            this.lbMensagem.Size = new System.Drawing.Size(232, 14);
+            this.lbMensagem.Size = new System.Drawing.Size(230, 14);
             this.lbMensagem.TabIndex = 5;
             this.lbMensagem.Text = "Você está conectado como \'Admin\' !";
             // 
