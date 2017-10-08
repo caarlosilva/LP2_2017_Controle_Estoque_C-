@@ -114,14 +114,24 @@ namespace ControlX.DAO
             return fs;
         }
 
-        public void Remover(int idFornecedor)
+        public int Remover(int idFornecedor)
         {
             //PROCURA PRODUTOS COM ID DO FORNECEDOR
-            //string qry = string.Format("SELECT idFornecedor FROM produtos WHERE idFornecedor = {0}", f.Id);
-            //DataSet ds = db.ExecuteQuery(qry);
+            string qry = string.Format("SELECT idFornecedor FROM produtos WHERE idFornecedor = {0}", idFornecedor);
+            DataSet ds = db.ExecuteQuery(qry);
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                return 1;
+            }
 
-            string qry = string.Format("DELETE FROM fornecedor WHERE id = {0}", idFornecedor);
-            db.ExecuteNonQuery(qry);
+            if (idFornecedor != -1)
+            {
+                string qry1 = string.Format("DELETE FROM fornecedor WHERE id = {0}", idFornecedor);
+                db.ExecuteNonQuery(qry1);
+            }
+
+            return 0;
+
         }
 
         //BUSCA NA TABELA FORNECEDOR PELO ULTIMO VALOR DO AUTO INCREMENTO

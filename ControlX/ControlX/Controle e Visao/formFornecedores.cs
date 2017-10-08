@@ -29,7 +29,6 @@ namespace ControlX
             foreach (Fornecedor p in ps)
             {
                 dgvFornecedor.Rows.Add(p.Id, p.Nome, p.Cnpj, p.Cidade + " - " + p.Estado);
-
             }
 
             buttonEnable();
@@ -89,14 +88,26 @@ namespace ControlX
             Fornecedor a = new Fornecedor();
             a.Id =  int.Parse(dgvFornecedor.Rows[dgvFornecedor.CurrentRow.Index].Cells[0].Value.ToString());
             //Caixa de aviso caso deseja ou não apagar
-            DialogResult result = MessageBox.Show("Esta ação também irá remover todos os produtos deste fornecedor. Tem certeza que deseja remove-lo?",
+            DialogResult result = MessageBox.Show("Tem certeza que deseja remover este fornecedor?",
                 "Aviso!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             //Caso clique em sim
             if (result == DialogResult.Yes)
             {
-                data.Remover(a.Id);
+                int aux = data.Remover(a.Id);
                 Fill();
+                if (aux == 1)
+                    {
+                        MessageBox.Show("Existem produtos registrados com este fornecedor. Remova-os primeiro.",
+                        "Aviso!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fornecedor removido com sucesso.",
+                        "Aviso!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 buttonEnable();
             }
             else if (result == DialogResult.No)

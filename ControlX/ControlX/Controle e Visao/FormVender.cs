@@ -22,11 +22,12 @@ namespace ControlX
         {
             txNome.AutoCompleteMode = AutoCompleteMode.Suggest;
             txNome.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
             AutoCompleteStringCollection col = new AutoCompleteStringCollection();
+
             IDao db = new DAO.ProdutoDao();
             List<Object> ps = db.ListAll();
             
+            //Adiciona sugestão de nomes ao digitar no TextBox
             foreach (Produto p in ps)
             {
                 col.Add(p.Nome);

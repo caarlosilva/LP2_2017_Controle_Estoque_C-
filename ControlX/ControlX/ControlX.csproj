@@ -70,52 +70,57 @@
     <Compile Include="DAO\FornecedorDao.cs" />
     <Compile Include="DAO\ProdutoDao.cs" />
     <Compile Include="DAO\UsuarioDao.cs" />
-    <Compile Include="Database.cs" />
-    <Compile Include="formCadastroForn.cs">
+    <Compile Include="DAO\Database.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controle e Visao\formCadastroForn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formCadastroForn.Designer.cs">
+    <Compile Include="Controle e Visao\formCadastroForn.Designer.cs">
       <DependentUpon>formCadastroForn.cs</DependentUpon>
     </Compile>
-    <Compile Include="formEstoque.cs">
+    <Compile Include="Controle e Visao\formEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formEstoque.Designer.cs">
+    <Compile Include="Controle e Visao\formEstoque.Designer.cs">
       <DependentUpon>formEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="formCadastroProd.cs">
+    <Compile Include="Controle e Visao\formCadastroProd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formCadastroProd.Designer.cs">
+    <Compile Include="Controle e Visao\formCadastroProd.Designer.cs">
       <DependentUpon>formCadastroProd.cs</DependentUpon>
     </Compile>
-    <Compile Include="formFornecedores.cs">
+    <Compile Include="Controle e Visao\formFornecedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formFornecedores.Designer.cs">
+    <Compile Include="Controle e Visao\formFornecedores.Designer.cs">
       <DependentUpon>formFornecedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormVender.cs">
+    <Compile Include="Controle e Visao\FormVender.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormVender.designer.cs">
+    <Compile Include="Controle e Visao\formVender.designer.cs">
       <DependentUpon>FormVender.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fornecedor.cs" />
-    <Compile Include="IDao.cs" />
-    <Compile Include="formLogin.cs">
+    <Compile Include="Modelo\Fornecedor.cs" />
+    <Compile Include="DAO\IDao.cs" />
+    <Compile Include="Controle e Visao\formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formLogin.Designer.cs">
+    <Compile Include="Controle e Visao\formLogin.Designer.cs">
       <DependentUpon>formLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="formMenu.cs">
+    <Compile Include="Controle e Visao\formMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formMenu.Designer.cs">
+    <Compile Include="Controle e Visao\formMenu.Designer.cs">
       <DependentUpon>formMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produto.cs" />
+    <Compile Include="Modelo\Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\WsCorreios\Reference.cs">
@@ -123,40 +128,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="formCadastroForn.pt-BR.resx">
+    <EmbeddedResource Include="Controle e Visao\formCadastroForn.pt-BR.resx">
       <DependentUpon>formCadastroForn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formCadastroForn.resx">
+    <EmbeddedResource Include="Controle e Visao\formCadastroForn.resx">
       <DependentUpon>formCadastroForn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formEstoque.resx">
+    <EmbeddedResource Include="Controle e Visao\formEstoque.resx">
       <DependentUpon>formEstoque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formCadastroProd.resx">
+    <EmbeddedResource Include="Controle e Visao\formCadastroProd.resx">
       <DependentUpon>formCadastroProd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formFornecedores.resx">
+    <EmbeddedResource Include="Controle e Visao\formFornecedores.resx">
       <DependentUpon>formFornecedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formLogin.resx">
+    <EmbeddedResource Include="Controle e Visao\formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formMenu.resx">
+    <EmbeddedResource Include="Controle e Visao\formMenu.resx">
       <DependentUpon>formMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormVender.resx">
+    <EmbeddedResource Include="Controle e Visao\FormVender.resx">
       <DependentUpon>FormVender.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -332,19 +332,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="lupa.png" />
+    <None Include="Imagens\lupa.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="lupa32x32.png" />
+    <None Include="Imagens\lupa32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="search.png" />
+    <None Include="Imagens\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="user.png" />
+    <None Include="Imagens\user.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pwd.png" />
+    <None Include="Imagens\pwd.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

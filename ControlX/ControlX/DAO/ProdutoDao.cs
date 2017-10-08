@@ -124,11 +124,12 @@ namespace ControlX.DAO
             return ps;
         }
 
-        public void Remover(int idProduto)
+        public int Remover(int idProduto)
         {
             string qry = string.Format("DELETE FROM produtos where id = {0}", idProduto);
+            db.ExecuteNonQuery(qry);
+            return 1;
 
-            db.ExecuteNonQuery(qry);
         }
 
         //BUSCA NA TABELA PRODUTOS PELO ULTIMO VALOR DO AUTO INCREMENTO

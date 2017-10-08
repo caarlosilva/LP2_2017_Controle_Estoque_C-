@@ -91,6 +91,9 @@ namespace ControlX
             {
                 data.Remover(a);
                 Fill();
+                MessageBox.Show("Item removido com sucesso.",
+                "Aviso!",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 buttonEnable();
             }
             else if (result == DialogResult.No)
