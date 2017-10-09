@@ -254,6 +254,7 @@
             // btMenu
             // 
             this.btMenu.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btMenu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btMenu.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btMenu.Location = new System.Drawing.Point(6, 3);
             this.btMenu.Name = "btMenu";
@@ -277,6 +278,7 @@
             this.AcceptButton = this.btAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btMenu;
             this.ClientSize = new System.Drawing.Size(690, 429);
             this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.pnButtons);

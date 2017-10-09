@@ -41,11 +41,11 @@
             this.btAdd = new System.Windows.Forms.Button();
             this.gbFornecedores = new System.Windows.Forms.GroupBox();
             this.dgvFornecedor = new System.Windows.Forms.DataGridView();
-            this.pnMenu = new System.Windows.Forms.Panel();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCidadeEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnMenu = new System.Windows.Forms.Panel();
             this.pnFiltro.SuspendLayout();
             this.pnBtns.SuspendLayout();
             this.gbFornecedores.SuspendLayout();
@@ -56,6 +56,7 @@
             // btMenu
             // 
             this.btMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btMenu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btMenu.Location = new System.Drawing.Point(5, 3);
             this.btMenu.Name = "btMenu";
             this.btMenu.Size = new System.Drawing.Size(70, 23);
@@ -184,15 +185,6 @@
             this.dgvFornecedor.Size = new System.Drawing.Size(654, 309);
             this.dgvFornecedor.TabIndex = 0;
             // 
-            // pnMenu
-            // 
-            this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnMenu.Controls.Add(this.btMenu);
-            this.pnMenu.Location = new System.Drawing.Point(12, 388);
-            this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(98, 29);
-            this.pnMenu.TabIndex = 5;
-            // 
             // colID
             // 
             this.colID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -228,11 +220,21 @@
             this.colCidadeEstado.Name = "colCidadeEstado";
             this.colCidadeEstado.ReadOnly = true;
             // 
+            // pnMenu
+            // 
+            this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnMenu.Controls.Add(this.btMenu);
+            this.pnMenu.Location = new System.Drawing.Point(12, 388);
+            this.pnMenu.Name = "pnMenu";
+            this.pnMenu.Size = new System.Drawing.Size(98, 29);
+            this.pnMenu.TabIndex = 5;
+            // 
             // formFornecedores
             // 
             this.AcceptButton = this.btAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btMenu;
             this.ClientSize = new System.Drawing.Size(690, 429);
             this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.gbFornecedores);
