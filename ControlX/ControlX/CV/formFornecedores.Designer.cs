@@ -182,6 +182,8 @@
             this.dgvFornecedor.Location = new System.Drawing.Point(6, 19);
             this.dgvFornecedor.Name = "dgvFornecedor";
             this.dgvFornecedor.ReadOnly = true;
+            this.dgvFornecedor.RowHeadersVisible = false;
+            this.dgvFornecedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFornecedor.Size = new System.Drawing.Size(654, 309);
             this.dgvFornecedor.TabIndex = 0;
             // 
@@ -244,7 +246,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formFornecedores";
-            this.Text = "Fornecedores";
+            this.Text = "ControlX - Fornecedores";
             this.pnFiltro.ResumeLayout(false);
             this.pnFiltro.PerformLayout();
             this.pnBtns.ResumeLayout(false);

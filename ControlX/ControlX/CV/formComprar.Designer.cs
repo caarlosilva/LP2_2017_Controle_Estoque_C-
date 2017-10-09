@@ -125,6 +125,8 @@
             this.dgvEstoque.Location = new System.Drawing.Point(6, 19);
             this.dgvEstoque.Name = "dgvEstoque";
             this.dgvEstoque.ReadOnly = true;
+            this.dgvEstoque.RowHeadersVisible = false;
+            this.dgvEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEstoque.Size = new System.Drawing.Size(654, 309);
             this.dgvEstoque.TabIndex = 3;
             // 
@@ -241,7 +243,7 @@
             this.Controls.Add(this.pnPesquisa);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formComprarProd";
-            this.Text = "Comprar Produto";
+            this.Text = "ControlX - Compras";
             this.pnMenu.ResumeLayout(false);
             this.pnButtons.ResumeLayout(false);
             this.gbEstoque.ResumeLayout(false);

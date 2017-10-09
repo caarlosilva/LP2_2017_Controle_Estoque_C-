@@ -228,3 +228,6 @@ C:\Users\Fabricio\Source\Repos\LP2 - Projeto\ControlX\ControlX\obj\Debug\Control
 C:\Users\Fabricio\Source\Repos\LP2 - Projeto\ControlX\ControlX\obj\Debug\ControlX.formComprarProd.resources
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-3\ControlX\ControlX\obj\Debug\ControlX.formComprarProd.resources
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-3\ControlX\ControlX\obj\Debug\ControlX.formEditComprar.resources
+C:\Users\IFSP\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formComprarProd.resources
+C:\Users\IFSP\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formEditComprar.resources
+C:\Users\IFSP\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.FormVender.resources

@@ -136,6 +136,8 @@
             this.dgvEstoque.Location = new System.Drawing.Point(6, 19);
             this.dgvEstoque.Name = "dgvEstoque";
             this.dgvEstoque.ReadOnly = true;
+            this.dgvEstoque.RowHeadersVisible = false;
+            this.dgvEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEstoque.Size = new System.Drawing.Size(654, 309);
             this.dgvEstoque.TabIndex = 3;
             // 

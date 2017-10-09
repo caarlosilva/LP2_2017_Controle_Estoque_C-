@@ -33,6 +33,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVender));
             this.pnForm = new System.Windows.Forms.Panel();
             this.pnTroco = new System.Windows.Forms.Panel();
+            this.txValorPago = new System.Windows.Forms.TextBox();
             this.lbTrocoShow = new System.Windows.Forms.Label();
             this.lbTroco = new System.Windows.Forms.Label();
             this.lbValorPago = new System.Windows.Forms.Label();
@@ -68,7 +69,8 @@
             this.pnBtVender = new System.Windows.Forms.Panel();
             this.btVender = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.txValorPago = new System.Windows.Forms.TextBox();
+            this.lbReais2 = new System.Windows.Forms.Label();
+            this.lbReais3 = new System.Windows.Forms.Label();
             this.pnForm.SuspendLayout();
             this.pnTroco.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -104,40 +106,53 @@
             // pnTroco
             // 
             this.pnTroco.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnTroco.Controls.Add(this.lbReais3);
+            this.pnTroco.Controls.Add(this.lbReais2);
             this.pnTroco.Controls.Add(this.txValorPago);
             this.pnTroco.Controls.Add(this.lbTrocoShow);
             this.pnTroco.Controls.Add(this.lbTroco);
             this.pnTroco.Controls.Add(this.lbValorPago);
-            this.pnTroco.Location = new System.Drawing.Point(228, 336);
+            this.pnTroco.Location = new System.Drawing.Point(200, 336);
             this.pnTroco.Name = "pnTroco";
-            this.pnTroco.Size = new System.Drawing.Size(264, 27);
+            this.pnTroco.Size = new System.Drawing.Size(292, 27);
             this.pnTroco.TabIndex = 19;
+            // 
+            // txValorPago
+            // 
+            this.txValorPago.Location = new System.Drawing.Point(100, 3);
+            this.txValorPago.Name = "txValorPago";
+            this.txValorPago.Size = new System.Drawing.Size(52, 21);
+            this.txValorPago.TabIndex = 21;
+            this.txValorPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txValorPago.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txTroco_KeyUp);
             // 
             // lbTrocoShow
             // 
             this.lbTrocoShow.BackColor = System.Drawing.SystemColors.ControlDark;
             this.lbTrocoShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbTrocoShow.Location = new System.Drawing.Point(196, 3);
+            this.lbTrocoShow.Location = new System.Drawing.Point(228, 3);
             this.lbTrocoShow.Name = "lbTrocoShow";
-            this.lbTrocoShow.Size = new System.Drawing.Size(60, 21);
+            this.lbTrocoShow.Size = new System.Drawing.Size(53, 21);
             this.lbTrocoShow.TabIndex = 20;
             this.lbTrocoShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbTroco
             // 
             this.lbTroco.AutoSize = true;
-            this.lbTroco.Location = new System.Drawing.Point(146, 7);
+            this.lbTroco.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTroco.Location = new System.Drawing.Point(157, 6);
             this.lbTroco.Name = "lbTroco";
-            this.lbTroco.Size = new System.Drawing.Size(44, 13);
+            this.lbTroco.Size = new System.Drawing.Size(48, 13);
             this.lbTroco.TabIndex = 19;
             this.lbTroco.Text = "Troco:";
             // 
             // lbValorPago
             // 
             this.lbValorPago.AutoSize = true;
+            this.lbValorPago.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbValorPago.Location = new System.Drawing.Point(3, 6);
             this.lbValorPago.Name = "lbValorPago";
-            this.lbValorPago.Size = new System.Drawing.Size(74, 13);
+            this.lbValorPago.Size = new System.Drawing.Size(81, 13);
             this.lbValorPago.TabIndex = 17;
             this.lbValorPago.Text = "Valor Pago:";
             // 
@@ -356,7 +371,7 @@
             this.pnTotal.Controls.Add(this.lbTotal);
             this.pnTotal.Location = new System.Drawing.Point(16, 336);
             this.pnTotal.Name = "pnTotal";
-            this.pnTotal.Size = new System.Drawing.Size(166, 26);
+            this.pnTotal.Size = new System.Drawing.Size(160, 27);
             this.pnTotal.TabIndex = 15;
             // 
             // lbReais
@@ -371,19 +386,19 @@
             // lbValorTotal
             // 
             this.lbValorTotal.BackColor = System.Drawing.SystemColors.Control;
-            this.lbValorTotal.Location = new System.Drawing.Point(71, 2);
+            this.lbValorTotal.Location = new System.Drawing.Point(67, 2);
             this.lbValorTotal.Name = "lbValorTotal";
-            this.lbValorTotal.Size = new System.Drawing.Size(94, 21);
+            this.lbValorTotal.Size = new System.Drawing.Size(86, 21);
             this.lbValorTotal.TabIndex = 15;
             this.lbValorTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbTotal
             // 
             this.lbTotal.AutoSize = true;
-            this.lbTotal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotal.Location = new System.Drawing.Point(3, 5);
             this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(40, 13);
+            this.lbTotal.Size = new System.Drawing.Size(44, 13);
             this.lbTotal.TabIndex = 14;
             this.lbTotal.Text = "Total:";
             // 
@@ -419,6 +434,8 @@
             this.dgvVendas.Location = new System.Drawing.Point(5, 19);
             this.dgvVendas.Name = "dgvVendas";
             this.dgvVendas.ReadOnly = true;
+            this.dgvVendas.RowHeadersVisible = false;
+            this.dgvVendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVendas.Size = new System.Drawing.Size(469, 170);
             this.dgvVendas.TabIndex = 0;
             // 
@@ -511,13 +528,24 @@
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
-            // txValorPago
+            // lbReais2
             // 
-            this.txValorPago.Location = new System.Drawing.Point(72, 3);
-            this.txValorPago.Name = "txValorPago";
-            this.txValorPago.Size = new System.Drawing.Size(73, 21);
-            this.txValorPago.TabIndex = 21;
-            this.txValorPago.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txTroco_KeyUp);
+            this.lbReais2.AutoSize = true;
+            this.lbReais2.Location = new System.Drawing.Point(79, 6);
+            this.lbReais2.Name = "lbReais2";
+            this.lbReais2.Size = new System.Drawing.Size(22, 13);
+            this.lbReais2.TabIndex = 20;
+            this.lbReais2.Text = "R$";
+            // 
+            // lbReais3
+            // 
+            this.lbReais3.AutoSize = true;
+            this.lbReais3.Location = new System.Drawing.Point(204, 6);
+            this.lbReais3.Name = "lbReais3";
+            this.lbReais3.Size = new System.Drawing.Size(22, 13);
+            this.lbReais3.TabIndex = 20;
+            this.lbReais3.Text = "R$";
+            this.lbReais3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormVender
             // 
@@ -587,5 +615,7 @@
         private System.Windows.Forms.Label lbTroco;
         private System.Windows.Forms.Label lbValorPago;
         private System.Windows.Forms.TextBox txValorPago;
+        private System.Windows.Forms.Label lbReais3;
+        private System.Windows.Forms.Label lbReais2;
     }
 }
