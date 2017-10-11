@@ -54,6 +54,20 @@ namespace ControlX
                 dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
             }
 
+            int countProd = dgvEstoque.RowCount;
+            for (int i = 0; i < countProd; i++)
+            {
+                int Qntd = int.Parse(dgvEstoque.Rows[i].Cells[3].Value.ToString());
+                foreach (Produto p in ps)
+                {
+                    if (Qntd <= 20)
+                    {
+                        dgvEstoque.Rows[i].DefaultCellStyle.ForeColor = Color.Red;
+                        dgvEstoque.Rows[i].DefaultCellStyle.Font = new Font(this.Font, FontStyle.Bold);
+                    }
+                }
+            }
+
             buttonEnable();
         }
 
