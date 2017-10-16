@@ -75,6 +75,7 @@
             this.pnFiltro.Name = "pnFiltro";
             this.pnFiltro.Size = new System.Drawing.Size(666, 30);
             this.pnFiltro.TabIndex = 1;
+            this.pnFiltro.Paint += new System.Windows.Forms.PaintEventHandler(this.pnFiltro_Paint);
             // 
             // txPesquisar
             // 
@@ -108,6 +109,7 @@
             this.pnBtns.Name = "pnBtns";
             this.pnBtns.Size = new System.Drawing.Size(340, 29);
             this.pnBtns.TabIndex = 3;
+            this.pnBtns.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBtns_Paint);
             // 
             // btDel
             // 
@@ -165,6 +167,7 @@
             this.gbFornecedores.TabIndex = 4;
             this.gbFornecedores.TabStop = false;
             this.gbFornecedores.Text = "Fornecedores";
+            this.gbFornecedores.Enter += new System.EventHandler(this.gbFornecedores_Enter);
             // 
             // dgvFornecedor
             // 
@@ -186,6 +189,7 @@
             this.dgvFornecedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFornecedor.Size = new System.Drawing.Size(654, 309);
             this.dgvFornecedor.TabIndex = 0;
+            this.dgvFornecedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellContentClick);
             // 
             // colID
             // 
@@ -230,6 +234,7 @@
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Size = new System.Drawing.Size(98, 29);
             this.pnMenu.TabIndex = 5;
+            this.pnMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMenu_Paint);
             // 
             // formFornecedores
             // 

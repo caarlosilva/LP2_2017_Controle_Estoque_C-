@@ -48,11 +48,6 @@ namespace ControlX
 
         }
 
-        private void ronaldoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btVender_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -64,6 +59,13 @@ namespace ControlX
         {
             this.Hide();
             new formComprarProd().ShowDialog();
+            this.Show();
+        }
+
+        private void btUsuario_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new formUsuario().ShowDialog();
             this.Show();
         }
     }

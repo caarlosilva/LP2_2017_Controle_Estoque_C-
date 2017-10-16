@@ -41,11 +41,12 @@
             this.lblData = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.msMenu = new System.Windows.Forms.MenuStrip();
-            this.ronaldoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.HistoricoTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.compraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btUsuario = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -99,13 +100,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btUsuario);
             this.panel1.Controls.Add(this.btComprar);
             this.panel1.Controls.Add(this.btVender);
             this.panel1.Controls.Add(this.btEstoque);
             this.panel1.Controls.Add(this.btFornecedor);
-            this.panel1.Location = new System.Drawing.Point(266, 137);
+            this.panel1.Location = new System.Drawing.Point(266, 108);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(257, 63);
+            this.panel1.Size = new System.Drawing.Size(257, 92);
             this.panel1.TabIndex = 4;
             // 
             // btComprar
@@ -157,7 +159,7 @@
             // msMenu
             // 
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ronaldoToolStripMenuItem,
+            this.HistoricoTSMI,
             this.helpToolStripMenuItem,
             this.sobreToolStripMenuItem});
             this.msMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
@@ -167,17 +169,16 @@
             this.msMenu.TabIndex = 8;
             this.msMenu.Text = "menuStrip1";
             // 
-            // ronaldoToolStripMenuItem
+            // HistoricoTSMI
             // 
-            this.ronaldoToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.ronaldoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.HistoricoTSMI.BackColor = System.Drawing.SystemColors.Control;
+            this.HistoricoTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.compraToolStripMenuItem,
             this.vendaToolStripMenuItem});
-            this.ronaldoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ronaldoToolStripMenuItem.Name = "ronaldoToolStripMenuItem";
-            this.ronaldoToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.ronaldoToolStripMenuItem.Text = "Relatórios";
-            this.ronaldoToolStripMenuItem.Click += new System.EventHandler(this.ronaldoToolStripMenuItem_Click);
+            this.HistoricoTSMI.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.HistoricoTSMI.Name = "HistoricoTSMI";
+            this.HistoricoTSMI.Size = new System.Drawing.Size(67, 20);
+            this.HistoricoTSMI.Text = "Histórico";
             // 
             // compraToolStripMenuItem
             // 
@@ -202,6 +203,16 @@
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
             this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.sobreToolStripMenuItem.Text = "Sobre";
+            // 
+            // btUsuario
+            // 
+            this.btUsuario.Location = new System.Drawing.Point(72, 64);
+            this.btUsuario.Name = "btUsuario";
+            this.btUsuario.Size = new System.Drawing.Size(120, 25);
+            this.btUsuario.TabIndex = 4;
+            this.btUsuario.Text = "Usuários";
+            this.btUsuario.UseVisualStyleBackColor = true;
+            this.btUsuario.Click += new System.EventHandler(this.btUsuario_Click);
             // 
             // picLogo
             // 
@@ -258,10 +269,11 @@
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Button btComprar;
         private System.Windows.Forms.MenuStrip msMenu;
-        private System.Windows.Forms.ToolStripMenuItem ronaldoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem HistoricoTSMI;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
+        private System.Windows.Forms.Button btUsuario;
     }
 }

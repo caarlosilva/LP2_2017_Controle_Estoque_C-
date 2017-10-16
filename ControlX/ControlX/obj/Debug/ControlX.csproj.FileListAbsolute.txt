@@ -252,3 +252,5 @@ C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.Prop
 C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.formCadastroForn.pt-BR.resources
 C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.csproj.GenerateResource.Cache
 C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\pt-BR\ControlX.resources.dll
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-3\ControlX\ControlX\obj\Debug\ControlX.formCadastroUser.resources
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-3\ControlX\ControlX\obj\Debug\ControlX.formUsuario.resources

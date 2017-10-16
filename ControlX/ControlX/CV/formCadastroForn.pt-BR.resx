@@ -120,6 +120,10 @@
   <data name="txCNPJ.Mask" xml:space="preserve">
     <value>00,000,000/0000-00</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txCNPJ.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 21</value>
+  </data>
   <data name="txTel2.Mask" xml:space="preserve">
     <value>(00) 00000-0009</value>
   </data>
@@ -129,9 +133,11 @@
   <data name="txCEP.Mask" xml:space="preserve">
     <value>00000-000</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txRua.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 172</value>
+  </data>
   <data name="txRua.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 21</value>
+    <value>301, 21</value>
   </data>
   <data name="lbEndereco.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>

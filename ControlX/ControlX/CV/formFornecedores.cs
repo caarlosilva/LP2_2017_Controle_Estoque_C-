@@ -202,5 +202,30 @@ namespace ControlX
                 dgvFornecedor.Rows.Add(p.Id, p.Nome, p.Cnpj, p.Cidade + "-" + p.Estado);
             }
         }
+
+        private void dgvFornecedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void gbFornecedores_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnFiltro_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnBtns_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

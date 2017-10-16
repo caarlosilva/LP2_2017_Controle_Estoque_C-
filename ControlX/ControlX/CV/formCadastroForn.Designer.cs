@@ -69,6 +69,7 @@
             // pnCadForn
             // 
             resources.ApplyResources(this.pnCadForn, "pnCadForn");
+            this.pnCadForn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnCadForn.Controls.Add(this.txCNPJ);
             this.pnCadForn.Controls.Add(this.txTel2);
             this.pnCadForn.Controls.Add(this.txTel1);
