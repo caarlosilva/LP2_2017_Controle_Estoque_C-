@@ -219,7 +219,7 @@ namespace ControlX
             }
         }
 
-        public Usuario(int id, string nome, long cpf, long telefone1, long telefone2, long cep, long num, string rua, string comp, string bairro, string cidade, string estado, string usuario, string senha)
+        public Usuario(int id, string nome, DateTime datanasc, long cpf, long telefone1, long telefone2, long cep, long num, string rua, string comp, string bairro, string cidade, string estado, string usuario, string senha)
         {
             this.Id = id;
             this.Nome = nome;
