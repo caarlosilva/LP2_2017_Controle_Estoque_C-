@@ -11,7 +11,8 @@ namespace ControlX
         private int id;
         private string nome;
         private long cpf;
-        private DateTime datanasc;
+        private char sexo;
+        private DateTime dataNasc;
         private long telefone1;
         private long telefone2;
         private long cep;
@@ -21,6 +22,7 @@ namespace ControlX
         private string bairro;
         private string cidade;
         private string estado;
+        private string cargo;
         private string login;
         private string senha;
 
@@ -60,6 +62,32 @@ namespace ControlX
             set
             {
                 cpf = value;
+            }
+        }
+
+        public char Sexo
+        {
+            get
+            {
+                return sexo;
+            }
+
+            set
+            {
+                sexo = value;
+            }
+        }
+
+        public DateTime DataNasc
+        {
+            get
+            {
+                return dataNasc;
+            }
+
+            set
+            {
+                dataNasc = value;
             }
         }
 
@@ -180,6 +208,19 @@ namespace ControlX
             }
         }
 
+        public string Cargo
+        {
+            get
+            {
+                return cargo;
+            }
+
+            set
+            {
+                cargo = value;
+            }
+        }
+
         public string Login
         {
             get
@@ -206,24 +247,16 @@ namespace ControlX
             }
         }
 
-        public DateTime Datanasc
+        public Usuario()
         {
-            get
-            {
-                return datanasc;
-            }
 
-            set
-            {
-                datanasc = value;
-            }
         }
 
         public Usuario(int id, string nome, DateTime datanasc, long cpf, long telefone1, long telefone2, long cep, long num, string rua, string comp, string bairro, string cidade, string estado, string usuario, string senha)
         {
             this.Id = id;
             this.Nome = nome;
-            this.Datanasc = datanasc;
+            this.DataNasc = dataNasc;
             this.Cpf = cpf;
             this.Telefone1 = telefone1;
             this.Telefone2 = telefone2;
@@ -234,6 +267,27 @@ namespace ControlX
             this.Bairro = bairro;
             this.Cidade = cidade;
             this.Estado = estado;
+            this.Login = Login;
+            this.Senha = senha;
+        }
+
+        public Usuario(int id, string nome, long cpf, char sexo, DateTime dataNasc, long telefone1, long telefone2, long cep, long num, string rua, string comp, string bairro, string cidade, string estado, string cargo, string login, string senha)
+        {
+            this.Id = id;
+            this.Nome = nome;
+            this.Cpf = cpf;
+            this.Sexo = sexo;
+            this.DataNasc = dataNasc;
+            this.Telefone1 = telefone1;
+            this.Telefone2 = telefone2;
+            this.Cep = cep;
+            this.Num = num;
+            this.Rua = rua;
+            this.Comp = comp;
+            this.Bairro = bairro;
+            this.Cidade = cidade;
+            this.Estado = estado;
+            this.Cargo = cargo;
             this.Login = login;
             this.Senha = senha;
         }

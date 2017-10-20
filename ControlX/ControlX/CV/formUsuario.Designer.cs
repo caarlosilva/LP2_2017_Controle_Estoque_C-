@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formUsuario));
             this.pnFiltro = new System.Windows.Forms.Panel();
             this.txPesquisar = new System.Windows.Forms.TextBox();
@@ -45,6 +46,7 @@
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDtNasc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
@@ -97,6 +99,7 @@
             this.colID,
             this.colNome,
             this.colCPF,
+            this.colDtNasc,
             this.colCargo});
             this.dgvUsuario.Location = new System.Drawing.Point(12, 19);
             this.dgvUsuario.Name = "dgvUsuario";
@@ -205,7 +208,7 @@
             // colNome
             // 
             this.colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colNome.FillWeight = 90F;
+            this.colNome.FillWeight = 70F;
             this.colNome.HeaderText = "Nome";
             this.colNome.Name = "colNome";
             this.colNome.ReadOnly = true;
@@ -213,7 +216,7 @@
             // colCPF
             // 
             this.colCPF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Format = "000.000.000-00";
+            dataGridViewCellStyle1.Format = "000\\.000\\.000-00";
             dataGridViewCellStyle1.NullValue = null;
             this.colCPF.DefaultCellStyle = dataGridViewCellStyle1;
             this.colCPF.FillWeight = 50F;
@@ -221,10 +224,21 @@
             this.colCPF.Name = "colCPF";
             this.colCPF.ReadOnly = true;
             // 
+            // colDtNasc
+            // 
+            this.colDtNasc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colDtNasc.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colDtNasc.FillWeight = 30F;
+            this.colDtNasc.HeaderText = "Data de Nascimento";
+            this.colDtNasc.Name = "colDtNasc";
+            this.colDtNasc.ReadOnly = true;
+            // 
             // colCargo
             // 
             this.colCargo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCargo.FillWeight = 50F;
+            this.colCargo.FillWeight = 40F;
             this.colCargo.HeaderText = "Cargo/Função";
             this.colCargo.Name = "colCargo";
             this.colCargo.ReadOnly = true;
@@ -270,6 +284,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDtNasc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCargo;
     }
 }

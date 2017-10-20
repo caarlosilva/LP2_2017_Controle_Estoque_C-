@@ -33,6 +33,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVender));
             this.pnForm = new System.Windows.Forms.Panel();
             this.pnTroco = new System.Windows.Forms.Panel();
+            this.lbReais3 = new System.Windows.Forms.Label();
+            this.lbReais2 = new System.Windows.Forms.Label();
             this.txValorPago = new System.Windows.Forms.TextBox();
             this.lbTrocoShow = new System.Windows.Forms.Label();
             this.lbTroco = new System.Windows.Forms.Label();
@@ -69,8 +71,6 @@
             this.pnBtVender = new System.Windows.Forms.Panel();
             this.btVender = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.lbReais2 = new System.Windows.Forms.Label();
-            this.lbReais3 = new System.Windows.Forms.Label();
             this.pnForm.SuspendLayout();
             this.pnTroco.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -112,14 +112,33 @@
             this.pnTroco.Controls.Add(this.lbTrocoShow);
             this.pnTroco.Controls.Add(this.lbTroco);
             this.pnTroco.Controls.Add(this.lbValorPago);
-            this.pnTroco.Location = new System.Drawing.Point(200, 336);
+            this.pnTroco.Location = new System.Drawing.Point(194, 336);
             this.pnTroco.Name = "pnTroco";
-            this.pnTroco.Size = new System.Drawing.Size(292, 27);
+            this.pnTroco.Size = new System.Drawing.Size(298, 27);
             this.pnTroco.TabIndex = 19;
+            // 
+            // lbReais3
+            // 
+            this.lbReais3.AutoSize = true;
+            this.lbReais3.Location = new System.Drawing.Point(211, 6);
+            this.lbReais3.Name = "lbReais3";
+            this.lbReais3.Size = new System.Drawing.Size(22, 13);
+            this.lbReais3.TabIndex = 20;
+            this.lbReais3.Text = "R$";
+            this.lbReais3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbReais2
+            // 
+            this.lbReais2.AutoSize = true;
+            this.lbReais2.Location = new System.Drawing.Point(79, 6);
+            this.lbReais2.Name = "lbReais2";
+            this.lbReais2.Size = new System.Drawing.Size(22, 13);
+            this.lbReais2.TabIndex = 20;
+            this.lbReais2.Text = "R$";
             // 
             // txValorPago
             // 
-            this.txValorPago.Location = new System.Drawing.Point(100, 3);
+            this.txValorPago.Location = new System.Drawing.Point(102, 3);
             this.txValorPago.Name = "txValorPago";
             this.txValorPago.Size = new System.Drawing.Size(52, 21);
             this.txValorPago.TabIndex = 21;
@@ -130,7 +149,7 @@
             // 
             this.lbTrocoShow.BackColor = System.Drawing.SystemColors.ControlDark;
             this.lbTrocoShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbTrocoShow.Location = new System.Drawing.Point(228, 3);
+            this.lbTrocoShow.Location = new System.Drawing.Point(236, 3);
             this.lbTrocoShow.Name = "lbTrocoShow";
             this.lbTrocoShow.Size = new System.Drawing.Size(53, 21);
             this.lbTrocoShow.TabIndex = 20;
@@ -140,7 +159,7 @@
             // 
             this.lbTroco.AutoSize = true;
             this.lbTroco.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTroco.Location = new System.Drawing.Point(157, 6);
+            this.lbTroco.Location = new System.Drawing.Point(162, 6);
             this.lbTroco.Name = "lbTroco";
             this.lbTroco.Size = new System.Drawing.Size(48, 13);
             this.lbTroco.TabIndex = 19;
@@ -150,7 +169,7 @@
             // 
             this.lbValorPago.AutoSize = true;
             this.lbValorPago.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbValorPago.Location = new System.Drawing.Point(3, 6);
+            this.lbValorPago.Location = new System.Drawing.Point(2, 6);
             this.lbValorPago.Name = "lbValorPago";
             this.lbValorPago.Size = new System.Drawing.Size(81, 13);
             this.lbValorPago.TabIndex = 17;
@@ -527,25 +546,6 @@
             this.btCancelar.Text = "Limpar Venda";
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
-            // 
-            // lbReais2
-            // 
-            this.lbReais2.AutoSize = true;
-            this.lbReais2.Location = new System.Drawing.Point(79, 6);
-            this.lbReais2.Name = "lbReais2";
-            this.lbReais2.Size = new System.Drawing.Size(22, 13);
-            this.lbReais2.TabIndex = 20;
-            this.lbReais2.Text = "R$";
-            // 
-            // lbReais3
-            // 
-            this.lbReais3.AutoSize = true;
-            this.lbReais3.Location = new System.Drawing.Point(204, 6);
-            this.lbReais3.Name = "lbReais3";
-            this.lbReais3.Size = new System.Drawing.Size(22, 13);
-            this.lbReais3.TabIndex = 20;
-            this.lbReais3.Text = "R$";
-            this.lbReais3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormVender
             // 

@@ -173,6 +173,9 @@
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
   </data>
+  <data name="&gt;&gt;lbTel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -193,9 +196,6 @@
   </data>
   <data name="&gt;&gt;lbCompl.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btCadastrar.Text" xml:space="preserve">
-    <value>Cadastrar</value>
   </data>
   <data name="txCNPJ.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -223,6 +223,9 @@
   </data>
   <data name="lbId.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;lbTel2.Parent" xml:space="preserve">
+    <value>pnCadForn</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 8.25pt</value>
@@ -1419,9 +1422,6 @@
   <data name="&gt;&gt;lbCidade.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 313</value>
-  </data>
   <data name="&gt;&gt;lbBairro.Parent" xml:space="preserve">
     <value>pnCadForn</value>
   </data>
@@ -1491,17 +1491,14 @@
   <data name="&gt;&gt;lbIdForn.Parent" xml:space="preserve">
     <value>pnCadForn</value>
   </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;txTel1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="txTel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>121, 74</value>
   </data>
-  <data name="lbCompl.Text" xml:space="preserve">
-    <value>Complemento:</value>
+  <data name="&gt;&gt;txRua.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lbCEP.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1517,6 +1514,9 @@
   </data>
   <data name="lbNome.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="txCNPJ.Mask" xml:space="preserve">
+    <value>00,000,000/9999-00</value>
   </data>
   <data name="&gt;&gt;txCompl.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1554,8 +1554,8 @@
   <data name="&gt;&gt;lbTel2.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="&gt;&gt;txRua.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lbBairro.Name" xml:space="preserve">
+    <value>lbBairro</value>
   </data>
   <data name="lbBairro.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -1731,9 +1731,6 @@
   <data name="lbTel1.Text" xml:space="preserve">
     <value>Telefone Principal:</value>
   </data>
-  <data name="lbNum.Text" xml:space="preserve">
-    <value>N°:</value>
-  </data>
   <data name="&gt;&gt;lbIdForn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1761,14 +1758,14 @@
   <data name="txTel1.Mask" xml:space="preserve">
     <value>(99) 00000-0000</value>
   </data>
-  <data name="&gt;&gt;lbTel1.Parent" xml:space="preserve">
-    <value>pnCadForn</value>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="txCEP.Mask" xml:space="preserve">
     <value>00000-999</value>
   </data>
-  <data name="&gt;&gt;lbBairro.Name" xml:space="preserve">
-    <value>lbBairro</value>
+  <data name="lbNum.Text" xml:space="preserve">
+    <value>N°:</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1782,8 +1779,8 @@
   <data name="&gt;&gt;lbCNPJ.Name" xml:space="preserve">
     <value>lbCNPJ</value>
   </data>
-  <data name="txCNPJ.Mask" xml:space="preserve">
-    <value>00,000,000/9999-00</value>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 313</value>
   </data>
   <data name="&gt;&gt;txBairro.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -1809,8 +1806,8 @@
   <data name="&gt;&gt;txCEP.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;lbTel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btCadastrar.Text" xml:space="preserve">
+    <value>Cadastrar</value>
   </data>
   <data name="&gt;&gt;txTel1.Parent" xml:space="preserve">
     <value>pnCadForn</value>
@@ -1854,6 +1851,9 @@
   <data name="&gt;&gt;txCNPJ.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;lbTel1.Parent" xml:space="preserve">
+    <value>pnCadForn</value>
+  </data>
   <data name="&gt;&gt;lbBairro.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
@@ -1866,8 +1866,8 @@
   <data name="&gt;&gt;txNome.ZOrder" xml:space="preserve">
     <value>22</value>
   </data>
-  <data name="&gt;&gt;lbTel2.Parent" xml:space="preserve">
-    <value>pnCadForn</value>
+  <data name="lbCompl.Text" xml:space="preserve">
+    <value>Complemento:</value>
   </data>
   <data name="&gt;&gt;lbTel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
