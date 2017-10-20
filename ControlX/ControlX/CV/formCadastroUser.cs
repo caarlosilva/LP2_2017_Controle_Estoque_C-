@@ -41,6 +41,8 @@ namespace ControlX
             MaskOff();  //Tira a máscara para mandar ao Banco somente os valores
             user.Nome = txNome.Text;
             user.Cpf = long.Parse(txCPF.Text);
+            user.Sexo = char.Parse(cbSexo.Text);
+            user.DataNasc = dtpDataNasc.Value;
             user.Cep = long.Parse(txCEP.Text);
             user.Rua = txRua.Text;
             user.Bairro = txBairro.Text;
@@ -48,6 +50,9 @@ namespace ControlX
             user.Cidade = txCidade.Text;
             user.Estado = txEstado.Text;
             user.Comp = txCompl.Text;
+            user.Cargo = cbCargo.Text;
+            user.Login = txLogin.Text;
+            user.Senha = txSenha.Text;
             user.Telefone1 = long.Parse(txTel1.Text);
             user.Telefone2 = (txTel2.Text == "") ? 0 : long.Parse(txTel2.Text);
             //btComplete();

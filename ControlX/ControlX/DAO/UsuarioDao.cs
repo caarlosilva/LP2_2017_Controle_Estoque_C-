@@ -26,7 +26,7 @@ namespace ControlX.DAO
 
         public List<object> ListAll()
         {
-            string qry = string.Format("SELECT id, nome, cpf, sexo, DATE_FORMAT(dataNasc, '%m/%d/%Y'), tel1, tel2, cep, num, rua, comp, bairro, cidade, estado, cargo, login, senha FROM usuario");
+            string qry = string.Format("SELECT id, nome, cpf, sexo, dataNasc, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado, cargo, login, senha FROM usuario");
             DataSet ds = db.ExecuteQuery(qry);
 
             List<object> user = new List<object>();
@@ -38,7 +38,7 @@ namespace ControlX.DAO
                 u.Nome = dr["nome"].ToString();
                 u.Cpf = long.Parse(dr["cpf"].ToString());
                 u.Sexo = char.Parse(dr["sexo"].ToString());
-                u.DataNasc = DateTime.Parse(dr["DATE_FORMAT(dataNasc, '%m/%d/%Y')"].ToString());
+                u.DataNasc = DateTime.Parse(dr["dataNasc"].ToString());
                 u.Telefone1 = long.Parse(dr["tel1"].ToString());
                 u.Telefone2 = long.Parse(dr["tel2"].ToString());
                 u.Cep = long.Parse(dr["cep"].ToString());
