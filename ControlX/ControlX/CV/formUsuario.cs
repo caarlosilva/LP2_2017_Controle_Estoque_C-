@@ -28,7 +28,8 @@ namespace ControlX
             dgvUsuario.Rows.Clear();
             foreach (Usuario u in users)
             {
-                dgvUsuario.Rows.Add(u.Id, u.Nome, u.Cpf, u.DataNasc, u.Cargo);
+                string dataMySql = u.DataNasc.ToString("dd-MM-yyyy");
+                dgvUsuario.Rows.Add(u.Id, u.Nome, u.Cpf, dataMySql, u.Cargo);
             }
 
             buttonEnable();
@@ -63,6 +64,43 @@ namespace ControlX
             IDao db = new DAO.UsuarioDao();
             idUser = db.GetId();
             form.lbIdUser.Text = "" + idUser;
+            form.ShowDialog(this);
+            Fill();
+        }
+
+        private void btEdit_Click(object sender, EventArgs e)
+        {
+            IDao db = new DAO.UsuarioDao();
+            List<Object> usuarios = db.ListAll();
+
+
+            formCadastroUser form = new formCadastroUser();
+            int id = int.Parse(dgvUsuario.Rows[dgvUsuario.CurrentRow.Index].Cells[0].Value.ToString());
+            form.lbIdUser.Text = Convert.ToString(id);
+
+            foreach (Usuario u in usuarios)
+            {
+                if (u.Id == id)
+                {
+                    form.txNome.Text = u.Nome;
+                    form.txCPF.Text = Convert.ToString(u.Cpf);
+                    form.cbSexo.Text = Convert.ToString(u.Sexo);
+                    form.dtpDataNasc.Text = Convert.ToString(u.DataNasc);
+                    form.txTel1.Text = Convert.ToString(u.Telefone1);
+                    form.txTel2.Text = Convert.ToString(u.Telefone2);
+                    form.txCEP.Text = Convert.ToString(u.Cep);
+                    form.txNum.Text = Convert.ToString(u.Num);
+                    form.txRua.Text = u.Rua;
+                    form.txCompl.Text = u.Comp;
+                    form.txBairro.Text = u.Bairro;
+                    form.txCidade.Text = u.Cidade;
+                    form.txEstado.Text = u.Estado;
+                    form.cbCargo.Text = Convert.ToString(u.Cargo);
+                    form.txLogin.Text = Convert.ToString(u.Login);
+                    form.txSenha.Text = Convert.ToString(u.Senha);
+                }
+            }
+            form.btCadastrar.Text = "Salvar";
             form.ShowDialog(this);
             Fill();
         }

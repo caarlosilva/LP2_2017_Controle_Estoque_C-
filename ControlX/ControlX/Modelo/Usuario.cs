@@ -252,7 +252,7 @@ namespace ControlX
 
         }
 
-        public Usuario(int id, string nome, DateTime datanasc, long cpf, long telefone1, long telefone2, long cep, long num, string rua, string comp, string bairro, string cidade, string estado, string usuario, string senha)
+        public Usuario(int id, string nome, DateTime datanasc, long cpf, long telefone1, long telefone2, long cep, long num, string rua, string comp, string bairro, string cidade, string estado, string cargo, string login, string senha)
         {
             this.Id = id;
             this.Nome = nome;
@@ -267,7 +267,8 @@ namespace ControlX
             this.Bairro = bairro;
             this.Cidade = cidade;
             this.Estado = estado;
-            this.Login = Login;
+            this.Cargo = cargo;
+            this.Login = login;
             this.Senha = senha;
         }
 

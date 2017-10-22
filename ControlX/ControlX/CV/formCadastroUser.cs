@@ -100,5 +100,10 @@ namespace ControlX
             if (txCEP.MaskFull)
                 BuscaCEP();
         }
+
+        private void txCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

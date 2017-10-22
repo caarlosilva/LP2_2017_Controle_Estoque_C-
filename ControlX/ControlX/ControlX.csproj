@@ -153,6 +153,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="Modelo\Vender.cs" />
     <EmbeddedResource Include="CV\formCadastroForn.pt-BR.resx">
       <DependentUpon>formCadastroForn.cs</DependentUpon>
     </EmbeddedResource>

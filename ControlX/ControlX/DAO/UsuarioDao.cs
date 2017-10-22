@@ -21,7 +21,10 @@ namespace ControlX.DAO
 
         public void Atualizar(object f)
         {
-            throw new NotImplementedException();
+            Usuario u = (Usuario)f;
+            string dataMySql = u.DataNasc.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string qry = string.Format("UPDATE usuario SET nome = '{0}', cpf = '{1}', sexo = '{2}', dataNasc = '{3}', tel1 = '{4}', tel2 = '{5}', cep = '{6}', num = '{7}', rua = '{8}', comp = '{9}', bairro = '{10}', cidade = '{11}', estado = '{12}', cargo = '{13}', login = '{14}', senha = '{15}' WHERE id = {16}", u.Nome, u.Cpf, u.Sexo, dataMySql, u.Telefone1, u.Telefone2, u.Cep, u.Num, u.Rua, u.Comp, u.Bairro, u.Cidade, u.Estado, u.Cargo, u.Login, u.Senha, u.Id);
+            db.ExecuteNonQuery(qry);
         }
 
         public List<object> ListAll()

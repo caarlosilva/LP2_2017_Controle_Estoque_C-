@@ -132,7 +132,7 @@
             this.lbValidaCPF.ForeColor = System.Drawing.Color.Lime;
             this.lbValidaCPF.Location = new System.Drawing.Point(159, 46);
             this.lbValidaCPF.Name = "lbValidaCPF";
-            this.lbValidaCPF.Size = new System.Drawing.Size(18, 13);
+            this.lbValidaCPF.Size = new System.Drawing.Size(17, 13);
             this.lbValidaCPF.TabIndex = 21;
             this.lbValidaCPF.Text = "✔";
             // 
@@ -318,7 +318,7 @@
             this.lbTel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbTel2.Location = new System.Drawing.Point(4, 108);
             this.lbTel2.Name = "lbTel2";
-            this.lbTel2.Size = new System.Drawing.Size(120, 13);
+            this.lbTel2.Size = new System.Drawing.Size(119, 13);
             this.lbTel2.TabIndex = 7;
             this.lbTel2.Text = "Telefone(Opcional):";
             // 
@@ -328,7 +328,7 @@
             this.lbTel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbTel1.Location = new System.Drawing.Point(4, 77);
             this.lbTel1.Name = "lbTel1";
-            this.lbTel1.Size = new System.Drawing.Size(61, 13);
+            this.lbTel1.Size = new System.Drawing.Size(60, 13);
             this.lbTel1.TabIndex = 6;
             this.lbTel1.Text = "Telefone:";
             // 
@@ -582,20 +582,20 @@
         public System.Windows.Forms.Button btCadastrar;
         public System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Panel pnLogSenha;
-        private System.Windows.Forms.TextBox txSenha;
         private System.Windows.Forms.Label lbSenha;
-        private System.Windows.Forms.TextBox txLogin;
         private System.Windows.Forms.Label lbLogin;
-        private System.Windows.Forms.ComboBox cbCargo;
         private System.Windows.Forms.Label lbCargo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btVerificar;
         private System.Windows.Forms.PictureBox pbUser;
         private System.Windows.Forms.Label lbMensagem;
-        private System.Windows.Forms.ComboBox cbSexo;
         private System.Windows.Forms.Label lbSexo;
-        private System.Windows.Forms.DateTimePicker dtpDataNasc;
         private System.Windows.Forms.Label lbDataNasc;
         private System.Windows.Forms.Label lbValidaCPF;
+        public System.Windows.Forms.ComboBox cbSexo;
+        public System.Windows.Forms.DateTimePicker dtpDataNasc;
+        public System.Windows.Forms.ComboBox cbCargo;
+        public System.Windows.Forms.TextBox txSenha;
+        public System.Windows.Forms.TextBox txLogin;
     }
 }
