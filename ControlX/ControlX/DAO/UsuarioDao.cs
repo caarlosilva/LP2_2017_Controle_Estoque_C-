@@ -11,6 +11,17 @@ namespace ControlX.DAO
     {
         Database db = Database.GetInstance();
 
+        public bool Verificar(string login)
+        {
+            string qry = string.Format("SELECT login FROM usuario WHERE login = '{0}'", login);
+            DataSet ds = db.ExecuteQuery(qry);
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                return true;
+            }
+           return false;
+        }
+
         public void Adicionar(Object o)
         {
             Usuario u = (Usuario)o;
@@ -61,17 +72,75 @@ namespace ControlX.DAO
 
         public List<object> ListByName(int id)
         {
-            throw new NotImplementedException();
+            string qry = string.Format("SELECT * FROM usuario WHERE id = {0};", id);
+
+            DataSet ds = db.ExecuteQuery(qry);
+
+            List<object> user = new List<object>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Usuario u = new Usuario();
+                u.Id = int.Parse(dr["id"].ToString());
+                u.Nome = dr["nome"].ToString();
+                u.Cpf = long.Parse(dr["cpf"].ToString());
+                u.Sexo = char.Parse(dr["sexo"].ToString());
+                u.DataNasc = DateTime.Parse(dr["dataNasc"].ToString());
+                u.Telefone1 = long.Parse(dr["tel1"].ToString());
+                u.Telefone2 = long.Parse(dr["tel2"].ToString());
+                u.Cep = long.Parse(dr["cep"].ToString());
+                u.Num = int.Parse(dr["num"].ToString());
+                u.Rua = dr["rua"].ToString();
+                u.Comp = dr["comp"].ToString();
+                u.Bairro = dr["bairro"].ToString();
+                u.Cidade = dr["cidade"].ToString();
+                u.Estado = dr["estado"].ToString();
+                u.Cargo = dr["cargo"].ToString();
+                u.Login = dr["login"].ToString();
+                u.Senha = dr["senha"].ToString();
+                user.Add(u);
+            }
+            return user;
         }
 
         public List<object> ListByName(string name)
         {
-            throw new NotImplementedException();
+            string qry = string.Format("SELECT * FROM usuario WHERE nome LIKE '%{0}%';", name);
+
+            DataSet ds = db.ExecuteQuery(qry);
+
+            List<object> user = new List<object>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Usuario u = new Usuario();
+                u.Id = int.Parse(dr["id"].ToString());
+                u.Nome = dr["nome"].ToString();
+                u.Cpf = long.Parse(dr["cpf"].ToString());
+                u.Sexo = char.Parse(dr["sexo"].ToString());
+                u.DataNasc = DateTime.Parse(dr["dataNasc"].ToString());
+                u.Telefone1 = long.Parse(dr["tel1"].ToString());
+                u.Telefone2 = long.Parse(dr["tel2"].ToString());
+                u.Cep = long.Parse(dr["cep"].ToString());
+                u.Num = int.Parse(dr["num"].ToString());
+                u.Rua = dr["rua"].ToString();
+                u.Comp = dr["comp"].ToString();
+                u.Bairro = dr["bairro"].ToString();
+                u.Cidade = dr["cidade"].ToString();
+                u.Estado = dr["estado"].ToString();
+                u.Cargo = dr["cargo"].ToString();
+                u.Login = dr["login"].ToString();
+                u.Senha = dr["senha"].ToString();
+                user.Add(u);
+            }
+            return user;
         }
 
         public int Remover(int id)
         {
-            throw new NotImplementedException();
+            string qry = string.Format("DELETE FROM usuario where id = {0}", id);
+            db.ExecuteNonQuery(qry);
+            return 1;
         }
 
         //BUSCA NA TABELA PRODUTOS PELO ULTIMO VALOR DO AUTO INCREMENTO

@@ -19,6 +19,7 @@ namespace ControlX
         public formCadastroUser()
         {
             InitializeComponent();
+            this.btCadastrar.Enabled = false;
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
@@ -37,7 +38,6 @@ namespace ControlX
 
         private void btCadastrar_Click(object sender, EventArgs e)
         {
-
             MaskOff();  //Tira a máscara para mandar ao Banco somente os valores
             user.Nome = txNome.Text;
             user.Cpf = long.Parse(txCPF.Text);
@@ -55,8 +55,8 @@ namespace ControlX
             user.Senha = txSenha.Text;
             user.Telefone1 = long.Parse(txTel1.Text);
             user.Telefone2 = (txTel2.Text == "") ? 0 : long.Parse(txTel2.Text);
-            //btComplete();
             //Se o botão estiver com o nome de 'Cadastrar', salvaremos tudo no Banco de Dados
+
             if (btCadastrar.Text == "Cadastrar")
                 db1.Adicionar(user);
             //Se estiver 'Salvar', pegamos o ID no label, referente ao produto que será editado
@@ -67,8 +67,6 @@ namespace ControlX
                db1.Atualizar(user);
             }
             this.Close();
-
-        
         }
 
         private void BuscaCEP()
@@ -101,9 +99,25 @@ namespace ControlX
                 BuscaCEP();
         }
 
-        private void txCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void txLogin_KeyUp(object sender, KeyEventArgs e)
         {
+            DAO.UsuarioDao user = new DAO.UsuarioDao();
+            formCadastroUser form = new formCadastroUser();
+            bool verifica = user.Verificar(txLogin.Text);
+            this.lbMensagem.Visible = true;
 
+            if (verifica == true)
+            {
+                this.lbMensagem.ForeColor = Color.Red;
+                this.lbMensagem.Text = "Usuario já está em uso!";
+                this.btCadastrar.Enabled = false;
+            }
+            else if (verifica == false)
+            {
+                this.lbMensagem.ForeColor = Color.Green;
+                this.lbMensagem.Text = "Usuario disponivel para uso!";
+                this.btCadastrar.Enabled = true;
+            }
         }
     }
 }

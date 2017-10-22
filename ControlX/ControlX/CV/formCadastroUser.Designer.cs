@@ -63,7 +63,6 @@
             this.btCadastrar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.pnLogSenha = new System.Windows.Forms.Panel();
-            this.btVerificar = new System.Windows.Forms.Button();
             this.pbUser = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txSenha = new System.Windows.Forms.TextBox();
@@ -416,7 +415,6 @@
             // 
             // pnLogSenha
             // 
-            this.pnLogSenha.Controls.Add(this.btVerificar);
             this.pnLogSenha.Controls.Add(this.pbUser);
             this.pnLogSenha.Controls.Add(this.pictureBox1);
             this.pnLogSenha.Controls.Add(this.txSenha);
@@ -427,23 +425,14 @@
             this.pnLogSenha.Controls.Add(this.lbCargo);
             this.pnLogSenha.Location = new System.Drawing.Point(12, 313);
             this.pnLogSenha.Name = "pnLogSenha";
-            this.pnLogSenha.Size = new System.Drawing.Size(410, 84);
+            this.pnLogSenha.Size = new System.Drawing.Size(410, 85);
             this.pnLogSenha.TabIndex = 4;
-            // 
-            // btVerificar
-            // 
-            this.btVerificar.Location = new System.Drawing.Point(314, 44);
-            this.btVerificar.Name = "btVerificar";
-            this.btVerificar.Size = new System.Drawing.Size(75, 23);
-            this.btVerificar.TabIndex = 11;
-            this.btVerificar.Text = "Verificar";
-            this.btVerificar.UseVisualStyleBackColor = true;
             // 
             // pbUser
             // 
             this.pbUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbUser.Image = global::ControlX.Properties.Resources.user1;
-            this.pbUser.Location = new System.Drawing.Point(272, 30);
+            this.pbUser.Location = new System.Drawing.Point(351, 30);
             this.pbUser.Name = "pbUser";
             this.pbUser.Size = new System.Drawing.Size(24, 23);
             this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -453,7 +442,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ControlX.Properties.Resources.pwd;
-            this.pictureBox1.Location = new System.Drawing.Point(272, 59);
+            this.pictureBox1.Location = new System.Drawing.Point(351, 58);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 22);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -464,7 +453,7 @@
             // 
             this.txSenha.Location = new System.Drawing.Point(54, 59);
             this.txSenha.Name = "txSenha";
-            this.txSenha.Size = new System.Drawing.Size(212, 21);
+            this.txSenha.Size = new System.Drawing.Size(258, 21);
             this.txSenha.TabIndex = 5;
             this.txSenha.UseSystemPasswordChar = true;
             // 
@@ -481,8 +470,9 @@
             // 
             this.txLogin.Location = new System.Drawing.Point(54, 30);
             this.txLogin.Name = "txLogin";
-            this.txLogin.Size = new System.Drawing.Size(212, 21);
+            this.txLogin.Size = new System.Drawing.Size(258, 21);
             this.txLogin.TabIndex = 3;
+            this.txLogin.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txLogin_KeyUp);
             // 
             // lbLogin
             // 
@@ -517,14 +507,15 @@
             // 
             // lbMensagem
             // 
-            this.lbMensagem.AutoSize = true;
             this.lbMensagem.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensagem.ForeColor = System.Drawing.Color.Red;
-            this.lbMensagem.Location = new System.Drawing.Point(120, 400);
+            this.lbMensagem.Location = new System.Drawing.Point(12, 401);
             this.lbMensagem.Name = "lbMensagem";
-            this.lbMensagem.Size = new System.Drawing.Size(193, 14);
-            this.lbMensagem.TabIndex = 13;
-            this.lbMensagem.Text = "Usuário \'Ronaldo\' já existe !";
+            this.lbMensagem.Size = new System.Drawing.Size(410, 14);
+            this.lbMensagem.TabIndex = 12;
+            this.lbMensagem.Text = "Usuario disponivel para uso!";
+            this.lbMensagem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbMensagem.Visible = false;
             // 
             // formCadastroUser
             // 
@@ -537,6 +528,8 @@
             this.Controls.Add(this.pnCadUser);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "formCadastroUser";
             this.Text = "ControlX - Cadastrar Usuário";
             this.pnCadUser.ResumeLayout(false);
@@ -547,7 +540,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -581,14 +573,11 @@
         private System.Windows.Forms.Panel pnBtn;
         public System.Windows.Forms.Button btCadastrar;
         public System.Windows.Forms.Button btCancelar;
-        private System.Windows.Forms.Panel pnLogSenha;
         private System.Windows.Forms.Label lbSenha;
         private System.Windows.Forms.Label lbLogin;
         private System.Windows.Forms.Label lbCargo;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btVerificar;
         private System.Windows.Forms.PictureBox pbUser;
-        private System.Windows.Forms.Label lbMensagem;
         private System.Windows.Forms.Label lbSexo;
         private System.Windows.Forms.Label lbDataNasc;
         private System.Windows.Forms.Label lbValidaCPF;
@@ -597,5 +586,7 @@
         public System.Windows.Forms.ComboBox cbCargo;
         public System.Windows.Forms.TextBox txSenha;
         public System.Windows.Forms.TextBox txLogin;
+        public System.Windows.Forms.Panel pnLogSenha;
+        private System.Windows.Forms.Label lbMensagem;
     }
 }

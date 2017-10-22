@@ -52,7 +52,6 @@ namespace ControlX
             }
         }
 
-
         private void btMenu_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -103,6 +102,104 @@ namespace ControlX
             form.btCadastrar.Text = "Salvar";
             form.ShowDialog(this);
             Fill();
+        }
+
+        private void btView_Click(object sender, EventArgs e)
+        {
+            IDao db = new DAO.UsuarioDao();
+            List<Object> usuarios = db.ListAll();
+            formCadastroUser form = new formCadastroUser();
+
+            int id = int.Parse(dgvUsuario.Rows[dgvUsuario.CurrentRow.Index].Cells[0].Value.ToString());
+            form.lbIdUser.Text = Convert.ToString(id);
+
+            //Paineis somente leitura
+
+            //Painel CadUser
+            foreach (TextBox textbox in form.pnCadUser.Controls.OfType<TextBox>())
+            {
+                textbox.ReadOnly = true;
+            }
+
+            foreach (MaskedTextBox textbox in form.pnCadUser.Controls.OfType<MaskedTextBox>())
+            {
+                textbox.ReadOnly = true;
+            }
+            //Painel LogSenha
+            foreach (TextBox textbox in form.pnLogSenha.Controls.OfType<TextBox>())
+            {
+                textbox.ReadOnly = true;
+            }
+
+            //ComboBox
+            form.cbSexo.Enabled = false;
+            form.cbCargo.Enabled = false;
+            form.dtpDataNasc.Enabled = false;
+
+            //Fim paineis somente leitura
+
+            foreach (Usuario u in usuarios)
+            {
+                if (u.Id == id)
+                {
+                    form.txNome.Text = u.Nome;
+                    form.txCPF.Text = Convert.ToString(u.Cpf);
+                    form.cbSexo.Text = Convert.ToString(u.Sexo);
+                    form.dtpDataNasc.Text = Convert.ToString(u.DataNasc);
+                    form.txTel1.Text = Convert.ToString(u.Telefone1);
+                    form.txTel2.Text = Convert.ToString(u.Telefone2);
+                    form.txCEP.Text = Convert.ToString(u.Cep);
+                    form.txNum.Text = Convert.ToString(u.Num);
+                    form.txRua.Text = u.Rua;
+                    form.txCompl.Text = u.Comp;
+                    form.txBairro.Text = u.Bairro;
+                    form.txCidade.Text = u.Cidade;
+                    form.txEstado.Text = u.Estado;
+                    form.cbCargo.Text = Convert.ToString(u.Cargo);
+                    form.txLogin.Text = Convert.ToString(u.Login);
+                    form.txSenha.Text = Convert.ToString(u.Senha);
+                }
+            }
+            form.btCadastrar.Enabled = false;
+            form.btCancelar.Text = "Voltar";
+            form.ShowDialog(this);
+            Fill();
+        }
+
+        private void btDel_Click(object sender, EventArgs e)
+        {
+            IDao data = new DAO.UsuarioDao();
+            int a = int.Parse(dgvUsuario.Rows[dgvUsuario.CurrentRow.Index].Cells[0].Value.ToString());
+            //Caixa de aviso caso deseja ou não apagar
+            DialogResult result = MessageBox.Show("Tem certeza que deseja remover este usuario?",
+                "Aviso!",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //Caso clique em sim
+            if (result == DialogResult.Yes)
+            {
+                data.Remover(a);
+                Fill();
+                MessageBox.Show("Usuario removido com sucesso.",
+                "Aviso!",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                buttonEnable();
+            }
+            else if (result == DialogResult.No)
+            {
+
+            }
+        }
+
+        private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
+        {
+            IDao db = new DAO.UsuarioDao();
+            List<Object> ps = db.ListByName(txPesquisar.Text);
+
+            dgvUsuario.Rows.Clear();
+            foreach (Usuario u in ps)
+            {
+                dgvUsuario.Rows.Add(u.Id, u.Nome, u.Cpf, u.DataNasc, u.Cargo);
+            }
         }
     }
 }

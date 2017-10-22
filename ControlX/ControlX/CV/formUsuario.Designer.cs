@@ -74,6 +74,7 @@
             this.txPesquisar.Name = "txPesquisar";
             this.txPesquisar.Size = new System.Drawing.Size(593, 21);
             this.txPesquisar.TabIndex = 0;
+            this.txPesquisar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txPesquisar_KeyUp);
             // 
             // lbFiltro
             // 
@@ -211,6 +212,7 @@
             this.btDel.TabIndex = 3;
             this.btDel.Text = "Remover";
             this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
             // 
             // btEdit
             // 
@@ -232,6 +234,7 @@
             this.btView.TabIndex = 2;
             this.btView.Text = "Visualizar";
             this.btView.UseVisualStyleBackColor = true;
+            this.btView.Click += new System.EventHandler(this.btView_Click);
             // 
             // btAdd
             // 
