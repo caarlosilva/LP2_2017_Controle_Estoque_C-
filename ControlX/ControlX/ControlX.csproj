@@ -67,6 +67,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\ComprarDao.cs" />
+    <Compile Include="Modelo\Comprar.cs" />
     <Compile Include="CV\formComprar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +156,7 @@
     </Compile>
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Modelo\Vender.cs" />
+    <Compile Include="DAO\VenderDao.cs" />
     <EmbeddedResource Include="CV\formCadastroForn.pt-BR.resx">
       <DependentUpon>formCadastroForn.cs</DependentUpon>
     </EmbeddedResource>

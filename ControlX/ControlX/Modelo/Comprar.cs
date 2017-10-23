@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ControlX
 {
-    class Vender
+    class Comprar
     {
         private int id;
         private string nome_usuario;
@@ -79,7 +79,7 @@ namespace ControlX
             }
         }
 
-        public Vender(int id, string nome_usuario, long valor, List<Produto> itens, DateTime data)
+        public Comprar(int id, string nome_usuario, long valor, List<Produto> itens, DateTime data)
         {
             this.Id = id;
             this.Nome_usuario = nome_usuario;
