@@ -41,7 +41,6 @@ C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\ControlX.exe
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\ControlX.pdb
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.csprojResolveAssemblyReference.cache
-C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.Form1.resources
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formCadastroProd.resources
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.Properties.Resources.resources
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.csproj.GenerateResource.Cache
@@ -277,3 +276,17 @@ C:\Users\Fabricio\Source\Repos\LP2 - NOVO\ControlX\ControlX\bin\Debug\ControlX.p
 C:\Users\Fabricio\Source\Repos\LP2 - NOVO\ControlX\ControlX\bin\Debug\pt-BR\ControlX.resources.dll
 C:\Users\Fabricio\Source\Repos\LP2 - NOVO\ControlX\ControlX\bin\Debug\MySql.Data.dll
 C:\Users\Fabricio\Source\Repos\LP2 - NOVO\ControlX\ControlX\obj\Debug\pt-BR\ControlX.resources.dll
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\pt-BR\ControlX.resources.dll
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\MySql.Data.dll
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formCadastroForn.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formComprarProd.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formEditComprar.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formEstoque.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formFornecedores.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formLogin.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formMenu.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.FormVender.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formCadastroUser.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formUsuario.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formCadastroForn.pt-BR.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\pt-BR\ControlX.resources.dll
