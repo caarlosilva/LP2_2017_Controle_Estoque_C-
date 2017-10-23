@@ -83,16 +83,16 @@
     <Compile Include="DAO\ProdutoDao.cs" />
     <Compile Include="DAO\UsuarioDao.cs" />
     <Compile Include="DAO\Database.cs" />
-    <Compile Include="formCadastroUser.cs">
+    <Compile Include="CV\formCadastroUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formCadastroUser.Designer.cs">
+    <Compile Include="CV\formCadastroUser.Designer.cs">
       <DependentUpon>formCadastroUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="formUsuario.cs">
+    <Compile Include="CV\formUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formUsuario.Designer.cs">
+    <Compile Include="CV\formUsuario.Designer.cs">
       <DependentUpon>formUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -152,6 +152,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="Modelo\Vender.cs" />
     <EmbeddedResource Include="CV\formCadastroForn.pt-BR.resx">
       <DependentUpon>formCadastroForn.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,10 +184,10 @@
     <EmbeddedResource Include="CV\FormVender.resx">
       <DependentUpon>FormVender.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formCadastroUser.resx">
+    <EmbeddedResource Include="CV\formCadastroUser.resx">
       <DependentUpon>formCadastroUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formUsuario.resx">
+    <EmbeddedResource Include="CV\formUsuario.resx">
       <DependentUpon>formUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

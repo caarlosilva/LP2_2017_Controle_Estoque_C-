@@ -79,7 +79,6 @@ namespace ControlX
 
         private void btDel_Click(object sender, EventArgs e)
         {
-
             IDao data = new DAO.ProdutoDao();
             int a = int.Parse(dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
             //Caixa de aviso caso deseja ou não apagar
@@ -178,6 +177,5 @@ namespace ControlX
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && rbId.Checked)
                 e.Handled = true;
         }
-
     }
 }

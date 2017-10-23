@@ -26,7 +26,7 @@ namespace ControlX
 
         //Esse método utiliza o WebService dos correios para fazer a busca do CEP
         //e  retornar Rua, Nome, Bairro, Cidade, Estado e Complemento.
-        private void BuscaCPF()
+        private void BuscaCEP()
         {
             try
             {
@@ -97,7 +97,7 @@ namespace ControlX
         private void txCEP_Leave(object sender, EventArgs e)
         {                           
             if (txCEP.MaskFull)
-                BuscaCPF();
+                BuscaCEP();
         }
 
         private void MaskOff()

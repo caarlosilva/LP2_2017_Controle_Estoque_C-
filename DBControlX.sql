@@ -28,6 +28,26 @@ CREATE TABLE produtos (
   FOREIGN KEY (idFornecedor) REFERENCES fornecedor (id)
  );
 
+ CREATE TABLE usuario (
+	id int NOT NULL AUTO_INCREMENT,
+	nome varchar(64),
+	cpf varchar(11),
+	sexo varchar(1),
+	dataNasc date,
+	tel1 varchar(11),
+	tel2 varchar(11),
+	cep varchar(10),
+	num int(6),
+	rua varchar(64),
+	comp varchar(32),
+	bairro varchar(64),
+	cidade varchar(64),
+	estado varchar(64),
+	cargo varchar(32),
+	login varchar(32),
+	senha varchar(32),
+	PRIMARY KEY (id)	
+ );
 
 INSERT INTO fornecedor(nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado) 
 	values ('Gustavo Nunes INFO','15236987458214','1633663366','0','18273725','4002','Praça Professora Magaly Azambuja de Toledo','','Parque Residencial Colina das Estrelas','Tatuí','SP');
@@ -91,3 +111,7 @@ INSERT INTO produtos(nome, preco, qntd, idFornecedor) values ('Rage', 999.99, 1,
 INSERT INTO produtos(nome, preco, qntd, idFornecedor) values ('Tenis para Mesa de Tenis de Mesa', 899.99, 12, 3);
 INSERT INTO produtos(nome, preco, qntd, idFornecedor) values ('Panicat', 150000.00, 5, 4);
 
+
+
+--INSERT INTO usuario(nome, cpf, sexo, dataNasc, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado, cargo, login, senha) 
+--	values ();

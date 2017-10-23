@@ -41,11 +41,11 @@
             this.btAdd = new System.Windows.Forms.Button();
             this.gbFornecedores = new System.Windows.Forms.GroupBox();
             this.dgvFornecedor = new System.Windows.Forms.DataGridView();
+            this.pnMenu = new System.Windows.Forms.Panel();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCidadeEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnMenu = new System.Windows.Forms.Panel();
             this.pnFiltro.SuspendLayout();
             this.pnBtns.SuspendLayout();
             this.gbFornecedores.SuspendLayout();
@@ -191,6 +191,16 @@
             this.dgvFornecedor.TabIndex = 0;
             this.dgvFornecedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellContentClick);
             // 
+            // pnMenu
+            // 
+            this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnMenu.Controls.Add(this.btMenu);
+            this.pnMenu.Location = new System.Drawing.Point(12, 388);
+            this.pnMenu.Name = "pnMenu";
+            this.pnMenu.Size = new System.Drawing.Size(98, 29);
+            this.pnMenu.TabIndex = 5;
+            this.pnMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMenu_Paint);
+            // 
             // colID
             // 
             this.colID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -210,8 +220,8 @@
             // colCNPJ
             // 
             this.colCNPJ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Format = "00,000,000/0000-00";
-            dataGridViewCellStyle1.NullValue = "00,000,000/0000-00";
+            dataGridViewCellStyle1.Format = "00\\.000\\.000/0000-00";
+            dataGridViewCellStyle1.NullValue = null;
             this.colCNPJ.DefaultCellStyle = dataGridViewCellStyle1;
             this.colCNPJ.FillWeight = 50F;
             this.colCNPJ.HeaderText = "CNPJ";
@@ -225,16 +235,6 @@
             this.colCidadeEstado.HeaderText = "Localização";
             this.colCidadeEstado.Name = "colCidadeEstado";
             this.colCidadeEstado.ReadOnly = true;
-            // 
-            // pnMenu
-            // 
-            this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnMenu.Controls.Add(this.btMenu);
-            this.pnMenu.Location = new System.Drawing.Point(12, 388);
-            this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(98, 29);
-            this.pnMenu.TabIndex = 5;
-            this.pnMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMenu_Paint);
             // 
             // formFornecedores
             // 
