@@ -15,11 +15,24 @@ namespace ControlX
 
         private IDao db1 = new DAO.UsuarioDao();
         private Usuario user = new Usuario();
+        bool loginValido = false;
 
         public formCadastroUser()
-        {
+        {            
             InitializeComponent();
-            this.btCadastrar.Enabled = false;
+            btComplete();
+        }
+
+        private void btComplete()
+        {
+            if (txNome.Text.Trim() == "" || txRua.Text.Trim() == ""
+                || txBairro.Text.Trim() == "" || txCidade.Text.Trim() == "" || txEstado.Text.Trim() == ""
+                    || txNum.Text.Trim() == "" || !txCPF.MaskCompleted || !txTel1.MaskCompleted || txLogin.Text.Trim() == ""
+                        || txSenha.Text.Trim() == "" || cbCargo.Text.Trim() == "" || cbSexo.Text.Trim() == "" || !loginValido) //O IF ACABA AQUI, KRAI
+                btCadastrar.Enabled = false;
+            else
+                btCadastrar.Enabled = true;
+
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
@@ -101,23 +114,45 @@ namespace ControlX
 
         private void txLogin_KeyUp(object sender, KeyEventArgs e)
         {
-            DAO.UsuarioDao user = new DAO.UsuarioDao();
-            formCadastroUser form = new formCadastroUser();
-            bool verifica = user.Verificar(txLogin.Text);
-            this.lbMensagem.Visible = true;
 
-            if (verifica == true)
+        }
+
+        private void txLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsLetter(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txLogin_Leave(object sender, EventArgs e)
+        {
+            if (txLogin.Text != "")
             {
-                this.lbMensagem.ForeColor = Color.Red;
-                this.lbMensagem.Text = "Usuario já está em uso!";
-                this.btCadastrar.Enabled = false;
+                DAO.UsuarioDao uDAO = new DAO.UsuarioDao();
+                bool verifica = uDAO.Verificar(txLogin.Text);
+                lbMensagem.Visible = true;
+
+                if (verifica)
+                {
+                    lbMensagem.ForeColor = Color.Red;                 
+                    lbMensagem.Text = "Usuário já está em uso!";
+                    loginValido = false;
+                    btComplete();
+                }
+                else
+                {
+                    lbMensagem.ForeColor = Color.Green;
+                    lbMensagem.Text = "Usuário disponivel para uso!";
+                    loginValido = true;
+                    btComplete();
+                }
             }
-            else if (verifica == false)
-            {
-                this.lbMensagem.ForeColor = Color.Green;
-                this.lbMensagem.Text = "Usuario disponivel para uso!";
-                this.btCadastrar.Enabled = true;
-            }
+            else
+                lbMensagem.Visible = false;
+        }
+
+        private void txSenha_TextChanged(object sender, EventArgs e)
+        {
+            btComplete();
         }
     }
 }

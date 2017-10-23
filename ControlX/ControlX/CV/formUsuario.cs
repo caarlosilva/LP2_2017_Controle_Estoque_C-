@@ -112,23 +112,21 @@ namespace ControlX
 
             int id = int.Parse(dgvUsuario.Rows[dgvUsuario.CurrentRow.Index].Cells[0].Value.ToString());
             form.lbIdUser.Text = Convert.ToString(id);
-
-            //Paineis somente leitura
-
+            //Text box desabilitados por painel
             //Painel CadUser
             foreach (TextBox textbox in form.pnCadUser.Controls.OfType<TextBox>())
             {
-                textbox.ReadOnly = true;
+                textbox.Enabled = false;
             }
 
             foreach (MaskedTextBox textbox in form.pnCadUser.Controls.OfType<MaskedTextBox>())
             {
-                textbox.ReadOnly = true;
+                textbox.Enabled = false;
             }
             //Painel LogSenha
             foreach (TextBox textbox in form.pnLogSenha.Controls.OfType<TextBox>())
             {
-                textbox.ReadOnly = true;
+                textbox.Enabled = false;
             }
 
             //ComboBox
