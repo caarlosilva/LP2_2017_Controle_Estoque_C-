@@ -35,9 +35,10 @@
             this.btEstoque = new System.Windows.Forms.Button();
             this.btDesconectar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btUsuario = new System.Windows.Forms.Button();
             this.btComprar = new System.Windows.Forms.Button();
             this.lbMensagem = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnConectado = new System.Windows.Forms.Panel();
             this.lblData = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.msMenu = new System.Windows.Forms.MenuStrip();
@@ -46,10 +47,9 @@
             this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btUsuario = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnConectado.SuspendLayout();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -110,6 +110,16 @@
             this.panel1.Size = new System.Drawing.Size(257, 92);
             this.panel1.TabIndex = 4;
             // 
+            // btUsuario
+            // 
+            this.btUsuario.Location = new System.Drawing.Point(72, 64);
+            this.btUsuario.Name = "btUsuario";
+            this.btUsuario.Size = new System.Drawing.Size(120, 25);
+            this.btUsuario.TabIndex = 4;
+            this.btUsuario.Text = "Usuários";
+            this.btUsuario.UseVisualStyleBackColor = true;
+            this.btUsuario.Click += new System.EventHandler(this.btUsuario_Click);
+            // 
             // btComprar
             // 
             this.btComprar.Location = new System.Drawing.Point(3, 3);
@@ -130,15 +140,15 @@
             this.lbMensagem.TabIndex = 5;
             this.lbMensagem.Text = "Você está conectado como \'Admin\' !";
             // 
-            // panel2
+            // pnConectado
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.lbMensagem);
-            this.panel2.Controls.Add(this.btDesconectar);
-            this.panel2.Location = new System.Drawing.Point(10, 37);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(513, 35);
-            this.panel2.TabIndex = 6;
+            this.pnConectado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnConectado.Controls.Add(this.lbMensagem);
+            this.pnConectado.Controls.Add(this.btDesconectar);
+            this.pnConectado.Location = new System.Drawing.Point(10, 37);
+            this.pnConectado.Name = "pnConectado";
+            this.pnConectado.Size = new System.Drawing.Size(513, 35);
+            this.pnConectado.TabIndex = 6;
             // 
             // lblData
             // 
@@ -183,13 +193,13 @@
             // compraToolStripMenuItem
             // 
             this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
-            this.compraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.compraToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.compraToolStripMenuItem.Text = "Compra";
             // 
             // vendaToolStripMenuItem
             // 
             this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.vendaToolStripMenuItem.Text = "Venda";
             // 
             // helpToolStripMenuItem
@@ -203,16 +213,6 @@
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
             this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.sobreToolStripMenuItem.Text = "Sobre";
-            // 
-            // btUsuario
-            // 
-            this.btUsuario.Location = new System.Drawing.Point(72, 64);
-            this.btUsuario.Name = "btUsuario";
-            this.btUsuario.Size = new System.Drawing.Size(120, 25);
-            this.btUsuario.TabIndex = 4;
-            this.btUsuario.Text = "Usuários";
-            this.btUsuario.UseVisualStyleBackColor = true;
-            this.btUsuario.Click += new System.EventHandler(this.btUsuario_Click);
             // 
             // picLogo
             // 
@@ -233,7 +233,7 @@
             this.ClientSize = new System.Drawing.Size(535, 204);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.lblData);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnConectado);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.msMenu);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -245,8 +245,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ControlX - Menu";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnConectado.ResumeLayout(false);
+            this.pnConectado.PerformLayout();
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
@@ -262,8 +262,7 @@
         private System.Windows.Forms.Button btEstoque;
         private System.Windows.Forms.Button btDesconectar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbMensagem;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnConectado;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox picLogo;
@@ -275,5 +274,6 @@
         private System.Windows.Forms.ToolStripMenuItem vendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.Button btUsuario;
+        public System.Windows.Forms.Label lbMensagem;
     }
 }

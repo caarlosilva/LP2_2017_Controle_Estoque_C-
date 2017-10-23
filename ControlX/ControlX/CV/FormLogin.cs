@@ -26,7 +26,11 @@ namespace ControlX
         private void btLogar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new formMenu().ShowDialog();
+            formMenu menu = new formMenu(); 
+            menu.lbMensagem.Text = "Você está conectado como '" + txUsuario.Text +"' !";
+            menu.ShowDialog();
+
+
             this.Show();
             txSenha.Text = "";
         }

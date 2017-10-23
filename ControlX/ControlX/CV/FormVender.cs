@@ -124,7 +124,7 @@ namespace ControlX
                         //Preço da venda (QTD * PREÇO UNITARIO)
                         double pVenda = qVenda * p.Preco;
                         //Adicionando ao Data Grid View
-                        dgvVendas.Rows.Add(p.Id, p.Nome, qVenda, pVenda);
+                        dgvVendas.Rows.Add(p.Id, p.Nome, qVenda, p.Preco, pVenda);
                         //Valor Total Recebe o valor ja existente, caso esteja NULL, recebe 0
                         double vTotal = lbValorTotal.Text == "" ? 0 : double.Parse(lbValorTotal.Text);
                         //O Label com o Valor Total recebe ele mesmo, mais o Preço de Venda do item em questão

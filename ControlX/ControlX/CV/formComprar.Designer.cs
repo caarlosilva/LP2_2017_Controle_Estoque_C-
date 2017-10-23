@@ -113,21 +113,19 @@
             // 
             this.dgvEstoque.AllowUserToAddRows = false;
             this.dgvEstoque.AllowUserToDeleteRows = false;
-            this.dgvEstoque.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
             this.colNome,
             this.colPreco,
             this.colQtd});
-            this.dgvEstoque.Location = new System.Drawing.Point(6, 19);
+            this.dgvEstoque.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEstoque.Location = new System.Drawing.Point(3, 17);
             this.dgvEstoque.Name = "dgvEstoque";
             this.dgvEstoque.ReadOnly = true;
             this.dgvEstoque.RowHeadersVisible = false;
             this.dgvEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEstoque.Size = new System.Drawing.Size(654, 309);
+            this.dgvEstoque.Size = new System.Drawing.Size(660, 314);
             this.dgvEstoque.TabIndex = 3;
             // 
             // colId

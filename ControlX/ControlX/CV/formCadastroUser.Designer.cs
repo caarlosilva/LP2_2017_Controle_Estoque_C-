@@ -144,7 +144,7 @@
             this.dtpDataNasc.Name = "dtpDataNasc";
             this.dtpDataNasc.Size = new System.Drawing.Size(94, 21);
             this.dtpDataNasc.TabIndex = 20;
-            this.dtpDataNasc.Value = new System.DateTime(2017, 10, 25, 0, 0, 0, 0);
+            this.dtpDataNasc.Value = new System.DateTime(2017, 10, 23, 0, 0, 0, 0);
             // 
             // cbSexo
             // 

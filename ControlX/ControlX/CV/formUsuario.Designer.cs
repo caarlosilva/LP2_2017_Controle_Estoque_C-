@@ -92,9 +92,6 @@
             // 
             this.dgvUsuario.AllowUserToAddRows = false;
             this.dgvUsuario.AllowUserToDeleteRows = false;
-            this.dgvUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
@@ -102,12 +99,13 @@
             this.colCPF,
             this.colDtNasc,
             this.colCargo});
-            this.dgvUsuario.Location = new System.Drawing.Point(12, 19);
+            this.dgvUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUsuario.Location = new System.Drawing.Point(3, 17);
             this.dgvUsuario.Name = "dgvUsuario";
             this.dgvUsuario.ReadOnly = true;
             this.dgvUsuario.RowHeadersVisible = false;
             this.dgvUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuario.Size = new System.Drawing.Size(649, 302);
+            this.dgvUsuario.Size = new System.Drawing.Size(661, 307);
             this.dgvUsuario.TabIndex = 0;
             // 
             // colID
