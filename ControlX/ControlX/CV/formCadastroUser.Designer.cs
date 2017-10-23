@@ -131,7 +131,7 @@
             this.lbValidaCPF.ForeColor = System.Drawing.Color.Lime;
             this.lbValidaCPF.Location = new System.Drawing.Point(159, 46);
             this.lbValidaCPF.Name = "lbValidaCPF";
-            this.lbValidaCPF.Size = new System.Drawing.Size(17, 13);
+            this.lbValidaCPF.Size = new System.Drawing.Size(18, 13);
             this.lbValidaCPF.TabIndex = 21;
             this.lbValidaCPF.Text = "✔";
             // 
@@ -148,6 +148,8 @@
             // 
             // cbSexo
             // 
+            this.cbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSexo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbSexo.FormattingEnabled = true;
             this.cbSexo.Items.AddRange(new object[] {
             "M",
@@ -156,6 +158,7 @@
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(45, 21);
             this.cbSexo.TabIndex = 19;
+            this.cbSexo.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
             // lbSexo
             // 
@@ -173,6 +176,7 @@
             this.txCPF.Name = "txCPF";
             this.txCPF.Size = new System.Drawing.Size(102, 21);
             this.txCPF.TabIndex = 1;
+            this.txCPF.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
             // txTel2
             // 
@@ -189,6 +193,7 @@
             this.txTel1.Name = "txTel1";
             this.txTel1.Size = new System.Drawing.Size(106, 21);
             this.txTel1.TabIndex = 2;
+            this.txTel1.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
             // txCEP
             // 
@@ -197,6 +202,7 @@
             this.txCEP.Name = "txCEP";
             this.txCEP.Size = new System.Drawing.Size(79, 21);
             this.txCEP.TabIndex = 4;
+            this.txCEP.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             this.txCEP.Leave += new System.EventHandler(this.txCEP_Leave);
             // 
             // txEstado
@@ -205,6 +211,7 @@
             this.txEstado.Name = "txEstado";
             this.txEstado.Size = new System.Drawing.Size(82, 21);
             this.txEstado.TabIndex = 10;
+            this.txEstado.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
             // txCidade
             // 
@@ -212,6 +219,7 @@
             this.txCidade.Name = "txCidade";
             this.txCidade.Size = new System.Drawing.Size(200, 21);
             this.txCidade.TabIndex = 9;
+            this.txCidade.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
             // txBairro
             // 
@@ -219,6 +227,7 @@
             this.txBairro.Name = "txBairro";
             this.txBairro.Size = new System.Drawing.Size(344, 21);
             this.txBairro.TabIndex = 8;
+            this.txBairro.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
             // txCompl
             // 
@@ -233,6 +242,7 @@
             this.txRua.Name = "txRua";
             this.txRua.Size = new System.Drawing.Size(344, 21);
             this.txRua.TabIndex = 6;
+            this.txRua.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
             // txNum
             // 
@@ -240,6 +250,7 @@
             this.txNum.Name = "txNum";
             this.txNum.Size = new System.Drawing.Size(70, 21);
             this.txNum.TabIndex = 5;
+            this.txNum.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
             // lbNum
             // 
@@ -317,7 +328,7 @@
             this.lbTel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbTel2.Location = new System.Drawing.Point(4, 108);
             this.lbTel2.Name = "lbTel2";
-            this.lbTel2.Size = new System.Drawing.Size(119, 13);
+            this.lbTel2.Size = new System.Drawing.Size(120, 13);
             this.lbTel2.TabIndex = 7;
             this.lbTel2.Text = "Telefone(Opcional):";
             // 
@@ -327,7 +338,7 @@
             this.lbTel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbTel1.Location = new System.Drawing.Point(4, 77);
             this.lbTel1.Name = "lbTel1";
-            this.lbTel1.Size = new System.Drawing.Size(60, 13);
+            this.lbTel1.Size = new System.Drawing.Size(61, 13);
             this.lbTel1.TabIndex = 6;
             this.lbTel1.Text = "Telefone:";
             // 
@@ -370,6 +381,7 @@
             this.txNome.Name = "txNome";
             this.txNome.Size = new System.Drawing.Size(344, 21);
             this.txNome.TabIndex = 0;
+            this.txNome.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
             // lbNome
             // 
@@ -432,9 +444,9 @@
             // 
             this.pbUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbUser.Image = global::ControlX.Properties.Resources.user1;
-            this.pbUser.Location = new System.Drawing.Point(351, 30);
+            this.pbUser.Location = new System.Drawing.Point(383, 30);
             this.pbUser.Name = "pbUser";
-            this.pbUser.Size = new System.Drawing.Size(24, 23);
+            this.pbUser.Size = new System.Drawing.Size(24, 21);
             this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbUser.TabIndex = 10;
             this.pbUser.TabStop = false;
@@ -442,9 +454,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ControlX.Properties.Resources.pwd;
-            this.pictureBox1.Location = new System.Drawing.Point(351, 58);
+            this.pictureBox1.Location = new System.Drawing.Point(383, 59);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 22);
+            this.pictureBox1.Size = new System.Drawing.Size(24, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -453,14 +465,15 @@
             // 
             this.txSenha.Location = new System.Drawing.Point(54, 59);
             this.txSenha.Name = "txSenha";
-            this.txSenha.Size = new System.Drawing.Size(258, 21);
+            this.txSenha.Size = new System.Drawing.Size(322, 21);
             this.txSenha.TabIndex = 5;
             this.txSenha.UseSystemPasswordChar = true;
+            this.txSenha.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
             // lbSenha
             // 
             this.lbSenha.AutoSize = true;
-            this.lbSenha.Location = new System.Drawing.Point(9, 62);
+            this.lbSenha.Location = new System.Drawing.Point(4, 62);
             this.lbSenha.Name = "lbSenha";
             this.lbSenha.Size = new System.Drawing.Size(48, 13);
             this.lbSenha.TabIndex = 4;
@@ -468,16 +481,20 @@
             // 
             // txLogin
             // 
+            this.txLogin.BackColor = System.Drawing.SystemColors.Window;
             this.txLogin.Location = new System.Drawing.Point(54, 30);
             this.txLogin.Name = "txLogin";
-            this.txLogin.Size = new System.Drawing.Size(258, 21);
+            this.txLogin.Size = new System.Drawing.Size(323, 21);
             this.txLogin.TabIndex = 3;
+            this.txLogin.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
+            this.txLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txLogin_KeyPress);
             this.txLogin.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txLogin_KeyUp);
+            this.txLogin.Leave += new System.EventHandler(this.txLogin_Leave);
             // 
             // lbLogin
             // 
             this.lbLogin.AutoSize = true;
-            this.lbLogin.Location = new System.Drawing.Point(9, 33);
+            this.lbLogin.Location = new System.Drawing.Point(4, 33);
             this.lbLogin.Name = "lbLogin";
             this.lbLogin.Size = new System.Drawing.Size(42, 13);
             this.lbLogin.TabIndex = 2;
@@ -485,6 +502,8 @@
             // 
             // cbCargo
             // 
+            this.cbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCargo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbCargo.FormattingEnabled = true;
             this.cbCargo.Items.AddRange(new object[] {
             "Administrador",
@@ -495,11 +514,12 @@
             this.cbCargo.Name = "cbCargo";
             this.cbCargo.Size = new System.Drawing.Size(168, 21);
             this.cbCargo.TabIndex = 1;
+            this.cbCargo.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
             // lbCargo
             // 
             this.lbCargo.AutoSize = true;
-            this.lbCargo.Location = new System.Drawing.Point(9, 4);
+            this.lbCargo.Location = new System.Drawing.Point(4, 4);
             this.lbCargo.Name = "lbCargo";
             this.lbCargo.Size = new System.Drawing.Size(92, 13);
             this.lbCargo.TabIndex = 0;
