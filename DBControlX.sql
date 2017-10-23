@@ -113,5 +113,11 @@ INSERT INTO produtos(nome, preco, qntd, idFornecedor) values ('Panicat', 150000.
 
 
 
---INSERT INTO usuario(nome, cpf, sexo, dataNasc, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado, cargo, login, senha) 
---	values ();
+
+INSERT INTO usuario(nome, cpf, sexo, dataNasc, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado, cargo, login, senha) 
+	values ('Gustavo Nunes','46760818806','M','1997-09-24','1633667070','0','13563340',666,'Rua Albino Triques','','Parque Santa Felícia Jardim','São Carlos','SP','Administrador','gnunesinfo','gustavo4990');
+	
+
+INSERT INTO usuario(nome, cpf, sexo, dataNasc, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado, cargo, login, senha) 
+	values ('Carlos Silva','44691492844','M','1996-12-06','1633661367','16982472564','13573059',882,'Rua Joaquim Garcia de Oliveira ','','Cidade Aracy ','São Carlos','SP','Administrador','csilva','hitlerdidnothingwrong');
+	
