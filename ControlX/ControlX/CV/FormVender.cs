@@ -39,6 +39,10 @@ namespace ControlX
                 btCancelar.Enabled = true;
                 txValorPago.Enabled = true;
             }
+            if (txId.Text == "" || txNome.Text == "" || txQntdVenda.Text == "")
+                btAdd.Enabled = false;
+            else
+                btAdd.Enabled = true;
         }
 
         private void Auto_Complete()
@@ -76,7 +80,8 @@ namespace ControlX
         }
 
         private void txNome_TextChanged(object sender, EventArgs e)
-        {        
+        {
+            BtComplete();
             foreach (Produto p in ps)
                 if (txNome.Text.Trim() == p.Nome)
                 {
@@ -156,7 +161,7 @@ namespace ControlX
             {
                 int idProd = int.Parse(dgvVendas.Rows[dgvVendas.CurrentRow.Index].Cells[0].Value.ToString());
                 int qntdProd = int.Parse(dgvVendas.Rows[dgvVendas.CurrentRow.Index].Cells[2].Value.ToString());
-                double precoProd = double.Parse(dgvVendas.Rows[dgvVendas.CurrentRow.Index].Cells[3].Value.ToString());
+                double precoTotalProd = double.Parse(dgvVendas.Rows[dgvVendas.CurrentRow.Index].Cells[4].Value.ToString());
                 double vTotal = double.Parse(lbValorTotal.Text);
 
                 foreach (Produto p in ps)
@@ -164,7 +169,7 @@ namespace ControlX
                     if (p.Id == idProd)
                     {
                         p.Qntd += qntdProd;
-                        lbValorTotal.Text = Convert.ToString(vTotal - precoProd);
+                        lbValorTotal.Text = Convert.ToString(vTotal - precoTotalProd);
                         dgvVendas.Rows.RemoveAt(dgvVendas.CurrentRow.Index);
                         BtComplete();
                         Limpar();
@@ -225,6 +230,11 @@ namespace ControlX
             {
 
             }
+        }
+
+        private void txId_TextChanged(object sender, EventArgs e)
+        {
+            BtComplete();
         }
     }
 }

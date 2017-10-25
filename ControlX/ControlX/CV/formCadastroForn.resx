@@ -173,9 +173,6 @@
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;lbTel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -223,9 +220,6 @@
   </data>
   <data name="lbId.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="&gt;&gt;lbTel2.Parent" xml:space="preserve">
-    <value>pnCadForn</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 8.25pt</value>
@@ -1419,8 +1413,8 @@
         //////////////////////////////////8=
 </value>
   </data>
-  <data name="&gt;&gt;lbCidade.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lbBairro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
   </data>
   <data name="&gt;&gt;lbBairro.Parent" xml:space="preserve">
     <value>pnCadForn</value>
@@ -1497,8 +1491,8 @@
   <data name="txTel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>121, 74</value>
   </data>
-  <data name="&gt;&gt;txRua.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lbCompl.Text" xml:space="preserve">
+    <value>Complemento:</value>
   </data>
   <data name="lbCEP.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1514,9 +1508,6 @@
   </data>
   <data name="lbNome.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="txCNPJ.Mask" xml:space="preserve">
-    <value>00,000,000/9999-00</value>
   </data>
   <data name="&gt;&gt;txCompl.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1539,6 +1530,9 @@
   <data name="&gt;&gt;txBairro.Name" xml:space="preserve">
     <value>txBairro</value>
   </data>
+  <data name="&gt;&gt;lbCidade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>formCadastroForn</value>
   </data>
@@ -1557,8 +1551,8 @@
   <data name="&gt;&gt;lbBairro.Name" xml:space="preserve">
     <value>lbBairro</value>
   </data>
-  <data name="lbBairro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
+  <data name="btCadastrar.Text" xml:space="preserve">
+    <value>Cadastrar</value>
   </data>
   <data name="lbIdForn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 8.25pt, style=Bold</value>
@@ -1613,6 +1607,9 @@
   </data>
   <data name="&gt;&gt;lbEndereco.Parent" xml:space="preserve">
     <value>pnCadForn</value>
+  </data>
+  <data name="&gt;&gt;txRua.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbId.Parent" xml:space="preserve">
     <value>pnCadForn</value>
@@ -1740,6 +1737,9 @@
   <data name="&gt;&gt;lbTel1.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
+  <data name="lbNum.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="lbTel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 108</value>
   </data>
@@ -1776,14 +1776,11 @@
   <data name="&gt;&gt;panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbCNPJ.Name" xml:space="preserve">
-    <value>lbCNPJ</value>
+  <data name="txCNPJ.Mask" xml:space="preserve">
+    <value>00,000,000/9999-00</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 313</value>
-  </data>
-  <data name="&gt;&gt;txBairro.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="lbCEP.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1806,8 +1803,8 @@
   <data name="&gt;&gt;txCEP.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="btCadastrar.Text" xml:space="preserve">
-    <value>Cadastrar</value>
+  <data name="&gt;&gt;lbCNPJ.Name" xml:space="preserve">
+    <value>lbCNPJ</value>
   </data>
   <data name="&gt;&gt;txTel1.Parent" xml:space="preserve">
     <value>pnCadForn</value>
@@ -1866,14 +1863,17 @@
   <data name="&gt;&gt;txNome.ZOrder" xml:space="preserve">
     <value>22</value>
   </data>
-  <data name="lbCompl.Text" xml:space="preserve">
-    <value>Complemento:</value>
+  <data name="&gt;&gt;lbTel2.Parent" xml:space="preserve">
+    <value>pnCadForn</value>
   </data>
   <data name="&gt;&gt;lbTel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txCompl.Parent" xml:space="preserve">
     <value>pnCadForn</value>
+  </data>
+  <data name="txCidade.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 261</value>
   </data>
   <data name="txNum.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 21</value>
@@ -1929,8 +1929,8 @@
   <data name="&gt;&gt;lbNome.ZOrder" xml:space="preserve">
     <value>23</value>
   </data>
-  <data name="lbNum.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;txBairro.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;txNum.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -1980,8 +1980,8 @@
   <data name="&gt;&gt;txEstado.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="txCidade.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 261</value>
+  <data name="&gt;&gt;lbTel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txCompl.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>

@@ -112,13 +112,11 @@ namespace ControlX
                 BuscaCEP();
         }
 
-        private void txLogin_KeyUp(object sender, KeyEventArgs e)
-        {
-
-        }
-
         private void txLogin_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //Se o que foi digitado NÃO for um Digito(numeral) E NÃO for do tipo controle(backspace por exemplo) 
+            //E NÃO for do tipo Letter(Alfabeto)
+            //o e.Handled praticamente ira ignorar o que foi inserido
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsLetter(e.KeyChar))
                 e.Handled = true;
         }

@@ -69,7 +69,6 @@
             // pnCadForn
             // 
             resources.ApplyResources(this.pnCadForn, "pnCadForn");
-            this.pnCadForn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnCadForn.Controls.Add(this.txCNPJ);
             this.pnCadForn.Controls.Add(this.txTel2);
             this.pnCadForn.Controls.Add(this.txTel1);
@@ -120,7 +119,6 @@
             this.txCEP.Name = "txCEP";
             this.txCEP.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             this.txCEP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txCEP_KeyPress);
-            this.txCEP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txCEP_KeyUp);
             this.txCEP.Leave += new System.EventHandler(this.txCEP_Leave);
             // 
             // txEstado

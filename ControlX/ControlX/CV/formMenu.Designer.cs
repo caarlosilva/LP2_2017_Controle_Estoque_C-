@@ -42,9 +42,6 @@
             this.lblData = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.msMenu = new System.Windows.Forms.MenuStrip();
-            this.HistoricoTSMI = new System.Windows.Forms.ToolStripMenuItem();
-            this.compraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.picLogo = new System.Windows.Forms.PictureBox();
@@ -169,7 +166,6 @@
             // msMenu
             // 
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.HistoricoTSMI,
             this.helpToolStripMenuItem,
             this.sobreToolStripMenuItem});
             this.msMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
@@ -178,29 +174,6 @@
             this.msMenu.Size = new System.Drawing.Size(535, 24);
             this.msMenu.TabIndex = 8;
             this.msMenu.Text = "menuStrip1";
-            // 
-            // HistoricoTSMI
-            // 
-            this.HistoricoTSMI.BackColor = System.Drawing.SystemColors.Control;
-            this.HistoricoTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.compraToolStripMenuItem,
-            this.vendaToolStripMenuItem});
-            this.HistoricoTSMI.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.HistoricoTSMI.Name = "HistoricoTSMI";
-            this.HistoricoTSMI.Size = new System.Drawing.Size(67, 20);
-            this.HistoricoTSMI.Text = "Histórico";
-            // 
-            // compraToolStripMenuItem
-            // 
-            this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
-            this.compraToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.compraToolStripMenuItem.Text = "Compra";
-            // 
-            // vendaToolStripMenuItem
-            // 
-            this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.vendaToolStripMenuItem.Text = "Venda";
             // 
             // helpToolStripMenuItem
             // 
@@ -268,10 +241,7 @@
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Button btComprar;
         private System.Windows.Forms.MenuStrip msMenu;
-        private System.Windows.Forms.ToolStripMenuItem HistoricoTSMI;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem compraToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.Button btUsuario;
         public System.Windows.Forms.Label lbMensagem;

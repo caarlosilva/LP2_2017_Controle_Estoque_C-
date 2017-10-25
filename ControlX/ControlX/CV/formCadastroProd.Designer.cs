@@ -86,6 +86,7 @@
             this.txNome.Size = new System.Drawing.Size(324, 21);
             this.txNome.TabIndex = 0;
             this.txNome.TextChanged += new System.EventHandler(this.txNome_TextChanged);
+            this.txNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txNome_KeyPress);
             // 
             // lbId
             // 
@@ -130,12 +131,12 @@
             // cbFornecedor
             // 
             this.cbFornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbFornecedor.FormattingEnabled = true;
             this.cbFornecedor.Location = new System.Drawing.Point(388, 58);
             this.cbFornecedor.Name = "cbFornecedor";
             this.cbFornecedor.Size = new System.Drawing.Size(146, 21);
             this.cbFornecedor.TabIndex = 12;
-            this.cbFornecedor.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cbFornecedor_Format);
             // 
             // lbQntd
             // 

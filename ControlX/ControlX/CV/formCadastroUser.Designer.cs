@@ -488,7 +488,6 @@
             this.txLogin.TabIndex = 3;
             this.txLogin.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             this.txLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txLogin_KeyPress);
-            this.txLogin.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txLogin_KeyUp);
             this.txLogin.Leave += new System.EventHandler(this.txLogin_Leave);
             // 
             // lbLogin
@@ -547,6 +546,7 @@
             this.Controls.Add(this.pnBtn);
             this.Controls.Add(this.pnCadUser);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

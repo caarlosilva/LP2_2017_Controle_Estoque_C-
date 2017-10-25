@@ -59,20 +59,20 @@ namespace ControlX
                     if (((TextBox)c).Text.Trim() != "")
                         btCadastrar.Enabled = false;
                 else if(c is MaskedTextBox)
-                     if (((MaskedTextBox)c).Text.Trim() != "")
+                     if (((MaskedTextBox)c).MaskCompleted)
                         btCadastrar.Enabled = false;
                 else
                         btCadastrar.Enabled = true;
             }
             */
-
+            
             if (txNome.Text.Trim() == "" || txRua.Text.Trim() == "" 
                 || txBairro.Text.Trim() == "" || txCidade.Text.Trim() == "" || txEstado.Text.Trim() == "" 
-                || txNum.Text.Trim() == "" || !txCNPJ.MaskCompleted || !txTel1.MaskCompleted) //O IF ACABA AQUI, KRAI
+                || txNum.Text.Trim() == "" || !txCNPJ.MaskCompleted || !txCEP.MaskCompleted || !txTel1.MaskCompleted) //O IF ACABA AQUI, KRAI
                 btCadastrar.Enabled = false;
             else
                 btCadastrar.Enabled = true;
-
+            
 
         }
 
@@ -81,21 +81,19 @@ namespace ControlX
             this.Dispose();
         }
 
+        
         private void txCEP_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+            //Se o que foi digitado NÃO for um Digito(numeral) E NÃO for do tipo controle(backspace por exemplo)
+            //o e.Handled praticamente ira ignorar o que foi inserido
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-                e.Handled = true;
-            
-        }
-
-        private void txCEP_KeyUp(object sender, KeyEventArgs e)
-        {
-
+                e.Handled = true;          
         }
 
         private void txCEP_Leave(object sender, EventArgs e)
-        {                           
+        {                          
+            //Caso a mascara esteja completa, ou seja, todos os digitos que formam um CEP
+            //Iremos chamar o método BuscaCEP 
             if (txCEP.MaskFull)
                 BuscaCEP();
         }
@@ -135,35 +133,12 @@ namespace ControlX
                 db1.Atualizar(nFornecedor);
             }
             this.Close();
-
         }
 
         private void txNome_TextChanged(object sender, EventArgs e)
         {
+            //Qualquer alteração nos Text Boxs, o btComplete será executado
             btComplete();
         }
-        /*
-        private void txRua_TextChanged(object sender, EventArgs e)
-        {
-            btComplete();
-        }
-
-        private void txBairro_TextChanged(object sender, EventArgs e)
-        {
-            btComplete();
-        }
-
-
-        private void txCidade_TextChanged(object sender, EventArgs e)
-        {
-            btComplete();
-        }
-
-        private void txEstado_TextChanged(object sender, EventArgs e)
-        {
-            btComplete();
-        }
-        */
-
     }
 }

@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVender));
             this.pnForm = new System.Windows.Forms.Panel();
             this.pnTroco = new System.Windows.Forms.Panel();
@@ -225,6 +226,7 @@
             this.txQntdVenda.Size = new System.Drawing.Size(53, 21);
             this.txQntdVenda.TabIndex = 32;
             this.txQntdVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txQntdVenda.TextChanged += new System.EventHandler(this.txId_TextChanged);
             this.txQntdVenda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txQntdVenda_KeyPress);
             // 
             // lbPrecoShow
@@ -322,6 +324,7 @@
             this.txId.Name = "txId";
             this.txId.Size = new System.Drawing.Size(66, 21);
             this.txId.TabIndex = 1;
+            this.txId.TextChanged += new System.EventHandler(this.txId_TextChanged);
             this.txId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txId_KeyPress);
             // 
             // lbId
@@ -539,6 +542,9 @@
             // colPrecoUn
             // 
             this.colPrecoUn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colPrecoUn.DefaultCellStyle = dataGridViewCellStyle2;
             this.colPrecoUn.FillWeight = 20F;
             this.colPrecoUn.HeaderText = "Preço Unitário";
             this.colPrecoUn.Name = "colPrecoUn";
@@ -547,9 +553,9 @@
             // coLPreco
             // 
             this.coLPreco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.coLPreco.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.coLPreco.DefaultCellStyle = dataGridViewCellStyle3;
             this.coLPreco.FillWeight = 20F;
             this.coLPreco.HeaderText = "Preço Total";
             this.coLPreco.Name = "coLPreco";
