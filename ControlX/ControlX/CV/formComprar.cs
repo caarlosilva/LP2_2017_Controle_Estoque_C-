@@ -60,10 +60,11 @@ namespace ControlX
                 int Qntd = int.Parse(dgvEstoque.Rows[i].Cells[3].Value.ToString());
                 foreach (Produto p in ps)
                 {
+                    //Alerta em vermelho os produtos com estoque < 20
                     if (Qntd <= 20)
                     {
                         dgvEstoque.Rows[i].DefaultCellStyle.ForeColor = Color.Red;
-                        dgvEstoque.Rows[i].DefaultCellStyle.Font = new Font(this.Font, FontStyle.Bold);
+//                        dgvEstoque.Rows[i].DefaultCellStyle.Font = new Font(this.Font, FontStyle.Bold);
                     }
                 }
             }
