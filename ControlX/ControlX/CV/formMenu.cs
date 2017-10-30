@@ -68,5 +68,12 @@ namespace ControlX
             new formUsuario().ShowDialog();
             this.Show();
         }
+
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new formHistoricoData().ShowDialog();
+            this.Show();
+        }
     }
 }
