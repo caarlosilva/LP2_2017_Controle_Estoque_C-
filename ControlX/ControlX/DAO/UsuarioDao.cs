@@ -19,7 +19,7 @@ namespace ControlX.DAO
             {
                 return true;
             }
-           return false;
+            return false;
         }
 
         public void Adicionar(Object o)
@@ -40,7 +40,7 @@ namespace ControlX.DAO
 
         public List<object> ListAll()
         {
-            string qry = string.Format("SELECT id, nome, cpf, sexo, dataNasc, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado, cargo, login, senha FROM usuario");
+            string qry = string.Format("SELECT id, nome, cpf, sexo, dataNasc, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado, cargo, login, senha FROM usuario WHERE deleted_at is null");
             DataSet ds = db.ExecuteQuery(qry);
 
             List<object> user = new List<object>();
@@ -72,7 +72,7 @@ namespace ControlX.DAO
 
         public List<object> ListByName(int id)
         {
-            string qry = string.Format("SELECT * FROM usuario WHERE id = {0};", id);
+            string qry = string.Format("SELECT * FROM usuario WHERE id = {0} AND deleted_at is null;", id);
 
             DataSet ds = db.ExecuteQuery(qry);
 
@@ -105,7 +105,7 @@ namespace ControlX.DAO
 
         public List<object> ListByName(string name)
         {
-            string qry = string.Format("SELECT * FROM usuario WHERE nome LIKE '%{0}%';", name);
+            string qry = string.Format("SELECT * FROM usuario WHERE nome LIKE '%{0}%' AND deleted_at is null;", name);
 
             DataSet ds = db.ExecuteQuery(qry);
 
@@ -138,7 +138,8 @@ namespace ControlX.DAO
 
         public int Remover(int id)
         {
-            string qry = string.Format("DELETE FROM usuario where id = {0}", id);
+            string dataMySql = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string qry = string.Format("UPDATE usuario SET deleted_at = '{0}' where id = {1}", dataMySql, id);
             db.ExecuteNonQuery(qry);
             return 1;
         }

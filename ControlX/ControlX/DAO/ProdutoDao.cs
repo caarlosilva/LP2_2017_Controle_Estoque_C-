@@ -36,7 +36,7 @@ namespace ControlX.DAO
                 preco = preco.Replace(",", ".");
             }
             string qry = string.Format("UPDATE produtos SET nome = '{0}', preco = {1}, qntd = {2}, idFornecedor = {4} where id = {3}", p.Nome, preco, p.Qntd, p.Id, p.Fornecedor.Id);
-            
+
             db.ExecuteNonQuery(qry);
         }
 
@@ -44,11 +44,11 @@ namespace ControlX.DAO
 
         public List<object> ListAll()
         {
-            string qry = string.Format("SELECT id, nome, preco, qntd, idFornecedor FROM produtos");
+            string qry = string.Format("SELECT id, nome, preco, qntd, idFornecedor FROM produtos WHERE deleted_at is null");
             DataSet ds = db.ExecuteQuery(qry);
 
             List<Object> ps = new List<Object>();
-            
+
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 Produto p = new Produto();
@@ -78,16 +78,16 @@ namespace ControlX.DAO
                     p.Fornecedor.Cidade = f.Cidade;
                     p.Fornecedor.Estado = f.Estado;
                 }*/
-            }            
+            }
             return ps;
         }
 
         public List<object> ListByName(int id)
         {
-            string qry = string.Format("SELECT id, nome, preco, qntd, idFornecedor FROM produtos WHERE id = {0};", id);
-                      
+            string qry = string.Format("SELECT id, nome, preco, qntd, idFornecedor FROM produtos WHERE id = {0} AND deleted_at is null", id);
+
             DataSet ds = db.ExecuteQuery(qry);
-            
+
             List<object> ps = new List<object>();
 
             foreach (DataRow dr in ds.Tables[0].Rows)
@@ -105,7 +105,7 @@ namespace ControlX.DAO
 
         public List<object> ListByName(string name)
         {
-            string qry = string.Format("SELECT * FROM produtos WHERE nome LIKE '%{0}%';", name);
+            string qry = string.Format("SELECT * FROM produtos WHERE nome LIKE '%{0}%' AND deleted_at is null;", name);
 
             DataSet ds = db.ExecuteQuery(qry);
 
@@ -126,7 +126,8 @@ namespace ControlX.DAO
 
         public int Remover(int idProduto)
         {
-            string qry = string.Format("DELETE FROM produtos where id = {0}", idProduto);
+            string dataMySql = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string qry = string.Format("UPDATE produtos SET deleted_at = '{0}' WHERE id = {1}", dataMySql, idProduto);
             db.ExecuteNonQuery(qry);
             return 1;
 
@@ -134,7 +135,7 @@ namespace ControlX.DAO
 
         //BUSCA NA TABELA PRODUTOS PELO ULTIMO VALOR DO AUTO INCREMENTO
         public int GetId()
-        {            
+        {
             string qry = string.Format("SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'controlx' AND TABLE_NAME = 'produtos'");
             DataSet ds = db.ExecuteQuery(qry);
             DataRow dr = ds.Tables[0].Rows[0];

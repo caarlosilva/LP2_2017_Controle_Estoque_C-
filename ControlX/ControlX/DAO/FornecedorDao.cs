@@ -30,7 +30,7 @@ namespace ControlX.DAO
 
         public List<object> ListAll()
         {
-            string qry = string.Format("SELECT id, nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado FROM fornecedor");
+            string qry = string.Format("SELECT id, nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado FROM fornecedor WHERE deleted_at is null");
             DataSet ds = db.ExecuteQuery(qry);
 
             List<object> fs = new List<object>();
@@ -57,7 +57,7 @@ namespace ControlX.DAO
 
         public Fornecedor Ler(int id)
         {
-            string qry = string.Format("SELECT * FROM fornecedor WHERE id ={0}",id);
+            string qry = string.Format("SELECT * FROM fornecedor WHERE id = {0} AND deleted_at is null", id);
             DataSet ds = db.ExecuteQuery(qry);
 
             Fornecedor f = null;
@@ -83,7 +83,7 @@ namespace ControlX.DAO
 
         public List<object> ListByName(string name)
         {
-            string qry = string.Format("SELECT id, nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado FROM fornecedor WHERE nome LIKE '%{0}%'", name);
+            string qry = string.Format("SELECT id, nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado FROM fornecedor WHERE nome LIKE '%{0}%' AND deleted_at is null", name);
             DataSet ds = db.ExecuteQuery(qry);
 
             List<object> fs = new List<object>();
@@ -117,7 +117,7 @@ namespace ControlX.DAO
         public int Remover(int idFornecedor)
         {
             //PROCURA PRODUTOS COM ID DO FORNECEDOR
-            string qry = string.Format("SELECT idFornecedor FROM produtos WHERE idFornecedor = {0}", idFornecedor);
+            string qry = string.Format("SELECT idFornecedor FROM produtos WHERE idFornecedor = {0} AND deleted_at is null;", idFornecedor);
             DataSet ds = db.ExecuteQuery(qry);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -126,7 +126,8 @@ namespace ControlX.DAO
 
             if (idFornecedor != -1)
             {
-                string qry1 = string.Format("DELETE FROM fornecedor WHERE id = {0}", idFornecedor);
+                string dataMySql = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
+                string qry1 = string.Format("UPDATE fornecedor SET deleted_at = '{0}' WHERE id = {1}", dataMySql, idFornecedor);
                 db.ExecuteNonQuery(qry1);
             }
 

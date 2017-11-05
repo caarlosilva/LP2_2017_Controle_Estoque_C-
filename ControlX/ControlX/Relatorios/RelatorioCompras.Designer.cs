@@ -26,10 +26,13 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        /// 
+
         private void InitializeComponent()
         {
+
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.Compras_Rel1 = new ControlX.Relatorios.Compras_Rel();
+            this.Compras_Rel1 = new Relatorios.Compras_Rel();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -62,5 +65,6 @@
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private Relatorios.Compras_Rel Compras_Rel1;
+
     }
 }
