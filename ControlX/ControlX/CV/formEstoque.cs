@@ -20,12 +20,12 @@ namespace ControlX
         {
             InitializeComponent();
             Fill();
-            
+
         }
 
         private void btAdd_Click(object sender, EventArgs e)
-        {          
-            formCadastroProd form =  new formCadastroProd();
+        {
+            formCadastroProd form = new formCadastroProd();
             IDao db = new DAO.ProdutoDao();
             idProduto = db.GetId();
             form.lbIdProduto.Text = "" + idProduto;
@@ -38,11 +38,11 @@ namespace ControlX
         {
             IDao db = new DAO.ProdutoDao();
             List<Object> ps = db.ListAll();
-            
+
             dgvEstoque.Rows.Clear();
             foreach (Produto p in ps)
             {
-                dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
+                dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd, p.Cat.Nome);
             }
 
             buttonEnable();
@@ -67,14 +67,15 @@ namespace ControlX
 
         private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
         {
-            IDao db = new DAO.ProdutoDao();
-            List<Object> ps = (rbNome.Checked) ? db.ListByName(txPesquisar.Text) : (txPesquisar.Text.Trim() == "")? db.ListAll() : db.ListByName(int.Parse(txPesquisar.Text));
+            DAO.ProdutoDao db = new DAO.ProdutoDao();
 
-            dgvEstoque.Rows.Clear();            
-            foreach (Produto p in ps)
-            {
-                dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
-            }
+                List<Object> ps = (rbNome.Checked) ? db.ListByName(txPesquisar.Text) : (txPesquisar.Text.Trim() == "") ? db.ListAll() : db.ListById(int.Parse(txPesquisar.Text));
+
+                dgvEstoque.Rows.Clear();
+                foreach (Produto p in ps)
+                {
+                    dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd, p.Cat.Nome);
+                }
         }
 
         private void btDel_Click(object sender, EventArgs e)
@@ -82,7 +83,7 @@ namespace ControlX
             IDao data = new DAO.ProdutoDao();
             int a = int.Parse(dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
             //Caixa de aviso caso deseja ou não apagar
-            DialogResult result = MessageBox.Show("Tem certeza que deseja remover esse item do seu estoque?", 
+            DialogResult result = MessageBox.Show("Tem certeza que deseja remover esse item do seu estoque?",
                 "Aviso!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             //Caso clique em sim
@@ -97,7 +98,7 @@ namespace ControlX
             }
             else if (result == DialogResult.No)
             {
-                 
+
             }
         }
 
@@ -117,12 +118,13 @@ namespace ControlX
             int idP = Convert.ToInt32(form.lbIdProduto.Text);
             IDao db = new DAO.ProdutoDao();
 
-            List<Object> p = db.ListByName(idP);
+            List<Object> p = db.ListById(idP);
 
 
             foreach (Produto produto in p)
             {
                 form.cbFornecedor.SelectedValue = produto.Fornecedor.Id;
+                form.cbCategoria.SelectedValue = produto.Cat.Id;
             }
 
             form.btCadastrar.Text = "Salvar";
@@ -138,6 +140,7 @@ namespace ControlX
             form.txPreco.ReadOnly = true;
             form.txQntd.ReadOnly = true;
             form.cbFornecedor.Enabled = false;
+            form.cbCategoria.Enabled = false;
             //Enviando informacões para os labels e bottons.
             form.txNome.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[1].Value.ToString());
             form.txPreco.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[2].Value.ToString());
@@ -146,23 +149,24 @@ namespace ControlX
             int idP = Convert.ToInt32(form.lbIdProduto.Text);
             IDao db = new DAO.ProdutoDao();
 
-            List<Object> p = db.ListByName(idP);
-            
+            List<Object> p = db.ListById(idP);
 
-            foreach(Produto produto in p)
+
+            foreach (Produto produto in p)
             {
                 form.cbFornecedor.SelectedValue = produto.Fornecedor.Id;
+                form.cbCategoria.SelectedValue = produto.Cat.Id;
             }
-                                         
+
             //form.cbFornecedor.DataSource = p;
             //form.cbFornecedor.DisplayMember = "FornecedorFullName";
             //form.cbFornecedor.ValueMember = "Id";
-               
-            
+
+
             //Deixa o botão Cadastrar oculto.
             form.btCadastrar.Enabled = false;
             //Modifica o texto do botão Cancelar.
-            form.btCancelar.Text = "Voltar";            
+            form.btCancelar.Text = "Voltar";
             form.ShowDialog(this);
             Fill();
         }
@@ -176,6 +180,13 @@ namespace ControlX
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && rbId.Checked)
                 e.Handled = true;
+        }
+
+        private void btCategoria_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new FormCategoria().ShowDialog();
+            this.Show();
         }
     }
 }

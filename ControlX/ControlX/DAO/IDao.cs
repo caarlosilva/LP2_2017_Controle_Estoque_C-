@@ -18,7 +18,7 @@ namespace ControlX
 
                 List<Object> ListByName(string name);
 
-                List<Object> ListByName(int id);
+                List<Object> ListById(int id);
 
                 int GetId();
     }

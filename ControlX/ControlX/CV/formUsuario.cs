@@ -100,6 +100,7 @@ namespace ControlX
                 }
             }
             form.btCadastrar.Text = "Salvar";
+            form.txLogin.Enabled = false;
             form.ShowDialog(this);
             Fill();
         }

@@ -28,7 +28,7 @@ namespace ControlX
             throw new NotImplementedException();
         }
 
-        public List<object> ListByName(int id)
+        public List<object> ListById(int id)
         {
             throw new NotImplementedException();
         }

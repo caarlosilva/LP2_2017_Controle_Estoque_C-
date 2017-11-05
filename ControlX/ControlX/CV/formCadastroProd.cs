@@ -48,6 +48,18 @@ namespace ControlX
                 //O Combo Box então mostrará '13 - Jorge Cutigi', e caso for selecionado
                 //O seu Id '13' será o valor que o combo box terá em seu ValueMember
             }
+
+            //comboBox Categorias
+
+            IDao db3 = new DAO.CategoriaDao();
+            List<Object> cat = db3.ListAll();
+            cbCategoria.DataSource = cat;
+
+            foreach (Object c in cat)
+            {
+                cbCategoria.DisplayMember = "CategoriaFullName";
+                cbCategoria.ValueMember = "Id";
+            }
         }
         
         private void btComplete()
@@ -64,6 +76,7 @@ namespace ControlX
             nProduto.Preco = double.Parse(txPreco.Text);                
             nProduto.Qntd = int.Parse(txQntd.Text);
             nProduto.Fornecedor.Id = int.Parse(cbFornecedor.SelectedValue.ToString());
+            nProduto.Cat.Id = int.Parse(cbCategoria.SelectedValue.ToString());
 
             btComplete();
 

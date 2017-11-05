@@ -91,6 +91,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\CategoriaDao.cs" />
+    <Compile Include="CV\FormCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormCategoria.Designer.cs">
+      <DependentUpon>FormCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormCadastroCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormCadastroCat.Designer.cs">
+      <DependentUpon>FormCadastroCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Categoria.cs" />
     <Compile Include="Relatorios\Compras_Rel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -200,6 +214,12 @@
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Modelo\Vender.cs" />
     <Compile Include="DAO\VenderDao.cs" />
+    <EmbeddedResource Include="CV\FormCategoria.resx">
+      <DependentUpon>FormCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormCadastroCat.resx">
+      <DependentUpon>FormCadastroCat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\Compras_Rel.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Compras_Rel.cs</LastGenOutput>

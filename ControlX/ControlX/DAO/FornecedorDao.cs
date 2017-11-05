@@ -108,7 +108,7 @@ namespace ControlX.DAO
             return fs;
         }
 
-        public List<object> ListByName(int id)
+        public List<object> ListById(int id)
         {
             List<object> fs = new List<object>();
             return fs;

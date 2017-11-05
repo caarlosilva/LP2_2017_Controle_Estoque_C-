@@ -34,7 +34,7 @@ namespace ControlX
         private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
         {
             IDao db = new DAO.ProdutoDao();
-            List<Object> ps = (rbNome.Checked) ? db.ListByName(txPesquisar.Text) : (txPesquisar.Text.Trim() == "") ? db.ListAll() : db.ListByName(int.Parse(txPesquisar.Text));
+            List<Object> ps = (rbNome.Checked) ? db.ListByName(txPesquisar.Text) : (txPesquisar.Text.Trim() == "") ? db.ListAll() : db.ListById(int.Parse(txPesquisar.Text));
 
             dgvEstoque.Rows.Clear();
             foreach (Produto p in ps)
@@ -99,7 +99,7 @@ namespace ControlX
             int idP = Convert.ToInt32(form.lbIdProduto.Text);
             IDao db = new DAO.ProdutoDao();
 
-            List<Object> p = db.ListByName(idP);
+            List<Object> p = db.ListById(idP);
 
 
             foreach (Produto produto in p)

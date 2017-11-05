@@ -94,7 +94,7 @@ namespace ControlX.DAO
             return user;
         }
 
-        public List<object> ListByName(int id)
+        public List<object> ListById(int id)
         {
             string qry = string.Format("SELECT * FROM usuario WHERE id = {0} AND deleted_at is null;", id);
 

@@ -48,7 +48,6 @@ namespace ControlX
 
             if (result != 0)
             {
-                MessageBox.Show("Seja bem vindo!");
                 this.Hide();
                 formMenu menu = new formMenu();
                 if (Logado1 != 1)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ControlX.Modelo;
 
 namespace ControlX
 {
@@ -12,6 +13,7 @@ namespace ControlX
         private int id;
         private double preco;
         private int qntd;
+        private Modelo.Categoria cat = new Modelo.Categoria();
         
         //private int idFornecedor;
         private Fornecedor fornecedor = new Fornecedor();
@@ -89,6 +91,19 @@ namespace ControlX
             }
         }
 
+        internal Categoria Cat
+        {
+            get
+            {
+                return cat;
+            }
+
+            set
+            {
+                cat = value;
+            }
+        }
+
         /*public int IdFornecedor
         {
             get
@@ -107,13 +122,14 @@ namespace ControlX
 
         }
 
-        public Produto(string nome, int id, double preco, int qntd, Fornecedor f)
+        public Produto(string nome, int id, double preco, int qntd, Fornecedor f, Categoria cat)
         {
             this.nome = nome;
             this.id = id;
             this.preco = preco;
             this.qntd = qntd;
             this.Fornecedor = f;
+            this.cat = cat;
         }
     }
 }

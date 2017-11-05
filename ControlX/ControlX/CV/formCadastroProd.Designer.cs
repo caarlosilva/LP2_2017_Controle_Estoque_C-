@@ -43,6 +43,8 @@
             this.pnBtCad = new System.Windows.Forms.Panel();
             this.btCancelar = new System.Windows.Forms.Button();
             this.txPreco = new System.Windows.Forms.TextBox();
+            this.lbCategoria = new System.Windows.Forms.Label();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.pnCadastro.SuspendLayout();
             this.pnBtCad.SuspendLayout();
             this.SuspendLayout();
@@ -103,6 +105,8 @@
             this.pnCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnCadastro.Controls.Add(this.lbCategoria);
+            this.pnCadastro.Controls.Add(this.cbCategoria);
             this.pnCadastro.Controls.Add(this.label1);
             this.pnCadastro.Controls.Add(this.cbFornecedor);
             this.pnCadastro.Controls.Add(this.lbQntd);
@@ -198,6 +202,25 @@
             this.txPreco.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             this.txPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPreco_KeyPress);
             // 
+            // lbCategoria
+            // 
+            this.lbCategoria.AutoSize = true;
+            this.lbCategoria.Location = new System.Drawing.Point(5, 97);
+            this.lbCategoria.Name = "lbCategoria";
+            this.lbCategoria.Size = new System.Drawing.Size(68, 13);
+            this.lbCategoria.TabIndex = 15;
+            this.lbCategoria.Text = "Categoria:";
+            // 
+            // cbCategoria
+            // 
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(79, 93);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(222, 21);
+            this.cbCategoria.TabIndex = 14;
+            // 
             // formCadastroProd
             // 
             this.AcceptButton = this.btCadastrar;
@@ -235,5 +258,7 @@
         public System.Windows.Forms.TextBox txPreco;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ComboBox cbFornecedor;
+        private System.Windows.Forms.Label lbCategoria;
+        public System.Windows.Forms.ComboBox cbCategoria;
     }
 }

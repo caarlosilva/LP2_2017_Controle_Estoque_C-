@@ -453,3 +453,5 @@ C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.
 C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.formCadastroForn.pt-BR.resources
 C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.csproj.GenerateResource.Cache
 C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\pt-BR\ControlX.resources.dll
+C:\Users\Fabricio\Source\Repos\LP2_PROJETOO\ControlX\ControlX\obj\Debug\ControlX.FormCategoria.resources
+C:\Users\Fabricio\Source\Repos\LP2_PROJETOO\ControlX\ControlX\obj\Debug\ControlX.FormCadastroCat.resources
