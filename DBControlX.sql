@@ -14,6 +14,7 @@ CREATE TABLE fornecedor (
   bairro varchar(64) DEFAULT NULL,
   cidade varchar(64) DEFAULT NULL,
   estado varchar(64) DEFAULT NULL,
+  deleted_at date DEFAULT NULL,
   PRIMARY KEY (id)
 );
 
@@ -24,6 +25,7 @@ CREATE TABLE produtos (
   preco double DEFAULT NULL,
   qntd int DEFAULT NULL,
   idFornecedor int,
+  deleted_at date DEFAULT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (idFornecedor) REFERENCES fornecedor (id)
  );
@@ -46,6 +48,7 @@ CREATE TABLE produtos (
 	cargo varchar(32),
 	login varchar(32),
 	senha varchar(32),
+	deleted_at date DEFAULT NULL,
 	PRIMARY KEY (id)	
  );
 
