@@ -12,11 +12,9 @@ namespace ControlX
 {
     public partial class formMenu : Form
     {
-        
         public formMenu()
         {
             InitializeComponent();
-            
         }
 
         private void btControleEstoq_Click(object sender, EventArgs e)

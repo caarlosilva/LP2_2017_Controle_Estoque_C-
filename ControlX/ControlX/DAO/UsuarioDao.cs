@@ -22,6 +22,30 @@ namespace ControlX.DAO
             return false;
         }
 
+
+        public int VerificaLogin(string login, string senha)
+        {
+                //0 - Deslogado, 1 - Administrador, 2 - Supervisor, 3 - Almoxarifado, 4 - Caixa
+                int result = 0;
+                
+                Usuario u = new Usuario();
+                string sql = string.Format("SELECT login, senha, cargo FROM usuario WHERE login = '{0}' AND senha = '{1}' AND deleted_at is null;", login, senha);
+                DataSet ds = db.ExecuteQuery(sql);
+                
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        if (dr["cargo"].ToString() == "Administrador")
+                            return result = 1;
+                        if (dr["cargo"].ToString() == "Supervisor")
+                            return result = 2;
+                        if (dr["cargo"].ToString() == "Almoxarifado")
+                            return result = 3;
+                        if (dr["cargo"].ToString() == "Caixa")
+                            return result = 4;
+                    }         
+            return result;
+        }
+
         public void Adicionar(Object o)
         {
             Usuario u = (Usuario)o;

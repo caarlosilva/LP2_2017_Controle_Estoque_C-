@@ -36,13 +36,13 @@
             this.txUsuario = new System.Windows.Forms.TextBox();
             this.txSenha = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbUser = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btSair
@@ -94,7 +94,7 @@
             this.txUsuario.Name = "txUsuario";
             this.txUsuario.Size = new System.Drawing.Size(186, 23);
             this.txUsuario.TabIndex = 0;
-            this.txUsuario.Text = "Admin";
+            this.txUsuario.Text = "admin";
             // 
             // txSenha
             // 
@@ -119,15 +119,6 @@
             this.panel1.Size = new System.Drawing.Size(307, 71);
             this.panel1.TabIndex = 6;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btLogar);
-            this.panel2.Controls.Add(this.btSair);
-            this.panel2.Location = new System.Drawing.Point(62, 93);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(203, 29);
-            this.panel2.TabIndex = 7;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ControlX.Properties.Resources.pwd;
@@ -147,6 +138,15 @@
             this.pbUser.TabIndex = 8;
             this.pbUser.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btLogar);
+            this.panel2.Controls.Add(this.btSair);
+            this.panel2.Location = new System.Drawing.Point(62, 93);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(203, 29);
+            this.panel2.TabIndex = 7;
+            // 
             // formLogin
             // 
             this.AcceptButton = this.btLogar;
@@ -163,9 +163,9 @@
             this.Text = "ControlX - Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

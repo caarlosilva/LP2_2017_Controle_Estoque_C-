@@ -23,16 +23,49 @@ namespace ControlX
             this.Close();
         }
 
+        private int Logado = 0;
+
+        public int Logado1
+        {
+            get
+            {
+                return Logado;
+            }
+
+            set
+            {
+                Logado = value;
+            }
+        }
+
         private void btLogar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            formMenu menu = new formMenu(); 
-            menu.lbMensagem.Text = "Você está conectado como '" + txUsuario.Text +"' !";
-            menu.ShowDialog();
+            formMenu form = new formMenu();
+            DAO.UsuarioDao u = new DAO.UsuarioDao();
+            int result = u.VerificaLogin(txUsuario.Text, txSenha.Text);
 
+            Logado1 = result;
 
-            this.Show();
-            txSenha.Text = "";
+            if (result != 0)
+            {
+                MessageBox.Show("Seja bem vindo!");
+                this.Hide();
+                formMenu menu = new formMenu();
+                if (Logado1 != 1)
+                {
+                    menu.btUsuario.Visible = false;
+                    menu.relatoriosToolStripMenuItem.Visible = false;
+                }
+                menu.lbMensagem.Text = "Você está conectado como '" + txUsuario.Text + "' !";
+                menu.ShowDialog();
+
+                this.Show();
+                txSenha.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Usuário ou senha incorreto!");
+            }
         }
     }
 }
