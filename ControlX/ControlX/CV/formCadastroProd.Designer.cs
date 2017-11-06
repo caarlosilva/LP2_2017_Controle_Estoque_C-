@@ -35,6 +35,13 @@
             this.txNome = new System.Windows.Forms.TextBox();
             this.lbId = new System.Windows.Forms.Label();
             this.pnCadastro = new System.Windows.Forms.Panel();
+            this.cbTipoUn = new System.Windows.Forms.ComboBox();
+            this.lbTipoVenda = new System.Windows.Forms.Label();
+            this.btImagem = new System.Windows.Forms.Button();
+            this.pbImagemProd = new System.Windows.Forms.PictureBox();
+            this.txPreco = new System.Windows.Forms.MaskedTextBox();
+            this.lbCategoria = new System.Windows.Forms.Label();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbFornecedor = new System.Windows.Forms.ComboBox();
             this.lbQntd = new System.Windows.Forms.Label();
@@ -42,19 +49,17 @@
             this.lbIdProduto = new System.Windows.Forms.Label();
             this.pnBtCad = new System.Windows.Forms.Panel();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.txPreco = new System.Windows.Forms.TextBox();
-            this.lbCategoria = new System.Windows.Forms.Label();
-            this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.pnCadastro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).BeginInit();
             this.pnBtCad.SuspendLayout();
             this.SuspendLayout();
             // 
             // btCadastrar
             // 
             this.btCadastrar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCadastrar.Location = new System.Drawing.Point(108, 2);
+            this.btCadastrar.Location = new System.Drawing.Point(332, 3);
             this.btCadastrar.Name = "btCadastrar";
-            this.btCadastrar.Size = new System.Drawing.Size(87, 23);
+            this.btCadastrar.Size = new System.Drawing.Size(89, 23);
             this.btCadastrar.TabIndex = 0;
             this.btCadastrar.Text = "Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = true;
@@ -64,7 +69,7 @@
             // 
             this.lbNome.AutoSize = true;
             this.lbNome.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNome.Location = new System.Drawing.Point(5, 22);
+            this.lbNome.Location = new System.Drawing.Point(109, 23);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(45, 13);
             this.lbNome.TabIndex = 1;
@@ -83,9 +88,9 @@
             // txNome
             // 
             this.txNome.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txNome.Location = new System.Drawing.Point(52, 19);
+            this.txNome.Location = new System.Drawing.Point(152, 19);
             this.txNome.Name = "txNome";
-            this.txNome.Size = new System.Drawing.Size(324, 21);
+            this.txNome.Size = new System.Drawing.Size(280, 21);
             this.txNome.TabIndex = 0;
             this.txNome.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             this.txNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txNome_KeyPress);
@@ -94,7 +99,7 @@
             // 
             this.lbId.AutoSize = true;
             this.lbId.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbId.Location = new System.Drawing.Point(408, 22);
+            this.lbId.Location = new System.Drawing.Point(5, 23);
             this.lbId.Name = "lbId";
             this.lbId.Size = new System.Drawing.Size(26, 13);
             this.lbId.TabIndex = 5;
@@ -105,6 +110,11 @@
             this.pnCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnCadastro.Controls.Add(this.cbTipoUn);
+            this.pnCadastro.Controls.Add(this.lbTipoVenda);
+            this.pnCadastro.Controls.Add(this.btImagem);
+            this.pnCadastro.Controls.Add(this.pbImagemProd);
+            this.pnCadastro.Controls.Add(this.txPreco);
             this.pnCadastro.Controls.Add(this.lbCategoria);
             this.pnCadastro.Controls.Add(this.cbCategoria);
             this.pnCadastro.Controls.Add(this.label1);
@@ -114,19 +124,98 @@
             this.pnCadastro.Controls.Add(this.lbIdProduto);
             this.pnCadastro.Controls.Add(this.pnBtCad);
             this.pnCadastro.Controls.Add(this.txNome);
-            this.pnCadastro.Controls.Add(this.txPreco);
             this.pnCadastro.Controls.Add(this.lbNome);
             this.pnCadastro.Controls.Add(this.lbId);
             this.pnCadastro.Controls.Add(this.lbPreco);
-            this.pnCadastro.Location = new System.Drawing.Point(5, 12);
+            this.pnCadastro.Location = new System.Drawing.Point(5, 6);
             this.pnCadastro.Name = "pnCadastro";
-            this.pnCadastro.Size = new System.Drawing.Size(541, 121);
+            this.pnCadastro.Size = new System.Drawing.Size(444, 234);
             this.pnCadastro.TabIndex = 7;
+            // 
+            // cbTipoUn
+            // 
+            this.cbTipoUn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoUn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbTipoUn.FormattingEnabled = true;
+            this.cbTipoUn.Items.AddRange(new object[] {
+            "UN",
+            "KG",
+            "CM",
+            "M",
+            "L",
+            "M²",
+            "M³"});
+            this.cbTipoUn.Location = new System.Drawing.Point(234, 57);
+            this.cbTipoUn.Name = "cbTipoUn";
+            this.cbTipoUn.Size = new System.Drawing.Size(55, 21);
+            this.cbTipoUn.TabIndex = 20;
+            this.cbTipoUn.TextChanged += new System.EventHandler(this.txNome_TextChanged);
+            // 
+            // lbTipoVenda
+            // 
+            this.lbTipoVenda.AutoSize = true;
+            this.lbTipoVenda.Location = new System.Drawing.Point(173, 61);
+            this.lbTipoVenda.Name = "lbTipoVenda";
+            this.lbTipoVenda.Size = new System.Drawing.Size(59, 13);
+            this.lbTipoVenda.TabIndex = 19;
+            this.lbTipoVenda.Text = "Tipo Un.:";
+            // 
+            // btImagem
+            // 
+            this.btImagem.Font = new System.Drawing.Font("Verdana", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btImagem.Location = new System.Drawing.Point(319, 166);
+            this.btImagem.Name = "btImagem";
+            this.btImagem.Size = new System.Drawing.Size(113, 18);
+            this.btImagem.TabIndex = 18;
+            this.btImagem.Text = "Escolher Imagem";
+            this.btImagem.UseVisualStyleBackColor = true;
+            this.btImagem.Click += new System.EventHandler(this.btImagem_Click);
+            // 
+            // pbImagemProd
+            // 
+            this.pbImagemProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbImagemProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbImagemProd.InitialImage = null;
+            this.pbImagemProd.Location = new System.Drawing.Point(319, 46);
+            this.pbImagemProd.Name = "pbImagemProd";
+            this.pbImagemProd.Size = new System.Drawing.Size(112, 116);
+            this.pbImagemProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagemProd.TabIndex = 17;
+            this.pbImagemProd.TabStop = false;
+            // 
+            // txPreco
+            // 
+            this.txPreco.Location = new System.Drawing.Point(53, 58);
+            this.txPreco.Name = "txPreco";
+            this.txPreco.Size = new System.Drawing.Size(116, 21);
+            this.txPreco.TabIndex = 16;
+            this.txPreco.TextChanged += new System.EventHandler(this.txNome_TextChanged);
+            this.txPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPreco_KeyPress);
+            // 
+            // lbCategoria
+            // 
+            this.lbCategoria.AutoSize = true;
+            this.lbCategoria.Location = new System.Drawing.Point(5, 166);
+            this.lbCategoria.Name = "lbCategoria";
+            this.lbCategoria.Size = new System.Drawing.Size(68, 13);
+            this.lbCategoria.TabIndex = 15;
+            this.lbCategoria.Text = "Categoria:";
+            // 
+            // cbCategoria
+            // 
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(81, 163);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(208, 21);
+            this.cbCategoria.TabIndex = 14;
+            this.cbCategoria.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(311, 61);
+            this.label1.Location = new System.Drawing.Point(5, 133);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 13;
@@ -137,15 +226,16 @@
             this.cbFornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbFornecedor.FormattingEnabled = true;
-            this.cbFornecedor.Location = new System.Drawing.Point(388, 58);
+            this.cbFornecedor.Location = new System.Drawing.Point(81, 130);
             this.cbFornecedor.Name = "cbFornecedor";
-            this.cbFornecedor.Size = new System.Drawing.Size(146, 21);
+            this.cbFornecedor.Size = new System.Drawing.Size(208, 21);
             this.cbFornecedor.TabIndex = 12;
+            this.cbFornecedor.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // lbQntd
             // 
             this.lbQntd.AutoSize = true;
-            this.lbQntd.Location = new System.Drawing.Point(159, 61);
+            this.lbQntd.Location = new System.Drawing.Point(5, 98);
             this.lbQntd.Name = "lbQntd";
             this.lbQntd.Size = new System.Drawing.Size(50, 13);
             this.lbQntd.TabIndex = 11;
@@ -153,20 +243,20 @@
             // 
             // txQntd
             // 
-            this.txQntd.Location = new System.Drawing.Point(213, 58);
+            this.txQntd.Location = new System.Drawing.Point(53, 95);
             this.txQntd.Name = "txQntd";
-            this.txQntd.Size = new System.Drawing.Size(88, 21);
+            this.txQntd.Size = new System.Drawing.Size(116, 21);
             this.txQntd.TabIndex = 2;
             this.txQntd.TextChanged += new System.EventHandler(this.txNome_TextChanged);
-            this.txQntd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPreco_KeyPress);
+            this.txQntd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txQntd_KeyPress);
             // 
             // lbIdProduto
             // 
             this.lbIdProduto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbIdProduto.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdProduto.Location = new System.Drawing.Point(435, 19);
+            this.lbIdProduto.Location = new System.Drawing.Point(37, 19);
             this.lbIdProduto.Name = "lbIdProduto";
-            this.lbIdProduto.Size = new System.Drawing.Size(95, 21);
+            this.lbIdProduto.Size = new System.Drawing.Size(66, 21);
             this.lbIdProduto.TabIndex = 9;
             this.lbIdProduto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -174,9 +264,9 @@
             // 
             this.pnBtCad.Controls.Add(this.btCancelar);
             this.pnBtCad.Controls.Add(this.btCadastrar);
-            this.pnBtCad.Location = new System.Drawing.Point(339, 93);
+            this.pnBtCad.Location = new System.Drawing.Point(8, 200);
             this.pnBtCad.Name = "pnBtCad";
-            this.pnBtCad.Size = new System.Drawing.Size(202, 28);
+            this.pnBtCad.Size = new System.Drawing.Size(424, 28);
             this.pnBtCad.TabIndex = 8;
             // 
             // btCancelar
@@ -192,42 +282,13 @@
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
-            // txPreco
-            // 
-            this.txPreco.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txPreco.Location = new System.Drawing.Point(52, 58);
-            this.txPreco.Name = "txPreco";
-            this.txPreco.Size = new System.Drawing.Size(94, 21);
-            this.txPreco.TabIndex = 1;
-            this.txPreco.TextChanged += new System.EventHandler(this.txNome_TextChanged);
-            this.txPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPreco_KeyPress);
-            // 
-            // lbCategoria
-            // 
-            this.lbCategoria.AutoSize = true;
-            this.lbCategoria.Location = new System.Drawing.Point(5, 97);
-            this.lbCategoria.Name = "lbCategoria";
-            this.lbCategoria.Size = new System.Drawing.Size(68, 13);
-            this.lbCategoria.TabIndex = 15;
-            this.lbCategoria.Text = "Categoria:";
-            // 
-            // cbCategoria
-            // 
-            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Location = new System.Drawing.Point(79, 93);
-            this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(222, 21);
-            this.cbCategoria.TabIndex = 14;
-            // 
             // formCadastroProd
             // 
             this.AcceptButton = this.btCadastrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btCancelar;
-            this.ClientSize = new System.Drawing.Size(547, 140);
+            this.ClientSize = new System.Drawing.Size(450, 243);
             this.Controls.Add(this.pnCadastro);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -238,6 +299,7 @@
             this.Text = "Cadastrar Produto";
             this.pnCadastro.ResumeLayout(false);
             this.pnCadastro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).EndInit();
             this.pnBtCad.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -255,10 +317,14 @@
         public System.Windows.Forms.Label lbIdProduto;
         public System.Windows.Forms.Button btCancelar;
         public System.Windows.Forms.TextBox txQntd;
-        public System.Windows.Forms.TextBox txPreco;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ComboBox cbFornecedor;
         private System.Windows.Forms.Label lbCategoria;
         public System.Windows.Forms.ComboBox cbCategoria;
+        private System.Windows.Forms.Label lbTipoVenda;
+        public System.Windows.Forms.MaskedTextBox txPreco;
+        public System.Windows.Forms.ComboBox cbTipoUn;
+        public System.Windows.Forms.Button btImagem;
+        public System.Windows.Forms.PictureBox pbImagemProd;
     }
 }

@@ -42,7 +42,7 @@ namespace ControlX
             dgvEstoque.Rows.Clear();
             foreach (Produto p in ps)
             {
-                dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd, p.Cat.Nome);
+                dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd, p.TipoUn, p.Cat.Nome);
             }
 
             buttonEnable();
@@ -111,10 +111,12 @@ namespace ControlX
             //Value.ToString() para pegar o valor da celular usar o tostring.
 
             formCadastroProd form = new formCadastroProd();
+            form.lbIdProduto.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
             form.txNome.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[1].Value.ToString());
             form.txPreco.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[2].Value.ToString());
             form.txQntd.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[3].Value.ToString());
-            form.lbIdProduto.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
+            form.cbTipoUn.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[4].Value.ToString());
+            
             int idP = Convert.ToInt32(form.lbIdProduto.Text);
             IDao db = new DAO.ProdutoDao();
 
@@ -125,6 +127,7 @@ namespace ControlX
             {
                 form.cbFornecedor.SelectedValue = produto.Fornecedor.Id;
                 form.cbCategoria.SelectedValue = produto.Cat.Id;
+                form.cbTipoUn.Text = produto.TipoUn;
             }
 
             form.btCadastrar.Text = "Salvar";
@@ -141,21 +144,25 @@ namespace ControlX
             form.txQntd.ReadOnly = true;
             form.cbFornecedor.Enabled = false;
             form.cbCategoria.Enabled = false;
+            form.cbTipoUn.Enabled = false;
+            form.btImagem.Enabled = false;
             //Enviando informacões para os labels e bottons.
+            form.lbIdProduto.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
             form.txNome.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[1].Value.ToString());
             form.txPreco.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[2].Value.ToString());
             form.txQntd.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[3].Value.ToString());
-            form.lbIdProduto.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
+            form.cbTipoUn.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[4].Value.ToString());
+            
             int idP = Convert.ToInt32(form.lbIdProduto.Text);
             IDao db = new DAO.ProdutoDao();
 
             List<Object> p = db.ListById(idP);
 
-
             foreach (Produto produto in p)
             {
                 form.cbFornecedor.SelectedValue = produto.Fornecedor.Id;
                 form.cbCategoria.SelectedValue = produto.Cat.Id;
+                form.cbTipoUn.Text = produto.TipoUn;
             }
 
             //form.cbFornecedor.DataSource = p;
@@ -168,7 +175,6 @@ namespace ControlX
             //Modifica o texto do botão Cancelar.
             form.btCancelar.Text = "Voltar";
             form.ShowDialog(this);
-            Fill();
         }
 
         private void btMenuPrincipal_Click(object sender, EventArgs e)

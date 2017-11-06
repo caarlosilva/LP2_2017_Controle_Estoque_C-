@@ -12,8 +12,9 @@ namespace ControlX
         private string nome;
         private int id;
         private double preco;
-        private int qntd;
-        private Modelo.Categoria cat = new Modelo.Categoria();
+        private double qntd;
+        private string tipoUn;
+        private Categoria cat = new Categoria();
         
         //private int idFornecedor;
         private Fornecedor fornecedor = new Fornecedor();
@@ -65,7 +66,7 @@ namespace ControlX
             }
         }
 
-        public int Qntd
+        public double Qntd
         {
             get
             {
@@ -75,6 +76,19 @@ namespace ControlX
             set
             {
                qntd = value;
+            }
+        }
+
+        public string TipoUn
+        {
+            get
+            {
+                return tipoUn;
+            }
+
+            set
+            {
+                tipoUn = value;
             }
         }
 
@@ -91,7 +105,7 @@ namespace ControlX
             }
         }
 
-        internal Categoria Cat
+        public Categoria Cat
         {
             get
             {
@@ -104,32 +118,20 @@ namespace ControlX
             }
         }
 
-        /*public int IdFornecedor
-        {
-            get
-            {
-                return idFornecedor;
-            }
-
-            set
-            {
-                idFornecedor = value;
-            }
-        }*/
-
         public Produto()
         {
 
         }
 
-        public Produto(string nome, int id, double preco, int qntd, Fornecedor f, Categoria cat)
+        public Produto(string nome, int id, double preco, double qntd,string tipoUn, Fornecedor f, Categoria cat)
         {
-            this.nome = nome;
-            this.id = id;
-            this.preco = preco;
-            this.qntd = qntd;
+            this.Nome = nome;
+            this.Id = id;
+            this.Preco = preco;
+            this.Qntd = qntd;
+            this.TipoUn = tipoUn;
             this.Fornecedor = f;
-            this.cat = cat;
+            this.Cat = cat;
         }
     }
 }

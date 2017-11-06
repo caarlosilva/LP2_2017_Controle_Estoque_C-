@@ -12,7 +12,8 @@ namespace ControlX
         private string nome_usuario;
         private long valor;
         private List<Produto> itens = new List<Produto>();
-        private DateTime data;
+        private DateTime dataCompra;
+        private DateTime dataEntrega;
 
         public int Id
         {
@@ -66,26 +67,45 @@ namespace ControlX
             }
         }
 
-        public DateTime Data
+        public DateTime DataCompra
         {
             get
             {
-                return data;
+                return dataCompra;
             }
 
             set
             {
-                data = value;
+                dataCompra = value;
             }
         }
 
-        public Comprar(int id, string nome_usuario, long valor, List<Produto> itens, DateTime data)
+        public DateTime DataEntrega
+        {
+            get
+            {
+                return dataEntrega;
+            }
+
+            set
+            {
+                dataEntrega = value;
+            }
+        }
+
+        public Comprar()
+        {
+
+        }
+
+        public Comprar(int id, string nome_usuario, long valor, List<Produto> itens, DateTime dataCompra, DateTime dataEntrega)
         {
             this.Id = id;
             this.Nome_usuario = nome_usuario;
             this.Valor = valor;
             this.Itens = itens;
-            this.Data = data;
+            this.DataCompra = dataCompra;
+            this.DataEntrega = dataEntrega;
         }
     }
 }

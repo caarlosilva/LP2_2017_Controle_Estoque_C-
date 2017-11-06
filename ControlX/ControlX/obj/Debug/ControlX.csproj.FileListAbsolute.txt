@@ -455,3 +455,13 @@ C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.
 C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\pt-BR\ControlX.resources.dll
 C:\Users\Fabricio\Source\Repos\LP2_PROJETOO\ControlX\ControlX\obj\Debug\ControlX.FormCategoria.resources
 C:\Users\Fabricio\Source\Repos\LP2_PROJETOO\ControlX\ControlX\obj\Debug\ControlX.FormCadastroCat.resources
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.FormCategoria.resources
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.FormCadastroCat.resources
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formHistoricoData.resources
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.RelatorioCompras.resources
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.Web.dll
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\stdole.dll
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.csproj.ControlX.exe.config

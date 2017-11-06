@@ -34,14 +34,10 @@
             this.lbFiltro = new System.Windows.Forms.Label();
             this.txPesquisar = new System.Windows.Forms.TextBox();
             this.pnPesquisa = new System.Windows.Forms.Panel();
+            this.rbCategoria = new System.Windows.Forms.RadioButton();
             this.rbNome = new System.Windows.Forms.RadioButton();
             this.rbId = new System.Windows.Forms.RadioButton();
             this.dgvEstoque = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbEstoque = new System.Windows.Forms.GroupBox();
             this.btAdd = new System.Windows.Forms.Button();
             this.btDel = new System.Windows.Forms.Button();
@@ -51,7 +47,12 @@
             this.btView = new System.Windows.Forms.Button();
             this.btMenu = new System.Windows.Forms.Button();
             this.pnMenu = new System.Windows.Forms.Panel();
-            this.rbCategoria = new System.Windows.Forms.RadioButton();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
             this.gbEstoque.SuspendLayout();
@@ -98,6 +99,18 @@
             this.pnPesquisa.Size = new System.Drawing.Size(666, 65);
             this.pnPesquisa.TabIndex = 2;
             // 
+            // rbCategoria
+            // 
+            this.rbCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbCategoria.AutoSize = true;
+            this.rbCategoria.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCategoria.Location = new System.Drawing.Point(569, 36);
+            this.rbCategoria.Name = "rbCategoria";
+            this.rbCategoria.Size = new System.Drawing.Size(81, 17);
+            this.rbCategoria.TabIndex = 11;
+            this.rbCategoria.Text = "Categoria";
+            this.rbCategoria.UseVisualStyleBackColor = true;
+            // 
             // rbNome
             // 
             this.rbNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -128,12 +141,14 @@
             // 
             this.dgvEstoque.AllowUserToAddRows = false;
             this.dgvEstoque.AllowUserToDeleteRows = false;
+            this.dgvEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
             this.colNome,
             this.colPreco,
             this.colQtd,
+            this.colUn,
             this.colCat});
             this.dgvEstoque.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEstoque.Location = new System.Drawing.Point(3, 17);
@@ -143,51 +158,6 @@
             this.dgvEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEstoque.Size = new System.Drawing.Size(660, 306);
             this.dgvEstoque.TabIndex = 3;
-            // 
-            // colId
-            // 
-            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colId.FillWeight = 15F;
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.ToolTipText = "Numero de identificação gerado no cadastro";
-            // 
-            // colNome
-            // 
-            this.colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colNome.FillWeight = 80F;
-            this.colNome.HeaderText = "Nome";
-            this.colNome.Name = "colNome";
-            this.colNome.ReadOnly = true;
-            // 
-            // colPreco
-            // 
-            this.colPreco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.colPreco.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colPreco.FillWeight = 40F;
-            this.colPreco.HeaderText = "Preço";
-            this.colPreco.Name = "colPreco";
-            this.colPreco.ReadOnly = true;
-            // 
-            // colQtd
-            // 
-            this.colQtd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.NullValue = null;
-            this.colQtd.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colQtd.FillWeight = 40F;
-            this.colQtd.HeaderText = "Quantidade";
-            this.colQtd.Name = "colQtd";
-            this.colQtd.ReadOnly = true;
-            // 
-            // colCat
-            // 
-            this.colCat.FillWeight = 60F;
-            this.colCat.HeaderText = "Categoria";
-            this.colCat.Name = "colCat";
-            this.colCat.ReadOnly = true;
             // 
             // gbEstoque
             // 
@@ -298,17 +268,60 @@
             this.pnMenu.Size = new System.Drawing.Size(83, 29);
             this.pnMenu.TabIndex = 9;
             // 
-            // rbCategoria
+            // colId
             // 
-            this.rbCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbCategoria.AutoSize = true;
-            this.rbCategoria.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCategoria.Location = new System.Drawing.Point(569, 36);
-            this.rbCategoria.Name = "rbCategoria";
-            this.rbCategoria.Size = new System.Drawing.Size(81, 17);
-            this.rbCategoria.TabIndex = 11;
-            this.rbCategoria.Text = "Categoria";
-            this.rbCategoria.UseVisualStyleBackColor = true;
+            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colId.FillWeight = 15F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.ToolTipText = "Numero de identificação gerado no cadastro";
+            // 
+            // colNome
+            // 
+            this.colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNome.FillWeight = 70F;
+            this.colNome.HeaderText = "Nome";
+            this.colNome.Name = "colNome";
+            this.colNome.ReadOnly = true;
+            // 
+            // colPreco
+            // 
+            this.colPreco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.colPreco.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colPreco.FillWeight = 25F;
+            this.colPreco.HeaderText = "Preço";
+            this.colPreco.Name = "colPreco";
+            this.colPreco.ReadOnly = true;
+            // 
+            // colQtd
+            // 
+            this.colQtd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.NullValue = null;
+            this.colQtd.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colQtd.FillWeight = 15F;
+            this.colQtd.HeaderText = "Qtd.";
+            this.colQtd.Name = "colQtd";
+            this.colQtd.ReadOnly = true;
+            // 
+            // colUn
+            // 
+            this.colUn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colUn.FillWeight = 15F;
+            this.colUn.HeaderText = "Unidade";
+            this.colUn.Name = "colUn";
+            this.colUn.ReadOnly = true;
+            // 
+            // colCat
+            // 
+            this.colCat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCat.FillWeight = 20F;
+            this.colCat.HeaderText = "Categoria";
+            this.colCat.Name = "colCat";
+            this.colCat.ReadOnly = true;
             // 
             // formEstoque
             // 
@@ -352,12 +365,13 @@
         public System.Windows.Forms.Panel pnButtons;
         public System.Windows.Forms.Panel pnMenu;
         public System.Windows.Forms.Button btCategoria;
+        private System.Windows.Forms.RadioButton rbCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPreco;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQtd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUn;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCat;
-        private System.Windows.Forms.RadioButton rbCategoria;
     }
 }
 

@@ -15,7 +15,7 @@ namespace ControlX
 
         static IDao db = new DAO.ProdutoDao();
         static List<Object> ps = db.ListAll();
-
+        double qntdEstoque;
         public FormVender()
         {
             InitializeComponent();
@@ -87,8 +87,9 @@ namespace ControlX
                 {
                     txId.Text = Convert.ToString(p.Id);
                     lbPrecoShow.Text = Convert.ToString(p.Preco);
-                    lbQntdEstoqueShow.Text = Convert.ToString(p.Qntd);
+                    lbQntdEstoqueShow.Text = Convert.ToString(p.Qntd) + " " + p.TipoUn;
                     txQntdVenda.Text = "0";
+                    qntdEstoque = p.Qntd;
                 }
             
         }
@@ -114,12 +115,12 @@ namespace ControlX
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            int qVenda = int.Parse(txQntdVenda.Text); //Quantidade que sera vendida
-            int qEstoque = int.Parse(lbQntdEstoqueShow.Text);//Quantidade no estoque
+            double qVenda = double.Parse(txQntdVenda.Text); //Quantidade que sera vendida
+            //double qEstoque = double.Parse(lbQntdEstoqueShow.Text);//Quantidade no estoque
             int idProd = int.Parse(txId.Text);//Id do produto a ser adicionado a venda
 
-            if (qVenda > qEstoque || qVenda <= 0)
-                MessageBox.Show("Impossível vender " + qVenda + " Itens. A quantidade do produto no estoque é de " + qEstoque + "!", "Aviso!");
+            if (qVenda > qntdEstoque || qVenda <= 0)
+                MessageBox.Show("Impossível vender " + qVenda + " Itens. A quantidade do produto no estoque é de " + qntdEstoque + "!", "Aviso!");
             else
             {
                 foreach (Produto p in ps)
@@ -160,7 +161,7 @@ namespace ControlX
             if (dgvVendas.RowCount > 0)
             {
                 int idProd = int.Parse(dgvVendas.Rows[dgvVendas.CurrentRow.Index].Cells[0].Value.ToString());
-                int qntdProd = int.Parse(dgvVendas.Rows[dgvVendas.CurrentRow.Index].Cells[2].Value.ToString());
+                double qntdProd = double.Parse(dgvVendas.Rows[dgvVendas.CurrentRow.Index].Cells[2].Value.ToString());
                 double precoTotalProd = double.Parse(dgvVendas.Rows[dgvVendas.CurrentRow.Index].Cells[4].Value.ToString());
                 double vTotal = double.Parse(lbValorTotal.Text);
 
@@ -186,8 +187,12 @@ namespace ControlX
 
         private void txQntdVenda_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
                 e.Handled = true;
+
+            if (e.KeyChar == ',')   //Se o usuario inserir uma virgula
+                if (txQntdVenda.Text.Contains(",") || txQntdVenda.Text.Equals(""))//Checa se o usuario ja inseriu uma virgula previamente
+                    e.Handled = true; // Caso ja exista uma virgula, outra não será aceita   
         }
 
         private void btVender_Click(object sender, EventArgs e)

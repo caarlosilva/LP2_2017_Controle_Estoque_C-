@@ -57,7 +57,7 @@ namespace ControlX
             int countProd = dgvEstoque.RowCount;
             for (int i = 0; i < countProd; i++)
             {
-                int Qntd = int.Parse(dgvEstoque.Rows[i].Cells[3].Value.ToString());
+                double Qntd = double.Parse(dgvEstoque.Rows[i].Cells[3].Value.ToString());
                 foreach (Produto p in ps)
                 {
                     //Alerta em vermelho os produtos com estoque < 20

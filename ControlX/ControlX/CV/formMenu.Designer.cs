@@ -140,7 +140,7 @@
             this.lbMensagem.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensagem.Location = new System.Drawing.Point(3, 9);
             this.lbMensagem.Name = "lbMensagem";
-            this.lbMensagem.Size = new System.Drawing.Size(230, 14);
+            this.lbMensagem.Size = new System.Drawing.Size(232, 14);
             this.lbMensagem.TabIndex = 5;
             this.lbMensagem.Text = "Você está conectado como \'Admin\' !";
             // 
@@ -172,17 +172,20 @@
             // 
             // msMenu
             // 
+            this.msMenu.BackColor = System.Drawing.SystemColors.Control;
+            this.msMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.helpToolStripMenuItem,
-            this.sobreToolStripMenuItem,
             this.historicoToolStripMenuItem,
-            this.relatoriosToolStripMenuItem});
-            this.msMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.relatoriosToolStripMenuItem,
+            this.helpToolStripMenuItem,
+            this.sobreToolStripMenuItem});
+            this.msMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
-            this.msMenu.Size = new System.Drawing.Size(535, 24);
+            this.msMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.msMenu.Size = new System.Drawing.Size(535, 23);
             this.msMenu.TabIndex = 8;
-            this.msMenu.Text = "menuStrip1";
+            this.msMenu.Text = "Menu";
             // 
             // helpToolStripMenuItem
             // 
@@ -208,14 +211,14 @@
             // comprasToolStripMenuItem
             // 
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.comprasToolStripMenuItem.Text = "Compras";
             this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
             // 
             // vendasToolStripMenuItem
             // 
             this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
-            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.vendasToolStripMenuItem.Text = "Vendas";
             // 
             // relatoriosToolStripMenuItem

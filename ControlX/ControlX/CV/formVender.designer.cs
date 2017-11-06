@@ -63,16 +63,16 @@
             this.lbTotal = new System.Windows.Forms.Label();
             this.gpVendas = new System.Windows.Forms.GroupBox();
             this.dgvVendas = new System.Windows.Forms.DataGridView();
-            this.pnMenu = new System.Windows.Forms.Panel();
-            this.btMenu = new System.Windows.Forms.Button();
-            this.pnBtVender = new System.Windows.Forms.Panel();
-            this.btVender = new System.Windows.Forms.Button();
-            this.btCancelar = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrecoUn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coLPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnMenu = new System.Windows.Forms.Panel();
+            this.btMenu = new System.Windows.Forms.Button();
+            this.pnBtVender = new System.Windows.Forms.Panel();
+            this.btVender = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
             this.pnForm.SuspendLayout();
             this.pnTroco.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -235,7 +235,7 @@
             this.lbPrecoShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbPrecoShow.Location = new System.Drawing.Point(46, 53);
             this.lbPrecoShow.Name = "lbPrecoShow";
-            this.lbPrecoShow.Size = new System.Drawing.Size(70, 21);
+            this.lbPrecoShow.Size = new System.Drawing.Size(101, 21);
             this.lbPrecoShow.TabIndex = 31;
             this.lbPrecoShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -243,9 +243,9 @@
             // 
             this.lbQntdEstoqueShow.BackColor = System.Drawing.SystemColors.ControlDark;
             this.lbQntdEstoqueShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbQntdEstoqueShow.Location = new System.Drawing.Point(219, 53);
+            this.lbQntdEstoqueShow.Location = new System.Drawing.Point(237, 53);
             this.lbQntdEstoqueShow.Name = "lbQntdEstoqueShow";
-            this.lbQntdEstoqueShow.Size = new System.Drawing.Size(50, 21);
+            this.lbQntdEstoqueShow.Size = new System.Drawing.Size(110, 21);
             this.lbQntdEstoqueShow.TabIndex = 30;
             this.lbQntdEstoqueShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -369,7 +369,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbQntdEstoque.AutoSize = true;
             this.lbQntdEstoque.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQntdEstoque.Location = new System.Drawing.Point(132, 55);
+            this.lbQntdEstoque.Location = new System.Drawing.Point(153, 55);
             this.lbQntdEstoque.Name = "lbQntdEstoque";
             this.lbQntdEstoque.Size = new System.Drawing.Size(81, 13);
             this.lbQntdEstoque.TabIndex = 23;
@@ -461,6 +461,52 @@
             this.dgvVendas.Size = new System.Drawing.Size(475, 175);
             this.dgvVendas.TabIndex = 0;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.FillWeight = 15F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.FillWeight = 45F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.FillWeight = 20F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Qtd.";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // colPrecoUn
+            // 
+            this.colPrecoUn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colPrecoUn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colPrecoUn.FillWeight = 20F;
+            this.colPrecoUn.HeaderText = "Preço Unitário";
+            this.colPrecoUn.Name = "colPrecoUn";
+            this.colPrecoUn.ReadOnly = true;
+            // 
+            // coLPreco
+            // 
+            this.coLPreco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.coLPreco.DefaultCellStyle = dataGridViewCellStyle3;
+            this.coLPreco.FillWeight = 20F;
+            this.coLPreco.HeaderText = "Preço Total";
+            this.coLPreco.Name = "coLPreco";
+            this.coLPreco.ReadOnly = true;
+            // 
             // pnMenu
             // 
             this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -514,52 +560,6 @@
             this.btCancelar.Text = "Limpar Venda";
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.FillWeight = 15F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.FillWeight = 45F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.FillWeight = 20F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Qtd.";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // colPrecoUn
-            // 
-            this.colPrecoUn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colPrecoUn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colPrecoUn.FillWeight = 20F;
-            this.colPrecoUn.HeaderText = "Preço Unitário";
-            this.colPrecoUn.Name = "colPrecoUn";
-            this.colPrecoUn.ReadOnly = true;
-            // 
-            // coLPreco
-            // 
-            this.coLPreco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.coLPreco.DefaultCellStyle = dataGridViewCellStyle3;
-            this.coLPreco.FillWeight = 20F;
-            this.coLPreco.HeaderText = "Preço Total";
-            this.coLPreco.Name = "coLPreco";
-            this.coLPreco.ReadOnly = true;
             // 
             // FormVender
             // 

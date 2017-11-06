@@ -118,7 +118,7 @@
             // lbDataNasc
             // 
             this.lbDataNasc.AutoSize = true;
-            this.lbDataNasc.Location = new System.Drawing.Point(178, 77);
+            this.lbDataNasc.Location = new System.Drawing.Point(176, 77);
             this.lbDataNasc.Name = "lbDataNasc";
             this.lbDataNasc.Size = new System.Drawing.Size(127, 13);
             this.lbDataNasc.TabIndex = 22;

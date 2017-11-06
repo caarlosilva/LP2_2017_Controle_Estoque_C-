@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,8 +15,6 @@ namespace ControlX
     {
         private IDao db1 = new DAO.ProdutoDao();
         private Produto nProduto = new Produto();
-
-
         public formCadastroProd()
         {
             InitializeComponent();
@@ -25,11 +24,11 @@ namespace ControlX
             //iniComboBox tem como função inicializar o combo box de Fornecedor com *pasmem*
             //os Fornecedores
             iniComboBox();
+ 
         }
 
         private void iniComboBox()
         {
-
             IDao db2 = new DAO.FornecedorDao();
             List<Object> forn = db2.ListAll();
             //Pegamos a lista fornecida pelo ListAll, que contém todos os Fornecedores
@@ -64,7 +63,7 @@ namespace ControlX
         
         private void btComplete()
         {
-            if (txNome.Text.Trim() == "" || txPreco.Text.Trim() == "" || txQntd.Text.Trim() == "" || cbFornecedor.Text.Trim() == "")
+            if (txNome.Text.Trim() == "" || txPreco.Text.Trim() == "" || txQntd.Text.Trim() == "" || cbFornecedor.Text.Trim() == "" || cbCategoria.Text.Trim() == "" || cbTipoUn.Text.Trim() == "")
                 btCadastrar.Enabled = false;
             else
                 btCadastrar.Enabled = true;
@@ -74,9 +73,10 @@ namespace ControlX
         {
             nProduto.Nome = txNome.Text;
             nProduto.Preco = double.Parse(txPreco.Text);                
-            nProduto.Qntd = int.Parse(txQntd.Text);
+            nProduto.Qntd = double.Parse(txQntd.Text);
             nProduto.Fornecedor.Id = int.Parse(cbFornecedor.SelectedValue.ToString());
             nProduto.Cat.Id = int.Parse(cbCategoria.SelectedValue.ToString());
+            nProduto.TipoUn = cbTipoUn.Text.ToString();
 
             btComplete();
 
@@ -99,16 +99,6 @@ namespace ControlX
             btComplete();
         }
 
-        private void txPreco_KeyPress(object sender, KeyPressEventArgs e)
-        {            
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
-                e.Handled = true;
-
-            if (e.KeyChar == ',')   //Se o usuario inserir uma virgula
-                if (txPreco.Text.Contains(",") || txPreco.Text.Equals(""))//Checa se o usuario ja inseriu uma virgula previamente
-                    e.Handled = true; // Caso ja exista uma virgula, outra não será aceita            
-        }
-
         private void btCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -116,11 +106,44 @@ namespace ControlX
 
         private void txNome_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Se o que foi digitado NÃO for um Digito(numeral) E NÃO for do tipo controle(backspace por exemplo) 
-            //E NÃO for do tipo Letter(Alfabeto)
-            //o e.Handled praticamente ira ignorar o que foi inserido
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            if (char.IsPunctuation(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void btImagem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog imagem = new OpenFileDialog();
+            imagem.Filter = "jpg|*.jpg|png|*.png";
+            if (imagem.ShowDialog() == DialogResult.OK)
+            {
+                FileInfo arquivo = new FileInfo(imagem.FileName);
+                //testa se tem menos de 1MB (1MB em bytes = 1048576)
+                if (arquivo.Length <= 1048576)
+                    pbImagemProd.ImageLocation = imagem.FileName;
+                else
+                    MessageBox.Show("O Tamanho da imagem não pode exceder 1MB!", "Tamanho de arquivo inválido!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void txQntd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+                e.Handled = true;
+
+            if (e.KeyChar == ',')   //Se o usuario inserir uma virgula
+                if (txQntd.Text.Contains(",") || txQntd.Text.Equals(""))//Checa se o usuario ja inseriu uma virgula previamente
+                    e.Handled = true; // Caso ja exista uma virgula, outra não será aceita 
+        }
+
+        private void txPreco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+                e.Handled = true;
+
+            if (e.KeyChar == ',')   //Se o usuario inserir uma virgula
+                if (txPreco.Text.Contains(",") || txPreco.Text.Equals(""))//Checa se o usuario ja inseriu uma virgula previamente
+                    e.Handled = true; // Caso ja exista uma virgula, outra não será aceita            
         }
     }
 }
