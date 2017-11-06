@@ -16,6 +16,7 @@ namespace ControlX
         static IDao db = new DAO.ProdutoDao();
         static List<Object> ps = db.ListAll();
         double qntdEstoque;
+
         public FormVender()
         {
             InitializeComponent();

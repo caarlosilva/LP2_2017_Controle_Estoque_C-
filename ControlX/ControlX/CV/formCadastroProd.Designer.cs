@@ -38,7 +38,6 @@
             this.cbTipoUn = new System.Windows.Forms.ComboBox();
             this.lbTipoVenda = new System.Windows.Forms.Label();
             this.btImagem = new System.Windows.Forms.Button();
-            this.pbImagemProd = new System.Windows.Forms.PictureBox();
             this.txPreco = new System.Windows.Forms.MaskedTextBox();
             this.lbCategoria = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
@@ -49,9 +48,10 @@
             this.lbIdProduto = new System.Windows.Forms.Label();
             this.pnBtCad = new System.Windows.Forms.Panel();
             this.btCancelar = new System.Windows.Forms.Button();
+            this.pbImagemProd = new System.Windows.Forms.PictureBox();
             this.pnCadastro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).BeginInit();
             this.pnBtCad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).BeginInit();
             this.SuspendLayout();
             // 
             // btCadastrar
@@ -148,7 +148,7 @@
             this.cbTipoUn.Location = new System.Drawing.Point(234, 57);
             this.cbTipoUn.Name = "cbTipoUn";
             this.cbTipoUn.Size = new System.Drawing.Size(55, 21);
-            this.cbTipoUn.TabIndex = 20;
+            this.cbTipoUn.TabIndex = 2;
             this.cbTipoUn.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // lbTipoVenda
@@ -166,29 +166,17 @@
             this.btImagem.Location = new System.Drawing.Point(319, 166);
             this.btImagem.Name = "btImagem";
             this.btImagem.Size = new System.Drawing.Size(113, 18);
-            this.btImagem.TabIndex = 18;
+            this.btImagem.TabIndex = 6;
             this.btImagem.Text = "Escolher Imagem";
             this.btImagem.UseVisualStyleBackColor = true;
             this.btImagem.Click += new System.EventHandler(this.btImagem_Click);
-            // 
-            // pbImagemProd
-            // 
-            this.pbImagemProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbImagemProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbImagemProd.InitialImage = null;
-            this.pbImagemProd.Location = new System.Drawing.Point(319, 46);
-            this.pbImagemProd.Name = "pbImagemProd";
-            this.pbImagemProd.Size = new System.Drawing.Size(112, 116);
-            this.pbImagemProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImagemProd.TabIndex = 17;
-            this.pbImagemProd.TabStop = false;
             // 
             // txPreco
             // 
             this.txPreco.Location = new System.Drawing.Point(53, 58);
             this.txPreco.Name = "txPreco";
             this.txPreco.Size = new System.Drawing.Size(116, 21);
-            this.txPreco.TabIndex = 16;
+            this.txPreco.TabIndex = 1;
             this.txPreco.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             this.txPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPreco_KeyPress);
             // 
@@ -209,7 +197,7 @@
             this.cbCategoria.Location = new System.Drawing.Point(81, 163);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(208, 21);
-            this.cbCategoria.TabIndex = 14;
+            this.cbCategoria.TabIndex = 5;
             this.cbCategoria.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // label1
@@ -229,7 +217,7 @@
             this.cbFornecedor.Location = new System.Drawing.Point(81, 130);
             this.cbFornecedor.Name = "cbFornecedor";
             this.cbFornecedor.Size = new System.Drawing.Size(208, 21);
-            this.cbFornecedor.TabIndex = 12;
+            this.cbFornecedor.TabIndex = 4;
             this.cbFornecedor.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // lbQntd
@@ -246,7 +234,7 @@
             this.txQntd.Location = new System.Drawing.Point(53, 95);
             this.txQntd.Name = "txQntd";
             this.txQntd.Size = new System.Drawing.Size(116, 21);
-            this.txQntd.TabIndex = 2;
+            this.txQntd.TabIndex = 3;
             this.txQntd.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             this.txQntd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txQntd_KeyPress);
             // 
@@ -282,6 +270,18 @@
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
+            // pbImagemProd
+            // 
+            this.pbImagemProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbImagemProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbImagemProd.InitialImage = null;
+            this.pbImagemProd.Location = new System.Drawing.Point(319, 46);
+            this.pbImagemProd.Name = "pbImagemProd";
+            this.pbImagemProd.Size = new System.Drawing.Size(112, 116);
+            this.pbImagemProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagemProd.TabIndex = 17;
+            this.pbImagemProd.TabStop = false;
+            // 
             // formCadastroProd
             // 
             this.AcceptButton = this.btCadastrar;
@@ -299,8 +299,8 @@
             this.Text = "Cadastrar Produto";
             this.pnCadastro.ResumeLayout(false);
             this.pnCadastro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).EndInit();
             this.pnBtCad.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).EndInit();
             this.ResumeLayout(false);
 
         }

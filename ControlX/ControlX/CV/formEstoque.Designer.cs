@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formEstoque));
             this.lbFiltro = new System.Windows.Forms.Label();
             this.txPesquisar = new System.Windows.Forms.TextBox();
@@ -310,8 +311,10 @@
             // colUn
             // 
             this.colUn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colUn.FillWeight = 15F;
-            this.colUn.HeaderText = "Unidade";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colUn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colUn.FillWeight = 6F;
+            this.colUn.HeaderText = "";
             this.colUn.Name = "colUn";
             this.colUn.ReadOnly = true;
             // 

@@ -48,7 +48,6 @@
             this.lbQntdEstoqueShow = new System.Windows.Forms.Label();
             this.lbQntdVenda = new System.Windows.Forms.Label();
             this.pnBtCad = new System.Windows.Forms.Panel();
-            this.btPesquisar = new System.Windows.Forms.Button();
             this.btLimpar = new System.Windows.Forms.Button();
             this.btAdd = new System.Windows.Forms.Button();
             this.txId = new System.Windows.Forms.TextBox();
@@ -73,6 +72,7 @@
             this.pnBtVender = new System.Windows.Forms.Panel();
             this.btVender = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
+            this.btPesquisar = new System.Windows.Forms.Button();
             this.pnForm.SuspendLayout();
             this.pnTroco.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -143,7 +143,7 @@
             this.txValorPago.Location = new System.Drawing.Point(102, 3);
             this.txValorPago.Name = "txValorPago";
             this.txValorPago.Size = new System.Drawing.Size(52, 21);
-            this.txValorPago.TabIndex = 21;
+            this.txValorPago.TabIndex = 0;
             this.txValorPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txValorPago.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txTroco_KeyUp);
             // 
@@ -224,7 +224,7 @@
             this.txQntdVenda.Location = new System.Drawing.Point(423, 53);
             this.txQntdVenda.Name = "txQntdVenda";
             this.txQntdVenda.Size = new System.Drawing.Size(53, 21);
-            this.txQntdVenda.TabIndex = 32;
+            this.txQntdVenda.TabIndex = 2;
             this.txQntdVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txQntdVenda.TextChanged += new System.EventHandler(this.txId_TextChanged);
             this.txQntdVenda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txQntdVenda_KeyPress);
@@ -271,25 +271,6 @@
             this.pnBtCad.Size = new System.Drawing.Size(327, 28);
             this.pnBtCad.TabIndex = 28;
             // 
-            // btPesquisar
-            // 
-            this.btPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.btPesquisar.BackgroundImage = global::ControlX.Properties.Resources.search;
-            this.btPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btPesquisar.Cursor = System.Windows.Forms.Cursors.Help;
-            this.btPesquisar.FlatAppearance.BorderSize = 0;
-            this.btPesquisar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPesquisar.Location = new System.Drawing.Point(253, 3);
-            this.btPesquisar.Name = "btPesquisar";
-            this.btPesquisar.Size = new System.Drawing.Size(23, 22);
-            this.btPesquisar.TabIndex = 2;
-            this.btPesquisar.UseVisualStyleBackColor = false;
-            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
-            // 
             // btLimpar
             // 
             this.btLimpar.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -297,7 +278,7 @@
             this.btLimpar.Location = new System.Drawing.Point(44, 3);
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(87, 23);
-            this.btLimpar.TabIndex = 0;
+            this.btLimpar.TabIndex = 1;
             this.btLimpar.Text = "Limpar";
             this.btLimpar.UseVisualStyleBackColor = true;
             this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
@@ -309,7 +290,7 @@
             this.btAdd.Location = new System.Drawing.Point(149, 3);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(87, 23);
-            this.btAdd.TabIndex = 1;
+            this.btAdd.TabIndex = 0;
             this.btAdd.Text = "Adicionar";
             this.btAdd.UseVisualStyleBackColor = true;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
@@ -560,6 +541,25 @@
             this.btCancelar.Text = "Limpar Venda";
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
+            // btPesquisar
+            // 
+            this.btPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.btPesquisar.BackgroundImage = global::ControlX.Properties.Resources.search;
+            this.btPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btPesquisar.Cursor = System.Windows.Forms.Cursors.Help;
+            this.btPesquisar.FlatAppearance.BorderSize = 0;
+            this.btPesquisar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPesquisar.Location = new System.Drawing.Point(253, 3);
+            this.btPesquisar.Name = "btPesquisar";
+            this.btPesquisar.Size = new System.Drawing.Size(23, 22);
+            this.btPesquisar.TabIndex = 2;
+            this.btPesquisar.UseVisualStyleBackColor = false;
+            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
             // 
             // FormVender
             // 

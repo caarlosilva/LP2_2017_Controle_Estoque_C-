@@ -12,70 +12,34 @@ namespace ControlX
 {
     public partial class formComprarProd : Form
     {
+
+        static IDao db = new DAO.ProdutoDao();
+        static List<Object> ps = db.ListAll();
+
         public formComprarProd()
         {
             InitializeComponent();
-            Fill();
+            BtComplete();
         }
 
-        private void buttonEnable()
+        private void BtComplete()
         {
-
-            if (dgvEstoque.RowCount == 0)
+            if (dgvItensCompra.RowCount <= 0)
             {
+                btDelItemCompra.Enabled = false;
+                btRemoverTudo.Enabled = false;
                 btComprar.Enabled = false;
             }
             else
             {
+                btDelItemCompra.Enabled = true;
+                btRemoverTudo.Enabled = true;
                 btComprar.Enabled = true;
             }
-        }
-
-        private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
-        {
-            IDao db = new DAO.ProdutoDao();
-            List<Object> ps = (rbNome.Checked) ? db.ListByName(txPesquisar.Text) : (txPesquisar.Text.Trim() == "") ? db.ListAll() : db.ListById(int.Parse(txPesquisar.Text));
-
-            dgvEstoque.Rows.Clear();
-            foreach (Produto p in ps)
-            {
-                dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
-            }
-        }
-
-        private void Fill()
-        {
-            IDao db = new DAO.ProdutoDao();
-            List<Object> ps = db.ListAll();
-
-            dgvEstoque.Rows.Clear();
-            foreach (Produto p in ps)
-            {
-                dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd);
-            }
-
-            int countProd = dgvEstoque.RowCount;
-            for (int i = 0; i < countProd; i++)
-            {
-                double Qntd = double.Parse(dgvEstoque.Rows[i].Cells[3].Value.ToString());
-                foreach (Produto p in ps)
-                {
-                    //Alerta em vermelho os produtos com estoque < 20
-                    if (Qntd <= 20)
-                    {
-                        dgvEstoque.Rows[i].DefaultCellStyle.ForeColor = Color.Red;
-//                        dgvEstoque.Rows[i].DefaultCellStyle.Font = new Font(this.Font, FontStyle.Bold);
-                    }
-                }
-            }
-
-            buttonEnable();
-        }
-
-        private void txPesquisar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && rbId.Checked)
-                e.Handled = true;
+            if (txId.Text == "" || txNome.Text == "" || txQntdCompra.Text == "")
+                btAdd.Enabled = false;
+            else
+                btAdd.Enabled = true;
         }
 
         private void btMenu_Click(object sender, EventArgs e)
@@ -83,31 +47,9 @@ namespace ControlX
             this.Close();
         }
 
-        private void btComprar_Click(object sender, EventArgs e)
+        private void btAdd_Click(object sender, EventArgs e)
         {
-            formEditComprar form = new formEditComprar();
-            //Os texts não podem ser editado.
-            form.txNome.ReadOnly = true;
-            form.txPreco.ReadOnly = true;
-            form.txQntd.ReadOnly = true;
-            form.cbFornecedor.Enabled = false;
-            //Enviando informacões para os labels e bottons.
-            form.txNome.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[1].Value.ToString());
-            form.txPreco.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[2].Value.ToString());
-            form.txQntd.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[3].Value.ToString());
-            form.lbIdProduto.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
-            int idP = Convert.ToInt32(form.lbIdProduto.Text);
-            IDao db = new DAO.ProdutoDao();
 
-            List<Object> p = db.ListById(idP);
-
-
-            foreach (Produto produto in p)
-            {
-                form.cbFornecedor.SelectedValue = produto.Fornecedor.Id;
-            }
-            form.ShowDialog(this);
-            Fill();
         }
     }
 }

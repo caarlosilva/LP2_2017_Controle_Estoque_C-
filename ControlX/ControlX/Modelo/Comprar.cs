@@ -10,8 +10,9 @@ namespace ControlX
     {
         private int id;
         private string nome_usuario;
-        private long valor;
+        private double valor;
         private List<Produto> itens = new List<Produto>();
+        private bool status;
         private DateTime dataCompra;
         private DateTime dataEntrega;
 
@@ -41,7 +42,7 @@ namespace ControlX
             }
         }
 
-        public long Valor
+        public double Valor
         {
             get
             {
@@ -93,17 +94,31 @@ namespace ControlX
             }
         }
 
+        public bool Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
+        }
+
         public Comprar()
         {
 
         }
 
-        public Comprar(int id, string nome_usuario, long valor, List<Produto> itens, DateTime dataCompra, DateTime dataEntrega)
+        public Comprar(int id, string nome_usuario, double valor, List<Produto> itens, bool status, DateTime dataCompra, DateTime dataEntrega)
         {
             this.Id = id;
             this.Nome_usuario = nome_usuario;
             this.Valor = valor;
             this.Itens = itens;
+            this.Status = status;
             this.DataCompra = dataCompra;
             this.DataEntrega = dataEntrega;
         }
