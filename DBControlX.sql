@@ -29,7 +29,8 @@ CREATE TABLE produtos (
   id int NOT NULL AUTO_INCREMENT,
   nome varchar(64) DEFAULT NULL,
   preco double DEFAULT NULL,
-  qntd int DEFAULT NULL,
+  qntd double DEFAULT NULL,
+  tipoUn varchar(5),
   idFornecedor int,
   idCategoria int,
   deleted_at date DEFAULT NULL,
@@ -60,6 +61,25 @@ CREATE TABLE produtos (
 	PRIMARY KEY (id)	
  );
 
+ CREATE TABLE compras (
+	id int NOT NULL AUTO_INCREMENT,
+	nome_usuario varchar(64),
+	valor double,
+	status int,
+	dataCompra date,
+	dataEntrega date,
+	PRIMARY KEY (id)
+);
+ 
+ 
+ CREATE TABLE produtos_compra(
+ 	idCompra int NOT NULL,
+	idProduto int NOT NULL,
+	PRIMARY KEY(idCompra,idProduto),
+	FOREIGN KEY (idCompra) REFERENCES compras (id),
+	FOREIGN KEY (idProduto) REFERENCES produtos (id)
+);
+
 INSERT INTO fornecedor(nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado) 
 	values ('Gustavo Nunes INFO','15236987458214','1633663366','0','18273725','4002','Praça Professora Magaly Azambuja de Toledo','','Parque Residencial Colina das Estrelas','Tatuí','SP');
 	
@@ -81,55 +101,55 @@ INSERT INTO categoria(nome) values ('Irineu');
 INSERT INTO categoria(nome) values ('Tubulações');
 
 
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Monitor de 144Hz', 1500.00, 5, 2, 1);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Formatação PC',49.90, 1, 1, 2);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Tampa',19.90, 20, 3, 3);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Curso Avançado de C#', 499.90, 20, 4, 4);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Monitor de 144Hz', 1500.00, 5,'UN', 2, 1);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Formatação PC',49.90, 1,'UN', 1, 2);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Tampa',19.90, 20,'UN', 3, 3);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Curso Avançado de C#', 499.90, 20,'UN', 4, 4);
 
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Mouse Razer', 799.99, 2, 2, 5);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Teclado CK104', 149.90, 6, 1, 6);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Aula de Drift', 1800, 10, 3, 1);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Porção de batata', 7.50, 6, 4, 2);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Mouse Razer', 799.99, 2,'UN', 2, 5);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Teclado CK104', 149.90, 6,'UN', 1, 6);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Aula de Drift', 1800, 10,'UN', 3, 1);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Porção de batata', 7.50, 6,'UN', 4, 2);
 
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('PC MASTER RACE', 15000, 1, 2, 3);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Limpeza de PC MASTER RACE', 49.90, 1, 1, 4);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Factor Memes', 800, 10, 3, 5);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Aula de GitHub', 400, 15, 4, 6);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('PC MASTER RACE', 15000, 1,'UN', 2, 3);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Limpeza de PC MASTER RACE', 49.90, 1,'UN', 1, 4);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Factor Memes', 800, 10,'UN', 3, 5);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Aula de GitHub', 400, 15,'UN', 4, 6);
 
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Avião TAM', 85000000, 1 , 2, 2);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Notebook Lenovo G475',700.90, 1, 1, 1);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('CNH Falsificada', 3400, 1, 3, 2);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Software biblioteca IFSP', 150000, 1 , 4, 3);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Avião TAM', 85000000, 1 ,'UN', 2, 2);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Notebook Lenovo G475',700.90, 1,'UN', 1, 1);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('CNH Falsificada', 3400, 1,'UN', 3, 2);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Software biblioteca IFSP', 150000, 1 ,'UN', 4, 3);
 
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Avião GOL', 65000000, 1, 2, 2);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Manutenção de Notebook', 49.90, 1, 1, 4);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('CNH Original', 5600, 1, 3, 5);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Software de todo tipo', 2000, 5, 4, 6);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Avião GOL', 65000000, 1,'UN', 2, 2);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Manutenção de Notebook', 49.90, 1,'UN', 1, 4);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('CNH Original', 5600, 1,'UN', 3, 5);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Software de todo tipo', 2000, 5,'UN', 4, 6);
 
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Aviao AZUL', 42000000, 1, 2, 2);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('AK-47 RED LINE(CS GO)',70.90, 1 , 1, 1);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Irineu, você não sabe nem eu', 74.99, 17, 3, 2);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Café Grande(Por Dia)', 1.50, 1, 4, 3);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Aviao AZUL', 42000000, 1,'UN', 2, 2);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('AK-47 RED LINE(CS GO)',70.90, 1 ,'UN', 1, 1);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Irineu, você não sabe nem eu', 74.99, 17,'UN', 3, 2);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Café Grande(Por Dia)', 1.50, 1,'UN', 4, 3);
 
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Avião ROXO', 50000000 ,1, 2, 2);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('AWP RED LINE(CS GO)', 89.90, 1, 1, 4);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Sabonete Phebo', 2.99, 138, 3, 5);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Cafézinhozinho', 1.00, 175, 4, 6);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Avião ROXO', 50000000 ,1,'UN', 2, 2);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('AWP RED LINE(CS GO)', 89.90, 1,'UN', 1, 4);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Sabonete Phebo', 2.99, 138,'UN', 3, 5);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Cafézinhozinho', 1.00, 175,'UN', 4, 6);
 
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Avião AMARELO', 25000000, 1, 2, 2);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Placa de vídeo 1050 TI', 700.90, 5, 1, 1);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('PUBG', 55.59, 1, 3, 2);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('QUERO CAFÉÉÉÉÉ', 1.50, 250, 4, 3);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Avião AMARELO', 25000000, 1,'UN', 2, 2);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Placa de vídeo 1050 TI', 700.90, 5,'UN', 1, 1);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('PUBG', 55.59, 1,'UN', 3, 2);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('QUERO CAFÉÉÉÉÉ', 1.50, 250,'UN', 4, 3);
 
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Avião CYAN', 7500000, 1, 2, 2);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('CG 150(TURBO)', 3999.90, 2, 1, 4);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Revólvi', 500, 7, 3, 5);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Kpeta', 666, 666, 4, 6);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Avião CYAN', 7500000, 1,'UN', 2, 2);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('CG 150(TURBO)', 3999.90, 2,'UN', 1, 4);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Revólvi', 500, 7,'UN', 3, 5);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Kpeta', 666, 666,'UN', 4, 6);
 
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Avião ROXO MEIO AMARELO', 999999999.99, 1, 2, 2);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Rage', 999.99, 1, 1, 1);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Tenis para Mesa de Tenis de Mesa', 899.99, 12, 3, 2);
-INSERT INTO produtos(nome, preco, qntd, idFornecedor, idCategoria) values ('Panicat', 150000.00, 5, 4, 3);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Avião ROXO MEIO AMARELO', 999999999.99, 1,'UN', 2, 2);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Rage', 999.99, 1,'UN', 1, 1);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Tenis para Mesa de Tenis de Mesa', 899.99, 12,'UN', 3, 2);
+INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('Panicat', 150000.00, 5.5,'KG', 4, 3);
 
 
 
