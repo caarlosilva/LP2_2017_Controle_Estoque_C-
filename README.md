@@ -8,15 +8,16 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 
 - Sistema de controle de Estoque, Compra e Venda.
 
-      PARA FAZER:
--Finalizar o form de Compras;
--Finalizar o sistema de Logins e Cargos;
--Criar o Histórico de Compras;
--Criar o Histórico de Vendas;
--Gerar Relatórios de Compras;
--Gerar Relatórios de Vendas;
--Criar uma base de dados correta para apresentação;
--Aperfeiçoar a interface gráfica do software;
+-PARA FAZER:
+
+      -Finalizar o form de Compras;
+      -Finalizar o sistema de Logins e Cargos;
+      -Criar o Histórico de Compras;
+      -Criar o Histórico de Vendas;
+      -Gerar Relatórios de Compras;
+      -Gerar Relatórios de Vendas;
+      -Criar uma base de dados correta para apresentação;
+      -Aperfeiçoar a interface gráfica do software;
 
 
 ---------- PRODUTO/ESTOQUE --------------
