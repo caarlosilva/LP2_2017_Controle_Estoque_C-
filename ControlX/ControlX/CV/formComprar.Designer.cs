@@ -31,12 +31,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formComprarProd));
             this.pnMenu = new System.Windows.Forms.Panel();
             this.btRemoverTudo = new System.Windows.Forms.Button();
             this.btDelItemCompra = new System.Windows.Forms.Button();
             this.btMenu = new System.Windows.Forms.Button();
             this.pnCabecalho = new System.Windows.Forms.Panel();
+            this.txPrecoCompra = new System.Windows.Forms.TextBox();
+            this.lbPrecoCompra = new System.Windows.Forms.Label();
             this.txQntdCompra = new System.Windows.Forms.TextBox();
             this.lbPrecoShow = new System.Windows.Forms.Label();
             this.lbQntdEstoqueShow = new System.Windows.Forms.Label();
@@ -56,6 +60,7 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrecoUn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coLPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnListaCompra = new System.Windows.Forms.Panel();
@@ -69,8 +74,6 @@
             this.lbDataEntrega = new System.Windows.Forms.Label();
             this.dtEntrega = new System.Windows.Forms.DateTimePicker();
             this.lbDataCompra = new System.Windows.Forms.Label();
-            this.lbPrecoCompra = new System.Windows.Forms.Label();
-            this.txPrecoCompra = new System.Windows.Forms.TextBox();
             this.pnMenu.SuspendLayout();
             this.pnCabecalho.SuspendLayout();
             this.pnBtCad.SuspendLayout();
@@ -101,6 +104,7 @@
             this.btRemoverTudo.TabIndex = 2;
             this.btRemoverTudo.Text = "Remover Tudo";
             this.btRemoverTudo.UseVisualStyleBackColor = true;
+            this.btRemoverTudo.Click += new System.EventHandler(this.btRemoverTudo_Click);
             // 
             // btDelItemCompra
             // 
@@ -111,6 +115,7 @@
             this.btDelItemCompra.TabIndex = 1;
             this.btDelItemCompra.Text = "Remover Item";
             this.btDelItemCompra.UseVisualStyleBackColor = true;
+            this.btDelItemCompra.Click += new System.EventHandler(this.btDelItemCompra_Click);
             // 
             // btMenu
             // 
@@ -145,18 +150,37 @@
             this.pnCabecalho.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnCabecalho.Location = new System.Drawing.Point(3, 3);
             this.pnCabecalho.Name = "pnCabecalho";
-            this.pnCabecalho.Size = new System.Drawing.Size(499, 125);
+            this.pnCabecalho.Size = new System.Drawing.Size(502, 125);
             this.pnCabecalho.TabIndex = 18;
+            // 
+            // txPrecoCompra
+            // 
+            this.txPrecoCompra.Location = new System.Drawing.Point(62, 92);
+            this.txPrecoCompra.Name = "txPrecoCompra";
+            this.txPrecoCompra.Size = new System.Drawing.Size(111, 21);
+            this.txPrecoCompra.TabIndex = 34;
+            this.txPrecoCompra.TextChanged += new System.EventHandler(this.txQntdCompra_TextChanged);
+            this.txPrecoCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPrecoCompra_KeyPress);
+            // 
+            // lbPrecoCompra
+            // 
+            this.lbPrecoCompra.Location = new System.Drawing.Point(4, 86);
+            this.lbPrecoCompra.Name = "lbPrecoCompra";
+            this.lbPrecoCompra.Size = new System.Drawing.Size(64, 34);
+            this.lbPrecoCompra.TabIndex = 33;
+            this.lbPrecoCompra.Text = "Preço Compra:";
             // 
             // txQntdCompra
             // 
             this.txQntdCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txQntdCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txQntdCompra.Location = new System.Drawing.Point(429, 53);
+            this.txQntdCompra.Location = new System.Drawing.Point(432, 53);
             this.txQntdCompra.Name = "txQntdCompra";
             this.txQntdCompra.Size = new System.Drawing.Size(62, 21);
             this.txQntdCompra.TabIndex = 32;
             this.txQntdCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txQntdCompra.TextChanged += new System.EventHandler(this.txQntdCompra_TextChanged);
+            this.txQntdCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txQntdCompra_KeyPress);
             // 
             // lbPrecoShow
             // 
@@ -182,7 +206,7 @@
             // 
             this.lbQntdCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbQntdCompra.AutoSize = true;
-            this.lbQntdCompra.Location = new System.Drawing.Point(350, 57);
+            this.lbQntdCompra.Location = new System.Drawing.Point(353, 57);
             this.lbQntdCompra.Name = "lbQntdCompra";
             this.lbQntdCompra.Size = new System.Drawing.Size(82, 13);
             this.lbQntdCompra.TabIndex = 29;
@@ -197,7 +221,7 @@
             this.pnBtCad.Controls.Add(this.btAdd);
             this.pnBtCad.Location = new System.Drawing.Point(264, 88);
             this.pnBtCad.Name = "pnBtCad";
-            this.pnBtCad.Size = new System.Drawing.Size(227, 28);
+            this.pnBtCad.Size = new System.Drawing.Size(230, 28);
             this.pnBtCad.TabIndex = 28;
             // 
             // btPesquisar
@@ -212,28 +236,30 @@
             this.btPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPesquisar.Location = new System.Drawing.Point(6, 3);
+            this.btPesquisar.Location = new System.Drawing.Point(8, 3);
             this.btPesquisar.Name = "btPesquisar";
             this.btPesquisar.Size = new System.Drawing.Size(23, 22);
             this.btPesquisar.TabIndex = 2;
             this.btPesquisar.UseVisualStyleBackColor = false;
+            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
             // 
             // btLimpar
             // 
             this.btLimpar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btLimpar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btLimpar.Location = new System.Drawing.Point(40, 3);
+            this.btLimpar.Location = new System.Drawing.Point(42, 3);
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(87, 23);
             this.btLimpar.TabIndex = 0;
             this.btLimpar.Text = "Limpar";
             this.btLimpar.UseVisualStyleBackColor = true;
+            this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
             // 
             // btAdd
             // 
             this.btAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btAdd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Location = new System.Drawing.Point(135, 3);
+            this.btAdd.Location = new System.Drawing.Point(137, 3);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(87, 23);
             this.btAdd.TabIndex = 1;
@@ -247,17 +273,18 @@
             this.txId.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txId.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txId.Location = new System.Drawing.Point(425, 13);
+            this.txId.Location = new System.Drawing.Point(428, 13);
             this.txId.Name = "txId";
             this.txId.Size = new System.Drawing.Size(66, 21);
             this.txId.TabIndex = 1;
+            this.txId.TextChanged += new System.EventHandler(this.txQntdCompra_TextChanged);
             // 
             // lbId
             // 
             this.lbId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbId.AutoSize = true;
             this.lbId.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbId.Location = new System.Drawing.Point(393, 15);
+            this.lbId.Location = new System.Drawing.Point(396, 15);
             this.lbId.Name = "lbId";
             this.lbId.Size = new System.Drawing.Size(26, 13);
             this.lbId.TabIndex = 26;
@@ -273,8 +300,9 @@
             this.txNome.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txNome.Location = new System.Drawing.Point(46, 13);
             this.txNome.Name = "txNome";
-            this.txNome.Size = new System.Drawing.Size(328, 21);
+            this.txNome.Size = new System.Drawing.Size(331, 21);
             this.txNome.TabIndex = 0;
+            this.txNome.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // lbNome
             // 
@@ -333,6 +361,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
+            this.colUn,
             this.colPrecoUn,
             this.coLPreco});
             this.dgvItensCompra.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -363,17 +392,29 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.FillWeight = 20F;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn3.FillWeight = 15F;
             this.dataGridViewTextBoxColumn3.HeaderText = "Qtd.";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
+            // colUn
+            // 
+            this.colUn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colUn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colUn.FillWeight = 7F;
+            this.colUn.HeaderText = "";
+            this.colUn.Name = "colUn";
+            this.colUn.ReadOnly = true;
+            // 
             // colPrecoUn
             // 
             this.colPrecoUn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colPrecoUn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.colPrecoUn.DefaultCellStyle = dataGridViewCellStyle4;
             this.colPrecoUn.FillWeight = 20F;
             this.colPrecoUn.HeaderText = "Preço Unitário";
             this.colPrecoUn.Name = "colPrecoUn";
@@ -382,9 +423,9 @@
             // coLPreco
             // 
             this.coLPreco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.coLPreco.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.coLPreco.DefaultCellStyle = dataGridViewCellStyle5;
             this.coLPreco.FillWeight = 20F;
             this.coLPreco.HeaderText = "Preço Total";
             this.coLPreco.Name = "coLPreco";
@@ -392,6 +433,9 @@
             // 
             // pnListaCompra
             // 
+            this.pnListaCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnListaCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnListaCompra.Controls.Add(this.pnCabecalho);
             this.pnListaCompra.Controls.Add(this.gpItensCompra);
@@ -403,8 +447,10 @@
             // 
             // gbDetalhesCompra
             // 
+            this.gbDetalhesCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbDetalhesCompra.BackgroundImage = global::ControlX.Properties.Resources.shopping_cart_PNG362;
-            this.gbDetalhesCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gbDetalhesCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.gbDetalhesCompra.Controls.Add(this.lbNumCompra);
             this.gbDetalhesCompra.Controls.Add(this.lbValorShow);
             this.gbDetalhesCompra.Controls.Add(this.pnButtons);
@@ -459,6 +505,7 @@
             this.btComprar.TabIndex = 0;
             this.btComprar.Text = "Agendar Compra";
             this.btComprar.UseVisualStyleBackColor = true;
+            this.btComprar.Click += new System.EventHandler(this.btComprar_Click);
             // 
             // lbValor
             // 
@@ -511,21 +558,6 @@
             this.lbDataCompra.TabIndex = 2;
             this.lbDataCompra.Text = "Data da Compra:";
             // 
-            // lbPrecoCompra
-            // 
-            this.lbPrecoCompra.Location = new System.Drawing.Point(4, 86);
-            this.lbPrecoCompra.Name = "lbPrecoCompra";
-            this.lbPrecoCompra.Size = new System.Drawing.Size(64, 34);
-            this.lbPrecoCompra.TabIndex = 33;
-            this.lbPrecoCompra.Text = "Preço Compra:";
-            // 
-            // txPrecoCompra
-            // 
-            this.txPrecoCompra.Location = new System.Drawing.Point(62, 92);
-            this.txPrecoCompra.Name = "txPrecoCompra";
-            this.txPrecoCompra.Size = new System.Drawing.Size(111, 21);
-            this.txPrecoCompra.TabIndex = 34;
-            // 
             // formComprarProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -574,11 +606,6 @@
         private System.Windows.Forms.Label lbPreco;
         private System.Windows.Forms.GroupBox gpItensCompra;
         private System.Windows.Forms.DataGridView dgvItensCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecoUn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coLPreco;
         private System.Windows.Forms.Panel pnListaCompra;
         private System.Windows.Forms.Button btRemoverTudo;
         private System.Windows.Forms.Button btDelItemCompra;
@@ -592,5 +619,11 @@
         private System.Windows.Forms.Label lbNumCompra;
         private System.Windows.Forms.TextBox txPrecoCompra;
         private System.Windows.Forms.Label lbPrecoCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecoUn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coLPreco;
     }
 }
