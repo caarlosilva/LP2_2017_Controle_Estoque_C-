@@ -465,3 +465,13 @@ C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.Web.dll
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\stdole.dll
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.csproj.ControlX.exe.config
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.Web.dll
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\MySql.Data.xml
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.FormCategoria.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.FormCadastroCat.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formHistoricoData.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.RelatorioCompras.resources

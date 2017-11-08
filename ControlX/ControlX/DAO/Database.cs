@@ -13,7 +13,7 @@ namespace ControlX
 
         private static MySqlConnection connection;
         private static Database instance;
-        private const string URL = "Server=127.0.0.1; Database=controlx; Uid=root; Pwd=;";
+        private const string URL = "Server=localhost; Database=controlx; Uid=root; Pwd=;";
         private Database()
         {
             connection = new MySqlConnection(URL);
