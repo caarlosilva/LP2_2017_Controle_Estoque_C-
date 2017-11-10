@@ -325,8 +325,6 @@ C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\MySql.Data.dll
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.csprojResolveAssemblyReference.cache
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formCadastroForn.resources
-C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formComprarProd.resources
-C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formEditComprar.resources
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formEstoque.resources
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formCadastroProd.resources
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formFornecedores.resources
@@ -456,14 +454,8 @@ C:\Users\Fabricio\Source\Repos\LP2_PROJETOO\ControlX\ControlX\obj\Debug\ControlX
 C:\Users\Fabricio\Source\Repos\LP2_PROJETOO\ControlX\ControlX\obj\Debug\ControlX.FormCadastroCat.resources
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.FormCategoria.resources
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.FormCadastroCat.resources
-C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formHistoricoData.resources
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.RelatorioCompras.resources
-C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
-C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.ReportSource.dll
-C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.Shared.dll
-C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.Web.dll
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\stdole.dll
-C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.csproj.ControlX.exe.config
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.ReportSource.dll
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\CrystalDecisions.Shared.dll
@@ -481,3 +473,10 @@ C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.
 C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.formDocumento.resources
 C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.CV.FormHistoricoComprasView.resources
 C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.formHistoricoCompras.resources
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.csproj.ResolveComReference.cache
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.CV.FormHistoricoComprasView.resources
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formDocumento.resources
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formHistoricoCompras.resources
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\bin\Debug\MySql.Data.xml
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.FormCompras.resources
+C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.FormAgendarCompra.resources

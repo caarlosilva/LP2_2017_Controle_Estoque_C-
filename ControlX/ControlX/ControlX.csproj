@@ -114,17 +114,17 @@
       <DependentUpon>formHistoricoCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Comprar.cs" />
-    <Compile Include="CV\formComprar.cs">
+    <Compile Include="CV\FormAgendarCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CV\formComprar.Designer.cs">
-      <DependentUpon>formComprar.cs</DependentUpon>
+    <Compile Include="CV\FormAgendarCompra.Designer.cs">
+      <DependentUpon>FormAgendarCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="CV\formComprarProd.cs">
+    <Compile Include="CV\FormCompras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CV\formComprarProd.Designer.cs">
-      <DependentUpon>formComprarProd.cs</DependentUpon>
+    <Compile Include="CV\FormCompras.Designer.cs">
+      <DependentUpon>FormCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\FornecedorDao.cs" />
     <Compile Include="DAO\ProdutoDao.cs" />
@@ -230,11 +230,11 @@
     <EmbeddedResource Include="CV\formCadastroForn.resx">
       <DependentUpon>formCadastroForn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\formComprar.resx">
-      <DependentUpon>formComprar.cs</DependentUpon>
+    <EmbeddedResource Include="CV\FormAgendarCompra.resx">
+      <DependentUpon>FormAgendarCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\formComprarProd.resx">
-      <DependentUpon>formComprarProd.cs</DependentUpon>
+    <EmbeddedResource Include="CV\FormCompras.resx">
+      <DependentUpon>FormCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\formEstoque.resx">
       <DependentUpon>formEstoque.cs</DependentUpon>
@@ -484,6 +484,8 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <None Include="Resources\newcart.png" />
+    <None Include="Resources\_add_cart-512.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

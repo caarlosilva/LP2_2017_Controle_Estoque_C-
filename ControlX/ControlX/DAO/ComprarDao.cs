@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ControlX
 {
-    class ComprarDao
+    class ComprarDao : IDao
     {
         Database db = Database.GetInstance();
 
@@ -111,6 +111,16 @@ namespace ControlX
         {
             throw new NotImplementedException(); 
             // SEM USO PARA 'COMPRAR' , SERIA UTIL UM 'LISTBYDATE', mas da pra implementar em um form, não precisa de um método
+        }
+
+        public int Remover(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<object> ListByName(string name)
+        {
+            throw new NotImplementedException();
         }
     }
 }

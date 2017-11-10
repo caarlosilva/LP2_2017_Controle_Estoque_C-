@@ -63,6 +63,16 @@ namespace ControlX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _add_cart_512 {
+            get {
+                object obj = ResourceManager.GetObject("_add_cart-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lupa {
             get {
                 object obj = ResourceManager.GetObject("lupa", resourceCulture);
@@ -76,6 +86,16 @@ namespace ControlX.Properties {
         internal static System.Drawing.Bitmap lupa32x32 {
             get {
                 object obj = ResourceManager.GetObject("lupa32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap newcart {
+            get {
+                object obj = ResourceManager.GetObject("newcart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

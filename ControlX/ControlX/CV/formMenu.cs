@@ -56,7 +56,7 @@ namespace ControlX
         private void btComprar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new formComprarProd().ShowDialog();
+            new FormCompras().ShowDialog();
             this.Show();
         }
 

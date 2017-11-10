@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ControlX
 {
-    public partial class formComprarProd : Form
+    public partial class FormAgendarCompra : Form
     {
 
         static IDao db = new DAO.ProdutoDao();
@@ -18,7 +18,7 @@ namespace ControlX
         private ComprarDao cd = new ComprarDao();
         double qntdEstoque;
 
-        public formComprarProd()
+        public FormAgendarCompra()
         {
             //int idCompra = cd.GetId();
             InitializeComponent();
