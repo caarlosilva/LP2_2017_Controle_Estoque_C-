@@ -70,7 +70,7 @@ namespace ControlX
         private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new formHistoricoData().ShowDialog();
+            new formHistoricoCompras().ShowDialog();
             this.Show();
         }
 

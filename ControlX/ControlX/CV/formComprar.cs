@@ -201,7 +201,7 @@ namespace ControlX
                     }
                 }
                 compra.Id = cd.GetId();
-                compra.Status = false; //Compra não finalizada, produtos agendados !
+                compra.Status = 0; //Compra não finalizada, produtos agendados !
                 compra.Valor = double.Parse(lbValorShow.Text);
                 compra.DataCompra = dtCompra.Value;
                 compra.DataEntrega = dtEntrega.Value;

@@ -12,7 +12,7 @@ namespace ControlX
         private string nome_usuario;
         private double valor;
         private List<Produto> itens = new List<Produto>();
-        private bool status;
+        private int status;
         private DateTime dataCompra;
         private DateTime dataEntrega;
 
@@ -94,7 +94,7 @@ namespace ControlX
             }
         }
 
-        public bool Status
+        public int Status
         {
             get
             {
@@ -112,7 +112,7 @@ namespace ControlX
 
         }
 
-        public Comprar(int id, string nome_usuario, double valor, List<Produto> itens, bool status, DateTime dataCompra, DateTime dataEntrega)
+        public Comprar(int id, string nome_usuario, double valor, List<Produto> itens, int status, DateTime dataCompra, DateTime dataEntrega)
         {
             this.Id = id;
             this.Nome_usuario = nome_usuario;

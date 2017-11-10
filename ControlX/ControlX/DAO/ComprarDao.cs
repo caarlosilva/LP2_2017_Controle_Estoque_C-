@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ControlX
 {
-    class ComprarDao : IDao
+    class ComprarDao
     {
         Database db = Database.GetInstance();
 
@@ -16,7 +16,7 @@ namespace ControlX
             Comprar c = (Comprar)o;
             string dataCompraMySql = c.DataCompra.ToString("yyyy-MM-dd HH:mm:ss.fff");
             string dataEntregaMySql = c.DataEntrega.ToString("yyyy-MM-dd HH:mm:ss.fff");
-            int status = c.Status ? 1 : 0;
+            int status = c.Status;
             string sql = string.Format("INSERT INTO compras(nome_usuario, valor, status, dataCompra, dataEntrega) values('{0}',{1},{2},'{3}','{4}')","Ronaldo Lopes", c.Valor, status, dataCompraMySql, dataEntregaMySql);
             db.ExecuteNonQuery(sql);
             for(int i = 0; i < c.Itens.Count; i++)
@@ -45,27 +45,72 @@ namespace ControlX
 
         public List<object> ListAll()
         {
-            throw new NotImplementedException(); 
-            //IMPLEMENTAR P/ MOSTRAR NO HISTORICO, SEPARADOS POR FINALIZADOS(status = 1) E NÃO FINALIZADOS(status = 0)
+            string qry = string.Format("SELECT id, nome_usuario, valor, status, dataCompra, dataEntrega FROM compras");
+            DataSet ds = db.ExecuteQuery(qry);
+
+            List<object> compras = new List<object>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Comprar c = new Comprar();
+                c.Id = int.Parse(dr["id"].ToString());
+                c.Nome_usuario = dr["nome_usuario"].ToString();
+                c.Valor = long.Parse(dr["valor"].ToString());
+                c.Status = int.Parse(dr["status"].ToString());
+                c.DataCompra = DateTime.Parse(dr["dataCompra"].ToString());
+                c.DataEntrega = DateTime.Parse(dr["dataEntrega"].ToString());
+                compras.Add(c);
+            }
+            return compras;
+        }
+
+        public List<object> ListProdutos(int id)
+        {
+
+            string qry = string.Format("SELECT pc.idCompra, pc.idProduto, p.nome AS nome_prod, p.preco AS preco_prod, p.qntd AS qtd_prod, p.tipoUn AS un_prod, f.nome AS nome_forn FROM (((compras c JOIN produtos_compra pc ON c.id = pc.idCompra) JOIN produtos p ON pc.idProduto = p.id) JOIN fornecedor f ON f.id = p.idFornecedor) WHERE c.id = {0}", id);
+            DataSet ds = db.ExecuteQuery(qry);
+
+            List<object> prods = new List<object>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Produto p = new Produto();
+                p.Id = int.Parse(dr["idProduto"].ToString());
+                p.Nome = dr["nome_prod"].ToString();
+                p.Preco = double.Parse(dr["preco_prod"].ToString());
+                p.Qntd = double.Parse(dr["qtd_prod"].ToString());
+                p.TipoUn = dr["un_prod"].ToString();
+                p.Fornecedor.Nome = dr["nome_forn"].ToString();
+                prods.Add(p);
+            }
+            return prods;
         }
 
         public List<object> ListById(int id)
         {
-            throw new NotImplementedException(); 
-            // SEM USO PARA 'COMPRAR'
+            string qry = string.Format("SELECT id, nome_usuario, valor, status, dataCompra, dataEntrega FROM compras WHERE id = {0}", id);
+            DataSet ds = db.ExecuteQuery(qry);
+
+            List<object> compras = new List<object>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Comprar c = new Comprar();
+                c.Id = int.Parse(dr["id"].ToString());
+                c.Nome_usuario = dr["nome_usuario"].ToString();
+                c.Valor = long.Parse(dr["valor"].ToString());
+                c.Status = int.Parse(dr["status"].ToString());
+                c.DataCompra = DateTime.Parse(dr["dataCompra"].ToString());
+                c.DataEntrega = DateTime.Parse(dr["dataEntrega"].ToString());
+                compras.Add(c);
+            }
+            return compras;
         }
 
-        public List<object> ListByName(string name)
+        public List<object> ListByDate(DateTime inicio, DateTime fim)
         {
             throw new NotImplementedException(); 
             // SEM USO PARA 'COMPRAR' , SERIA UTIL UM 'LISTBYDATE', mas da pra implementar em um form, não precisa de um método
-        }
-
-        public int Remover(int id)
-        {
-            throw new NotImplementedException(); 
-            //OLHA, CREIO QUE NÃO TERA UTILIDADE 'APAGAR' UMA COMPRA, A MENOS QUE ELA SEJA CANCELADA ANTES DE ENTREGAR
-            //E NO CASO EU NÃO SEI O QUE FAZER
         }
     }
 }

@@ -276,6 +276,7 @@
             this.colId.HeaderText = "Id";
             this.colId.Name = "colId";
             this.colId.ReadOnly = true;
+            this.colId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colId.ToolTipText = "Numero de identificação gerado no cadastro";
             // 
             // colNome

@@ -57,7 +57,7 @@ namespace ControlX.DAO
 
         public List<object> ListAll()
         {
-            string qry = string.Format("SELECT id, nome, preco, qntd, tipoUn, idFornecedor, idCategoria FROM produtos WHERE deleted_at is null");
+            string qry = string.Format("SELECT p.id AS id_prod, p.nome AS nome_prod, preco, qntd, tipoUn, idFornecedor, f.nome AS nome_forn, idCategoria FROM (produtos p JOIN fornecedor f ON p.idFornecedor = f.id) WHERE p.deleted_at is null");
             DataSet ds = db.ExecuteQuery(qry);
 
             List<Object> ps = new List<Object>();
@@ -65,13 +65,14 @@ namespace ControlX.DAO
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 Produto p = new Produto();
-                p.Id = int.Parse(dr["id"].ToString());
-                p.Nome = dr["nome"].ToString();
+                p.Id = int.Parse(dr["id_prod"].ToString());
+                p.Nome = dr["nome_prod"].ToString();
                 p.Preco = double.Parse(dr["preco"].ToString());
                 p.Qntd = double.Parse(dr["qntd"].ToString());
                 p.TipoUn = dr["tipoUn"].ToString();
                 p.Fornecedor.Id = int.Parse(dr["idFornecedor"].ToString());
                 p.Cat.Id = int.Parse(dr["idCategoria"].ToString());
+                p.Fornecedor.Nome = dr["nome_forn"].ToString();
 
                 FornecedorDao fdao = new FornecedorDao();
                 Fornecedor f = fdao.Ler(p.Fornecedor.Id);

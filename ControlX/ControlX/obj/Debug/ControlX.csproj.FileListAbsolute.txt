@@ -447,7 +447,6 @@ C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.
 C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.FormVender.resources
 C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.formCadastroUser.resources
 C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.formUsuario.resources
-C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.formHistoricoData.resources
 C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.Properties.Resources.resources
 C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.RelatorioCompras.resources
 C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.formCadastroForn.pt-BR.resources
@@ -475,3 +474,10 @@ C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.FormCadastroCat.resources
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.formHistoricoData.resources
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-\ControlX\ControlX\obj\Debug\ControlX.RelatorioCompras.resources
+C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\bin\Debug\MySql.Data.xml
+C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.FormCategoria.resources
+C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.FormCadastroCat.resources
+C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.csproj.ResolveComReference.cache
+C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.formDocumento.resources
+C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.CV.FormHistoricoComprasView.resources
+C:\Users\Fabricio\Source\Repos\Project_LP2\ControlX\ControlX\obj\Debug\ControlX.formHistoricoCompras.resources
