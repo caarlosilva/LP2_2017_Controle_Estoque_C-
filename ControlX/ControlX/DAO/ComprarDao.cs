@@ -17,7 +17,7 @@ namespace ControlX
             string dataCompraMySql = c.DataCompra.ToString("yyyy-MM-dd HH:mm:ss.fff");
             string dataEntregaMySql = c.DataEntrega.ToString("yyyy-MM-dd HH:mm:ss.fff");
             int status = c.Status;
-            string sql = string.Format("INSERT INTO compras(nome_usuario, valor, status, dataCompra, dataEntrega) values('{0}',{1},{2},'{3}','{4}')","Ronaldo Lopes", c.Valor, status, dataCompraMySql, dataEntregaMySql);
+            string sql = string.Format("INSERT INTO compras(nome_usuario, valor, status, dataCompra, dataEntrega) values('{0}',{1},{2},'{3}','{4}')", c.Nome_usuario, c.Valor, status, dataCompraMySql, dataEntregaMySql);
             db.ExecuteNonQuery(sql);
             for(int i = 0; i < c.Itens.Count; i++)
             {

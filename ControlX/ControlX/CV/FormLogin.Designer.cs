@@ -176,11 +176,11 @@
         private System.Windows.Forms.Button btLogar;
         private System.Windows.Forms.Label lbUsuario;
         private System.Windows.Forms.Label lbSenha;
-        private System.Windows.Forms.TextBox txUsuario;
         private System.Windows.Forms.TextBox txSenha;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pbUser;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TextBox txUsuario;
     }
 }

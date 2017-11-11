@@ -99,6 +99,18 @@
     <Compile Include="formDocumento.Designer.cs">
       <DependentUpon>formDocumento.cs</DependentUpon>
     </Compile>
+    <Compile Include="CV\FormHistoricoVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormHistoricoVendas.Designer.cs">
+      <DependentUpon>FormHistoricoVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormHistoricoVendasView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormHistoricoVendasView.Designer.cs">
+      <DependentUpon>FormHistoricoVendasView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Categoria.cs" />
     <Compile Include="Relatorios\Compras_Rel.cs">
       <AutoGen>True</AutoGen>

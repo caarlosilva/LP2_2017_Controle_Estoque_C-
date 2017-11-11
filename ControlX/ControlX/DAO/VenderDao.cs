@@ -8,9 +8,20 @@ namespace ControlX
 {
     class VenderDao : IDao
     {
-        public void Adicionar(object f)
+
+        Database db = Database.GetInstance();
+
+        public void Adicionar(object o)
         {
-            throw new NotImplementedException();
+            Vender v = (Vender)o;
+            string dataCompraMySql = v.Data.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string sql = string.Format("INSERT INTO vendas(nome_usuario, valor, dataVenda) values('{0}',{1},{2})", v.Nome_usuario, v.Valor, dataCompraMySql);
+            db.ExecuteNonQuery(sql);
+            for (int i = 0; i < v.Itens.Count; i++)
+            {
+                sql = string.Format("INSERT INTO produtos_venda(idProduto, idVenda) values ({0},{1})", v.Itens[i].Id, v.Id);
+                db.ExecuteNonQuery(sql);
+            }
         }
 
         public void Atualizar(object f)
