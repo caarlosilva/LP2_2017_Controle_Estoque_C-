@@ -128,6 +128,7 @@ namespace ControlX
                 form.cbFornecedor.SelectedValue = produto.Fornecedor.Id;
                 form.cbCategoria.SelectedValue = produto.Cat.Id;
                 form.cbTipoUn.Text = produto.TipoUn;
+                form.txEstoqueMin.Text = produto.EstoqueMin.ToString();
             }
 
             form.btCadastrar.Text = "Salvar";
@@ -145,6 +146,7 @@ namespace ControlX
             form.cbFornecedor.Enabled = false;
             form.cbCategoria.Enabled = false;
             form.cbTipoUn.Enabled = false;
+            form.txEstoqueMin.Enabled = false;
             form.btImagem.Enabled = false;
             //Enviando informacões para os labels e bottons.
             form.lbIdProduto.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[0].Value.ToString());
@@ -157,12 +159,12 @@ namespace ControlX
             IDao db = new DAO.ProdutoDao();
 
             List<Object> p = db.ListById(idP);
-
             foreach (Produto produto in p)
             {
                 form.cbFornecedor.SelectedValue = produto.Fornecedor.Id;
                 form.cbCategoria.SelectedValue = produto.Cat.Id;
                 form.cbTipoUn.Text = produto.TipoUn;
+                form.txEstoqueMin.Text = produto.EstoqueMin.ToString();
             }
 
             //form.cbFornecedor.DataSource = p;

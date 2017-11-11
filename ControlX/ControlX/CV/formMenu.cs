@@ -41,11 +41,6 @@ namespace ControlX
             this.Show();
         }
 
-        private void picLogo_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btVender_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -67,24 +62,40 @@ namespace ControlX
             this.Show();
         }
 
-        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menuHistCompras_Click(object sender, EventArgs e)
         {
             this.Hide();
             new formHistoricoCompras().ShowDialog();
             this.Show();
         }
 
-        private void comprasToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            RelatorioCompras form = new RelatorioCompras();
-            form.Show();
-        }
-
-        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menuHistVendas_Click(object sender, EventArgs e)
         {
             this.Hide();
             new FormHistoricoVendas().ShowDialog();
             this.Show();
+        }
+
+        private void menuRelCompras_Click(object sender, EventArgs e)
+        {
+            CV.FormDataRelatorio form = new CV.FormDataRelatorio();
+            form.tipoRelatorio = "compras";
+            form.Show();
+        }
+
+        private void menuRelEstoque_Click(object sender, EventArgs e)
+        {
+            CV.FormDataRelatorio tipo= new CV.FormDataRelatorio();
+            tipo.tipoRelatorio = "estoquemin";
+            FormRelatorios form = new FormRelatorios();
+            form.Show();
+        }
+
+        private void menuRelVendas_Click(object sender, EventArgs e)
+        {
+            CV.FormDataRelatorio form = new CV.FormDataRelatorio();
+            form.tipoRelatorio = "vendas";
+            form.Show();
         }
     }
 }

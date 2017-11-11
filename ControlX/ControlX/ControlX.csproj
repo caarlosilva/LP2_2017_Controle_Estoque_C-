@@ -74,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CV\FormDataRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormDataRelatorio.Designer.cs">
+      <DependentUpon>FormDataRelatorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="CV\FormHistoricoComprasView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,10 +118,10 @@
       <DependentUpon>FormHistoricoVendasView.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Categoria.cs" />
-    <Compile Include="Relatorios\Compras_Rel.cs">
+    <Compile Include="Relatorios\EstoqueMin_Rel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Compras_Rel.rpt</DependentUpon>
+      <DependentUpon>EstoqueMin_Rel.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DAO\ComprarDao.cs" />
@@ -206,11 +212,11 @@
     <Compile Include="Modelo\Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Relatorios\RelatorioCompras.cs">
+    <Compile Include="Relatorios\FormRelatorios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Relatorios\RelatorioCompras.Designer.cs">
-      <DependentUpon>RelatorioCompras.cs</DependentUpon>
+    <Compile Include="Relatorios\FormRelatorios.Designer.cs">
+      <DependentUpon>FormRelatorios.cs</DependentUpon>
     </Compile>
     <Compile Include="Service References\WsCorreios\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -220,11 +226,20 @@
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Modelo\Vender.cs" />
     <Compile Include="DAO\VenderDao.cs" />
+    <Compile Include="Relatorios\Vendas_Rel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Vendas_Rel.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="CV\FormCategoria.resx">
       <DependentUpon>FormCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormCadastroCat.resx">
       <DependentUpon>FormCadastroCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormDataRelatorio.resx">
+      <DependentUpon>FormDataRelatorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormHistoricoComprasView.resx">
       <DependentUpon>FormHistoricoComprasView.cs</DependentUpon>
@@ -238,9 +253,9 @@
     <EmbeddedResource Include="formDocumento.resx">
       <DependentUpon>formDocumento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Relatorios\Compras_Rel.rpt">
+    <EmbeddedResource Include="Relatorios\EstoqueMin_Rel.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Compras_Rel.cs</LastGenOutput>
+      <LastGenOutput>EstoqueMin_Rel.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\formCadastroForn.pt-BR.resx">
       <DependentUpon>formCadastroForn.cs</DependentUpon>
@@ -286,8 +301,12 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Relatorios\RelatorioCompras.resx">
-      <DependentUpon>RelatorioCompras.cs</DependentUpon>
+    <EmbeddedResource Include="Relatorios\FormRelatorios.resx">
+      <DependentUpon>FormRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\Vendas_Rel.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Vendas_Rel.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

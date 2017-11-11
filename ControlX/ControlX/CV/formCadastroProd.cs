@@ -77,6 +77,7 @@ namespace ControlX
             nProduto.Fornecedor.Id = int.Parse(cbFornecedor.SelectedValue.ToString());
             nProduto.Cat.Id = int.Parse(cbCategoria.SelectedValue.ToString());
             nProduto.TipoUn = cbTipoUn.Text.ToString();
+            nProduto.EstoqueMin = double.Parse(txEstoqueMin.Text.ToString());
 
             btComplete();
 

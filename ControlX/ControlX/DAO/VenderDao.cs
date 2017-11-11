@@ -40,6 +40,27 @@ namespace ControlX
             return idUsuario;
         }
 
+        public List<object> ListVendas(DateTime dataInicio, DateTime dataFim)
+        {
+            string dataMySqlInicio = dataInicio.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string dataMySqlFim = dataFim.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string qry = string.Format("SELECT id, nome_usuario, valor, dataVenda FROM vendas WHERE dataVenda BETWEEN '{0}' AND '{1}'", dataMySqlInicio, dataMySqlFim);
+            DataSet ds = db.ExecuteQuery(qry);
+
+            List<object> vendas = new List<object>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Vender v = new Vender();
+                v.Id = int.Parse(dr["id"].ToString());
+                v.Nome_usuario = dr["nome_usuario"].ToString();
+                v.Valor = long.Parse(dr["valor"].ToString());
+                v.Data = DateTime.Parse(dr["dataVenda"].ToString());
+                vendas.Add(v);
+            }
+            return vendas;
+        }
+
         public List<object> ListAll()
         {
             string qry = string.Format("SELECT id, nome_usuario, valor, dataVenda FROM vendas");

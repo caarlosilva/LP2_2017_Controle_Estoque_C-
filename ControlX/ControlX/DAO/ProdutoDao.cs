@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 using System.Data;
 
 namespace ControlX.DAO
@@ -28,7 +27,7 @@ namespace ControlX.DAO
                 qntd = qntd.Replace(",", ".");
             }
 
-            string sql = string.Format("INSERT INTO produtos(nome, preco, qntd, tipoUn, idFornecedor, idCategoria) values ('{0}',{1},{2},'{3}',{4},{5})", p.Nome, preco, qntd, p.TipoUn, p.Fornecedor.Id, p.Cat.Id);
+            string sql = string.Format("INSERT INTO produtos(nome, preco, qntd, tipoUn, estoqueMin, idFornecedor, idCategoria) values ('{0}',{1},{2},'{3}', {4}, {5},{6})", p.Nome, preco, qntd, p.TipoUn, p.EstoqueMin, p.Fornecedor.Id, p.Cat.Id);
             db.ExecuteNonQuery(sql);
         }
 
@@ -48,16 +47,15 @@ namespace ControlX.DAO
                 qntd = qntd.Replace(",", ".");
             }
 
-            string qry = string.Format("UPDATE produtos SET nome = '{0}', preco = {1}, qntd = {2}, tipoUn = '{3}', idFornecedor = {4}, idCategoria = {5} where id = {6}", p.Nome, preco, qntd, p.TipoUn, p.Fornecedor.Id, p.Cat.Id, p.Id);
+            string qry = string.Format("UPDATE produtos SET nome = '{0}', preco = {1}, qntd = {2}, tipoUn = '{3}', estoqueMin = {4}, idFornecedor = {5}, idCategoria = {6} where id = {7}", p.Nome, preco, qntd, p.TipoUn, p.EstoqueMin, p.Fornecedor.Id, p.Cat.Id, p.Id);
 
             db.ExecuteNonQuery(qry);
         }
 
-
-
-        public List<object> ListAll()
+        //Relatorio de estoque min
+        public List<object> ListEstoqueMinimo()
         {
-            string qry = string.Format("SELECT p.id AS id_prod, p.nome AS nome_prod, preco, qntd, tipoUn, idFornecedor, f.nome AS nome_forn, idCategoria FROM (produtos p JOIN fornecedor f ON p.idFornecedor = f.id) WHERE p.deleted_at is null");
+            string qry = string.Format("SELECT id, nome, preco, qntd, tipoUn, estoqueMin, idFornecedor, idCategoria FROM produtos WHERE deleted_at is null AND qntd < estoqueMin");
             DataSet ds = db.ExecuteQuery(qry);
 
             List<Object> ps = new List<Object>();
@@ -65,14 +63,14 @@ namespace ControlX.DAO
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 Produto p = new Produto();
-                p.Id = int.Parse(dr["id_prod"].ToString());
-                p.Nome = dr["nome_prod"].ToString();
+                p.Id = int.Parse(dr["id"].ToString());
+                p.Nome = dr["nome"].ToString();
                 p.Preco = double.Parse(dr["preco"].ToString());
                 p.Qntd = double.Parse(dr["qntd"].ToString());
                 p.TipoUn = dr["tipoUn"].ToString();
+                p.EstoqueMin = double.Parse(dr["estoqueMin"].ToString());
                 p.Fornecedor.Id = int.Parse(dr["idFornecedor"].ToString());
                 p.Cat.Id = int.Parse(dr["idCategoria"].ToString());
-                p.Fornecedor.Nome = dr["nome_forn"].ToString();
 
                 FornecedorDao fdao = new FornecedorDao();
                 Fornecedor f = fdao.Ler(p.Fornecedor.Id);
@@ -83,30 +81,46 @@ namespace ControlX.DAO
                 p.Cat = c;
 
                 ps.Add(p);
-                /*List<Object> flist = fdao.ListByName(p.Fornecedor.Id);
+            }
+            return ps;
+        }
+        //
 
+        public List<object> ListAll()
+        {
+            string qry = string.Format("SELECT id, nome, preco, qntd, tipoUn, estoqueMin, idFornecedor, idCategoria FROM produtos WHERE deleted_at is null");
+            DataSet ds = db.ExecuteQuery(qry);
 
-                foreach (Fornecedor f in flist)
-                {
-                    p.Fornecedor.Nome = f.Nome;
-                    p.Fornecedor.Cnpj = f.Cnpj;
-                    p.Fornecedor.Telefone1 = f.Telefone1;
-                    p.Fornecedor.Telefone2 = f.Telefone2;
-                    p.Fornecedor.Cep = f.Cep;
-                    p.Fornecedor.Num = f.Num;
-                    p.Fornecedor.Rua = f.Rua;
-                    p.Fornecedor.Comp = f.Comp;
-                    p.Fornecedor.Bairro = f.Bairro;
-                    p.Fornecedor.Cidade = f.Cidade;
-                    p.Fornecedor.Estado = f.Estado;
-                }*/
+            List<Object> ps = new List<Object>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Produto p = new Produto();
+                p.Id = int.Parse(dr["id"].ToString());
+                p.Nome = dr["nome"].ToString();
+                p.Preco = double.Parse(dr["preco"].ToString());
+                p.Qntd = double.Parse(dr["qntd"].ToString());
+                p.TipoUn = dr["tipoUn"].ToString();
+                p.EstoqueMin = double.Parse(dr["estoqueMin"].ToString());
+                p.Fornecedor.Id = int.Parse(dr["idFornecedor"].ToString());
+                p.Cat.Id = int.Parse(dr["idCategoria"].ToString());
+
+                FornecedorDao fdao = new FornecedorDao();
+                Fornecedor f = fdao.Ler(p.Fornecedor.Id);
+                p.Fornecedor = f;
+
+                CategoriaDao cdao = new CategoriaDao();
+                Modelo.Categoria c = cdao.Ler(p.Cat.Id);
+                p.Cat = c;
+
+                ps.Add(p);
             }
             return ps;
         }
 
         public List<object> ListById(int id)
         {
-            string qry = string.Format("SELECT id, nome, preco, qntd, tipoUn, idFornecedor, idCategoria FROM produtos WHERE id = {0} AND deleted_at is null", id);
+            string qry = string.Format("SELECT id, nome, preco, qntd, tipoUn, estoqueMin, idFornecedor, idCategoria FROM produtos WHERE id = {0} AND deleted_at is null", id);
 
             DataSet ds = db.ExecuteQuery(qry);
 
@@ -120,6 +134,7 @@ namespace ControlX.DAO
                 p.Preco = double.Parse(dr["preco"].ToString());
                 p.Qntd = double.Parse(dr["qntd"].ToString());
                 p.TipoUn = dr["tipoUn"].ToString();
+                p.EstoqueMin = double.Parse(dr["estoqueMin"].ToString());
                 p.Fornecedor.Id = int.Parse(dr["idFornecedor"].ToString());
                 p.Cat.Id = int.Parse(dr["idCategoria"].ToString());
 
@@ -152,6 +167,8 @@ namespace ControlX.DAO
                 p.Preco = double.Parse(dr["preco"].ToString());
                 p.Qntd = double.Parse(dr["qntd"].ToString());
                 p.TipoUn = dr["tipoUn"].ToString();
+                p.EstoqueMin = double.Parse(dr["estoqueMin"].ToString());
+                p.Fornecedor.Id = int.Parse(dr["idFornecedor"].ToString());
                 p.Fornecedor.Id = int.Parse(dr["idFornecedor"].ToString());
                 p.Cat.Id = int.Parse(dr["idCategoria"].ToString());
 
@@ -183,6 +200,8 @@ namespace ControlX.DAO
                 p.Nome = dr["nome"].ToString();
                 p.Preco = double.Parse(dr["preco"].ToString());
                 p.Qntd = double.Parse(dr["qntd"].ToString());
+                p.TipoUn = dr["tipoUn"].ToString();
+                p.EstoqueMin = double.Parse(dr["estoqueMin"].ToString());
                 p.Fornecedor.Id = int.Parse(dr["idFornecedor"].ToString());
                 p.Cat.Id = int.Parse(dr["idCategoria"].ToString());
 

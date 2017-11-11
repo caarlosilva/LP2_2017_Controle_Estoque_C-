@@ -53,7 +53,7 @@ namespace ControlX
                 if (Logado1 != 1)
                 {
                     menu.btUsuario.Visible = false;
-                    menu.relatoriosToolStripMenuItem.Visible = false;
+                    menu.menuRelatorio.Visible = false;
                 }
                 menu.lbMensagem.Text = "Você está conectado como '" + txUsuario.Text + "' !";
                 menu.ShowDialog();

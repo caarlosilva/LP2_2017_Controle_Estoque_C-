@@ -314,8 +314,8 @@
             this.colUn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.colUn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colUn.FillWeight = 6F;
-            this.colUn.HeaderText = "";
+            this.colUn.FillWeight = 7F;
+            this.colUn.HeaderText = "Un.";
             this.colUn.Name = "colUn";
             this.colUn.ReadOnly = true;
             // 

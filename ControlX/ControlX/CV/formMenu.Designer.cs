@@ -42,15 +42,15 @@
             this.lblData = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.msMenu = new System.Windows.Forms.MenuStrip();
-            this.historicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comprasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuHistorico = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuHistCompras = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuHistVendas = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRelatorio = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRelCompras = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRelVendas = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRelEstoque = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAjuda = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSobre = new System.Windows.Forms.ToolStripMenuItem();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.pnConectado.SuspendLayout();
@@ -175,10 +175,10 @@
             this.msMenu.BackColor = System.Drawing.SystemColors.Control;
             this.msMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.historicoToolStripMenuItem,
-            this.relatoriosToolStripMenuItem,
-            this.helpToolStripMenuItem,
-            this.sobreToolStripMenuItem});
+            this.menuHistorico,
+            this.menuRelatorio,
+            this.menuAjuda,
+            this.menuSobre});
             this.msMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
@@ -187,69 +187,71 @@
             this.msMenu.TabIndex = 8;
             this.msMenu.Text = "Menu";
             // 
-            // historicoToolStripMenuItem
+            // menuHistorico
             // 
-            this.historicoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.comprasToolStripMenuItem,
-            this.vendasToolStripMenuItem});
-            this.historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
-            this.historicoToolStripMenuItem.Size = new System.Drawing.Size(67, 19);
-            this.historicoToolStripMenuItem.Text = "Historico";
+            this.menuHistorico.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuHistCompras,
+            this.menuHistVendas});
+            this.menuHistorico.Name = "menuHistorico";
+            this.menuHistorico.Size = new System.Drawing.Size(67, 19);
+            this.menuHistorico.Text = "Historico";
             // 
-            // comprasToolStripMenuItem
+            // menuHistCompras
             // 
-            this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.comprasToolStripMenuItem.Text = "Compras";
-            this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
+            this.menuHistCompras.Name = "menuHistCompras";
+            this.menuHistCompras.Size = new System.Drawing.Size(122, 22);
+            this.menuHistCompras.Text = "Compras";
+            this.menuHistCompras.Click += new System.EventHandler(this.menuHistCompras_Click);
             // 
-            // vendasToolStripMenuItem
+            // menuHistVendas
             // 
-            this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
-            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.vendasToolStripMenuItem.Text = "Vendas";
-            this.vendasToolStripMenuItem.Click += new System.EventHandler(this.vendasToolStripMenuItem_Click);
+            this.menuHistVendas.Name = "menuHistVendas";
+            this.menuHistVendas.Size = new System.Drawing.Size(122, 22);
+            this.menuHistVendas.Text = "Vendas";
+            this.menuHistVendas.Click += new System.EventHandler(this.menuHistVendas_Click);
             // 
-            // relatoriosToolStripMenuItem
+            // menuRelatorio
             // 
-            this.relatoriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.comprasToolStripMenuItem1,
-            this.vendasToolStripMenuItem1,
-            this.estoqueToolStripMenuItem});
-            this.relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
-            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(71, 19);
-            this.relatoriosToolStripMenuItem.Text = "Relatorios";
+            this.menuRelatorio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuRelCompras,
+            this.menuRelVendas,
+            this.menuRelEstoque});
+            this.menuRelatorio.Name = "menuRelatorio";
+            this.menuRelatorio.Size = new System.Drawing.Size(71, 19);
+            this.menuRelatorio.Text = "Relatorios";
             // 
-            // comprasToolStripMenuItem1
+            // menuRelCompras
             // 
-            this.comprasToolStripMenuItem1.Name = "comprasToolStripMenuItem1";
-            this.comprasToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
-            this.comprasToolStripMenuItem1.Text = "Compras";
-            this.comprasToolStripMenuItem1.Click += new System.EventHandler(this.comprasToolStripMenuItem1_Click);
+            this.menuRelCompras.Name = "menuRelCompras";
+            this.menuRelCompras.Size = new System.Drawing.Size(152, 22);
+            this.menuRelCompras.Text = "Compras";
+            this.menuRelCompras.Click += new System.EventHandler(this.menuRelCompras_Click);
             // 
-            // vendasToolStripMenuItem1
+            // menuRelVendas
             // 
-            this.vendasToolStripMenuItem1.Name = "vendasToolStripMenuItem1";
-            this.vendasToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
-            this.vendasToolStripMenuItem1.Text = "Vendas";
+            this.menuRelVendas.Name = "menuRelVendas";
+            this.menuRelVendas.Size = new System.Drawing.Size(152, 22);
+            this.menuRelVendas.Text = "Vendas";
+            this.menuRelVendas.Click += new System.EventHandler(this.menuRelVendas_Click);
             // 
-            // estoqueToolStripMenuItem
+            // menuRelEstoque
             // 
-            this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.estoqueToolStripMenuItem.Text = "Estoque";
+            this.menuRelEstoque.Name = "menuRelEstoque";
+            this.menuRelEstoque.Size = new System.Drawing.Size(152, 22);
+            this.menuRelEstoque.Text = "Estoque";
+            this.menuRelEstoque.Click += new System.EventHandler(this.menuRelEstoque_Click);
             // 
-            // helpToolStripMenuItem
+            // menuAjuda
             // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(50, 19);
-            this.helpToolStripMenuItem.Text = "Ajuda";
+            this.menuAjuda.Name = "menuAjuda";
+            this.menuAjuda.Size = new System.Drawing.Size(50, 19);
+            this.menuAjuda.Text = "Ajuda";
             // 
-            // sobreToolStripMenuItem
+            // menuSobre
             // 
-            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 19);
-            this.sobreToolStripMenuItem.Text = "Sobre";
+            this.menuSobre.Name = "menuSobre";
+            this.menuSobre.Size = new System.Drawing.Size(49, 19);
+            this.menuSobre.Text = "Sobre";
             // 
             // picLogo
             // 
@@ -260,7 +262,6 @@
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 7;
             this.picLogo.TabStop = false;
-            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
             // 
             // formMenu
             // 
@@ -305,16 +306,16 @@
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Button btComprar;
         private System.Windows.Forms.MenuStrip msMenu;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuAjuda;
+        private System.Windows.Forms.ToolStripMenuItem menuSobre;
         public System.Windows.Forms.Label lbMensagem;
-        private System.Windows.Forms.ToolStripMenuItem historicoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuHistorico;
+        private System.Windows.Forms.ToolStripMenuItem menuHistCompras;
+        private System.Windows.Forms.ToolStripMenuItem menuHistVendas;
+        private System.Windows.Forms.ToolStripMenuItem menuRelCompras;
+        private System.Windows.Forms.ToolStripMenuItem menuRelVendas;
+        private System.Windows.Forms.ToolStripMenuItem menuRelEstoque;
         public System.Windows.Forms.Button btUsuario;
-        public System.Windows.Forms.ToolStripMenuItem relatoriosToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem menuRelatorio;
     }
 }

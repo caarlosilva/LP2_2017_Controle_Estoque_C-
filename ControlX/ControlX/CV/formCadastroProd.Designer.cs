@@ -38,6 +38,7 @@
             this.cbTipoUn = new System.Windows.Forms.ComboBox();
             this.lbTipoVenda = new System.Windows.Forms.Label();
             this.btImagem = new System.Windows.Forms.Button();
+            this.pbImagemProd = new System.Windows.Forms.PictureBox();
             this.txPreco = new System.Windows.Forms.MaskedTextBox();
             this.lbCategoria = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
@@ -48,10 +49,11 @@
             this.lbIdProduto = new System.Windows.Forms.Label();
             this.pnBtCad = new System.Windows.Forms.Panel();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.pbImagemProd = new System.Windows.Forms.PictureBox();
+            this.lbEstoqueMin = new System.Windows.Forms.Label();
+            this.txEstoqueMin = new System.Windows.Forms.TextBox();
             this.pnCadastro.SuspendLayout();
-            this.pnBtCad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).BeginInit();
+            this.pnBtCad.SuspendLayout();
             this.SuspendLayout();
             // 
             // btCadastrar
@@ -110,6 +112,8 @@
             this.pnCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnCadastro.Controls.Add(this.lbEstoqueMin);
+            this.pnCadastro.Controls.Add(this.txEstoqueMin);
             this.pnCadastro.Controls.Add(this.cbTipoUn);
             this.pnCadastro.Controls.Add(this.lbTipoVenda);
             this.pnCadastro.Controls.Add(this.btImagem);
@@ -170,6 +174,18 @@
             this.btImagem.Text = "Escolher Imagem";
             this.btImagem.UseVisualStyleBackColor = true;
             this.btImagem.Click += new System.EventHandler(this.btImagem_Click);
+            // 
+            // pbImagemProd
+            // 
+            this.pbImagemProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbImagemProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbImagemProd.InitialImage = null;
+            this.pbImagemProd.Location = new System.Drawing.Point(319, 46);
+            this.pbImagemProd.Name = "pbImagemProd";
+            this.pbImagemProd.Size = new System.Drawing.Size(112, 116);
+            this.pbImagemProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagemProd.TabIndex = 17;
+            this.pbImagemProd.TabStop = false;
             // 
             // txPreco
             // 
@@ -270,17 +286,21 @@
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
-            // pbImagemProd
+            // lbEstoqueMin
             // 
-            this.pbImagemProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbImagemProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbImagemProd.InitialImage = null;
-            this.pbImagemProd.Location = new System.Drawing.Point(319, 46);
-            this.pbImagemProd.Name = "pbImagemProd";
-            this.pbImagemProd.Size = new System.Drawing.Size(112, 116);
-            this.pbImagemProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImagemProd.TabIndex = 17;
-            this.pbImagemProd.TabStop = false;
+            this.lbEstoqueMin.AutoSize = true;
+            this.lbEstoqueMin.Location = new System.Drawing.Point(173, 91);
+            this.lbEstoqueMin.Name = "lbEstoqueMin";
+            this.lbEstoqueMin.Size = new System.Drawing.Size(52, 26);
+            this.lbEstoqueMin.TabIndex = 21;
+            this.lbEstoqueMin.Text = "Estoque\r\nMinimo:";
+            // 
+            // txEstoqueMin
+            // 
+            this.txEstoqueMin.Location = new System.Drawing.Point(234, 95);
+            this.txEstoqueMin.Name = "txEstoqueMin";
+            this.txEstoqueMin.Size = new System.Drawing.Size(55, 21);
+            this.txEstoqueMin.TabIndex = 20;
             // 
             // formCadastroProd
             // 
@@ -299,8 +319,8 @@
             this.Text = "Cadastrar Produto";
             this.pnCadastro.ResumeLayout(false);
             this.pnCadastro.PerformLayout();
-            this.pnBtCad.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).EndInit();
+            this.pnBtCad.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -326,5 +346,7 @@
         public System.Windows.Forms.ComboBox cbTipoUn;
         public System.Windows.Forms.Button btImagem;
         public System.Windows.Forms.PictureBox pbImagemProd;
+        private System.Windows.Forms.Label lbEstoqueMin;
+        public System.Windows.Forms.TextBox txEstoqueMin;
     }
 }

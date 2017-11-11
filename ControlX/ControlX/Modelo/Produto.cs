@@ -14,6 +14,7 @@ namespace ControlX
         private double preco;
         private double qntd;
         private string tipoUn;
+        private double estoqueMin;
         private Categoria cat = new Categoria();
         
         //private int idFornecedor;
@@ -118,18 +119,32 @@ namespace ControlX
             }
         }
 
+        public double EstoqueMin
+        {
+            get
+            {
+                return estoqueMin;
+            }
+
+            set
+            {
+                estoqueMin = value;
+            }
+        }
+
         public Produto()
         {
 
         }
 
-        public Produto(string nome, int id, double preco, double qntd,string tipoUn, Fornecedor f, Categoria cat)
+        public Produto(string nome, int id, double preco, double qntd,string tipoUn, double estoqueMin, Fornecedor f, Categoria cat)
         {
             this.Nome = nome;
             this.Id = id;
             this.Preco = preco;
             this.Qntd = qntd;
             this.TipoUn = tipoUn;
+            this.EstoqueMin = estoqueMin;
             this.Fornecedor = f;
             this.Cat = cat;
         }
