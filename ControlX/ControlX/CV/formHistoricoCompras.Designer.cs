@@ -44,10 +44,10 @@
             this.rbNome = new System.Windows.Forms.RadioButton();
             this.rbId = new System.Windows.Forms.RadioButton();
             this.pnPesquisa = new System.Windows.Forms.Panel();
-            this.pnData = new System.Windows.Forms.Panel();
             this.pnId = new System.Windows.Forms.Panel();
             this.txPesquisar = new System.Windows.Forms.TextBox();
             this.lbFiltro = new System.Windows.Forms.Label();
+            this.pnData = new System.Windows.Forms.Panel();
             this.lbFim = new System.Windows.Forms.Label();
             this.lbInicio = new System.Windows.Forms.Label();
             this.dtFim = new System.Windows.Forms.DateTimePicker();
@@ -57,8 +57,8 @@
             this.gbEstoque.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistCompras)).BeginInit();
             this.pnPesquisa.SuspendLayout();
-            this.pnData.SuspendLayout();
             this.pnId.SuspendLayout();
+            this.pnData.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnMenu
@@ -81,6 +81,7 @@
             this.btMenu.TabIndex = 4;
             this.btMenu.Text = "Menu";
             this.btMenu.UseVisualStyleBackColor = true;
+            this.btMenu.Click += new System.EventHandler(this.btMenu_Click);
             // 
             // btView
             // 
@@ -214,18 +215,6 @@
             this.pnPesquisa.Size = new System.Drawing.Size(666, 52);
             this.pnPesquisa.TabIndex = 10;
             // 
-            // pnData
-            // 
-            this.pnData.Controls.Add(this.lbFim);
-            this.pnData.Controls.Add(this.lbInicio);
-            this.pnData.Controls.Add(this.dtFim);
-            this.pnData.Controls.Add(this.dtInicio);
-            this.pnData.Location = new System.Drawing.Point(408, 1);
-            this.pnData.Name = "pnData";
-            this.pnData.Size = new System.Drawing.Size(188, 50);
-            this.pnData.TabIndex = 4;
-            this.pnData.Visible = false;
-            // 
             // pnId
             // 
             this.pnId.Controls.Add(this.txPesquisar);
@@ -258,6 +247,18 @@
             this.lbFiltro.Size = new System.Drawing.Size(24, 13);
             this.lbFiltro.TabIndex = 2;
             this.lbFiltro.Text = "Id:";
+            // 
+            // pnData
+            // 
+            this.pnData.Controls.Add(this.lbFim);
+            this.pnData.Controls.Add(this.lbInicio);
+            this.pnData.Controls.Add(this.dtFim);
+            this.pnData.Controls.Add(this.dtInicio);
+            this.pnData.Location = new System.Drawing.Point(408, 1);
+            this.pnData.Name = "pnData";
+            this.pnData.Size = new System.Drawing.Size(188, 50);
+            this.pnData.TabIndex = 4;
+            this.pnData.Visible = false;
             // 
             // lbFim
             // 
@@ -313,10 +314,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistCompras)).EndInit();
             this.pnPesquisa.ResumeLayout(false);
             this.pnPesquisa.PerformLayout();
-            this.pnData.ResumeLayout(false);
-            this.pnData.PerformLayout();
             this.pnId.ResumeLayout(false);
             this.pnId.PerformLayout();
+            this.pnData.ResumeLayout(false);
+            this.pnData.PerformLayout();
             this.ResumeLayout(false);
 
         }

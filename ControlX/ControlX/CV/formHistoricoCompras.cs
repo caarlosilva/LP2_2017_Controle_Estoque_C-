@@ -21,24 +21,23 @@ namespace ControlX
 
         private void Fill()
         {
-            ComprarDao db = new ComprarDao();
-            List<Object> ps = db.ListAll();
-            string status;
+                ComprarDao db = new ComprarDao();
+                List<Object> ps = db.ListAll();
+                string status;
 
-            dgvHistCompras.Rows.Clear();
-            foreach (Comprar p in ps)
-            {
-                if (p.Status == 0)
+                dgvHistCompras.Rows.Clear();
+                foreach (Comprar p in ps)
                 {
-                 status = "Pendente";
+                   if (p.Status == 0)
+                   {
+                       status = "Pendente";
+                   }
+                   else
+                   {
+                       status = "Entregue";
+                   }
+                   dgvHistCompras.Rows.Add(p.Id, p.Nome_usuario, p.Valor, status);
                 }
-                else
-                {
-                    status = "Entregue";
-                }
-                dgvHistCompras.Rows.Add(p.Id, p.Nome_usuario, p.Valor, status);
-            }
-
             buttonEnable();
         }
 
@@ -55,11 +54,6 @@ namespace ControlX
             }
         }
 
-        private void btVoltar_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
 
         private void btView_Click(object sender, EventArgs e)
         {
@@ -67,7 +61,7 @@ namespace ControlX
             //Enviando informacões para os labels e bottons.
             form.txId.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[0].Value.ToString());
             form.txUser.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[1].Value.ToString());
-            form.txValor.Text = "R$" + (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[2].Value.ToString());
+            form.txValor.Text = Convert.ToDouble(dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[2].Value.ToString()).ToString("C");
             form.txStatus.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[3].Value.ToString());
 
             ComprarDao db = new ComprarDao();
@@ -80,6 +74,11 @@ namespace ControlX
             }
 
             form.ShowDialog(this);
+        }
+
+        private void btMenu_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

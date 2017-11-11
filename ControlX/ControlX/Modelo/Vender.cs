@@ -87,5 +87,9 @@ namespace ControlX
             this.Itens = itens;
             this.Data = data;
         }
+
+        public Vender()
+        {
+        }
     }
 }

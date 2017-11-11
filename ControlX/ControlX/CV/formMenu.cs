@@ -79,5 +79,12 @@ namespace ControlX
             RelatorioCompras form = new RelatorioCompras();
             form.Show();
         }
+
+        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new FormHistoricoVendas().ShowDialog();
+            this.Show();
+        }
     }
 }

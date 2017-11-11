@@ -15,6 +15,7 @@ namespace ControlX
 
         static IDao db = new DAO.ProdutoDao();
         static List<Object> ps = db.ListAll();
+        VenderDao vd = new VenderDao();
         double qntdEstoque;
 
         public FormVender()
@@ -50,7 +51,7 @@ namespace ControlX
         {
             txNome.AutoCompleteMode = AutoCompleteMode.Suggest;
             txNome.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            AutoCompleteStringCollection col = new AutoCompleteStringCollection();           
+            AutoCompleteStringCollection col = new AutoCompleteStringCollection();
             //Adiciona sugestão de nomes ao digitar no TextBox
             foreach (Produto p in ps)
             {
@@ -92,7 +93,7 @@ namespace ControlX
                     txQntdVenda.Text = "0";
                     qntdEstoque = p.Qntd;
                 }
-            
+
         }
 
         private void btPesquisar_Click(object sender, EventArgs e)
@@ -106,7 +107,7 @@ namespace ControlX
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
-        {         
+        {
             dgvVendas.Rows.Clear();
             ps = db.ListAll();
             Limpar();
@@ -127,7 +128,7 @@ namespace ControlX
                 foreach (Produto p in ps)
                 {
                     if (p.Id == idProd)
-                    {                      
+                    {
                         //Preço da venda (QTD * PREÇO UNITARIO)
                         double pVenda = qVenda * p.Preco;
                         //Adicionando ao Data Grid View
@@ -144,7 +145,7 @@ namespace ControlX
 
                     }
                 }
-            }      
+            }
         }
 
         private void lbId_Click(object sender, EventArgs e)
@@ -176,7 +177,7 @@ namespace ControlX
                         BtComplete();
                         Limpar();
                     }
-                }               
+                }
             }
         }
 
@@ -198,32 +199,61 @@ namespace ControlX
 
         private void btVender_Click(object sender, EventArgs e)
         {
-            int numProd = dgvVendas.RowCount;
-            for(int i=0; i< numProd; i++)
+            try
             {
-                int idProd = int.Parse(dgvVendas.Rows[i].Cells[0].Value.ToString());
-                foreach(Produto p in ps)
+                Vender vender = new Vender();
+                for (int i = 0; i < dgvVendas.RowCount; i++)
                 {
-                    if(p.Id == idProd)
+                    int idProduto = int.Parse(dgvVendas.Rows[dgvVendas.Rows[i].Index].Cells[0].Value.ToString());
+                    foreach (Produto p in ps)
                     {
-                        db.Atualizar(p);
+                        if (p.Id == idProduto)
+                        {
+                            p.Preco = double.Parse(dgvVendas.Rows[dgvVendas.Rows[i].Index].Cells[4].Value.ToString());
+                            p.Qntd = double.Parse(dgvVendas.Rows[dgvVendas.Rows[i].Index].Cells[2].Value.ToString());
+                            vender.Itens.Add(p);
+                        }
                     }
                 }
+                formLogin login = new formLogin();
+                vender.Id = vd.GetId();
+                vender.Nome_usuario = login.txUsuario.Text.ToString();
+                vender.Valor = long.Parse(txValorPago.Text);
+                vender.Data = DateTime.Now;
+                vd.Adicionar(vender);
+
+                int numProd = dgvVendas.RowCount;
+                for (int i = 0; i < numProd; i++)
+                {
+                    int idProd = int.Parse(dgvVendas.Rows[i].Cells[0].Value.ToString());
+                    foreach (Produto p in ps)
+                    {
+                        if (p.Id == idProd)
+                        {
+                            db.Atualizar(p);
+                        }
+                    }
+                }
+                DialogResult result = MessageBox.Show("Venda Concluida com Sucesso !!!\n Deseja imprimir o Recibo do Cliente? ",
+                    "Venda Realizada",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                //Caso clique em sim
+                if (result == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                else if (result == DialogResult.No)
+                {
+                    this.Close();
+                }
             }
-            DialogResult result = MessageBox.Show("Venda Concluida com Sucesso !!!\n Deseja imprimir o Recibo do Cliente? ",
-                "Venda Realizada",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            //Caso clique em sim
-            if (result == DialogResult.Yes)
+            catch (Exception x)
             {
-                this.Close();
+                MessageBox.Show("ERRO:" + x, "Venda não concluida!");
             }
-            else if (result == DialogResult.No)
-            {
-                this.Close();
-            }
-            
         }
+
+
 
         private void txTroco_KeyUp(object sender, KeyEventArgs e)
         {

@@ -229,6 +229,12 @@
     <EmbeddedResource Include="CV\FormHistoricoComprasView.resx">
       <DependentUpon>FormHistoricoComprasView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormHistoricoVendas.resx">
+      <DependentUpon>FormHistoricoVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormHistoricoVendasView.resx">
+      <DependentUpon>FormHistoricoVendasView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formDocumento.resx">
       <DependentUpon>formDocumento.cs</DependentUpon>
     </EmbeddedResource>

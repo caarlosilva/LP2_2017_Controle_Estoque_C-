@@ -140,7 +140,7 @@
             this.lbMensagem.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensagem.Location = new System.Drawing.Point(3, 9);
             this.lbMensagem.Name = "lbMensagem";
-            this.lbMensagem.Size = new System.Drawing.Size(232, 14);
+            this.lbMensagem.Size = new System.Drawing.Size(230, 14);
             this.lbMensagem.TabIndex = 5;
             this.lbMensagem.Text = "Você está conectado como \'Admin\' !";
             // 
@@ -208,6 +208,7 @@
             this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
             this.vendasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.vendasToolStripMenuItem.Text = "Vendas";
+            this.vendasToolStripMenuItem.Click += new System.EventHandler(this.vendasToolStripMenuItem_Click);
             // 
             // relatoriosToolStripMenuItem
             // 
@@ -222,20 +223,20 @@
             // comprasToolStripMenuItem1
             // 
             this.comprasToolStripMenuItem1.Name = "comprasToolStripMenuItem1";
-            this.comprasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.comprasToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.comprasToolStripMenuItem1.Text = "Compras";
             this.comprasToolStripMenuItem1.Click += new System.EventHandler(this.comprasToolStripMenuItem1_Click);
             // 
             // vendasToolStripMenuItem1
             // 
             this.vendasToolStripMenuItem1.Name = "vendasToolStripMenuItem1";
-            this.vendasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.vendasToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.vendasToolStripMenuItem1.Text = "Vendas";
             // 
             // estoqueToolStripMenuItem
             // 
             this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.estoqueToolStripMenuItem.Text = "Estoque";
             // 
             // helpToolStripMenuItem

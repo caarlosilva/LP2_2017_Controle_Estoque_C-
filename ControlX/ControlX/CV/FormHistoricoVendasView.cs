@@ -16,5 +16,10 @@ namespace ControlX
         {
             InitializeComponent();
         }
+
+        private void btVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

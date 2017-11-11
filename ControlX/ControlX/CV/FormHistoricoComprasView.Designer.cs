@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHistoricoComprasView));
             this.pnCompras = new System.Windows.Forms.Panel();
             this.txValor = new System.Windows.Forms.TextBox();
             this.txStatus = new System.Windows.Forms.TextBox();
@@ -286,6 +287,7 @@
             this.Controls.Add(this.lbProdutos);
             this.Controls.Add(this.lbDadosCompras);
             this.Controls.Add(this.pnCompras);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormHistoricoComprasView";
             this.Text = "ControlX - Historico de Compras";
             this.pnCompras.ResumeLayout(false);
