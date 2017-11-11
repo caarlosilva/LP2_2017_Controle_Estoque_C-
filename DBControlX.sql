@@ -80,6 +80,23 @@ CREATE TABLE produtos (
 	FOREIGN KEY (idProduto) REFERENCES produtos (id)
 );
 
+ CREATE TABLE vendas (
+	id int NOT NULL AUTO_INCREMENT,
+	nome_usuario varchar(64),
+	valor double,
+	dataVenda date,
+	PRIMARY KEY (id)
+);
+ 
+ 
+ CREATE TABLE produtos_venda(
+ 	idVenda int NOT NULL,
+	idProduto int NOT NULL,
+	PRIMARY KEY(idVenda,idProduto),
+	FOREIGN KEY (idVenda) REFERENCES vendas (id),
+	FOREIGN KEY (idProduto) REFERENCES produtos (id)
+);
+
 INSERT INTO fornecedor(nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado) 
 	values ('Gustavo Nunes INFO','15236987458214','1633663366','0','18273725','4002','Praça Professora Magaly Azambuja de Toledo','','Parque Residencial Colina das Estrelas','Tatuí','SP');
 	
