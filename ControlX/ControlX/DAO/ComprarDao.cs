@@ -43,6 +43,29 @@ namespace ControlX
             return idUsuario;
         }
 
+        public List<object> ListCompras(DateTime dataInicio, DateTime dataFim)
+        {
+            string dataMySqlInicio = dataInicio.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string dataMySqlFim = dataFim.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string qry = string.Format("SELECT id, nome_usuario, valor, status, dataCompra, dataEntrega FROM compras WHERE dataCompra BETWEEN {0} AND {1}", dataMySqlInicio, dataMySqlFim);
+            DataSet ds = db.ExecuteQuery(qry);
+
+            List<object> compras = new List<object>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Comprar c = new Comprar();
+                c.Id = int.Parse(dr["id"].ToString());
+                c.Nome_usuario = dr["nome_usuario"].ToString();
+                c.Valor = long.Parse(dr["valor"].ToString());
+                c.Status = int.Parse(dr["status"].ToString());
+                c.DataCompra = DateTime.Parse(dr["dataCompra"].ToString());
+                c.DataEntrega = DateTime.Parse(dr["dataEntrega"].ToString());
+                compras.Add(c);
+            }
+            return compras;
+        }
+
         public List<object> ListAll()
         {
             string qry = string.Format("SELECT id, nome_usuario, valor, status, dataCompra, dataEntrega FROM compras");

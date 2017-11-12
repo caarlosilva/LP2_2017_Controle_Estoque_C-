@@ -23,7 +23,12 @@ namespace ControlX
             CV.FormDataRelatorio form = new CV.FormDataRelatorio();
             if (form.tipoRelatorio == "compras")
             {
+                List<Object> lista = new ComprarDao().ListCompras(DateTime.Parse(form.dtInicio.ToString()), DateTime.Parse(form.dtFim.ToString()));
 
+
+                Relatorios.Compras_Rel report = new Relatorios.Compras_Rel();
+                report.SetDataSource(lista);
+                crvRelatorio.ReportSource = report;
             }
             if (form.tipoRelatorio == "vendas")
             {
