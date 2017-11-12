@@ -12,7 +12,7 @@ namespace ControlX.CV
 {
     public partial class FormDataRelatorio : Form
     {
-        public string tipoRelatorio = "estoquemin";
+        public int tipoRelatorio;
         public FormDataRelatorio()
         {
             InitializeComponent();
@@ -21,24 +21,17 @@ namespace ControlX.CV
         private void btGerar_Click(object sender, EventArgs e)
         {
             FormRelatorios relatorio = new FormRelatorios();
-
-            if (tipoRelatorio == "compras")
+            if (tipoRelatorio == 1)
             {
-                this.Dispose();
-                relatorio.Show();
+                relatorio.tipoRelatorio = 1;
             }
 
-            if (tipoRelatorio == "estoquemin")
+            if (tipoRelatorio == 2)
             {
-                this.Dispose();
-                relatorio.Show();
+                relatorio.tipoRelatorio = 2;
             }
-
-            if (tipoRelatorio == "vendas")
-            {
-                this.Dispose();
-                relatorio.Show();
-            }
+            this.Dispose();
+            relatorio.Show();
         }
     }
 }

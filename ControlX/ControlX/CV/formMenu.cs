@@ -15,7 +15,7 @@ namespace ControlX
         public formMenu()
         {
             InitializeComponent();
-        }
+    }
 
         private void btControleEstoq_Click(object sender, EventArgs e)
         {
@@ -79,22 +79,22 @@ namespace ControlX
         private void menuRelCompras_Click(object sender, EventArgs e)
         {
             CV.FormDataRelatorio form = new CV.FormDataRelatorio();
-            form.tipoRelatorio = "compras";
-            form.Show();
-        }
-
-        private void menuRelEstoque_Click(object sender, EventArgs e)
-        {
-            CV.FormDataRelatorio tipo= new CV.FormDataRelatorio();
-            tipo.tipoRelatorio = "estoquemin";
-            FormRelatorios form = new FormRelatorios();
+            form.tipoRelatorio = 1;
             form.Show();
         }
 
         private void menuRelVendas_Click(object sender, EventArgs e)
         {
             CV.FormDataRelatorio form = new CV.FormDataRelatorio();
-            form.tipoRelatorio = "vendas";
+            form.tipoRelatorio = 2;
+            form.Show();
+        }
+
+        private void menuRelEstoque_Click(object sender, EventArgs e)
+        {
+
+            FormRelatorios form = new FormRelatorios();
+            form.tipoRelatorio = 3;
             form.Show();
         }
     }
