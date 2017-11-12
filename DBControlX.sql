@@ -31,6 +31,7 @@ CREATE TABLE produtos (
   preco double DEFAULT NULL,
   qntd double DEFAULT NULL,
   tipoUn varchar(5),
+  estoqueMin double DEFAULT 1,
   idFornecedor int,
   idCategoria int,
   deleted_at date DEFAULT NULL,
