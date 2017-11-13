@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDataRelatorio));
             this.dtInicio = new System.Windows.Forms.DateTimePicker();
             this.dtFim = new System.Windows.Forms.DateTimePicker();
             this.lbDataInicio = new System.Windows.Forms.Label();
@@ -38,7 +39,9 @@
             // 
             // dtInicio
             // 
-            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtInicio.AllowDrop = true;
+            this.dtInicio.Checked = false;
+            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtInicio.Location = new System.Drawing.Point(64, 57);
             this.dtInicio.Name = "dtInicio";
             this.dtInicio.Size = new System.Drawing.Size(96, 20);
@@ -46,6 +49,7 @@
             // 
             // dtFim
             // 
+            this.dtFim.Checked = false;
             this.dtFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFim.Location = new System.Drawing.Point(64, 109);
             this.dtFim.Name = "dtFim";
@@ -100,6 +104,7 @@
             this.Controls.Add(this.lbDataInicio);
             this.Controls.Add(this.dtFim);
             this.Controls.Add(this.dtInicio);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormDataRelatorio";
@@ -114,7 +119,7 @@
         private System.Windows.Forms.Label lbDataFim;
         private System.Windows.Forms.Label lbInstrucao;
         private System.Windows.Forms.Button btGerar;
-        public System.Windows.Forms.DateTimePicker dtInicio;
         public System.Windows.Forms.DateTimePicker dtFim;
+        public System.Windows.Forms.DateTimePicker dtInicio;
     }
 }

@@ -20,7 +20,8 @@ namespace ControlX.CV
 
         private void btGerar_Click(object sender, EventArgs e)
         {
-            FormRelatorios relatorio = new FormRelatorios();
+            formLogin user = new formLogin();
+            FormRelatorios relatorio = new FormRelatorios(user.txUsuario.Text);
             if (tipoRelatorio == 1)
             {
                 relatorio.tipoRelatorio = 1;

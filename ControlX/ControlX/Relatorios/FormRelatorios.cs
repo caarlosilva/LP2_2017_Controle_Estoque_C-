@@ -13,32 +13,60 @@ namespace ControlX
     public partial class FormRelatorios : Form
     {
         public int tipoRelatorio;
-        public FormRelatorios()
+        private string autor;
+
+
+ /*       public FormRelatorios()
         {
+            InitializeComponent();
+        }*/
+
+        public FormRelatorios(string autor)
+        {
+            this.autor = autor;
             InitializeComponent();
         }
 
         private void RelatorioCompras_Load(object sender, EventArgs e)
         {
             formMenu form = new formMenu();
+            
 
             CV.FormDataRelatorio data = new CV.FormDataRelatorio();
+
             if (tipoRelatorio == 1)
             {
+                string dataInicio = data.dtInicio.Value.ToString("dd-MM-yyyy");
+                string dataFim = data.dtFim.Value.ToString("dd-MM-yyyy");
                 List<Object> lista = new ComprarDao().ListCompras(DateTime.Parse(data.dtInicio.Value.ToString()), DateTime.Parse(data.dtFim.Value.ToString()));
 
                 Relatorios.Compras_Rel report = new Relatorios.Compras_Rel();
+
                 report.SetDataSource(lista);
+                report.SetParameterValue("Autor", autor);
+                report.SetParameterValue("DataInicio", dataInicio);
+                report.SetParameterValue("DataFim", dataFim);
                 crvRelatorio.ReportSource = report;
+                //crvRelatorio.Refresh();
             }
 
             if (tipoRelatorio == 2)
             {
-                List<Object> lista = new VenderDao().ListVendas(DateTime.Parse(data.dtInicio.Value.ToString()), DateTime.Parse(data.dtFim.Value.ToString()));
+
+                List<Object> lista = new VenderDao().ListVendas(data.dtInicio.Value, data.dtFim.Value);
+                
 
                 Relatorios.Vendas_Rel report = new Relatorios.Vendas_Rel();
+
+                string dataInicio = data.dtInicio.Value.ToString("dd-MM-yyyy");
+                string dataFim = data.dtFim.Value.ToString("dd-MM-yyyy");
+
                 report.SetDataSource(lista);
+                report.SetParameterValue("Autor", autor);
+                report.SetParameterValue("DataInicio", dataInicio);
+                report.SetParameterValue("DataFim", dataFim);
                 crvRelatorio.ReportSource = report;
+                //crvRelatorio.Refresh();
             }
 
             if (tipoRelatorio == 3)
@@ -47,7 +75,9 @@ namespace ControlX
 
                 Relatorios.EstoqueMin_Rel report = new Relatorios.EstoqueMin_Rel();
                 report.SetDataSource(lista);
+                report.SetParameterValue("Autor", autor);
                 crvRelatorio.ReportSource = report;
+                crvRelatorio.Refresh();
             }
         }
     }
