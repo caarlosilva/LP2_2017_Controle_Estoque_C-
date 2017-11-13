@@ -10,7 +10,7 @@ namespace ControlX
     {
         private int id;
         private string nome_usuario;
-        private long valor;
+        private double valor;
         private List<Produto> itens = new List<Produto>();
         private DateTime data;
 
@@ -40,7 +40,7 @@ namespace ControlX
             }
         }
 
-        public long Valor
+        public double Valor
         {
             get
             {
@@ -79,7 +79,7 @@ namespace ControlX
             }
         }
 
-        public Vender(int id, string nome_usuario, long valor, List<Produto> itens, DateTime data)
+        public Vender(int id, string nome_usuario, double valor, List<Produto> itens, DateTime data)
         {
             this.Id = id;
             this.Nome_usuario = nome_usuario;

@@ -201,16 +201,18 @@ namespace ControlX
         {
             try
             {
+                List<Object> produtos = db.ListAll();
                 Vender vender = new Vender();
                 for (int i = 0; i < dgvVendas.RowCount; i++)
                 {
+                    double qtdVenda = double.Parse(dgvVendas.Rows[i].Cells[2].Value.ToString());
                     int idProduto = int.Parse(dgvVendas.Rows[dgvVendas.Rows[i].Index].Cells[0].Value.ToString());
-                    foreach (Produto p in ps)
+                    foreach (Produto p in produtos)
                     {
                         if (p.Id == idProduto)
                         {
                             p.Preco = double.Parse(dgvVendas.Rows[dgvVendas.Rows[i].Index].Cells[4].Value.ToString());
-                            p.Qntd = double.Parse(dgvVendas.Rows[dgvVendas.Rows[i].Index].Cells[2].Value.ToString());
+                            p.Qntd = p.Qntd - qtdVenda;
                             vender.Itens.Add(p);
                         }
                     }
@@ -218,7 +220,7 @@ namespace ControlX
                 formLogin login = new formLogin();
                 vender.Id = vd.GetId();
                 vender.Nome_usuario = login.txUsuario.Text.ToString();
-                vender.Valor = long.Parse(txValorPago.Text);
+                vender.Valor = double.Parse(lbValorTotal.Text.ToString());
                 vender.Data = DateTime.Now;
                 vd.Adicionar(vender);
 
@@ -226,10 +228,12 @@ namespace ControlX
                 for (int i = 0; i < numProd; i++)
                 {
                     int idProd = int.Parse(dgvVendas.Rows[i].Cells[0].Value.ToString());
+                    
                     foreach (Produto p in ps)
                     {
                         if (p.Id == idProd)
                         {
+                            
                             db.Atualizar(p);
                         }
                     }

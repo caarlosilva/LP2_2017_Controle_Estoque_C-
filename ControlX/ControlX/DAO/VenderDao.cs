@@ -12,11 +12,18 @@ namespace ControlX
 
         Database db = Database.GetInstance();
 
-        public void Adicionar(object o)
+        public void Adicionar(Object o)
         {
             Vender v = (Vender)o;
             string dataMySql = v.Data.ToString("yyyy-MM-dd HH:mm:ss.fff");
-            string sql = string.Format("INSERT INTO vendas(nome_usuario, valor, dataVenda) values('{0}',{1},'{2}')", v.Nome_usuario, v.Valor, dataMySql);
+
+            string valor = Convert.ToString(v.Valor);
+            if (valor.ToString().Contains(","))
+            {
+                valor = valor.Replace(",", ".");
+            }
+
+            string sql = string.Format("INSERT INTO vendas(nome_usuario, valor, dataVenda) values('{0}',{1},'{2}')", v.Nome_usuario, valor, dataMySql);
             db.ExecuteNonQuery(sql);
             for (int i = 0; i < v.Itens.Count; i++)
             {
@@ -32,7 +39,7 @@ namespace ControlX
 
         public int GetId()
         {
-            string qry = string.Format("SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'controlx' AND TABLE_NAME = 'compras'");
+            string qry = string.Format("SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'controlx' AND TABLE_NAME = 'vendas'");
             DataSet ds = db.ExecuteQuery(qry);
             DataRow dr = ds.Tables[0].Rows[0];
             int idUsuario = int.Parse(dr["AUTO_INCREMENT"].ToString());
@@ -73,7 +80,7 @@ namespace ControlX
                 Vender v = new Vender();
                 v.Id = int.Parse(dr["id"].ToString());
                 v.Nome_usuario = dr["nome_usuario"].ToString();
-                v.Valor = long.Parse(dr["valor"].ToString());
+                v.Valor = double.Parse(dr["valor"].ToString());
                 v.Data = DateTime.Parse(dr["dataVenda"].ToString());
                 vendas.Add(v);
             }
