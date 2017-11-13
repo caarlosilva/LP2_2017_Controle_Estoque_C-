@@ -504,7 +504,6 @@ C:\Users\Fabricio\Source\Repos\LP2_Projeto\ControlX\ControlX\obj\Debug\ControlX.
 C:\Users\Fabricio\Source\Repos\LP2_Projeto\ControlX\ControlX\obj\Debug\ControlX.FormAgendarCompra.resources
 C:\Users\Fabricio\Source\Repos\LP2_Projeto\ControlX\ControlX\obj\Debug\ControlX.FormCompras.resources
 C:\Users\Fabricio\Source\Repos\LP2_Projeto\ControlX\ControlX\obj\Debug\ControlX.formHistoricoCompras.resources
-C:\Users\Fabricio\Source\Repos\LP2_Projeto\ControlX\ControlX\obj\Debug\ControlX.RelatorioCompras.resources
 C:\Users\Fabricio\Source\Repos\LP2_Projeto\ControlX\ControlX\obj\Debug\ControlX.FormHistoricoVendas.resources
 C:\Users\Fabricio\Source\Repos\LP2_Projeto\ControlX\ControlX\obj\Debug\ControlX.FormHistoricoVendasView.resources
 C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.csproj.ResolveComReference.cache
@@ -542,3 +541,5 @@ C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.form
 C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.formHistoricoCompras.resources
 C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.CV.FormDataRelatorio.resources
 C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.FormRelatorios.resources
+C:\Users\Fabricio\Source\Repos\LP2_Projeto\ControlX\ControlX\obj\Debug\ControlX.CV.FormDataRelatorio.resources
+C:\Users\Fabricio\Source\Repos\LP2_Projeto\ControlX\ControlX\obj\Debug\ControlX.FormRelatorios.resources

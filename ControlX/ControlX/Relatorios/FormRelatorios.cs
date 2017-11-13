@@ -14,40 +14,48 @@ namespace ControlX
     {
         public int tipoRelatorio;
         private string autor;
+        private DateTime dataInicio;
+        private DateTime dataFim;
 
 
- /*       public FormRelatorios()
-        {
-            InitializeComponent();
-        }*/
+        /*       public FormRelatorios()
+               {
+                   InitializeComponent();
+               }*/
 
         public FormRelatorios(string autor)
         {
             this.autor = autor;
+        }
+
+        public FormRelatorios(string autor, DateTime dataInicio, DateTime dataFim)
+        {
+            this.autor = autor;
+            this.dataInicio = dataInicio;
+            this.dataFim = dataFim;
             InitializeComponent();
         }
 
         private void RelatorioCompras_Load(object sender, EventArgs e)
         {
             formMenu form = new formMenu();
-            
+            string dataI = dataInicio.ToString("dd-MM-yyyy");
+            string dataF = dataFim.ToString("dd-MM-yyyy");
 
             CV.FormDataRelatorio data = new CV.FormDataRelatorio();
 
             if (tipoRelatorio == 1)
             {
-                string dataInicio = data.dtInicio.Value.ToString("dd-MM-yyyy");
-                string dataFim = data.dtFim.Value.ToString("dd-MM-yyyy");
-                List<Object> lista = new ComprarDao().ListCompras(DateTime.Parse(data.dtInicio.Value.ToString()), DateTime.Parse(data.dtFim.Value.ToString()));
+                List<Object> lista = new ComprarDao().ListCompras(dataInicio, dataFim);
 
                 Relatorios.Compras_Rel report = new Relatorios.Compras_Rel();
 
                 report.SetDataSource(lista);
                 report.SetParameterValue("Autor", autor);
-                report.SetParameterValue("DataInicio", dataInicio);
-                report.SetParameterValue("DataFim", dataFim);
+                report.SetParameterValue("DataInicio", dataI);
+                report.SetParameterValue("DataFim", dataF);
                 crvRelatorio.ReportSource = report;
-                //crvRelatorio.Refresh();
+                crvRelatorio.Refresh();
             }
 
             if (tipoRelatorio == 2)
@@ -58,15 +66,12 @@ namespace ControlX
 
                 Relatorios.Vendas_Rel report = new Relatorios.Vendas_Rel();
 
-                string dataInicio = data.dtInicio.Value.ToString("dd-MM-yyyy");
-                string dataFim = data.dtFim.Value.ToString("dd-MM-yyyy");
-
                 report.SetDataSource(lista);
                 report.SetParameterValue("Autor", autor);
-                report.SetParameterValue("DataInicio", dataInicio);
-                report.SetParameterValue("DataFim", dataFim);
+                report.SetParameterValue("DataInicio", dataI);
+                report.SetParameterValue("DataFim", dataF);
                 crvRelatorio.ReportSource = report;
-                //crvRelatorio.Refresh();
+                crvRelatorio.Refresh();
             }
 
             if (tipoRelatorio == 3)
