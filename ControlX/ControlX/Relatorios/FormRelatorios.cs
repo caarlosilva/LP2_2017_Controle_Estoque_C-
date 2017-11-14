@@ -26,6 +26,7 @@ namespace ControlX
         public FormRelatorios(string autor)
         {
             this.autor = autor;
+            InitializeComponent();
         }
 
         public FormRelatorios(string autor, DateTime dataInicio, DateTime dataFim)
