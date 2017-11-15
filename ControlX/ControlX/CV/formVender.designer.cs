@@ -258,7 +258,7 @@
             this.lbQntdVenda.AutoSize = true;
             this.lbQntdVenda.Location = new System.Drawing.Point(353, 57);
             this.lbQntdVenda.Name = "lbQntdVenda";
-            this.lbQntdVenda.Size = new System.Drawing.Size(72, 13);
+            this.lbQntdVenda.Size = new System.Drawing.Size(71, 13);
             this.lbQntdVenda.TabIndex = 29;
             this.lbQntdVenda.Text = "Qtd Venda:";
             // 
@@ -551,7 +551,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.colUn.DefaultCellStyle = dataGridViewCellStyle3;
             this.colUn.FillWeight = 7F;
-            this.colUn.HeaderText = "";
+            this.colUn.HeaderText = "Un.";
             this.colUn.Name = "colUn";
             this.colUn.ReadOnly = true;
             // 

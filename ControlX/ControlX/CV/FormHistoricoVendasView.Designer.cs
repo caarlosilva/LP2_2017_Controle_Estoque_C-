@@ -161,9 +161,9 @@
             this.lbUsuario.AutoSize = true;
             this.lbUsuario.Location = new System.Drawing.Point(203, 9);
             this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(46, 13);
+            this.lbUsuario.Size = new System.Drawing.Size(56, 13);
             this.lbUsuario.TabIndex = 1;
-            this.lbUsuario.Text = "Usuario:";
+            this.lbUsuario.Text = "Vendedor:";
             // 
             // lbProdutos
             // 

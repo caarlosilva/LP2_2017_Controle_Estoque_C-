@@ -18,6 +18,7 @@ namespace ControlX
             string dataMySql = v.Data.ToString("yyyy-MM-dd HH:mm:ss.fff");
 
             string valor = Convert.ToString(v.Valor);
+
             if (valor.ToString().Contains(","))
             {
                 valor = valor.Replace(",", ".");
@@ -27,7 +28,13 @@ namespace ControlX
             db.ExecuteNonQuery(sql);
             for (int i = 0; i < v.Itens.Count; i++)
             {
-                sql = string.Format("INSERT INTO produtos_venda(idProduto, idVenda) values ({0},{1})", v.Itens[i].Id, v.Id);
+                string preco = Convert.ToString(v.Itens[i].Preco);
+                if (preco.ToString().Contains(","))
+                {
+                    preco = preco.Replace(",", ".");
+                }
+
+                sql = string.Format("INSERT INTO produtos_venda(idProduto, idVenda, qtdProduto, precoUnProduto) values ({0}, {1}, {2}, {3})", v.Itens[i].Id, v.Id, v.Itens[i].Qntd, preco);
                 db.ExecuteNonQuery(sql);
             }
         }
@@ -90,7 +97,7 @@ namespace ControlX
         public List<object> ListProdutos(int id)
         {
 
-            string qry = string.Format("SELECT pv.idVenda, pv.idProduto, p.nome AS nome_prod, p.preco AS preco_prod, p.qntd AS qtd_prod, p.tipoUn AS un_prod, f.nome AS nome_forn FROM (((vendas v JOIN produtos_venda pv ON v.id = pv.idVenda) JOIN produtos p ON pv.idProduto = p.id) JOIN fornecedor f ON f.id = p.idFornecedor) WHERE v.id = {0}", id);
+            string qry = string.Format("SELECT pv.idVenda, pv.idProduto, p.nome AS nome_prod, pv.precoUnProduto AS preco_prod, pv.qtdProduto AS qtd_prod, p.tipoUn AS un_prod, f.nome AS nome_forn FROM (((vendas v JOIN produtos_venda pv ON v.id = pv.idVenda) JOIN produtos p ON pv.idProduto = p.id) JOIN fornecedor f ON f.id = p.idFornecedor) WHERE v.id = {0}", id);
             DataSet ds = db.ExecuteQuery(qry);
 
             List<object> prods = new List<object>();

@@ -70,7 +70,7 @@ namespace ControlX
             form.dgvProdutos.Rows.Clear();
             foreach (Produto p in ps)
             {
-                form.dgvProdutos.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd, p.TipoUn, p.Fornecedor.Nome);
+                form.dgvProdutos.Rows.Add(p.Id, p.Nome, p.Preco.ToString("C"), p.Qntd, p.TipoUn, p.Fornecedor.Nome);
             }
 
             form.ShowDialog(this);
