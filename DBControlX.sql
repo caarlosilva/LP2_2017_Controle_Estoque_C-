@@ -93,6 +93,8 @@ CREATE TABLE produtos (
  CREATE TABLE produtos_venda(
  	idVenda int NOT NULL,
 	idProduto int NOT NULL,
+	qtdProduto double DEFAULT 0,
+	precoUnProduto double,
 	PRIMARY KEY(idVenda,idProduto),
 	FOREIGN KEY (idVenda) REFERENCES vendas (id),
 	FOREIGN KEY (idProduto) REFERENCES produtos (id)
