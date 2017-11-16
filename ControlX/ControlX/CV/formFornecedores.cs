@@ -57,12 +57,20 @@ namespace ControlX
                 btDel.Enabled = false;
                 btEdit.Enabled = false;
                 btView.Enabled = false;
+
+                removerToolStripMenuItem.Enabled = false;
+                editarToolStripMenuItem.Enabled = false;
+                detalhesToolStripMenuItem.Enabled = false;
             }
             else
             {
                 btDel.Enabled = true;
                 btEdit.Enabled = true;
                 btView.Enabled = true;
+
+                removerToolStripMenuItem.Enabled = true;
+                editarToolStripMenuItem.Enabled = true;
+                detalhesToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -149,7 +157,8 @@ namespace ControlX
             Fill();
         }
 
-        private void btView_Click(object sender, EventArgs e)
+
+        private void detalhes()
         {
             IDao db = new DAO.FornecedorDao();
             List<Object> fornecedor = db.ListAll();
@@ -160,7 +169,7 @@ namespace ControlX
 
             foreach (TextBox textbox in form.pnCadForn.Controls.OfType<TextBox>())
             {
-                textbox.ReadOnly = true;                
+                textbox.ReadOnly = true;
             }
 
             foreach (MaskedTextBox textbox in form.pnCadForn.Controls.OfType<MaskedTextBox>())
@@ -188,7 +197,12 @@ namespace ControlX
             form.btCadastrar.Enabled = false;
             form.btCancelar.Text = "Voltar";
             form.ShowDialog(this);
-            Fill();
+        }
+
+
+        private void btView_Click(object sender, EventArgs e)
+        {
+            detalhes();
         }
 
         private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
@@ -203,29 +217,9 @@ namespace ControlX
             }
         }
 
-        private void dgvFornecedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvFornecedor_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
-        }
-
-        private void gbFornecedores_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnFiltro_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pnMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pnBtns_Paint(object sender, PaintEventArgs e)
-        {
-
+            detalhes();
         }
     }
 }

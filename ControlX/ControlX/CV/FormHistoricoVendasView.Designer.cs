@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHistoricoVendasView));
-            this.btVoltar = new System.Windows.Forms.Button();
             this.txValor = new System.Windows.Forms.TextBox();
             this.txId = new System.Windows.Forms.TextBox();
             this.dateCompra = new System.Windows.Forms.DateTimePicker();
@@ -42,41 +41,35 @@
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbUsuario = new System.Windows.Forms.Label();
-            this.lbProdutos = new System.Windows.Forms.Label();
-            this.lbDadosVenda = new System.Windows.Forms.Label();
             this.lbIdCompra = new System.Windows.Forms.Label();
             this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
-            this.pnCompras = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gpDetalhesVenda = new System.Windows.Forms.GroupBox();
+            this.gbItensVenda = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
-            this.pnCompras.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.gpDetalhesVenda.SuspendLayout();
+            this.gbItensVenda.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btVoltar
-            // 
-            this.btVoltar.Location = new System.Drawing.Point(236, 340);
-            this.btVoltar.Name = "btVoltar";
-            this.btVoltar.Size = new System.Drawing.Size(178, 23);
-            this.btVoltar.TabIndex = 9;
-            this.btVoltar.Text = "Voltar";
-            this.btVoltar.UseVisualStyleBackColor = true;
-            this.btVoltar.Click += new System.EventHandler(this.btVoltar_Click);
             // 
             // txValor
             // 
-            this.txValor.Location = new System.Drawing.Point(354, 25);
+            this.txValor.Location = new System.Drawing.Point(371, 33);
             this.txValor.Name = "txValor";
             this.txValor.ReadOnly = true;
-            this.txValor.Size = new System.Drawing.Size(85, 20);
+            this.txValor.Size = new System.Drawing.Size(98, 21);
             this.txValor.TabIndex = 11;
             this.txValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txValor.TextChanged += new System.EventHandler(this.txValor_TextChanged);
             // 
             // txId
             // 
-            this.txId.Location = new System.Drawing.Point(14, 25);
+            this.txId.Location = new System.Drawing.Point(32, 33);
             this.txId.Name = "txId";
             this.txId.ReadOnly = true;
-            this.txId.Size = new System.Drawing.Size(85, 20);
+            this.txId.Size = new System.Drawing.Size(98, 21);
             this.txId.TabIndex = 8;
             this.txId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -84,37 +77,38 @@
             // 
             this.dateCompra.Enabled = false;
             this.dateCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateCompra.Location = new System.Drawing.Point(524, 25);
+            this.dateCompra.Location = new System.Drawing.Point(536, 33);
             this.dateCompra.Name = "dateCompra";
-            this.dateCompra.Size = new System.Drawing.Size(85, 20);
+            this.dateCompra.Size = new System.Drawing.Size(98, 21);
             this.dateCompra.TabIndex = 2;
             // 
             // txUser
             // 
-            this.txUser.Location = new System.Drawing.Point(184, 25);
+            this.txUser.Location = new System.Drawing.Point(199, 33);
             this.txUser.Name = "txUser";
             this.txUser.ReadOnly = true;
-            this.txUser.Size = new System.Drawing.Size(85, 20);
+            this.txUser.Size = new System.Drawing.Size(98, 21);
             this.txUser.TabIndex = 7;
             this.txUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbDataVenda
             // 
             this.lbDataVenda.AutoSize = true;
-            this.lbDataVenda.Location = new System.Drawing.Point(523, 9);
+            this.lbDataVenda.Location = new System.Drawing.Point(535, 17);
             this.lbDataVenda.Name = "lbDataVenda";
-            this.lbDataVenda.Size = new System.Drawing.Size(81, 13);
+            this.lbDataVenda.Size = new System.Drawing.Size(96, 13);
             this.lbDataVenda.TabIndex = 4;
             this.lbDataVenda.Text = "Data da venda:";
             // 
             // lbValor
             // 
             this.lbValor.AutoSize = true;
-            this.lbValor.Location = new System.Drawing.Point(379, 9);
+            this.lbValor.Location = new System.Drawing.Point(401, 17);
             this.lbValor.Name = "lbValor";
-            this.lbValor.Size = new System.Drawing.Size(34, 13);
+            this.lbValor.Size = new System.Drawing.Size(42, 13);
             this.lbValor.TabIndex = 2;
             this.lbValor.Text = "Valor:";
+            this.lbValor.Click += new System.EventHandler(this.lbValor_Click);
             // 
             // unit
             // 
@@ -159,36 +153,18 @@
             // lbUsuario
             // 
             this.lbUsuario.AutoSize = true;
-            this.lbUsuario.Location = new System.Drawing.Point(203, 9);
+            this.lbUsuario.Location = new System.Drawing.Point(211, 17);
             this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(56, 13);
+            this.lbUsuario.Size = new System.Drawing.Size(67, 13);
             this.lbUsuario.TabIndex = 1;
             this.lbUsuario.Text = "Vendedor:";
-            // 
-            // lbProdutos
-            // 
-            this.lbProdutos.AutoSize = true;
-            this.lbProdutos.Location = new System.Drawing.Point(10, 95);
-            this.lbProdutos.Name = "lbProdutos";
-            this.lbProdutos.Size = new System.Drawing.Size(52, 13);
-            this.lbProdutos.TabIndex = 7;
-            this.lbProdutos.Text = "Produtos:";
-            // 
-            // lbDadosVenda
-            // 
-            this.lbDadosVenda.AutoSize = true;
-            this.lbDadosVenda.Location = new System.Drawing.Point(10, 12);
-            this.lbDadosVenda.Name = "lbDadosVenda";
-            this.lbDadosVenda.Size = new System.Drawing.Size(89, 13);
-            this.lbDadosVenda.TabIndex = 6;
-            this.lbDadosVenda.Text = "Dados da venda:";
             // 
             // lbIdCompra
             // 
             this.lbIdCompra.AutoSize = true;
-            this.lbIdCompra.Location = new System.Drawing.Point(47, 9);
+            this.lbIdCompra.Location = new System.Drawing.Point(71, 17);
             this.lbIdCompra.Name = "lbIdCompra";
-            this.lbIdCompra.Size = new System.Drawing.Size(19, 13);
+            this.lbIdCompra.Size = new System.Drawing.Size(24, 13);
             this.lbIdCompra.TabIndex = 0;
             this.lbIdCompra.Text = "Id:";
             // 
@@ -203,6 +179,8 @@
             // 
             this.dgvProdutos.AllowUserToAddRows = false;
             this.dgvProdutos.AllowUserToDeleteRows = false;
+            this.dgvProdutos.AllowUserToResizeRows = false;
+            this.dgvProdutos.BackgroundColor = System.Drawing.Color.White;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -211,52 +189,89 @@
             this.qtd,
             this.unit,
             this.fornecedor});
-            this.dgvProdutos.Location = new System.Drawing.Point(13, 112);
+            this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProdutos.Location = new System.Drawing.Point(3, 17);
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.ReadOnly = true;
-            this.dgvProdutos.Size = new System.Drawing.Size(627, 219);
+            this.dgvProdutos.RowHeadersVisible = false;
+            this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProdutos.Size = new System.Drawing.Size(667, 338);
             this.dgvProdutos.TabIndex = 8;
+            this.dgvProdutos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProdutos_CellMouseDoubleClick);
             // 
-            // pnCompras
+            // menuStrip1
             // 
-            this.pnCompras.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnCompras.Controls.Add(this.txValor);
-            this.pnCompras.Controls.Add(this.txId);
-            this.pnCompras.Controls.Add(this.dateCompra);
-            this.pnCompras.Controls.Add(this.txUser);
-            this.pnCompras.Controls.Add(this.lbDataVenda);
-            this.pnCompras.Controls.Add(this.lbValor);
-            this.pnCompras.Controls.Add(this.lbUsuario);
-            this.pnCompras.Controls.Add(this.lbIdCompra);
-            this.pnCompras.Location = new System.Drawing.Point(13, 28);
-            this.pnCompras.Name = "pnCompras";
-            this.pnCompras.Size = new System.Drawing.Size(627, 58);
-            this.pnCompras.TabIndex = 5;
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.voltarToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(679, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // voltarToolStripMenuItem
+            // 
+            this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
+            this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.voltarToolStripMenuItem.Text = "Voltar";
+            this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btVoltar_Click);
+            // 
+            // gpDetalhesVenda
+            // 
+            this.gpDetalhesVenda.Controls.Add(this.txValor);
+            this.gpDetalhesVenda.Controls.Add(this.lbIdCompra);
+            this.gpDetalhesVenda.Controls.Add(this.txId);
+            this.gpDetalhesVenda.Controls.Add(this.lbUsuario);
+            this.gpDetalhesVenda.Controls.Add(this.dateCompra);
+            this.gpDetalhesVenda.Controls.Add(this.lbValor);
+            this.gpDetalhesVenda.Controls.Add(this.txUser);
+            this.gpDetalhesVenda.Controls.Add(this.lbDataVenda);
+            this.gpDetalhesVenda.Location = new System.Drawing.Point(3, 27);
+            this.gpDetalhesVenda.Name = "gpDetalhesVenda";
+            this.gpDetalhesVenda.Size = new System.Drawing.Size(673, 70);
+            this.gpDetalhesVenda.TabIndex = 11;
+            this.gpDetalhesVenda.TabStop = false;
+            this.gpDetalhesVenda.Text = "Detalhes da Venda";
+            // 
+            // gbItensVenda
+            // 
+            this.gbItensVenda.Controls.Add(this.dgvProdutos);
+            this.gbItensVenda.Location = new System.Drawing.Point(3, 103);
+            this.gbItensVenda.Name = "gbItensVenda";
+            this.gbItensVenda.Size = new System.Drawing.Size(673, 358);
+            this.gbItensVenda.TabIndex = 12;
+            this.gbItensVenda.TabStop = false;
+            this.gbItensVenda.Text = "Itens da Venda";
             // 
             // FormHistoricoVendasView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 371);
-            this.Controls.Add(this.btVoltar);
-            this.Controls.Add(this.lbProdutos);
-            this.Controls.Add(this.lbDadosVenda);
-            this.Controls.Add(this.dgvProdutos);
-            this.Controls.Add(this.pnCompras);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(679, 462);
+            this.Controls.Add(this.gbItensVenda);
+            this.Controls.Add(this.gpDetalhesVenda);
+            this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormHistoricoVendasView";
             this.Text = "ControlX - Histórico de Vendas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
-            this.pnCompras.ResumeLayout(false);
-            this.pnCompras.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.gpDetalhesVenda.ResumeLayout(false);
+            this.gpDetalhesVenda.PerformLayout();
+            this.gbItensVenda.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btVoltar;
         public System.Windows.Forms.TextBox txValor;
         public System.Windows.Forms.TextBox txId;
         public System.Windows.Forms.DateTimePicker dateCompra;
@@ -269,11 +284,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.Label lbUsuario;
-        private System.Windows.Forms.Label lbProdutos;
-        private System.Windows.Forms.Label lbDadosVenda;
         private System.Windows.Forms.Label lbIdCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn fornecedor;
         public System.Windows.Forms.DataGridView dgvProdutos;
-        private System.Windows.Forms.Panel pnCompras;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
+        private System.Windows.Forms.GroupBox gpDetalhesVenda;
+        private System.Windows.Forms.GroupBox gbItensVenda;
     }
 }

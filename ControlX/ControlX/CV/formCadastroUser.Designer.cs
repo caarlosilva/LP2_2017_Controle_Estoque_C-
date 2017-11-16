@@ -148,6 +148,7 @@
             // 
             // cbSexo
             // 
+            this.cbSexo.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.cbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSexo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbSexo.FormattingEnabled = true;
@@ -501,6 +502,7 @@
             // 
             // cbCargo
             // 
+            this.cbCargo.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.cbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCargo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbCargo.FormattingEnabled = true;
@@ -540,6 +542,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(430, 452);
             this.Controls.Add(this.lbMensagem);
             this.Controls.Add(this.pnLogSenha);

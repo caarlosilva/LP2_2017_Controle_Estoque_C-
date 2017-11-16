@@ -21,5 +21,20 @@ namespace ControlX
         {
             this.Close();
         }
+
+        private void txValor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbValor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvProdutos_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
     }
 }

@@ -21,5 +21,10 @@ namespace ControlX.CV
         {
             this.Close();
         }
+
+        private void txValor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

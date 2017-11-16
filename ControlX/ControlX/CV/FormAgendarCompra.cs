@@ -64,7 +64,7 @@ namespace ControlX
 
         private void btMenu_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
         private void btAdd_Click(object sender, EventArgs e)
@@ -221,8 +221,12 @@ namespace ControlX
         {
             formEstoque formSearch = new formEstoque();
             formSearch.pnButtons.Visible = false;
-            formSearch.btMenu.Text = "Voltar";
             formSearch.ShowDialog(this);
+        }
+
+        private void dgvItensCompra_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
         }
     }
 }

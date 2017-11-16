@@ -252,6 +252,7 @@
             this.AcceptButton = this.btCadastrar;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btCancelar;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnCadForn);

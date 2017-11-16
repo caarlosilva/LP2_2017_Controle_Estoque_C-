@@ -101,7 +101,6 @@ namespace ControlX
 
             formEstoque formSearch = new formEstoque();
             formSearch.pnButtons.Visible = false;
-            formSearch.btMenu.Text = "Voltar";
             formSearch.ShowDialog(this);
 
         }

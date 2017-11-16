@@ -56,12 +56,20 @@ namespace ControlX
                 btDel.Enabled = false;
                 btEdit.Enabled = false;
                 btView.Enabled = false;
+
+                removerToolStripMenuItem.Enabled = false;
+                editarToolStripMenuItem.Enabled = false;
+                detalhesToolStripMenuItem.Enabled = false;
             }
             else
             {
                 btDel.Enabled = true;
                 btEdit.Enabled = true;
                 btView.Enabled = true;
+
+                removerToolStripMenuItem.Enabled = true;
+                editarToolStripMenuItem.Enabled = true;
+                detalhesToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -136,7 +144,8 @@ namespace ControlX
             Fill();
         }
 
-        private void btView_Click(object sender, EventArgs e)
+
+        private void detalhes()
         {
             formCadastroProd form = new formCadastroProd();
             //Os texts não podem ser editado.
@@ -154,7 +163,7 @@ namespace ControlX
             form.txPreco.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[2].Value.ToString());
             form.txQntd.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[3].Value.ToString());
             form.cbTipoUn.Text = (dgvEstoque.Rows[dgvEstoque.CurrentRow.Index].Cells[4].Value.ToString());
-            
+
             int idP = Convert.ToInt32(form.lbIdProduto.Text);
             IDao db = new DAO.ProdutoDao();
 
@@ -179,6 +188,11 @@ namespace ControlX
             form.ShowDialog(this);
         }
 
+        private void btView_Click(object sender, EventArgs e)
+        {
+            detalhes();
+        }
+
         private void btMenuPrincipal_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -195,6 +209,11 @@ namespace ControlX
             this.Hide();
             new FormCategoria().ShowDialog();
             this.Show();
+        }
+
+        private void dgvEstoque_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            detalhes();
         }
     }
 }

@@ -39,11 +39,15 @@ namespace ControlX
             {
                 btDel.Enabled = false;
                 btEdit.Enabled = false;
+                removerToolStripMenuItem.Enabled = false;
+                editarToolStripMenuItem.Enabled = false;
             }
             else
             {
                 btDel.Enabled = true;
                 btEdit.Enabled = true;
+                removerToolStripMenuItem.Enabled = true;
+                editarToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -138,6 +142,11 @@ namespace ControlX
             form.btCadastrar.Text = "Salvar";
             form.ShowDialog(this);
             Fill();
+        }
+
+        private void voltarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

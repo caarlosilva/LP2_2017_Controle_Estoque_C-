@@ -35,6 +35,8 @@
             this.txNome = new System.Windows.Forms.TextBox();
             this.lbId = new System.Windows.Forms.Label();
             this.pnCadastro = new System.Windows.Forms.Panel();
+            this.lbEstoqueMin = new System.Windows.Forms.Label();
+            this.txEstoqueMin = new System.Windows.Forms.TextBox();
             this.cbTipoUn = new System.Windows.Forms.ComboBox();
             this.lbTipoVenda = new System.Windows.Forms.Label();
             this.btImagem = new System.Windows.Forms.Button();
@@ -49,8 +51,6 @@
             this.lbIdProduto = new System.Windows.Forms.Label();
             this.pnBtCad = new System.Windows.Forms.Panel();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.lbEstoqueMin = new System.Windows.Forms.Label();
-            this.txEstoqueMin = new System.Windows.Forms.TextBox();
             this.pnCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).BeginInit();
             this.pnBtCad.SuspendLayout();
@@ -136,8 +136,25 @@
             this.pnCadastro.Size = new System.Drawing.Size(444, 234);
             this.pnCadastro.TabIndex = 7;
             // 
+            // lbEstoqueMin
+            // 
+            this.lbEstoqueMin.AutoSize = true;
+            this.lbEstoqueMin.Location = new System.Drawing.Point(173, 91);
+            this.lbEstoqueMin.Name = "lbEstoqueMin";
+            this.lbEstoqueMin.Size = new System.Drawing.Size(52, 26);
+            this.lbEstoqueMin.TabIndex = 21;
+            this.lbEstoqueMin.Text = "Estoque\r\nMinimo:";
+            // 
+            // txEstoqueMin
+            // 
+            this.txEstoqueMin.Location = new System.Drawing.Point(234, 95);
+            this.txEstoqueMin.Name = "txEstoqueMin";
+            this.txEstoqueMin.Size = new System.Drawing.Size(55, 21);
+            this.txEstoqueMin.TabIndex = 20;
+            // 
             // cbTipoUn
             // 
+            this.cbTipoUn.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.cbTipoUn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoUn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbTipoUn.FormattingEnabled = true;
@@ -207,6 +224,7 @@
             // 
             // cbCategoria
             // 
+            this.cbCategoria.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbCategoria.FormattingEnabled = true;
@@ -227,6 +245,7 @@
             // 
             // cbFornecedor
             // 
+            this.cbFornecedor.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.cbFornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbFornecedor.FormattingEnabled = true;
@@ -286,27 +305,12 @@
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
-            // lbEstoqueMin
-            // 
-            this.lbEstoqueMin.AutoSize = true;
-            this.lbEstoqueMin.Location = new System.Drawing.Point(173, 91);
-            this.lbEstoqueMin.Name = "lbEstoqueMin";
-            this.lbEstoqueMin.Size = new System.Drawing.Size(52, 26);
-            this.lbEstoqueMin.TabIndex = 21;
-            this.lbEstoqueMin.Text = "Estoque\r\nMinimo:";
-            // 
-            // txEstoqueMin
-            // 
-            this.txEstoqueMin.Location = new System.Drawing.Point(234, 95);
-            this.txEstoqueMin.Name = "txEstoqueMin";
-            this.txEstoqueMin.Size = new System.Drawing.Size(55, 21);
-            this.txEstoqueMin.TabIndex = 20;
-            // 
             // formCadastroProd
             // 
             this.AcceptButton = this.btCadastrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btCancelar;
             this.ClientSize = new System.Drawing.Size(450, 243);
             this.Controls.Add(this.pnCadastro);

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCategoria));
-            this.pnMenu = new System.Windows.Forms.Panel();
-            this.btEstoque = new System.Windows.Forms.Button();
             this.pnButtons = new System.Windows.Forms.Panel();
             this.btAdd = new System.Windows.Forms.Button();
             this.btEdit = new System.Windows.Forms.Button();
@@ -44,34 +42,17 @@
             this.pnPesquisa = new System.Windows.Forms.Panel();
             this.txPesquisar = new System.Windows.Forms.TextBox();
             this.lbFiltro = new System.Windows.Forms.Label();
-            this.pnMenu.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnButtons.SuspendLayout();
             this.gbEstoque.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
             this.pnPesquisa.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnMenu
-            // 
-            this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnMenu.Controls.Add(this.btEstoque);
-            this.pnMenu.Location = new System.Drawing.Point(12, 393);
-            this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(83, 29);
-            this.pnMenu.TabIndex = 13;
-            // 
-            // btEstoque
-            // 
-            this.btEstoque.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btEstoque.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btEstoque.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEstoque.Location = new System.Drawing.Point(6, 3);
-            this.btEstoque.Name = "btEstoque";
-            this.btEstoque.Size = new System.Drawing.Size(70, 23);
-            this.btEstoque.TabIndex = 4;
-            this.btEstoque.Text = "Estoque";
-            this.btEstoque.UseVisualStyleBackColor = true;
-            this.btEstoque.Click += new System.EventHandler(this.btEstoque_Click);
             // 
             // pnButtons
             // 
@@ -79,10 +60,11 @@
             this.pnButtons.Controls.Add(this.btAdd);
             this.pnButtons.Controls.Add(this.btEdit);
             this.pnButtons.Controls.Add(this.btDel);
-            this.pnButtons.Location = new System.Drawing.Point(429, 393);
+            this.pnButtons.Location = new System.Drawing.Point(429, 349);
             this.pnButtons.Name = "pnButtons";
             this.pnButtons.Size = new System.Drawing.Size(249, 29);
             this.pnButtons.TabIndex = 12;
+            this.pnButtons.Visible = false;
             // 
             // btAdd
             // 
@@ -125,11 +107,12 @@
             this.gbEstoque.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbEstoque.Controls.Add(this.pnButtons);
             this.gbEstoque.Controls.Add(this.dgvCategoria);
             this.gbEstoque.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbEstoque.Location = new System.Drawing.Point(12, 53);
+            this.gbEstoque.Location = new System.Drawing.Point(0, 73);
             this.gbEstoque.Name = "gbEstoque";
-            this.gbEstoque.Size = new System.Drawing.Size(666, 334);
+            this.gbEstoque.Size = new System.Drawing.Size(690, 384);
             this.gbEstoque.TabIndex = 11;
             this.gbEstoque.TabStop = false;
             this.gbEstoque.Text = "Categorias";
@@ -138,6 +121,8 @@
             // 
             this.dgvCategoria.AllowUserToAddRows = false;
             this.dgvCategoria.AllowUserToDeleteRows = false;
+            this.dgvCategoria.AllowUserToResizeRows = false;
+            this.dgvCategoria.BackgroundColor = System.Drawing.Color.White;
             this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategoria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
@@ -148,7 +133,7 @@
             this.dgvCategoria.ReadOnly = true;
             this.dgvCategoria.RowHeadersVisible = false;
             this.dgvCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategoria.Size = new System.Drawing.Size(660, 314);
+            this.dgvCategoria.Size = new System.Drawing.Size(684, 364);
             this.dgvCategoria.TabIndex = 3;
             // 
             // colId
@@ -174,7 +159,7 @@
             this.rbNome.AutoSize = true;
             this.rbNome.Checked = true;
             this.rbNome.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNome.Location = new System.Drawing.Point(602, 3);
+            this.rbNome.Location = new System.Drawing.Point(626, 3);
             this.rbNome.Name = "rbNome";
             this.rbNome.Size = new System.Drawing.Size(58, 17);
             this.rbNome.TabIndex = 10;
@@ -187,7 +172,7 @@
             this.rbId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbId.AutoSize = true;
             this.rbId.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbId.Location = new System.Drawing.Point(602, 20);
+            this.rbId.Location = new System.Drawing.Point(626, 20);
             this.rbId.Name = "rbId";
             this.rbId.Size = new System.Drawing.Size(37, 17);
             this.rbId.TabIndex = 1;
@@ -202,9 +187,9 @@
             this.pnPesquisa.Controls.Add(this.rbId);
             this.pnPesquisa.Controls.Add(this.txPesquisar);
             this.pnPesquisa.Controls.Add(this.lbFiltro);
-            this.pnPesquisa.Location = new System.Drawing.Point(12, 7);
+            this.pnPesquisa.Location = new System.Drawing.Point(0, 31);
             this.pnPesquisa.Name = "pnPesquisa";
-            this.pnPesquisa.Size = new System.Drawing.Size(666, 40);
+            this.pnPesquisa.Size = new System.Drawing.Size(690, 40);
             this.pnPesquisa.TabIndex = 10;
             // 
             // txPesquisar
@@ -213,9 +198,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txPesquisar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txPesquisar.Location = new System.Drawing.Point(47, 6);
+            this.txPesquisar.Location = new System.Drawing.Point(47, 10);
             this.txPesquisar.Name = "txPesquisar";
-            this.txPesquisar.Size = new System.Drawing.Size(535, 21);
+            this.txPesquisar.Size = new System.Drawing.Size(559, 21);
             this.txPesquisar.TabIndex = 0;
             this.txPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPesquisar_KeyPress);
             this.txPesquisar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txPesquisar_KeyUp);
@@ -226,38 +211,85 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFiltro.AutoSize = true;
             this.lbFiltro.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFiltro.Location = new System.Drawing.Point(9, 9);
+            this.lbFiltro.Location = new System.Drawing.Point(9, 14);
             this.lbFiltro.Name = "lbFiltro";
             this.lbFiltro.Size = new System.Drawing.Size(40, 13);
             this.lbFiltro.TabIndex = 0;
             this.lbFiltro.Text = "Filtro:";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.voltarToolStripMenuItem,
+            this.adicionarToolStripMenuItem,
+            this.editarToolStripMenuItem,
+            this.removerToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(690, 28);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // voltarToolStripMenuItem
+            // 
+            this.voltarToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
+            this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.voltarToolStripMenuItem.Text = "Voltar";
+            this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
+            // 
+            // adicionarToolStripMenuItem
+            // 
+            this.adicionarToolStripMenuItem.Image = global::ControlX.Properties.Resources.add_icon;
+            this.adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
+            this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.adicionarToolStripMenuItem.Text = "Adicionar";
+            this.adicionarToolStripMenuItem.Click += new System.EventHandler(this.btAdd_Click);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Image = global::ControlX.Properties.Resources.edit_icon;
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.btEdit_Click);
+            // 
+            // removerToolStripMenuItem
+            // 
+            this.removerToolStripMenuItem.Image = global::ControlX.Properties.Resources.remover;
+            this.removerToolStripMenuItem.Name = "removerToolStripMenuItem";
+            this.removerToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.removerToolStripMenuItem.Text = "Remover";
+            this.removerToolStripMenuItem.Click += new System.EventHandler(this.btDel_Click);
+            // 
             // FormCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 429);
-            this.Controls.Add(this.pnMenu);
-            this.Controls.Add(this.pnButtons);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(690, 458);
             this.Controls.Add(this.gbEstoque);
             this.Controls.Add(this.pnPesquisa);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormCategoria";
             this.Text = "ControlX - Categorias";
-            this.pnMenu.ResumeLayout(false);
             this.pnButtons.ResumeLayout(false);
             this.gbEstoque.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).EndInit();
             this.pnPesquisa.ResumeLayout(false);
             this.pnPesquisa.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        public System.Windows.Forms.Panel pnMenu;
-        public System.Windows.Forms.Button btEstoque;
         public System.Windows.Forms.Panel pnButtons;
         public System.Windows.Forms.Button btAdd;
         public System.Windows.Forms.Button btEdit;
@@ -271,5 +303,10 @@
         private System.Windows.Forms.Label lbFiltro;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adicionarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removerToolStripMenuItem;
     }
 }

@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formFornecedores));
-            this.btMenu = new System.Windows.Forms.Button();
             this.pnFiltro = new System.Windows.Forms.Panel();
             this.txPesquisar = new System.Windows.Forms.TextBox();
             this.lbFiltro = new System.Windows.Forms.Label();
@@ -45,25 +44,18 @@
             this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCidadeEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnMenu = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnFiltro.SuspendLayout();
             this.pnBtns.SuspendLayout();
             this.gbFornecedores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
-            this.pnMenu.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btMenu
-            // 
-            this.btMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btMenu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btMenu.Location = new System.Drawing.Point(5, 3);
-            this.btMenu.Name = "btMenu";
-            this.btMenu.Size = new System.Drawing.Size(70, 23);
-            this.btMenu.TabIndex = 4;
-            this.btMenu.Text = "Menu";
-            this.btMenu.UseVisualStyleBackColor = true;
-            this.btMenu.Click += new System.EventHandler(this.btMenu_Click);
             // 
             // pnFiltro
             // 
@@ -71,11 +63,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnFiltro.Controls.Add(this.txPesquisar);
             this.pnFiltro.Controls.Add(this.lbFiltro);
-            this.pnFiltro.Location = new System.Drawing.Point(12, 12);
+            this.pnFiltro.Location = new System.Drawing.Point(0, 31);
             this.pnFiltro.Name = "pnFiltro";
-            this.pnFiltro.Size = new System.Drawing.Size(666, 30);
+            this.pnFiltro.Size = new System.Drawing.Size(688, 30);
             this.pnFiltro.TabIndex = 1;
-            this.pnFiltro.Paint += new System.Windows.Forms.PaintEventHandler(this.pnFiltro_Paint);
             // 
             // txPesquisar
             // 
@@ -83,7 +74,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txPesquisar.Location = new System.Drawing.Point(47, 6);
             this.txPesquisar.Name = "txPesquisar";
-            this.txPesquisar.Size = new System.Drawing.Size(613, 21);
+            this.txPesquisar.Size = new System.Drawing.Size(635, 21);
             this.txPesquisar.TabIndex = 0;
             this.txPesquisar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txPesquisar_KeyUp);
             // 
@@ -92,7 +83,7 @@
             this.lbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFiltro.AutoSize = true;
-            this.lbFiltro.Location = new System.Drawing.Point(9, 9);
+            this.lbFiltro.Location = new System.Drawing.Point(4, 9);
             this.lbFiltro.Name = "lbFiltro";
             this.lbFiltro.Size = new System.Drawing.Size(40, 13);
             this.lbFiltro.TabIndex = 0;
@@ -105,11 +96,11 @@
             this.pnBtns.Controls.Add(this.btEdit);
             this.pnBtns.Controls.Add(this.btView);
             this.pnBtns.Controls.Add(this.btAdd);
-            this.pnBtns.Location = new System.Drawing.Point(338, 388);
+            this.pnBtns.Location = new System.Drawing.Point(338, 312);
             this.pnBtns.Name = "pnBtns";
             this.pnBtns.Size = new System.Drawing.Size(340, 29);
             this.pnBtns.TabIndex = 3;
-            this.pnBtns.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBtns_Paint);
+            this.pnBtns.Visible = false;
             // 
             // btDel
             // 
@@ -160,19 +151,21 @@
             this.gbFornecedores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbFornecedores.Controls.Add(this.pnBtns);
             this.gbFornecedores.Controls.Add(this.dgvFornecedor);
-            this.gbFornecedores.Location = new System.Drawing.Point(12, 48);
+            this.gbFornecedores.Location = new System.Drawing.Point(0, 64);
             this.gbFornecedores.Name = "gbFornecedores";
-            this.gbFornecedores.Size = new System.Drawing.Size(666, 334);
+            this.gbFornecedores.Size = new System.Drawing.Size(691, 366);
             this.gbFornecedores.TabIndex = 4;
             this.gbFornecedores.TabStop = false;
             this.gbFornecedores.Text = "Fornecedores";
-            this.gbFornecedores.Enter += new System.EventHandler(this.gbFornecedores_Enter);
             // 
             // dgvFornecedor
             // 
             this.dgvFornecedor.AllowUserToAddRows = false;
             this.dgvFornecedor.AllowUserToDeleteRows = false;
+            this.dgvFornecedor.AllowUserToResizeRows = false;
+            this.dgvFornecedor.BackgroundColor = System.Drawing.Color.White;
             this.dgvFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
@@ -185,9 +178,9 @@
             this.dgvFornecedor.ReadOnly = true;
             this.dgvFornecedor.RowHeadersVisible = false;
             this.dgvFornecedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFornecedor.Size = new System.Drawing.Size(660, 314);
+            this.dgvFornecedor.Size = new System.Drawing.Size(685, 346);
             this.dgvFornecedor.TabIndex = 0;
-            this.dgvFornecedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellContentClick);
+            this.dgvFornecedor.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvFornecedor_CellMouseDoubleClick);
             // 
             // colID
             // 
@@ -224,26 +217,72 @@
             this.colCidadeEstado.Name = "colCidadeEstado";
             this.colCidadeEstado.ReadOnly = true;
             // 
-            // pnMenu
+            // menuStrip1
             // 
-            this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnMenu.Controls.Add(this.btMenu);
-            this.pnMenu.Location = new System.Drawing.Point(12, 388);
-            this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(98, 29);
-            this.pnMenu.TabIndex = 5;
-            this.pnMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMenu_Paint);
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.voltarToolStripMenuItem,
+            this.adicionarToolStripMenuItem,
+            this.detalhesToolStripMenuItem,
+            this.editarToolStripMenuItem,
+            this.removerToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(690, 28);
+            this.menuStrip1.TabIndex = 15;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // voltarToolStripMenuItem
+            // 
+            this.voltarToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
+            this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.voltarToolStripMenuItem.Text = "Voltar";
+            this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btMenu_Click);
+            // 
+            // adicionarToolStripMenuItem
+            // 
+            this.adicionarToolStripMenuItem.Image = global::ControlX.Properties.Resources.add_icon;
+            this.adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
+            this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.adicionarToolStripMenuItem.Text = "Adicionar";
+            this.adicionarToolStripMenuItem.Click += new System.EventHandler(this.btAdicionar_Click);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Image = global::ControlX.Properties.Resources.edit_icon;
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.btEdit_Click);
+            // 
+            // removerToolStripMenuItem
+            // 
+            this.removerToolStripMenuItem.Image = global::ControlX.Properties.Resources.remover;
+            this.removerToolStripMenuItem.Name = "removerToolStripMenuItem";
+            this.removerToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.removerToolStripMenuItem.Text = "Remover";
+            this.removerToolStripMenuItem.Click += new System.EventHandler(this.btDel_Click);
+            // 
+            // detalhesToolStripMenuItem
+            // 
+            this.detalhesToolStripMenuItem.Image = global::ControlX.Properties.Resources.details_icon;
+            this.detalhesToolStripMenuItem.Name = "detalhesToolStripMenuItem";
+            this.detalhesToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.detalhesToolStripMenuItem.Text = "Detalhes";
+            this.detalhesToolStripMenuItem.Click += new System.EventHandler(this.btView_Click);
             // 
             // formFornecedores
             // 
             this.AcceptButton = this.btAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btMenu;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(690, 429);
-            this.Controls.Add(this.pnMenu);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.gbFornecedores);
-            this.Controls.Add(this.pnBtns);
             this.Controls.Add(this.pnFiltro);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -255,14 +294,13 @@
             this.pnBtns.ResumeLayout(false);
             this.gbFornecedores.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).EndInit();
-            this.pnMenu.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btMenu;
         private System.Windows.Forms.Panel pnFiltro;
         private System.Windows.Forms.Panel pnBtns;
         private System.Windows.Forms.Button btEdit;
@@ -272,11 +310,16 @@
         private System.Windows.Forms.TextBox txPesquisar;
         private System.Windows.Forms.GroupBox gbFornecedores;
         private System.Windows.Forms.DataGridView dgvFornecedor;
-        private System.Windows.Forms.Panel pnMenu;
         protected internal System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCNPJ;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCidadeEstado;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adicionarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem detalhesToolStripMenuItem;
     }
 }

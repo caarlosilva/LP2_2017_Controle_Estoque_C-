@@ -37,7 +37,6 @@
             this.pnMenu = new System.Windows.Forms.Panel();
             this.btRemoverTudo = new System.Windows.Forms.Button();
             this.btDelItemCompra = new System.Windows.Forms.Button();
-            this.btMenu = new System.Windows.Forms.Button();
             this.pnCabecalho = new System.Windows.Forms.Panel();
             this.txPrecoCompra = new System.Windows.Forms.TextBox();
             this.lbPrecoCompra = new System.Windows.Forms.Label();
@@ -63,6 +62,7 @@
             this.colPrecoUn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coLPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnListaCompra = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gbDetalhesCompra = new System.Windows.Forms.GroupBox();
             this.lbNumCompra = new System.Windows.Forms.Label();
             this.lbValorShow = new System.Windows.Forms.Label();
@@ -74,12 +74,14 @@
             this.dtEntrega = new System.Windows.Forms.DateTimePicker();
             this.lbDataCompra = new System.Windows.Forms.Label();
             this.btPesquisar = new System.Windows.Forms.Button();
+            this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnMenu.SuspendLayout();
             this.pnCabecalho.SuspendLayout();
             this.pnBtCad.SuspendLayout();
             this.gpItensCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItensCompra)).BeginInit();
             this.pnListaCompra.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.gbDetalhesCompra.SuspendLayout();
             this.pnButtons.SuspendLayout();
             this.SuspendLayout();
@@ -89,8 +91,7 @@
             this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pnMenu.Controls.Add(this.btRemoverTudo);
             this.pnMenu.Controls.Add(this.btDelItemCompra);
-            this.pnMenu.Controls.Add(this.btMenu);
-            this.pnMenu.Location = new System.Drawing.Point(6, 392);
+            this.pnMenu.Location = new System.Drawing.Point(6, 369);
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Size = new System.Drawing.Size(499, 29);
             this.pnMenu.TabIndex = 13;
@@ -116,18 +117,6 @@
             this.btDelItemCompra.Text = "Remover Item";
             this.btDelItemCompra.UseVisualStyleBackColor = true;
             this.btDelItemCompra.Click += new System.EventHandler(this.btDelItemCompra_Click);
-            // 
-            // btMenu
-            // 
-            this.btMenu.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btMenu.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btMenu.Location = new System.Drawing.Point(3, 3);
-            this.btMenu.Name = "btMenu";
-            this.btMenu.Size = new System.Drawing.Size(70, 23);
-            this.btMenu.TabIndex = 4;
-            this.btMenu.Text = "Menu";
-            this.btMenu.UseVisualStyleBackColor = true;
-            this.btMenu.Click += new System.EventHandler(this.btMenu_Click);
             // 
             // pnCabecalho
             // 
@@ -325,7 +314,7 @@
             this.gpItensCompra.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpItensCompra.Location = new System.Drawing.Point(6, 134);
             this.gpItensCompra.Name = "gpItensCompra";
-            this.gpItensCompra.Size = new System.Drawing.Size(499, 252);
+            this.gpItensCompra.Size = new System.Drawing.Size(499, 229);
             this.gpItensCompra.TabIndex = 17;
             this.gpItensCompra.TabStop = false;
             this.gpItensCompra.Text = "Produtos da compra";
@@ -334,9 +323,11 @@
             // 
             this.dgvItensCompra.AllowUserToAddRows = false;
             this.dgvItensCompra.AllowUserToDeleteRows = false;
+            this.dgvItensCompra.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.NullValue = null;
             this.dgvItensCompra.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvItensCompra.BackgroundColor = System.Drawing.Color.White;
             this.dgvItensCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItensCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -351,8 +342,9 @@
             this.dgvItensCompra.ReadOnly = true;
             this.dgvItensCompra.RowHeadersVisible = false;
             this.dgvItensCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItensCompra.Size = new System.Drawing.Size(493, 232);
+            this.dgvItensCompra.Size = new System.Drawing.Size(493, 209);
             this.dgvItensCompra.TabIndex = 0;
+            this.dgvItensCompra.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvItensCompra_CellMouseDoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -421,10 +413,22 @@
             this.pnListaCompra.Controls.Add(this.pnCabecalho);
             this.pnListaCompra.Controls.Add(this.gpItensCompra);
             this.pnListaCompra.Controls.Add(this.pnMenu);
-            this.pnListaCompra.Location = new System.Drawing.Point(3, 3);
+            this.pnListaCompra.Location = new System.Drawing.Point(3, 31);
             this.pnListaCompra.Name = "pnListaCompra";
-            this.pnListaCompra.Size = new System.Drawing.Size(510, 426);
+            this.pnListaCompra.Size = new System.Drawing.Size(510, 403);
             this.pnListaCompra.TabIndex = 19;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.voltarToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(836, 28);
+            this.menuStrip1.TabIndex = 20;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // gbDetalhesCompra
             // 
@@ -441,9 +445,9 @@
             this.gbDetalhesCompra.Controls.Add(this.dtEntrega);
             this.gbDetalhesCompra.Controls.Add(this.lbDataCompra);
             this.gbDetalhesCompra.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDetalhesCompra.Location = new System.Drawing.Point(519, 4);
+            this.gbDetalhesCompra.Location = new System.Drawing.Point(519, 31);
             this.gbDetalhesCompra.Name = "gbDetalhesCompra";
-            this.gbDetalhesCompra.Size = new System.Drawing.Size(314, 425);
+            this.gbDetalhesCompra.Size = new System.Drawing.Size(314, 403);
             this.gbDetalhesCompra.TabIndex = 15;
             this.gbDetalhesCompra.TabStop = false;
             this.gbDetalhesCompra.Text = "Detalhes da Compra";
@@ -471,7 +475,7 @@
             // 
             this.pnButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnButtons.Controls.Add(this.btComprar);
-            this.pnButtons.Location = new System.Drawing.Point(9, 392);
+            this.pnButtons.Location = new System.Drawing.Point(9, 370);
             this.pnButtons.Name = "pnButtons";
             this.pnButtons.Size = new System.Drawing.Size(305, 29);
             this.pnButtons.TabIndex = 12;
@@ -558,15 +562,26 @@
             this.btPesquisar.UseVisualStyleBackColor = false;
             this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
             // 
+            // voltarToolStripMenuItem
+            // 
+            this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
+            this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.voltarToolStripMenuItem.Text = "Voltar";
+            this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btMenu_Click);
+            // 
             // FormAgendarCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 429);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(836, 434);
             this.Controls.Add(this.gbDetalhesCompra);
             this.Controls.Add(this.pnListaCompra);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormAgendarCompra";
             this.Text = "ControlX - Agendar Compra";
             this.pnMenu.ResumeLayout(false);
@@ -576,6 +591,8 @@
             this.gpItensCompra.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItensCompra)).EndInit();
             this.pnListaCompra.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.gbDetalhesCompra.ResumeLayout(false);
             this.gbDetalhesCompra.PerformLayout();
             this.pnButtons.ResumeLayout(false);
@@ -586,7 +603,6 @@
         #endregion
 
         public System.Windows.Forms.Panel pnMenu;
-        public System.Windows.Forms.Button btMenu;
         public System.Windows.Forms.Panel pnButtons;
         public System.Windows.Forms.Button btComprar;
         private System.Windows.Forms.Panel pnCabecalho;
@@ -625,5 +641,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colUn;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecoUn;
         private System.Windows.Forms.DataGridViewTextBoxColumn coLPreco;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
     }
 }

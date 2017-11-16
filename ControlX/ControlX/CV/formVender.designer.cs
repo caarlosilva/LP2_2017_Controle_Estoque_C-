@@ -65,17 +65,17 @@
             this.lbTotal = new System.Windows.Forms.Label();
             this.gpVendas = new System.Windows.Forms.GroupBox();
             this.dgvVendas = new System.Windows.Forms.DataGridView();
-            this.pnMenu = new System.Windows.Forms.Panel();
-            this.btMenu = new System.Windows.Forms.Button();
-            this.pnBtVender = new System.Windows.Forms.Panel();
-            this.btVender = new System.Windows.Forms.Button();
-            this.btCancelar = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrecoUn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coLPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnBtVender = new System.Windows.Forms.Panel();
+            this.btVender = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnForm.SuspendLayout();
             this.pnTroco.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -84,8 +84,8 @@
             this.pnTotal.SuspendLayout();
             this.gpVendas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
-            this.pnMenu.SuspendLayout();
             this.pnBtVender.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnForm
@@ -99,12 +99,11 @@
             this.pnForm.Controls.Add(this.pnCabecalho);
             this.pnForm.Controls.Add(this.pnTotal);
             this.pnForm.Controls.Add(this.gpVendas);
-            this.pnForm.Controls.Add(this.pnMenu);
             this.pnForm.Controls.Add(this.pnBtVender);
             this.pnForm.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnForm.Location = new System.Drawing.Point(12, 8);
+            this.pnForm.Location = new System.Drawing.Point(12, 31);
             this.pnForm.Name = "pnForm";
-            this.pnForm.Size = new System.Drawing.Size(501, 430);
+            this.pnForm.Size = new System.Drawing.Size(501, 426);
             this.pnForm.TabIndex = 8;
             this.pnForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnForm_Paint);
             // 
@@ -117,7 +116,7 @@
             this.pnTroco.Controls.Add(this.lbTrocoShow);
             this.pnTroco.Controls.Add(this.lbTroco);
             this.pnTroco.Controls.Add(this.lbValorPago);
-            this.pnTroco.Location = new System.Drawing.Point(194, 336);
+            this.pnTroco.Location = new System.Drawing.Point(194, 332);
             this.pnTroco.Name = "pnTroco";
             this.pnTroco.Size = new System.Drawing.Size(298, 27);
             this.pnTroco.TabIndex = 19;
@@ -184,7 +183,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.btDelItemVenda);
-            this.panel1.Location = new System.Drawing.Point(409, 366);
+            this.panel1.Location = new System.Drawing.Point(409, 362);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(83, 26);
             this.panel1.TabIndex = 17;
@@ -217,7 +216,7 @@
             this.pnCabecalho.Controls.Add(this.lbPreco);
             this.pnCabecalho.Location = new System.Drawing.Point(8, 9);
             this.pnCabecalho.Name = "pnCabecalho";
-            this.pnCabecalho.Size = new System.Drawing.Size(484, 120);
+            this.pnCabecalho.Size = new System.Drawing.Size(484, 124);
             this.pnCabecalho.TabIndex = 16;
             // 
             // txQntdVenda
@@ -258,7 +257,7 @@
             this.lbQntdVenda.AutoSize = true;
             this.lbQntdVenda.Location = new System.Drawing.Point(353, 57);
             this.lbQntdVenda.Name = "lbQntdVenda";
-            this.lbQntdVenda.Size = new System.Drawing.Size(71, 13);
+            this.lbQntdVenda.Size = new System.Drawing.Size(72, 13);
             this.lbQntdVenda.TabIndex = 29;
             this.lbQntdVenda.Text = "Qtd Venda:";
             // 
@@ -395,7 +394,7 @@
             this.pnTotal.Controls.Add(this.lbReais);
             this.pnTotal.Controls.Add(this.lbValorTotal);
             this.pnTotal.Controls.Add(this.lbTotal);
-            this.pnTotal.Location = new System.Drawing.Point(16, 336);
+            this.pnTotal.Location = new System.Drawing.Point(16, 332);
             this.pnTotal.Name = "pnTotal";
             this.pnTotal.Size = new System.Drawing.Size(160, 27);
             this.pnTotal.TabIndex = 15;
@@ -434,9 +433,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gpVendas.Controls.Add(this.dgvVendas);
-            this.gpVendas.Location = new System.Drawing.Point(11, 135);
+            this.gpVendas.Location = new System.Drawing.Point(11, 139);
             this.gpVendas.Name = "gpVendas";
-            this.gpVendas.Size = new System.Drawing.Size(481, 195);
+            this.gpVendas.Size = new System.Drawing.Size(481, 187);
             this.gpVendas.TabIndex = 14;
             this.gpVendas.TabStop = false;
             this.gpVendas.Text = "Produtos da venda";
@@ -445,9 +444,11 @@
             // 
             this.dgvVendas.AllowUserToAddRows = false;
             this.dgvVendas.AllowUserToDeleteRows = false;
+            this.dgvVendas.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.NullValue = null;
             this.dgvVendas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvVendas.BackgroundColor = System.Drawing.Color.White;
             this.dgvVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVendas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -462,62 +463,8 @@
             this.dgvVendas.ReadOnly = true;
             this.dgvVendas.RowHeadersVisible = false;
             this.dgvVendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVendas.Size = new System.Drawing.Size(475, 175);
+            this.dgvVendas.Size = new System.Drawing.Size(475, 167);
             this.dgvVendas.TabIndex = 0;
-            // 
-            // pnMenu
-            // 
-            this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnMenu.Controls.Add(this.btMenu);
-            this.pnMenu.Location = new System.Drawing.Point(16, 396);
-            this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(98, 29);
-            this.pnMenu.TabIndex = 11;
-            // 
-            // btMenu
-            // 
-            this.btMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btMenu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btMenu.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btMenu.Location = new System.Drawing.Point(5, 3);
-            this.btMenu.Name = "btMenu";
-            this.btMenu.Size = new System.Drawing.Size(70, 23);
-            this.btMenu.TabIndex = 0;
-            this.btMenu.Text = "Menu";
-            this.btMenu.UseVisualStyleBackColor = true;
-            this.btMenu.Click += new System.EventHandler(this.btMenu_Click);
-            // 
-            // pnBtVender
-            // 
-            this.pnBtVender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnBtVender.Controls.Add(this.btVender);
-            this.pnBtVender.Controls.Add(this.btCancelar);
-            this.pnBtVender.Location = new System.Drawing.Point(285, 396);
-            this.pnBtVender.Name = "pnBtVender";
-            this.pnBtVender.Size = new System.Drawing.Size(207, 29);
-            this.pnBtVender.TabIndex = 10;
-            // 
-            // btVender
-            // 
-            this.btVender.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btVender.Location = new System.Drawing.Point(124, 3);
-            this.btVender.Name = "btVender";
-            this.btVender.Size = new System.Drawing.Size(75, 23);
-            this.btVender.TabIndex = 1;
-            this.btVender.Text = "Finalizar";
-            this.btVender.UseVisualStyleBackColor = true;
-            this.btVender.Click += new System.EventHandler(this.btVender_Click);
-            // 
-            // btCancelar
-            // 
-            this.btCancelar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(2, 3);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(104, 23);
-            this.btCancelar.TabIndex = 0;
-            this.btCancelar.Text = "Limpar Venda";
-            this.btCancelar.UseVisualStyleBackColor = true;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -577,12 +524,66 @@
             this.coLPreco.Name = "coLPreco";
             this.coLPreco.ReadOnly = true;
             // 
+            // pnBtVender
+            // 
+            this.pnBtVender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnBtVender.Controls.Add(this.btVender);
+            this.pnBtVender.Controls.Add(this.btCancelar);
+            this.pnBtVender.Location = new System.Drawing.Point(285, 392);
+            this.pnBtVender.Name = "pnBtVender";
+            this.pnBtVender.Size = new System.Drawing.Size(207, 29);
+            this.pnBtVender.TabIndex = 10;
+            // 
+            // btVender
+            // 
+            this.btVender.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btVender.Location = new System.Drawing.Point(124, 3);
+            this.btVender.Name = "btVender";
+            this.btVender.Size = new System.Drawing.Size(75, 23);
+            this.btVender.TabIndex = 1;
+            this.btVender.Text = "Finalizar";
+            this.btVender.UseVisualStyleBackColor = true;
+            this.btVender.Click += new System.EventHandler(this.btVender_Click);
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(2, 3);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(104, 23);
+            this.btCancelar.TabIndex = 0;
+            this.btCancelar.Text = "Limpar Venda";
+            this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.voltarToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(520, 28);
+            this.menuStrip1.TabIndex = 19;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // voltarToolStripMenuItem
+            // 
+            this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
+            this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.voltarToolStripMenuItem.Text = "Voltar";
+            this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btMenu_Click);
+            // 
             // FormVender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btMenu;
-            this.ClientSize = new System.Drawing.Size(520, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(520, 469);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -600,8 +601,9 @@
             this.pnTotal.PerformLayout();
             this.gpVendas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).EndInit();
-            this.pnMenu.ResumeLayout(false);
             this.pnBtVender.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -611,8 +613,6 @@
         private System.Windows.Forms.Panel pnBtVender;
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button btVender;
-        private System.Windows.Forms.Panel pnMenu;
-        private System.Windows.Forms.Button btMenu;
         private System.Windows.Forms.Panel pnTotal;
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.GroupBox gpVendas;
@@ -649,5 +649,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colUn;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecoUn;
         private System.Windows.Forms.DataGridViewTextBoxColumn coLPreco;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
     }
 }

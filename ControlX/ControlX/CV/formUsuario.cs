@@ -43,12 +43,21 @@ namespace ControlX
                 btDel.Enabled = false;
                 btEdit.Enabled = false;
                 btView.Enabled = false;
+
+                removerToolStripMenuItem.Enabled = false;
+                editarToolStripMenuItem.Enabled = false;
+                detalhesToolStripMenuItem.Enabled = false;
+                
             }
             else
             {
                 btDel.Enabled = true;
                 btEdit.Enabled = true;
                 btView.Enabled = true;
+
+                removerToolStripMenuItem.Enabled = true;
+                editarToolStripMenuItem.Enabled = true;
+                detalhesToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -105,7 +114,7 @@ namespace ControlX
             Fill();
         }
 
-        private void btView_Click(object sender, EventArgs e)
+        private void detalhes()
         {
             IDao db = new DAO.UsuarioDao();
             List<Object> usuarios = db.ListAll();
@@ -162,7 +171,12 @@ namespace ControlX
             form.btCadastrar.Enabled = false;
             form.btCancelar.Text = "Voltar";
             form.ShowDialog(this);
-            Fill();
+        }
+
+
+        private void btView_Click(object sender, EventArgs e)
+        {
+            detalhes();
         }
 
         private void btDel_Click(object sender, EventArgs e)
@@ -199,6 +213,11 @@ namespace ControlX
             {
                 dgvUsuario.Rows.Add(u.Id, u.Nome, u.Cpf, u.DataNasc, u.Cargo);
             }
+        }
+
+        private void dgvUsuario_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            detalhes();
         }
     }
 }

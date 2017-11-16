@@ -152,6 +152,7 @@
             this.AcceptButton = this.btLogar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(331, 134);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

@@ -15,6 +15,8 @@ namespace ControlX
         public formHistoricoCompras()
         {
             InitializeComponent();
+            buttonEnable();
+            ChecaFiltros();
             Fill();
 
         }
@@ -26,9 +28,9 @@ namespace ControlX
                 string status;
 
                 dgvHistCompras.Rows.Clear();
-                foreach (Comprar p in ps)
+                foreach (Comprar c in ps)
                 {
-                   if (p.Status == 0)
+                   if (c.Status == 0)
                    {
                        status = "Pendente";
                    }
@@ -36,7 +38,7 @@ namespace ControlX
                    {
                        status = "Entregue";
                    }
-                   dgvHistCompras.Rows.Add(p.Id, p.Nome_usuario, p.Valor, status);
+                   dgvHistCompras.Rows.Add(c.Id, c.Nome_usuario, c.DataCompra, c.DataEntrega, c.Valor, status);
                 }
             buttonEnable();
         }
@@ -46,23 +48,22 @@ namespace ControlX
 
             if (dgvHistCompras.RowCount == 0)
             {
-                btView.Enabled = false;
+                detalhesToolStripMenuItem.Enabled = false;
             }
             else
             {
-                btView.Enabled = true;
+                detalhesToolStripMenuItem.Enabled = true;
             }
         }
 
-
-        private void btView_Click(object sender, EventArgs e)
+        private void detalhes()
         {
             CV.FormHistoricoComprasView form = new CV.FormHistoricoComprasView();
             //Enviando informacões para os labels e bottons.
             form.txId.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[0].Value.ToString());
             form.txUser.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[1].Value.ToString());
-            form.txValor.Text = Convert.ToDouble(dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[2].Value.ToString()).ToString("C");
-            form.txStatus.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[3].Value.ToString());
+            form.txValor.Text = Convert.ToDouble(dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[4].Value.ToString()).ToString("C");
+            form.txStatus.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[5].Value.ToString());
 
             ComprarDao db = new ComprarDao();
             List<Object> ps = db.ListProdutos(int.Parse(dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[0].Value.ToString()));
@@ -75,10 +76,38 @@ namespace ControlX
 
             form.ShowDialog(this);
         }
+        private void btView_Click(object sender, EventArgs e)
+        {
+            detalhes();
+        }
 
         private void btMenu_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void rbDataEntrega_CheckedChanged(object sender, EventArgs e)
+        {
+            ChecaFiltros();
+        }
+
+        private void ChecaFiltros()
+        {
+            if (rbDataEntrega.Checked)
+            {
+                dtInicio.Enabled = true;
+                txPesquisar.Enabled = false;
+            }
+            else if (rbId.Checked)
+            {
+                dtInicio.Enabled = false;
+                txPesquisar.Enabled = true;
+            }
+        }
+
+        private void dgvHistCompras_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            detalhes();
         }
     }
 }

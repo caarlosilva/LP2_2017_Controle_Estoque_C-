@@ -36,15 +36,16 @@ namespace ControlX
 
             if (dgvHistVendas.RowCount == 0)
             {
-                btView.Enabled = false;
+                detalhesToolStripMenuItem.Enabled = false;
             }
             else
             {
-                btView.Enabled = true;
+                detalhesToolStripMenuItem.Enabled = true;
             }
         }
 
-        private void btView_Click(object sender, EventArgs e)
+
+        private void detalhes()
         {
             FormHistoricoVendasView form = new FormHistoricoVendasView();
             //Enviando informacões para os labels e bottons.
@@ -62,6 +63,21 @@ namespace ControlX
             }
 
             form.ShowDialog(this);
+        }
+
+        private void btView_Click(object sender, EventArgs e)
+        {
+            detalhes();
+        }
+
+        private void voltarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void dgvHistVendas_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            detalhes();
         }
     }
 }
