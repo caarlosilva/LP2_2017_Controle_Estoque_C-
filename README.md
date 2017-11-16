@@ -3,7 +3,7 @@ COMMIT -- >  SYNC -->  PUSH (<-- REPEAT)
 <-------------------------------------------------------------------------------->
 
  -> Crystal Report: http://www.crystalreports.com/crystal-reports-visual-studio/
-      - Digitar o e-mail e selecionar o país;
+      - Digitar o e-mail e selecionar o país, clicar em Free Download;
       - Clicar no botão LARANJA na parte superior da tela e o arquivo será baixado.
 
  -> Crystal Report Essentials Version: 13.0.20.2399
