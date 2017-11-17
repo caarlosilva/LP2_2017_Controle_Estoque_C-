@@ -12,6 +12,7 @@ namespace ControlX
 {
     public partial class FormCompras : Form
     {
+
         public FormCompras()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace ControlX
                 {
                     dgvComprasAguardando.Rows.Add(c.Id, c.DataCompra, c.DataEntrega);
                     i++;
-                    if(DateTime.Compare(c.DataEntrega ,DateTime.Now) <= 0)
+                    if (DateTime.Compare(c.DataEntrega, DateTime.Now) <= 0)
                     {
                         //dgvComprasAguardando.CurrentRow.DefaultCellStyle.ForeColor = Color.Red;
                         dgvComprasAguardando.Rows[i - 1].DefaultCellStyle.ForeColor = Color.Yellow;
@@ -57,7 +58,21 @@ namespace ControlX
 
         private void btFinalizar_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Tem certeza que deseja finalizar esta compra? Seu status será atualizado para 'Entregue'.",
+             "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //Caso clique em sim
+            if (result == DialogResult.Yes)
+            {
+                ComprarDao db = new ComprarDao();
+                List<object> p = db.ListProdutos(int.Parse(dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[0].Value.ToString()));
+                
 
+            }
+            else if (result == DialogResult.No)
+            {
+
+            }
+            FillComprasAguardando();
         }
     }
 }

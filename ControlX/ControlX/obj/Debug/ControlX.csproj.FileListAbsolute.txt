@@ -614,3 +614,4 @@ C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\bin
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\bin\Debug\CrystalDecisions.Shared.dll
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\bin\Debug\CrystalDecisions.Web.dll
 C:\Users\Carlos\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.csproj.ControlX.exe.config

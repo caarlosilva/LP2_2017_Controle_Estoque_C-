@@ -27,19 +27,32 @@ namespace ControlX
 
             string sql = string.Format("INSERT INTO compras(nome_usuario, valor, status, dataCompra, dataEntrega) values('{0}',{1},{2},'{3}','{4}')", c.Nome_usuario, valor, status, dataCompraMySql, dataEntregaMySql);
             db.ExecuteNonQuery(sql);
-            for(int i = 0; i < c.Itens.Count; i++)
+            for (int i = 0; i < c.Itens.Count; i++)
             {
-                sql = string.Format("INSERT INTO produtos_compra(idProduto, idCompra) values ({0},{1})", c.Itens[i].Id, c.Id);
+                string preco = Convert.ToString(c.Itens[i].Preco);
+                if (preco.ToString().Contains(","))
+                {
+                    preco = preco.Replace(",", ".");
+                }
+
+                sql = string.Format("INSERT INTO produtos_compra(idProduto, idCompra, qtdProduto, precoUnProduto) values ({0},{1})", c.Itens[i].Id, c.Id, c.Itens[i].Qntd, preco);
                 db.ExecuteNonQuery(sql);
             }
         }
 
         public void Atualizar(object o)
         {
-            throw new NotImplementedException(); 
-            //IMPOSSIVEL ATUALIZAR UMA COMPRA APÓS AGENDADA
-            //ATUALIZAR SERÁ UTILIZADO APENAS PARA MUDAR O STATUS DA COMPRA DE NÂO ENTREGUE PARA FINALIZADO
+            Comprar c = (Comprar)o;
+            string qry = string.Format("UPDATE compras SET status = 1 WHERE id = {0}", c.Id);
+            db.ExecuteQuery(qry);
+
+            for (int i = 0; i < c.Itens.Count; i++)
+            {
+                string sql = string.Format("UPDATE produtos SET qntd = {0} WHERE id = {1}", c.Itens[i].Qntd, c.Itens[i].Id);
+                db.ExecuteNonQuery(sql);
+            }
         }
+
 
         public int GetId()
         {
@@ -98,7 +111,7 @@ namespace ControlX
         public List<object> ListProdutos(int id)
         {
 
-            string qry = string.Format("SELECT pc.idCompra, pc.idProduto, p.nome AS nome_prod, p.preco AS preco_prod, p.qntd AS qtd_prod, p.tipoUn AS un_prod, f.nome AS nome_forn FROM (((compras c JOIN produtos_compra pc ON c.id = pc.idCompra) JOIN produtos p ON pc.idProduto = p.id) JOIN fornecedor f ON f.id = p.idFornecedor) WHERE c.id = {0}", id);
+            string qry = string.Format("SELECT pc.idCompra, pc.idProduto, p.nome AS nome_prod, pc.precoUnProduto AS preco_prod, pc.qtdProduto AS qtd_prod, p.tipoUn AS un_prod, f.nome AS nome_forn FROM (((compras c JOIN produtos_compra pc ON c.id = pc.idCompra) JOIN produtos p ON pc.idProduto = p.id) JOIN fornecedor f ON f.id = p.idFornecedor) WHERE c.id = {0}", id);
             DataSet ds = db.ExecuteQuery(qry);
 
             List<object> prods = new List<object>();
