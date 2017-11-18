@@ -27,6 +27,7 @@ namespace ControlX
 
             string sql = string.Format("INSERT INTO compras(nome_usuario, valor, status, dataCompra, dataEntrega) values('{0}',{1},{2},'{3}','{4}')", c.Nome_usuario, valor, status, dataCompraMySql, dataEntregaMySql);
             db.ExecuteNonQuery(sql);
+
             for (int i = 0; i < c.Itens.Count; i++)
             {
                 string preco = Convert.ToString(c.Itens[i].Preco);
@@ -35,7 +36,7 @@ namespace ControlX
                     preco = preco.Replace(",", ".");
                 }
 
-                sql = string.Format("INSERT INTO produtos_compra(idProduto, idCompra, qtdProduto, precoUnProduto) values ({0},{1})", c.Itens[i].Id, c.Id, c.Itens[i].Qntd, preco);
+                sql = string.Format("INSERT INTO produtos_compra(idProduto, idCompra, qtdProduto, precoUnProduto) values ({0}, {1}, {2}, {3})", c.Itens[i].Id, c.Id, c.Itens[i].Qntd, preco);
                 db.ExecuteNonQuery(sql);
             }
         }
@@ -48,7 +49,7 @@ namespace ControlX
 
             for (int i = 0; i < c.Itens.Count; i++)
             {
-                string sql = string.Format("UPDATE produtos SET qntd = {0} WHERE id = {1}", c.Itens[i].Qntd, c.Itens[i].Id);
+                string sql = string.Format("UPDATE produtos SET qntd = qntd + {0} WHERE id = {1}", c.Itens[i].Qntd, c.Itens[i].Id);
                 db.ExecuteNonQuery(sql);
             }
         }

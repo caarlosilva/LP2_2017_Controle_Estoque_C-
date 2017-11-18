@@ -60,12 +60,21 @@ namespace ControlX
         {
             DialogResult result = MessageBox.Show("Tem certeza que deseja finalizar esta compra? Seu status será atualizado para 'Entregue'.",
              "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
             //Caso clique em sim
             if (result == DialogResult.Yes)
             {
                 ComprarDao db = new ComprarDao();
-                List<object> p = db.ListProdutos(int.Parse(dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[0].Value.ToString()));
-                
+                List<object> produtos = db.ListProdutos(int.Parse(dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[0].Value.ToString()));
+                Comprar c = new Comprar();
+                c.Id = int.Parse(dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[0].Value.ToString());
+
+                    foreach (Produto p in produtos)
+                    {
+                        c.Itens.Add(p);
+                    }
+
+                db.Atualizar(c);
 
             }
             else if (result == DialogResult.No)

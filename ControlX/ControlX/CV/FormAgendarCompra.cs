@@ -204,7 +204,7 @@ namespace ControlX
                 compra.Id = cd.GetId();
                 compra.Nome_usuario = login.txUsuario.Text.ToString();
                 compra.Status = 0; //Compra não finalizada, produtos agendados !
-                compra.Valor = double.Parse(lbValorShow.Text);
+                compra.Valor = double.Parse(lbValorShow.Text.ToString());
                 compra.DataCompra = dtCompra.Value;
                 compra.DataEntrega = dtEntrega.Value;
                 MessageBox.Show("O Pedido de compra de número " + compra.Id + " foi agendado com sucesso !\nVerifique em 'Compras Agendadas' e finalize a compra quando ela for entregue!", "Compra Agendada com Sucesso!");
