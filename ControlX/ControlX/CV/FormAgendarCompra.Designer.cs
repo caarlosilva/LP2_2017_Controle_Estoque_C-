@@ -45,6 +45,7 @@
             this.lbQntdEstoqueShow = new System.Windows.Forms.Label();
             this.lbQntdCompra = new System.Windows.Forms.Label();
             this.pnBtCad = new System.Windows.Forms.Panel();
+            this.btPesquisar = new System.Windows.Forms.Button();
             this.btLimpar = new System.Windows.Forms.Button();
             this.btAdd = new System.Windows.Forms.Button();
             this.txId = new System.Windows.Forms.TextBox();
@@ -63,6 +64,7 @@
             this.coLPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnListaCompra = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbDetalhesCompra = new System.Windows.Forms.GroupBox();
             this.lbNumCompra = new System.Windows.Forms.Label();
             this.lbValorShow = new System.Windows.Forms.Label();
@@ -73,8 +75,6 @@
             this.lbDataEntrega = new System.Windows.Forms.Label();
             this.dtEntrega = new System.Windows.Forms.DateTimePicker();
             this.lbDataCompra = new System.Windows.Forms.Label();
-            this.btPesquisar = new System.Windows.Forms.Button();
-            this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnMenu.SuspendLayout();
             this.pnCabecalho.SuspendLayout();
             this.pnBtCad.SuspendLayout();
@@ -144,7 +144,8 @@
             // 
             // txPrecoCompra
             // 
-            this.txPrecoCompra.Location = new System.Drawing.Point(62, 92);
+            this.txPrecoCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txPrecoCompra.Location = new System.Drawing.Point(84, 92);
             this.txPrecoCompra.Name = "txPrecoCompra";
             this.txPrecoCompra.Size = new System.Drawing.Size(111, 21);
             this.txPrecoCompra.TabIndex = 34;
@@ -155,9 +156,9 @@
             // 
             this.lbPrecoCompra.Location = new System.Drawing.Point(4, 86);
             this.lbPrecoCompra.Name = "lbPrecoCompra";
-            this.lbPrecoCompra.Size = new System.Drawing.Size(64, 34);
+            this.lbPrecoCompra.Size = new System.Drawing.Size(84, 34);
             this.lbPrecoCompra.TabIndex = 33;
-            this.lbPrecoCompra.Text = "Preço Compra:";
+            this.lbPrecoCompra.Text = "Preço Un. do     Produto:";
             // 
             // txQntdCompra
             // 
@@ -213,6 +214,25 @@
             this.pnBtCad.Size = new System.Drawing.Size(230, 28);
             this.pnBtCad.TabIndex = 28;
             // 
+            // btPesquisar
+            // 
+            this.btPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.btPesquisar.BackgroundImage = global::ControlX.Properties.Resources.search;
+            this.btPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btPesquisar.Cursor = System.Windows.Forms.Cursors.Help;
+            this.btPesquisar.FlatAppearance.BorderSize = 0;
+            this.btPesquisar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPesquisar.Location = new System.Drawing.Point(8, 3);
+            this.btPesquisar.Name = "btPesquisar";
+            this.btPesquisar.Size = new System.Drawing.Size(23, 22);
+            this.btPesquisar.TabIndex = 2;
+            this.btPesquisar.UseVisualStyleBackColor = false;
+            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
+            // 
             // btLimpar
             // 
             this.btLimpar.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -247,7 +267,7 @@
             this.txId.Name = "txId";
             this.txId.Size = new System.Drawing.Size(66, 21);
             this.txId.TabIndex = 1;
-            this.txId.TextChanged += new System.EventHandler(this.txQntdCompra_TextChanged);
+            this.txId.TextChanged += new System.EventHandler(this.txId_TextChanged);
             // 
             // lbId
             // 
@@ -430,6 +450,14 @@
             this.menuStrip1.TabIndex = 20;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // voltarToolStripMenuItem
+            // 
+            this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
+            this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.voltarToolStripMenuItem.Text = "Voltar";
+            this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btMenu_Click);
+            // 
             // gbDetalhesCompra
             // 
             this.gbDetalhesCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -542,33 +570,6 @@
             this.lbDataCompra.Size = new System.Drawing.Size(115, 13);
             this.lbDataCompra.TabIndex = 2;
             this.lbDataCompra.Text = "Data da Compra:";
-            // 
-            // btPesquisar
-            // 
-            this.btPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.btPesquisar.BackgroundImage = global::ControlX.Properties.Resources.search;
-            this.btPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btPesquisar.Cursor = System.Windows.Forms.Cursors.Help;
-            this.btPesquisar.FlatAppearance.BorderSize = 0;
-            this.btPesquisar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPesquisar.Location = new System.Drawing.Point(8, 3);
-            this.btPesquisar.Name = "btPesquisar";
-            this.btPesquisar.Size = new System.Drawing.Size(23, 22);
-            this.btPesquisar.TabIndex = 2;
-            this.btPesquisar.UseVisualStyleBackColor = false;
-            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
-            // 
-            // voltarToolStripMenuItem
-            // 
-            this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
-            this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
-            this.voltarToolStripMenuItem.Text = "Voltar";
-            this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btMenu_Click);
             // 
             // FormAgendarCompra
             // 

@@ -98,24 +98,28 @@
             // txCNPJ
             // 
             resources.ApplyResources(this.txCNPJ, "txCNPJ");
+            this.txCNPJ.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txCNPJ.Name = "txCNPJ";
             this.txCNPJ.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txTel2
             // 
             resources.ApplyResources(this.txTel2, "txTel2");
+            this.txTel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txTel2.Name = "txTel2";
             this.txTel2.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txTel1
             // 
             resources.ApplyResources(this.txTel1, "txTel1");
+            this.txTel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txTel1.Name = "txTel1";
             this.txTel1.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txCEP
             // 
             resources.ApplyResources(this.txCEP, "txCEP");
+            this.txCEP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txCEP.Name = "txCEP";
             this.txCEP.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             this.txCEP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txCEP_KeyPress);
@@ -124,36 +128,42 @@
             // txEstado
             // 
             resources.ApplyResources(this.txEstado, "txEstado");
+            this.txEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txEstado.Name = "txEstado";
             this.txEstado.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txCidade
             // 
             resources.ApplyResources(this.txCidade, "txCidade");
+            this.txCidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txCidade.Name = "txCidade";
             this.txCidade.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txBairro
             // 
             resources.ApplyResources(this.txBairro, "txBairro");
+            this.txBairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txBairro.Name = "txBairro";
             this.txBairro.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txCompl
             // 
             resources.ApplyResources(this.txCompl, "txCompl");
+            this.txCompl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txCompl.Name = "txCompl";
             this.txCompl.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txRua
             // 
             resources.ApplyResources(this.txRua, "txRua");
+            this.txRua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txRua.Name = "txRua";
             this.txRua.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // txNum
             // 
             resources.ApplyResources(this.txNum, "txNum");
+            this.txNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txNum.Name = "txNum";
             this.txNum.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
@@ -205,7 +215,7 @@
             // lbIdForn
             // 
             resources.ApplyResources(this.lbIdForn, "lbIdForn");
-            this.lbIdForn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbIdForn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbIdForn.Name = "lbIdForn";
             // 
             // lbId
@@ -222,6 +232,7 @@
             // 
             resources.ApplyResources(this.txNome, "txNome");
             this.txNome.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txNome.Name = "txNome";
             this.txNome.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 

@@ -47,9 +47,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.detalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnFiltro.SuspendLayout();
             this.pnBtns.SuspendLayout();
             this.gbFornecedores.SuspendLayout();
@@ -72,6 +72,7 @@
             // 
             this.txPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txPesquisar.Location = new System.Drawing.Point(47, 6);
             this.txPesquisar.Name = "txPesquisar";
             this.txPesquisar.Size = new System.Drawing.Size(635, 21);
@@ -250,6 +251,14 @@
             this.adicionarToolStripMenuItem.Text = "Adicionar";
             this.adicionarToolStripMenuItem.Click += new System.EventHandler(this.btAdicionar_Click);
             // 
+            // detalhesToolStripMenuItem
+            // 
+            this.detalhesToolStripMenuItem.Image = global::ControlX.Properties.Resources.details_icon;
+            this.detalhesToolStripMenuItem.Name = "detalhesToolStripMenuItem";
+            this.detalhesToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.detalhesToolStripMenuItem.Text = "Detalhes";
+            this.detalhesToolStripMenuItem.Click += new System.EventHandler(this.btView_Click);
+            // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Image = global::ControlX.Properties.Resources.edit_icon;
@@ -265,14 +274,6 @@
             this.removerToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.removerToolStripMenuItem.Text = "Remover";
             this.removerToolStripMenuItem.Click += new System.EventHandler(this.btDel_Click);
-            // 
-            // detalhesToolStripMenuItem
-            // 
-            this.detalhesToolStripMenuItem.Image = global::ControlX.Properties.Resources.details_icon;
-            this.detalhesToolStripMenuItem.Name = "detalhesToolStripMenuItem";
-            this.detalhesToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
-            this.detalhesToolStripMenuItem.Text = "Detalhes";
-            this.detalhesToolStripMenuItem.Click += new System.EventHandler(this.btView_Click);
             // 
             // formFornecedores
             // 

@@ -172,6 +172,7 @@
             // 
             // txCPF
             // 
+            this.txCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txCPF.Location = new System.Drawing.Point(54, 42);
             this.txCPF.Mask = "000\\.000\\.000-00";
             this.txCPF.Name = "txCPF";
@@ -181,6 +182,7 @@
             // 
             // txTel2
             // 
+            this.txTel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txTel2.Location = new System.Drawing.Point(123, 105);
             this.txTel2.Mask = "(00) 00000-0009";
             this.txTel2.Name = "txTel2";
@@ -189,6 +191,7 @@
             // 
             // txTel1
             // 
+            this.txTel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txTel1.Location = new System.Drawing.Point(66, 73);
             this.txTel1.Mask = "(00) 00000-0009";
             this.txTel1.Name = "txTel1";
@@ -198,6 +201,7 @@
             // 
             // txCEP
             // 
+            this.txCEP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txCEP.Location = new System.Drawing.Point(54, 140);
             this.txCEP.Mask = "00000-000";
             this.txCEP.Name = "txCEP";
@@ -208,6 +212,7 @@
             // 
             // txEstado
             // 
+            this.txEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txEstado.Location = new System.Drawing.Point(316, 261);
             this.txEstado.Name = "txEstado";
             this.txEstado.Size = new System.Drawing.Size(82, 21);
@@ -216,6 +221,7 @@
             // 
             // txCidade
             // 
+            this.txCidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txCidade.Location = new System.Drawing.Point(54, 261);
             this.txCidade.Name = "txCidade";
             this.txCidade.Size = new System.Drawing.Size(200, 21);
@@ -224,6 +230,7 @@
             // 
             // txBairro
             // 
+            this.txBairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txBairro.Location = new System.Drawing.Point(54, 231);
             this.txBairro.Name = "txBairro";
             this.txBairro.Size = new System.Drawing.Size(344, 21);
@@ -232,6 +239,7 @@
             // 
             // txCompl
             // 
+            this.txCompl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txCompl.Location = new System.Drawing.Point(98, 199);
             this.txCompl.Name = "txCompl";
             this.txCompl.Size = new System.Drawing.Size(300, 21);
@@ -239,6 +247,7 @@
             // 
             // txRua
             // 
+            this.txRua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txRua.Location = new System.Drawing.Point(54, 172);
             this.txRua.Name = "txRua";
             this.txRua.Size = new System.Drawing.Size(344, 21);
@@ -247,6 +256,7 @@
             // 
             // txNum
             // 
+            this.txNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txNum.Location = new System.Drawing.Point(185, 140);
             this.txNum.Name = "txNum";
             this.txNum.Size = new System.Drawing.Size(70, 21);
@@ -345,7 +355,7 @@
             // 
             // lbIdUser
             // 
-            this.lbIdUser.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbIdUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbIdUser.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.lbIdUser.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbIdUser.Location = new System.Drawing.Point(336, 42);
@@ -378,6 +388,7 @@
             // txNome
             // 
             this.txNome.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txNome.Location = new System.Drawing.Point(54, 11);
             this.txNome.Name = "txNome";
             this.txNome.Size = new System.Drawing.Size(344, 21);
@@ -464,6 +475,7 @@
             // 
             // txSenha
             // 
+            this.txSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txSenha.Location = new System.Drawing.Point(54, 59);
             this.txSenha.Name = "txSenha";
             this.txSenha.Size = new System.Drawing.Size(322, 21);
@@ -483,6 +495,7 @@
             // txLogin
             // 
             this.txLogin.BackColor = System.Drawing.SystemColors.Window;
+            this.txLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txLogin.Location = new System.Drawing.Point(54, 30);
             this.txLogin.Name = "txLogin";
             this.txLogin.Size = new System.Drawing.Size(323, 21);

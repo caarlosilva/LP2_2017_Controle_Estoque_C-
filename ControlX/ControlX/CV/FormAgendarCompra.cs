@@ -228,5 +228,21 @@ namespace ControlX
         {
 
         }
+
+        private void txId_TextChanged(object sender, EventArgs e)
+        {
+
+            foreach (Produto p in ps)
+                if (txId.Text.Trim() == Convert.ToString(p.Id))
+                {
+                    txId.Text = Convert.ToString(p.Id);
+                    txNome.Text = p.Nome;
+                    lbPrecoShow.Text = Convert.ToString(p.Preco);
+                    lbQntdEstoqueShow.Text = Convert.ToString(p.Qntd) + " " + p.TipoUn;
+                    qntdEstoque = p.Qntd;
+                }
+            BtComplete();
+
+        }
     }
 }

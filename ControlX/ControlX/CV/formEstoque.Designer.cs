@@ -46,19 +46,19 @@
             this.colUn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbEstoque = new System.Windows.Forms.GroupBox();
-            this.btAdd = new System.Windows.Forms.Button();
-            this.btDel = new System.Windows.Forms.Button();
-            this.btEdit = new System.Windows.Forms.Button();
             this.pnButtons = new System.Windows.Forms.Panel();
             this.btCategoria = new System.Windows.Forms.Button();
             this.btView = new System.Windows.Forms.Button();
+            this.btAdd = new System.Windows.Forms.Button();
+            this.btEdit = new System.Windows.Forms.Button();
+            this.btDel = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
             this.gbEstoque.SuspendLayout();
@@ -83,6 +83,7 @@
             this.txPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txPesquisar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txPesquisar.Location = new System.Drawing.Point(47, 14);
             this.txPesquisar.Name = "txPesquisar";
@@ -240,42 +241,6 @@
             this.gbEstoque.TabStop = false;
             this.gbEstoque.Text = "Estoque";
             // 
-            // btAdd
-            // 
-            this.btAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btAdd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Location = new System.Drawing.Point(337, 5);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(75, 23);
-            this.btAdd.TabIndex = 0;
-            this.btAdd.Text = "Adicionar";
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
-            // 
-            // btDel
-            // 
-            this.btDel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btDel.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDel.Location = new System.Drawing.Point(94, 5);
-            this.btDel.Name = "btDel";
-            this.btDel.Size = new System.Drawing.Size(75, 23);
-            this.btDel.TabIndex = 3;
-            this.btDel.Text = "Remover";
-            this.btDel.UseVisualStyleBackColor = true;
-            this.btDel.Click += new System.EventHandler(this.btDel_Click);
-            // 
-            // btEdit
-            // 
-            this.btEdit.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btEdit.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEdit.Location = new System.Drawing.Point(256, 5);
-            this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(75, 23);
-            this.btEdit.TabIndex = 1;
-            this.btEdit.Text = "Editar";
-            this.btEdit.UseVisualStyleBackColor = true;
-            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
-            // 
             // pnButtons
             // 
             this.pnButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -314,6 +279,42 @@
             this.btView.UseVisualStyleBackColor = true;
             this.btView.Click += new System.EventHandler(this.btView_Click);
             // 
+            // btAdd
+            // 
+            this.btAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btAdd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Location = new System.Drawing.Point(337, 5);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(75, 23);
+            this.btAdd.TabIndex = 0;
+            this.btAdd.Text = "Adicionar";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
+            // btEdit
+            // 
+            this.btEdit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btEdit.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEdit.Location = new System.Drawing.Point(256, 5);
+            this.btEdit.Name = "btEdit";
+            this.btEdit.Size = new System.Drawing.Size(75, 23);
+            this.btEdit.TabIndex = 1;
+            this.btEdit.Text = "Editar";
+            this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
+            // 
+            // btDel
+            // 
+            this.btDel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btDel.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDel.Location = new System.Drawing.Point(94, 5);
+            this.btDel.Name = "btDel";
+            this.btDel.Size = new System.Drawing.Size(75, 23);
+            this.btDel.TabIndex = 3;
+            this.btDel.Text = "Remover";
+            this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.AutoSize = false;
@@ -339,6 +340,14 @@
             this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btMenuPrincipal_Click);
+            // 
+            // categoriasToolStripMenuItem
+            // 
+            this.categoriasToolStripMenuItem.Image = global::ControlX.Properties.Resources.category_icon;
+            this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
+            this.categoriasToolStripMenuItem.Text = "Categorias";
+            this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.btCategoria_Click);
             // 
             // adicionarToolStripMenuItem
             // 
@@ -371,14 +380,6 @@
             this.removerToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.removerToolStripMenuItem.Text = "Remover";
             this.removerToolStripMenuItem.Click += new System.EventHandler(this.btDel_Click);
-            // 
-            // categoriasToolStripMenuItem
-            // 
-            this.categoriasToolStripMenuItem.Image = global::ControlX.Properties.Resources.category_icon;
-            this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
-            this.categoriasToolStripMenuItem.Text = "Categorias";
-            this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.btCategoria_Click);
             // 
             // formEstoque
             // 

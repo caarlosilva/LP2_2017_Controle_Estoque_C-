@@ -89,6 +89,7 @@
             // 
             // txNome
             // 
+            this.txNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txNome.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txNome.Location = new System.Drawing.Point(152, 19);
             this.txNome.Name = "txNome";
@@ -147,6 +148,7 @@
             // 
             // txEstoqueMin
             // 
+            this.txEstoqueMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txEstoqueMin.Location = new System.Drawing.Point(234, 95);
             this.txEstoqueMin.Name = "txEstoqueMin";
             this.txEstoqueMin.Size = new System.Drawing.Size(55, 21);
@@ -206,6 +208,7 @@
             // 
             // txPreco
             // 
+            this.txPreco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txPreco.Location = new System.Drawing.Point(53, 58);
             this.txPreco.Name = "txPreco";
             this.txPreco.Size = new System.Drawing.Size(116, 21);
@@ -266,6 +269,7 @@
             // 
             // txQntd
             // 
+            this.txQntd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txQntd.Location = new System.Drawing.Point(53, 95);
             this.txQntd.Name = "txQntd";
             this.txQntd.Size = new System.Drawing.Size(116, 21);
@@ -275,7 +279,7 @@
             // 
             // lbIdProduto
             // 
-            this.lbIdProduto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbIdProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbIdProduto.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIdProduto.Location = new System.Drawing.Point(37, 19);
             this.lbIdProduto.Name = "lbIdProduto";

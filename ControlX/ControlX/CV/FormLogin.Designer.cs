@@ -89,6 +89,7 @@
             // 
             // txUsuario
             // 
+            this.txUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txUsuario.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txUsuario.Location = new System.Drawing.Point(79, 10);
             this.txUsuario.Name = "txUsuario";
@@ -98,6 +99,7 @@
             // 
             // txSenha
             // 
+            this.txSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txSenha.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txSenha.Location = new System.Drawing.Point(79, 43);
             this.txSenha.Name = "txSenha";

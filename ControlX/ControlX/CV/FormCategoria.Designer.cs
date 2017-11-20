@@ -197,6 +197,7 @@
             this.txPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txPesquisar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txPesquisar.Location = new System.Drawing.Point(47, 10);
             this.txPesquisar.Name = "txPesquisar";

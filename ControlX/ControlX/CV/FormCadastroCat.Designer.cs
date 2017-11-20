@@ -63,6 +63,7 @@
             // 
             // txNome
             // 
+            this.txNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txNome.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txNome.Location = new System.Drawing.Point(52, 19);
             this.txNome.Name = "txNome";
@@ -105,7 +106,7 @@
             // 
             // lbIdCategoria
             // 
-            this.lbIdCategoria.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbIdCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbIdCategoria.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIdCategoria.Location = new System.Drawing.Point(435, 19);
             this.lbIdCategoria.Name = "lbIdCategoria";

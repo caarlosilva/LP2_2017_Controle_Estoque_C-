@@ -60,6 +60,7 @@
             // 
             // txValor
             // 
+            this.txValor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txValor.Location = new System.Drawing.Point(367, 46);
             this.txValor.Name = "txValor";
             this.txValor.ReadOnly = true;
@@ -70,6 +71,7 @@
             // 
             // txStatus
             // 
+            this.txStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txStatus.Location = new System.Drawing.Point(532, 46);
             this.txStatus.Name = "txStatus";
             this.txStatus.ReadOnly = true;
@@ -79,6 +81,7 @@
             // 
             // txId
             // 
+            this.txId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txId.Location = new System.Drawing.Point(28, 46);
             this.txId.Name = "txId";
             this.txId.ReadOnly = true;
@@ -106,6 +109,7 @@
             // 
             // txUser
             // 
+            this.txUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txUser.Location = new System.Drawing.Point(194, 46);
             this.txUser.Name = "txUser";
             this.txUser.ReadOnly = true;

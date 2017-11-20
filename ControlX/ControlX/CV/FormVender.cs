@@ -41,7 +41,7 @@ namespace ControlX
                 btCancelar.Enabled = true;
                 txValorPago.Enabled = true;
             }
-            if (txId.Text == "" || txNome.Text == "" || txQntdVenda.Text == "")
+            if (txId.Text.Trim() == "" || txNome.Text.Trim() == "" || txQntdVenda.Text.Trim() == "")
                 btAdd.Enabled = false;
             else
                 btAdd.Enabled = true;
@@ -274,6 +274,15 @@ namespace ControlX
         private void txId_TextChanged(object sender, EventArgs e)
         {
             BtComplete();
+            foreach (Produto p in ps)
+                if (txId.Text.Trim() == Convert.ToString(p.Id))
+                {
+                    txNome.Text = p.Nome;
+                    txId.Text = Convert.ToString(p.Id);
+                    lbPrecoShow.Text = Convert.ToString(p.Preco);
+                    lbQntdEstoqueShow.Text = Convert.ToString(p.Qntd) + " " + p.TipoUn;                    
+                    qntdEstoque = p.Qntd;
+                }
         }
     }
 }

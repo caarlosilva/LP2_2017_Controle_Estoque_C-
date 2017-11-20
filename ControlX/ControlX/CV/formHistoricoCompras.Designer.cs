@@ -35,6 +35,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formHistoricoCompras));
             this.gbEstoque = new System.Windows.Forms.GroupBox();
             this.dgvHistCompras = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDataCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDataEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rbDataEntrega = new System.Windows.Forms.RadioButton();
             this.rbId = new System.Windows.Forms.RadioButton();
             this.pnFiltros = new System.Windows.Forms.Panel();
@@ -47,12 +53,6 @@
             this.dtFim = new System.Windows.Forms.DateTimePicker();
             this.dtInicio = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDataCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDataEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbEstoque.SuspendLayout();
@@ -100,6 +100,66 @@
             this.dgvHistCompras.Size = new System.Drawing.Size(795, 360);
             this.dgvHistCompras.TabIndex = 3;
             this.dgvHistCompras.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHistCompras_CellMouseDoubleClick);
+            // 
+            // colId
+            // 
+            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colId.FillWeight = 15F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.ToolTipText = "Numero de identificação gerado no cadastro";
+            // 
+            // colUser
+            // 
+            this.colUser.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colUser.FillWeight = 40F;
+            this.colUser.HeaderText = "Usuario";
+            this.colUser.Name = "colUser";
+            this.colUser.ReadOnly = true;
+            // 
+            // colDataCompra
+            // 
+            this.colDataCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.colDataCompra.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colDataCompra.FillWeight = 30F;
+            this.colDataCompra.HeaderText = "Data da Compra";
+            this.colDataCompra.Name = "colDataCompra";
+            this.colDataCompra.ReadOnly = true;
+            // 
+            // colDataEntrega
+            // 
+            this.colDataEntrega.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colDataEntrega.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colDataEntrega.FillWeight = 30F;
+            this.colDataEntrega.HeaderText = "Data de Entrega";
+            this.colDataEntrega.Name = "colDataEntrega";
+            this.colDataEntrega.ReadOnly = true;
+            // 
+            // colTotal
+            // 
+            this.colTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.colTotal.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colTotal.FillWeight = 25F;
+            this.colTotal.HeaderText = "Total";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.ReadOnly = true;
+            // 
+            // colStatus
+            // 
+            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.NullValue = null;
+            this.colStatus.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colStatus.FillWeight = 15F;
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
             // 
             // rbDataEntrega
             // 
@@ -153,6 +213,7 @@
             this.txPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txPesquisar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txPesquisar.Location = new System.Drawing.Point(40, 14);
             this.txPesquisar.Name = "txPesquisar";
@@ -232,66 +293,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(801, 28);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // colId
-            // 
-            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colId.FillWeight = 15F;
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.ToolTipText = "Numero de identificação gerado no cadastro";
-            // 
-            // colUser
-            // 
-            this.colUser.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colUser.FillWeight = 40F;
-            this.colUser.HeaderText = "Usuario";
-            this.colUser.Name = "colUser";
-            this.colUser.ReadOnly = true;
-            // 
-            // colDataCompra
-            // 
-            this.colDataCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.colDataCompra.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colDataCompra.FillWeight = 30F;
-            this.colDataCompra.HeaderText = "Data da Compra";
-            this.colDataCompra.Name = "colDataCompra";
-            this.colDataCompra.ReadOnly = true;
-            // 
-            // colDataEntrega
-            // 
-            this.colDataEntrega.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colDataEntrega.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colDataEntrega.FillWeight = 30F;
-            this.colDataEntrega.HeaderText = "Data de Entrega";
-            this.colDataEntrega.Name = "colDataEntrega";
-            this.colDataEntrega.ReadOnly = true;
-            // 
-            // colTotal
-            // 
-            this.colTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colTotal.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colTotal.FillWeight = 25F;
-            this.colTotal.HeaderText = "Total";
-            this.colTotal.Name = "colTotal";
-            this.colTotal.ReadOnly = true;
-            // 
-            // colStatus
-            // 
-            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.NullValue = null;
-            this.colStatus.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colStatus.FillWeight = 15F;
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
             // 
             // voltarToolStripMenuItem
             // 

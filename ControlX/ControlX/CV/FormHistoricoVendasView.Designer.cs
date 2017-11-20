@@ -56,6 +56,7 @@
             // 
             // txValor
             // 
+            this.txValor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txValor.Location = new System.Drawing.Point(371, 33);
             this.txValor.Name = "txValor";
             this.txValor.ReadOnly = true;
@@ -66,6 +67,7 @@
             // 
             // txId
             // 
+            this.txId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txId.Location = new System.Drawing.Point(32, 33);
             this.txId.Name = "txId";
             this.txId.ReadOnly = true;
@@ -77,6 +79,7 @@
             // 
             this.dateCompra.Enabled = false;
             this.dateCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateCompra.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dateCompra.Location = new System.Drawing.Point(536, 33);
             this.dateCompra.Name = "dateCompra";
             this.dateCompra.Size = new System.Drawing.Size(98, 21);
@@ -84,6 +87,7 @@
             // 
             // txUser
             // 
+            this.txUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txUser.Location = new System.Drawing.Point(199, 33);
             this.txUser.Name = "txUser";
             this.txUser.ReadOnly = true;

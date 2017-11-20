@@ -41,22 +41,22 @@
             this.colDtNasc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbUsuarios = new System.Windows.Forms.GroupBox();
-            this.pnBtns = new System.Windows.Forms.Panel();
-            this.btDel = new System.Windows.Forms.Button();
-            this.btEdit = new System.Windows.Forms.Button();
-            this.btView = new System.Windows.Forms.Button();
-            this.btAdd = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btAdd = new System.Windows.Forms.Button();
+            this.btView = new System.Windows.Forms.Button();
+            this.btEdit = new System.Windows.Forms.Button();
+            this.btDel = new System.Windows.Forms.Button();
+            this.pnBtns = new System.Windows.Forms.Panel();
             this.pnFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.gbUsuarios.SuspendLayout();
-            this.pnBtns.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.pnBtns.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnFiltro
@@ -74,6 +74,7 @@
             // 
             this.txPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txPesquisar.Location = new System.Drawing.Point(55, 6);
             this.txPesquisar.Name = "txPesquisar";
             this.txPesquisar.Size = new System.Drawing.Size(603, 21);
@@ -176,63 +177,6 @@
             this.gbUsuarios.TabStop = false;
             this.gbUsuarios.Text = "Usuários";
             // 
-            // pnBtns
-            // 
-            this.pnBtns.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnBtns.Controls.Add(this.btDel);
-            this.pnBtns.Controls.Add(this.btEdit);
-            this.pnBtns.Controls.Add(this.btView);
-            this.pnBtns.Controls.Add(this.btAdd);
-            this.pnBtns.Location = new System.Drawing.Point(261, 303);
-            this.pnBtns.Name = "pnBtns";
-            this.pnBtns.Size = new System.Drawing.Size(397, 29);
-            this.pnBtns.TabIndex = 7;
-            this.pnBtns.Visible = false;
-            // 
-            // btDel
-            // 
-            this.btDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btDel.Location = new System.Drawing.Point(21, 3);
-            this.btDel.Name = "btDel";
-            this.btDel.Size = new System.Drawing.Size(87, 23);
-            this.btDel.TabIndex = 3;
-            this.btDel.Text = "Remover";
-            this.btDel.UseVisualStyleBackColor = true;
-            this.btDel.Click += new System.EventHandler(this.btDel_Click);
-            // 
-            // btEdit
-            // 
-            this.btEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btEdit.Location = new System.Drawing.Point(210, 3);
-            this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(87, 23);
-            this.btEdit.TabIndex = 1;
-            this.btEdit.Text = "Editar";
-            this.btEdit.UseVisualStyleBackColor = true;
-            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
-            // 
-            // btView
-            // 
-            this.btView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btView.Location = new System.Drawing.Point(115, 3);
-            this.btView.Name = "btView";
-            this.btView.Size = new System.Drawing.Size(87, 23);
-            this.btView.TabIndex = 2;
-            this.btView.Text = "Visualizar";
-            this.btView.UseVisualStyleBackColor = true;
-            this.btView.Click += new System.EventHandler(this.btView_Click);
-            // 
-            // btAdd
-            // 
-            this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btAdd.Location = new System.Drawing.Point(304, 3);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(87, 23);
-            this.btAdd.TabIndex = 0;
-            this.btAdd.Text = "Adicionar";
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.AutoSize = false;
@@ -290,6 +234,63 @@
             this.removerToolStripMenuItem.Text = "Remover";
             this.removerToolStripMenuItem.Click += new System.EventHandler(this.btDel_Click);
             // 
+            // btAdd
+            // 
+            this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btAdd.Location = new System.Drawing.Point(304, 3);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(87, 23);
+            this.btAdd.TabIndex = 0;
+            this.btAdd.Text = "Adicionar";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
+            // btView
+            // 
+            this.btView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btView.Location = new System.Drawing.Point(115, 3);
+            this.btView.Name = "btView";
+            this.btView.Size = new System.Drawing.Size(87, 23);
+            this.btView.TabIndex = 2;
+            this.btView.Text = "Visualizar";
+            this.btView.UseVisualStyleBackColor = true;
+            this.btView.Click += new System.EventHandler(this.btView_Click);
+            // 
+            // btEdit
+            // 
+            this.btEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btEdit.Location = new System.Drawing.Point(210, 3);
+            this.btEdit.Name = "btEdit";
+            this.btEdit.Size = new System.Drawing.Size(87, 23);
+            this.btEdit.TabIndex = 1;
+            this.btEdit.Text = "Editar";
+            this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
+            // 
+            // btDel
+            // 
+            this.btDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btDel.Location = new System.Drawing.Point(21, 3);
+            this.btDel.Name = "btDel";
+            this.btDel.Size = new System.Drawing.Size(87, 23);
+            this.btDel.TabIndex = 3;
+            this.btDel.Text = "Remover";
+            this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
+            // 
+            // pnBtns
+            // 
+            this.pnBtns.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnBtns.Controls.Add(this.btDel);
+            this.pnBtns.Controls.Add(this.btEdit);
+            this.pnBtns.Controls.Add(this.btView);
+            this.pnBtns.Controls.Add(this.btAdd);
+            this.pnBtns.Location = new System.Drawing.Point(261, 303);
+            this.pnBtns.Name = "pnBtns";
+            this.pnBtns.Size = new System.Drawing.Size(397, 29);
+            this.pnBtns.TabIndex = 7;
+            this.pnBtns.Visible = false;
+            // 
             // formUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -308,9 +309,9 @@
             this.pnFiltro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
             this.gbUsuarios.ResumeLayout(false);
-            this.pnBtns.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.pnBtns.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -322,11 +323,6 @@
         private System.Windows.Forms.Label lbFiltro;
         private System.Windows.Forms.DataGridView dgvUsuario;
         private System.Windows.Forms.GroupBox gbUsuarios;
-        private System.Windows.Forms.Panel pnBtns;
-        private System.Windows.Forms.Button btDel;
-        private System.Windows.Forms.Button btEdit;
-        private System.Windows.Forms.Button btView;
-        protected internal System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCPF;
@@ -338,5 +334,10 @@
         private System.Windows.Forms.ToolStripMenuItem detalhesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removerToolStripMenuItem;
+        private System.Windows.Forms.Panel pnBtns;
+        private System.Windows.Forms.Button btDel;
+        private System.Windows.Forms.Button btEdit;
+        private System.Windows.Forms.Button btView;
+        protected internal System.Windows.Forms.Button btAdd;
     }
 }
