@@ -34,6 +34,8 @@
             this.Vendas_Rel1 = new Relatorios.Vendas_Rel();
             this.EstoqueMin_Rel1 = new Relatorios.EstoqueMin_Rel();
             this.Compras_Rel1 = new Relatorios.Compras_Rel();
+            this.NotaFiscal1 = new Relatorios.NotaFiscal();
+            this.Func_Rel1 = new Relatorios.Func_Rel();
             this.SuspendLayout();
             // 
             // crvRelatorio
@@ -68,5 +70,7 @@
         private Relatorios.EstoqueMin_Rel EstoqueMin_Rel1;
         private Relatorios.Vendas_Rel Vendas_Rel1;
         private Relatorios.Compras_Rel Compras_Rel1;
+        private Relatorios.NotaFiscal NotaFiscal1;
+        private Relatorios.Func_Rel Func_Rel1;
     }
 }

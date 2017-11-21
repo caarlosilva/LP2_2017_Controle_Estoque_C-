@@ -52,6 +52,7 @@
             this.menuAjuda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSobre = new System.Windows.Forms.ToolStripMenuItem();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.funcionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.pnConectado.SuspendLayout();
             this.msMenu.SuspendLayout();
@@ -217,7 +218,8 @@
             this.menuRelatorio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuRelCompras,
             this.menuRelVendas,
-            this.menuRelEstoque});
+            this.menuRelEstoque,
+            this.funcionárioToolStripMenuItem});
             this.menuRelatorio.Image = global::ControlX.Properties.Resources.relatorio_icon;
             this.menuRelatorio.Name = "menuRelatorio";
             this.menuRelatorio.Size = new System.Drawing.Size(87, 20);
@@ -267,6 +269,13 @@
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 7;
             this.picLogo.TabStop = false;
+            // 
+            // funcionárioToolStripMenuItem
+            // 
+            this.funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
+            this.funcionárioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.funcionárioToolStripMenuItem.Text = "Funcionário";
+            this.funcionárioToolStripMenuItem.Click += new System.EventHandler(this.funcionárioToolStripMenuItem_Click);
             // 
             // formMenu
             // 
@@ -323,5 +332,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuRelEstoque;
         public System.Windows.Forms.Button btUsuario;
         public System.Windows.Forms.ToolStripMenuItem menuRelatorio;
+        private System.Windows.Forms.ToolStripMenuItem funcionárioToolStripMenuItem;
     }
 }

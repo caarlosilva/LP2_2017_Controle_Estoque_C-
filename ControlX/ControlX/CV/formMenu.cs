@@ -97,5 +97,13 @@ namespace ControlX
             form.tipoRelatorio = 3;
             form.Show();
         }
+
+        private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUserRelatorio form = new FormUserRelatorio();
+            FormRelatorios relatorio = new FormRelatorios();
+            relatorio.tipoRelatorio = 4;
+            form.Show();
+        }
     }
 }

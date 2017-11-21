@@ -23,6 +23,11 @@ namespace ControlX
                    InitializeComponent();
                }*/
 
+        public FormRelatorios()
+        {
+            InitializeComponent();
+        }
+
         public FormRelatorios(string autor)
         {
             this.autor = autor;
@@ -99,6 +104,15 @@ namespace ControlX
                 report.SetParameterValue("Count", lista.Count);
                 crvRelatorio.ReportSource = report;
                 crvRelatorio.Refresh();
+            }
+
+            if (tipoRelatorio == 4) //Funcionario
+            {
+                Usuario user = new Usuario();
+
+                Relatorios.Func_Rel report = new Relatorios.Func_Rel();
+                report.SetDataSource(user);
+                report.SetParameterValue("Autor", autor);
             }
         }
     }
