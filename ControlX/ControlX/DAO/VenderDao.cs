@@ -68,7 +68,7 @@ namespace ControlX
                 Vender v = new Vender();
                 v.Id = int.Parse(dr["id"].ToString());
                 v.Nome_usuario = dr["nome_usuario"].ToString();
-                v.Valor = long.Parse(dr["valor"].ToString());
+                v.Valor = double.Parse(dr["valor"].ToString());
                 v.Data = DateTime.Parse(dr["dataVenda"].ToString());
                 vendas.Add(v);
             }

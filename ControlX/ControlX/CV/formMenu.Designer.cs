@@ -42,8 +42,6 @@
             this.lblData = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.msMenu = new System.Windows.Forms.MenuStrip();
-            this.menuSobre = new System.Windows.Forms.ToolStripMenuItem();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.menuHistorico = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHistCompras = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHistVendas = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +50,8 @@
             this.menuRelVendas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRelEstoque = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAjuda = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSobre = new System.Windows.Forms.ToolStripMenuItem();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.pnConectado.SuspendLayout();
             this.msMenu.SuspendLayout();
@@ -140,7 +140,7 @@
             this.lbMensagem.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensagem.Location = new System.Drawing.Point(3, 9);
             this.lbMensagem.Name = "lbMensagem";
-            this.lbMensagem.Size = new System.Drawing.Size(232, 14);
+            this.lbMensagem.Size = new System.Drawing.Size(230, 14);
             this.lbMensagem.TabIndex = 5;
             this.lbMensagem.Text = "Você está conectado como \'Admin\' !";
             // 
@@ -188,23 +188,6 @@
             this.msMenu.TabIndex = 8;
             this.msMenu.Text = "Menu";
             // 
-            // menuSobre
-            // 
-            this.menuSobre.Image = global::ControlX.Properties.Resources.about_icon;
-            this.menuSobre.Name = "menuSobre";
-            this.menuSobre.Size = new System.Drawing.Size(65, 20);
-            this.menuSobre.Text = "Sobre";
-            // 
-            // picLogo
-            // 
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(10, 78);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(167, 122);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 7;
-            this.picLogo.TabStop = false;
-            // 
             // menuHistorico
             // 
             this.menuHistorico.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -243,21 +226,21 @@
             // menuRelCompras
             // 
             this.menuRelCompras.Name = "menuRelCompras";
-            this.menuRelCompras.Size = new System.Drawing.Size(122, 22);
+            this.menuRelCompras.Size = new System.Drawing.Size(152, 22);
             this.menuRelCompras.Text = "Compras";
             this.menuRelCompras.Click += new System.EventHandler(this.menuRelCompras_Click);
             // 
             // menuRelVendas
             // 
             this.menuRelVendas.Name = "menuRelVendas";
-            this.menuRelVendas.Size = new System.Drawing.Size(122, 22);
+            this.menuRelVendas.Size = new System.Drawing.Size(152, 22);
             this.menuRelVendas.Text = "Vendas";
             this.menuRelVendas.Click += new System.EventHandler(this.menuRelVendas_Click);
             // 
             // menuRelEstoque
             // 
             this.menuRelEstoque.Name = "menuRelEstoque";
-            this.menuRelEstoque.Size = new System.Drawing.Size(122, 22);
+            this.menuRelEstoque.Size = new System.Drawing.Size(152, 22);
             this.menuRelEstoque.Text = "Estoque";
             this.menuRelEstoque.Click += new System.EventHandler(this.menuRelEstoque_Click);
             // 
@@ -267,6 +250,23 @@
             this.menuAjuda.Name = "menuAjuda";
             this.menuAjuda.Size = new System.Drawing.Size(66, 20);
             this.menuAjuda.Text = "Ajuda";
+            // 
+            // menuSobre
+            // 
+            this.menuSobre.Image = global::ControlX.Properties.Resources.about_icon;
+            this.menuSobre.Name = "menuSobre";
+            this.menuSobre.Size = new System.Drawing.Size(65, 20);
+            this.menuSobre.Text = "Sobre";
+            // 
+            // picLogo
+            // 
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(10, 78);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(167, 122);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 7;
+            this.picLogo.TabStop = false;
             // 
             // formMenu
             // 

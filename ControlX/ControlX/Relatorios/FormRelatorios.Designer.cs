@@ -31,9 +31,9 @@
         private void InitializeComponent()
         {
             this.crvRelatorio = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.Vendas_Rel1 = new ControlX.Relatorios.Vendas_Rel();
-            this.EstoqueMin_Rel1 = new ControlX.Relatorios.EstoqueMin_Rel();
-            this.Compras_Rel1 = new ControlX.Relatorios.Compras_Rel();
+            this.Vendas_Rel1 = new Relatorios.Vendas_Rel();
+            this.EstoqueMin_Rel1 = new Relatorios.EstoqueMin_Rel();
+            this.Compras_Rel1 = new Relatorios.Compras_Rel();
             this.SuspendLayout();
             // 
             // crvRelatorio

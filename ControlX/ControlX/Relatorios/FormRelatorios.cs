@@ -45,9 +45,15 @@ namespace ControlX
 
             CV.FormDataRelatorio data = new CV.FormDataRelatorio();
 
-            if (tipoRelatorio == 1)
+            if (tipoRelatorio == 1) //Compras
             {
                 List<Object> lista = new ComprarDao().ListCompras(dataInicio, dataFim);
+
+                double valor = 0;
+                foreach (Comprar c in lista)
+                {
+                    valor += c.Valor;
+                }
 
                 Relatorios.Compras_Rel report = new Relatorios.Compras_Rel();
 
@@ -55,15 +61,21 @@ namespace ControlX
                 report.SetParameterValue("Autor", autor);
                 report.SetParameterValue("DataInicio", dataI);
                 report.SetParameterValue("DataFim", dataF);
+                report.SetParameterValue("Count", lista.Count);
+                report.SetParameterValue("Valor", valor);
                 crvRelatorio.ReportSource = report;
                 crvRelatorio.Refresh();
             }
 
-            if (tipoRelatorio == 2)
+            if (tipoRelatorio == 2) //Vendas
             {
-
                 List<Object> lista = new VenderDao().ListVendas(data.dtInicio.Value, data.dtFim.Value);
-                
+
+                double valor = 0;
+                foreach (Vender v in lista)
+                {
+                    valor += v.Valor;
+                }
 
                 Relatorios.Vendas_Rel report = new Relatorios.Vendas_Rel();
 
@@ -71,17 +83,20 @@ namespace ControlX
                 report.SetParameterValue("Autor", autor);
                 report.SetParameterValue("DataInicio", dataI);
                 report.SetParameterValue("DataFim", dataF);
+                report.SetParameterValue("Count", lista.Count);
+                report.SetParameterValue("Valor", valor);
                 crvRelatorio.ReportSource = report;
                 crvRelatorio.Refresh();
             }
 
-            if (tipoRelatorio == 3)
+            if (tipoRelatorio == 3) //Estoque
             {
                 List<Object> lista = new DAO.ProdutoDao().ListEstoqueMinimo();
 
                 Relatorios.EstoqueMin_Rel report = new Relatorios.EstoqueMin_Rel();
                 report.SetDataSource(lista);
                 report.SetParameterValue("Autor", autor);
+                report.SetParameterValue("Count", lista.Count);
                 crvRelatorio.ReportSource = report;
                 crvRelatorio.Refresh();
             }
