@@ -178,6 +178,37 @@ namespace ControlX.DAO
 
             return idUsuario;
         }
+
+        public Usuario Ler(string user)
+        {
+            string qry = string.Format("SELECT * FROM usuario WHERE login = '{0}' AND deleted_at is null", user);
+            DataSet ds = db.ExecuteQuery(qry);
+
+            Usuario u = null;
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                u = new Usuario();
+                u.Id = int.Parse(dr["id"].ToString());
+                u.Nome = dr["nome"].ToString();
+                u.Cpf = long.Parse(dr["cpf"].ToString());
+                u.Sexo = char.Parse(dr["sexo"].ToString());
+                u.DataNasc = DateTime.Parse(dr["dataNasc"].ToString());
+                u.Telefone1 = long.Parse(dr["tel1"].ToString());
+                u.Telefone2 = long.Parse(dr["tel2"].ToString());
+                u.Cep = long.Parse(dr["cep"].ToString());
+                u.Num = int.Parse(dr["num"].ToString());
+                u.Rua = dr["rua"].ToString();
+                u.Comp = dr["comp"].ToString();
+                u.Bairro = dr["bairro"].ToString();
+                u.Cidade = dr["cidade"].ToString();
+                u.Estado = dr["estado"].ToString();
+                u.Cargo = dr["cargo"].ToString();
+                u.Login = dr["login"].ToString();
+                u.Senha = dr["senha"].ToString();
+            }
+            return u;
+        }
         //FIM METODOS PRODUTO
 
     }

@@ -651,3 +651,4 @@ C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\ob
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.formUsuario.resources
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.formHistoricoCompras.resources
 C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.FormRelatorios.resources
+C:\Users\Gustavo\Source\Repos\LP2_2017_Controle_Estoque_C-2\ControlX\ControlX\obj\Debug\ControlX.FormUserRelatorio.resources

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCompras));
@@ -37,12 +38,14 @@
             this.colDataCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDataEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novaCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnAguardando = new System.Windows.Forms.Panel();
             this.btFinalizar = new System.Windows.Forms.Button();
-            this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.novaCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tx = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.gbAgendadas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprasAguardando)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -127,6 +130,22 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // voltarToolStripMenuItem
+            // 
+            this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
+            this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.voltarToolStripMenuItem.Text = "Voltar";
+            this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btVoltar_Click);
+            // 
+            // novaCompraToolStripMenuItem
+            // 
+            this.novaCompraToolStripMenuItem.Image = global::ControlX.Properties.Resources.cart_icon;
+            this.novaCompraToolStripMenuItem.Name = "novaCompraToolStripMenuItem";
+            this.novaCompraToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
+            this.novaCompraToolStripMenuItem.Text = "Agendar Compra";
+            this.novaCompraToolStripMenuItem.Click += new System.EventHandler(this.novaCompraToolStripMenuItem_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
@@ -153,6 +172,7 @@
             // pnAguardando
             // 
             this.pnAguardando.Controls.Add(this.btFinalizar);
+            this.pnAguardando.Controls.Add(this.tx);
             this.pnAguardando.Location = new System.Drawing.Point(373, 404);
             this.pnAguardando.Name = "pnAguardando";
             this.pnAguardando.Size = new System.Drawing.Size(357, 26);
@@ -168,21 +188,18 @@
             this.btFinalizar.UseVisualStyleBackColor = true;
             this.btFinalizar.Click += new System.EventHandler(this.btFinalizar_Click);
             // 
-            // voltarToolStripMenuItem
+            // tx
             // 
-            this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
-            this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
-            this.voltarToolStripMenuItem.Text = "Voltar";
-            this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btVoltar_Click);
+            this.tx.Location = new System.Drawing.Point(3, 3);
+            this.tx.Name = "tx";
+            this.tx.Size = new System.Drawing.Size(100, 21);
+            this.tx.TabIndex = 5;
+            this.tx.Visible = false;
             // 
-            // novaCompraToolStripMenuItem
+            // contextMenuStrip1
             // 
-            this.novaCompraToolStripMenuItem.Image = global::ControlX.Properties.Resources.cart_icon;
-            this.novaCompraToolStripMenuItem.Name = "novaCompraToolStripMenuItem";
-            this.novaCompraToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
-            this.novaCompraToolStripMenuItem.Text = "Agendar Compra";
-            this.novaCompraToolStripMenuItem.Click += new System.EventHandler(this.novaCompraToolStripMenuItem_Click);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // FormCompras
             // 
@@ -209,6 +226,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnAguardando.ResumeLayout(false);
+            this.pnAguardando.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -227,5 +245,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colDataCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDataEntrega;
         private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
+        public System.Windows.Forms.TextBox tx;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

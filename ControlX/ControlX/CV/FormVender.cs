@@ -216,9 +216,9 @@ namespace ControlX
                     }
                 }
 
-                formLogin login = new formLogin();
+                
                 vender.Id = vd.GetId();
-                vender.Nome_usuario = login.txUsuario.Text.ToString();
+                vender.Nome_usuario = lbVendedor.Text;
                 vender.Valor = double.Parse(lbValorTotal.Text.ToString());
                 vender.Data = DateTime.Now;
                 vd.Adicionar(vender);

@@ -200,9 +200,8 @@ namespace ControlX
                         }
                     }
                 }
-                formLogin login = new formLogin();
                 compra.Id = cd.GetId();
-                compra.Nome_usuario = login.txUsuario.Text.ToString();
+                compra.Nome_usuario = lbUser.Text;
                 compra.Status = 0; //Compra não finalizada, produtos agendados !
                 compra.Valor = double.Parse(lbValorShow.Text.ToString());
                 compra.DataCompra = dtCompra.Value;

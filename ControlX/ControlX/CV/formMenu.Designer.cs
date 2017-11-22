@@ -49,10 +49,12 @@
             this.menuRelCompras = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRelVendas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRelEstoque = new System.Windows.Forms.ToolStripMenuItem();
+            this.funcionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAjuda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSobre = new System.Windows.Forms.ToolStripMenuItem();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.funcionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AuxUser = new System.Windows.Forms.Label();
+            this.txNome = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.pnConectado.SuspendLayout();
             this.msMenu.SuspendLayout();
@@ -141,7 +143,7 @@
             this.lbMensagem.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensagem.Location = new System.Drawing.Point(3, 9);
             this.lbMensagem.Name = "lbMensagem";
-            this.lbMensagem.Size = new System.Drawing.Size(230, 14);
+            this.lbMensagem.Size = new System.Drawing.Size(232, 14);
             this.lbMensagem.TabIndex = 5;
             this.lbMensagem.Text = "Você está conectado como \'Admin\' !";
             // 
@@ -228,23 +230,30 @@
             // menuRelCompras
             // 
             this.menuRelCompras.Name = "menuRelCompras";
-            this.menuRelCompras.Size = new System.Drawing.Size(152, 22);
+            this.menuRelCompras.Size = new System.Drawing.Size(137, 22);
             this.menuRelCompras.Text = "Compras";
             this.menuRelCompras.Click += new System.EventHandler(this.menuRelCompras_Click);
             // 
             // menuRelVendas
             // 
             this.menuRelVendas.Name = "menuRelVendas";
-            this.menuRelVendas.Size = new System.Drawing.Size(152, 22);
+            this.menuRelVendas.Size = new System.Drawing.Size(137, 22);
             this.menuRelVendas.Text = "Vendas";
             this.menuRelVendas.Click += new System.EventHandler(this.menuRelVendas_Click);
             // 
             // menuRelEstoque
             // 
             this.menuRelEstoque.Name = "menuRelEstoque";
-            this.menuRelEstoque.Size = new System.Drawing.Size(152, 22);
+            this.menuRelEstoque.Size = new System.Drawing.Size(137, 22);
             this.menuRelEstoque.Text = "Estoque";
             this.menuRelEstoque.Click += new System.EventHandler(this.menuRelEstoque_Click);
+            // 
+            // funcionárioToolStripMenuItem
+            // 
+            this.funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
+            this.funcionárioToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.funcionárioToolStripMenuItem.Text = "Funcionário";
+            this.funcionárioToolStripMenuItem.Click += new System.EventHandler(this.funcionárioToolStripMenuItem_Click);
             // 
             // menuAjuda
             // 
@@ -269,13 +278,23 @@
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 7;
             this.picLogo.TabStop = false;
+            this.picLogo.Tag = "";
             // 
-            // funcionárioToolStripMenuItem
+            // AuxUser
             // 
-            this.funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            this.funcionárioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.funcionárioToolStripMenuItem.Text = "Funcionário";
-            this.funcionárioToolStripMenuItem.Click += new System.EventHandler(this.funcionárioToolStripMenuItem_Click);
+            this.AuxUser.AutoSize = true;
+            this.AuxUser.Location = new System.Drawing.Point(205, 172);
+            this.AuxUser.Name = "AuxUser";
+            this.AuxUser.Size = new System.Drawing.Size(0, 13);
+            this.AuxUser.TabIndex = 9;
+            // 
+            // txNome
+            // 
+            this.txNome.Location = new System.Drawing.Point(183, 172);
+            this.txNome.Name = "txNome";
+            this.txNome.Size = new System.Drawing.Size(77, 21);
+            this.txNome.TabIndex = 10;
+            this.txNome.Visible = false;
             // 
             // formMenu
             // 
@@ -284,6 +303,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(535, 204);
+            this.Controls.Add(this.txNome);
+            this.Controls.Add(this.AuxUser);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.pnConectado);
@@ -333,5 +354,7 @@
         public System.Windows.Forms.Button btUsuario;
         public System.Windows.Forms.ToolStripMenuItem menuRelatorio;
         private System.Windows.Forms.ToolStripMenuItem funcionárioToolStripMenuItem;
+        public System.Windows.Forms.Label AuxUser;
+        public System.Windows.Forms.TextBox txNome;
     }
 }

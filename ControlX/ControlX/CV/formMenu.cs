@@ -12,10 +12,16 @@ namespace ControlX
 {
     public partial class formMenu : Form
     {
+        DAO.UsuarioDao u = new DAO.UsuarioDao();
+        
+
+       
+
         public formMenu()
         {
             InitializeComponent();
-    }
+            
+        }
 
         private void btControleEstoq_Click(object sender, EventArgs e)
         {
@@ -34,6 +40,8 @@ namespace ControlX
             lblData.Text = DateTime.Now.ToString("dd/MM/yyyy") + " " + DateTime.Now.ToLongTimeString();
         }
 
+        
+
         private void btCadastroFunc_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -44,14 +52,21 @@ namespace ControlX
         private void btVender_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new FormVender().ShowDialog();
+            FormVender form = new FormVender();
+            Usuario user = u.Ler(txNome.Text);
+            form.lbVendedor.Text = user.Nome;
+            form.ShowDialog();
+
             this.Show();
         }
 
         private void btComprar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new FormCompras().ShowDialog();
+            FormCompras form = new FormCompras();
+            Usuario user = u.Ler(txNome.Text);
+            form.tx.Text = user.Nome;
+            form.ShowDialog();
             this.Show();
         }
 

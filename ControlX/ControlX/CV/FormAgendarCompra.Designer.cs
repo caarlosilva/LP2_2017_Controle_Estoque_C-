@@ -75,6 +75,8 @@
             this.lbDataEntrega = new System.Windows.Forms.Label();
             this.dtEntrega = new System.Windows.Forms.DateTimePicker();
             this.lbDataCompra = new System.Windows.Forms.Label();
+            this.lbUsuario = new System.Windows.Forms.Label();
+            this.lbUser = new System.Windows.Forms.Label();
             this.pnMenu.SuspendLayout();
             this.pnCabecalho.SuspendLayout();
             this.pnBtCad.SuspendLayout();
@@ -464,6 +466,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbDetalhesCompra.BackgroundImage = global::ControlX.Properties.Resources.shopping_cart_PNG362;
             this.gbDetalhesCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.gbDetalhesCompra.Controls.Add(this.lbUser);
+            this.gbDetalhesCompra.Controls.Add(this.lbUsuario);
             this.gbDetalhesCompra.Controls.Add(this.lbNumCompra);
             this.gbDetalhesCompra.Controls.Add(this.lbValorShow);
             this.gbDetalhesCompra.Controls.Add(this.pnButtons);
@@ -478,7 +482,7 @@
             this.gbDetalhesCompra.Size = new System.Drawing.Size(314, 403);
             this.gbDetalhesCompra.TabIndex = 15;
             this.gbDetalhesCompra.TabStop = false;
-            this.gbDetalhesCompra.Text = "Detalhes da Compra";
+            this.gbDetalhesCompra.Text = "W";
             // 
             // lbNumCompra
             // 
@@ -571,6 +575,26 @@
             this.lbDataCompra.TabIndex = 2;
             this.lbDataCompra.Text = "Data da Compra:";
             // 
+            // lbUsuario
+            // 
+            this.lbUsuario.AutoSize = true;
+            this.lbUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lbUsuario.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsuario.Location = new System.Drawing.Point(8, 141);
+            this.lbUsuario.Name = "lbUsuario";
+            this.lbUsuario.Size = new System.Drawing.Size(61, 13);
+            this.lbUsuario.TabIndex = 16;
+            this.lbUsuario.Text = "Usuario:";
+            // 
+            // lbUser
+            // 
+            this.lbUser.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lbUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbUser.Location = new System.Drawing.Point(88, 136);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(208, 21);
+            this.lbUser.TabIndex = 17;
+            // 
             // FormAgendarCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -644,5 +668,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn coLPreco;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
+        public System.Windows.Forms.Label lbUser;
+        private System.Windows.Forms.Label lbUsuario;
     }
 }

@@ -43,6 +43,7 @@ namespace ControlX
             formMenu form = new formMenu();
             DAO.UsuarioDao u = new DAO.UsuarioDao();
             int result = u.VerificaLogin(txUsuario.Text, txSenha.Text);
+            Usuario user = u.Ler(txUsuario.Text);
 
             Logado1 = result;
 
@@ -55,7 +56,8 @@ namespace ControlX
                     menu.btUsuario.Visible = false;
                     menu.menuRelatorio.Visible = false;
                 }
-                menu.lbMensagem.Text = "Você está conectado como '" + txUsuario.Text + "' !";
+                menu.lbMensagem.Text = "Você está conectado como '" + user.Nome + "' !";
+                menu.txNome.Text = user.Login;
                 menu.ShowDialog();
 
                 this.Show();

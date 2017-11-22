@@ -76,6 +76,9 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbVendedor = new System.Windows.Forms.Label();
             this.pnForm.SuspendLayout();
             this.pnTroco.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -86,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             this.pnBtVender.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnForm
@@ -94,6 +98,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnForm.Controls.Add(this.panel2);
             this.pnForm.Controls.Add(this.pnTroco);
             this.pnForm.Controls.Add(this.panel1);
             this.pnForm.Controls.Add(this.pnCabecalho);
@@ -577,6 +582,37 @@
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btMenu_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lbVendedor);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(16, 374);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(261, 27);
+            this.panel2.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Vendedor:";
+            // 
+            // lbVendedor
+            // 
+            this.lbVendedor.BackColor = System.Drawing.SystemColors.Control;
+            this.lbVendedor.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lbVendedor.Location = new System.Drawing.Point(76, 1);
+            this.lbVendedor.Name = "lbVendedor";
+            this.lbVendedor.Size = new System.Drawing.Size(175, 21);
+            this.lbVendedor.TabIndex = 15;
+            this.lbVendedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FormVender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,6 +640,8 @@
             this.pnBtVender.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -651,5 +689,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn coLPreco;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label lbVendedor;
     }
 }

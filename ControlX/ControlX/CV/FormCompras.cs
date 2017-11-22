@@ -45,7 +45,9 @@ namespace ControlX
         private void novaCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new FormAgendarCompra().ShowDialog();
+            FormAgendarCompra form = new FormAgendarCompra();
+            form.lbUser.Text = tx.Text;
+            form.ShowDialog();
             FillComprasAguardando();
             this.Show();
 
