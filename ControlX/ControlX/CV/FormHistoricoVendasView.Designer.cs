@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHistoricoVendasView));
             this.txValor = new System.Windows.Forms.TextBox();
             this.txId = new System.Windows.Forms.TextBox();
-            this.dateCompra = new System.Windows.Forms.DateTimePicker();
+            this.dateVenda = new System.Windows.Forms.DateTimePicker();
             this.txUser = new System.Windows.Forms.TextBox();
             this.lbDataVenda = new System.Windows.Forms.Label();
             this.lbValor = new System.Windows.Forms.Label();
@@ -46,6 +46,7 @@
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NFtoolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.gpDetalhesVenda = new System.Windows.Forms.GroupBox();
             this.gbItensVenda = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
@@ -75,15 +76,15 @@
             this.txId.TabIndex = 8;
             this.txId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // dateCompra
+            // dateVenda
             // 
-            this.dateCompra.Enabled = false;
-            this.dateCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateCompra.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateCompra.Location = new System.Drawing.Point(536, 33);
-            this.dateCompra.Name = "dateCompra";
-            this.dateCompra.Size = new System.Drawing.Size(98, 21);
-            this.dateCompra.TabIndex = 2;
+            this.dateVenda.Enabled = false;
+            this.dateVenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateVenda.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateVenda.Location = new System.Drawing.Point(536, 33);
+            this.dateVenda.Name = "dateVenda";
+            this.dateVenda.Size = new System.Drawing.Size(98, 21);
+            this.dateVenda.TabIndex = 2;
             // 
             // txUser
             // 
@@ -109,7 +110,7 @@
             this.lbValor.AutoSize = true;
             this.lbValor.Location = new System.Drawing.Point(401, 17);
             this.lbValor.Name = "lbValor";
-            this.lbValor.Size = new System.Drawing.Size(42, 13);
+            this.lbValor.Size = new System.Drawing.Size(41, 13);
             this.lbValor.TabIndex = 2;
             this.lbValor.Text = "Valor:";
             this.lbValor.Click += new System.EventHandler(this.lbValor_Click);
@@ -159,7 +160,7 @@
             this.lbUsuario.AutoSize = true;
             this.lbUsuario.Location = new System.Drawing.Point(211, 17);
             this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(67, 13);
+            this.lbUsuario.Size = new System.Drawing.Size(66, 13);
             this.lbUsuario.TabIndex = 1;
             this.lbUsuario.Text = "Vendedor:";
             // 
@@ -207,7 +208,8 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.voltarToolStripMenuItem});
+            this.voltarToolStripMenuItem,
+            this.NFtoolStripMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -219,9 +221,17 @@
             // 
             this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
             this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btVoltar_Click);
+            // 
+            // NFtoolStripMenu
+            // 
+            this.NFtoolStripMenu.Image = global::ControlX.Properties.Resources.historico_icon;
+            this.NFtoolStripMenu.Name = "NFtoolStripMenu";
+            this.NFtoolStripMenu.Size = new System.Drawing.Size(93, 20);
+            this.NFtoolStripMenu.Text = "Nota Fiscal";
+            this.NFtoolStripMenu.Click += new System.EventHandler(this.NFtoolStripMenu_Click);
             // 
             // gpDetalhesVenda
             // 
@@ -229,7 +239,7 @@
             this.gpDetalhesVenda.Controls.Add(this.lbIdCompra);
             this.gpDetalhesVenda.Controls.Add(this.txId);
             this.gpDetalhesVenda.Controls.Add(this.lbUsuario);
-            this.gpDetalhesVenda.Controls.Add(this.dateCompra);
+            this.gpDetalhesVenda.Controls.Add(this.dateVenda);
             this.gpDetalhesVenda.Controls.Add(this.lbValor);
             this.gpDetalhesVenda.Controls.Add(this.txUser);
             this.gpDetalhesVenda.Controls.Add(this.lbDataVenda);
@@ -278,7 +288,7 @@
         #endregion
         public System.Windows.Forms.TextBox txValor;
         public System.Windows.Forms.TextBox txId;
-        public System.Windows.Forms.DateTimePicker dateCompra;
+        public System.Windows.Forms.DateTimePicker dateVenda;
         public System.Windows.Forms.TextBox txUser;
         private System.Windows.Forms.Label lbDataVenda;
         private System.Windows.Forms.Label lbValor;
@@ -295,5 +305,6 @@
         private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
         private System.Windows.Forms.GroupBox gpDetalhesVenda;
         private System.Windows.Forms.GroupBox gbItensVenda;
+        private System.Windows.Forms.ToolStripMenuItem NFtoolStripMenu;
     }
 }

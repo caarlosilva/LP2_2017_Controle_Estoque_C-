@@ -36,5 +36,13 @@ namespace ControlX
         {
 
         }
+
+        private void NFtoolStripMenu_Click(object sender, EventArgs e)
+        {
+            formLogin user = new formLogin();
+            FormRelatorios form = new FormRelatorios(user.txUsuario.Text, DateTime.Parse(dateVenda.Value.ToString()), int.Parse(txId.Text.ToString()), txUser.Text);
+            form.tipoRelatorio = 5;
+            form.Show();
+        }
     }
 }

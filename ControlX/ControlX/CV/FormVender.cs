@@ -243,6 +243,10 @@ namespace ControlX
                 //Caso clique em sim
                 if (result == DialogResult.Yes)
                 {
+                    formLogin user = new formLogin();
+                    FormRelatorios form = new FormRelatorios(user.txUsuario.Text, DateTime.Parse(vender.Data.ToString()), int.Parse(vender.Id.ToString()), vender.Nome_usuario.ToString());
+                    form.tipoRelatorio = 5;
+                    form.Show();
                     this.Close();
                 }
                 else if (result == DialogResult.No)

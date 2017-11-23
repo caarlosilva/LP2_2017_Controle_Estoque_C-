@@ -90,7 +90,7 @@ namespace ControlX.Relatorios {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DataInicio {
+        public CrystalDecisions.Shared.IParameterField Parameter_Autor {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,7 +98,7 @@ namespace ControlX.Relatorios {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DataFim {
+        public CrystalDecisions.Shared.IParameterField Parameter_Valor {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -106,7 +106,7 @@ namespace ControlX.Relatorios {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Autor {
+        public CrystalDecisions.Shared.IParameterField Parameter_Count {
             get {
                 return this.DataDefinition.ParameterFields[2];
             }
@@ -114,7 +114,7 @@ namespace ControlX.Relatorios {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Valor {
+        public CrystalDecisions.Shared.IParameterField Parameter_IdVenda {
             get {
                 return this.DataDefinition.ParameterFields[3];
             }
@@ -122,9 +122,17 @@ namespace ControlX.Relatorios {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Count {
+        public CrystalDecisions.Shared.IParameterField Parameter_Vendedor {
             get {
                 return this.DataDefinition.ParameterFields[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_dataVenda {
+            get {
+                return this.DataDefinition.ParameterFields[5];
             }
         }
     }

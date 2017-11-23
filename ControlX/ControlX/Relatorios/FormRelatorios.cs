@@ -14,27 +14,38 @@ namespace ControlX
     {
         public int tipoRelatorio;
         private string autor;
+
+        //NotaFiscal
+        private DateTime dataVenda;
+        private int idVenda;
+        private string vendedor;
+        //-----------
+
         private DateTime dataInicio;
         private DateTime dataFim;
 
-
-        /*       public FormRelatorios()
-               {
-                   InitializeComponent();
-               }*/
 
         public FormRelatorios()
         {
             InitializeComponent();
         }
 
-        public FormRelatorios(string autor)
+        public FormRelatorios(string autor, DateTime dataVenda, int idVenda, string vendedor) //Construtor Nota Fiscal
+        {           
+            this.autor = autor;
+            this.dataVenda = dataVenda;
+            this.idVenda = idVenda;
+            this.vendedor = vendedor;
+            InitializeComponent();
+        }
+
+        public FormRelatorios(string autor) //Construtor Rel Estoque
         {
             this.autor = autor;
             InitializeComponent();
         }
 
-        public FormRelatorios(string autor, DateTime dataInicio, DateTime dataFim)
+        public FormRelatorios(string autor, DateTime dataInicio, DateTime dataFim) // Construtor Rel Compras e Vendas
         {
             this.autor = autor;
             this.dataInicio = dataInicio;
@@ -113,6 +124,29 @@ namespace ControlX
                 Relatorios.Func_Rel report = new Relatorios.Func_Rel();
                 report.SetDataSource(user);
                 report.SetParameterValue("Autor", autor);
+            }
+
+            if (tipoRelatorio == 5) //Nota Fiscal
+            {
+                List<Object> lista = new VenderDao().ListProdutos(idVenda);
+
+                double valor = 0;
+                foreach (Produto p in lista)
+                {
+                    valor += p.Preco;
+                }
+                string dataV = dataVenda.ToString("dd-MM-yyyy HH:mm:ss");
+
+                Relatorios.NotaFiscal report = new Relatorios.NotaFiscal();
+                report.SetDataSource(lista);
+                report.SetParameterValue("Autor", autor);
+                report.SetParameterValue("dataVenda", dataV);
+                report.SetParameterValue("Count", lista.Count);
+                report.SetParameterValue("Valor", valor);
+                report.SetParameterValue("idVenda", idVenda);
+                report.SetParameterValue("Vendedor", vendedor);
+                crvRelatorio.ReportSource = report;
+                crvRelatorio.Refresh();
             }
         }
     }

@@ -26,7 +26,8 @@ namespace ControlX
             dgvHistVendas.Rows.Clear();
             foreach (Vender v in ps)
             {
-                dgvHistVendas.Rows.Add(v.Id, v.Nome_usuario, v.Valor, v.Data);
+                string dataVenda = v.Data.ToString("dd-MM-yyyy");
+                dgvHistVendas.Rows.Add(v.Id, v.Nome_usuario, v.Valor, dataVenda);
             }
             buttonEnable();
         }
@@ -52,6 +53,7 @@ namespace ControlX
             form.txId.Text = (dgvHistVendas.Rows[dgvHistVendas.CurrentRow.Index].Cells[0].Value.ToString());
             form.txUser.Text = (dgvHistVendas.Rows[dgvHistVendas.CurrentRow.Index].Cells[1].Value.ToString());
             form.txValor.Text = Convert.ToDouble(dgvHistVendas.Rows[dgvHistVendas.CurrentRow.Index].Cells[2].Value.ToString()).ToString("C");
+            form.dateVenda.Text = (dgvHistVendas.Rows[dgvHistVendas.CurrentRow.Index].Cells[3].Value.ToString());
 
             VenderDao db = new VenderDao();
             List<Object> ps = db.ListProdutos(int.Parse(dgvHistVendas.Rows[dgvHistVendas.CurrentRow.Index].Cells[0].Value.ToString()));

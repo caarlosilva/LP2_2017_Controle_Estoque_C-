@@ -38,7 +38,9 @@ namespace ControlX
                    {
                        status = "Entregue";
                    }
-                   dgvHistCompras.Rows.Add(c.Id, c.Nome_usuario, c.DataCompra, c.DataEntrega, c.Valor, status);
+                string dataCompra = c.DataCompra.ToString("dd-MM-yyyy");
+                string dataEntrega = c.DataEntrega.ToString("dd-MM-yyyy");
+                dgvHistCompras.Rows.Add(c.Id, c.Nome_usuario, dataCompra, dataEntrega, c.Valor, status);
                 }
             buttonEnable();
         }

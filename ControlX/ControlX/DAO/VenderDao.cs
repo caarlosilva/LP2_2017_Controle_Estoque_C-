@@ -15,7 +15,7 @@ namespace ControlX
         public void Adicionar(Object o)
         {
             Vender v = (Vender)o;
-            string dataMySql = v.Data.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string dataMySql = v.Data.ToString("yyyy-MM-dd HH:mm:ss");
 
             string valor = Convert.ToString(v.Valor);
 
@@ -56,8 +56,8 @@ namespace ControlX
 
         public List<object> ListVendas(DateTime dataInicio, DateTime dataFim)
         {
-            string dataMySqlInicio = dataInicio.ToString("yyyy-MM-dd");
-            string dataMySqlFim = dataFim.ToString("yyyy-MM-dd");
+            string dataMySqlInicio = dataInicio.ToString("yyyy-MM-dd HH:mm:ss");
+            string dataMySqlFim = dataFim.ToString("yyyy-MM-dd HH:mm:ss");
             string qry = string.Format("SELECT id, nome_usuario, valor, dataVenda FROM vendas WHERE dataVenda BETWEEN '{0}' AND '{1}'", dataMySqlInicio, dataMySqlFim);
             DataSet ds = db.ExecuteQuery(qry);
 
