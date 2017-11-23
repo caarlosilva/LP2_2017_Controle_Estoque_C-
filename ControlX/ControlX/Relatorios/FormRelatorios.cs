@@ -74,7 +74,7 @@ namespace ControlX
 
             if (tipoRelatorio == 2) //Vendas
             {
-                List<Object> lista = new VenderDao().ListVendas(data.dtInicio.Value, data.dtFim.Value);
+                List<Object> lista = new VenderDao().ListVendas(dataInicio, dataFim);
 
                 double valor = 0;
                 foreach (Vender v in lista)

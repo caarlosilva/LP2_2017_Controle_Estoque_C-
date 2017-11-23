@@ -69,7 +69,7 @@ namespace ControlX
         {
             string dataMySqlInicio = dataInicio.ToString("yyyy-MM-dd");
             string dataMySqlFim = dataFim.ToString("yyyy-MM-dd");
-            string qry = string.Format("SELECT id, nome_usuario, valor, status, dataCompra, dataEntrega FROM compras WHERE dataCompra BETWEEN {0} AND {1}", dataMySqlInicio, dataMySqlFim);
+            string qry = string.Format("SELECT id, nome_usuario, valor, status, dataCompra, dataEntrega FROM compras WHERE dataCompra BETWEEN '{0}' AND '{1}'", dataMySqlInicio, dataMySqlFim);
             DataSet ds = db.ExecuteQuery(qry);
 
             List<object> compras = new List<object>();

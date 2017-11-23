@@ -13,6 +13,7 @@ namespace ControlX.CV
     public partial class FormDataRelatorio : Form
     {
         public int tipoRelatorio;
+
         public FormDataRelatorio()
         {
             InitializeComponent();
@@ -20,8 +21,9 @@ namespace ControlX.CV
 
         private void btGerar_Click(object sender, EventArgs e)
         {
-            formLogin user = new formLogin();
-            FormRelatorios relatorio = new FormRelatorios(user.txUsuario.Text, DateTime.Parse(dtInicio.Value.ToString()), DateTime.Parse(dtFim.Value.ToString()));
+            formLogin form = new formLogin();
+
+            FormRelatorios relatorio = new FormRelatorios(form.txUsuario.Text, DateTime.Parse(dtInicio.Value.ToString()), DateTime.Parse(dtFim.Value.ToString()));
             if (tipoRelatorio == 1)
             {
                 relatorio.tipoRelatorio = 1;
