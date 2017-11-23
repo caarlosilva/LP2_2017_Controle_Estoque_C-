@@ -67,8 +67,8 @@ CREATE TABLE produtos (
 	nome_usuario varchar(64),
 	valor double,
 	status int,
-	dataCompra date,
-	dataEntrega date,
+	dataCompra datetime,
+	dataEntrega datetime,
 	PRIMARY KEY (id)
 );
  
@@ -87,7 +87,7 @@ CREATE TABLE produtos (
 	id int NOT NULL AUTO_INCREMENT,
 	nome_usuario varchar(64),
 	valor double,
-	dataVenda date,
+	dataVenda datetime,
 	PRIMARY KEY (id)
 );
  
