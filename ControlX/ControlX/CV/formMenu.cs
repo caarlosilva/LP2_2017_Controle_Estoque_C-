@@ -107,8 +107,8 @@ namespace ControlX
 
         private void menuRelEstoque_Click(object sender, EventArgs e)
         {
-            formLogin user = new formLogin();
-            FormRelatorios form = new FormRelatorios(user.txUsuario.Text);
+            Usuario usuario = u.Ler(txNome.Text);
+            FormRelatorios form = new FormRelatorios(usuario.Nome);
             form.tipoRelatorio = 3;
             form.Show();
         }
