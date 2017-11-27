@@ -77,10 +77,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormUserRelatorio.cs">
+    <Compile Include="CV\FormUserRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUserRelatorio.Designer.cs">
+    <Compile Include="CV\FormUserRelatorio.Designer.cs">
       <DependentUpon>FormUserRelatorio.cs</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\Func_Rel.cs">
@@ -125,12 +125,6 @@
     </Compile>
     <Compile Include="CV\FormCadastroCat.Designer.cs">
       <DependentUpon>FormCadastroCat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formDocumento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formDocumento.Designer.cs">
-      <DependentUpon>formDocumento.cs</DependentUpon>
     </Compile>
     <Compile Include="CV\FormHistoricoVendas.cs">
       <SubType>Form</SubType>
@@ -259,7 +253,7 @@
       <DependentUpon>Vendas_Rel.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="FormUserRelatorio.resx">
+    <EmbeddedResource Include="CV\FormUserRelatorio.resx">
       <DependentUpon>FormUserRelatorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\Func_Rel.rpt">
@@ -291,9 +285,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormHistoricoVendasView.resx">
       <DependentUpon>FormHistoricoVendasView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formDocumento.resx">
-      <DependentUpon>formDocumento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\EstoqueMin_Rel.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -563,6 +554,7 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <Content Include="Imagens\icon.ico" />
     <None Include="Resources\category-icon.png" />
     <None Include="Resources\edit-icon.png" />
     <None Include="Resources\remover.png" />

@@ -245,6 +245,7 @@ namespace ControlX
                 {
                     formLogin user = new formLogin();
                     FormRelatorios form = new FormRelatorios(user.txUsuario.Text, DateTime.Parse(vender.Data.ToString()), int.Parse(vender.Id.ToString()), vender.Nome_usuario.ToString());
+                    form.Text = "ControlX - Nota Fiscal ID: " + int.Parse(txId.Text.ToString());
                     form.tipoRelatorio = 5;
                     form.Show();
                     this.Close();

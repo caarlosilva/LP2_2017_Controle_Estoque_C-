@@ -531,7 +531,6 @@ C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.Form
 C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.CV.FormHistoricoComprasView.resources
 C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.FormHistoricoVendas.resources
 C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.FormHistoricoVendasView.resources
-C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.formDocumento.resources
 C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.FormAgendarCompra.resources
 C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.FormCompras.resources
 C:\Users\Fabricio\Source\Repos\Projeto\ControlX\ControlX\obj\Debug\ControlX.formCadastroUser.resources

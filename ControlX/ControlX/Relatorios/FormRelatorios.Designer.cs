@@ -30,6 +30,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRelatorios));
             this.crvRelatorio = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.Vendas_Rel1 = new Relatorios.Vendas_Rel();
             this.EstoqueMin_Rel1 = new Relatorios.EstoqueMin_Rel();
@@ -59,6 +60,7 @@
             this.Controls.Add(this.crvRelatorio);
             this.Name = "FormRelatorios";
             this.Text = "ControlX - Relatorios";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Load += new System.EventHandler(this.RelatorioCompras_Load);
             this.ResumeLayout(false);
 
