@@ -17,17 +17,75 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 
 - Sistema de controle de Estoque, Compra e Venda.
 
--PARA FAZER:
+*------------------------------ PARA FAZER ------------------------------*
 
-      -Finalizar o form de Compras;
-      -Finalizar o sistema de Logins e Cargos;
-      -Criar o Histórico de Compras;
-      -Criar o Histórico de Vendas;
-      -Gerar Relatórios de Compras;
-      -Gerar Relatórios de Vendas;
-      -Criar uma base de dados correta para apresentação;
-      -Aperfeiçoar a interface gráfica do software;
+ -Criar uma base de dados correta para apresentação;
+ -Aperfeiçoar a interface gráfica do software;
 
+*------------------------------ F O R M S ------------------------------* 
+------------------------------ EM TODOS OS FORMS ------------------------------
+
+-Busca por nome não pode aceitar ' aspas simples para não bugar o SQL
+-Quando trocar de tipo de busca(ID,NOME), apagar o textbox para não gerar conflitos com o banco
+
+------------------------------  ESTOQUE ------------------------------
+
+-Busca por Categoria não funcionando
+-DGV com dados errados em UN e Categoria quando usa-se o filtro de BUSCA
+-Arrumar as imagens dos produtos/ou remover
+-Na hora de adicionar, o campo nome não aceita ' aspas simples(inverter com o campo busca)
+
+------------------------------ FORNECEDORES ------------------------------
+
+  -Adicionar filtro por ID
+  -Configurar para o Filtro buscar no NOME e por CIDADE
+
+------------------------------ COMPRAS ------------------------------
+
+  -Habilitar modo TELA CHEIA e arrumar os 'Anchors'
+  -Preencher o DGV com as ultimas compras realizadas OU Colocar algo mais útil no lugar
+  -Botão Finalizar só pode estar habilitado caso tenha algo no DGV de Compras em Aguardo
+  -Ao adicionar uma compra, os valores em R$ devem estar com sua devida máscara
+  -Notificar caso o Preço de Compra seja maior que o Preço de Venda
+  -Não pode comprar '0' produtos
+
+*-------------------------------------------------------------------------*
+
+*------------------------------ C A R G O S ------------------------------*
+
+------------------------------ ADMIN ------------------------------
+
+  -Dono da porra toda, acesso total ao Software
+
+------------------------------ SUPERVISOR ------------------------------
+
+  -Acesso total aos relatórios
+  -Acesso parcial aos usuarios
+	(Pode adicionar usuarios do tipo Caixa e Almoxarifado)
+	(Não pode remover ninguém)
+	(Pode editar usuarios do tipo Caixa e Almoxarifado)
+  -Acesso total ao resto da porra toda ?!?
+
+------------------------------ CAIXA ------------------------------
+
+  -Acesso total ao sistema de Vendas
+  -Acesso total ao Histórico de Vendas
+  -Acesso parcial ao estoque
+	(Somente habilitada a função de 'Detalhes')
+  -Acesso total a aba Ajuda e Sobre
+
+------------------------------ ALMOXARIFADO ------------------------------
+
+  -Acesso total ao sistema de Compras
+  -Acesso parcial ao estoque
+	(Somente habilitada a função de 'Detalhes')
+  -Acesso parcial aos fornecedores
+	(Somente habilitada a função de 'Detalhes')
+
+*-------------------------------------------------------------------------*
+
+      
+*---------------------------- ATRIBUTOS ------------------------------*
 
 ---------- PRODUTO/ESTOQUE --------------
 
