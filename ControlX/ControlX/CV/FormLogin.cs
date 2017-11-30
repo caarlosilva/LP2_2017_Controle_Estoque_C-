@@ -58,6 +58,7 @@ namespace ControlX
                 }
                 menu.lbMensagem.Text = "Você está conectado como '" + user.Nome + "' !";
                 menu.txNome.Text = user.Login;
+                menu.txNomeUser.Text = user.Nome;
                 menu.ShowDialog();
 
                 this.Show();

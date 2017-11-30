@@ -21,9 +21,9 @@ namespace ControlX.CV
 
         private void btGerar_Click(object sender, EventArgs e)
         {
-            formLogin form = new formLogin();
+            formMenu user = new formMenu();
 
-            FormRelatorios relatorio = new FormRelatorios(form.txUsuario.Text, DateTime.Parse(dtInicio.Value.ToString()), DateTime.Parse(dtFim.Value.ToString()));
+            FormRelatorios relatorio = new FormRelatorios(user.txNomeUser.Text, DateTime.Parse(dtInicio.Value.ToString()), DateTime.Parse(dtFim.Value.ToString()));
             if (tipoRelatorio == 1)
             {
                 relatorio.tipoRelatorio = 1;

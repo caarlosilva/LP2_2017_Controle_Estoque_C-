@@ -48,13 +48,17 @@
             this.menuRelatorio = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRelCompras = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRelVendas = new System.Windows.Forms.ToolStripMenuItem();
+            this.porFuncionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.porPeriodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRelEstoque = new System.Windows.Forms.ToolStripMenuItem();
-            this.funcionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estoqueMinimoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAjuda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSobre = new System.Windows.Forms.ToolStripMenuItem();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.AuxUser = new System.Windows.Forms.Label();
             this.txNome = new System.Windows.Forms.TextBox();
+            this.txNomeUser = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.pnConectado.SuspendLayout();
             this.msMenu.SuspendLayout();
@@ -143,7 +147,7 @@
             this.lbMensagem.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensagem.Location = new System.Drawing.Point(3, 9);
             this.lbMensagem.Name = "lbMensagem";
-            this.lbMensagem.Size = new System.Drawing.Size(232, 14);
+            this.lbMensagem.Size = new System.Drawing.Size(230, 14);
             this.lbMensagem.TabIndex = 5;
             this.lbMensagem.Text = "Você está conectado como \'Admin\' !";
             // 
@@ -220,8 +224,7 @@
             this.menuRelatorio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuRelCompras,
             this.menuRelVendas,
-            this.menuRelEstoque,
-            this.funcionárioToolStripMenuItem});
+            this.menuRelEstoque});
             this.menuRelatorio.Image = global::ControlX.Properties.Resources.relatorio_icon;
             this.menuRelatorio.Name = "menuRelatorio";
             this.menuRelatorio.Size = new System.Drawing.Size(87, 20);
@@ -230,30 +233,55 @@
             // menuRelCompras
             // 
             this.menuRelCompras.Name = "menuRelCompras";
-            this.menuRelCompras.Size = new System.Drawing.Size(137, 22);
+            this.menuRelCompras.Size = new System.Drawing.Size(122, 22);
             this.menuRelCompras.Text = "Compras";
             this.menuRelCompras.Click += new System.EventHandler(this.menuRelCompras_Click);
             // 
             // menuRelVendas
             // 
+            this.menuRelVendas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.porFuncionárioToolStripMenuItem,
+            this.porPeriodoToolStripMenuItem});
             this.menuRelVendas.Name = "menuRelVendas";
-            this.menuRelVendas.Size = new System.Drawing.Size(137, 22);
+            this.menuRelVendas.Size = new System.Drawing.Size(122, 22);
             this.menuRelVendas.Text = "Vendas";
-            this.menuRelVendas.Click += new System.EventHandler(this.menuRelVendas_Click);
+            // 
+            // porFuncionárioToolStripMenuItem
+            // 
+            this.porFuncionárioToolStripMenuItem.Name = "porFuncionárioToolStripMenuItem";
+            this.porFuncionárioToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.porFuncionárioToolStripMenuItem.Text = "Por funcionário";
+            this.porFuncionárioToolStripMenuItem.Click += new System.EventHandler(this.porFuncionárioToolStripMenuItem_Click);
+            // 
+            // porPeriodoToolStripMenuItem
+            // 
+            this.porPeriodoToolStripMenuItem.Name = "porPeriodoToolStripMenuItem";
+            this.porPeriodoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.porPeriodoToolStripMenuItem.Text = "Por periodo";
+            this.porPeriodoToolStripMenuItem.Click += new System.EventHandler(this.porPeriodoToolStripMenuItem_Click);
             // 
             // menuRelEstoque
             // 
+            this.menuRelEstoque.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.estoqueMinimoToolStripMenuItem,
+            this.inventárioToolStripMenuItem});
             this.menuRelEstoque.Name = "menuRelEstoque";
-            this.menuRelEstoque.Size = new System.Drawing.Size(137, 22);
+            this.menuRelEstoque.Size = new System.Drawing.Size(122, 22);
             this.menuRelEstoque.Text = "Estoque";
-            this.menuRelEstoque.Click += new System.EventHandler(this.menuRelEstoque_Click);
             // 
-            // funcionárioToolStripMenuItem
+            // estoqueMinimoToolStripMenuItem
             // 
-            this.funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            this.funcionárioToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.funcionárioToolStripMenuItem.Text = "Funcionário";
-            this.funcionárioToolStripMenuItem.Click += new System.EventHandler(this.funcionárioToolStripMenuItem_Click);
+            this.estoqueMinimoToolStripMenuItem.Name = "estoqueMinimoToolStripMenuItem";
+            this.estoqueMinimoToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.estoqueMinimoToolStripMenuItem.Text = "Estóque mínimo";
+            this.estoqueMinimoToolStripMenuItem.Click += new System.EventHandler(this.estoqueMinimoToolStripMenuItem_Click);
+            // 
+            // inventárioToolStripMenuItem
+            // 
+            this.inventárioToolStripMenuItem.Name = "inventárioToolStripMenuItem";
+            this.inventárioToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.inventárioToolStripMenuItem.Text = "Inventário";
+            this.inventárioToolStripMenuItem.Click += new System.EventHandler(this.inventárioToolStripMenuItem_Click);
             // 
             // menuAjuda
             // 
@@ -296,6 +324,14 @@
             this.txNome.TabIndex = 10;
             this.txNome.Visible = false;
             // 
+            // txNomeUser
+            // 
+            this.txNomeUser.Location = new System.Drawing.Point(183, 142);
+            this.txNomeUser.Name = "txNomeUser";
+            this.txNomeUser.Size = new System.Drawing.Size(77, 21);
+            this.txNomeUser.TabIndex = 11;
+            this.txNomeUser.Visible = false;
+            // 
             // formMenu
             // 
             this.AcceptButton = this.btVender;
@@ -303,6 +339,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(535, 204);
+            this.Controls.Add(this.txNomeUser);
             this.Controls.Add(this.txNome);
             this.Controls.Add(this.AuxUser);
             this.Controls.Add(this.picLogo);
@@ -353,8 +390,12 @@
         private System.Windows.Forms.ToolStripMenuItem menuRelEstoque;
         public System.Windows.Forms.Button btUsuario;
         public System.Windows.Forms.ToolStripMenuItem menuRelatorio;
-        private System.Windows.Forms.ToolStripMenuItem funcionárioToolStripMenuItem;
         public System.Windows.Forms.Label AuxUser;
         public System.Windows.Forms.TextBox txNome;
+        private System.Windows.Forms.ToolStripMenuItem estoqueMinimoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porFuncionárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porPeriodoToolStripMenuItem;
+        public System.Windows.Forms.TextBox txNomeUser;
     }
 }

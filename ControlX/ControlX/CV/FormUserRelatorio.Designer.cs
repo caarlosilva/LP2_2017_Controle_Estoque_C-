@@ -28,38 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUserRelatorio));
+            this.cbFunc = new System.Windows.Forms.ComboBox();
+            this.dateFim = new System.Windows.Forms.DateTimePicker();
+            this.dateInicio = new System.Windows.Forms.DateTimePicker();
             this.lbFuncionario = new System.Windows.Forms.Label();
             this.lbDataInicio = new System.Windows.Forms.Label();
             this.lbDataFim = new System.Windows.Forms.Label();
             this.btGerar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbFunc
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(155, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cbFunc.FormattingEnabled = true;
+            this.cbFunc.Location = new System.Drawing.Point(12, 33);
+            this.cbFunc.Name = "cbFunc";
+            this.cbFunc.Size = new System.Drawing.Size(155, 21);
+            this.cbFunc.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // dateFim
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(40, 140);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(98, 20);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dateFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFim.Location = new System.Drawing.Point(40, 140);
+            this.dateFim.Name = "dateFim";
+            this.dateFim.Size = new System.Drawing.Size(98, 20);
+            this.dateFim.TabIndex = 1;
             // 
-            // dateTimePicker2
+            // dateInicio
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(40, 87);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(98, 20);
-            this.dateTimePicker2.TabIndex = 2;
+            this.dateInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateInicio.Location = new System.Drawing.Point(40, 87);
+            this.dateInicio.Name = "dateInicio";
+            this.dateInicio.Size = new System.Drawing.Size(98, 20);
+            this.dateInicio.TabIndex = 2;
             // 
             // lbFuncionario
             // 
@@ -96,19 +97,23 @@
             this.btGerar.TabIndex = 6;
             this.btGerar.Text = "Gerar";
             this.btGerar.UseVisualStyleBackColor = true;
+            this.btGerar.Click += new System.EventHandler(this.btGerar_Click);
             // 
             // FormUserRelatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(179, 207);
             this.Controls.Add(this.btGerar);
             this.Controls.Add(this.lbDataFim);
             this.Controls.Add(this.lbDataInicio);
             this.Controls.Add(this.lbFuncionario);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dateInicio);
+            this.Controls.Add(this.dateFim);
+            this.Controls.Add(this.cbFunc);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormUserRelatorio";
             this.Text = "ControlX - Relatório de Funcionario";
             this.ResumeLayout(false);
@@ -118,9 +123,9 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ComboBox cbFunc;
+        private System.Windows.Forms.DateTimePicker dateFim;
+        private System.Windows.Forms.DateTimePicker dateInicio;
         private System.Windows.Forms.Label lbFuncionario;
         private System.Windows.Forms.Label lbDataInicio;
         private System.Windows.Forms.Label lbDataFim;

@@ -12,15 +12,12 @@ namespace ControlX
 {
     public partial class formMenu : Form
     {
-        DAO.UsuarioDao u = new DAO.UsuarioDao();
-        
+        private DAO.UsuarioDao u = new DAO.UsuarioDao();
 
-       
 
         public formMenu()
         {
             InitializeComponent();
-            
         }
 
         private void btControleEstoq_Click(object sender, EventArgs e)
@@ -98,27 +95,30 @@ namespace ControlX
             form.Show();
         }
 
-        private void menuRelVendas_Click(object sender, EventArgs e)
+        private void estoqueMinimoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FormRelatorios form = new FormRelatorios(txNomeUser.Text);
+            form.tipoRelatorio = 3;
+            form.Show();
+        }
+
+        private void porFuncionárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUserRelatorio form = new FormUserRelatorio();
+            form.Show();
+        }
+
+        private void porPeriodoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CV.FormDataRelatorio form = new CV.FormDataRelatorio();
             form.tipoRelatorio = 2;
             form.Show();
         }
 
-        private void menuRelEstoque_Click(object sender, EventArgs e)
+        private void inventárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Usuario usuario = u.Ler(txNome.Text);
-            FormRelatorios form = new FormRelatorios(usuario.Nome);
-            form.tipoRelatorio = 3;
-            form.Show();
-        }
 
-        private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormUserRelatorio form = new FormUserRelatorio();
-            FormRelatorios relatorio = new FormRelatorios();
-            relatorio.tipoRelatorio = 4;
-            form.Show();
         }
     }
 }

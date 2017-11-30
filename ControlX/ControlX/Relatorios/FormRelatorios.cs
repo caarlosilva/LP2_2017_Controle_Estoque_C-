@@ -14,6 +14,7 @@ namespace ControlX
     {
         public int tipoRelatorio;
         private string autor;
+        private Usuario func;
 
         //NotaFiscal
         private DateTime dataVenda;
@@ -39,17 +40,29 @@ namespace ControlX
             InitializeComponent();
         }
 
-        public FormRelatorios(string autor) //Construtor Rel Estoque
+        //Construtor Rel Estoque Minimo
+        public FormRelatorios(string autor)
         {
             this.autor = autor;
             InitializeComponent();
         }
 
-        public FormRelatorios(string autor, DateTime dataInicio, DateTime dataFim) // Construtor Rel Compras e Vendas
+        // Construtor Rel Compras e Vendas por periodo
+        public FormRelatorios(string autor, DateTime dataInicio, DateTime dataFim) 
         {
             this.autor = autor;
             this.dataInicio = dataInicio;
             this.dataFim = dataFim;
+            InitializeComponent();
+        }
+
+        // Construtor Rel Vendas por Funcionario
+        public FormRelatorios(string autor, DateTime dataInicio, DateTime dataFim, Usuario func) 
+        {
+            this.autor = autor;
+            this.dataInicio = dataInicio;
+            this.dataFim = dataFim;
+            this.func = func;
             InitializeComponent();
         }
 
@@ -117,13 +130,27 @@ namespace ControlX
                 crvRelatorio.Refresh();
             }
 
-            if (tipoRelatorio == 4) //Funcionario
+            if (tipoRelatorio == 4) //Vendas por Funcionario
             {
-                Usuario user = new Usuario();
+                List<Object> lista = new VenderDao().ListByUser(dataInicio, dataFim, func);
+
+                double valor = 0;
+                foreach (Vender c in lista)
+                {
+                    valor += c.Valor;
+                }
 
                 Relatorios.Func_Rel report = new Relatorios.Func_Rel();
-                report.SetDataSource(user);
+                report.SetDataSource(lista);
                 report.SetParameterValue("Autor", autor);
+                report.SetParameterValue("Id_Func", func.Id);
+                report.SetParameterValue("Nome_Func", func.Nome);
+                report.SetParameterValue("Cpf_Func", func.Cpf);
+                report.SetParameterValue("DataInicio", dataI);
+                report.SetParameterValue("DataFim", dataF);
+                report.SetParameterValue("Count", lista.Count);
+                report.SetParameterValue("Valor", valor);
+
             }
 
             if (tipoRelatorio == 5) //Nota Fiscal

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ControlX
 {
-    class Usuario
+    public class Usuario
     {
         private int id;
         private string nome;
@@ -25,6 +25,14 @@ namespace ControlX
         private string cargo;
         private string login;
         private string senha;
+
+        public string UsuarioFullName
+        {
+            get
+            {
+                return Id + " - " + Nome;
+            }
+        }
 
         public int Id
         {
