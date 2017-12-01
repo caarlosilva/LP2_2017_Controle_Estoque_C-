@@ -17,6 +17,7 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 
 - Sistema de controle de Estoque, Compra e Venda.
 
+****TERMINAR PELO MENOS ESSES BAGULHO DAQUI PRA BAIXO, VLW FLW**** 
 *------------------------------ PARA FAZER ------------------------------*
 
  -Criar uma base de dados correta para apresentação;
@@ -26,7 +27,7 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 ------------------------------ EM TODOS OS FORMS ------------------------------
 
 *FEITO*-Busca por nome não pode aceitar ' aspas simples para não bugar o SQL
--Quando trocar de tipo de busca(ID,NOME), apagar o textbox para não gerar conflitos com o banco
+*PARCIAL(ESTOQUE FEITO)*-Quando trocar de tipo de busca(ID,NOME), apagar o textbox para não gerar conflitos com o banco
 
 ------------------------------  ESTOQUE ------------------------------
 
@@ -85,7 +86,7 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 
 *-------------------------------------------------------------------------*
 
-      
+****TERMINAR PELO MENOS ESSES BAGULHO DAQUI PRA CIMA, VLW FLW****     
 *---------------------------- ATRIBUTOS ------------------------------*
 
 ---------- PRODUTO/ESTOQUE --------------
