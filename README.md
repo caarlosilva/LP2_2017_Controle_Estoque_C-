@@ -61,16 +61,16 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 
 ------------------------------ ADMIN ------------------------------
 
-  -Dono da porra toda, acesso total ao Software
+  - Dono da porra toda, acesso total ao Software
 
 ------------------------------ SUPERVISOR ------------------------------
 
-  - Acesso total aos relatórios
-  - Acesso parcial aos usuarios
-	- (Pode adicionar usuarios do tipo Caixa e Almoxarifado)
-	- (Não pode remover ninguém)
-	- (Pode editar usuarios do tipo Caixa e Almoxarifado)
-  - Acesso total ao resto da porra toda ?!?
+  - Acesso total aos relatórios *FEITO*
+  - Acesso parcial aos usuarios *FEITO*
+	- (Pode adicionar usuarios do tipo Caixa e Almoxarifado) *FEITO*
+	- (Não pode remover ninguém) *FEITO*
+	- (Pode editar usuarios do tipo Caixa e Almoxarifado) *FEITO*
+  - Acesso total ao resto da porra toda ?!? *FEITO*
 
 ------------------------------ CAIXA ------------------------------
 
