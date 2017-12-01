@@ -13,12 +13,19 @@ namespace ControlX
     public partial class formMenu : Form
     {
         private DAO.UsuarioDao u = new DAO.UsuarioDao();
-
+        private Usuario user = new Usuario();        
 
         public formMenu()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
+
+        public formMenu(Usuario usuario)
+        {
+            InitializeComponent();
+            user = usuario;
+        }
+               
 
         private void btControleEstoq_Click(object sender, EventArgs e)
         {
@@ -49,8 +56,7 @@ namespace ControlX
         private void btVender_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormVender form = new FormVender();
-            Usuario user = u.Ler(txNome.Text);
+            FormVender form = new FormVender(user);
             form.lbVendedor.Text = user.Nome;
             form.ShowDialog();
 
@@ -60,9 +66,7 @@ namespace ControlX
         private void btComprar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormCompras form = new FormCompras();
-            Usuario user = u.Ler(txNome.Text);
-            form.tx.Text = user.Nome;
+            FormCompras form = new FormCompras(user);
             form.ShowDialog();
             this.Show();
         }
@@ -90,28 +94,27 @@ namespace ControlX
 
         private void menuRelCompras_Click(object sender, EventArgs e)
         {
-            CV.FormDataRelatorio form = new CV.FormDataRelatorio();
+            CV.FormDataRelatorio form = new CV.FormDataRelatorio(user);
             form.tipoRelatorio = 1;
             form.Show();
         }
 
         private void estoqueMinimoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            FormRelatorios form = new FormRelatorios(txNomeUser.Text);
+            FormRelatorios form = new FormRelatorios(user.Nome);
             form.tipoRelatorio = 3;
             form.Show();
         }
 
         private void porFuncionárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormUserRelatorio form = new FormUserRelatorio();
+            FormUserRelatorio form = new FormUserRelatorio(user);
             form.Show();
         }
 
         private void porPeriodoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CV.FormDataRelatorio form = new CV.FormDataRelatorio();
+            CV.FormDataRelatorio form = new CV.FormDataRelatorio(user);
             form.tipoRelatorio = 2;
             form.Show();
         }

@@ -12,10 +12,19 @@ namespace ControlX
 {
     public partial class FormUserRelatorio : Form
     {
+        Usuario user = new Usuario();
+        Usuario user1 = new Usuario();
         public FormUserRelatorio()
         {
             InitializeComponent();
             iniComboBox();
+        }
+
+        public FormUserRelatorio(Usuario u)
+        {
+            InitializeComponent();
+            iniComboBox();
+            user = u;
         }
 
         private void iniComboBox()
@@ -42,10 +51,13 @@ namespace ControlX
 
         private void btGerar_Click(object sender, EventArgs e)
         {
-            DAO.UsuarioDao u = new DAO.UsuarioDao();
-            formMenu user = new formMenu();
-            Usuario func = u.LerUser(int.Parse(cbFunc.SelectedValue.ToString()));
-            FormRelatorios form = new FormRelatorios(user.txNomeUser.Text, DateTime.Parse(dateInicio.Value.ToString()), DateTime.Parse(dateFim.Value.ToString()), func);
+            DateTime dataIni = DateTime.Parse(dateInicio.Value.ToString());
+            DateTime dataFim = DateTime.Parse(dateFim.Value.ToString());
+            int idFunc = int.Parse(cbFunc.SelectedValue.ToString());
+            DAO.UsuarioDao func = new DAO.UsuarioDao();
+            user1 = func.LerUser(idFunc); 
+
+            FormRelatorios form = new FormRelatorios(user1.Nome, dataIni, dataFim, user1);
             form.tipoRelatorio = 4;
             form.Show();
         }

@@ -13,10 +13,19 @@ namespace ControlX
     public partial class FormCompras : Form
     {
 
+        Usuario user = new Usuario();
+
         public FormCompras()
         {
             InitializeComponent();
             FillComprasAguardando();
+        }
+
+        public FormCompras(Usuario u)
+        {
+            InitializeComponent();
+            FillComprasAguardando();
+            user = u;
         }
 
         private void FillComprasAguardando()
@@ -45,8 +54,8 @@ namespace ControlX
         private void novaCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormAgendarCompra form = new FormAgendarCompra();
-            form.lbUser.Text = tx.Text;
+            FormAgendarCompra form = new FormAgendarCompra(user);
+            form.lbUser.Text = user.Nome;
             form.ShowDialog();
             FillComprasAguardando();
             this.Show();

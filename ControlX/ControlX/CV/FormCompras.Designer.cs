@@ -44,7 +44,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnAguardando = new System.Windows.Forms.Panel();
             this.btFinalizar = new System.Windows.Forms.Button();
-            this.tx = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.gbAgendadas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprasAguardando)).BeginInit();
@@ -134,7 +133,7 @@
             // 
             this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
             this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btVoltar_Click);
             // 
@@ -172,7 +171,6 @@
             // pnAguardando
             // 
             this.pnAguardando.Controls.Add(this.btFinalizar);
-            this.pnAguardando.Controls.Add(this.tx);
             this.pnAguardando.Location = new System.Drawing.Point(373, 404);
             this.pnAguardando.Name = "pnAguardando";
             this.pnAguardando.Size = new System.Drawing.Size(357, 26);
@@ -187,14 +185,6 @@
             this.btFinalizar.Text = "Finalizar";
             this.btFinalizar.UseVisualStyleBackColor = true;
             this.btFinalizar.Click += new System.EventHandler(this.btFinalizar_Click);
-            // 
-            // tx
-            // 
-            this.tx.Location = new System.Drawing.Point(3, 3);
-            this.tx.Name = "tx";
-            this.tx.Size = new System.Drawing.Size(100, 21);
-            this.tx.TabIndex = 5;
-            this.tx.Visible = false;
             // 
             // contextMenuStrip1
             // 
@@ -226,7 +216,6 @@
             this.gbComprasFinalizadas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnAguardando.ResumeLayout(false);
-            this.pnAguardando.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -245,7 +234,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colDataCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDataEntrega;
         private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
-        public System.Windows.Forms.TextBox tx;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

@@ -79,7 +79,7 @@ namespace ControlX
                 Comprar c = new Comprar();
                 c.Id = int.Parse(dr["id"].ToString());
                 c.Nome_usuario = dr["nome_usuario"].ToString();
-                c.Valor = long.Parse(dr["valor"].ToString());
+                c.Valor = double.Parse(dr["valor"].ToString());
                 c.Status = int.Parse(dr["status"].ToString());
                 c.DataCompra = DateTime.Parse(dr["dataCompra"].ToString());
                 c.DataEntrega = DateTime.Parse(dr["dataEntrega"].ToString());
@@ -100,7 +100,7 @@ namespace ControlX
                 Comprar c = new Comprar();
                 c.Id = int.Parse(dr["id"].ToString());
                 c.Nome_usuario = dr["nome_usuario"].ToString();
-                c.Valor = long.Parse(dr["valor"].ToString());
+                c.Valor = double.Parse(dr["valor"].ToString());
                 c.Status = int.Parse(dr["status"].ToString());
                 c.DataCompra = DateTime.Parse(dr["dataCompra"].ToString());
                 c.DataEntrega = DateTime.Parse(dr["dataEntrega"].ToString());

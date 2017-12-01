@@ -16,11 +16,20 @@ namespace ControlX
         static IDao db = new DAO.ProdutoDao();
         static List<Object> ps = db.ListAll();
         VenderDao vd = new VenderDao();
+        Usuario user = new Usuario();
         double qntdEstoque;
 
         public FormVender()
         {
             InitializeComponent();
+            Auto_Complete();
+            BtComplete();
+        }
+
+        public FormVender(Usuario u)
+        {
+            InitializeComponent();
+            user = u;
             Auto_Complete();
             BtComplete();
         }
@@ -229,7 +238,7 @@ namespace ControlX
 
                 
                 vender.Id = vd.GetId();
-                vender.Nome_usuario = lbVendedor.Text;
+                vender.Nome_usuario = user.Nome;
                 vender.Valor = double.Parse(lbValorTotal.Text.ToString());
                 vender.Data = DateTime.Now;
                 vd.Adicionar(vender);
@@ -254,9 +263,8 @@ namespace ControlX
                 //Caso clique em sim
                 if (result == DialogResult.Yes)
                 {
-                    formLogin user = new formLogin();
-                    FormRelatorios form = new FormRelatorios(user.txUsuario.Text, DateTime.Parse(vender.Data.ToString()), int.Parse(vender.Id.ToString()), vender.Nome_usuario.ToString());
-                    form.Text = "ControlX - Nota Fiscal ID: " + int.Parse(txId.Text.ToString());
+                    FormRelatorios form = new FormRelatorios(user.Nome, vender.Data, vender.Id, vender.Nome_usuario);
+                    form.Text = "ControlX - Nota Fiscal ID: " + txId.Text;
                     form.tipoRelatorio = 5;
                     form.Show();
                 }

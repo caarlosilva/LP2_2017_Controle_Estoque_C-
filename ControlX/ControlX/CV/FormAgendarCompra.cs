@@ -17,6 +17,7 @@ namespace ControlX
         static List<Object> ps = db.ListAll();
         private ComprarDao cd = new ComprarDao();
         double qntdEstoque;
+        Usuario user = new Usuario();
 
         public FormAgendarCompra()
         {
@@ -26,6 +27,17 @@ namespace ControlX
             dtEntrega.MinDate = DateTime.Today;
             Auto_Complete();
             BtComplete();
+        }
+
+        public FormAgendarCompra(Usuario u)
+        {
+            //int idCompra = cd.GetId();
+            InitializeComponent();
+            lbNumCompra.Text = "Pedido de Compra N° " + cd.GetId();
+            dtEntrega.MinDate = DateTime.Today;
+            Auto_Complete();
+            BtComplete();
+            user = u;
         }
 
         private void BtComplete()
@@ -201,7 +213,7 @@ namespace ControlX
                     }
                 }
                 compra.Id = cd.GetId();
-                compra.Nome_usuario = lbUser.Text;
+                compra.Nome_usuario = user.Nome;
                 compra.Status = 0; //Compra não finalizada, produtos agendados !
                 compra.Valor = double.Parse(lbValorShow.Text.ToString());
                 compra.DataCompra = dtCompra.Value;

@@ -13,17 +13,26 @@ namespace ControlX.CV
     public partial class FormDataRelatorio : Form
     {
         public int tipoRelatorio;
+        Usuario user = new Usuario();
 
         public FormDataRelatorio()
         {
             InitializeComponent();
         }
 
+        public FormDataRelatorio(Usuario u)
+        {
+            InitializeComponent();
+            user = u;
+        }
+
         private void btGerar_Click(object sender, EventArgs e)
         {
-            formMenu user = new formMenu();
 
-            FormRelatorios relatorio = new FormRelatorios(user.txNomeUser.Text, DateTime.Parse(dtInicio.Value.ToString()), DateTime.Parse(dtFim.Value.ToString()));
+            DateTime dataIni1 = DateTime.Parse(dtInicio.Value.ToString("dd-MM-yyyy, HH:mm:ss"));
+            DateTime dataFim1 = DateTime.Parse(dtFim.Value.ToString("dd-MM-yyyy, HH:mm:ss"));
+
+            FormRelatorios relatorio = new FormRelatorios(user.Nome, dataIni1, dataFim1);
             if (tipoRelatorio == 1)
             {
                 relatorio.tipoRelatorio = 1;

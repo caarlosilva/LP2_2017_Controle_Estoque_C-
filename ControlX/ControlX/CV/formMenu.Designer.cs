@@ -56,9 +56,6 @@
             this.menuAjuda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSobre = new System.Windows.Forms.ToolStripMenuItem();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.AuxUser = new System.Windows.Forms.Label();
-            this.txNome = new System.Windows.Forms.TextBox();
-            this.txNomeUser = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.pnConectado.SuspendLayout();
             this.msMenu.SuspendLayout();
@@ -308,30 +305,6 @@
             this.picLogo.TabStop = false;
             this.picLogo.Tag = "";
             // 
-            // AuxUser
-            // 
-            this.AuxUser.AutoSize = true;
-            this.AuxUser.Location = new System.Drawing.Point(205, 172);
-            this.AuxUser.Name = "AuxUser";
-            this.AuxUser.Size = new System.Drawing.Size(0, 13);
-            this.AuxUser.TabIndex = 9;
-            // 
-            // txNome
-            // 
-            this.txNome.Location = new System.Drawing.Point(183, 172);
-            this.txNome.Name = "txNome";
-            this.txNome.Size = new System.Drawing.Size(77, 21);
-            this.txNome.TabIndex = 10;
-            this.txNome.Visible = false;
-            // 
-            // txNomeUser
-            // 
-            this.txNomeUser.Location = new System.Drawing.Point(183, 142);
-            this.txNomeUser.Name = "txNomeUser";
-            this.txNomeUser.Size = new System.Drawing.Size(77, 21);
-            this.txNomeUser.TabIndex = 11;
-            this.txNomeUser.Visible = false;
-            // 
             // formMenu
             // 
             this.AcceptButton = this.btVender;
@@ -339,9 +312,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(535, 204);
-            this.Controls.Add(this.txNomeUser);
-            this.Controls.Add(this.txNome);
-            this.Controls.Add(this.AuxUser);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.pnConectado);
@@ -390,12 +360,9 @@
         private System.Windows.Forms.ToolStripMenuItem menuRelEstoque;
         public System.Windows.Forms.Button btUsuario;
         public System.Windows.Forms.ToolStripMenuItem menuRelatorio;
-        public System.Windows.Forms.Label AuxUser;
-        public System.Windows.Forms.TextBox txNome;
         private System.Windows.Forms.ToolStripMenuItem estoqueMinimoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem porFuncionárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem porPeriodoToolStripMenuItem;
-        public System.Windows.Forms.TextBox txNomeUser;
     }
 }
