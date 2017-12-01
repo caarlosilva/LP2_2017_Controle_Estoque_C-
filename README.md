@@ -18,38 +18,42 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 - Sistema de controle de Estoque, Compra e Venda.
 
 ****TERMINAR PELO MENOS ESSES BAGULHO DAQUI PRA BAIXO, VLW FLW**** 
+
+
 *------------------------------ PARA FAZER ------------------------------*
 
- -Criar uma base de dados correta para apresentação;
- -Aperfeiçoar a interface gráfica do software;
+ - Criar uma base de dados correta para apresentação;
+ - Aperfeiçoar a interface gráfica do software;
 
-*------------------------------ F O R M S ------------------------------* 
+------------------------------ F O R M S ------------------------------
+
+
 ------------------------------ EM TODOS OS FORMS ------------------------------
 
-*FEITO*-Busca por nome não pode aceitar ' aspas simples para não bugar o SQL
-*PARCIAL(ESTOQUE FEITO)*-Quando trocar de tipo de busca(ID,NOME), apagar o textbox para não gerar conflitos com o banco
+- Busca por nome não pode aceitar ' aspas simples para não bugar o SQL *FEITO*
+- Quando trocar de tipo de busca(ID,NOME), apagar o textbox para não gerar conflitos com o banco *PARCIAL(ESTOQUE FEITO)*
 
 ------------------------------  ESTOQUE ------------------------------
 
-*FEITO*-Busca por Categoria não funcionando
-*FEITO*-DGV com dados errados em UN e Categoria quando usa-se o filtro de BUSCA
--Arrumar as imagens dos produtos/ou remover
-*FEITO*-Na hora de adicionar, o campo nome não aceita ' aspas simples(inverter com o campo busca)
+- Busca por Categoria não funcionando *FEITO*
+- DGV com dados errados em UN e Categoria quando usa-se o filtro de BUSCA *FEITO*
+- Arrumar as imagens dos produtos/ou remover
+- Na hora de adicionar, o campo nome não aceita ' aspas simples(inverter com o campo busca) *FEITO*
 
 ------------------------------ FORNECEDORES ------------------------------
 
-  -Adicionar filtro por ID
-  -Configurar para o Filtro buscar no NOME e por CIDADE
+  - Adicionar filtro por ID
+  - Configurar para o Filtro buscar no NOME e por CIDADE
 
 ------------------------------ COMPRAS ------------------------------
 
-  -Habilitar modo TELA CHEIA e arrumar os 'Anchors'
-  -Preencher o DGV com as ultimas compras realizadas OU Colocar algo mais útil no lugar
-  -Botão Finalizar só pode estar habilitado caso tenha algo no DGV de Compras em Aguardo
-  -Ao adicionar uma compra, os valores em R$ devem estar com sua devida máscara
-  -Poder Visualizar os itens da compra ao clicar em uma compra não finalizada(DGV direito)
-  -Notificar caso o Preço de Compra seja maior que o Preço de Venda
-  -Não pode comprar '0' produtos
+  - Habilitar modo TELA CHEIA e arrumar os 'Anchors'
+  - Preencher o DGV com as ultimas compras realizadas OU Colocar algo mais útil no lugar
+  - Botão Finalizar só pode estar habilitado caso tenha algo no DGV de Compras em Aguardo
+  - Ao adicionar uma compra, os valores em R$ devem estar com sua devida máscara
+  - Poder Visualizar os itens da compra ao clicar em uma compra não finalizada(DGV direito)
+  - Notificar caso o Preço de Compra seja maior que o Preço de Venda
+  - Não pode comprar '0' produtos
 
 *-------------------------------------------------------------------------*
 
@@ -61,32 +65,35 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 
 ------------------------------ SUPERVISOR ------------------------------
 
-  -Acesso total aos relatórios
-  -Acesso parcial aos usuarios
-	(Pode adicionar usuarios do tipo Caixa e Almoxarifado)
-	(Não pode remover ninguém)
-	(Pode editar usuarios do tipo Caixa e Almoxarifado)
-  -Acesso total ao resto da porra toda ?!?
+  - Acesso total aos relatórios
+  - Acesso parcial aos usuarios
+	- (Pode adicionar usuarios do tipo Caixa e Almoxarifado)
+	- (Não pode remover ninguém)
+	- (Pode editar usuarios do tipo Caixa e Almoxarifado)
+  - Acesso total ao resto da porra toda ?!?
 
 ------------------------------ CAIXA ------------------------------
 
-  -Acesso total ao sistema de Vendas
-  -Acesso total ao Histórico de Vendas
-  -Acesso parcial ao estoque
-	(Somente habilitada a função de 'Detalhes')
-  -Acesso total a aba Ajuda e Sobre
+  - Acesso total ao sistema de Vendas
+  - Acesso total ao Histórico de Vendas
+  - Acesso parcial ao estoque
+	- (Somente habilitada a função de 'Detalhes')
+  - Acesso total a aba Ajuda e Sobre
 
 ------------------------------ ALMOXARIFADO ------------------------------
 
-  -Acesso total ao sistema de Compras
-  -Acesso parcial ao estoque
-	(Somente habilitada a função de 'Detalhes')
+  - Acesso total ao sistema de Compras
+  - Acesso parcial ao estoque
+	- (Somente habilitada a função de 'Detalhes')
   -Acesso parcial aos fornecedores
-	(Somente habilitada a função de 'Detalhes')
+	- (Somente habilitada a função de 'Detalhes')
 
 *-------------------------------------------------------------------------*
 
+
 ****TERMINAR PELO MENOS ESSES BAGULHO DAQUI PRA CIMA, VLW FLW****     
+
+
 *---------------------------- ATRIBUTOS ------------------------------*
 
 ---------- PRODUTO/ESTOQUE --------------
