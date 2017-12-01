@@ -25,15 +25,15 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 *------------------------------ F O R M S ------------------------------* 
 ------------------------------ EM TODOS OS FORMS ------------------------------
 
--Busca por nome não pode aceitar ' aspas simples para não bugar o SQL
+*FEITO*-Busca por nome não pode aceitar ' aspas simples para não bugar o SQL
 -Quando trocar de tipo de busca(ID,NOME), apagar o textbox para não gerar conflitos com o banco
 
 ------------------------------  ESTOQUE ------------------------------
 
--Busca por Categoria não funcionando
--DGV com dados errados em UN e Categoria quando usa-se o filtro de BUSCA
+*FEITO*-Busca por Categoria não funcionando
+*FEITO*-DGV com dados errados em UN e Categoria quando usa-se o filtro de BUSCA
 -Arrumar as imagens dos produtos/ou remover
--Na hora de adicionar, o campo nome não aceita ' aspas simples(inverter com o campo busca)
+*FEITO*-Na hora de adicionar, o campo nome não aceita ' aspas simples(inverter com o campo busca)
 
 ------------------------------ FORNECEDORES ------------------------------
 
@@ -46,6 +46,7 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
   -Preencher o DGV com as ultimas compras realizadas OU Colocar algo mais útil no lugar
   -Botão Finalizar só pode estar habilitado caso tenha algo no DGV de Compras em Aguardo
   -Ao adicionar uma compra, os valores em R$ devem estar com sua devida máscara
+  -Poder Visualizar os itens da compra ao clicar em uma compra não finalizada(DGV direito)
   -Notificar caso o Preço de Compra seja maior que o Preço de Venda
   -Não pode comprar '0' produtos
 
