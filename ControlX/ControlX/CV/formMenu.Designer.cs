@@ -230,7 +230,7 @@
             // menuRelCompras
             // 
             this.menuRelCompras.Name = "menuRelCompras";
-            this.menuRelCompras.Size = new System.Drawing.Size(122, 22);
+            this.menuRelCompras.Size = new System.Drawing.Size(152, 22);
             this.menuRelCompras.Text = "Compras";
             this.menuRelCompras.Click += new System.EventHandler(this.menuRelCompras_Click);
             // 
@@ -240,7 +240,7 @@
             this.porFuncionárioToolStripMenuItem,
             this.porPeriodoToolStripMenuItem});
             this.menuRelVendas.Name = "menuRelVendas";
-            this.menuRelVendas.Size = new System.Drawing.Size(122, 22);
+            this.menuRelVendas.Size = new System.Drawing.Size(152, 22);
             this.menuRelVendas.Text = "Vendas";
             // 
             // porFuncionárioToolStripMenuItem
@@ -263,20 +263,20 @@
             this.estoqueMinimoToolStripMenuItem,
             this.inventárioToolStripMenuItem});
             this.menuRelEstoque.Name = "menuRelEstoque";
-            this.menuRelEstoque.Size = new System.Drawing.Size(122, 22);
+            this.menuRelEstoque.Size = new System.Drawing.Size(152, 22);
             this.menuRelEstoque.Text = "Estoque";
             // 
             // estoqueMinimoToolStripMenuItem
             // 
             this.estoqueMinimoToolStripMenuItem.Name = "estoqueMinimoToolStripMenuItem";
-            this.estoqueMinimoToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.estoqueMinimoToolStripMenuItem.Text = "Estóque mínimo";
+            this.estoqueMinimoToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.estoqueMinimoToolStripMenuItem.Text = "Estóque abaixo do mínimo";
             this.estoqueMinimoToolStripMenuItem.Click += new System.EventHandler(this.estoqueMinimoToolStripMenuItem_Click);
             // 
             // inventárioToolStripMenuItem
             // 
             this.inventárioToolStripMenuItem.Name = "inventárioToolStripMenuItem";
-            this.inventárioToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.inventárioToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.inventárioToolStripMenuItem.Text = "Inventário";
             this.inventárioToolStripMenuItem.Click += new System.EventHandler(this.inventárioToolStripMenuItem_Click);
             // 

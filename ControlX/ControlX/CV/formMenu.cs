@@ -74,7 +74,7 @@ namespace ControlX
         private void btUsuario_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new formUsuario().ShowDialog();
+            new formUsuario(true).ShowDialog();
             this.Show();
         }
 
@@ -102,6 +102,7 @@ namespace ControlX
         private void estoqueMinimoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormRelatorios form = new FormRelatorios(user.Nome);
+            form.Text = "ControlX - Relatório de produtos abaixo do estoque minimo";
             form.tipoRelatorio = 3;
             form.Show();
         }
@@ -121,7 +122,10 @@ namespace ControlX
 
         private void inventárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormRelatorios form = new FormRelatorios(user.Nome);
+            form.Text = "ControlX - Relatório de inventário de estoque";
+            form.tipoRelatorio = 6;
+            form.Show();
         }
     }
 }

@@ -31,7 +31,8 @@ namespace ControlX
             InitializeComponent();
         }
 
-        public FormRelatorios(string autor, DateTime dataVenda, int idVenda, string vendedor) //Construtor Nota Fiscal
+        //Construtor Nota Fiscal
+        public FormRelatorios(string autor, DateTime dataVenda, int idVenda, string vendedor) 
         {           
             this.autor = autor;
             this.dataVenda = dataVenda;
@@ -96,7 +97,7 @@ namespace ControlX
                 crvRelatorio.Refresh();
             }
 
-            if (tipoRelatorio == 2) //Vendas
+            if (tipoRelatorio == 2) //Vendas > Por periodo
             {
                 List<Object> lista = new VenderDao().ListVendas(dataInicio, dataFim);
 
@@ -118,7 +119,7 @@ namespace ControlX
                 crvRelatorio.Refresh();
             }
 
-            if (tipoRelatorio == 3) //Estoque
+            if (tipoRelatorio == 3) //Estoque > Estoque abaixo do minimo
             {
                 List<Object> lista = new DAO.ProdutoDao().ListEstoqueMinimo();
 
@@ -130,7 +131,7 @@ namespace ControlX
                 crvRelatorio.Refresh();
             }
 
-            if (tipoRelatorio == 4) //Vendas por Funcionario
+            if (tipoRelatorio == 4) //Vendas > Por funcionario
             {
                 List<Object> lista = new VenderDao().ListByUser(dataInicio, dataFim, func);
 
@@ -150,6 +151,8 @@ namespace ControlX
                 report.SetParameterValue("DataFim", dataF);
                 report.SetParameterValue("Count", lista.Count);
                 report.SetParameterValue("Valor", valor);
+                crvRelatorio.ReportSource = report;
+                crvRelatorio.Refresh();
 
             }
 
@@ -172,6 +175,18 @@ namespace ControlX
                 report.SetParameterValue("Valor", valor);
                 report.SetParameterValue("idVenda", idVenda);
                 report.SetParameterValue("Vendedor", vendedor);
+                crvRelatorio.ReportSource = report;
+                crvRelatorio.Refresh();
+            }
+
+            if (tipoRelatorio == 6) //Estoque > Inventario
+            {
+                List<Object> lista = new DAO.ProdutoDao().ListAll();
+
+                Relatorios.Inventario_Rel report = new Relatorios.Inventario_Rel();
+                report.SetDataSource(lista);
+                report.SetParameterValue("Autor", autor);
+                report.SetParameterValue("Count", lista.Count);
                 crvRelatorio.ReportSource = report;
                 crvRelatorio.Refresh();
             }

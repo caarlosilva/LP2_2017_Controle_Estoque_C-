@@ -33,13 +33,16 @@ namespace ControlX.CV
             DateTime dataFim1 = DateTime.Parse(dtFim.Value.ToString("dd-MM-yyyy, HH:mm:ss"));
 
             FormRelatorios relatorio = new FormRelatorios(user.Nome, dataIni1, dataFim1);
-            if (tipoRelatorio == 1)
+
+            if (tipoRelatorio == 1) //Compras
             {
+                relatorio.Text = "ControlX - Relatório de compras";
                 relatorio.tipoRelatorio = 1;
             }
 
-            if (tipoRelatorio == 2)
+            if (tipoRelatorio == 2) //Vendas por periodo
             {
+                relatorio.Text = "ControlX - Relatório de vendas por período";
                 relatorio.tipoRelatorio = 2;
             }
             this.Dispose();

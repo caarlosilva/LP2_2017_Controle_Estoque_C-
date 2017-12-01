@@ -58,6 +58,7 @@ namespace ControlX
             user1 = func.LerUser(idFunc); 
 
             FormRelatorios form = new FormRelatorios(user1.Nome, dataIni, dataFim, user1);
+            form.Text = "ControlX - Relatorio de vendas por funcionário";
             form.tipoRelatorio = 4;
             form.Show();
         }

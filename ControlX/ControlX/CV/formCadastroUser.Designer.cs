@@ -131,7 +131,7 @@
             this.lbValidaCPF.ForeColor = System.Drawing.Color.Lime;
             this.lbValidaCPF.Location = new System.Drawing.Point(159, 46);
             this.lbValidaCPF.Name = "lbValidaCPF";
-            this.lbValidaCPF.Size = new System.Drawing.Size(18, 13);
+            this.lbValidaCPF.Size = new System.Drawing.Size(17, 13);
             this.lbValidaCPF.TabIndex = 21;
             this.lbValidaCPF.Text = "✔";
             // 
@@ -339,7 +339,7 @@
             this.lbTel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbTel2.Location = new System.Drawing.Point(4, 108);
             this.lbTel2.Name = "lbTel2";
-            this.lbTel2.Size = new System.Drawing.Size(120, 13);
+            this.lbTel2.Size = new System.Drawing.Size(119, 13);
             this.lbTel2.TabIndex = 7;
             this.lbTel2.Text = "Telefone(Opcional):";
             // 
@@ -349,7 +349,7 @@
             this.lbTel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbTel1.Location = new System.Drawing.Point(4, 77);
             this.lbTel1.Name = "lbTel1";
-            this.lbTel1.Size = new System.Drawing.Size(61, 13);
+            this.lbTel1.Size = new System.Drawing.Size(60, 13);
             this.lbTel1.TabIndex = 6;
             this.lbTel1.Text = "Telefone:";
             // 

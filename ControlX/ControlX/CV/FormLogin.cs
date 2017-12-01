@@ -51,11 +51,12 @@ namespace ControlX
             {
                 this.Hide();
                 formMenu menu = new formMenu(user);
-                if (Logado1 != 1)
+                if (Logado1 > 2)
                 {
                     menu.btUsuario.Visible = false;
                     menu.menuRelatorio.Visible = false;
                 }
+                   
                 menu.lbMensagem.Text = "Olá '" + user.Nome + "' !";
                 menu.ShowDialog();
 

@@ -17,6 +17,19 @@ namespace ControlX
         private Usuario user = new Usuario();
         bool loginValido = false;
 
+        public bool LoginValido
+        {
+            get
+            {
+                return loginValido;
+            }
+
+            set
+            {
+                loginValido = value;
+            }
+        }
+
         public formCadastroUser()
         {            
             InitializeComponent();
@@ -28,7 +41,7 @@ namespace ControlX
             if (txNome.Text.Trim() == "" || txRua.Text.Trim() == ""
                 || txBairro.Text.Trim() == "" || txCidade.Text.Trim() == "" || txEstado.Text.Trim() == ""
                     || txNum.Text.Trim() == "" || !txCPF.MaskCompleted || !txTel1.MaskCompleted || txLogin.Text.Trim() == ""
-                        || txSenha.Text.Trim() == "" || cbCargo.Text.Trim() == "" || cbSexo.Text.Trim() == "" || !loginValido) //O IF ACABA AQUI, KRAI
+                        || txSenha.Text.Trim() == "" || cbCargo.Text.Trim() == "" || cbSexo.Text.Trim() == "" || !LoginValido) //O IF ACABA AQUI, KRAI
                 btCadastrar.Enabled = false;
             else
                 btCadastrar.Enabled = true;
@@ -133,14 +146,14 @@ namespace ControlX
                 {
                     lbMensagem.ForeColor = Color.Red;                 
                     lbMensagem.Text = "Usuário já está em uso!";
-                    loginValido = false;
+                    LoginValido = false;
                     btComplete();
                 }
                 else
                 {
                     lbMensagem.ForeColor = Color.Green;
                     lbMensagem.Text = "Usuário disponivel para uso!";
-                    loginValido = true;
+                    LoginValido = true;
                     btComplete();
                 }
             }

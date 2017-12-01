@@ -13,6 +13,16 @@ namespace ControlX
     public partial class formUsuario : Form
     {
         private int idUser;
+        private bool supervisor = false;
+
+        //Supervisor
+        public formUsuario(bool supervisor)
+        {
+            this.supervisor = supervisor;
+            InitializeComponent();
+            Fill();
+            btDel.Enabled = false;
+        }
 
         public formUsuario()
         {
@@ -72,6 +82,8 @@ namespace ControlX
             IDao db = new DAO.UsuarioDao();
             idUser = db.GetId();
             form.lbIdUser.Text = "" + idUser;
+            form.cbCargo.Items.Remove("Administrador");
+            form.cbCargo.Items.Remove("Supervisor"); 
             form.ShowDialog(this);
             Fill();
         }
@@ -80,7 +92,12 @@ namespace ControlX
         {
             IDao db = new DAO.UsuarioDao();
             List<Object> usuarios = db.ListAll();
+            int permissao = 0;
 
+            if (dgvUsuario.Rows[dgvUsuario.CurrentRow.Index].Cells[4].Value.ToString() == "Administrador" || dgvUsuario.Rows[dgvUsuario.CurrentRow.Index].Cells[4].Value.ToString() == "Supervisor")
+            {
+                permissao = 1;
+            }
 
             formCadastroUser form = new formCadastroUser();
             int id = int.Parse(dgvUsuario.Rows[dgvUsuario.CurrentRow.Index].Cells[0].Value.ToString());
@@ -108,10 +125,22 @@ namespace ControlX
                     form.txSenha.Text = Convert.ToString(u.Senha);
                 }
             }
+
             form.btCadastrar.Text = "Salvar";
+            form.LoginValido = true;
             form.txLogin.Enabled = false;
-            form.ShowDialog(this);
-            Fill();
+            if (this.supervisor == true && permissao == 1)
+            {
+                //Caixa de aviso para edição de Administrador ou Supervisor
+                DialogResult result = MessageBox.Show("Você não tem permissão para isso.",
+                    "Aviso!",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                form.ShowDialog(this);
+                Fill();
+            }
         }
 
         private void detalhes()

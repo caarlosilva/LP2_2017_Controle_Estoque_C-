@@ -44,7 +44,7 @@
             this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtInicio.Location = new System.Drawing.Point(64, 57);
             this.dtInicio.Name = "dtInicio";
-            this.dtInicio.Size = new System.Drawing.Size(115, 20);
+            this.dtInicio.Size = new System.Drawing.Size(97, 20);
             this.dtInicio.TabIndex = 0;
             this.dtInicio.Value = new System.DateTime(2017, 12, 1, 1, 0, 0, 0);
             // 
@@ -54,7 +54,7 @@
             this.dtFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFim.Location = new System.Drawing.Point(64, 109);
             this.dtFim.Name = "dtFim";
-            this.dtFim.Size = new System.Drawing.Size(115, 20);
+            this.dtFim.Size = new System.Drawing.Size(97, 20);
             this.dtFim.TabIndex = 0;
             this.dtFim.Value = new System.DateTime(2017, 12, 1, 23, 0, 0, 0);
             // 
