@@ -25,18 +25,20 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
  - Criar uma base de dados correta para apresentação;
  - Aperfeiçoar a interface gráfica do software;
 
-*------------------------------ F O R M S ------------------------------* 
+------------------------------ F O R M S ------------------------------
+
+
 ------------------------------ EM TODOS OS FORMS ------------------------------
 
-*FEITO*- Busca por nome não pode aceitar ' aspas simples para não bugar o SQL
-*PARCIAL(ESTOQUE FEITO)*- Quando trocar de tipo de busca(ID,NOME), apagar o textbox para não gerar conflitos com o banco
+- Busca por nome não pode aceitar ' aspas simples para não bugar o SQL *FEITO*
+- Quando trocar de tipo de busca(ID,NOME), apagar o textbox para não gerar conflitos com o banco *PARCIAL(ESTOQUE FEITO)*
 
 ------------------------------  ESTOQUE ------------------------------
 
-*FEITO*- Busca por Categoria não funcionando
-*FEITO*- DGV com dados errados em UN e Categoria quando usa-se o filtro de BUSCA
+- Busca por Categoria não funcionando *FEITO*
+- DGV com dados errados em UN e Categoria quando usa-se o filtro de BUSCA *FEITO*
 - Arrumar as imagens dos produtos/ou remover
-*FEITO*- Na hora de adicionar, o campo nome não aceita ' aspas simples(inverter com o campo busca)
+- Na hora de adicionar, o campo nome não aceita ' aspas simples(inverter com o campo busca) *FEITO*
 
 ------------------------------ FORNECEDORES ------------------------------
 
