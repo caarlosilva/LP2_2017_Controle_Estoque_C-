@@ -205,6 +205,7 @@
             this.txPesquisar.Name = "txPesquisar";
             this.txPesquisar.Size = new System.Drawing.Size(405, 21);
             this.txPesquisar.TabIndex = 1;
+            this.txPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPesquisar_KeyPress);
             // 
             // lbId
             // 

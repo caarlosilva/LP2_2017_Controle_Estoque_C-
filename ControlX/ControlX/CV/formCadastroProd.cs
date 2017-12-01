@@ -63,7 +63,7 @@ namespace ControlX
         
         private void btComplete()
         {
-            if (txNome.Text.Trim() == "" || txPreco.Text.Trim() == "" || txQntd.Text.Trim() == "" || cbFornecedor.Text.Trim() == "" || cbCategoria.Text.Trim() == "" || cbTipoUn.Text.Trim() == "")
+            if (txNome.Text.Trim() == "" || txPreco.Text.Trim() == "" || txQntd.Text.Trim() == "" || cbFornecedor.Text.Trim() == "" || cbCategoria.Text.Trim() == "" || cbTipoUn.Text.Trim() == "" || txEstoqueMin.Text.Trim() == "")
                 btCadastrar.Enabled = false;
             else
                 btCadastrar.Enabled = true;
@@ -107,8 +107,6 @@ namespace ControlX
 
         private void txNome_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsPunctuation(e.KeyChar))
-                e.Handled = true;
         }
 
         private void btImagem_Click(object sender, EventArgs e)
@@ -146,5 +144,18 @@ namespace ControlX
                 if (txPreco.Text.Contains(",") || txPreco.Text.Equals(""))//Checa se o usuario ja inseriu uma virgula previamente
                     e.Handled = true; // Caso ja exista uma virgula, outra não será aceita            
         }
+
+        private void txEstoqueMin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+                e.Handled = true;
+
+            if (e.KeyChar == ',')   //Se o usuario inserir uma virgula
+                if (txEstoqueMin.Text.Contains(",") || txEstoqueMin.Text.Equals(""))//Checa se o usuario ja inseriu uma virgula previamente
+                    e.Handled = true; // Caso ja exista uma virgula, outra não será aceita   
+
+                         
+        }
     }
+    
 }

@@ -40,7 +40,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novaCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbComprasFinalizadas = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnAguardando = new System.Windows.Forms.Panel();
             this.btFinalizar = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@
             this.gbAgendadas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprasAguardando)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbComprasFinalizadas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnAguardando.SuspendLayout();
             this.SuspendLayout();
@@ -146,15 +146,15 @@
             this.novaCompraToolStripMenuItem.Text = "Agendar Compra";
             this.novaCompraToolStripMenuItem.Click += new System.EventHandler(this.novaCompraToolStripMenuItem_Click);
             // 
-            // groupBox1
+            // gbComprasFinalizadas
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(4, 31);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(363, 399);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ultimas compras finalizadas";
+            this.gbComprasFinalizadas.Controls.Add(this.dataGridView1);
+            this.gbComprasFinalizadas.Location = new System.Drawing.Point(4, 31);
+            this.gbComprasFinalizadas.Name = "gbComprasFinalizadas";
+            this.gbComprasFinalizadas.Size = new System.Drawing.Size(363, 399);
+            this.gbComprasFinalizadas.TabIndex = 3;
+            this.gbComprasFinalizadas.TabStop = false;
+            this.gbComprasFinalizadas.Text = "Ultimas compras finalizadas";
             // 
             // dataGridView1
             // 
@@ -208,7 +208,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(734, 436);
             this.Controls.Add(this.pnAguardando);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbComprasFinalizadas);
             this.Controls.Add(this.gbAgendadas);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,7 +223,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprasAguardando)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.gbComprasFinalizadas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnAguardando.ResumeLayout(false);
             this.pnAguardando.PerformLayout();
@@ -237,7 +237,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem novaCompraToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvComprasAguardando;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbComprasFinalizadas;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel pnAguardando;
         private System.Windows.Forms.Button btFinalizar;

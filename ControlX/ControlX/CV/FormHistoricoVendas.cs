@@ -81,5 +81,13 @@ namespace ControlX
         {
             detalhes();
         }
+
+        private void txPesquisar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && rbId.Checked)
+                e.Handled = true;
+            if (e.KeyChar == '\'')
+                e.Handled = true;
+        }
     }
 }

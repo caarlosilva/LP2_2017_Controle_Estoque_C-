@@ -35,7 +35,8 @@
             this.lbFiltro = new System.Windows.Forms.Label();
             this.txPesquisar = new System.Windows.Forms.TextBox();
             this.pnPesquisa = new System.Windows.Forms.Panel();
-            this.rbCategoria = new System.Windows.Forms.RadioButton();
+            this.lbCategorias = new System.Windows.Forms.Label();
+            this.cbCategorias = new System.Windows.Forms.ComboBox();
             this.rbNome = new System.Windows.Forms.RadioButton();
             this.rbId = new System.Windows.Forms.RadioButton();
             this.dgvEstoque = new System.Windows.Forms.DataGridView();
@@ -72,7 +73,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFiltro.AutoSize = true;
             this.lbFiltro.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFiltro.Location = new System.Drawing.Point(7, 16);
+            this.lbFiltro.Location = new System.Drawing.Point(8, 16);
             this.lbFiltro.Name = "lbFiltro";
             this.lbFiltro.Size = new System.Drawing.Size(40, 13);
             this.lbFiltro.TabIndex = 0;
@@ -85,9 +86,9 @@
             this.txPesquisar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txPesquisar.Location = new System.Drawing.Point(47, 14);
+            this.txPesquisar.Location = new System.Drawing.Point(55, 14);
             this.txPesquisar.Name = "txPesquisar";
-            this.txPesquisar.Size = new System.Drawing.Size(466, 21);
+            this.txPesquisar.Size = new System.Drawing.Size(543, 21);
             this.txPesquisar.TabIndex = 0;
             this.txPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPesquisar_KeyPress);
             this.txPesquisar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txPesquisar_KeyUp);
@@ -96,27 +97,39 @@
             // 
             this.pnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnPesquisa.Controls.Add(this.rbCategoria);
+            this.pnPesquisa.Controls.Add(this.lbCategorias);
+            this.pnPesquisa.Controls.Add(this.cbCategorias);
             this.pnPesquisa.Controls.Add(this.rbNome);
             this.pnPesquisa.Controls.Add(this.rbId);
             this.pnPesquisa.Controls.Add(this.txPesquisar);
             this.pnPesquisa.Controls.Add(this.lbFiltro);
             this.pnPesquisa.Location = new System.Drawing.Point(0, 31);
             this.pnPesquisa.Name = "pnPesquisa";
-            this.pnPesquisa.Size = new System.Drawing.Size(690, 46);
+            this.pnPesquisa.Size = new System.Drawing.Size(805, 46);
             this.pnPesquisa.TabIndex = 2;
             // 
-            // rbCategoria
+            // lbCategorias
             // 
-            this.rbCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbCategoria.AutoSize = true;
-            this.rbCategoria.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCategoria.Location = new System.Drawing.Point(594, 3);
-            this.rbCategoria.Name = "rbCategoria";
-            this.rbCategoria.Size = new System.Drawing.Size(81, 17);
-            this.rbCategoria.TabIndex = 11;
-            this.rbCategoria.Text = "Categoria";
-            this.rbCategoria.UseVisualStyleBackColor = true;
+            this.lbCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbCategorias.AutoSize = true;
+            this.lbCategorias.Location = new System.Drawing.Point(675, 5);
+            this.lbCategorias.Name = "lbCategorias";
+            this.lbCategorias.Size = new System.Drawing.Size(74, 13);
+            this.lbCategorias.TabIndex = 13;
+            this.lbCategorias.Text = "Categorias:";
+            // 
+            // cbCategorias
+            // 
+            this.cbCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbCategorias.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cbCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbCategorias.FormattingEnabled = true;
+            this.cbCategorias.Location = new System.Drawing.Point(670, 23);
+            this.cbCategorias.Name = "cbCategorias";
+            this.cbCategorias.Size = new System.Drawing.Size(123, 21);
+            this.cbCategorias.TabIndex = 12;
+            this.cbCategorias.TextChanged += new System.EventHandler(this.cbCategorias_TextChanged);
             // 
             // rbNome
             // 
@@ -124,25 +137,27 @@
             this.rbNome.AutoSize = true;
             this.rbNome.Checked = true;
             this.rbNome.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNome.Location = new System.Drawing.Point(519, 3);
+            this.rbNome.Location = new System.Drawing.Point(611, 3);
             this.rbNome.Name = "rbNome";
             this.rbNome.Size = new System.Drawing.Size(58, 17);
             this.rbNome.TabIndex = 10;
             this.rbNome.TabStop = true;
             this.rbNome.Text = "Nome";
             this.rbNome.UseVisualStyleBackColor = true;
+            this.rbNome.CheckedChanged += new System.EventHandler(this.rbId_CheckedChanged);
             // 
             // rbId
             // 
             this.rbId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbId.AutoSize = true;
             this.rbId.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbId.Location = new System.Drawing.Point(519, 26);
+            this.rbId.Location = new System.Drawing.Point(611, 23);
             this.rbId.Name = "rbId";
             this.rbId.Size = new System.Drawing.Size(37, 17);
             this.rbId.TabIndex = 1;
             this.rbId.Text = "Id";
             this.rbId.UseVisualStyleBackColor = true;
+            this.rbId.CheckedChanged += new System.EventHandler(this.rbId_CheckedChanged);
             // 
             // dgvEstoque
             // 
@@ -164,7 +179,7 @@
             this.dgvEstoque.ReadOnly = true;
             this.dgvEstoque.RowHeadersVisible = false;
             this.dgvEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEstoque.Size = new System.Drawing.Size(684, 360);
+            this.dgvEstoque.Size = new System.Drawing.Size(791, 360);
             this.dgvEstoque.TabIndex = 3;
             this.dgvEstoque.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEstoque_CellMouseDoubleClick);
             // 
@@ -231,12 +246,12 @@
             this.gbEstoque.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbEstoque.Controls.Add(this.pnButtons);
             this.gbEstoque.Controls.Add(this.dgvEstoque);
+            this.gbEstoque.Controls.Add(this.pnButtons);
             this.gbEstoque.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbEstoque.Location = new System.Drawing.Point(0, 83);
             this.gbEstoque.Name = "gbEstoque";
-            this.gbEstoque.Size = new System.Drawing.Size(690, 380);
+            this.gbEstoque.Size = new System.Drawing.Size(797, 380);
             this.gbEstoque.TabIndex = 4;
             this.gbEstoque.TabStop = false;
             this.gbEstoque.Text = "Estoque";
@@ -249,9 +264,9 @@
             this.pnButtons.Controls.Add(this.btAdd);
             this.pnButtons.Controls.Add(this.btEdit);
             this.pnButtons.Controls.Add(this.btDel);
-            this.pnButtons.Location = new System.Drawing.Point(269, 341);
+            this.pnButtons.Location = new System.Drawing.Point(306, 341);
             this.pnButtons.Name = "pnButtons";
-            this.pnButtons.Size = new System.Drawing.Size(415, 29);
+            this.pnButtons.Size = new System.Drawing.Size(484, 29);
             this.pnButtons.TabIndex = 8;
             this.pnButtons.Visible = false;
             // 
@@ -261,7 +276,7 @@
             this.btCategoria.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCategoria.Location = new System.Drawing.Point(3, 5);
             this.btCategoria.Name = "btCategoria";
-            this.btCategoria.Size = new System.Drawing.Size(85, 23);
+            this.btCategoria.Size = new System.Drawing.Size(99, 23);
             this.btCategoria.TabIndex = 5;
             this.btCategoria.Text = "Categorias";
             this.btCategoria.UseVisualStyleBackColor = true;
@@ -271,9 +286,9 @@
             // 
             this.btView.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btView.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btView.Location = new System.Drawing.Point(175, 5);
+            this.btView.Location = new System.Drawing.Point(204, 5);
             this.btView.Name = "btView";
-            this.btView.Size = new System.Drawing.Size(75, 23);
+            this.btView.Size = new System.Drawing.Size(87, 23);
             this.btView.TabIndex = 2;
             this.btView.Text = "Visualizar";
             this.btView.UseVisualStyleBackColor = true;
@@ -283,9 +298,9 @@
             // 
             this.btAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btAdd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Location = new System.Drawing.Point(337, 5);
+            this.btAdd.Location = new System.Drawing.Point(393, 5);
             this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(75, 23);
+            this.btAdd.Size = new System.Drawing.Size(87, 23);
             this.btAdd.TabIndex = 0;
             this.btAdd.Text = "Adicionar";
             this.btAdd.UseVisualStyleBackColor = true;
@@ -295,9 +310,9 @@
             // 
             this.btEdit.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btEdit.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEdit.Location = new System.Drawing.Point(256, 5);
+            this.btEdit.Location = new System.Drawing.Point(299, 5);
             this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(75, 23);
+            this.btEdit.Size = new System.Drawing.Size(87, 23);
             this.btEdit.TabIndex = 1;
             this.btEdit.Text = "Editar";
             this.btEdit.UseVisualStyleBackColor = true;
@@ -307,9 +322,9 @@
             // 
             this.btDel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btDel.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDel.Location = new System.Drawing.Point(94, 5);
+            this.btDel.Location = new System.Drawing.Point(110, 5);
             this.btDel.Name = "btDel";
-            this.btDel.Size = new System.Drawing.Size(75, 23);
+            this.btDel.Size = new System.Drawing.Size(87, 23);
             this.btDel.TabIndex = 3;
             this.btDel.Text = "Remover";
             this.btDel.UseVisualStyleBackColor = true;
@@ -328,7 +343,8 @@
             this.removerToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(690, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(805, 28);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -384,13 +400,14 @@
             // formEstoque
             // 
             this.AcceptButton = this.btAdd;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(690, 465);
+            this.ClientSize = new System.Drawing.Size(805, 465);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.gbEstoque);
             this.Controls.Add(this.pnPesquisa);
+            this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formEstoque";
@@ -421,20 +438,21 @@
         public System.Windows.Forms.Panel pnPesquisa;
         public System.Windows.Forms.Panel pnButtons;
         public System.Windows.Forms.Button btCategoria;
-        private System.Windows.Forms.RadioButton rbCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPreco;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQtd;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUn;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCat;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem adicionarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem detalhesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cbCategorias;
+        private System.Windows.Forms.Label lbCategorias;
+        public System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem adicionarToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem detalhesToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem removerToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
     }
 }
 

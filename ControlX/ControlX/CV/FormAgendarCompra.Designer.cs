@@ -66,6 +66,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbDetalhesCompra = new System.Windows.Forms.GroupBox();
+            this.lbUser = new System.Windows.Forms.Label();
+            this.lbUsuario = new System.Windows.Forms.Label();
             this.lbNumCompra = new System.Windows.Forms.Label();
             this.lbValorShow = new System.Windows.Forms.Label();
             this.pnButtons = new System.Windows.Forms.Panel();
@@ -75,8 +77,6 @@
             this.lbDataEntrega = new System.Windows.Forms.Label();
             this.dtEntrega = new System.Windows.Forms.DateTimePicker();
             this.lbDataCompra = new System.Windows.Forms.Label();
-            this.lbUsuario = new System.Windows.Forms.Label();
-            this.lbUser = new System.Windows.Forms.Label();
             this.pnMenu.SuspendLayout();
             this.pnCabecalho.SuspendLayout();
             this.pnBtCad.SuspendLayout();
@@ -482,7 +482,27 @@
             this.gbDetalhesCompra.Size = new System.Drawing.Size(314, 403);
             this.gbDetalhesCompra.TabIndex = 15;
             this.gbDetalhesCompra.TabStop = false;
-            this.gbDetalhesCompra.Text = "W";
+            this.gbDetalhesCompra.Text = "Detalhes da Compra";
+            // 
+            // lbUser
+            // 
+            this.lbUser.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lbUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbUser.Location = new System.Drawing.Point(88, 136);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(208, 21);
+            this.lbUser.TabIndex = 17;
+            // 
+            // lbUsuario
+            // 
+            this.lbUsuario.AutoSize = true;
+            this.lbUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lbUsuario.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsuario.Location = new System.Drawing.Point(8, 141);
+            this.lbUsuario.Name = "lbUsuario";
+            this.lbUsuario.Size = new System.Drawing.Size(61, 13);
+            this.lbUsuario.TabIndex = 16;
+            this.lbUsuario.Text = "Usuario:";
             // 
             // lbNumCompra
             // 
@@ -574,26 +594,6 @@
             this.lbDataCompra.Size = new System.Drawing.Size(115, 13);
             this.lbDataCompra.TabIndex = 2;
             this.lbDataCompra.Text = "Data da Compra:";
-            // 
-            // lbUsuario
-            // 
-            this.lbUsuario.AutoSize = true;
-            this.lbUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lbUsuario.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsuario.Location = new System.Drawing.Point(8, 141);
-            this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(61, 13);
-            this.lbUsuario.TabIndex = 16;
-            this.lbUsuario.Text = "Usuario:";
-            // 
-            // lbUser
-            // 
-            this.lbUser.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.lbUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbUser.Location = new System.Drawing.Point(88, 136);
-            this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(208, 21);
-            this.lbUser.TabIndex = 17;
             // 
             // FormAgendarCompra
             // 

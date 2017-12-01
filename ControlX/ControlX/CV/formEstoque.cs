@@ -13,7 +13,6 @@ namespace ControlX
 {
     public partial class formEstoque : Form
     {
-        //private static Dictionary<int, Produto> produtos = new Dictionary<int, Produto>();
         private int idProduto;
 
         public formEstoque()
@@ -39,9 +38,17 @@ namespace ControlX
             IDao db = new DAO.ProdutoDao();
             List<Object> ps = db.ListAll();
 
+            IDao db1 = new DAO.CategoriaDao();
+            List<Object> cs = db1.ListAll();
+            cbCategorias.DisplayMember = "Nome";
+            cs.Add("Todos");
+            cbCategorias.DataSource = cs;
+            cbCategorias.SelectedItem = "Todos";
+
             dgvEstoque.Rows.Clear();
             foreach (Produto p in ps)
             {
+
                 dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd, p.TipoUn, p.Cat.Nome);
             }
 
@@ -75,15 +82,10 @@ namespace ControlX
 
         private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
         {
-            DAO.ProdutoDao db = new DAO.ProdutoDao();
-
-                List<Object> ps = (rbNome.Checked) ? db.ListByName(txPesquisar.Text) : (txPesquisar.Text.Trim() == "") ? db.ListAll() : db.ListById(int.Parse(txPesquisar.Text));
-
-                dgvEstoque.Rows.Clear();
-                foreach (Produto p in ps)
-                {
-                    dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd, p.Cat.Nome);
-                }
+            if (txPesquisar.Text.Trim() != "")
+                pesquisaFiltro();
+            else
+                Fill();
         }
 
         private void btDel_Click(object sender, EventArgs e)
@@ -188,6 +190,33 @@ namespace ControlX
             form.ShowDialog(this);
         }
 
+
+        private void pesquisaFiltro()
+        {
+            DAO.ProdutoDao db = new DAO.ProdutoDao();
+            List<Object> ps = (rbNome.Checked) ? db.ListByName(txPesquisar.Text) : (txPesquisar.Text.Trim() == "") ? db.ListAll() : db.ListById(int.Parse(txPesquisar.Text));
+
+            dgvEstoque.Rows.Clear();
+
+            if (cbCategorias.Text != "Todos")
+            {
+                foreach (Produto p in ps)
+                {
+                    if (p.Cat.Nome.Equals(cbCategorias.Text))
+                    {
+                        dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd, p.TipoUn, p.Cat.Nome);
+                    }
+
+                }
+            }
+            else
+            {
+                foreach (Produto p in ps)
+                {
+                    dgvEstoque.Rows.Add(p.Id, p.Nome, p.Preco, p.Qntd, p.TipoUn, p.Cat.Nome);
+                }
+            }
+        }
         private void btView_Click(object sender, EventArgs e)
         {
             detalhes();
@@ -202,6 +231,8 @@ namespace ControlX
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && rbId.Checked)
                 e.Handled = true;
+            if (e.KeyChar == '\'')
+                e.Handled = true;
         }
 
         private void btCategoria_Click(object sender, EventArgs e)
@@ -209,11 +240,24 @@ namespace ControlX
             this.Hide();
             new FormCategoria().ShowDialog();
             this.Show();
+            Fill();
         }
 
         private void dgvEstoque_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             detalhes();
+        }
+
+        private void rbId_CheckedChanged(object sender, EventArgs e)
+        {
+            txPesquisar.Text = "";
+            pesquisaFiltro();
+            txPesquisar.Focus();
+        }
+
+        private void cbCategorias_TextChanged(object sender, EventArgs e)
+        {
+            pesquisaFiltro();
         }
     }
 }

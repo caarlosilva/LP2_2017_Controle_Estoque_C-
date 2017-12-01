@@ -221,5 +221,12 @@ namespace ControlX
         {
             detalhes();
         }
+
+        private void txPesquisar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\'')
+                e.Handled = true;
+
+        }
     }
 }

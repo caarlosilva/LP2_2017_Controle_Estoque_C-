@@ -62,7 +62,7 @@
             this.btCadastrar.Location = new System.Drawing.Point(332, 3);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(89, 23);
-            this.btCadastrar.TabIndex = 0;
+            this.btCadastrar.TabIndex = 8;
             this.btCadastrar.Text = "Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = true;
             this.btCadastrar.Click += new System.EventHandler(this.btCadastrar_Click);
@@ -95,7 +95,6 @@
             this.txNome.Name = "txNome";
             this.txNome.Size = new System.Drawing.Size(280, 21);
             this.txNome.TabIndex = 0;
-            this.txNome.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             this.txNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txNome_KeyPress);
             // 
             // lbId
@@ -152,7 +151,9 @@
             this.txEstoqueMin.Location = new System.Drawing.Point(234, 95);
             this.txEstoqueMin.Name = "txEstoqueMin";
             this.txEstoqueMin.Size = new System.Drawing.Size(55, 21);
-            this.txEstoqueMin.TabIndex = 20;
+            this.txEstoqueMin.TabIndex = 4;
+            this.txEstoqueMin.TextChanged += new System.EventHandler(this.txNome_TextChanged);
+            this.txEstoqueMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txEstoqueMin_KeyPress);
             // 
             // cbTipoUn
             // 
@@ -189,7 +190,7 @@
             this.btImagem.Location = new System.Drawing.Point(319, 166);
             this.btImagem.Name = "btImagem";
             this.btImagem.Size = new System.Drawing.Size(113, 18);
-            this.btImagem.TabIndex = 6;
+            this.btImagem.TabIndex = 7;
             this.btImagem.Text = "Escolher Imagem";
             this.btImagem.UseVisualStyleBackColor = true;
             this.btImagem.Click += new System.EventHandler(this.btImagem_Click);
@@ -209,9 +210,9 @@
             // txPreco
             // 
             this.txPreco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txPreco.Location = new System.Drawing.Point(53, 58);
+            this.txPreco.Location = new System.Drawing.Point(61, 58);
             this.txPreco.Name = "txPreco";
-            this.txPreco.Size = new System.Drawing.Size(116, 21);
+            this.txPreco.Size = new System.Drawing.Size(108, 21);
             this.txPreco.TabIndex = 1;
             this.txPreco.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             this.txPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPreco_KeyPress);
@@ -234,7 +235,7 @@
             this.cbCategoria.Location = new System.Drawing.Point(81, 163);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(208, 21);
-            this.cbCategoria.TabIndex = 5;
+            this.cbCategoria.TabIndex = 6;
             this.cbCategoria.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // label1
@@ -255,7 +256,7 @@
             this.cbFornecedor.Location = new System.Drawing.Point(81, 130);
             this.cbFornecedor.Name = "cbFornecedor";
             this.cbFornecedor.Size = new System.Drawing.Size(208, 21);
-            this.cbFornecedor.TabIndex = 4;
+            this.cbFornecedor.TabIndex = 5;
             this.cbFornecedor.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             // 
             // lbQntd
@@ -270,9 +271,9 @@
             // txQntd
             // 
             this.txQntd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txQntd.Location = new System.Drawing.Point(53, 95);
+            this.txQntd.Location = new System.Drawing.Point(61, 95);
             this.txQntd.Name = "txQntd";
-            this.txQntd.Size = new System.Drawing.Size(116, 21);
+            this.txQntd.Size = new System.Drawing.Size(108, 21);
             this.txQntd.TabIndex = 3;
             this.txQntd.TextChanged += new System.EventHandler(this.txNome_TextChanged);
             this.txQntd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txQntd_KeyPress);
@@ -303,7 +304,7 @@
             this.btCancelar.Location = new System.Drawing.Point(8, 1);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(87, 23);
-            this.btCancelar.TabIndex = 1;
+            this.btCancelar.TabIndex = 9;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btCancelar.UseVisualStyleBackColor = true;

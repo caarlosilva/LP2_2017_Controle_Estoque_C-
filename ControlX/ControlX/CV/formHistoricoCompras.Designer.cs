@@ -219,6 +219,7 @@
             this.txPesquisar.Name = "txPesquisar";
             this.txPesquisar.Size = new System.Drawing.Size(389, 21);
             this.txPesquisar.TabIndex = 1;
+            this.txPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPesquisar_KeyPress);
             // 
             // lbFiltro
             // 
@@ -263,7 +264,6 @@
             // 
             // dtFim
             // 
-            this.dtFim.Enabled = false;
             this.dtFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFim.Location = new System.Drawing.Point(52, 27);
             this.dtFim.Name = "dtFim";

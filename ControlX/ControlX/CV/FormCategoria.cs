@@ -67,6 +67,8 @@ namespace ControlX
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && rbId.Checked)
                 e.Handled = true;
+            if (e.KeyChar == '\'')
+                e.Handled = true;
         }
 
         private void btEstoque_Click(object sender, EventArgs e)

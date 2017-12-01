@@ -15,7 +15,7 @@ namespace ControlX
         public formLogin()
         {
             InitializeComponent();
-        }
+    }
 
         private void btSair_Click(object sender, EventArgs e)
         {
@@ -56,7 +56,7 @@ namespace ControlX
                     menu.btUsuario.Visible = false;
                     menu.menuRelatorio.Visible = false;
                 }
-                menu.lbMensagem.Text = "Você está conectado como '" + user.Nome + "' !";
+                menu.lbMensagem.Text = "Olá '" + user.Nome + "' !";
                 menu.txNome.Text = user.Login;
                 menu.txNomeUser.Text = user.Nome;
                 menu.ShowDialog();

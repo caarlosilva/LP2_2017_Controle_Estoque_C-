@@ -17,6 +17,8 @@ namespace ControlX
             InitializeComponent();
             buttonEnable();
             ChecaFiltros();
+            dtInicio.MaxDate = DateTime.Now;
+            dtFim.MaxDate = DateTime.Now;
             Fill();
 
         }
@@ -110,6 +112,14 @@ namespace ControlX
         private void dgvHistCompras_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             detalhes();
+        }
+
+        private void txPesquisar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+            if (e.KeyChar == '\'')
+                e.Handled = true;
         }
     }
 }

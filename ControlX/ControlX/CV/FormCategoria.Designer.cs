@@ -57,9 +57,9 @@
             // pnButtons
             // 
             this.pnButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnButtons.Controls.Add(this.btDel);
             this.pnButtons.Controls.Add(this.btAdd);
             this.pnButtons.Controls.Add(this.btEdit);
-            this.pnButtons.Controls.Add(this.btDel);
             this.pnButtons.Location = new System.Drawing.Point(429, 349);
             this.pnButtons.Name = "pnButtons";
             this.pnButtons.Size = new System.Drawing.Size(249, 29);
@@ -107,8 +107,8 @@
             this.gbEstoque.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbEstoque.Controls.Add(this.pnButtons);
             this.gbEstoque.Controls.Add(this.dgvCategoria);
+            this.gbEstoque.Controls.Add(this.pnButtons);
             this.gbEstoque.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbEstoque.Location = new System.Drawing.Point(0, 73);
             this.gbEstoque.Name = "gbEstoque";

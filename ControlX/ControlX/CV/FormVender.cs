@@ -74,6 +74,11 @@ namespace ControlX
             lbPrecoShow.Text = "";
             lbQntdEstoqueShow.Text = "";
             txQntdVenda.Text = "";
+            txValorPago.Text = "";
+            txCategoria.Text = "";
+            txFornecedor.Text = "";
+            lbTrocoShow.Text = "";
+            txValorTotalItem.Text = "";
 
         }
         private void btLimpar_Click(object sender, EventArgs e)
@@ -88,9 +93,11 @@ namespace ControlX
                 if (txNome.Text.Trim() == p.Nome)
                 {
                     txId.Text = Convert.ToString(p.Id);
+                    txFornecedor.Text = p.Fornecedor.Nome;
+                    txCategoria.Text = p.Cat.Nome;
                     lbPrecoShow.Text = Convert.ToString(p.Preco);
                     lbQntdEstoqueShow.Text = Convert.ToString(p.Qntd) + " " + p.TipoUn;
-                    txQntdVenda.Text = "0";
+                    txQntdVenda.Text = "1";
                     qntdEstoque = p.Qntd;
                 }
 
@@ -100,7 +107,10 @@ namespace ControlX
         {
 
             formEstoque formSearch = new formEstoque();
-            formSearch.pnButtons.Visible = false;
+            formSearch.categoriasToolStripMenuItem.Enabled = false;
+            formSearch.adicionarToolStripMenuItem.Enabled = false;
+            formSearch.editarToolStripMenuItem.Enabled = false;
+            formSearch.removerToolStripMenuItem.Enabled = false;
             formSearch.ShowDialog(this);
 
         }
@@ -121,7 +131,7 @@ namespace ControlX
             int idProd = int.Parse(txId.Text);//Id do produto a ser adicionado a venda
 
             if (qVenda > qntdEstoque || qVenda <= 0)
-                MessageBox.Show("Impossível vender " + qVenda + " Itens. A quantidade do produto no estoque é de " + qntdEstoque + "!", "Aviso!");
+                MessageBox.Show("Item não adicionado !\nVerifique se a quantidade de venda é maior que a do estoque ou maior que 0(zero)!", "Quantidade inválida!");
             else
             {
                 foreach (Produto p in ps)
@@ -194,6 +204,7 @@ namespace ControlX
             if (e.KeyChar == ',')   //Se o usuario inserir uma virgula
                 if (txQntdVenda.Text.Contains(",") || txQntdVenda.Text.Equals(""))//Checa se o usuario ja inseriu uma virgula previamente
                     e.Handled = true; // Caso ja exista uma virgula, outra não será aceita   
+  
         }
 
         private void btVender_Click(object sender, EventArgs e)
@@ -248,16 +259,24 @@ namespace ControlX
                     form.Text = "ControlX - Nota Fiscal ID: " + int.Parse(txId.Text.ToString());
                     form.tipoRelatorio = 5;
                     form.Show();
-                    this.Close();
                 }
                 else if (result == DialogResult.No)
                 {
-                    this.Close();
                 }
             }
             catch (Exception x)
             {
                 MessageBox.Show("ERRO:" + x, "Venda não concluida!");
+            }
+            finally
+            {
+                this.Refresh();
+                dgvVendas.Rows.Clear();
+                ps = db.ListAll();
+                Limpar();
+                lbValorTotal.Text = "";
+                BtComplete();
+
             }
         }
 
@@ -287,7 +306,9 @@ namespace ControlX
                     lbPrecoShow.Text = Convert.ToString(p.Preco);
                     lbQntdEstoqueShow.Text = Convert.ToString(p.Qntd) + " " + p.TipoUn;                    
                     qntdEstoque = p.Qntd;
+                    txValorTotalItem.Text = (p.Preco * (txQntdVenda.Text != "" ? double.Parse(txQntdVenda.Text) : 1)).ToString();
                 }
+            
         }
     }
 }
