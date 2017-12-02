@@ -69,6 +69,7 @@ CREATE TABLE produtos (
 	status int,
 	dataCompra datetime,
 	dataEntrega datetime,
+	dataFinal datetime DEFAULT NULL,
 	PRIMARY KEY (id)
 );
  
