@@ -46,7 +46,7 @@
             this.dtInicio.Name = "dtInicio";
             this.dtInicio.Size = new System.Drawing.Size(97, 20);
             this.dtInicio.TabIndex = 0;
-            this.dtInicio.Value = new System.DateTime(2017, 12, 1, 1, 0, 0, 0);
+            this.dtInicio.Value = new System.DateTime(2017, 12, 2, 0, 0, 0, 0);
             // 
             // dtFim
             // 
@@ -56,7 +56,7 @@
             this.dtFim.Name = "dtFim";
             this.dtFim.Size = new System.Drawing.Size(97, 20);
             this.dtFim.TabIndex = 0;
-            this.dtFim.Value = new System.DateTime(2017, 12, 1, 23, 0, 0, 0);
+            this.dtFim.Value = new System.DateTime(2017, 12, 2, 0, 0, 0, 0);
             // 
             // lbDataInicio
             // 
