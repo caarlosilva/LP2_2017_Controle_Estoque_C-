@@ -34,15 +34,15 @@ namespace ControlX
                 {
                    if (c.Status == 0)
                    {
-                       status = "Pendente";
+                        status = "Pendente";
                    }
                    else
                    {
-                       status = "Entregue";
+                        status = "Entregue";
                    }
                 string dataCompra = c.DataCompra.ToString("dd-MM-yyyy");
                 string dataEntrega = c.DataEntrega.ToString("dd-MM-yyyy");
-                dgvHistCompras.Rows.Add(c.Id, c.Nome_usuario, dataCompra, dataEntrega, c.Valor, status);
+                dgvHistCompras.Rows.Add(c.Id, c.Nome_usuario, dataCompra, dataEntrega, c.Valor, status, c.DataFinal.ToString("dd-MM-yyyy"));
                 }
             buttonEnable();
         }
@@ -67,7 +67,15 @@ namespace ControlX
             form.txId.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[0].Value.ToString());
             form.txUser.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[1].Value.ToString());
             form.txValor.Text = Convert.ToDouble(dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[4].Value.ToString()).ToString("C");
-            form.txStatus.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[5].Value.ToString());
+            if (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[5].Value.ToString() == "Pendente")
+            {
+                form.txStatus.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[5].Value.ToString());
+            }
+            else
+            {
+                form.txStatus.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[6].Value.ToString());
+            }
+
 
             ComprarDao db = new ComprarDao();
             List<Object> ps = db.ListProdutos(int.Parse(dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[0].Value.ToString()));

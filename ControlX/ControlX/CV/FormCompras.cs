@@ -19,13 +19,17 @@ namespace ControlX
         {
             InitializeComponent();
             FillComprasAguardando();
+            FillUltimasCompras();
+            buttonEnable();
         }
 
         public FormCompras(Usuario u)
         {
             InitializeComponent();
             FillComprasAguardando();
+            FillUltimasCompras();
             user = u;
+            buttonEnable();
         }
 
         private void FillComprasAguardando()
@@ -38,7 +42,7 @@ namespace ControlX
             {
                 if (c.Status == 0)
                 {
-                    dgvComprasAguardando.Rows.Add(c.Id, c.DataCompra, c.DataEntrega);
+                    dgvComprasAguardando.Rows.Add(c.Id, c.Nome_usuario, c.DataCompra, c.DataEntrega, c.Valor, "Pendente");
                     i++;
                     if (DateTime.Compare(c.DataEntrega, DateTime.Now) <= 0)
                     {
@@ -51,6 +55,18 @@ namespace ControlX
             dgvComprasAguardando.Sort(colDataEntrega, ListSortDirection.Ascending);
         }
 
+        private void FillUltimasCompras()
+        {
+            ComprarDao db = new ComprarDao();
+            List<object> compras = db.ListUltimasCompras();
+
+            dgvUltimasCompras.Rows.Clear();
+            foreach (Comprar c in compras)
+            {
+                dgvUltimasCompras.Rows.Add(c.Id, c.DataCompra, c.DataFinal);
+            }
+        }
+
         private void novaCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -58,6 +74,8 @@ namespace ControlX
             form.lbUser.Text = user.Nome;
             form.ShowDialog();
             FillComprasAguardando();
+            FillUltimasCompras();
+            buttonEnable();
             this.Show();
 
         }
@@ -93,6 +111,55 @@ namespace ControlX
 
             }
             FillComprasAguardando();
+            FillUltimasCompras();
+            buttonEnable();
+        }
+
+        private void buttonEnable()
+        {
+
+            if (dgvComprasAguardando.RowCount == 0)
+            {
+                btFinalizar.Enabled = false;
+            }
+            else
+            {
+                btFinalizar.Enabled = true;
+            }
+        }
+
+        private void dgvComprasAguardando_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            detalhes();
+        }
+
+        private void detalhes()
+        {
+            CV.FormHistoricoComprasView form = new CV.FormHistoricoComprasView();
+            //Enviando informacões para os labels e bottons.
+            form.txId.Text = (dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[0].Value.ToString());
+            form.txUser.Text = (dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[1].Value.ToString());
+            form.txValor.Text = Convert.ToDouble(dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[4].Value.ToString()).ToString("C");
+            if (dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[5].Value.ToString() == "Pendente")
+            {
+                form.txStatus.Text = (dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[5].Value.ToString());
+            }
+            else
+            {
+                form.txStatus.Text = (dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[6].Value.ToString());
+            }
+
+
+            ComprarDao db = new ComprarDao();
+            List<Object> ps = db.ListProdutos(int.Parse(dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[0].Value.ToString()));
+
+            form.dgvProdutos.Rows.Clear();
+            foreach (Produto p in ps)
+            {
+                form.dgvProdutos.Rows.Add(p.Id, p.Nome, p.Preco.ToString("C"), p.Qntd, p.TipoUn, p.Fornecedor.Nome);
+            }
+
+            form.ShowDialog(this);
         }
     }
 }

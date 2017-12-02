@@ -146,7 +146,7 @@
             // 
             this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
             this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
             // 
@@ -160,6 +160,7 @@
             // 
             // pnData
             // 
+            this.pnData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnData.Controls.Add(this.lbData);
             this.pnData.Controls.Add(this.dtDataVenda);
             this.pnData.Location = new System.Drawing.Point(468, 31);
@@ -170,7 +171,7 @@
             // lbData
             // 
             this.lbData.AutoSize = true;
-            this.lbData.Location = new System.Drawing.Point(3, 22);
+            this.lbData.Location = new System.Drawing.Point(5, 19);
             this.lbData.Name = "lbData";
             this.lbData.Size = new System.Drawing.Size(39, 13);
             this.lbData.TabIndex = 13;
@@ -179,7 +180,7 @@
             // dtDataVenda
             // 
             this.dtDataVenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDataVenda.Location = new System.Drawing.Point(48, 17);
+            this.dtDataVenda.Location = new System.Drawing.Point(50, 14);
             this.dtDataVenda.Name = "dtDataVenda";
             this.dtDataVenda.Size = new System.Drawing.Size(125, 21);
             this.dtDataVenda.TabIndex = 11;
@@ -187,6 +188,8 @@
             // 
             // pnPesquisar
             // 
+            this.pnPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnPesquisar.Controls.Add(this.txPesquisar);
             this.pnPesquisar.Controls.Add(this.lbId);
             this.pnPesquisar.Location = new System.Drawing.Point(0, 31);
@@ -236,9 +239,9 @@
             this.rbDataVenda.AutoSize = true;
             this.rbDataVenda.Checked = true;
             this.rbDataVenda.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDataVenda.Location = new System.Drawing.Point(15, 8);
+            this.rbDataVenda.Location = new System.Drawing.Point(16, 3);
             this.rbDataVenda.Name = "rbDataVenda";
-            this.rbDataVenda.Size = new System.Drawing.Size(92, 17);
+            this.rbDataVenda.Size = new System.Drawing.Size(91, 17);
             this.rbDataVenda.TabIndex = 10;
             this.rbDataVenda.TabStop = true;
             this.rbDataVenda.Text = "Data Venda";
@@ -249,7 +252,7 @@
             this.rbId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbId.AutoSize = true;
             this.rbId.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbId.Location = new System.Drawing.Point(15, 32);
+            this.rbId.Location = new System.Drawing.Point(15, 27);
             this.rbId.Name = "rbId";
             this.rbId.Size = new System.Drawing.Size(37, 17);
             this.rbId.TabIndex = 1;

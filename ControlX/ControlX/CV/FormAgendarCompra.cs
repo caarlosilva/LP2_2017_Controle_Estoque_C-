@@ -216,7 +216,7 @@ namespace ControlX
                 compra.Nome_usuario = user.Nome;
                 compra.Status = 0; //Compra não finalizada, produtos agendados !
                 compra.Valor = double.Parse(lbValorShow.Text.ToString());
-                compra.DataCompra = dtCompra.Value;
+                compra.DataCompra = DateTime.Now;
                 compra.DataEntrega = dtEntrega.Value;
                 MessageBox.Show("O Pedido de compra de número " + compra.Id + " foi agendado com sucesso !\nVerifique em 'Compras Agendadas' e finalize a compra quando ela for entregue!", "Compra Agendada com Sucesso!");
                 cd.Adicionar(compra);
@@ -253,6 +253,11 @@ namespace ControlX
                     qntdEstoque = p.Qntd;
                 }
             BtComplete();
+
+        }
+
+        private void lbValorShow_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

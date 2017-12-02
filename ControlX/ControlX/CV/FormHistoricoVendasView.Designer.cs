@@ -57,6 +57,7 @@
             // 
             // txValor
             // 
+            this.txValor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txValor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txValor.Location = new System.Drawing.Point(371, 33);
             this.txValor.Name = "txValor";
@@ -68,6 +69,7 @@
             // 
             // txId
             // 
+            this.txId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txId.Location = new System.Drawing.Point(32, 33);
             this.txId.Name = "txId";
@@ -78,6 +80,7 @@
             // 
             // dateVenda
             // 
+            this.dateVenda.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateVenda.Enabled = false;
             this.dateVenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateVenda.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -88,6 +91,7 @@
             // 
             // txUser
             // 
+            this.txUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txUser.Location = new System.Drawing.Point(199, 33);
             this.txUser.Name = "txUser";
@@ -98,6 +102,7 @@
             // 
             // lbDataVenda
             // 
+            this.lbDataVenda.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbDataVenda.AutoSize = true;
             this.lbDataVenda.Location = new System.Drawing.Point(535, 17);
             this.lbDataVenda.Name = "lbDataVenda";
@@ -107,6 +112,7 @@
             // 
             // lbValor
             // 
+            this.lbValor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbValor.AutoSize = true;
             this.lbValor.Location = new System.Drawing.Point(401, 17);
             this.lbValor.Name = "lbValor";
@@ -157,6 +163,7 @@
             // 
             // lbUsuario
             // 
+            this.lbUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbUsuario.AutoSize = true;
             this.lbUsuario.Location = new System.Drawing.Point(211, 17);
             this.lbUsuario.Name = "lbUsuario";
@@ -166,6 +173,7 @@
             // 
             // lbIdCompra
             // 
+            this.lbIdCompra.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbIdCompra.AutoSize = true;
             this.lbIdCompra.Location = new System.Drawing.Point(71, 17);
             this.lbIdCompra.Name = "lbIdCompra";
@@ -185,6 +193,9 @@
             this.dgvProdutos.AllowUserToAddRows = false;
             this.dgvProdutos.AllowUserToDeleteRows = false;
             this.dgvProdutos.AllowUserToResizeRows = false;
+            this.dgvProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProdutos.BackgroundColor = System.Drawing.Color.White;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -194,7 +205,6 @@
             this.qtd,
             this.unit,
             this.fornecedor});
-            this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProdutos.Location = new System.Drawing.Point(3, 17);
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.ReadOnly = true;
@@ -235,6 +245,8 @@
             // 
             // gpDetalhesVenda
             // 
+            this.gpDetalhesVenda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gpDetalhesVenda.Controls.Add(this.txValor);
             this.gpDetalhesVenda.Controls.Add(this.lbIdCompra);
             this.gpDetalhesVenda.Controls.Add(this.txId);

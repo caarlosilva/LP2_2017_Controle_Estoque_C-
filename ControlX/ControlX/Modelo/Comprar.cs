@@ -15,6 +15,7 @@ namespace ControlX
         private int status;
         private DateTime dataCompra;
         private DateTime dataEntrega;
+        private DateTime dataFinal;
 
         public int Id
         {
@@ -104,6 +105,19 @@ namespace ControlX
             set
             {
                 status = value;
+            }
+        }
+
+        public DateTime DataFinal
+        {
+            get
+            {
+                return dataFinal;
+            }
+
+            set
+            {
+                dataFinal = value;
             }
         }
 

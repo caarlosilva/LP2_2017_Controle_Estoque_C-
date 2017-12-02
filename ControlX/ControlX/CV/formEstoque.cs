@@ -252,7 +252,7 @@ namespace ControlX
 
         private void btCategoria_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
             new FormCategoria().ShowDialog();
             this.Show();
             Fill();

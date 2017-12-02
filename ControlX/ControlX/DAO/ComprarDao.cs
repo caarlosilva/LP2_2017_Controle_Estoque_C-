@@ -15,7 +15,7 @@ namespace ControlX
         {
             Comprar c = (Comprar)o;
             string dataCompraMySql = c.DataCompra.ToString("yyyy-MM-dd HH:mm:ss.fff");
-            string dataEntregaMySql = c.DataEntrega.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string dataEntregaMySql = c.DataEntrega.ToString("yyyy-MM-dd");
 
             int status = c.Status;
 
@@ -43,8 +43,10 @@ namespace ControlX
 
         public void Atualizar(object o)
         {
+            DateTime data = DateTime.Now;
+            string dataMySql = data.ToString("yyyy-MM-dd HH:mm:ss.fff");
             Comprar c = (Comprar)o;
-            string qry = string.Format("UPDATE compras SET status = 1 WHERE id = {0}", c.Id);
+            string qry = string.Format("UPDATE compras SET status = 1, dataFinal = '{1}' WHERE id = {0}", c.Id, dataMySql);
             db.ExecuteQuery(qry);
 
             for (int i = 0; i < c.Itens.Count; i++)
@@ -69,7 +71,7 @@ namespace ControlX
         {
             string dataMySqlInicio = dataInicio.ToString("yyyy-MM-dd");
             string dataMySqlFim = dataFim.ToString("yyyy-MM-dd");
-            string qry = string.Format("SELECT id, nome_usuario, valor, status, dataCompra, dataEntrega FROM compras WHERE dataCompra BETWEEN '{0}' AND '{1}'", dataMySqlInicio, dataMySqlFim);
+            string qry = string.Format("SELECT id, nome_usuario, valor, status, dataCompra, dataEntrega, dataFinal FROM compras WHERE dataCompra BETWEEN '{0}' AND '{1}'", dataMySqlInicio, dataMySqlFim);
             DataSet ds = db.ExecuteQuery(qry);
 
             List<object> compras = new List<object>();
@@ -83,14 +85,41 @@ namespace ControlX
                 c.Status = int.Parse(dr["status"].ToString());
                 c.DataCompra = DateTime.Parse(dr["dataCompra"].ToString());
                 c.DataEntrega = DateTime.Parse(dr["dataEntrega"].ToString());
+                if (c.Status == 1)               
+                    c.DataFinal = DateTime.Parse(dr["dataFinal"].ToString());                
                 compras.Add(c);
+            }
+            return compras;
+        }
+
+        public List<object> ListUltimasCompras()
+        {
+            string qry = string.Format("SELECT * FROM compras ORDER BY id DESC LIMIT 15");
+            DataSet ds = db.ExecuteQuery(qry);
+
+            List<object> compras = new List<object>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                if (int.Parse(dr["status"].ToString()) == 1)
+                {
+                    Comprar c = new Comprar();
+                    c.Id = int.Parse(dr["id"].ToString());
+                    c.Nome_usuario = dr["nome_usuario"].ToString();
+                    c.Valor = double.Parse(dr["valor"].ToString());
+                    c.Status = int.Parse(dr["status"].ToString());
+                    c.DataCompra = DateTime.Parse(dr["dataCompra"].ToString());
+                    c.DataEntrega = DateTime.Parse(dr["dataEntrega"].ToString());
+                    c.DataFinal = DateTime.Parse(dr["dataFinal"].ToString());
+                    compras.Add(c);
+                }
             }
             return compras;
         }
 
         public List<object> ListAll()
         {
-            string qry = string.Format("SELECT id, nome_usuario, valor, status, dataCompra, dataEntrega FROM compras");
+            string qry = string.Format("SELECT id, nome_usuario, valor, status, dataCompra, dataEntrega, dataFinal FROM compras");
             DataSet ds = db.ExecuteQuery(qry);
 
             List<object> compras = new List<object>();
@@ -104,6 +133,8 @@ namespace ControlX
                 c.Status = int.Parse(dr["status"].ToString());
                 c.DataCompra = DateTime.Parse(dr["dataCompra"].ToString());
                 c.DataEntrega = DateTime.Parse(dr["dataEntrega"].ToString());
+                if (c.Status == 1)
+                    c.DataFinal = DateTime.Parse(dr["dataFinal"].ToString());
                 compras.Add(c);
             }
             return compras;
@@ -133,7 +164,7 @@ namespace ControlX
 
         public List<object> ListById(int id)
         {
-            string qry = string.Format("SELECT id, nome_usuario, valor, status, dataCompra, dataEntrega FROM compras WHERE id = {0}", id);
+            string qry = string.Format("SELECT id, nome_usuario, valor, status, dataCompra, dataEntrega, dataFinal FROM compras WHERE id = {0}", id);
             DataSet ds = db.ExecuteQuery(qry);
 
             List<object> compras = new List<object>();
@@ -147,6 +178,8 @@ namespace ControlX
                 c.Status = int.Parse(dr["status"].ToString());
                 c.DataCompra = DateTime.Parse(dr["dataCompra"].ToString());
                 c.DataEntrega = DateTime.Parse(dr["dataEntrega"].ToString());
+                if (c.Status == 1)
+                    c.DataFinal = DateTime.Parse(dr["dataFinal"].ToString());
                 compras.Add(c);
             }
             return compras;
