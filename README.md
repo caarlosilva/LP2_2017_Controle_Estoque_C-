@@ -61,7 +61,7 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 
 ------------------------------ ADMIN ------------------------------
 
-  - Dono da porra toda, acesso total ao Software
+  - Dono da porra toda, acesso total ao Software *FEITO*
 
 ------------------------------ SUPERVISOR ------------------------------
 
@@ -74,18 +74,18 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 
 ------------------------------ CAIXA ------------------------------
 
-  - Acesso total ao sistema de Vendas
-  - Acesso total ao Histórico de Vendas
-  - Acesso parcial ao estoque
-	- (Somente habilitada a função de 'Detalhes')
-  - Acesso total a aba Ajuda e Sobre
+  - Acesso total ao sistema de Vendas *FEITO*
+  - Acesso total ao Histórico de Vendas *FEITO*
+  - Acesso parcial ao estoque *FEITO*
+	- (Somente habilitada a função de 'Detalhes') *FEITO*
+  - Acesso total a aba Ajuda e Sobre *FEITO*
 
 ------------------------------ ALMOXARIFADO ------------------------------
 
-  - Acesso total ao sistema de Compras
-  - Acesso parcial ao estoque
+  - Acesso total ao sistema de Compras *FEITO*
+  - Acesso parcial ao estoque *FEITO*
 	- (Somente habilitada a função de 'Detalhes')
-  -Acesso parcial aos fornecedores
+  -Acesso parcial aos fornecedores *FEITO*
 	- (Somente habilitada a função de 'Detalhes')
 
 *-------------------------------------------------------------------------*
