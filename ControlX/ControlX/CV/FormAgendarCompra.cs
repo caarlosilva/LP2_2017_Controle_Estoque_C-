@@ -218,8 +218,13 @@ namespace ControlX
                 compra.Valor = double.Parse(lbValorShow.Text.ToString());
                 compra.DataCompra = DateTime.Now;
                 compra.DataEntrega = dtEntrega.Value;
-                MessageBox.Show("O Pedido de compra de número " + compra.Id + " foi agendado com sucesso !\nVerifique em 'Compras Agendadas' e finalize a compra quando ela for entregue!", "Compra Agendada com Sucesso!");
+                MessageBox.Show("O Pedido de compra de número " + compra.Id + " foi agendado com sucesso !\nVerifique em 'Compras Agendadas' e finalize a compra quando ela for entregue! \nGerando Nota Fiscal.", "Compra Agendada com Sucesso!");
                 cd.Adicionar(compra);
+
+                FormRelatorios form = new FormRelatorios(user.Nome, compra.DataCompra, compra.DataEntrega, compra.Id, compra.Nome_usuario);
+                form.Text = "ControlX - Nota Fiscal ID: " + compra.Id.ToString();
+                form.tipoRelatorio = 7;
+                form.ShowDialog();
                 this.Close();
             }
             catch(Exception x)

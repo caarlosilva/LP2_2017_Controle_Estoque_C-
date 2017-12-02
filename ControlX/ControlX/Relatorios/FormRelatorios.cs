@@ -16,11 +16,17 @@ namespace ControlX
         private string autor;
         private Usuario func;
 
-        //NotaFiscal
+        //NotaFiscal - Vendas
         private DateTime dataVenda;
         private int idVenda;
         private string vendedor;
-        //-----------
+
+        //NotaFiscal - Compras
+        private DateTime dataCompra;
+        private DateTime dataEntrega;
+        private int idCompra;
+        private string funcionario;
+
 
         private DateTime dataInicio;
         private DateTime dataFim;
@@ -31,13 +37,24 @@ namespace ControlX
             InitializeComponent();
         }
 
-        //Construtor Nota Fiscal
+        //Construtor Nota Fiscal - Vendas
         public FormRelatorios(string autor, DateTime dataVenda, int idVenda, string vendedor) 
         {           
             this.autor = autor;
             this.dataVenda = dataVenda;
             this.idVenda = idVenda;
             this.vendedor = vendedor;
+            InitializeComponent();
+        }
+
+        //Construtor Nota Fiscal - Compras
+        public FormRelatorios(string autor, DateTime dataCompra, DateTime dataEntrega, int idCompra, string funcionario)
+        {
+            this.autor = autor;
+            this.dataCompra = dataCompra;
+            this.dataEntrega = dataEntrega;
+            this.idCompra = idCompra;
+            this.funcionario = funcionario;
             InitializeComponent();
         }
 
@@ -156,7 +173,7 @@ namespace ControlX
 
             }
 
-            if (tipoRelatorio == 5) //Nota Fiscal
+            if (tipoRelatorio == 5) //Nota Fiscal - Vendas
             {
                 List<Object> lista = new VenderDao().ListProdutos(idVenda);
 
@@ -187,6 +204,31 @@ namespace ControlX
                 report.SetDataSource(lista);
                 report.SetParameterValue("Autor", autor);
                 report.SetParameterValue("Count", lista.Count);
+                crvRelatorio.ReportSource = report;
+                crvRelatorio.Refresh();
+            }
+
+            if (tipoRelatorio == 7) //Nota Fiscal - Compras
+            {
+                List<Object> lista = new ComprarDao().ListProdutos(idCompra);
+
+                double valor = 0;
+                foreach (Produto p in lista)
+                {
+                    valor += p.Preco;
+                }
+                string dataC = dataCompra.ToString("dd-MM-yyyy HH:mm:ss");
+                string dataE = dataCompra.ToString("dd-MM-yyyy");
+
+                Relatorios.Compras_NF report = new Relatorios.Compras_NF();
+                report.SetDataSource(lista);
+                report.SetParameterValue("Autor", autor);
+                report.SetParameterValue("dataCompra", dataC);
+                report.SetParameterValue("dataEntrega", dataE);
+                report.SetParameterValue("Count", lista.Count);
+                report.SetParameterValue("Valor", valor);
+                report.SetParameterValue("idCompra", idCompra);
+                report.SetParameterValue("Funcionario", funcionario);
                 crvRelatorio.ReportSource = report;
                 crvRelatorio.Refresh();
             }

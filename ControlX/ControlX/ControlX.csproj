@@ -95,6 +95,12 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Relatorios\Compras_NF.cs">
+      <DependentUpon>Compras_NF.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Relatorios\NotaFiscal.cs">
       <DependentUpon>NotaFiscal.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -269,6 +275,10 @@
     <EmbeddedResource Include="Relatorios\Func_Rel.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Func_Rel.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\Compras_NF.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Compras_NF.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\NotaFiscal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

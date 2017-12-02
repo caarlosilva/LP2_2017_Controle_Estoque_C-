@@ -51,6 +51,7 @@
             this.gbDetalhes = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notaFiscalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbItens = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.gbDetalhes.SuspendLayout();
@@ -282,7 +283,8 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.voltarToolStripMenuItem});
+            this.voltarToolStripMenuItem,
+            this.notaFiscalToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(679, 24);
@@ -296,6 +298,15 @@
             this.voltarToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btVoltar_Click);
+            // 
+            // notaFiscalToolStripMenuItem
+            // 
+            this.notaFiscalToolStripMenuItem.Image = global::ControlX.Properties.Resources.details_icon;
+            this.notaFiscalToolStripMenuItem.Name = "notaFiscalToolStripMenuItem";
+            this.notaFiscalToolStripMenuItem.ShowShortcutKeys = false;
+            this.notaFiscalToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.notaFiscalToolStripMenuItem.Text = "Nota Fiscal";
+            this.notaFiscalToolStripMenuItem.Click += new System.EventHandler(this.notaFiscalToolStripMenuItem_Click);
             // 
             // gbItens
             // 
@@ -360,5 +371,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
         private System.Windows.Forms.GroupBox gbItens;
+        private System.Windows.Forms.ToolStripMenuItem notaFiscalToolStripMenuItem;
     }
 }
