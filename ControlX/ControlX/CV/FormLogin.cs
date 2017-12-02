@@ -50,13 +50,19 @@ namespace ControlX
             if (result != 0)
             {
                 this.Hide();
-                formMenu menu = new formMenu(user);
-                if (Logado1 > 2)
+                formMenu menu = new formMenu(user, Logado1);
+                if (Logado1 == 3) //Almoxarifado
                 {
                     menu.btUsuario.Visible = false;
                     menu.menuRelatorio.Visible = false;
                 }
-                   
+
+                if (Logado1 == 4) //Caixa
+                {
+                    menu.btUsuario.Visible = false;
+                    menu.menuRelatorio.Visible = false;
+                }
+
                 menu.lbMensagem.Text = "Olá '" + user.Nome + "' !";
                 menu.ShowDialog();
 

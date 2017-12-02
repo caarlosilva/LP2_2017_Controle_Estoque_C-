@@ -13,11 +13,19 @@ namespace ControlX
     public partial class formMenu : Form
     {
         private DAO.UsuarioDao u = new DAO.UsuarioDao();
-        private Usuario user = new Usuario();        
+        private Usuario user = new Usuario();
+        private int cargo;      
 
         public formMenu()
         {
             InitializeComponent();            
+        }
+
+        public formMenu(Usuario usuario, int cargo)
+        {
+            InitializeComponent();
+            this.cargo = cargo;
+            user = usuario;
         }
 
         public formMenu(Usuario usuario)
@@ -25,7 +33,6 @@ namespace ControlX
             InitializeComponent();
             user = usuario;
         }
-               
 
         private void btControleEstoq_Click(object sender, EventArgs e)
         {
@@ -74,7 +81,16 @@ namespace ControlX
         private void btUsuario_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new formUsuario(true).ShowDialog();
+
+            if (cargo == 2)
+            {
+                new formUsuario(true).ShowDialog();
+            }
+            else
+            {
+                new formUsuario(false).ShowDialog();
+            }
+
             this.Show();
         }
 

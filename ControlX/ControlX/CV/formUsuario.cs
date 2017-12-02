@@ -13,15 +13,16 @@ namespace ControlX
     public partial class formUsuario : Form
     {
         private int idUser;
-        private bool supervisor = false;
+        private bool supervisor;
 
         //Supervisor
         public formUsuario(bool supervisor)
         {
             this.supervisor = supervisor;
             InitializeComponent();
+            if (supervisor == true)
+                removerToolStripMenuItem.Visible = false;
             Fill();
-            btDel.Enabled = false;
         }
 
         public formUsuario()
@@ -82,8 +83,11 @@ namespace ControlX
             IDao db = new DAO.UsuarioDao();
             idUser = db.GetId();
             form.lbIdUser.Text = "" + idUser;
-            form.cbCargo.Items.Remove("Administrador");
-            form.cbCargo.Items.Remove("Supervisor"); 
+            if (supervisor == true)
+            {
+                form.cbCargo.Items.Remove("Administrador");
+                form.cbCargo.Items.Remove("Supervisor");
+            }
             form.ShowDialog(this);
             Fill();
         }
