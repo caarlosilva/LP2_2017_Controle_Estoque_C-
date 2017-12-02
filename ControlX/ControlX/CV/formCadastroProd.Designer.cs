@@ -325,7 +325,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "formCadastroProd";
-            this.Text = "Cadastrar Produto";
+            this.Text = "ControlX - Cadastrar Produto";
             this.pnCadastro.ResumeLayout(false);
             this.pnCadastro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).EndInit();

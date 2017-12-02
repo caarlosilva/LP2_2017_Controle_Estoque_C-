@@ -15,7 +15,7 @@ namespace ControlX
         public formLogin()
         {
             InitializeComponent();
-    }
+        }
 
         private void btSair_Click(object sender, EventArgs e)
         {
@@ -47,6 +47,8 @@ namespace ControlX
 
             Logado1 = result;
 
+            // | 1 - Admin | 2 - Supervisor | 3 - Almoxarifado | 4 - Caixa |
+
             if (result != 0)
             {
                 this.Hide();
@@ -54,13 +56,18 @@ namespace ControlX
                 if (Logado1 == 3) //Almoxarifado
                 {
                     menu.btUsuario.Visible = false;
+                    menu.pnMenu.Visible = false;
+                    menu.pnAlmoxarife.Visible = true;
                     menu.menuRelatorio.Visible = false;
+                    menu.menuHistVendas.Visible = false;
                 }
 
                 if (Logado1 == 4) //Caixa
                 {
-                    menu.btUsuario.Visible = false;
+                    menu.menuHistCompras.Visible = false;
                     menu.menuRelatorio.Visible = false;
+                    menu.pnMenu.Visible = false;
+                    menu.pnCaixa.Visible = true;
                 }
 
                 menu.lbMensagem.Text = "Olá '" + user.Nome + "' !";

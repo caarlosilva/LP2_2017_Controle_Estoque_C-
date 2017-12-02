@@ -15,12 +15,27 @@ namespace ControlX
     {
         private int idProduto;
 
+        public formEstoque(int cargo)
+        {
+            InitializeComponent();
+            if (cargo == 4 || cargo == 3)
+            {
+                adicionarToolStripMenuItem.Visible = false;
+                categoriasToolStripMenuItem.Visible = false;
+                editarToolStripMenuItem.Visible = false;
+                removerToolStripMenuItem.Visible = false;
+            }
+            Fill();
+
+        }
+
         public formEstoque()
         {
             InitializeComponent();
             Fill();
 
         }
+
 
         private void btAdd_Click(object sender, EventArgs e)
         {

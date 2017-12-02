@@ -38,7 +38,7 @@ namespace ControlX.DAO
                             return result = 1;
                         if (dr["cargo"].ToString() == "Supervisor")
                             return result = 2;
-                        if (dr["cargo"].ToString() == "Almoxarifado")
+                        if (dr["cargo"].ToString() == "Auxiliar de Almoxarifado")
                             return result = 3;
                         if (dr["cargo"].ToString() == "Caixa")
                             return result = 4;

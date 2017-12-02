@@ -14,9 +14,16 @@ namespace ControlX
     {
 
         private int idFornecedor;
-        public formFornecedores()
+        public formFornecedores(int cargo)
         {
             InitializeComponent();
+            if (cargo == 3)
+            {
+                adicionarToolStripMenuItem.Visible = false;
+                editarToolStripMenuItem.Visible = false;
+                removerToolStripMenuItem.Visible = false;
+                pnBtns.Visible = false;
+            }
             Fill();
         }
 

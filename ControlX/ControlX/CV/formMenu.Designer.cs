@@ -34,7 +34,7 @@
             this.btFornecedor = new System.Windows.Forms.Button();
             this.btEstoque = new System.Windows.Forms.Button();
             this.btDesconectar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnMenu = new System.Windows.Forms.Panel();
             this.btUsuario = new System.Windows.Forms.Button();
             this.btComprar = new System.Windows.Forms.Button();
             this.lbMensagem = new System.Windows.Forms.Label();
@@ -56,10 +56,18 @@
             this.menuAjuda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSobre = new System.Windows.Forms.ToolStripMenuItem();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.btVenderCaixa = new System.Windows.Forms.Button();
+            this.pnCaixa = new System.Windows.Forms.Panel();
+            this.pnAlmoxarife = new System.Windows.Forms.Panel();
+            this.btComprarAlmox = new System.Windows.Forms.Button();
+            this.btEstoqueAlmox = new System.Windows.Forms.Button();
+            this.btFornecedorAlmox = new System.Windows.Forms.Button();
+            this.pnMenu.SuspendLayout();
             this.pnConectado.SuspendLayout();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.pnCaixa.SuspendLayout();
+            this.pnAlmoxarife.SuspendLayout();
             this.SuspendLayout();
             // 
             // btVender
@@ -106,17 +114,17 @@
             this.btDesconectar.UseVisualStyleBackColor = true;
             this.btDesconectar.Click += new System.EventHandler(this.btSair_Click);
             // 
-            // panel1
+            // pnMenu
             // 
-            this.panel1.Controls.Add(this.btUsuario);
-            this.panel1.Controls.Add(this.btComprar);
-            this.panel1.Controls.Add(this.btVender);
-            this.panel1.Controls.Add(this.btEstoque);
-            this.panel1.Controls.Add(this.btFornecedor);
-            this.panel1.Location = new System.Drawing.Point(266, 108);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(257, 92);
-            this.panel1.TabIndex = 4;
+            this.pnMenu.Controls.Add(this.btUsuario);
+            this.pnMenu.Controls.Add(this.btComprar);
+            this.pnMenu.Controls.Add(this.btVender);
+            this.pnMenu.Controls.Add(this.btEstoque);
+            this.pnMenu.Controls.Add(this.btFornecedor);
+            this.pnMenu.Location = new System.Drawing.Point(266, 108);
+            this.pnMenu.Name = "pnMenu";
+            this.pnMenu.Size = new System.Drawing.Size(257, 92);
+            this.pnMenu.TabIndex = 4;
             // 
             // btUsuario
             // 
@@ -134,7 +142,7 @@
             this.btComprar.Name = "btComprar";
             this.btComprar.Size = new System.Drawing.Size(120, 25);
             this.btComprar.TabIndex = 3;
-            this.btComprar.Text = "Compra";
+            this.btComprar.Text = "Comprar";
             this.btComprar.UseVisualStyleBackColor = true;
             this.btComprar.Click += new System.EventHandler(this.btComprar_Click);
             // 
@@ -230,7 +238,7 @@
             // menuRelCompras
             // 
             this.menuRelCompras.Name = "menuRelCompras";
-            this.menuRelCompras.Size = new System.Drawing.Size(152, 22);
+            this.menuRelCompras.Size = new System.Drawing.Size(122, 22);
             this.menuRelCompras.Text = "Compras";
             this.menuRelCompras.Click += new System.EventHandler(this.menuRelCompras_Click);
             // 
@@ -240,7 +248,7 @@
             this.porFuncionárioToolStripMenuItem,
             this.porPeriodoToolStripMenuItem});
             this.menuRelVendas.Name = "menuRelVendas";
-            this.menuRelVendas.Size = new System.Drawing.Size(152, 22);
+            this.menuRelVendas.Size = new System.Drawing.Size(122, 22);
             this.menuRelVendas.Text = "Vendas";
             // 
             // porFuncionárioToolStripMenuItem
@@ -263,7 +271,7 @@
             this.estoqueMinimoToolStripMenuItem,
             this.inventárioToolStripMenuItem});
             this.menuRelEstoque.Name = "menuRelEstoque";
-            this.menuRelEstoque.Size = new System.Drawing.Size(152, 22);
+            this.menuRelEstoque.Size = new System.Drawing.Size(122, 22);
             this.menuRelEstoque.Text = "Estoque";
             // 
             // estoqueMinimoToolStripMenuItem
@@ -305,6 +313,68 @@
             this.picLogo.TabStop = false;
             this.picLogo.Tag = "";
             // 
+            // btVenderCaixa
+            // 
+            this.btVenderCaixa.Location = new System.Drawing.Point(76, 17);
+            this.btVenderCaixa.Name = "btVenderCaixa";
+            this.btVenderCaixa.Size = new System.Drawing.Size(163, 65);
+            this.btVenderCaixa.TabIndex = 9;
+            this.btVenderCaixa.Text = "Vender";
+            this.btVenderCaixa.UseVisualStyleBackColor = true;
+            this.btVenderCaixa.Click += new System.EventHandler(this.btVenderCaixa_Click);
+            // 
+            // pnCaixa
+            // 
+            this.pnCaixa.Controls.Add(this.btVenderCaixa);
+            this.pnCaixa.Location = new System.Drawing.Point(202, 92);
+            this.pnCaixa.Name = "pnCaixa";
+            this.pnCaixa.Size = new System.Drawing.Size(300, 108);
+            this.pnCaixa.TabIndex = 10;
+            this.pnCaixa.Visible = false;
+            // 
+            // pnAlmoxarife
+            // 
+            this.pnAlmoxarife.Controls.Add(this.btComprarAlmox);
+            this.pnAlmoxarife.Controls.Add(this.btEstoqueAlmox);
+            this.pnAlmoxarife.Controls.Add(this.btFornecedorAlmox);
+            this.pnAlmoxarife.Location = new System.Drawing.Point(176, 92);
+            this.pnAlmoxarife.Name = "pnAlmoxarife";
+            this.pnAlmoxarife.Size = new System.Drawing.Size(359, 108);
+            this.pnAlmoxarife.TabIndex = 11;
+            this.pnAlmoxarife.Visible = false;
+            // 
+            // btComprarAlmox
+            // 
+            this.btComprarAlmox.Location = new System.Drawing.Point(54, 26);
+            this.btComprarAlmox.Name = "btComprarAlmox";
+            this.btComprarAlmox.Size = new System.Drawing.Size(120, 25);
+            this.btComprarAlmox.TabIndex = 6;
+            this.btComprarAlmox.Text = "Comprar";
+            this.btComprarAlmox.UseVisualStyleBackColor = true;
+            this.btComprarAlmox.Click += new System.EventHandler(this.btComprarAlmox_Click);
+            // 
+            // btEstoqueAlmox
+            // 
+            this.btEstoqueAlmox.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEstoqueAlmox.Location = new System.Drawing.Point(185, 26);
+            this.btEstoqueAlmox.Name = "btEstoqueAlmox";
+            this.btEstoqueAlmox.Size = new System.Drawing.Size(120, 25);
+            this.btEstoqueAlmox.TabIndex = 4;
+            this.btEstoqueAlmox.Text = "Estoque";
+            this.btEstoqueAlmox.UseVisualStyleBackColor = true;
+            this.btEstoqueAlmox.Click += new System.EventHandler(this.btEstoqueAlmox_Click);
+            // 
+            // btFornecedorAlmox
+            // 
+            this.btFornecedorAlmox.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFornecedorAlmox.Location = new System.Drawing.Point(119, 63);
+            this.btFornecedorAlmox.Name = "btFornecedorAlmox";
+            this.btFornecedorAlmox.Size = new System.Drawing.Size(120, 25);
+            this.btFornecedorAlmox.TabIndex = 5;
+            this.btFornecedorAlmox.Text = "Fornecedores";
+            this.btFornecedorAlmox.UseVisualStyleBackColor = true;
+            this.btFornecedorAlmox.Click += new System.EventHandler(this.btFornecedorAlmox_Click);
+            // 
             // formMenu
             // 
             this.AcceptButton = this.btVender;
@@ -315,8 +385,10 @@
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.pnConectado);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.msMenu);
+            this.Controls.Add(this.pnCaixa);
+            this.Controls.Add(this.pnAlmoxarife);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -325,24 +397,23 @@
             this.Name = "formMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ControlX - Menu";
-            this.panel1.ResumeLayout(false);
+            this.pnMenu.ResumeLayout(false);
             this.pnConectado.ResumeLayout(false);
             this.pnConectado.PerformLayout();
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.pnCaixa.ResumeLayout(false);
+            this.pnAlmoxarife.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btVender;
         private System.Windows.Forms.Button btFornecedor;
         private System.Windows.Forms.Button btEstoque;
         private System.Windows.Forms.Button btDesconectar;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnConectado;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Timer timer1;
@@ -352,9 +423,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuAjuda;
         private System.Windows.Forms.ToolStripMenuItem menuSobre;
         public System.Windows.Forms.Label lbMensagem;
-        private System.Windows.Forms.ToolStripMenuItem menuHistorico;
-        private System.Windows.Forms.ToolStripMenuItem menuHistCompras;
-        private System.Windows.Forms.ToolStripMenuItem menuHistVendas;
         private System.Windows.Forms.ToolStripMenuItem menuRelCompras;
         private System.Windows.Forms.ToolStripMenuItem menuRelVendas;
         private System.Windows.Forms.ToolStripMenuItem menuRelEstoque;
@@ -364,5 +432,16 @@
         private System.Windows.Forms.ToolStripMenuItem inventárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem porFuncionárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem porPeriodoToolStripMenuItem;
+        private System.Windows.Forms.Button btVenderCaixa;
+        public System.Windows.Forms.Panel pnCaixa;
+        public System.Windows.Forms.Panel pnMenu;
+        public System.Windows.Forms.ToolStripMenuItem menuHistCompras;
+        public System.Windows.Forms.ToolStripMenuItem menuHistorico;
+        public System.Windows.Forms.ToolStripMenuItem menuHistVendas;
+        public System.Windows.Forms.Button btVender;
+        public System.Windows.Forms.Panel pnAlmoxarife;
+        private System.Windows.Forms.Button btComprarAlmox;
+        private System.Windows.Forms.Button btEstoqueAlmox;
+        private System.Windows.Forms.Button btFornecedorAlmox;
     }
 }

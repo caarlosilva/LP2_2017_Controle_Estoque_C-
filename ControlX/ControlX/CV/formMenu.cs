@@ -37,7 +37,7 @@ namespace ControlX
         private void btControleEstoq_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new formEstoque().ShowDialog();
+            new formEstoque(cargo).ShowDialog();
             this.Show();
         }
 
@@ -56,7 +56,7 @@ namespace ControlX
         private void btCadastroFunc_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new formFornecedores().ShowDialog();
+            new formFornecedores(cargo).ShowDialog();
             this.Show();
         }
 
@@ -142,6 +142,38 @@ namespace ControlX
             form.Text = "ControlX - Relatório de inventário de estoque";
             form.tipoRelatorio = 6;
             form.Show();
+        }
+
+        private void btVenderCaixa_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormVender form = new FormVender(user);
+            form.lbVendedor.Text = user.Nome;
+            form.ShowDialog();
+
+            this.Show();
+        }
+
+        private void btComprarAlmox_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormCompras form = new FormCompras(user);
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void btEstoqueAlmox_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new formEstoque(cargo).ShowDialog();
+            this.Show();
+        }
+
+        private void btFornecedorAlmox_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new formFornecedores(cargo).ShowDialog();
+            this.Show();
         }
     }
 }
