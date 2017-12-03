@@ -85,22 +85,43 @@ namespace ControlX
             double precoCompra = double.Parse(txPrecoCompra.Text);
             int idProd = int.Parse(txId.Text);//Id do produto a ser adicionado a venda
 
-            foreach (Produto p in ps)
+            if (qtdCompra <= 0)
             {
-                if (p.Id == idProd)
+                MessageBox.Show("Atenção: Você não pode comprar 0 itens.");
+            }
+            else
+            {
+                if (int.Parse(txPrecoCompra.Text.ToString()) > int.Parse(lbPrecoShow.Text.ToString()))
                 {
-                    //Preço da compra (QTD * PREÇO UNITARIO)
-                    double precoCompraTotal = qtdCompra * precoCompra;
-                    //Adicionando ao Data Grid View
-                    dgvItensCompra.Rows.Add(p.Id, p.Nome, qtdCompra, p.TipoUn, precoCompra, precoCompraTotal);
-                    //Valor Total Recebe o valor ja existente, caso esteja NULL, recebe 0
-                    double vTotal = lbValorShow.Text == "" ? 0 : double.Parse(lbValorShow.Text);
-                    //O Label com o Valor Total recebe ele mesmo, mais o Preço de Venda do item em questão
-                    lbValorShow.Text = Convert.ToString(vTotal + precoCompraTotal);
+                    DialogResult result = MessageBox.Show("O preço de compra está maior que o de venda, deseja continuar?",
+                    "Atenção",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                    Limpar();
-                    BtComplete();
+                    //Caso clique em sim
+                    if (result == DialogResult.Yes)
+                    {
+                        foreach (Produto p in ps)
+                        {
+                            if (p.Id == idProd)
+                            {
+                                //Preço da compra (QTD * PREÇO UNITARIO)
+                                double precoCompraTotal = qtdCompra * precoCompra;
+                                //Adicionando ao Data Grid View
+                                dgvItensCompra.Rows.Add(p.Id, p.Nome, qtdCompra, p.TipoUn, precoCompra, precoCompraTotal);
+                                //Valor Total Recebe o valor ja existente, caso esteja NULL, recebe 0
+                                double vTotal = lbValorShow.Text == "" ? 0 : double.Parse(lbValorShow.Text);
+                                //O Label com o Valor Total recebe ele mesmo, mais o Preço de Venda do item em questão
+                                lbValorShow.Text = Convert.ToString(vTotal + precoCompraTotal);
 
+                                Limpar();
+                                BtComplete();
+                            }
+                        }
+                    }
+                    else if (result == DialogResult.No)
+                    {
+
+                    }
                 }
             }
         }
