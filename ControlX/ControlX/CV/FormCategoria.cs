@@ -148,7 +148,7 @@ namespace ControlX
 
         private void voltarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Hide();
             new formEstoque().ShowDialog();
             this.Show();
             Fill();
