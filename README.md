@@ -10,6 +10,22 @@ COMMIT -- >  SYNC -->  PUSH (<-- REPEAT)
 
 <-------------------------------------------------------------------------------->
 
+
+
+
+<-------------------------------------------------------------------------------->
+
+ -> WebService Correios: https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl
+      - Adicionar nova referencia.
+      - Colocar o link da referencia, dar go.
+      - Colocar o nome que deseja, ex: WSCorreios.
+	- Chamar ela em uma função que dejar ou só no botão ou change text, chamar um " var ws = new WSCorreios.AtendeClienteClient(); "
+	- Que isso retornara todos os campos, RUA, BAIRRO, CIDADE - ESTADO E COMPLEMENTO.
+
+ -> SITE DE EXPLICAÇÃO http://www.andrealveslima.com.br/blog/index.php/2016/09/07/acessando-os-web-services-dos-correios-com-c-e-vb-net-consulta-de-ceps-e-precos/
+
+<-------------------------------------------------------------------------------->
+
 Carlos Silva  - Fabricio Rocha - Gustavo Nunes
 
 ControlX -> Control de Controle(Estoque, produtos, enfim, do estabelecimento) e X, como a incógnita, uma variável,
