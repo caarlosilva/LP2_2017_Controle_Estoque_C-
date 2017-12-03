@@ -52,8 +52,8 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
   - Botão Finalizar só pode estar habilitado caso tenha algo no DGV de Compras em Aguardo *FEITO*
   - Ao adicionar uma compra, os valores em R$ devem estar com sua devida máscara
   - Poder Visualizar os itens da compra ao clicar em uma compra não finalizada(DGV direito) *FEITO*
-  - Notificar caso o Preço de Compra seja maior que o Preço de Venda
-  - Não pode comprar '0' produtos
+  - Notificar caso o Preço de Compra seja maior que o Preço de Venda *FEITO*
+  - Não pode comprar '0' produtos *FEITO*
 
 *-------------------------------------------------------------------------*
 
