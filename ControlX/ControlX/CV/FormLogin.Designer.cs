@@ -96,6 +96,7 @@
             this.txUsuario.Size = new System.Drawing.Size(186, 23);
             this.txUsuario.TabIndex = 0;
             this.txUsuario.Text = "admin";
+            this.txUsuario.TextChanged += new System.EventHandler(this.txUsuario_TextChanged);
             // 
             // txSenha
             // 
@@ -107,6 +108,7 @@
             this.txSenha.Size = new System.Drawing.Size(186, 22);
             this.txSenha.TabIndex = 1;
             this.txSenha.Text = "admin";
+            this.txSenha.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
             // panel1
             // 

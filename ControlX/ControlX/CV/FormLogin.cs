@@ -38,6 +38,19 @@ namespace ControlX
             }
         }
 
+        private void buttonEnable()
+        {
+
+            if (txUsuario.Text == "" || txSenha.Text == "")
+            {
+                btLogar.Enabled = false;
+            }
+            else
+            {
+                btLogar.Enabled = true;
+            }
+        }
+
         private void btLogar_Click(object sender, EventArgs e)
         {
             formMenu form = new formMenu();
@@ -80,6 +93,16 @@ namespace ControlX
             {
                 MessageBox.Show("Usuário ou senha incorreto!");
             }
+        }
+
+        private void txUsuario_TextChanged(object sender, EventArgs e)
+        {
+            buttonEnable();
+        }
+
+        private void txSenha_TextChanged(object sender, EventArgs e)
+        {
+            buttonEnable();
         }
     }
 }
