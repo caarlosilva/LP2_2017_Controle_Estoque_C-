@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVender));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVender));
             this.pnForm = new System.Windows.Forms.Panel();
             this.gbDetalheItem = new System.Windows.Forms.GroupBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txFornecedor = new System.Windows.Forms.TextBox();
             this.txCategoria = new System.Windows.Forms.TextBox();
@@ -83,9 +84,9 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.pnForm.SuspendLayout();
             this.gbDetalheItem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbSelItem.SuspendLayout();
             this.pnBtCad.SuspendLayout();
@@ -96,7 +97,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             this.pnBtVender.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnForm
@@ -134,6 +134,17 @@
             this.gbDetalheItem.TabStop = false;
             this.gbDetalheItem.Text = "Detalhe do Item";
             // 
+            // picLogo
+            // 
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(80, 125);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(167, 122);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 37;
+            this.picLogo.TabStop = false;
+            this.picLogo.Tag = "";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(258, 125);
@@ -148,6 +159,7 @@
             this.txFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txFornecedor.Location = new System.Drawing.Point(80, 97);
             this.txFornecedor.Name = "txFornecedor";
+            this.txFornecedor.ReadOnly = true;
             this.txFornecedor.Size = new System.Drawing.Size(301, 21);
             this.txFornecedor.TabIndex = 35;
             // 
@@ -157,6 +169,7 @@
             this.txCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txCategoria.Location = new System.Drawing.Point(80, 59);
             this.txCategoria.Name = "txCategoria";
+            this.txCategoria.ReadOnly = true;
             this.txCategoria.Size = new System.Drawing.Size(301, 21);
             this.txCategoria.TabIndex = 34;
             // 
@@ -663,17 +676,6 @@
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btMenu_Click);
             // 
-            // picLogo
-            // 
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(80, 125);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(167, 122);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 37;
-            this.picLogo.TabStop = false;
-            this.picLogo.Tag = "";
-            // 
             // FormVender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -694,6 +696,7 @@
             this.pnForm.ResumeLayout(false);
             this.gbDetalheItem.ResumeLayout(false);
             this.gbDetalheItem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbSelItem.ResumeLayout(false);
             this.gbSelItem.PerformLayout();
@@ -709,7 +712,6 @@
             this.pnBtVender.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
