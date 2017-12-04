@@ -12,6 +12,7 @@ namespace ControlX
 {
     public partial class formHistoricoCompras : Form
     {
+        Comprar compra = new Comprar();
         public formHistoricoCompras()
         {
             InitializeComponent();
@@ -64,6 +65,12 @@ namespace ControlX
         {
             CV.FormHistoricoComprasView form = new CV.FormHistoricoComprasView();
             //Enviando informacões para os labels e bottons.
+            int id = int.Parse((dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[0].Value.ToString()));
+            ComprarDao db = new ComprarDao();
+            compra = db.Ler(id);
+
+            form.dateCompra.Text = compra.DataCompra.ToString("dd-MM-yyyy");
+            form.dateEntrega.Text = compra.DataEntrega.ToString("dd-MM-yyyy");
             form.txId.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[0].Value.ToString());
             form.txUser.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[1].Value.ToString());
             form.txValor.Text = Convert.ToDouble(dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[4].Value.ToString()).ToString("C");
@@ -77,7 +84,7 @@ namespace ControlX
             }
 
 
-            ComprarDao db = new ComprarDao();
+            
             List<Object> ps = db.ListProdutos(int.Parse(dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[0].Value.ToString()));
 
             form.dgvProdutos.Rows.Clear();
@@ -159,7 +166,7 @@ namespace ControlX
                     status = "Entregue";
                 }
                 string dataCompra = c.DataCompra.ToString("dd-MM-yyyy");
-                string dataEntrega = c.DataEntrega.ToString("dd-MM-yyyy");
+                string dataEntrega = c.DataFinal.ToString("dd-MM-yyyy");
                 dgvHistCompras.Rows.Add(c.Id, c.Nome_usuario, dataCompra, dataEntrega, c.Valor, status);
             }
 
