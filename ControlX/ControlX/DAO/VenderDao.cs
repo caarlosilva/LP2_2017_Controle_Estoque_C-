@@ -34,7 +34,13 @@ namespace ControlX
                     preco = preco.Replace(",", ".");
                 }
 
-                sql = string.Format("INSERT INTO produtos_venda(idProduto, idVenda, qtdProduto, precoUnProduto) values ({0}, {1}, {2}, {3})", v.Itens[i].Id, v.Id, v.Itens[i].Qntd, preco);
+                string qntd = Convert.ToString(v.Itens[i].Qntd);
+                if (qntd.ToString().Contains(","))
+                {
+                    qntd = qntd.Replace(",", ".");
+                }
+
+                sql = string.Format("INSERT INTO produtos_venda(idProduto, idVenda, qtdProduto, precoUnProduto) values ({0}, {1}, {2}, {3})", v.Itens[i].Id, v.Id, qntd, preco);
                 db.ExecuteNonQuery(sql);
             }
         }

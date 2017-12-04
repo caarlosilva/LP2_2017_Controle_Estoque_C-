@@ -91,7 +91,7 @@ namespace ControlX
             }
             else
             {
-                if (int.Parse(txPrecoCompra.Text.ToString()) > int.Parse(lbPrecoShow.Text.ToString()))
+                if (double.Parse(txPrecoCompra.Text.ToString()) > double.Parse(lbPrecoShow.Text.ToString()))
                 {
                     DialogResult result = MessageBox.Show("O preço de compra está maior que o de venda, deseja continuar?",
                     "Atenção",
@@ -124,7 +124,7 @@ namespace ControlX
                     }
                 }
 
-                else if (int.Parse(txPrecoCompra.Text.ToString()) < int.Parse(lbPrecoShow.Text.ToString()))
+                else if (double.Parse(txPrecoCompra.Text.ToString()) < double.Parse(lbPrecoShow.Text.ToString()))
                 {
                     DialogResult result = MessageBox.Show("O preço de compra está menor que o de venda, deseja continuar?",
                     "Atenção",

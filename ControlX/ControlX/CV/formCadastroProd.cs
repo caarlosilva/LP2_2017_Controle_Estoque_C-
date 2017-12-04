@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace ControlX
     {
         private IDao db1 = new DAO.ProdutoDao();
         private Produto nProduto = new Produto();
+        
         public formCadastroProd()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace ControlX
             //iniComboBox tem como função inicializar o combo box de Fornecedor com *pasmem*
             //os Fornecedores
             iniComboBox();
+
  
         }
 
@@ -78,6 +81,18 @@ namespace ControlX
             nProduto.Cat.Id = int.Parse(cbCategoria.SelectedValue.ToString());
             nProduto.TipoUn = cbTipoUn.Text.ToString();
             nProduto.EstoqueMin = double.Parse(txEstoqueMin.Text.ToString());
+            nProduto.LocalPic = pbImagemProd.ImageLocation;
+
+            string pasta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ControlX\\Images\\Produtos\\";
+            //string pasta = @"C:\ControlX\Images\Produtos\"; //nome do diretorio a ser criado
+
+            //Se o diretório não existir...
+            if (!Directory.Exists(pasta))
+            {
+                //Criamos um com o nome folder
+                Directory.CreateDirectory(pasta);
+            }
+            pbImagemProd.Image.Save(pasta + lbIdProduto.Text + ".jpg", ImageFormat.Jpeg);
 
             btComplete();
 
@@ -112,13 +127,15 @@ namespace ControlX
         private void btImagem_Click(object sender, EventArgs e)
         {
             OpenFileDialog imagem = new OpenFileDialog();
-            imagem.Filter = "jpg|*.jpg|png|*.png";
+            imagem.Filter = "jpg|*.jpg";
             if (imagem.ShowDialog() == DialogResult.OK)
             {
                 FileInfo arquivo = new FileInfo(imagem.FileName);
                 //testa se tem menos de 1MB (1MB em bytes = 1048576)
                 if (arquivo.Length <= 1048576)
+                {
                     pbImagemProd.ImageLocation = imagem.FileName;
+                }
                 else
                     MessageBox.Show("O Tamanho da imagem não pode exceder 1MB!", "Tamanho de arquivo inválido!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

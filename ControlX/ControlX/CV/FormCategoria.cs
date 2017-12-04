@@ -73,9 +73,7 @@ namespace ControlX
 
         private void btEstoque_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new formEstoque().ShowDialog();
-            this.Show();
+            this.Dispose();
         }
 
         private void btAdd_Click(object sender, EventArgs e)
@@ -148,11 +146,14 @@ namespace ControlX
 
         private void voltarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new formEstoque().ShowDialog();
-            this.Show();
-            Fill();
+            this.Dispose();
+        }
 
+        private void rbId_CheckedChanged(object sender, EventArgs e)
+        {
+            txPesquisar.Text = "";
+            //pesquisaFiltro();
+            txPesquisar.Focus();
         }
     }
 }

@@ -239,7 +239,7 @@ namespace ControlX
 
         private void btMenuPrincipal_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
         private void txPesquisar_KeyPress(object sender, KeyPressEventArgs e)
@@ -252,7 +252,7 @@ namespace ControlX
 
         private void btCategoria_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Hide();
             new FormCategoria().ShowDialog();
             this.Show();
             Fill();

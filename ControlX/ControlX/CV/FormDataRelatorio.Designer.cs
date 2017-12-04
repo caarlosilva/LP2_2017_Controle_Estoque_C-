@@ -42,9 +42,9 @@
             this.dtInicio.AllowDrop = true;
             this.dtInicio.Checked = false;
             this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtInicio.Location = new System.Drawing.Point(64, 57);
+            this.dtInicio.Location = new System.Drawing.Point(75, 57);
             this.dtInicio.Name = "dtInicio";
-            this.dtInicio.Size = new System.Drawing.Size(97, 20);
+            this.dtInicio.Size = new System.Drawing.Size(112, 21);
             this.dtInicio.TabIndex = 0;
             this.dtInicio.Value = new System.DateTime(2017, 12, 2, 0, 0, 0, 0);
             // 
@@ -52,44 +52,44 @@
             // 
             this.dtFim.Checked = false;
             this.dtFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFim.Location = new System.Drawing.Point(64, 109);
+            this.dtFim.Location = new System.Drawing.Point(75, 109);
             this.dtFim.Name = "dtFim";
-            this.dtFim.Size = new System.Drawing.Size(97, 20);
+            this.dtFim.Size = new System.Drawing.Size(112, 21);
             this.dtFim.TabIndex = 0;
             this.dtFim.Value = new System.DateTime(2017, 12, 2, 0, 0, 0, 0);
             // 
             // lbDataInicio
             // 
             this.lbDataInicio.AutoSize = true;
-            this.lbDataInicio.Location = new System.Drawing.Point(100, 38);
+            this.lbDataInicio.Location = new System.Drawing.Point(117, 38);
             this.lbDataInicio.Name = "lbDataInicio";
-            this.lbDataInicio.Size = new System.Drawing.Size(24, 13);
+            this.lbDataInicio.Size = new System.Drawing.Size(28, 13);
             this.lbDataInicio.TabIndex = 2;
             this.lbDataInicio.Text = "De:";
             // 
             // lbDataFim
             // 
             this.lbDataFim.AutoSize = true;
-            this.lbDataFim.Location = new System.Drawing.Point(99, 93);
+            this.lbDataFim.Location = new System.Drawing.Point(115, 93);
             this.lbDataFim.Name = "lbDataFim";
-            this.lbDataFim.Size = new System.Drawing.Size(26, 13);
+            this.lbDataFim.Size = new System.Drawing.Size(31, 13);
             this.lbDataFim.TabIndex = 3;
             this.lbDataFim.Text = "Até:";
             // 
             // lbInstrucao
             // 
             this.lbInstrucao.AutoSize = true;
-            this.lbInstrucao.Location = new System.Drawing.Point(9, 13);
+            this.lbInstrucao.Location = new System.Drawing.Point(3, 13);
             this.lbInstrucao.Name = "lbInstrucao";
-            this.lbInstrucao.Size = new System.Drawing.Size(211, 13);
+            this.lbInstrucao.Size = new System.Drawing.Size(256, 13);
             this.lbInstrucao.TabIndex = 4;
             this.lbInstrucao.Text = "Escolha a data para a geração do relatório:";
             // 
             // btGerar
             // 
-            this.btGerar.Location = new System.Drawing.Point(75, 144);
+            this.btGerar.Location = new System.Drawing.Point(87, 144);
             this.btGerar.Name = "btGerar";
-            this.btGerar.Size = new System.Drawing.Size(75, 23);
+            this.btGerar.Size = new System.Drawing.Size(87, 23);
             this.btGerar.TabIndex = 5;
             this.btGerar.Text = "Gerar";
             this.btGerar.UseVisualStyleBackColor = true;
@@ -97,16 +97,17 @@
             // 
             // FormDataRelatorio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(225, 180);
+            this.ClientSize = new System.Drawing.Size(262, 180);
             this.Controls.Add(this.btGerar);
             this.Controls.Add(this.lbInstrucao);
             this.Controls.Add(this.lbDataFim);
             this.Controls.Add(this.lbDataInicio);
             this.Controls.Add(this.dtFim);
             this.Controls.Add(this.dtInicio);
+            this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

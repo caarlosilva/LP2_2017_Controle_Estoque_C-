@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCategoria));
             this.pnButtons = new System.Windows.Forms.Panel();
+            this.btDel = new System.Windows.Forms.Button();
             this.btAdd = new System.Windows.Forms.Button();
             this.btEdit = new System.Windows.Forms.Button();
-            this.btDel = new System.Windows.Forms.Button();
             this.gbEstoque = new System.Windows.Forms.GroupBox();
             this.dgvCategoria = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +66,18 @@
             this.pnButtons.TabIndex = 12;
             this.pnButtons.Visible = false;
             // 
+            // btDel
+            // 
+            this.btDel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btDel.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDel.Location = new System.Drawing.Point(9, 3);
+            this.btDel.Name = "btDel";
+            this.btDel.Size = new System.Drawing.Size(75, 23);
+            this.btDel.TabIndex = 3;
+            this.btDel.Text = "Remover";
+            this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
+            // 
             // btAdd
             // 
             this.btAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -89,18 +101,6 @@
             this.btEdit.Text = "Editar";
             this.btEdit.UseVisualStyleBackColor = true;
             this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
-            // 
-            // btDel
-            // 
-            this.btDel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btDel.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDel.Location = new System.Drawing.Point(9, 3);
-            this.btDel.Name = "btDel";
-            this.btDel.Size = new System.Drawing.Size(75, 23);
-            this.btDel.TabIndex = 3;
-            this.btDel.Text = "Remover";
-            this.btDel.UseVisualStyleBackColor = true;
-            this.btDel.Click += new System.EventHandler(this.btDel_Click);
             // 
             // gbEstoque
             // 
@@ -178,6 +178,7 @@
             this.rbId.TabIndex = 1;
             this.rbId.Text = "Id";
             this.rbId.UseVisualStyleBackColor = true;
+            this.rbId.CheckedChanged += new System.EventHandler(this.rbId_CheckedChanged);
             // 
             // pnPesquisa
             // 

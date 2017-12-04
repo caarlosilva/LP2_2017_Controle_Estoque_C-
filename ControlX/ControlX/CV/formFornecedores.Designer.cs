@@ -153,8 +153,8 @@
             this.gbFornecedores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbFornecedores.Controls.Add(this.pnBtns);
             this.gbFornecedores.Controls.Add(this.dgvFornecedor);
+            this.gbFornecedores.Controls.Add(this.pnBtns);
             this.gbFornecedores.Location = new System.Drawing.Point(0, 64);
             this.gbFornecedores.Name = "gbFornecedores";
             this.gbFornecedores.Size = new System.Drawing.Size(691, 366);
