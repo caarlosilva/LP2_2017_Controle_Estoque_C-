@@ -71,6 +71,7 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
   - Poder Visualizar os itens da compra ao clicar em uma compra não finalizada(DGV direito) *FEITO*
   - Notificar caso o Preço de Compra seja maior que o Preço de Venda *FEITO*
   - Não pode comprar '0' produtos *FEITO*
+  - Verificar se o ID já consta na lista antes de adicionar um item na compra, e avisar o usuario para remover e adicionar a quantidade correta caso ele ja exista (FAZER O MESMO COM VENDAS).
 
 *-------------------------------------------------------------------------*
 
