@@ -64,7 +64,6 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 
 ------------------------------ COMPRAS ------------------------------
 
-  - Apenas adicionar um item com o mesmo ID na compra, e avisar o usuario para remover e adicionar a quantidade correta.
   - Habilitar modo TELA CHEIA e arrumar os 'Anchors'
   - Preencher o DGV com as ultimas compras realizadas OU Colocar algo mais útil no lugar *FEITO*
   - Botão Finalizar só pode estar habilitado caso tenha algo no DGV de Compras em Aguardo *FEITO*
@@ -72,6 +71,7 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
   - Poder Visualizar os itens da compra ao clicar em uma compra não finalizada(DGV direito) *FEITO*
   - Notificar caso o Preço de Compra seja maior que o Preço de Venda *FEITO*
   - Não pode comprar '0' produtos *FEITO*
+  - Verificar se o ID já consta na lista antes de adicionar um item na compra, e avisar o usuario para remover e adicionar a quantidade correta caso ele ja exista (FAZER O MESMO COM VENDAS).
 
 *-------------------------------------------------------------------------*
 
