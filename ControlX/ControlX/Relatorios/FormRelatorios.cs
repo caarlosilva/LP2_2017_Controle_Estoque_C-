@@ -89,6 +89,7 @@ namespace ControlX
             formMenu form = new formMenu();
             string dataI = dataInicio.ToString("dd-MM-yyyy");
             string dataF = dataFim.ToString("dd-MM-yyyy");
+            double total = 0;
 
             CV.FormDataRelatorio data = new CV.FormDataRelatorio();
 
@@ -99,6 +100,7 @@ namespace ControlX
                 double valor = 0;
                 foreach (Comprar c in lista)
                 {
+
                     valor += c.Valor;
                 }
 
@@ -180,7 +182,7 @@ namespace ControlX
                 double valor = 0;
                 foreach (Produto p in lista)
                 {
-                    valor += p.Preco;
+                    valor += (p.Qntd * p.Preco);
                 }
                 string dataV = dataVenda.ToString("dd-MM-yyyy HH:mm:ss");
 
@@ -215,7 +217,7 @@ namespace ControlX
                 double valor = 0;
                 foreach (Produto p in lista)
                 {
-                    valor += p.Preco;
+                    valor += (p.Qntd * p.Preco);
                 }
                 string dataC = dataCompra.ToString("dd-MM-yyyy HH:mm:ss");
                 string dataE = dataCompra.ToString("dd-MM-yyyy");
