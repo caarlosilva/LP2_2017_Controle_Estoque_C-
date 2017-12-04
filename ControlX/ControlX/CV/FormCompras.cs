@@ -63,6 +63,7 @@ namespace ControlX
             dgvUltimasCompras.Rows.Clear();
             foreach (Comprar c in compras)
             {
+                c.DataCompra = DateTime.Parse(c.DataCompra.ToString("dd/MM/yyyy"));
                 dgvUltimasCompras.Rows.Add(c.Id, c.DataCompra, c.DataFinal);
             }
         }

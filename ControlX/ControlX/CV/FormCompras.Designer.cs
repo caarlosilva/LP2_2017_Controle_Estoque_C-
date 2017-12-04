@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCompras));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novaCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvUltimasCompras = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbComprasFinalizadas = new System.Windows.Forms.GroupBox();
             this.pnAguardando = new System.Windows.Forms.Panel();
+            this.lbAviso = new System.Windows.Forms.Label();
             this.btFinalizar = new System.Windows.Forms.Button();
             this.dgvComprasAguardando = new System.Windows.Forms.DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +48,9 @@
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbAgendadas = new System.Windows.Forms.GroupBox();
-            this.lbAviso = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUltimasCompras)).BeginInit();
             this.gbComprasFinalizadas.SuspendLayout();
@@ -78,7 +79,7 @@
             // 
             this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
             this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btVoltar_Click);
             // 
@@ -112,30 +113,6 @@
             this.dgvUltimasCompras.Size = new System.Drawing.Size(354, 380);
             this.dgvUltimasCompras.TabIndex = 0;
             // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID.FillWeight = 20F;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // DataCompra
-            // 
-            this.DataCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DataCompra.FillWeight = 40F;
-            this.DataCompra.HeaderText = "Data da Compra";
-            this.DataCompra.Name = "DataCompra";
-            this.DataCompra.ReadOnly = true;
-            // 
-            // DataFinal
-            // 
-            this.DataFinal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DataFinal.FillWeight = 40F;
-            this.DataFinal.HeaderText = "Data da Entrega";
-            this.DataFinal.Name = "DataFinal";
-            this.DataFinal.ReadOnly = true;
-            // 
             // gbComprasFinalizadas
             // 
             this.gbComprasFinalizadas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -158,6 +135,16 @@
             this.pnAguardando.Name = "pnAguardando";
             this.pnAguardando.Size = new System.Drawing.Size(351, 26);
             this.pnAguardando.TabIndex = 4;
+            // 
+            // lbAviso
+            // 
+            this.lbAviso.AutoSize = true;
+            this.lbAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAviso.Location = new System.Drawing.Point(15, 8);
+            this.lbAviso.Name = "lbAviso";
+            this.lbAviso.Size = new System.Drawing.Size(205, 12);
+            this.lbAviso.TabIndex = 1;
+            this.lbAviso.Text = "Entregas atrasadas são marcadas em Vermelho!";
             // 
             // btFinalizar
             // 
@@ -216,9 +203,9 @@
             // colDataCompra
             // 
             this.colDataCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.colDataCompra.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colDataCompra.DefaultCellStyle = dataGridViewCellStyle2;
             this.colDataCompra.FillWeight = 40F;
             this.colDataCompra.HeaderText = "Data da Compra";
             this.colDataCompra.Name = "colDataCompra";
@@ -228,9 +215,9 @@
             // colDataEntrega
             // 
             this.colDataEntrega.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colDataEntrega.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.colDataEntrega.DefaultCellStyle = dataGridViewCellStyle3;
             this.colDataEntrega.FillWeight = 40F;
             this.colDataEntrega.HeaderText = "Data Prevista";
             this.colDataEntrega.Name = "colDataEntrega";
@@ -267,15 +254,32 @@
             this.gbAgendadas.TabStop = false;
             this.gbAgendadas.Text = "Compras aguardando recebimento";
             // 
-            // lbAviso
+            // ID
             // 
-            this.lbAviso.AutoSize = true;
-            this.lbAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAviso.Location = new System.Drawing.Point(15, 8);
-            this.lbAviso.Name = "lbAviso";
-            this.lbAviso.Size = new System.Drawing.Size(205, 12);
-            this.lbAviso.TabIndex = 1;
-            this.lbAviso.Text = "Entregas atrasadas são marcadas em Vermelho!";
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ID.FillWeight = 20F;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // DataCompra
+            // 
+            this.DataCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.DataCompra.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DataCompra.FillWeight = 40F;
+            this.DataCompra.HeaderText = "Data da Compra";
+            this.DataCompra.Name = "DataCompra";
+            this.DataCompra.ReadOnly = true;
+            // 
+            // DataFinal
+            // 
+            this.DataFinal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DataFinal.FillWeight = 40F;
+            this.DataFinal.HeaderText = "Data da Entrega";
+            this.DataFinal.Name = "DataFinal";
+            this.DataFinal.ReadOnly = true;
             // 
             // FormCompras
             // 
@@ -309,9 +313,6 @@
         private System.Windows.Forms.ToolStripMenuItem novaCompraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvUltimasCompras;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataFinal;
         private System.Windows.Forms.GroupBox gbComprasFinalizadas;
         private System.Windows.Forms.Panel pnAguardando;
         private System.Windows.Forms.Button btFinalizar;
@@ -324,5 +325,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.GroupBox gbAgendadas;
         private System.Windows.Forms.Label lbAviso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataFinal;
     }
 }
