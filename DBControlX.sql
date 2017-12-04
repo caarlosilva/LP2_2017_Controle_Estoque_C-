@@ -32,6 +32,7 @@ CREATE TABLE produtos (
   qntd double DEFAULT NULL,
   tipoUn varchar(5),
   estoqueMin double DEFAULT 20,
+  localPic varchar(256),
   idFornecedor int,
   idCategoria int,
   deleted_at date DEFAULT NULL,
@@ -59,6 +60,7 @@ CREATE TABLE produtos (
 	login varchar(32),
 	senha varchar(32),
 	deleted_at date DEFAULT NULL,
+	localPic varchar(256),
 	PRIMARY KEY (id)	
  );
 
