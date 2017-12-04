@@ -64,6 +64,7 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 
 ------------------------------ COMPRAS ------------------------------
 
+  - Apenas adicionar um item com o mesmo ID na compra, e avisar o usuario para remover e adicionar a quantidade correta.
   - Habilitar modo TELA CHEIA e arrumar os 'Anchors'
   - Preencher o DGV com as ultimas compras realizadas OU Colocar algo mais útil no lugar *FEITO*
   - Botão Finalizar só pode estar habilitado caso tenha algo no DGV de Compras em Aguardo *FEITO*
