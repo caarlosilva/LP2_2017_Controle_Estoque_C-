@@ -45,6 +45,8 @@
             this.colCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCidadeEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.rbNome = new System.Windows.Forms.RadioButton();
+            this.rbId = new System.Windows.Forms.RadioButton();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,11 +63,13 @@
             // 
             this.pnFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnFiltro.Controls.Add(this.rbId);
+            this.pnFiltro.Controls.Add(this.rbNome);
             this.pnFiltro.Controls.Add(this.txPesquisar);
             this.pnFiltro.Controls.Add(this.lbFiltro);
             this.pnFiltro.Location = new System.Drawing.Point(0, 31);
             this.pnFiltro.Name = "pnFiltro";
-            this.pnFiltro.Size = new System.Drawing.Size(688, 30);
+            this.pnFiltro.Size = new System.Drawing.Size(688, 45);
             this.pnFiltro.TabIndex = 1;
             // 
             // txPesquisar
@@ -73,9 +77,9 @@
             this.txPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txPesquisar.Location = new System.Drawing.Point(47, 6);
+            this.txPesquisar.Location = new System.Drawing.Point(47, 10);
             this.txPesquisar.Name = "txPesquisar";
-            this.txPesquisar.Size = new System.Drawing.Size(635, 21);
+            this.txPesquisar.Size = new System.Drawing.Size(520, 21);
             this.txPesquisar.TabIndex = 0;
             this.txPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPesquisar_KeyPress);
             this.txPesquisar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txPesquisar_KeyUp);
@@ -85,7 +89,7 @@
             this.lbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFiltro.AutoSize = true;
-            this.lbFiltro.Location = new System.Drawing.Point(4, 9);
+            this.lbFiltro.Location = new System.Drawing.Point(4, 13);
             this.lbFiltro.Name = "lbFiltro";
             this.lbFiltro.Size = new System.Drawing.Size(40, 13);
             this.lbFiltro.TabIndex = 0;
@@ -98,7 +102,7 @@
             this.pnBtns.Controls.Add(this.btEdit);
             this.pnBtns.Controls.Add(this.btView);
             this.pnBtns.Controls.Add(this.btAdd);
-            this.pnBtns.Location = new System.Drawing.Point(338, 312);
+            this.pnBtns.Location = new System.Drawing.Point(338, 294);
             this.pnBtns.Name = "pnBtns";
             this.pnBtns.Size = new System.Drawing.Size(340, 29);
             this.pnBtns.TabIndex = 3;
@@ -155,9 +159,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbFornecedores.Controls.Add(this.dgvFornecedor);
             this.gbFornecedores.Controls.Add(this.pnBtns);
-            this.gbFornecedores.Location = new System.Drawing.Point(0, 64);
+            this.gbFornecedores.Location = new System.Drawing.Point(0, 82);
             this.gbFornecedores.Name = "gbFornecedores";
-            this.gbFornecedores.Size = new System.Drawing.Size(691, 366);
+            this.gbFornecedores.Size = new System.Drawing.Size(691, 348);
             this.gbFornecedores.TabIndex = 4;
             this.gbFornecedores.TabStop = false;
             this.gbFornecedores.Text = "Fornecedores";
@@ -180,7 +184,7 @@
             this.dgvFornecedor.ReadOnly = true;
             this.dgvFornecedor.RowHeadersVisible = false;
             this.dgvFornecedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFornecedor.Size = new System.Drawing.Size(685, 346);
+            this.dgvFornecedor.Size = new System.Drawing.Size(685, 328);
             this.dgvFornecedor.TabIndex = 0;
             this.dgvFornecedor.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvFornecedor_CellMouseDoubleClick);
             // 
@@ -234,6 +238,29 @@
             this.menuStrip1.Size = new System.Drawing.Size(690, 28);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // rbNome
+            // 
+            this.rbNome.AutoSize = true;
+            this.rbNome.Checked = true;
+            this.rbNome.Location = new System.Drawing.Point(578, 3);
+            this.rbNome.Name = "rbNome";
+            this.rbNome.Size = new System.Drawing.Size(103, 17);
+            this.rbNome.TabIndex = 1;
+            this.rbNome.TabStop = true;
+            this.rbNome.Text = "Nome/Cidade";
+            this.rbNome.UseVisualStyleBackColor = true;
+            // 
+            // rbId
+            // 
+            this.rbId.AutoSize = true;
+            this.rbId.Location = new System.Drawing.Point(578, 26);
+            this.rbId.Name = "rbId";
+            this.rbId.Size = new System.Drawing.Size(37, 17);
+            this.rbId.TabIndex = 2;
+            this.rbId.Text = "Id";
+            this.rbId.UseVisualStyleBackColor = true;
+            this.rbId.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // voltarToolStripMenuItem
             // 
@@ -323,5 +350,7 @@
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detalhesToolStripMenuItem;
+        private System.Windows.Forms.RadioButton rbId;
+        private System.Windows.Forms.RadioButton rbNome;
     }
 }

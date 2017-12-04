@@ -154,6 +154,7 @@ namespace ControlX
                 form.cbCategoria.SelectedValue = produto.Cat.Id;
                 form.cbTipoUn.Text = produto.TipoUn;
                 form.txEstoqueMin.Text = produto.EstoqueMin.ToString();
+                form.pbImagemProd.ImageLocation = produto.LocalPic;
             }
 
             form.btCadastrar.Text = "Salvar";
@@ -191,6 +192,7 @@ namespace ControlX
                 form.cbCategoria.SelectedValue = produto.Cat.Id;
                 form.cbTipoUn.Text = produto.TipoUn;
                 form.txEstoqueMin.Text = produto.EstoqueMin.ToString();
+                form.pbImagemProd.ImageLocation = produto.LocalPic;
             }
 
             //form.cbFornecedor.DataSource = p;
@@ -246,6 +248,7 @@ namespace ControlX
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && rbId.Checked)
                 e.Handled = true;
+
             if (e.KeyChar == '\'')
                 e.Handled = true;
         }

@@ -49,22 +49,38 @@ namespace ControlX.DAO
         public void Adicionar(Object o)
         {
             Usuario u = (Usuario)o;
+
             string dataMySql = u.DataNasc.ToString("yyyy-MM-dd HH:mm:ss.fff");
-            string sql = string.Format("INSERT INTO usuario(nome, cpf, sexo, dataNasc, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado, cargo, login, senha) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}',{7},'{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}')", u.Nome, u.Cpf, u.Sexo, dataMySql, u.Telefone1, u.Telefone2, u.Cep, u.Num, u.Rua, u.Comp, u.Bairro, u.Cidade, u.Estado, u.Cargo, u.Login, u.Senha);
+
+            string local = u.LocalPic;
+            if (local.Contains(@"/"))
+            {
+                local = local.Replace(@"/", @"//");
+            }
+
+            string sql = string.Format("INSERT INTO usuario(nome, cpf, sexo, dataNasc, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado, cargo, login, senha, localPic) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}',{7},'{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}')", u.Nome, u.Cpf, u.Sexo, dataMySql, u.Telefone1, u.Telefone2, u.Cep, u.Num, u.Rua, u.Comp, u.Bairro, u.Cidade, u.Estado, u.Cargo, u.Login, u.Senha, local);
             db.ExecuteNonQuery(sql);
         }
 
         public void Atualizar(object f)
         {
             Usuario u = (Usuario)f;
+
             string dataMySql = u.DataNasc.ToString("yyyy-MM-dd HH:mm:ss.fff");
-            string qry = string.Format("UPDATE usuario SET nome = '{0}', cpf = '{1}', sexo = '{2}', dataNasc = '{3}', tel1 = '{4}', tel2 = '{5}', cep = '{6}', num = '{7}', rua = '{8}', comp = '{9}', bairro = '{10}', cidade = '{11}', estado = '{12}', cargo = '{13}', login = '{14}', senha = '{15}' WHERE id = {16}", u.Nome, u.Cpf, u.Sexo, dataMySql, u.Telefone1, u.Telefone2, u.Cep, u.Num, u.Rua, u.Comp, u.Bairro, u.Cidade, u.Estado, u.Cargo, u.Login, u.Senha, u.Id);
+
+            string local = u.LocalPic;
+            if (local.Contains(@"/"))
+            {
+                local = local.Replace(@"/", @"//");
+            }
+
+            string qry = string.Format("UPDATE usuario SET nome = '{0}', cpf = '{1}', sexo = '{2}', dataNasc = '{3}', tel1 = '{4}', tel2 = '{5}', cep = '{6}', num = '{7}', rua = '{8}', comp = '{9}', bairro = '{10}', cidade = '{11}', estado = '{12}', cargo = '{13}', login = '{14}', senha = '{15}', localPic = '{16}' WHERE id = {17}", u.Nome, u.Cpf, u.Sexo, dataMySql, u.Telefone1, u.Telefone2, u.Cep, u.Num, u.Rua, u.Comp, u.Bairro, u.Cidade, u.Estado, u.Cargo, u.Login, u.Senha, local, u.Id);
             db.ExecuteNonQuery(qry);
         }
 
         public List<object> ListAll()
         {
-            string qry = string.Format("SELECT id, nome, cpf, sexo, dataNasc, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado, cargo, login, senha FROM usuario WHERE deleted_at is null");
+            string qry = string.Format("SELECT id, nome, cpf, sexo, dataNasc, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado, cargo, login, senha, localPic FROM usuario WHERE deleted_at is null");
             DataSet ds = db.ExecuteQuery(qry);
 
             List<object> user = new List<object>();
@@ -89,6 +105,7 @@ namespace ControlX.DAO
                 u.Cargo = dr["cargo"].ToString();
                 u.Login = dr["login"].ToString();
                 u.Senha = dr["senha"].ToString();
+                u.LocalPic = dr["localPic"].ToString();
                 user.Add(u);
             }
             return user;
@@ -122,6 +139,7 @@ namespace ControlX.DAO
                 u.Cargo = dr["cargo"].ToString();
                 u.Login = dr["login"].ToString();
                 u.Senha = dr["senha"].ToString();
+                u.LocalPic = dr["localPic"].ToString();
                 user.Add(u);
             }
             return user;
@@ -155,6 +173,7 @@ namespace ControlX.DAO
                 u.Cargo = dr["cargo"].ToString();
                 u.Login = dr["login"].ToString();
                 u.Senha = dr["senha"].ToString();
+                u.LocalPic = dr["localPic"].ToString();
                 user.Add(u);
             }
             return user;
@@ -206,6 +225,7 @@ namespace ControlX.DAO
                 u.Cargo = dr["cargo"].ToString();
                 u.Login = dr["login"].ToString();
                 u.Senha = dr["senha"].ToString();
+                u.LocalPic = dr["localPic"].ToString();
             }
             return u;
         }
@@ -237,6 +257,7 @@ namespace ControlX.DAO
                 u.Cargo = dr["cargo"].ToString();
                 u.Login = dr["login"].ToString();
                 u.Senha = dr["senha"].ToString();
+                u.LocalPic = dr["localPic"].ToString();
             }
             return u;
         }

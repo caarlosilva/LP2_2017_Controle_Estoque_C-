@@ -14,7 +14,7 @@ namespace ControlX
         public void Adicionar(object o)
         {
             Comprar c = (Comprar)o;
-            string dataCompraMySql = c.DataCompra.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string dataCompraMySql = c.DataCompra.ToString("yyyy-MM-dd");
             string dataEntregaMySql = c.DataEntrega.ToString("yyyy-MM-dd");
 
             int status = c.Status;
@@ -196,10 +196,32 @@ namespace ControlX
             return compras;
         }
 
-        public List<object> ListByDate(DateTime inicio, DateTime fim)
+        public List<object> ListByDate(DateTime dataInicio, DateTime dataFim)
         {
-            throw new NotImplementedException(); 
-            // SEM USO PARA 'COMPRAR' , SERIA UTIL UM 'LISTBYDATE', mas da pra implementar em um form, não precisa de um método
+            string dataMySqlInicio = dataInicio.ToString("yyyy-MM-dd");
+            string dataMySqlFim = dataFim.ToString("yyyy-MM-dd");
+            string qry = string.Format("SELECT id, nome_usuario, valor, status, dataCompra, dataEntrega, dataFinal FROM compras WHERE dataCompra BETWEEN '{0}' AND '{1}'", dataMySqlInicio, dataMySqlFim);
+
+            DataSet ds = db.ExecuteQuery(qry);
+
+            List<object> compras = new List<object>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                    Comprar c = new Comprar();
+                    c.Id = int.Parse(dr["id"].ToString());
+                    c.Nome_usuario = dr["nome_usuario"].ToString();
+                    c.Valor = double.Parse(dr["valor"].ToString());
+                    c.Status = int.Parse(dr["status"].ToString());
+                    c.DataCompra = DateTime.Parse(dr["dataCompra"].ToString());
+                    c.DataEntrega = DateTime.Parse(dr["dataEntrega"].ToString());
+                    if (c.Status == 1)
+                        c.DataFinal = DateTime.Parse(dr["dataFinal"].ToString());
+                compras.Add(c);
+                
+            }
+            return compras;
+
         }
 
         public int Remover(int id)

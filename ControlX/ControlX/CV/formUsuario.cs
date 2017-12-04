@@ -127,6 +127,7 @@ namespace ControlX
                     form.cbCargo.Text = Convert.ToString(u.Cargo);
                     form.txLogin.Text = Convert.ToString(u.Login);
                     form.txSenha.Text = Convert.ToString(u.Senha);
+                    form.pbImagemUser.ImageLocation = u.LocalPic;
                 }
             }
 
@@ -176,6 +177,7 @@ namespace ControlX
             form.cbSexo.Enabled = false;
             form.cbCargo.Enabled = false;
             form.dtpDataNasc.Enabled = false;
+            form.btImagem.Enabled = false;
 
             //Fim paineis somente leitura
 
@@ -199,6 +201,7 @@ namespace ControlX
                     form.cbCargo.Text = Convert.ToString(u.Cargo);
                     form.txLogin.Text = Convert.ToString(u.Login);
                     form.txSenha.Text = Convert.ToString(u.Senha);
+                    form.pbImagemUser.ImageLocation = u.LocalPic;
                 }
             }
             form.btCadastrar.Enabled = false;

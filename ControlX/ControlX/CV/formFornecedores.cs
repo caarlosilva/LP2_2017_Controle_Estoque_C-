@@ -214,14 +214,20 @@ namespace ControlX
 
         private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
         {
-            IDao db = new DAO.FornecedorDao();
-            List<Object> ps = db.ListByName(txPesquisar.Text);
 
-            dgvFornecedor.Rows.Clear();
-            foreach (Fornecedor p in ps)
+            if (txPesquisar.Text.Trim() != "")
             {
-                dgvFornecedor.Rows.Add(p.Id, p.Nome, p.Cnpj, p.Cidade + "-" + p.Estado);
+                IDao db = new DAO.FornecedorDao();
+                List<Object> fs = (rbNome.Checked) ? db.ListByName(txPesquisar.Text) : (txPesquisar.Text.Trim() == "") ? db.ListAll() : db.ListById(int.Parse(txPesquisar.Text));
+
+                dgvFornecedor.Rows.Clear();
+                foreach (Fornecedor f in fs)
+                {
+                    dgvFornecedor.Rows.Add(f.Id, f.Nome, f.Cnpj, f.Cidade + "-" + f.Estado);
+                }
             }
+            else
+                Fill();
         }
 
         private void dgvFornecedor_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -231,9 +237,19 @@ namespace ControlX
 
         private void txPesquisar_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && rbId.Checked)
+                e.Handled = true;
+
             if (e.KeyChar == '\'')
                 e.Handled = true;
 
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            txPesquisar.Text = "";
+            Fill();
+            txPesquisar.Focus();
         }
     }
 }

@@ -35,7 +35,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formHistoricoCompras));
             this.gbEstoque = new System.Windows.Forms.GroupBox();
             this.dgvHistCompras = new System.Windows.Forms.DataGridView();
-            this.rbDataEntrega = new System.Windows.Forms.RadioButton();
+            this.rbDataCompra = new System.Windows.Forms.RadioButton();
             this.rbId = new System.Windows.Forms.RadioButton();
             this.pnFiltros = new System.Windows.Forms.Panel();
             this.pnId = new System.Windows.Forms.Panel();
@@ -103,40 +103,41 @@
             this.dgvHistCompras.TabIndex = 3;
             this.dgvHistCompras.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHistCompras_CellMouseDoubleClick);
             // 
-            // rbDataEntrega
+            // rbDataCompra
             // 
-            this.rbDataEntrega.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbDataEntrega.AutoSize = true;
-            this.rbDataEntrega.Checked = true;
-            this.rbDataEntrega.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDataEntrega.Location = new System.Drawing.Point(15, 6);
-            this.rbDataEntrega.Name = "rbDataEntrega";
-            this.rbDataEntrega.Size = new System.Drawing.Size(100, 17);
-            this.rbDataEntrega.TabIndex = 10;
-            this.rbDataEntrega.TabStop = true;
-            this.rbDataEntrega.Text = "Data Entrega";
-            this.rbDataEntrega.UseVisualStyleBackColor = true;
-            this.rbDataEntrega.CheckedChanged += new System.EventHandler(this.rbDataEntrega_CheckedChanged);
+            this.rbDataCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbDataCompra.AutoSize = true;
+            this.rbDataCompra.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDataCompra.Location = new System.Drawing.Point(14, 30);
+            this.rbDataCompra.Name = "rbDataCompra";
+            this.rbDataCompra.Size = new System.Drawing.Size(102, 17);
+            this.rbDataCompra.TabIndex = 10;
+            this.rbDataCompra.Text = "Data Compra";
+            this.rbDataCompra.UseVisualStyleBackColor = true;
+            this.rbDataCompra.CheckedChanged += new System.EventHandler(this.rbDataEntrega_CheckedChanged);
             // 
             // rbId
             // 
             this.rbId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbId.AutoSize = true;
+            this.rbId.Checked = true;
             this.rbId.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbId.Location = new System.Drawing.Point(15, 29);
+            this.rbId.Location = new System.Drawing.Point(14, 6);
             this.rbId.Name = "rbId";
             this.rbId.Size = new System.Drawing.Size(37, 17);
             this.rbId.TabIndex = 1;
+            this.rbId.TabStop = true;
             this.rbId.Text = "Id";
             this.rbId.UseVisualStyleBackColor = true;
+            this.rbId.CheckedChanged += new System.EventHandler(this.rbId_CheckedChanged);
             // 
             // pnFiltros
             // 
             this.pnFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnFiltros.Controls.Add(this.rbDataEntrega);
+            this.pnFiltros.Controls.Add(this.rbDataCompra);
             this.pnFiltros.Controls.Add(this.rbId);
-            this.pnFiltros.Location = new System.Drawing.Point(647, 31);
+            this.pnFiltros.Location = new System.Drawing.Point(661, 31);
             this.pnFiltros.Name = "pnFiltros";
             this.pnFiltros.Size = new System.Drawing.Size(140, 52);
             this.pnFiltros.TabIndex = 10;
@@ -149,7 +150,7 @@
             this.pnId.Controls.Add(this.lbFiltro);
             this.pnId.Location = new System.Drawing.Point(3, 31);
             this.pnId.Name = "pnId";
-            this.pnId.Size = new System.Drawing.Size(446, 52);
+            this.pnId.Size = new System.Drawing.Size(482, 52);
             this.pnId.TabIndex = 4;
             // 
             // txPesquisar
@@ -161,9 +162,10 @@
             this.txPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txPesquisar.Location = new System.Drawing.Point(40, 14);
             this.txPesquisar.Name = "txPesquisar";
-            this.txPesquisar.Size = new System.Drawing.Size(389, 21);
+            this.txPesquisar.Size = new System.Drawing.Size(425, 21);
             this.txPesquisar.TabIndex = 1;
             this.txPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPesquisar_KeyPress);
+            this.txPesquisar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txPesquisar_KeyUp);
             // 
             // lbFiltro
             // 
@@ -173,9 +175,9 @@
             this.lbFiltro.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFiltro.Location = new System.Drawing.Point(8, 17);
             this.lbFiltro.Name = "lbFiltro";
-            this.lbFiltro.Size = new System.Drawing.Size(24, 13);
+            this.lbFiltro.Size = new System.Drawing.Size(26, 13);
             this.lbFiltro.TabIndex = 2;
-            this.lbFiltro.Text = "Id:";
+            this.lbFiltro.Text = "ID:";
             // 
             // pnData
             // 
@@ -184,9 +186,9 @@
             this.pnData.Controls.Add(this.lbInicio);
             this.pnData.Controls.Add(this.dtFim);
             this.pnData.Controls.Add(this.dtInicio);
-            this.pnData.Location = new System.Drawing.Point(456, 31);
+            this.pnData.Location = new System.Drawing.Point(491, 31);
             this.pnData.Name = "pnData";
-            this.pnData.Size = new System.Drawing.Size(191, 52);
+            this.pnData.Size = new System.Drawing.Size(164, 52);
             this.pnData.TabIndex = 4;
             // 
             // lbFim
@@ -209,21 +211,25 @@
             // 
             // dtFim
             // 
-            this.dtFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFim.CustomFormat = "dd/MM/yyyy";
+            this.dtFim.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtFim.Location = new System.Drawing.Point(52, 27);
             this.dtFim.Name = "dtFim";
-            this.dtFim.Size = new System.Drawing.Size(125, 21);
+            this.dtFim.Size = new System.Drawing.Size(99, 21);
             this.dtFim.TabIndex = 12;
-            this.dtFim.Value = new System.DateTime(2017, 11, 9, 0, 0, 0, 0);
+            this.dtFim.Value = new System.DateTime(2017, 12, 4, 0, 0, 0, 0);
+            this.dtFim.ValueChanged += new System.EventHandler(this.dtFim_ValueChanged);
             // 
             // dtInicio
             // 
-            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtInicio.CustomFormat = "dd/MM/yyyy";
+            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtInicio.Location = new System.Drawing.Point(52, 3);
             this.dtInicio.Name = "dtInicio";
-            this.dtInicio.Size = new System.Drawing.Size(125, 21);
+            this.dtInicio.Size = new System.Drawing.Size(99, 21);
             this.dtInicio.TabIndex = 11;
-            this.dtInicio.Value = new System.DateTime(2017, 11, 9, 19, 40, 47, 0);
+            this.dtInicio.Value = new System.DateTime(2017, 12, 4, 0, 0, 0, 0);
+            this.dtInicio.ValueChanged += new System.EventHandler(this.dtFim_ValueChanged);
             // 
             // menuStrip1
             // 
@@ -243,7 +249,7 @@
             // 
             this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
             this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btMenu_Click);
             // 
@@ -259,7 +265,7 @@
             // 
             this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colId.FillWeight = 15F;
-            this.colId.HeaderText = "Id";
+            this.colId.HeaderText = "ID";
             this.colId.Name = "colId";
             this.colId.ReadOnly = true;
             this.colId.ToolTipText = "Numero de identificação gerado no cadastro";
@@ -355,7 +361,7 @@
         #endregion
         private System.Windows.Forms.GroupBox gbEstoque;
         private System.Windows.Forms.DataGridView dgvHistCompras;
-        private System.Windows.Forms.RadioButton rbDataEntrega;
+        private System.Windows.Forms.RadioButton rbDataCompra;
         private System.Windows.Forms.RadioButton rbId;
         public System.Windows.Forms.Panel pnFiltros;
         private System.Windows.Forms.Panel pnData;

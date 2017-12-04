@@ -50,9 +50,9 @@
             this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDetalhes = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.gbItens = new System.Windows.Forms.GroupBox();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notaFiscalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gbItens = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.gbDetalhes.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -63,7 +63,7 @@
             // 
             this.txValor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txValor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txValor.Location = new System.Drawing.Point(367, 46);
+            this.txValor.Location = new System.Drawing.Point(364, 46);
             this.txValor.Name = "txValor";
             this.txValor.ReadOnly = true;
             this.txValor.Size = new System.Drawing.Size(98, 21);
@@ -75,7 +75,7 @@
             // 
             this.txStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txStatus.Location = new System.Drawing.Point(532, 46);
+            this.txStatus.Location = new System.Drawing.Point(529, 46);
             this.txStatus.Name = "txStatus";
             this.txStatus.ReadOnly = true;
             this.txStatus.Size = new System.Drawing.Size(98, 21);
@@ -86,7 +86,7 @@
             // 
             this.txId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txId.Location = new System.Drawing.Point(28, 46);
+            this.txId.Location = new System.Drawing.Point(25, 46);
             this.txId.Name = "txId";
             this.txId.ReadOnly = true;
             this.txId.Size = new System.Drawing.Size(98, 21);
@@ -98,7 +98,7 @@
             this.dateEntrega.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateEntrega.Enabled = false;
             this.dateEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateEntrega.Location = new System.Drawing.Point(415, 89);
+            this.dateEntrega.Location = new System.Drawing.Point(404, 92);
             this.dateEntrega.Name = "dateEntrega";
             this.dateEntrega.Size = new System.Drawing.Size(98, 21);
             this.dateEntrega.TabIndex = 9;
@@ -108,7 +108,7 @@
             this.dateCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateCompra.Enabled = false;
             this.dateCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateCompra.Location = new System.Drawing.Point(173, 89);
+            this.dateCompra.Location = new System.Drawing.Point(157, 92);
             this.dateCompra.Name = "dateCompra";
             this.dateCompra.Size = new System.Drawing.Size(98, 21);
             this.dateCompra.TabIndex = 2;
@@ -117,7 +117,7 @@
             // 
             this.txUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txUser.Location = new System.Drawing.Point(169, 46);
+            this.txUser.Location = new System.Drawing.Point(166, 46);
             this.txUser.Name = "txUser";
             this.txUser.ReadOnly = true;
             this.txUser.Size = new System.Drawing.Size(151, 21);
@@ -128,7 +128,7 @@
             // 
             this.lbEntrega.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbEntrega.AutoSize = true;
-            this.lbEntrega.Location = new System.Drawing.Point(306, 92);
+            this.lbEntrega.Location = new System.Drawing.Point(401, 76);
             this.lbEntrega.Name = "lbEntrega";
             this.lbEntrega.Size = new System.Drawing.Size(105, 13);
             this.lbEntrega.TabIndex = 5;
@@ -138,7 +138,7 @@
             // 
             this.lbDataCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbDataCompra.AutoSize = true;
-            this.lbDataCompra.Location = new System.Drawing.Point(66, 92);
+            this.lbDataCompra.Location = new System.Drawing.Point(154, 76);
             this.lbDataCompra.Name = "lbDataCompra";
             this.lbDataCompra.Size = new System.Drawing.Size(104, 13);
             this.lbDataCompra.TabIndex = 4;
@@ -148,7 +148,7 @@
             // 
             this.lbStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbStatus.AutoSize = true;
-            this.lbStatus.Location = new System.Drawing.Point(517, 30);
+            this.lbStatus.Location = new System.Drawing.Point(514, 30);
             this.lbStatus.Name = "lbStatus";
             this.lbStatus.Size = new System.Drawing.Size(126, 13);
             this.lbStatus.TabIndex = 3;
@@ -158,9 +158,9 @@
             // 
             this.lbValor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbValor.AutoSize = true;
-            this.lbValor.Location = new System.Drawing.Point(396, 30);
+            this.lbValor.Location = new System.Drawing.Point(393, 30);
             this.lbValor.Name = "lbValor";
-            this.lbValor.Size = new System.Drawing.Size(41, 13);
+            this.lbValor.Size = new System.Drawing.Size(42, 13);
             this.lbValor.TabIndex = 2;
             this.lbValor.Text = "Valor:";
             // 
@@ -168,7 +168,7 @@
             // 
             this.lbUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbUsuario.AutoSize = true;
-            this.lbUsuario.Location = new System.Drawing.Point(216, 30);
+            this.lbUsuario.Location = new System.Drawing.Point(213, 30);
             this.lbUsuario.Name = "lbUsuario";
             this.lbUsuario.Size = new System.Drawing.Size(55, 13);
             this.lbUsuario.TabIndex = 1;
@@ -178,7 +178,7 @@
             // 
             this.lbIdCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbIdCompra.AutoSize = true;
-            this.lbIdCompra.Location = new System.Drawing.Point(66, 30);
+            this.lbIdCompra.Location = new System.Drawing.Point(63, 30);
             this.lbIdCompra.Name = "lbIdCompra";
             this.lbIdCompra.Size = new System.Drawing.Size(24, 13);
             this.lbIdCompra.TabIndex = 0;
@@ -206,7 +206,7 @@
             this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.RowHeadersVisible = false;
             this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProdutos.Size = new System.Drawing.Size(673, 277);
+            this.dgvProdutos.Size = new System.Drawing.Size(667, 277);
             this.dgvProdutos.TabIndex = 3;
             // 
             // id
@@ -272,9 +272,9 @@
             this.gbDetalhes.Controls.Add(this.lbDataCompra);
             this.gbDetalhes.Controls.Add(this.txUser);
             this.gbDetalhes.Controls.Add(this.lbEntrega);
-            this.gbDetalhes.Location = new System.Drawing.Point(0, 27);
+            this.gbDetalhes.Location = new System.Drawing.Point(3, 27);
             this.gbDetalhes.Name = "gbDetalhes";
-            this.gbDetalhes.Size = new System.Drawing.Size(679, 134);
+            this.gbDetalhes.Size = new System.Drawing.Size(673, 134);
             this.gbDetalhes.TabIndex = 6;
             this.gbDetalhes.TabStop = false;
             this.gbDetalhes.Text = "Detalhes da Compra";
@@ -291,35 +291,35 @@
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // voltarToolStripMenuItem
-            // 
-            this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
-            this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.voltarToolStripMenuItem.Text = "Voltar";
-            this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btVoltar_Click);
-            // 
-            // notaFiscalToolStripMenuItem
-            // 
-            this.notaFiscalToolStripMenuItem.Image = global::ControlX.Properties.Resources.details_icon;
-            this.notaFiscalToolStripMenuItem.Name = "notaFiscalToolStripMenuItem";
-            this.notaFiscalToolStripMenuItem.ShowShortcutKeys = false;
-            this.notaFiscalToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
-            this.notaFiscalToolStripMenuItem.Text = "Nota Fiscal";
-            this.notaFiscalToolStripMenuItem.Click += new System.EventHandler(this.notaFiscalToolStripMenuItem_Click);
-            // 
             // gbItens
             // 
             this.gbItens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbItens.Controls.Add(this.dgvProdutos);
-            this.gbItens.Location = new System.Drawing.Point(0, 167);
+            this.gbItens.Location = new System.Drawing.Point(3, 167);
             this.gbItens.Name = "gbItens";
-            this.gbItens.Size = new System.Drawing.Size(679, 297);
+            this.gbItens.Size = new System.Drawing.Size(673, 297);
             this.gbItens.TabIndex = 8;
             this.gbItens.TabStop = false;
             this.gbItens.Text = "Itens da Compra";
+            // 
+            // voltarToolStripMenuItem
+            // 
+            this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
+            this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.voltarToolStripMenuItem.Text = "Voltar";
+            this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btVoltar_Click);
+            // 
+            // notaFiscalToolStripMenuItem
+            // 
+            this.notaFiscalToolStripMenuItem.Image = global::ControlX.Properties.Resources.nf;
+            this.notaFiscalToolStripMenuItem.Name = "notaFiscalToolStripMenuItem";
+            this.notaFiscalToolStripMenuItem.ShowShortcutKeys = false;
+            this.notaFiscalToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.notaFiscalToolStripMenuItem.Text = "Nota Fiscal";
+            this.notaFiscalToolStripMenuItem.Click += new System.EventHandler(this.notaFiscalToolStripMenuItem_Click);
             // 
             // FormHistoricoComprasView
             // 

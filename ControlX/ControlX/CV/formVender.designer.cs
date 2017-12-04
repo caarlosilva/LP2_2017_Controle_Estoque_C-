@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVender));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVender));
             this.pnForm = new System.Windows.Forms.Panel();
             this.gbDetalheItem = new System.Windows.Forms.GroupBox();
-            this.picLogo = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txFornecedor = new System.Windows.Forms.TextBox();
             this.txCategoria = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,7 +52,6 @@
             this.lbQntdVenda = new System.Windows.Forms.Label();
             this.txNome = new System.Windows.Forms.TextBox();
             this.pnBtCad = new System.Windows.Forms.Panel();
-            this.btPesquisar = new System.Windows.Forms.Button();
             this.btLimpar = new System.Windows.Forms.Button();
             this.btAdd = new System.Windows.Forms.Button();
             this.lbId = new System.Windows.Forms.Label();
@@ -84,10 +81,11 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.pbImagemProd = new System.Windows.Forms.PictureBox();
+            this.btPesquisar = new System.Windows.Forms.Button();
             this.pnForm.SuspendLayout();
             this.gbDetalheItem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbSelItem.SuspendLayout();
             this.pnBtCad.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -97,6 +95,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             this.pnBtVender.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).BeginInit();
             this.SuspendLayout();
             // 
             // pnForm
@@ -118,7 +118,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbDetalheItem.Controls.Add(this.picLogo);
-            this.gbDetalheItem.Controls.Add(this.pictureBox1);
+            this.gbDetalheItem.Controls.Add(this.pbImagemProd);
             this.gbDetalheItem.Controls.Add(this.txFornecedor);
             this.gbDetalheItem.Controls.Add(this.txCategoria);
             this.gbDetalheItem.Controls.Add(this.label1);
@@ -133,25 +133,6 @@
             this.gbDetalheItem.TabIndex = 32;
             this.gbDetalheItem.TabStop = false;
             this.gbDetalheItem.Text = "Detalhe do Item";
-            // 
-            // picLogo
-            // 
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(80, 125);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(167, 122);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 37;
-            this.picLogo.TabStop = false;
-            this.picLogo.Tag = "";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(258, 125);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 124);
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
             // 
             // txFornecedor
             // 
@@ -270,7 +251,7 @@
             this.lbValorTotalItem.AutoSize = true;
             this.lbValorTotalItem.Location = new System.Drawing.Point(175, 68);
             this.lbValorTotalItem.Name = "lbValorTotalItem";
-            this.lbValorTotalItem.Size = new System.Drawing.Size(121, 13);
+            this.lbValorTotalItem.Size = new System.Drawing.Size(123, 13);
             this.lbValorTotalItem.TabIndex = 30;
             this.lbValorTotalItem.Text = "Valor Total do Item:";
             // 
@@ -301,7 +282,7 @@
             this.lbQntdVenda.AutoSize = true;
             this.lbQntdVenda.Location = new System.Drawing.Point(1, 68);
             this.lbQntdVenda.Name = "lbQntdVenda";
-            this.lbQntdVenda.Size = new System.Drawing.Size(71, 13);
+            this.lbQntdVenda.Size = new System.Drawing.Size(72, 13);
             this.lbQntdVenda.TabIndex = 29;
             this.lbQntdVenda.Text = "Qtd Venda:";
             // 
@@ -331,29 +312,10 @@
             this.pnBtCad.Size = new System.Drawing.Size(266, 28);
             this.pnBtCad.TabIndex = 28;
             // 
-            // btPesquisar
-            // 
-            this.btPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.btPesquisar.BackgroundImage = global::ControlX.Properties.Resources.search;
-            this.btPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btPesquisar.Cursor = System.Windows.Forms.Cursors.Help;
-            this.btPesquisar.FlatAppearance.BorderSize = 0;
-            this.btPesquisar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPesquisar.Location = new System.Drawing.Point(223, 3);
-            this.btPesquisar.Name = "btPesquisar";
-            this.btPesquisar.Size = new System.Drawing.Size(23, 22);
-            this.btPesquisar.TabIndex = 2;
-            this.btPesquisar.UseVisualStyleBackColor = false;
-            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
-            // 
             // btLimpar
             // 
             this.btLimpar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btLimpar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLimpar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLimpar.Location = new System.Drawing.Point(14, 3);
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(87, 23);
@@ -365,7 +327,7 @@
             // btAdd
             // 
             this.btAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btAdd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAdd.Location = new System.Drawing.Point(119, 3);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(87, 23);
@@ -485,7 +447,7 @@
             // 
             // btDelItemVenda
             // 
-            this.btDelItemVenda.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDelItemVenda.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDelItemVenda.Location = new System.Drawing.Point(4, 3);
             this.btDelItemVenda.Name = "btDelItemVenda";
             this.btDelItemVenda.Size = new System.Drawing.Size(105, 23);
@@ -635,7 +597,7 @@
             // 
             // btVender
             // 
-            this.btVender.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btVender.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btVender.Location = new System.Drawing.Point(369, 3);
             this.btVender.Name = "btVender";
             this.btVender.Size = new System.Drawing.Size(75, 23);
@@ -646,7 +608,7 @@
             // 
             // btCancelar
             // 
-            this.btCancelar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.Location = new System.Drawing.Point(294, 3);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(70, 23);
@@ -672,9 +634,50 @@
             // 
             this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
             this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btMenu_Click);
+            // 
+            // picLogo
+            // 
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(6, 126);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(167, 122);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 37;
+            this.picLogo.TabStop = false;
+            this.picLogo.Tag = "";
+            // 
+            // pbImagemProd
+            // 
+            this.pbImagemProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbImagemProd.Image = global::ControlX.Properties.Resources.product;
+            this.pbImagemProd.Location = new System.Drawing.Point(234, 124);
+            this.pbImagemProd.Name = "pbImagemProd";
+            this.pbImagemProd.Size = new System.Drawing.Size(123, 124);
+            this.pbImagemProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagemProd.TabIndex = 36;
+            this.pbImagemProd.TabStop = false;
+            // 
+            // btPesquisar
+            // 
+            this.btPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.btPesquisar.BackgroundImage = global::ControlX.Properties.Resources.search;
+            this.btPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btPesquisar.Cursor = System.Windows.Forms.Cursors.Help;
+            this.btPesquisar.FlatAppearance.BorderSize = 0;
+            this.btPesquisar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPesquisar.Location = new System.Drawing.Point(223, 3);
+            this.btPesquisar.Name = "btPesquisar";
+            this.btPesquisar.Size = new System.Drawing.Size(23, 22);
+            this.btPesquisar.TabIndex = 2;
+            this.btPesquisar.UseVisualStyleBackColor = false;
+            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
             // 
             // FormVender
             // 
@@ -696,8 +699,6 @@
             this.pnForm.ResumeLayout(false);
             this.gbDetalheItem.ResumeLayout(false);
             this.gbDetalheItem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbSelItem.ResumeLayout(false);
             this.gbSelItem.PerformLayout();
             this.pnBtCad.ResumeLayout(false);
@@ -712,6 +713,8 @@
             this.pnBtVender.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -765,7 +768,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn coLPreco;
         private System.Windows.Forms.TextBox txValorTotalItem;
         private System.Windows.Forms.Label lbValorTotalItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbImagemProd;
         private System.Windows.Forms.PictureBox picLogo;
     }
 }

@@ -81,18 +81,25 @@ namespace ControlX
             nProduto.Cat.Id = int.Parse(cbCategoria.SelectedValue.ToString());
             nProduto.TipoUn = cbTipoUn.Text.ToString();
             nProduto.EstoqueMin = double.Parse(txEstoqueMin.Text.ToString());
-            nProduto.LocalPic = pbImagemProd.ImageLocation;
 
-            string pasta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ControlX\\Images\\Produtos\\";
-            //string pasta = @"C:\ControlX\Images\Produtos\"; //nome do diretorio a ser criado
-
-            //Se o diretório não existir...
-            if (!Directory.Exists(pasta))
+            if (pbImagemProd.ImageLocation != null)
             {
-                //Criamos um com o nome folder
-                Directory.CreateDirectory(pasta);
+                string pasta = @"C:\\ControlX\\Images\\Produtos\\";
+                //nome do diretorio a ser criado
+                
+                if (!Directory.Exists(pasta)) //Se o diretório não existir...
+                {
+                    //Criamos um com o nome folder
+                    Directory.CreateDirectory(pasta);
+                }
+
+                pbImagemProd.Image.Save(pasta + lbIdProduto.Text + ".jpg", ImageFormat.Jpeg);
+                nProduto.LocalPic = pasta + lbIdProduto.Text + ".jpg";
             }
-            pbImagemProd.Image.Save(pasta + lbIdProduto.Text + ".jpg", ImageFormat.Jpeg);
+            else
+                nProduto.LocalPic = null;
+            
+            
 
             btComplete();
 

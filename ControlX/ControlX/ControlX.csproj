@@ -575,6 +575,9 @@
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
     <Content Include="Imagens\icon.ico" />
+    <None Include="Resources\nf.png" />
+    <None Include="Resources\product.jpg" />
+    <None Include="Resources\default-user-image.png" />
     <None Include="Resources\category-icon.png" />
     <None Include="Resources\edit-icon.png" />
     <None Include="Resources\remover.png" />

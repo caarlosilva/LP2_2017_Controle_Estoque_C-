@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,6 +84,24 @@ namespace ControlX
             user.Telefone1 = long.Parse(txTel1.Text);
             user.Telefone2 = (txTel2.Text == "") ? 0 : long.Parse(txTel2.Text);
             //Se o botão estiver com o nome de 'Cadastrar', salvaremos tudo no Banco de Dados
+
+            if (pbImagemUser.ImageLocation != null)
+            {
+                string pasta = @"C:\\ControlX\\Images\\Usuarios\\";
+                //nome do diretorio a ser criado
+
+                if (!Directory.Exists(pasta)) //Se o diretório não existir...
+                {
+                    //Criamos um com o nome folder
+                    Directory.CreateDirectory(pasta);
+                }
+
+                pbImagemUser.Image.Save(pasta + lbIdUser.Text + ".jpg", ImageFormat.Jpeg);
+                user.LocalPic = pasta + lbIdUser.Text + ".jpg";
+            }
+            else
+                user.LocalPic = null;
+
 
             if (btCadastrar.Text == "Cadastrar")
                 db1.Adicionar(user);
@@ -164,6 +184,23 @@ namespace ControlX
         private void txSenha_TextChanged(object sender, EventArgs e)
         {
             btComplete();
+        }
+
+        private void btImagem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog imagem = new OpenFileDialog();
+            imagem.Filter = "jpg|*.jpg";
+            if (imagem.ShowDialog() == DialogResult.OK)
+            {
+                FileInfo arquivo = new FileInfo(imagem.FileName);
+                //testa se tem menos de 1MB (1MB em bytes = 1048576)
+                if (arquivo.Length <= 1048576)
+                {
+                    pbImagemUser.ImageLocation = imagem.FileName;
+                }
+                else
+                    MessageBox.Show("O Tamanho da imagem não pode exceder 1MB!", "Tamanho de arquivo inválido!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

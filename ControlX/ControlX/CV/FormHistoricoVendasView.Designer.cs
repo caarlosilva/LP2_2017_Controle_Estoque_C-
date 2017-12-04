@@ -45,10 +45,10 @@
             this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NFtoolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.gpDetalhesVenda = new System.Windows.Forms.GroupBox();
             this.gbItensVenda = new System.Windows.Forms.GroupBox();
+            this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NFtoolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gpDetalhesVenda.SuspendLayout();
@@ -116,7 +116,7 @@
             this.lbValor.AutoSize = true;
             this.lbValor.Location = new System.Drawing.Point(401, 17);
             this.lbValor.Name = "lbValor";
-            this.lbValor.Size = new System.Drawing.Size(41, 13);
+            this.lbValor.Size = new System.Drawing.Size(42, 13);
             this.lbValor.TabIndex = 2;
             this.lbValor.Text = "Valor:";
             this.lbValor.Click += new System.EventHandler(this.lbValor_Click);
@@ -167,7 +167,7 @@
             this.lbUsuario.AutoSize = true;
             this.lbUsuario.Location = new System.Drawing.Point(211, 17);
             this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(66, 13);
+            this.lbUsuario.Size = new System.Drawing.Size(67, 13);
             this.lbUsuario.TabIndex = 1;
             this.lbUsuario.Text = "Vendedor:";
             // 
@@ -227,22 +227,6 @@
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // voltarToolStripMenuItem
-            // 
-            this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
-            this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.voltarToolStripMenuItem.Text = "Voltar";
-            this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btVoltar_Click);
-            // 
-            // NFtoolStripMenu
-            // 
-            this.NFtoolStripMenu.Image = global::ControlX.Properties.Resources.historico_icon;
-            this.NFtoolStripMenu.Name = "NFtoolStripMenu";
-            this.NFtoolStripMenu.Size = new System.Drawing.Size(93, 20);
-            this.NFtoolStripMenu.Text = "Nota Fiscal";
-            this.NFtoolStripMenu.Click += new System.EventHandler(this.NFtoolStripMenu_Click);
-            // 
             // gpDetalhesVenda
             // 
             this.gpDetalhesVenda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -271,6 +255,22 @@
             this.gbItensVenda.TabIndex = 12;
             this.gbItensVenda.TabStop = false;
             this.gbItensVenda.Text = "Itens da Venda";
+            // 
+            // voltarToolStripMenuItem
+            // 
+            this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
+            this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.voltarToolStripMenuItem.Text = "Voltar";
+            this.voltarToolStripMenuItem.Click += new System.EventHandler(this.btVoltar_Click);
+            // 
+            // NFtoolStripMenu
+            // 
+            this.NFtoolStripMenu.Image = global::ControlX.Properties.Resources.nf;
+            this.NFtoolStripMenu.Name = "NFtoolStripMenu";
+            this.NFtoolStripMenu.Size = new System.Drawing.Size(93, 20);
+            this.NFtoolStripMenu.Text = "Nota Fiscal";
+            this.NFtoolStripMenu.Click += new System.EventHandler(this.NFtoolStripMenu_Click);
             // 
             // FormHistoricoVendasView
             // 

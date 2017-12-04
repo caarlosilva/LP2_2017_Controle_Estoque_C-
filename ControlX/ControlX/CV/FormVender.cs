@@ -88,6 +88,7 @@ namespace ControlX
             txFornecedor.Text = "";
             lbTrocoShow.Text = "";
             txValorTotalItem.Text = "";
+            pbImagemProd.Image = Properties.Resources.product;
 
         }
         private void btLimpar_Click(object sender, EventArgs e)
@@ -108,6 +109,10 @@ namespace ControlX
                     lbQntdEstoqueShow.Text = Convert.ToString(p.Qntd) + " " + p.TipoUn;
                     txQntdVenda.Text = "1";
                     qntdEstoque = p.Qntd;
+                    if (p.LocalPic == "" || p.LocalPic == null)
+                        pbImagemProd.Image = Properties.Resources.product;
+                    else
+                        pbImagemProd.ImageLocation = p.LocalPic;
                 }
 
         }
@@ -139,8 +144,20 @@ namespace ControlX
             //double qEstoque = double.Parse(lbQntdEstoqueShow.Text);//Quantidade no estoque
             int idProd = int.Parse(txId.Text);//Id do produto a ser adicionado a venda
 
+            for (int i = 0; i < dgvVendas.RowCount; i++)
+            {
+                if (idProd == int.Parse(dgvVendas.Rows[dgvVendas.Rows[i].Index].Cells[0].Value.ToString()))
+                {
+                    MessageBox.Show("Este mesmo produto já consta na lista de venda, remova-o e reinsira com a quantidade correta!","Erro! Produto já existente na lista!",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    return;
+                }
+
+            }
+
             if (qVenda > qntdEstoque || qVenda <= 0)
-                MessageBox.Show("Item não adicionado !\nVerifique se a quantidade de venda é maior que a do estoque ou maior que 0(zero)!", "Quantidade inválida!");
+            {
+                MessageBox.Show("Item não adicionado !\nVerifique se a quantidade de venda é maior que a do estoque ou maior que 0(zero)!", "Quantidade inválida!",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
                 foreach (Produto p in ps)

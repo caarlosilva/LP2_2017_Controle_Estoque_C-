@@ -72,15 +72,20 @@
             this.cbCargo = new System.Windows.Forms.ComboBox();
             this.lbCargo = new System.Windows.Forms.Label();
             this.lbMensagem = new System.Windows.Forms.Label();
+            this.pbImagemUser = new System.Windows.Forms.PictureBox();
+            this.btImagem = new System.Windows.Forms.Button();
             this.pnCadUser.SuspendLayout();
             this.pnBtn.SuspendLayout();
             this.pnLogSenha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagemUser)).BeginInit();
             this.SuspendLayout();
             // 
             // pnCadUser
             // 
+            this.pnCadUser.Controls.Add(this.btImagem);
+            this.pnCadUser.Controls.Add(this.pbImagemUser);
             this.pnCadUser.Controls.Add(this.lbDataNasc);
             this.pnCadUser.Controls.Add(this.lbValidaCPF);
             this.pnCadUser.Controls.Add(this.dtpDataNasc);
@@ -112,26 +117,26 @@
             this.pnCadUser.Controls.Add(this.lbNome);
             this.pnCadUser.Location = new System.Drawing.Point(12, 12);
             this.pnCadUser.Name = "pnCadUser";
-            this.pnCadUser.Size = new System.Drawing.Size(410, 295);
+            this.pnCadUser.Size = new System.Drawing.Size(425, 319);
             this.pnCadUser.TabIndex = 2;
             // 
             // lbDataNasc
             // 
             this.lbDataNasc.AutoSize = true;
-            this.lbDataNasc.Location = new System.Drawing.Point(176, 77);
+            this.lbDataNasc.Location = new System.Drawing.Point(4, 77);
             this.lbDataNasc.Name = "lbDataNasc";
-            this.lbDataNasc.Size = new System.Drawing.Size(127, 13);
+            this.lbDataNasc.Size = new System.Drawing.Size(134, 13);
             this.lbDataNasc.TabIndex = 22;
-            this.lbDataNasc.Text = "Data de Nascimento:";
+            this.lbDataNasc.Text = "*Data de Nascimento:";
             // 
             // lbValidaCPF
             // 
             this.lbValidaCPF.AutoSize = true;
             this.lbValidaCPF.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbValidaCPF.ForeColor = System.Drawing.Color.Lime;
-            this.lbValidaCPF.Location = new System.Drawing.Point(159, 46);
+            this.lbValidaCPF.Location = new System.Drawing.Point(151, 44);
             this.lbValidaCPF.Name = "lbValidaCPF";
-            this.lbValidaCPF.Size = new System.Drawing.Size(17, 13);
+            this.lbValidaCPF.Size = new System.Drawing.Size(18, 13);
             this.lbValidaCPF.TabIndex = 21;
             this.lbValidaCPF.Text = "✔";
             // 
@@ -139,7 +144,7 @@
             // 
             this.dtpDataNasc.CustomFormat = "dd/MM/yyyy";
             this.dtpDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDataNasc.Location = new System.Drawing.Point(304, 73);
+            this.dtpDataNasc.Location = new System.Drawing.Point(144, 73);
             this.dtpDataNasc.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpDataNasc.Name = "dtpDataNasc";
             this.dtpDataNasc.Size = new System.Drawing.Size(94, 21);
@@ -155,7 +160,7 @@
             this.cbSexo.Items.AddRange(new object[] {
             "M",
             "F"});
-            this.cbSexo.Location = new System.Drawing.Point(228, 42);
+            this.cbSexo.Location = new System.Drawing.Point(229, 43);
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(45, 21);
             this.cbSexo.TabIndex = 19;
@@ -164,16 +169,16 @@
             // lbSexo
             // 
             this.lbSexo.AutoSize = true;
-            this.lbSexo.Location = new System.Drawing.Point(188, 46);
+            this.lbSexo.Location = new System.Drawing.Point(180, 46);
             this.lbSexo.Name = "lbSexo";
-            this.lbSexo.Size = new System.Drawing.Size(41, 13);
+            this.lbSexo.Size = new System.Drawing.Size(48, 13);
             this.lbSexo.TabIndex = 18;
-            this.lbSexo.Text = "Sexo:";
+            this.lbSexo.Text = "*Sexo:";
             // 
             // txCPF
             // 
             this.txCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txCPF.Location = new System.Drawing.Point(54, 42);
+            this.txCPF.Location = new System.Drawing.Point(46, 42);
             this.txCPF.Mask = "000\\.000\\.000-00";
             this.txCPF.Name = "txCPF";
             this.txCPF.Size = new System.Drawing.Size(102, 21);
@@ -183,7 +188,7 @@
             // txTel2
             // 
             this.txTel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txTel2.Location = new System.Drawing.Point(123, 105);
+            this.txTel2.Location = new System.Drawing.Point(75, 140);
             this.txTel2.Mask = "(00) 00000-0009";
             this.txTel2.Name = "txTel2";
             this.txTel2.Size = new System.Drawing.Size(106, 21);
@@ -192,7 +197,7 @@
             // txTel1
             // 
             this.txTel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txTel1.Location = new System.Drawing.Point(66, 73);
+            this.txTel1.Location = new System.Drawing.Point(75, 104);
             this.txTel1.Mask = "(00) 00000-0009";
             this.txTel1.Name = "txTel1";
             this.txTel1.Size = new System.Drawing.Size(106, 21);
@@ -202,7 +207,7 @@
             // txCEP
             // 
             this.txCEP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txCEP.Location = new System.Drawing.Point(54, 140);
+            this.txCEP.Location = new System.Drawing.Point(54, 172);
             this.txCEP.Mask = "00000-000";
             this.txCEP.Name = "txCEP";
             this.txCEP.Size = new System.Drawing.Size(79, 21);
@@ -213,7 +218,7 @@
             // txEstado
             // 
             this.txEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txEstado.Location = new System.Drawing.Point(316, 261);
+            this.txEstado.Location = new System.Drawing.Point(335, 293);
             this.txEstado.Name = "txEstado";
             this.txEstado.Size = new System.Drawing.Size(82, 21);
             this.txEstado.TabIndex = 10;
@@ -222,42 +227,42 @@
             // txCidade
             // 
             this.txCidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txCidade.Location = new System.Drawing.Point(54, 261);
+            this.txCidade.Location = new System.Drawing.Point(54, 293);
             this.txCidade.Name = "txCidade";
-            this.txCidade.Size = new System.Drawing.Size(200, 21);
+            this.txCidade.Size = new System.Drawing.Size(220, 21);
             this.txCidade.TabIndex = 9;
             this.txCidade.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
             // txBairro
             // 
             this.txBairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txBairro.Location = new System.Drawing.Point(54, 231);
+            this.txBairro.Location = new System.Drawing.Point(54, 263);
             this.txBairro.Name = "txBairro";
-            this.txBairro.Size = new System.Drawing.Size(344, 21);
+            this.txBairro.Size = new System.Drawing.Size(363, 21);
             this.txBairro.TabIndex = 8;
             this.txBairro.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
             // txCompl
             // 
             this.txCompl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txCompl.Location = new System.Drawing.Point(98, 199);
+            this.txCompl.Location = new System.Drawing.Point(98, 231);
             this.txCompl.Name = "txCompl";
-            this.txCompl.Size = new System.Drawing.Size(300, 21);
+            this.txCompl.Size = new System.Drawing.Size(319, 21);
             this.txCompl.TabIndex = 7;
             // 
             // txRua
             // 
             this.txRua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txRua.Location = new System.Drawing.Point(54, 172);
+            this.txRua.Location = new System.Drawing.Point(54, 204);
             this.txRua.Name = "txRua";
-            this.txRua.Size = new System.Drawing.Size(344, 21);
+            this.txRua.Size = new System.Drawing.Size(363, 21);
             this.txRua.TabIndex = 6;
             this.txRua.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
             // txNum
             // 
             this.txNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txNum.Location = new System.Drawing.Point(185, 140);
+            this.txNum.Location = new System.Drawing.Point(185, 172);
             this.txNum.Name = "txNum";
             this.txNum.Size = new System.Drawing.Size(70, 21);
             this.txNum.TabIndex = 5;
@@ -267,47 +272,47 @@
             // 
             this.lbNum.AutoSize = true;
             this.lbNum.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbNum.Location = new System.Drawing.Point(153, 143);
+            this.lbNum.Location = new System.Drawing.Point(153, 175);
             this.lbNum.Name = "lbNum";
-            this.lbNum.Size = new System.Drawing.Size(26, 13);
+            this.lbNum.Size = new System.Drawing.Size(33, 13);
             this.lbNum.TabIndex = 17;
-            this.lbNum.Text = "N°:";
+            this.lbNum.Text = "*N°:";
             // 
             // lbEstado
             // 
             this.lbEstado.AutoSize = true;
             this.lbEstado.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbEstado.Location = new System.Drawing.Point(262, 264);
+            this.lbEstado.Location = new System.Drawing.Point(276, 296);
             this.lbEstado.Name = "lbEstado";
-            this.lbEstado.Size = new System.Drawing.Size(50, 13);
+            this.lbEstado.Size = new System.Drawing.Size(57, 13);
             this.lbEstado.TabIndex = 16;
-            this.lbEstado.Text = "Estado:";
+            this.lbEstado.Text = "*Estado:";
             // 
             // lbCidade
             // 
             this.lbCidade.AutoSize = true;
             this.lbCidade.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbCidade.Location = new System.Drawing.Point(4, 264);
+            this.lbCidade.Location = new System.Drawing.Point(4, 296);
             this.lbCidade.Name = "lbCidade";
-            this.lbCidade.Size = new System.Drawing.Size(52, 13);
+            this.lbCidade.Size = new System.Drawing.Size(59, 13);
             this.lbCidade.TabIndex = 15;
-            this.lbCidade.Text = "Cidade:";
+            this.lbCidade.Text = "*Cidade:";
             // 
             // lbBairro
             // 
             this.lbBairro.AutoSize = true;
             this.lbBairro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbBairro.Location = new System.Drawing.Point(4, 234);
+            this.lbBairro.Location = new System.Drawing.Point(4, 266);
             this.lbBairro.Name = "lbBairro";
-            this.lbBairro.Size = new System.Drawing.Size(47, 13);
+            this.lbBairro.Size = new System.Drawing.Size(54, 13);
             this.lbBairro.TabIndex = 14;
-            this.lbBairro.Text = "Bairro:";
+            this.lbBairro.Text = "*Bairro:";
             // 
             // lbCompl
             // 
             this.lbCompl.AutoSize = true;
             this.lbCompl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbCompl.Location = new System.Drawing.Point(4, 203);
+            this.lbCompl.Location = new System.Drawing.Point(4, 235);
             this.lbCompl.Name = "lbCompl";
             this.lbCompl.Size = new System.Drawing.Size(92, 13);
             this.lbCompl.TabIndex = 13;
@@ -317,48 +322,48 @@
             // 
             this.lbEndereco.AutoSize = true;
             this.lbEndereco.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbEndereco.Location = new System.Drawing.Point(4, 175);
+            this.lbEndereco.Location = new System.Drawing.Point(4, 207);
             this.lbEndereco.Name = "lbEndereco";
-            this.lbEndereco.Size = new System.Drawing.Size(34, 13);
+            this.lbEndereco.Size = new System.Drawing.Size(41, 13);
             this.lbEndereco.TabIndex = 12;
-            this.lbEndereco.Text = "Rua:";
+            this.lbEndereco.Text = "*Rua:";
             // 
             // lbCEP
             // 
             this.lbCEP.AutoSize = true;
             this.lbCEP.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbCEP.Location = new System.Drawing.Point(4, 143);
+            this.lbCEP.Location = new System.Drawing.Point(4, 175);
             this.lbCEP.Name = "lbCEP";
-            this.lbCEP.Size = new System.Drawing.Size(35, 13);
+            this.lbCEP.Size = new System.Drawing.Size(42, 13);
             this.lbCEP.TabIndex = 10;
-            this.lbCEP.Text = "CEP:";
+            this.lbCEP.Text = "*CEP:";
             // 
             // lbTel2
             // 
             this.lbTel2.AutoSize = true;
             this.lbTel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbTel2.Location = new System.Drawing.Point(4, 108);
+            this.lbTel2.Location = new System.Drawing.Point(4, 143);
             this.lbTel2.Name = "lbTel2";
-            this.lbTel2.Size = new System.Drawing.Size(119, 13);
+            this.lbTel2.Size = new System.Drawing.Size(72, 13);
             this.lbTel2.TabIndex = 7;
-            this.lbTel2.Text = "Telefone(Opcional):";
+            this.lbTel2.Text = "Telefone 2:";
             // 
             // lbTel1
             // 
             this.lbTel1.AutoSize = true;
             this.lbTel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbTel1.Location = new System.Drawing.Point(4, 77);
+            this.lbTel1.Location = new System.Drawing.Point(4, 109);
             this.lbTel1.Name = "lbTel1";
-            this.lbTel1.Size = new System.Drawing.Size(60, 13);
+            this.lbTel1.Size = new System.Drawing.Size(68, 13);
             this.lbTel1.TabIndex = 6;
-            this.lbTel1.Text = "Telefone:";
+            this.lbTel1.Text = "*Telefone:";
             // 
             // lbIdUser
             // 
             this.lbIdUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbIdUser.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.lbIdUser.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbIdUser.Location = new System.Drawing.Point(336, 42);
+            this.lbIdUser.Location = new System.Drawing.Point(40, 11);
             this.lbIdUser.Name = "lbIdUser";
             this.lbIdUser.Size = new System.Drawing.Size(62, 20);
             this.lbIdUser.TabIndex = 5;
@@ -369,7 +374,7 @@
             // 
             this.lbId.AutoSize = true;
             this.lbId.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbId.Location = new System.Drawing.Point(311, 46);
+            this.lbId.Location = new System.Drawing.Point(4, 14);
             this.lbId.Name = "lbId";
             this.lbId.Size = new System.Drawing.Size(26, 13);
             this.lbId.TabIndex = 4;
@@ -381,17 +386,17 @@
             this.lbCPF.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbCPF.Location = new System.Drawing.Point(4, 46);
             this.lbCPF.Name = "lbCPF";
-            this.lbCPF.Size = new System.Drawing.Size(34, 13);
+            this.lbCPF.Size = new System.Drawing.Size(41, 13);
             this.lbCPF.TabIndex = 2;
-            this.lbCPF.Text = "CPF:";
+            this.lbCPF.Text = "*CPF:";
             // 
             // txNome
             // 
             this.txNome.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txNome.Location = new System.Drawing.Point(54, 11);
+            this.txNome.Location = new System.Drawing.Point(156, 11);
             this.txNome.Name = "txNome";
-            this.txNome.Size = new System.Drawing.Size(344, 21);
+            this.txNome.Size = new System.Drawing.Size(261, 21);
             this.txNome.TabIndex = 0;
             this.txNome.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
@@ -399,25 +404,25 @@
             // 
             this.lbNome.AutoSize = true;
             this.lbNome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbNome.Location = new System.Drawing.Point(4, 14);
+            this.lbNome.Location = new System.Drawing.Point(108, 14);
             this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(45, 13);
+            this.lbNome.Size = new System.Drawing.Size(52, 13);
             this.lbNome.TabIndex = 0;
-            this.lbNome.Text = "Nome:";
+            this.lbNome.Text = "*Nome:";
             // 
             // pnBtn
             // 
             this.pnBtn.Controls.Add(this.btCadastrar);
             this.pnBtn.Controls.Add(this.btCancelar);
-            this.pnBtn.Location = new System.Drawing.Point(12, 417);
+            this.pnBtn.Location = new System.Drawing.Point(12, 444);
             this.pnBtn.Name = "pnBtn";
-            this.pnBtn.Size = new System.Drawing.Size(410, 31);
+            this.pnBtn.Size = new System.Drawing.Size(425, 31);
             this.pnBtn.TabIndex = 3;
             // 
             // btCadastrar
             // 
             this.btCadastrar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btCadastrar.Location = new System.Drawing.Point(330, 5);
+            this.btCadastrar.Location = new System.Drawing.Point(347, 5);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(75, 23);
             this.btCadastrar.TabIndex = 0;
@@ -429,7 +434,7 @@
             // 
             this.btCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btCancelar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btCancelar.Location = new System.Drawing.Point(243, 5);
+            this.btCancelar.Location = new System.Drawing.Point(266, 5);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 23);
             this.btCancelar.TabIndex = 1;
@@ -447,16 +452,16 @@
             this.pnLogSenha.Controls.Add(this.lbLogin);
             this.pnLogSenha.Controls.Add(this.cbCargo);
             this.pnLogSenha.Controls.Add(this.lbCargo);
-            this.pnLogSenha.Location = new System.Drawing.Point(12, 313);
+            this.pnLogSenha.Location = new System.Drawing.Point(12, 337);
             this.pnLogSenha.Name = "pnLogSenha";
-            this.pnLogSenha.Size = new System.Drawing.Size(410, 85);
+            this.pnLogSenha.Size = new System.Drawing.Size(425, 85);
             this.pnLogSenha.TabIndex = 4;
             // 
             // pbUser
             // 
             this.pbUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbUser.Image = global::ControlX.Properties.Resources.user1;
-            this.pbUser.Location = new System.Drawing.Point(383, 30);
+            this.pbUser.Location = new System.Drawing.Point(388, 30);
             this.pbUser.Name = "pbUser";
             this.pbUser.Size = new System.Drawing.Size(24, 21);
             this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -466,7 +471,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ControlX.Properties.Resources.pwd;
-            this.pictureBox1.Location = new System.Drawing.Point(383, 59);
+            this.pictureBox1.Location = new System.Drawing.Point(388, 59);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -476,9 +481,9 @@
             // txSenha
             // 
             this.txSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txSenha.Location = new System.Drawing.Point(54, 59);
+            this.txSenha.Location = new System.Drawing.Point(59, 59);
             this.txSenha.Name = "txSenha";
-            this.txSenha.Size = new System.Drawing.Size(322, 21);
+            this.txSenha.Size = new System.Drawing.Size(314, 21);
             this.txSenha.TabIndex = 5;
             this.txSenha.UseSystemPasswordChar = true;
             this.txSenha.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
@@ -488,17 +493,17 @@
             this.lbSenha.AutoSize = true;
             this.lbSenha.Location = new System.Drawing.Point(4, 62);
             this.lbSenha.Name = "lbSenha";
-            this.lbSenha.Size = new System.Drawing.Size(48, 13);
+            this.lbSenha.Size = new System.Drawing.Size(55, 13);
             this.lbSenha.TabIndex = 4;
-            this.lbSenha.Text = "Senha:";
+            this.lbSenha.Text = "*Senha:";
             // 
             // txLogin
             // 
             this.txLogin.BackColor = System.Drawing.SystemColors.Window;
             this.txLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txLogin.Location = new System.Drawing.Point(54, 30);
+            this.txLogin.Location = new System.Drawing.Point(59, 30);
             this.txLogin.Name = "txLogin";
-            this.txLogin.Size = new System.Drawing.Size(323, 21);
+            this.txLogin.Size = new System.Drawing.Size(314, 21);
             this.txLogin.TabIndex = 3;
             this.txLogin.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             this.txLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txLogin_KeyPress);
@@ -509,9 +514,9 @@
             this.lbLogin.AutoSize = true;
             this.lbLogin.Location = new System.Drawing.Point(4, 33);
             this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(42, 13);
+            this.lbLogin.Size = new System.Drawing.Size(49, 13);
             this.lbLogin.TabIndex = 2;
-            this.lbLogin.Text = "Login:";
+            this.lbLogin.Text = "*Login:";
             // 
             // cbCargo
             // 
@@ -526,7 +531,7 @@
             "Caixa"});
             this.cbCargo.Location = new System.Drawing.Point(98, 1);
             this.cbCargo.Name = "cbCargo";
-            this.cbCargo.Size = new System.Drawing.Size(168, 21);
+            this.cbCargo.Size = new System.Drawing.Size(319, 21);
             this.cbCargo.TabIndex = 1;
             this.cbCargo.TextChanged += new System.EventHandler(this.txSenha_TextChanged);
             // 
@@ -543,20 +548,44 @@
             // 
             this.lbMensagem.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensagem.ForeColor = System.Drawing.Color.Red;
-            this.lbMensagem.Location = new System.Drawing.Point(12, 401);
+            this.lbMensagem.Location = new System.Drawing.Point(12, 424);
             this.lbMensagem.Name = "lbMensagem";
-            this.lbMensagem.Size = new System.Drawing.Size(410, 14);
+            this.lbMensagem.Size = new System.Drawing.Size(425, 17);
             this.lbMensagem.TabIndex = 12;
             this.lbMensagem.Text = "Usuario disponivel para uso!";
             this.lbMensagem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbMensagem.Visible = false;
+            // 
+            // pbImagemUser
+            // 
+            this.pbImagemUser.BackgroundImage = global::ControlX.Properties.Resources.default_user_image;
+            this.pbImagemUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbImagemUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbImagemUser.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbImagemUser.InitialImage")));
+            this.pbImagemUser.Location = new System.Drawing.Point(280, 38);
+            this.pbImagemUser.Name = "pbImagemUser";
+            this.pbImagemUser.Size = new System.Drawing.Size(137, 136);
+            this.pbImagemUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagemUser.TabIndex = 23;
+            this.pbImagemUser.TabStop = false;
+            // 
+            // btImagem
+            // 
+            this.btImagem.Font = new System.Drawing.Font("Verdana", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btImagem.Location = new System.Drawing.Point(280, 180);
+            this.btImagem.Name = "btImagem";
+            this.btImagem.Size = new System.Drawing.Size(137, 18);
+            this.btImagem.TabIndex = 24;
+            this.btImagem.Text = "Escolher Imagem";
+            this.btImagem.UseVisualStyleBackColor = true;
+            this.btImagem.Click += new System.EventHandler(this.btImagem_Click);
             // 
             // formCadastroUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(430, 452);
+            this.ClientSize = new System.Drawing.Size(442, 478);
             this.Controls.Add(this.lbMensagem);
             this.Controls.Add(this.pnLogSenha);
             this.Controls.Add(this.pnBtn);
@@ -575,6 +604,7 @@
             this.pnLogSenha.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagemUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -624,5 +654,7 @@
         public System.Windows.Forms.TextBox txLogin;
         public System.Windows.Forms.Panel pnLogSenha;
         private System.Windows.Forms.Label lbMensagem;
+        public System.Windows.Forms.Button btImagem;
+        public System.Windows.Forms.PictureBox pbImagemUser;
     }
 }

@@ -71,7 +71,18 @@ namespace ControlX.DAO
 
         public List<object> ListById(int id)
         {
+            string qry = string.Format("SELECT id, nome FROM categoria WHERE deleted_at is null AND id = {0}", id);
+            DataSet ds = db.ExecuteQuery(qry);
+
             List<object> fs = new List<object>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Modelo.Categoria c = new Modelo.Categoria();
+                c.Id = int.Parse(dr["id"].ToString());
+                c.Nome = dr["nome"].ToString();
+                fs.Add(c);
+            }
             return fs;
         }
 

@@ -105,7 +105,7 @@ namespace ControlX
 
         private void ChecaFiltros()
         {
-            if (rbDataEntrega.Checked)
+            if (rbDataCompra.Checked)
             {
                 dtInicio.Enabled = true;
                 txPesquisar.Enabled = false;
@@ -128,6 +128,46 @@ namespace ControlX
                 e.Handled = true;
             if (e.KeyChar == '\'')
                 e.Handled = true;
+        }
+
+        private void rbId_CheckedChanged(object sender, EventArgs e)
+        {
+            txPesquisar.Text = "";
+            Fill();
+        }
+
+        private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
+        {
+            pesquisaFiltro();       
+        }
+        private void pesquisaFiltro()
+        {
+
+            ComprarDao db = new ComprarDao();
+            string status;
+            List<Object> cs = (rbDataCompra.Checked) ? db.ListByDate(dtInicio.Value, dtFim.Value) : (txPesquisar.Text.Trim() == "") ? db.ListAll() : db.ListById(int.Parse(txPesquisar.Text));
+
+            dgvHistCompras.Rows.Clear();
+            foreach (Comprar c in cs)
+            {
+                if (c.Status == 0)
+                {
+                    status = "Pendente";
+                }
+                else
+                {
+                    status = "Entregue";
+                }
+                string dataCompra = c.DataCompra.ToString("dd-MM-yyyy");
+                string dataEntrega = c.DataEntrega.ToString("dd-MM-yyyy");
+                dgvHistCompras.Rows.Add(c.Id, c.Nome_usuario, dataCompra, dataEntrega, c.Valor, status);
+            }
+
+        }
+
+        private void dtFim_ValueChanged(object sender, EventArgs e)
+        {
+            pesquisaFiltro();
         }
     }
 }

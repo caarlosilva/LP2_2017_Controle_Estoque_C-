@@ -40,7 +40,6 @@
             this.cbTipoUn = new System.Windows.Forms.ComboBox();
             this.lbTipoVenda = new System.Windows.Forms.Label();
             this.btImagem = new System.Windows.Forms.Button();
-            this.pbImagemProd = new System.Windows.Forms.PictureBox();
             this.txPreco = new System.Windows.Forms.MaskedTextBox();
             this.lbCategoria = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
@@ -51,9 +50,10 @@
             this.lbIdProduto = new System.Windows.Forms.Label();
             this.pnBtCad = new System.Windows.Forms.Panel();
             this.btCancelar = new System.Windows.Forms.Button();
+            this.pbImagemProd = new System.Windows.Forms.PictureBox();
             this.pnCadastro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).BeginInit();
             this.pnBtCad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).BeginInit();
             this.SuspendLayout();
             // 
             // btCadastrar
@@ -187,25 +187,13 @@
             // btImagem
             // 
             this.btImagem.Font = new System.Drawing.Font("Verdana", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btImagem.Location = new System.Drawing.Point(319, 166);
+            this.btImagem.Location = new System.Drawing.Point(310, 176);
             this.btImagem.Name = "btImagem";
-            this.btImagem.Size = new System.Drawing.Size(113, 18);
+            this.btImagem.Size = new System.Drawing.Size(122, 18);
             this.btImagem.TabIndex = 7;
             this.btImagem.Text = "Escolher Imagem";
             this.btImagem.UseVisualStyleBackColor = true;
             this.btImagem.Click += new System.EventHandler(this.btImagem_Click);
-            // 
-            // pbImagemProd
-            // 
-            this.pbImagemProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbImagemProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbImagemProd.InitialImage = null;
-            this.pbImagemProd.Location = new System.Drawing.Point(319, 46);
-            this.pbImagemProd.Name = "pbImagemProd";
-            this.pbImagemProd.Size = new System.Drawing.Size(112, 116);
-            this.pbImagemProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImagemProd.TabIndex = 17;
-            this.pbImagemProd.TabStop = false;
             // 
             // txPreco
             // 
@@ -310,6 +298,19 @@
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
+            // pbImagemProd
+            // 
+            this.pbImagemProd.BackgroundImage = global::ControlX.Properties.Resources.product;
+            this.pbImagemProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbImagemProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbImagemProd.InitialImage = null;
+            this.pbImagemProd.Location = new System.Drawing.Point(310, 46);
+            this.pbImagemProd.Name = "pbImagemProd";
+            this.pbImagemProd.Size = new System.Drawing.Size(121, 124);
+            this.pbImagemProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagemProd.TabIndex = 17;
+            this.pbImagemProd.TabStop = false;
+            // 
             // formCadastroProd
             // 
             this.AcceptButton = this.btCadastrar;
@@ -328,8 +329,8 @@
             this.Text = "ControlX - Cadastrar Produto";
             this.pnCadastro.ResumeLayout(false);
             this.pnCadastro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).EndInit();
             this.pnBtCad.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).EndInit();
             this.ResumeLayout(false);
 
         }

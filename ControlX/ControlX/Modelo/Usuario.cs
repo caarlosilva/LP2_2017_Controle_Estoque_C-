@@ -25,6 +25,7 @@ namespace ControlX
         private string cargo;
         private string login;
         private string senha;
+        private string localPic;
 
         public string UsuarioFullName
         {
@@ -255,6 +256,19 @@ namespace ControlX
             }
         }
 
+        public string LocalPic
+        {
+            get
+            {
+                return localPic;
+            }
+
+            set
+            {
+                localPic = value;
+            }
+        }
+
         public Usuario()
         {
 
@@ -280,7 +294,7 @@ namespace ControlX
             this.Senha = senha;
         }
 
-        public Usuario(int id, string nome, long cpf, char sexo, DateTime dataNasc, long telefone1, long telefone2, long cep, long num, string rua, string comp, string bairro, string cidade, string estado, string cargo, string login, string senha)
+        public Usuario(int id, string nome, long cpf, char sexo, DateTime dataNasc, long telefone1, long telefone2, long cep, long num, string rua, string comp, string bairro, string cidade, string estado, string cargo, string login, string senha, string localPic)
         {
             this.Id = id;
             this.Nome = nome;
@@ -299,6 +313,7 @@ namespace ControlX
             this.Cargo = cargo;
             this.Login = login;
             this.Senha = senha;
+            this.LocalPic = localPic;
         }
     }
 }

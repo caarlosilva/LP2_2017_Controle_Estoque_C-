@@ -51,16 +51,27 @@ namespace ControlX
             }
         }
 
+
+
+
+
         private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
         {
-            IDao db = new DAO.CategoriaDao();
-            List<Object> ps = (rbNome.Checked) ? db.ListByName(txPesquisar.Text) : (txPesquisar.Text.Trim() == "") ? db.ListAll() : db.ListById(int.Parse(txPesquisar.Text));
-
-            dgvCategoria.Rows.Clear();
-            foreach (Modelo.Categoria c in ps)
+            if (txPesquisar.Text.Trim() != "")
             {
-                dgvCategoria.Rows.Add(c.Id, c.Nome);
+                IDao db = new DAO.CategoriaDao();
+                List<Object> ps = (rbNome.Checked) ? db.ListByName(txPesquisar.Text) : (txPesquisar.Text.Trim() == "") ? db.ListAll() : db.ListById(int.Parse(txPesquisar.Text));
+
+                dgvCategoria.Rows.Clear();
+                foreach (Modelo.Categoria c in ps)
+                {
+                    dgvCategoria.Rows.Add(c.Id, c.Nome);
+                }
             }
+            else
+                Fill();
+
+
         }
 
         private void txPesquisar_KeyPress(object sender, KeyPressEventArgs e)
@@ -152,7 +163,7 @@ namespace ControlX
         private void rbId_CheckedChanged(object sender, EventArgs e)
         {
             txPesquisar.Text = "";
-            //pesquisaFiltro();
+            Fill();
             txPesquisar.Focus();
         }
     }

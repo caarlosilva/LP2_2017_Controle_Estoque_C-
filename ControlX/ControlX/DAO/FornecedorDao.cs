@@ -83,7 +83,7 @@ namespace ControlX.DAO
 
         public List<object> ListByName(string name)
         {
-            string qry = string.Format("SELECT id, nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado FROM fornecedor WHERE nome LIKE '%{0}%' AND deleted_at is null", name);
+            string qry = string.Format("SELECT id, nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado FROM fornecedor WHERE nome LIKE '%{0}%' OR cidade LIKE '%{1}%' AND deleted_at is null", name, name);
             DataSet ds = db.ExecuteQuery(qry);
 
             List<object> fs = new List<object>();
@@ -110,7 +110,28 @@ namespace ControlX.DAO
 
         public List<object> ListById(int id)
         {
+            string qry = string.Format("SELECT id, nome, cnpj, tel1, tel2, cep, num, rua, comp, bairro, cidade, estado FROM fornecedor WHERE id = {0} AND deleted_at is null", id);
+            DataSet ds = db.ExecuteQuery(qry);
+
             List<object> fs = new List<object>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Fornecedor f = new Fornecedor();
+                f.Id = int.Parse(dr["id"].ToString());
+                f.Nome = dr["nome"].ToString();
+                f.Cnpj = long.Parse(dr["cnpj"].ToString());
+                f.Telefone1 = long.Parse(dr["tel1"].ToString());
+                f.Telefone2 = long.Parse(dr["tel2"].ToString());
+                f.Cep = long.Parse(dr["cep"].ToString());
+                f.Num = int.Parse(dr["num"].ToString());
+                f.Rua = dr["rua"].ToString();
+                f.Comp = dr["comp"].ToString();
+                f.Bairro = dr["bairro"].ToString();
+                f.Cidade = dr["cidade"].ToString();
+                f.Estado = dr["estado"].ToString();
+                fs.Add(f);
+            }
             return fs;
         }
 

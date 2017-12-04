@@ -27,7 +27,13 @@ namespace ControlX.DAO
                 qntd = qntd.Replace(",", ".");
             }
 
-            string sql = string.Format("INSERT INTO produtos(nome, preco, qntd, tipoUn, estoqueMin, idFornecedor, idCategoria) values ('{0}',{1},{2},'{3}', {4}, {5},{6})", p.Nome, preco, qntd, p.TipoUn, p.EstoqueMin, p.Fornecedor.Id, p.Cat.Id);
+            string local = p.LocalPic;
+            if (local.Contains(@"/"))
+            {
+                local = local.Replace(@"/", @"//");
+            }
+
+            string sql = "INSERT INTO produtos(nome, preco, qntd, tipoUn, estoqueMin, idFornecedor, idCategoria, localPic) values ('"+ p.Nome +"',"+ preco +", "+ qntd +",'"+ p.TipoUn + "'," + p.EstoqueMin + "," + p.Fornecedor.Id + "," + p.Cat.Id +",'" + local +"')";
             db.ExecuteNonQuery(sql);
         }
 
@@ -47,7 +53,13 @@ namespace ControlX.DAO
                 qntd = qntd.Replace(",", ".");
             }
 
-            string qry = string.Format("UPDATE produtos SET nome = '{0}', preco = {1}, qntd = {2}, tipoUn = '{3}', estoqueMin = {4}, idFornecedor = {5}, idCategoria = {6} where id = {7}", p.Nome, preco, qntd, p.TipoUn, p.EstoqueMin, p.Fornecedor.Id, p.Cat.Id, p.Id);
+            string local = p.LocalPic;
+            if (local.Contains(@"/"))
+            {
+                local = local.Replace(@"/", @"//");
+            }
+
+            string qry = string.Format("UPDATE produtos SET nome = '{0}', preco = {1}, qntd = {2}, tipoUn = '{3}', estoqueMin = {4}, idFornecedor = {5}, idCategoria = {6}, localPic = '{7}' where id = {8}", p.Nome, preco, qntd, p.TipoUn, p.EstoqueMin, p.Fornecedor.Id, p.Cat.Id, local, p.Id);
 
             db.ExecuteNonQuery(qry);
         }
@@ -55,7 +67,7 @@ namespace ControlX.DAO
         //Relatorio de estoque min
         public List<object> ListEstoqueMinimo()
         {
-            string qry = string.Format("SELECT id, nome, preco, qntd, tipoUn, estoqueMin, idFornecedor, idCategoria FROM produtos WHERE deleted_at is null AND qntd < estoqueMin");
+            string qry = string.Format("SELECT id, nome, preco, qntd, tipoUn, estoqueMin, idFornecedor, idCategoria, localPic FROM produtos WHERE deleted_at is null AND qntd < estoqueMin");
             DataSet ds = db.ExecuteQuery(qry);
 
             List<Object> ps = new List<Object>();
@@ -71,6 +83,7 @@ namespace ControlX.DAO
                 p.EstoqueMin = double.Parse(dr["estoqueMin"].ToString());
                 p.Fornecedor.Id = int.Parse(dr["idFornecedor"].ToString());
                 p.Cat.Id = int.Parse(dr["idCategoria"].ToString());
+                p.LocalPic = dr["localPic"].ToString();
 
                 FornecedorDao fdao = new FornecedorDao();
                 Fornecedor f = fdao.Ler(p.Fornecedor.Id);
@@ -88,7 +101,7 @@ namespace ControlX.DAO
 
         public List<object> ListAll()
         {
-            string qry = string.Format("SELECT id, nome, preco, qntd, tipoUn, estoqueMin, idFornecedor, idCategoria FROM produtos WHERE deleted_at is null");
+            string qry = string.Format("SELECT id, nome, preco, qntd, tipoUn, estoqueMin, idFornecedor, idCategoria, localPic FROM produtos WHERE deleted_at is null");
             DataSet ds = db.ExecuteQuery(qry);
 
             List<Object> ps = new List<Object>();
@@ -104,6 +117,7 @@ namespace ControlX.DAO
                 p.EstoqueMin = double.Parse(dr["estoqueMin"].ToString());
                 p.Fornecedor.Id = int.Parse(dr["idFornecedor"].ToString());
                 p.Cat.Id = int.Parse(dr["idCategoria"].ToString());
+                p.LocalPic = dr["localPic"].ToString();
 
                 FornecedorDao fdao = new FornecedorDao();
                 Fornecedor f = fdao.Ler(p.Fornecedor.Id);
@@ -120,7 +134,7 @@ namespace ControlX.DAO
 
         public List<object> ListById(int id)
         {
-            string qry = string.Format("SELECT id, nome, preco, qntd, tipoUn, estoqueMin, idFornecedor, idCategoria FROM produtos WHERE id = {0} AND deleted_at is null", id);
+            string qry = string.Format("SELECT id, nome, preco, qntd, tipoUn, estoqueMin, idFornecedor, idCategoria, localPic FROM produtos WHERE id = {0} AND deleted_at is null", id);
 
             DataSet ds = db.ExecuteQuery(qry);
 
@@ -137,6 +151,7 @@ namespace ControlX.DAO
                 p.EstoqueMin = double.Parse(dr["estoqueMin"].ToString());
                 p.Fornecedor.Id = int.Parse(dr["idFornecedor"].ToString());
                 p.Cat.Id = int.Parse(dr["idCategoria"].ToString());
+                p.LocalPic = dr["localPic"].ToString();
 
                 FornecedorDao fdao = new FornecedorDao();
                 Fornecedor f = fdao.Ler(p.Fornecedor.Id);
@@ -153,7 +168,7 @@ namespace ControlX.DAO
 
         public List<object> ListByName(string name)
         {
-            string qry = string.Format("SELECT * FROM produtos WHERE nome LIKE '%{0}%' AND deleted_at is null;", name);
+            string qry = string.Format("SELECT id, nome, preco, qntd, tipoUn, estoqueMin, idFornecedor, idCategoria, localPic FROM produtos WHERE nome LIKE '%{0}%' AND deleted_at is null;", name);
 
             DataSet ds = db.ExecuteQuery(qry);
 
@@ -171,6 +186,7 @@ namespace ControlX.DAO
                 p.Fornecedor.Id = int.Parse(dr["idFornecedor"].ToString());
                 p.Fornecedor.Id = int.Parse(dr["idFornecedor"].ToString());
                 p.Cat.Id = int.Parse(dr["idCategoria"].ToString());
+                p.LocalPic = dr["localPic"].ToString();
 
                 FornecedorDao fdao = new FornecedorDao();
                 Fornecedor f = fdao.Ler(p.Fornecedor.Id);
@@ -204,6 +220,7 @@ namespace ControlX.DAO
                 p.EstoqueMin = double.Parse(dr["estoqueMin"].ToString());
                 p.Fornecedor.Id = int.Parse(dr["idFornecedor"].ToString());
                 p.Cat.Id = int.Parse(dr["idCategoria"].ToString());
+                p.LocalPic = dr["localPic"].ToString();
 
                 CategoriaDao cdao = new CategoriaDao();
                 Modelo.Categoria c = cdao.Ler(p.Cat.Id);
