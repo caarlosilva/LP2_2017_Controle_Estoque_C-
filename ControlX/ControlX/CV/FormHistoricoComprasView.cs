@@ -29,7 +29,7 @@ namespace ControlX.CV
 
         private void notaFiscalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormRelatorios form = new FormRelatorios(txUser.Text, DateTime.Parse(dateCompra.Value.ToString("dd-MM-yyyy hh:MM:ss")), DateTime.Parse(dateEntrega.Value.ToString("dd-MM-yyyy")), int.Parse(txId.Text.ToString()), txUser.Text);
+            FormRelatorios form = new FormRelatorios(txUser.Text, DateTime.Parse(dateCompra.Value.ToString("dd-MM-yyyy HH:mm:ss")), DateTime.Parse(dateEntrega.Value.ToString("dd-MM-yyyy")), int.Parse(txId.Text.ToString()), txUser.Text);
             form.Text = "ControlX - Nota Fiscal ID: " + txId.ToString();
             form.tipoRelatorio = 7;
             form.ShowDialog();

@@ -14,8 +14,8 @@ namespace ControlX
         public void Adicionar(object o)
         {
             Comprar c = (Comprar)o;
-            string dataCompraMySql = c.DataCompra.ToString("yyyy-MM-dd");
-            string dataEntregaMySql = c.DataEntrega.ToString("yyyy-MM-dd");
+            string dataCompraMySql = c.DataCompra.ToString("yyyy-MM-dd HH:mm:ss");
+            string dataEntregaMySql = c.DataEntrega.ToString("yyyy-MM-dd HH:mm:ss");
 
             int status = c.Status;
 
