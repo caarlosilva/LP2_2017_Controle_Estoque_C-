@@ -40,7 +40,7 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 *------------------------------ PARA FAZER ------------------------------*
 
  - Criar uma base de dados correta para apresentação;
- - Aperfeiçoar a interface gráfica do software;
+ - Aperfeiçoar a interface gráfica do software;*SEMI-FEITO*
 
 ------------------------------ F O R M S ------------------------------
 
@@ -48,19 +48,19 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
 ------------------------------ EM TODOS OS FORMS ------------------------------
 
 - Busca por nome não pode aceitar ' aspas simples para não bugar o SQL *FEITO*
-- Quando trocar de tipo de busca(ID,NOME), apagar o textbox para não gerar conflitos com o banco *PARCIAL(ESTOQUE FEITO)*
+- Quando trocar de tipo de busca(ID,NOME), apagar o textbox para não gerar conflitos com o banco *FEITO*
 
-------------------------------  ESTOQUE ------------------------------
+------------------------------  ESTOQUE ------------------------------*CONCLUIDO, TESTAR*
 
 - Busca por Categoria não funcionando *FEITO*
 - DGV com dados errados em UN e Categoria quando usa-se o filtro de BUSCA *FEITO*
-- Arrumar as imagens dos produtos/ou remover
+- Arrumar as imagens dos produtos/ou remover*FEITO*
 - Na hora de adicionar, o campo nome não aceita ' aspas simples(inverter com o campo busca) *FEITO*
 
------------------------------- FORNECEDORES ------------------------------
+------------------------------ FORNECEDORES ------------------------------*CONCLUIDO,TESTAR*
 
-  - Adicionar filtro por ID
-  - Configurar para o Filtro buscar no NOME e por CIDADE
+  - Adicionar filtro por ID*FEITO*
+  - Configurar para o Filtro buscar no NOME e por CIDADE*FEITO*
 
 ------------------------------ COMPRAS ------------------------------
 
@@ -71,7 +71,7 @@ mostrando de que é possível utilizar esse Software em vários tipos de Estabel
   - Poder Visualizar os itens da compra ao clicar em uma compra não finalizada(DGV direito) *FEITO*
   - Notificar caso o Preço de Compra seja maior que o Preço de Venda *FEITO*
   - Não pode comprar '0' produtos *FEITO*
-  - Verificar se o ID já consta na lista antes de adicionar um item na compra, e avisar o usuario para remover e adicionar a quantidade correta caso ele ja exista (FAZER O MESMO COM VENDAS).
+  - Verificar se o ID já consta na lista antes de adicionar um item na compra, e avisar o usuario para remover e adicionar a quantidade correta caso ele ja exista (FAZER O MESMO COM VENDAS).*FEITO*
 
 *-------------------------------------------------------------------------*
 
