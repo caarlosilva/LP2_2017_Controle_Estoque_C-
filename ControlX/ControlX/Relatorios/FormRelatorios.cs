@@ -184,7 +184,7 @@ namespace ControlX
                 {
                     valor += (p.Qntd * p.Preco);
                 }
-                string dataV = dataVenda.ToString("dd-MM-yyyy HH:mm:ss");
+                string dataV = dataVenda.ToString("dd-MM-yyyy");
 
                 Relatorios.NotaFiscal report = new Relatorios.NotaFiscal();
                 report.SetDataSource(lista);
@@ -219,7 +219,7 @@ namespace ControlX
                 {
                     valor += (p.Qntd * p.Preco);
                 }
-                string dataC = dataCompra.ToString("dd-MM-yyyy HH:mm:ss");
+                string dataC = dataCompra.ToString("dd-MM-yyyy");
                 string dataE = dataCompra.ToString("dd-MM-yyyy");
 
                 Relatorios.Compras_NF report = new Relatorios.Compras_NF();
