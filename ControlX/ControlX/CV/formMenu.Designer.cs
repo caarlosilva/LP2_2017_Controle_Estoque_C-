@@ -42,6 +42,13 @@
             this.lblData = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.msMenu = new System.Windows.Forms.MenuStrip();
+            this.btVenderCaixa = new System.Windows.Forms.Button();
+            this.pnCaixa = new System.Windows.Forms.Panel();
+            this.pnAlmoxarife = new System.Windows.Forms.Panel();
+            this.btComprarAlmox = new System.Windows.Forms.Button();
+            this.btEstoqueAlmox = new System.Windows.Forms.Button();
+            this.btFornecedorAlmox = new System.Windows.Forms.Button();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.menuHistorico = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHistCompras = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHistVendas = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,27 +62,20 @@
             this.inventárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAjuda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSobre = new System.Windows.Forms.ToolStripMenuItem();
-            this.picLogo = new System.Windows.Forms.PictureBox();
-            this.btVenderCaixa = new System.Windows.Forms.Button();
-            this.pnCaixa = new System.Windows.Forms.Panel();
-            this.pnAlmoxarife = new System.Windows.Forms.Panel();
-            this.btComprarAlmox = new System.Windows.Forms.Button();
-            this.btEstoqueAlmox = new System.Windows.Forms.Button();
-            this.btFornecedorAlmox = new System.Windows.Forms.Button();
             this.pnMenu.SuspendLayout();
             this.pnConectado.SuspendLayout();
             this.msMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnCaixa.SuspendLayout();
             this.pnAlmoxarife.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btVender
             // 
-            this.btVender.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btVender.Location = new System.Drawing.Point(3, 34);
+            this.btVender.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btVender.Location = new System.Drawing.Point(7, 34);
             this.btVender.Name = "btVender";
-            this.btVender.Size = new System.Drawing.Size(120, 25);
+            this.btVender.Size = new System.Drawing.Size(126, 25);
             this.btVender.TabIndex = 0;
             this.btVender.Text = "Venda";
             this.btVender.UseVisualStyleBackColor = true;
@@ -83,10 +83,10 @@
             // 
             // btFornecedor
             // 
-            this.btFornecedor.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btFornecedor.Location = new System.Drawing.Point(134, 34);
+            this.btFornecedor.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFornecedor.Location = new System.Drawing.Point(138, 34);
             this.btFornecedor.Name = "btFornecedor";
-            this.btFornecedor.Size = new System.Drawing.Size(120, 25);
+            this.btFornecedor.Size = new System.Drawing.Size(126, 25);
             this.btFornecedor.TabIndex = 2;
             this.btFornecedor.Text = "Fornecedores";
             this.btFornecedor.UseVisualStyleBackColor = true;
@@ -94,10 +94,10 @@
             // 
             // btEstoque
             // 
-            this.btEstoque.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEstoque.Location = new System.Drawing.Point(134, 3);
+            this.btEstoque.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEstoque.Location = new System.Drawing.Point(138, 3);
             this.btEstoque.Name = "btEstoque";
-            this.btEstoque.Size = new System.Drawing.Size(120, 25);
+            this.btEstoque.Size = new System.Drawing.Size(126, 25);
             this.btEstoque.TabIndex = 1;
             this.btEstoque.Text = "Estoque";
             this.btEstoque.UseVisualStyleBackColor = true;
@@ -105,10 +105,10 @@
             // 
             // btDesconectar
             // 
-            this.btDesconectar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDesconectar.Location = new System.Drawing.Point(413, 3);
+            this.btDesconectar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDesconectar.Location = new System.Drawing.Point(407, 3);
             this.btDesconectar.Name = "btDesconectar";
-            this.btDesconectar.Size = new System.Drawing.Size(95, 25);
+            this.btDesconectar.Size = new System.Drawing.Size(101, 25);
             this.btDesconectar.TabIndex = 0;
             this.btDesconectar.Text = "Desconectar";
             this.btDesconectar.UseVisualStyleBackColor = true;
@@ -121,16 +121,17 @@
             this.pnMenu.Controls.Add(this.btVender);
             this.pnMenu.Controls.Add(this.btEstoque);
             this.pnMenu.Controls.Add(this.btFornecedor);
-            this.pnMenu.Location = new System.Drawing.Point(266, 108);
+            this.pnMenu.Location = new System.Drawing.Point(251, 108);
             this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(257, 92);
+            this.pnMenu.Size = new System.Drawing.Size(272, 92);
             this.pnMenu.TabIndex = 4;
             // 
             // btUsuario
             // 
-            this.btUsuario.Location = new System.Drawing.Point(72, 64);
+            this.btUsuario.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btUsuario.Location = new System.Drawing.Point(76, 64);
             this.btUsuario.Name = "btUsuario";
-            this.btUsuario.Size = new System.Drawing.Size(120, 25);
+            this.btUsuario.Size = new System.Drawing.Size(126, 25);
             this.btUsuario.TabIndex = 4;
             this.btUsuario.Text = "Usuários";
             this.btUsuario.UseVisualStyleBackColor = true;
@@ -138,9 +139,10 @@
             // 
             // btComprar
             // 
-            this.btComprar.Location = new System.Drawing.Point(3, 3);
+            this.btComprar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btComprar.Location = new System.Drawing.Point(7, 3);
             this.btComprar.Name = "btComprar";
-            this.btComprar.Size = new System.Drawing.Size(120, 25);
+            this.btComprar.Size = new System.Drawing.Size(126, 25);
             this.btComprar.TabIndex = 3;
             this.btComprar.Text = "Comprar";
             this.btComprar.UseVisualStyleBackColor = true;
@@ -152,7 +154,7 @@
             this.lbMensagem.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensagem.Location = new System.Drawing.Point(3, 9);
             this.lbMensagem.Name = "lbMensagem";
-            this.lbMensagem.Size = new System.Drawing.Size(230, 14);
+            this.lbMensagem.Size = new System.Drawing.Size(232, 14);
             this.lbMensagem.TabIndex = 5;
             this.lbMensagem.Text = "Você está conectado como \'Admin\' !";
             // 
@@ -200,122 +202,10 @@
             this.msMenu.TabIndex = 8;
             this.msMenu.Text = "Menu";
             // 
-            // menuHistorico
-            // 
-            this.menuHistorico.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuHistCompras,
-            this.menuHistVendas});
-            this.menuHistorico.Image = global::ControlX.Properties.Resources.historico_icon;
-            this.menuHistorico.Name = "menuHistorico";
-            this.menuHistorico.Size = new System.Drawing.Size(83, 20);
-            this.menuHistorico.Text = "Historico";
-            // 
-            // menuHistCompras
-            // 
-            this.menuHistCompras.Name = "menuHistCompras";
-            this.menuHistCompras.Size = new System.Drawing.Size(122, 22);
-            this.menuHistCompras.Text = "Compras";
-            this.menuHistCompras.Click += new System.EventHandler(this.menuHistCompras_Click);
-            // 
-            // menuHistVendas
-            // 
-            this.menuHistVendas.Name = "menuHistVendas";
-            this.menuHistVendas.Size = new System.Drawing.Size(122, 22);
-            this.menuHistVendas.Text = "Vendas";
-            this.menuHistVendas.Click += new System.EventHandler(this.menuHistVendas_Click);
-            // 
-            // menuRelatorio
-            // 
-            this.menuRelatorio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuRelCompras,
-            this.menuRelVendas,
-            this.menuRelEstoque});
-            this.menuRelatorio.Image = global::ControlX.Properties.Resources.relatorio_icon;
-            this.menuRelatorio.Name = "menuRelatorio";
-            this.menuRelatorio.Size = new System.Drawing.Size(87, 20);
-            this.menuRelatorio.Text = "Relatorios";
-            // 
-            // menuRelCompras
-            // 
-            this.menuRelCompras.Name = "menuRelCompras";
-            this.menuRelCompras.Size = new System.Drawing.Size(122, 22);
-            this.menuRelCompras.Text = "Compras";
-            this.menuRelCompras.Click += new System.EventHandler(this.menuRelCompras_Click);
-            // 
-            // menuRelVendas
-            // 
-            this.menuRelVendas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.porFuncionárioToolStripMenuItem,
-            this.porPeriodoToolStripMenuItem});
-            this.menuRelVendas.Name = "menuRelVendas";
-            this.menuRelVendas.Size = new System.Drawing.Size(122, 22);
-            this.menuRelVendas.Text = "Vendas";
-            // 
-            // porFuncionárioToolStripMenuItem
-            // 
-            this.porFuncionárioToolStripMenuItem.Name = "porFuncionárioToolStripMenuItem";
-            this.porFuncionárioToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.porFuncionárioToolStripMenuItem.Text = "Por funcionário";
-            this.porFuncionárioToolStripMenuItem.Click += new System.EventHandler(this.porFuncionárioToolStripMenuItem_Click);
-            // 
-            // porPeriodoToolStripMenuItem
-            // 
-            this.porPeriodoToolStripMenuItem.Name = "porPeriodoToolStripMenuItem";
-            this.porPeriodoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.porPeriodoToolStripMenuItem.Text = "Por periodo";
-            this.porPeriodoToolStripMenuItem.Click += new System.EventHandler(this.porPeriodoToolStripMenuItem_Click);
-            // 
-            // menuRelEstoque
-            // 
-            this.menuRelEstoque.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.estoqueMinimoToolStripMenuItem,
-            this.inventárioToolStripMenuItem});
-            this.menuRelEstoque.Name = "menuRelEstoque";
-            this.menuRelEstoque.Size = new System.Drawing.Size(122, 22);
-            this.menuRelEstoque.Text = "Estoque";
-            // 
-            // estoqueMinimoToolStripMenuItem
-            // 
-            this.estoqueMinimoToolStripMenuItem.Name = "estoqueMinimoToolStripMenuItem";
-            this.estoqueMinimoToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.estoqueMinimoToolStripMenuItem.Text = "Estóque abaixo do mínimo";
-            this.estoqueMinimoToolStripMenuItem.Click += new System.EventHandler(this.estoqueMinimoToolStripMenuItem_Click);
-            // 
-            // inventárioToolStripMenuItem
-            // 
-            this.inventárioToolStripMenuItem.Name = "inventárioToolStripMenuItem";
-            this.inventárioToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.inventárioToolStripMenuItem.Text = "Inventário";
-            this.inventárioToolStripMenuItem.Click += new System.EventHandler(this.inventárioToolStripMenuItem_Click);
-            // 
-            // menuAjuda
-            // 
-            this.menuAjuda.Image = global::ControlX.Properties.Resources.help_icon;
-            this.menuAjuda.Name = "menuAjuda";
-            this.menuAjuda.Size = new System.Drawing.Size(66, 20);
-            this.menuAjuda.Text = "Ajuda";
-            // 
-            // menuSobre
-            // 
-            this.menuSobre.Image = global::ControlX.Properties.Resources.about_icon;
-            this.menuSobre.Name = "menuSobre";
-            this.menuSobre.Size = new System.Drawing.Size(65, 20);
-            this.menuSobre.Text = "Sobre";
-            // 
-            // picLogo
-            // 
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(10, 78);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(167, 122);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 7;
-            this.picLogo.TabStop = false;
-            this.picLogo.Tag = "";
-            // 
             // btVenderCaixa
             // 
-            this.btVenderCaixa.Location = new System.Drawing.Point(76, 17);
+            this.btVenderCaixa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btVenderCaixa.Location = new System.Drawing.Point(93, 16);
             this.btVenderCaixa.Name = "btVenderCaixa";
             this.btVenderCaixa.Size = new System.Drawing.Size(163, 65);
             this.btVenderCaixa.TabIndex = 9;
@@ -345,9 +235,10 @@
             // 
             // btComprarAlmox
             // 
-            this.btComprarAlmox.Location = new System.Drawing.Point(54, 26);
+            this.btComprarAlmox.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btComprarAlmox.Location = new System.Drawing.Point(48, 26);
             this.btComprarAlmox.Name = "btComprarAlmox";
-            this.btComprarAlmox.Size = new System.Drawing.Size(120, 25);
+            this.btComprarAlmox.Size = new System.Drawing.Size(126, 25);
             this.btComprarAlmox.TabIndex = 6;
             this.btComprarAlmox.Text = "Comprar";
             this.btComprarAlmox.UseVisualStyleBackColor = true;
@@ -355,7 +246,7 @@
             // 
             // btEstoqueAlmox
             // 
-            this.btEstoqueAlmox.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEstoqueAlmox.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEstoqueAlmox.Location = new System.Drawing.Point(185, 26);
             this.btEstoqueAlmox.Name = "btEstoqueAlmox";
             this.btEstoqueAlmox.Size = new System.Drawing.Size(120, 25);
@@ -366,7 +257,7 @@
             // 
             // btFornecedorAlmox
             // 
-            this.btFornecedorAlmox.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFornecedorAlmox.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btFornecedorAlmox.Location = new System.Drawing.Point(119, 63);
             this.btFornecedorAlmox.Name = "btFornecedorAlmox";
             this.btFornecedorAlmox.Size = new System.Drawing.Size(120, 25);
@@ -374,6 +265,130 @@
             this.btFornecedorAlmox.Text = "Fornecedores";
             this.btFornecedorAlmox.UseVisualStyleBackColor = true;
             this.btFornecedorAlmox.Click += new System.EventHandler(this.btFornecedorAlmox_Click);
+            // 
+            // picLogo
+            // 
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(10, 78);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(167, 122);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 7;
+            this.picLogo.TabStop = false;
+            this.picLogo.Tag = "";
+            // 
+            // menuHistorico
+            // 
+            this.menuHistorico.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuHistCompras,
+            this.menuHistVendas});
+            this.menuHistorico.Image = global::ControlX.Properties.Resources.historico_icon;
+            this.menuHistorico.Name = "menuHistorico";
+            this.menuHistorico.Size = new System.Drawing.Size(83, 20);
+            this.menuHistorico.Text = "Historico";
+            // 
+            // menuHistCompras
+            // 
+            this.menuHistCompras.Image = global::ControlX.Properties.Resources.cart_plus;
+            this.menuHistCompras.Name = "menuHistCompras";
+            this.menuHistCompras.Size = new System.Drawing.Size(122, 22);
+            this.menuHistCompras.Text = "Compras";
+            this.menuHistCompras.Click += new System.EventHandler(this.menuHistCompras_Click);
+            // 
+            // menuHistVendas
+            // 
+            this.menuHistVendas.Image = global::ControlX.Properties.Resources.cart_minus;
+            this.menuHistVendas.Name = "menuHistVendas";
+            this.menuHistVendas.Size = new System.Drawing.Size(122, 22);
+            this.menuHistVendas.Text = "Vendas";
+            this.menuHistVendas.Click += new System.EventHandler(this.menuHistVendas_Click);
+            // 
+            // menuRelatorio
+            // 
+            this.menuRelatorio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuRelCompras,
+            this.menuRelVendas,
+            this.menuRelEstoque});
+            this.menuRelatorio.Image = global::ControlX.Properties.Resources.relatorio_icon;
+            this.menuRelatorio.Name = "menuRelatorio";
+            this.menuRelatorio.Size = new System.Drawing.Size(87, 20);
+            this.menuRelatorio.Text = "Relatorios";
+            // 
+            // menuRelCompras
+            // 
+            this.menuRelCompras.Image = global::ControlX.Properties.Resources.cart_plus;
+            this.menuRelCompras.Name = "menuRelCompras";
+            this.menuRelCompras.Size = new System.Drawing.Size(122, 22);
+            this.menuRelCompras.Text = "Compras";
+            this.menuRelCompras.Click += new System.EventHandler(this.menuRelCompras_Click);
+            // 
+            // menuRelVendas
+            // 
+            this.menuRelVendas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.porFuncionárioToolStripMenuItem,
+            this.porPeriodoToolStripMenuItem});
+            this.menuRelVendas.Image = global::ControlX.Properties.Resources.cart_minus;
+            this.menuRelVendas.Name = "menuRelVendas";
+            this.menuRelVendas.Size = new System.Drawing.Size(122, 22);
+            this.menuRelVendas.Text = "Vendas";
+            // 
+            // porFuncionárioToolStripMenuItem
+            // 
+            this.porFuncionárioToolStripMenuItem.Image = global::ControlX.Properties.Resources.user;
+            this.porFuncionárioToolStripMenuItem.Name = "porFuncionárioToolStripMenuItem";
+            this.porFuncionárioToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.porFuncionárioToolStripMenuItem.Text = "Por funcionário";
+            this.porFuncionárioToolStripMenuItem.Click += new System.EventHandler(this.porFuncionárioToolStripMenuItem_Click);
+            // 
+            // porPeriodoToolStripMenuItem
+            // 
+            this.porPeriodoToolStripMenuItem.Image = global::ControlX.Properties.Resources.icon_date;
+            this.porPeriodoToolStripMenuItem.Name = "porPeriodoToolStripMenuItem";
+            this.porPeriodoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.porPeriodoToolStripMenuItem.Text = "Por periodo";
+            this.porPeriodoToolStripMenuItem.Click += new System.EventHandler(this.porPeriodoToolStripMenuItem_Click);
+            // 
+            // menuRelEstoque
+            // 
+            this.menuRelEstoque.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.estoqueMinimoToolStripMenuItem,
+            this.inventárioToolStripMenuItem});
+            this.menuRelEstoque.Image = global::ControlX.Properties.Resources.AERS;
+            this.menuRelEstoque.Name = "menuRelEstoque";
+            this.menuRelEstoque.Size = new System.Drawing.Size(122, 22);
+            this.menuRelEstoque.Text = "Estoque";
+            // 
+            // estoqueMinimoToolStripMenuItem
+            // 
+            this.estoqueMinimoToolStripMenuItem.Image = global::ControlX.Properties.Resources.AERRS;
+            this.estoqueMinimoToolStripMenuItem.Name = "estoqueMinimoToolStripMenuItem";
+            this.estoqueMinimoToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.estoqueMinimoToolStripMenuItem.Text = "Estóque abaixo do mínimo";
+            this.estoqueMinimoToolStripMenuItem.Click += new System.EventHandler(this.estoqueMinimoToolStripMenuItem_Click);
+            // 
+            // inventárioToolStripMenuItem
+            // 
+            this.inventárioToolStripMenuItem.Image = global::ControlX.Properties.Resources.AERS;
+            this.inventárioToolStripMenuItem.Name = "inventárioToolStripMenuItem";
+            this.inventárioToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.inventárioToolStripMenuItem.Text = "Inventário";
+            this.inventárioToolStripMenuItem.Click += new System.EventHandler(this.inventárioToolStripMenuItem_Click);
+            // 
+            // menuAjuda
+            // 
+            this.menuAjuda.Image = global::ControlX.Properties.Resources.help_icon;
+            this.menuAjuda.Name = "menuAjuda";
+            this.menuAjuda.Size = new System.Drawing.Size(66, 20);
+            this.menuAjuda.Text = "Ajuda";
+            this.menuAjuda.Click += new System.EventHandler(this.menuAjuda_Click);
+            // 
+            // menuSobre
+            // 
+            this.menuSobre.Image = global::ControlX.Properties.Resources.about_icon;
+            this.menuSobre.Name = "menuSobre";
+            this.menuSobre.Size = new System.Drawing.Size(65, 20);
+            this.menuSobre.Text = "Sobre";
+            this.menuSobre.Click += new System.EventHandler(this.menuSobre_Click);
             // 
             // formMenu
             // 
@@ -402,9 +417,9 @@
             this.pnConectado.PerformLayout();
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.pnCaixa.ResumeLayout(false);
             this.pnAlmoxarife.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

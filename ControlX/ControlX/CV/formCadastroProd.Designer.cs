@@ -40,6 +40,7 @@
             this.cbTipoUn = new System.Windows.Forms.ComboBox();
             this.lbTipoVenda = new System.Windows.Forms.Label();
             this.btImagem = new System.Windows.Forms.Button();
+            this.pbImagemProd = new System.Windows.Forms.PictureBox();
             this.txPreco = new System.Windows.Forms.MaskedTextBox();
             this.lbCategoria = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
@@ -50,10 +51,9 @@
             this.lbIdProduto = new System.Windows.Forms.Label();
             this.pnBtCad = new System.Windows.Forms.Panel();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.pbImagemProd = new System.Windows.Forms.PictureBox();
             this.pnCadastro.SuspendLayout();
-            this.pnBtCad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).BeginInit();
+            this.pnBtCad.SuspendLayout();
             this.SuspendLayout();
             // 
             // btCadastrar
@@ -195,11 +195,25 @@
             this.btImagem.UseVisualStyleBackColor = true;
             this.btImagem.Click += new System.EventHandler(this.btImagem_Click);
             // 
+            // pbImagemProd
+            // 
+            this.pbImagemProd.BackgroundImage = global::ControlX.Properties.Resources.product;
+            this.pbImagemProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbImagemProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbImagemProd.InitialImage = null;
+            this.pbImagemProd.Location = new System.Drawing.Point(310, 46);
+            this.pbImagemProd.Name = "pbImagemProd";
+            this.pbImagemProd.Size = new System.Drawing.Size(121, 124);
+            this.pbImagemProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagemProd.TabIndex = 17;
+            this.pbImagemProd.TabStop = false;
+            // 
             // txPreco
             // 
             this.txPreco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txPreco.Location = new System.Drawing.Point(61, 58);
             this.txPreco.Name = "txPreco";
+            this.txPreco.PromptChar = ' ';
             this.txPreco.Size = new System.Drawing.Size(108, 21);
             this.txPreco.TabIndex = 1;
             this.txPreco.TextChanged += new System.EventHandler(this.txNome_TextChanged);
@@ -298,19 +312,6 @@
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
-            // pbImagemProd
-            // 
-            this.pbImagemProd.BackgroundImage = global::ControlX.Properties.Resources.product;
-            this.pbImagemProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbImagemProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbImagemProd.InitialImage = null;
-            this.pbImagemProd.Location = new System.Drawing.Point(310, 46);
-            this.pbImagemProd.Name = "pbImagemProd";
-            this.pbImagemProd.Size = new System.Drawing.Size(121, 124);
-            this.pbImagemProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImagemProd.TabIndex = 17;
-            this.pbImagemProd.TabStop = false;
-            // 
             // formCadastroProd
             // 
             this.AcceptButton = this.btCadastrar;
@@ -329,8 +330,8 @@
             this.Text = "ControlX - Cadastrar Produto";
             this.pnCadastro.ResumeLayout(false);
             this.pnCadastro.PerformLayout();
-            this.pnBtCad.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbImagemProd)).EndInit();
+            this.pnBtCad.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

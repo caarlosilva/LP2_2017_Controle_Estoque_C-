@@ -52,10 +52,7 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.Windows.Forms.1.0.0\lib\CrystalDecisions.Windows.Forms.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="MySql.Data, Version=6.10.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.6.10.4\lib\net452\MySql.Data.dll</HintPath>
@@ -77,11 +74,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CV\FormUserRelatorio.cs">
+    <Compile Include="CV\formAjuda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CV\FormUserRelatorio.Designer.cs">
-      <DependentUpon>FormUserRelatorio.cs</DependentUpon>
+    <Compile Include="CV\formAjuda.Designer.cs">
+      <DependentUpon>formAjuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\formUserRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\formUserRelatorio.Designer.cs">
+      <DependentUpon>formUserRelatorio.cs</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\Inventario_Rel.cs">
       <DependentUpon>Inventario_Rel.rpt</DependentUpon>
@@ -113,42 +116,42 @@
       <DependentUpon>Compras_Rel.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CV\FormDataRelatorio.cs">
+    <Compile Include="CV\formDataRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CV\FormDataRelatorio.Designer.cs">
-      <DependentUpon>FormDataRelatorio.cs</DependentUpon>
+    <Compile Include="CV\formDataRelatorio.Designer.cs">
+      <DependentUpon>formDataRelatorio.cs</DependentUpon>
     </Compile>
-    <Compile Include="CV\FormHistoricoComprasView.cs">
+    <Compile Include="CV\formHistoricoComprasView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CV\FormHistoricoComprasView.Designer.cs">
-      <DependentUpon>FormHistoricoComprasView.cs</DependentUpon>
+    <Compile Include="CV\formHistoricoComprasView.Designer.cs">
+      <DependentUpon>formHistoricoComprasView.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\CategoriaDao.cs" />
-    <Compile Include="CV\FormCategoria.cs">
+    <Compile Include="CV\formCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CV\FormCategoria.Designer.cs">
-      <DependentUpon>FormCategoria.cs</DependentUpon>
+    <Compile Include="CV\formCategoria.Designer.cs">
+      <DependentUpon>formCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="CV\FormCadastroCat.cs">
+    <Compile Include="CV\formCadastroCat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CV\FormCadastroCat.Designer.cs">
-      <DependentUpon>FormCadastroCat.cs</DependentUpon>
+    <Compile Include="CV\formCadastroCat.Designer.cs">
+      <DependentUpon>formCadastroCat.cs</DependentUpon>
     </Compile>
-    <Compile Include="CV\FormHistoricoVendas.cs">
+    <Compile Include="CV\formHistoricoVendas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CV\FormHistoricoVendas.Designer.cs">
-      <DependentUpon>FormHistoricoVendas.cs</DependentUpon>
+    <Compile Include="CV\formHistoricoVendas.Designer.cs">
+      <DependentUpon>formHistoricoVendas.cs</DependentUpon>
     </Compile>
-    <Compile Include="CV\FormHistoricoVendasView.cs">
+    <Compile Include="CV\formHistoricoVendasView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CV\FormHistoricoVendasView.Designer.cs">
-      <DependentUpon>FormHistoricoVendasView.cs</DependentUpon>
+    <Compile Include="CV\formHistoricoVendasView.Designer.cs">
+      <DependentUpon>formHistoricoVendasView.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Categoria.cs" />
     <Compile Include="Relatorios\EstoqueMin_Rel.cs">
@@ -165,17 +168,17 @@
       <DependentUpon>formHistoricoCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Comprar.cs" />
-    <Compile Include="CV\FormAgendarCompra.cs">
+    <Compile Include="CV\formAgendarCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CV\FormAgendarCompra.Designer.cs">
-      <DependentUpon>FormAgendarCompra.cs</DependentUpon>
+    <Compile Include="CV\formAgendarCompra.Designer.cs">
+      <DependentUpon>formAgendarCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="CV\FormCompras.cs">
+    <Compile Include="CV\formCompras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CV\FormCompras.Designer.cs">
-      <DependentUpon>FormCompras.cs</DependentUpon>
+    <Compile Include="CV\formCompras.Designer.cs">
+      <DependentUpon>formCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\FornecedorDao.cs" />
     <Compile Include="DAO\ProdutoDao.cs" />
@@ -265,8 +268,20 @@
       <DependentUpon>Vendas_Rel.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="CV\FormUserRelatorio.resx">
-      <DependentUpon>FormUserRelatorio.cs</DependentUpon>
+    <Compile Include="CV\formSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\formSobre.Designer.cs">
+      <DependentUpon>formSobre.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CV\formAjuda.resx">
+      <DependentUpon>formAjuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\formUserRelatorio.resx">
+      <DependentUpon>formUserRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\formSobre.resx">
+      <DependentUpon>formSobre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\Inventario_Rel.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -288,23 +303,23 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Compras_Rel.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormCategoria.resx">
-      <DependentUpon>FormCategoria.cs</DependentUpon>
+    <EmbeddedResource Include="CV\formCategoria.resx">
+      <DependentUpon>formCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormCadastroCat.resx">
-      <DependentUpon>FormCadastroCat.cs</DependentUpon>
+    <EmbeddedResource Include="CV\formCadastroCat.resx">
+      <DependentUpon>formCadastroCat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormDataRelatorio.resx">
-      <DependentUpon>FormDataRelatorio.cs</DependentUpon>
+    <EmbeddedResource Include="CV\formDataRelatorio.resx">
+      <DependentUpon>formDataRelatorio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormHistoricoComprasView.resx">
-      <DependentUpon>FormHistoricoComprasView.cs</DependentUpon>
+    <EmbeddedResource Include="CV\formHistoricoComprasView.resx">
+      <DependentUpon>formHistoricoComprasView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormHistoricoVendas.resx">
-      <DependentUpon>FormHistoricoVendas.cs</DependentUpon>
+    <EmbeddedResource Include="CV\formHistoricoVendas.resx">
+      <DependentUpon>formHistoricoVendas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormHistoricoVendasView.resx">
-      <DependentUpon>FormHistoricoVendasView.cs</DependentUpon>
+    <EmbeddedResource Include="CV\formHistoricoVendasView.resx">
+      <DependentUpon>formHistoricoVendasView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\EstoqueMin_Rel.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -316,11 +331,11 @@
     <EmbeddedResource Include="CV\formCadastroForn.resx">
       <DependentUpon>formCadastroForn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormAgendarCompra.resx">
-      <DependentUpon>FormAgendarCompra.cs</DependentUpon>
+    <EmbeddedResource Include="CV\formAgendarCompra.resx">
+      <DependentUpon>formAgendarCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormCompras.resx">
-      <DependentUpon>FormCompras.cs</DependentUpon>
+    <EmbeddedResource Include="CV\formCompras.resx">
+      <DependentUpon>formCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\formEstoque.resx">
       <DependentUpon>formEstoque.cs</DependentUpon>
@@ -575,6 +590,16 @@
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
     <Content Include="Imagens\icon.ico" />
+    <None Include="Resources\WhatsApp Image 2017-06-19 at 16.24.19.jpeg" />
+    <None Include="Resources\pp.jpg" />
+    <None Include="Resources\AERRS.png" />
+    <None Include="Resources\invent-minus-icon.png" />
+    <None Include="Resources\AERS.png" />
+    <None Include="Resources\invent-icon.png" />
+    <None Include="Resources\cart-plus1.png" />
+    <None Include="Resources\icon-date.png" />
+    <None Include="Resources\cart-minus.png" />
+    <None Include="Resources\cart-plus.png" />
     <None Include="Resources\nf.png" />
     <None Include="Resources\product.jpg" />
     <None Include="Resources\default-user-image.png" />

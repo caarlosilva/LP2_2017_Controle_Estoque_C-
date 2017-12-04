@@ -48,22 +48,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Crystal.Reports.13.0.15.1840\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Crystal.Reports.13.0.15.1840\lib\CrystalDecisions.ReportSource.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Crystal.Reports.13.0.15.1840\lib\CrystalDecisions.Shared.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Crystal.Reports.13.0.15.1840\lib\CrystalDecisions.Web.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <HintPath>..\packages\CrystalDecisions.Windows.Forms.1.0.0\lib\CrystalDecisions.Windows.Forms.dll</HintPath>
       <Private>True</Private>
@@ -89,6 +77,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CV\FormUserRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormUserRelatorio.Designer.cs">
+      <DependentUpon>FormUserRelatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\Inventario_Rel.cs">
+      <DependentUpon>Inventario_Rel.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Relatorios\Func_Rel.cs">
+      <DependentUpon>Func_Rel.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Relatorios\Compras_NF.cs">
+      <DependentUpon>Compras_NF.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Relatorios\NotaFiscal.cs">
+      <DependentUpon>NotaFiscal.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Relatorios\Compras_Rel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,12 +137,6 @@
     </Compile>
     <Compile Include="CV\FormCadastroCat.Designer.cs">
       <DependentUpon>FormCadastroCat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formDocumento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formDocumento.Designer.cs">
-      <DependentUpon>formDocumento.cs</DependentUpon>
     </Compile>
     <Compile Include="CV\FormHistoricoVendas.cs">
       <SubType>Form</SubType>
@@ -253,6 +265,25 @@
       <DependentUpon>Vendas_Rel.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="CV\FormUserRelatorio.resx">
+      <DependentUpon>FormUserRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\Inventario_Rel.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Inventario_Rel.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\Func_Rel.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Func_Rel.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\Compras_NF.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Compras_NF.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\NotaFiscal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NotaFiscal.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\Compras_Rel.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Compras_Rel.cs</LastGenOutput>
@@ -274,9 +305,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormHistoricoVendasView.resx">
       <DependentUpon>FormHistoricoVendasView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formDocumento.resx">
-      <DependentUpon>formDocumento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\EstoqueMin_Rel.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -546,6 +574,10 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <Content Include="Imagens\icon.ico" />
+    <None Include="Resources\nf.png" />
+    <None Include="Resources\product.jpg" />
+    <None Include="Resources\default-user-image.png" />
     <None Include="Resources\category-icon.png" />
     <None Include="Resources\edit-icon.png" />
     <None Include="Resources\remover.png" />
@@ -562,24 +594,6 @@
     <None Include="Resources\_add_cart-512.png" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="Microsoft.Office.Core">
-      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
-      <VersionMajor>2</VersionMajor>
-      <VersionMinor>8</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="Microsoft.Office.Interop.Word">
-      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>8</VersionMajor>
-      <VersionMinor>7</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
     <COMReference Include="VBIDE">
       <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>5</VersionMajor>

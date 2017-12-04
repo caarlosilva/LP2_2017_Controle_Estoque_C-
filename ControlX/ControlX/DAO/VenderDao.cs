@@ -15,7 +15,7 @@ namespace ControlX
         public void Adicionar(Object o)
         {
             Vender v = (Vender)o;
-            string dataMySql = v.Data.ToString("yyyy-MM-dd HH:mm:ss");
+            string dataMySql = v.Data.ToString("yyyy-MM-dd");
 
             string valor = Convert.ToString(v.Valor);
 
@@ -62,8 +62,8 @@ namespace ControlX
 
         public List<object> ListVendas(DateTime dataInicio, DateTime dataFim)
         {
-            string dataMySqlInicio = dataInicio.ToString("yyyy-MM-dd HH:mm:ss");
-            string dataMySqlFim = dataFim.ToString("yyyy-MM-dd HH:mm:ss");
+            string dataMySqlInicio = dataInicio.ToString("yyyy-MM-dd");
+            string dataMySqlFim = dataFim.ToString("yyyy-MM-dd");
             string qry = string.Format("SELECT id, nome_usuario, valor, dataVenda FROM vendas WHERE dataVenda BETWEEN '{0}' AND '{1}'", dataMySqlInicio, dataMySqlFim);
             DataSet ds = db.ExecuteQuery(qry);
 
@@ -83,8 +83,8 @@ namespace ControlX
 
         public List<object> ListByUser(DateTime dataInicio, DateTime dataFim, Usuario user)
         {
-            string dataMySqlInicio = dataInicio.ToString("yyyy-MM-dd HH:mm:ss");
-            string dataMySqlFim = dataFim.ToString("yyyy-MM-dd HH:mm:ss");
+            string dataMySqlInicio = dataInicio.ToString("yyyy-MM-dd");
+            string dataMySqlFim = dataFim.ToString("yyyy-MM-dd");
             string qry = string.Format("SELECT id, nome_usuario, valor, dataVenda FROM vendas WHERE dataVenda BETWEEN '{0}' AND '{1}' AND nome_usuario = '{2}'", dataMySqlInicio, dataMySqlFim, user.Nome);
             DataSet ds = db.ExecuteQuery(qry);
 
@@ -155,19 +155,52 @@ namespace ControlX
                 Vender v = new Vender();
                 v.Id = int.Parse(dr["id"].ToString());
                 v.Nome_usuario = dr["nome_usuario"].ToString();
-                v.Valor = long.Parse(dr["valor"].ToString());
+                v.Valor = double.Parse(dr["valor"].ToString());
                 v.Data = DateTime.Parse(dr["dataVenda"].ToString());
                 vendas.Add(v);
             }
             return vendas;
         }
 
-        public List<object> ListByDate(DateTime inicio, DateTime fim)
+        public List<object> ListByDate(DateTime dataInicio, DateTime dataFim)
         {
-            throw new NotImplementedException();
-            // SEM USO PARA 'COMPRAR' , SERIA UTIL UM 'LISTBYDATE', mas da pra implementar em um form, não precisa de um método
+            string dataMySqlInicio = dataInicio.ToString("yyyy-MM-dd");
+            string dataMySqlFim = dataFim.ToString("yyyy-MM-dd");
+            string qry = string.Format("SELECT id, nome_usuario, valor, dataVenda FROM vendas WHERE dataVenda BETWEEN '{0}' AND '{1}'", dataMySqlInicio, dataMySqlFim);
+
+            DataSet ds = db.ExecuteQuery(qry);
+            List<object> vendas = new List<object>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Vender v = new Vender();
+                v.Id = int.Parse(dr["id"].ToString());
+                v.Nome_usuario = dr["nome_usuario"].ToString();
+                v.Valor = double.Parse(dr["valor"].ToString());
+                v.Data = DateTime.Parse(dr["dataVenda"].ToString());
+                vendas.Add(v);
+            }
+            return vendas;
         }
 
+        public Vender Ler(int id)
+        {
+            string qry = string.Format("SELECT id, nome_usuario, valor, dataVenda FROM vendas WHERE id = {0}", id);
+            DataSet ds = db.ExecuteQuery(qry);
+
+            Vender v = null;
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                v = new Vender();
+                v.Id = int.Parse(dr["id"].ToString());
+                v.Nome_usuario = dr["nome_usuario"].ToString();
+                v.Valor = long.Parse(dr["valor"].ToString());
+                v.Data = DateTime.Parse(dr["dataVenda"].ToString());
+
+            }
+            return v;
+        }
 
         public List<object> ListByName(string name)
         {

@@ -39,21 +39,23 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnData = new System.Windows.Forms.Panel();
-            this.lbData = new System.Windows.Forms.Label();
-            this.dtDataVenda = new System.Windows.Forms.DateTimePicker();
             this.pnPesquisar = new System.Windows.Forms.Panel();
             this.txPesquisar = new System.Windows.Forms.TextBox();
             this.lbId = new System.Windows.Forms.Label();
             this.pnFiltros = new System.Windows.Forms.Panel();
             this.rbDataVenda = new System.Windows.Forms.RadioButton();
             this.rbId = new System.Windows.Forms.RadioButton();
+            this.pnData = new System.Windows.Forms.Panel();
+            this.lbFim = new System.Windows.Forms.Label();
+            this.lbInicio = new System.Windows.Forms.Label();
+            this.dtFim = new System.Windows.Forms.DateTimePicker();
+            this.dtInicio = new System.Windows.Forms.DateTimePicker();
             this.gbEstoque.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistVendas)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.pnData.SuspendLayout();
             this.pnPesquisar.SuspendLayout();
             this.pnFiltros.SuspendLayout();
+            this.pnData.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbEstoque
@@ -146,7 +148,7 @@
             // 
             this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
             this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.voltarToolStripMenuItem.Text = "Voltar";
             this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
             // 
@@ -158,34 +160,6 @@
             this.detalhesToolStripMenuItem.Text = "Detalhes";
             this.detalhesToolStripMenuItem.Click += new System.EventHandler(this.btView_Click);
             // 
-            // pnData
-            // 
-            this.pnData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnData.Controls.Add(this.lbData);
-            this.pnData.Controls.Add(this.dtDataVenda);
-            this.pnData.Location = new System.Drawing.Point(468, 31);
-            this.pnData.Name = "pnData";
-            this.pnData.Size = new System.Drawing.Size(178, 52);
-            this.pnData.TabIndex = 19;
-            // 
-            // lbData
-            // 
-            this.lbData.AutoSize = true;
-            this.lbData.Location = new System.Drawing.Point(5, 19);
-            this.lbData.Name = "lbData";
-            this.lbData.Size = new System.Drawing.Size(39, 13);
-            this.lbData.TabIndex = 13;
-            this.lbData.Text = "Data:";
-            // 
-            // dtDataVenda
-            // 
-            this.dtDataVenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDataVenda.Location = new System.Drawing.Point(50, 14);
-            this.dtDataVenda.Name = "dtDataVenda";
-            this.dtDataVenda.Size = new System.Drawing.Size(125, 21);
-            this.dtDataVenda.TabIndex = 11;
-            this.dtDataVenda.Value = new System.DateTime(2017, 11, 9, 19, 40, 47, 0);
-            // 
             // pnPesquisar
             // 
             this.pnPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -194,7 +168,7 @@
             this.pnPesquisar.Controls.Add(this.lbId);
             this.pnPesquisar.Location = new System.Drawing.Point(0, 31);
             this.pnPesquisar.Name = "pnPesquisar";
-            this.pnPesquisar.Size = new System.Drawing.Size(462, 52);
+            this.pnPesquisar.Size = new System.Drawing.Size(476, 52);
             this.pnPesquisar.TabIndex = 20;
             // 
             // txPesquisar
@@ -206,9 +180,10 @@
             this.txPesquisar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txPesquisar.Location = new System.Drawing.Point(40, 14);
             this.txPesquisar.Name = "txPesquisar";
-            this.txPesquisar.Size = new System.Drawing.Size(405, 21);
+            this.txPesquisar.Size = new System.Drawing.Size(419, 21);
             this.txPesquisar.TabIndex = 1;
             this.txPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPesquisar_KeyPress);
+            this.txPesquisar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txPesquisar_KeyUp);
             // 
             // lbId
             // 
@@ -237,13 +212,11 @@
             // 
             this.rbDataVenda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbDataVenda.AutoSize = true;
-            this.rbDataVenda.Checked = true;
             this.rbDataVenda.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDataVenda.Location = new System.Drawing.Point(16, 3);
+            this.rbDataVenda.Location = new System.Drawing.Point(16, 31);
             this.rbDataVenda.Name = "rbDataVenda";
-            this.rbDataVenda.Size = new System.Drawing.Size(91, 17);
+            this.rbDataVenda.Size = new System.Drawing.Size(92, 17);
             this.rbDataVenda.TabIndex = 10;
-            this.rbDataVenda.TabStop = true;
             this.rbDataVenda.Text = "Data Venda";
             this.rbDataVenda.UseVisualStyleBackColor = true;
             // 
@@ -251,13 +224,68 @@
             // 
             this.rbId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbId.AutoSize = true;
+            this.rbId.Checked = true;
             this.rbId.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbId.Location = new System.Drawing.Point(15, 27);
+            this.rbId.Location = new System.Drawing.Point(16, 6);
             this.rbId.Name = "rbId";
             this.rbId.Size = new System.Drawing.Size(37, 17);
             this.rbId.TabIndex = 1;
+            this.rbId.TabStop = true;
             this.rbId.Text = "Id";
             this.rbId.UseVisualStyleBackColor = true;
+            this.rbId.CheckedChanged += new System.EventHandler(this.rbId_CheckedChanged);
+            // 
+            // pnData
+            // 
+            this.pnData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnData.Controls.Add(this.lbFim);
+            this.pnData.Controls.Add(this.lbInicio);
+            this.pnData.Controls.Add(this.dtFim);
+            this.pnData.Controls.Add(this.dtInicio);
+            this.pnData.Location = new System.Drawing.Point(482, 31);
+            this.pnData.Name = "pnData";
+            this.pnData.Size = new System.Drawing.Size(164, 52);
+            this.pnData.TabIndex = 5;
+            // 
+            // lbFim
+            // 
+            this.lbFim.AutoSize = true;
+            this.lbFim.Location = new System.Drawing.Point(15, 31);
+            this.lbFim.Name = "lbFim";
+            this.lbFim.Size = new System.Drawing.Size(31, 13);
+            this.lbFim.TabIndex = 14;
+            this.lbFim.Text = "Até:";
+            // 
+            // lbInicio
+            // 
+            this.lbInicio.AutoSize = true;
+            this.lbInicio.Location = new System.Drawing.Point(15, 6);
+            this.lbInicio.Name = "lbInicio";
+            this.lbInicio.Size = new System.Drawing.Size(28, 13);
+            this.lbInicio.TabIndex = 13;
+            this.lbInicio.Text = "De:";
+            // 
+            // dtFim
+            // 
+            this.dtFim.CustomFormat = "dd/MM/yyyy";
+            this.dtFim.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtFim.Location = new System.Drawing.Point(52, 27);
+            this.dtFim.Name = "dtFim";
+            this.dtFim.Size = new System.Drawing.Size(99, 21);
+            this.dtFim.TabIndex = 12;
+            this.dtFim.Value = new System.DateTime(2017, 12, 4, 0, 0, 0, 0);
+            this.dtFim.ValueChanged += new System.EventHandler(this.dtInicio_ValueChanged);
+            // 
+            // dtInicio
+            // 
+            this.dtInicio.CustomFormat = "dd/MM/yyyy";
+            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtInicio.Location = new System.Drawing.Point(52, 3);
+            this.dtInicio.Name = "dtInicio";
+            this.dtInicio.Size = new System.Drawing.Size(99, 21);
+            this.dtInicio.TabIndex = 11;
+            this.dtInicio.Value = new System.DateTime(2017, 12, 4, 0, 0, 0, 0);
+            this.dtInicio.ValueChanged += new System.EventHandler(this.dtInicio_ValueChanged);
             // 
             // FormHistoricoVendas
             // 
@@ -278,12 +306,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistVendas)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.pnData.ResumeLayout(false);
-            this.pnData.PerformLayout();
             this.pnPesquisar.ResumeLayout(false);
             this.pnPesquisar.PerformLayout();
             this.pnFiltros.ResumeLayout(false);
             this.pnFiltros.PerformLayout();
+            this.pnData.ResumeLayout(false);
+            this.pnData.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -298,14 +326,16 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detalhesToolStripMenuItem;
-        private System.Windows.Forms.Panel pnData;
-        private System.Windows.Forms.Label lbData;
-        private System.Windows.Forms.DateTimePicker dtDataVenda;
         private System.Windows.Forms.Panel pnPesquisar;
         private System.Windows.Forms.TextBox txPesquisar;
         private System.Windows.Forms.Label lbId;
         public System.Windows.Forms.Panel pnFiltros;
         private System.Windows.Forms.RadioButton rbDataVenda;
         private System.Windows.Forms.RadioButton rbId;
+        private System.Windows.Forms.Panel pnData;
+        private System.Windows.Forms.Label lbFim;
+        private System.Windows.Forms.Label lbInicio;
+        private System.Windows.Forms.DateTimePicker dtFim;
+        private System.Windows.Forms.DateTimePicker dtInicio;
     }
 }

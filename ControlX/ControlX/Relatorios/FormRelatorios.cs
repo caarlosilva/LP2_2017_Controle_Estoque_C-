@@ -91,7 +91,7 @@ namespace ControlX
             string dataF = dataFim.ToString("dd-MM-yyyy");
             double total = 0;
 
-            CV.FormDataRelatorio data = new CV.FormDataRelatorio();
+            CV.formDataRelatorio data = new CV.formDataRelatorio();
 
             if (tipoRelatorio == 1) //Compras
             {

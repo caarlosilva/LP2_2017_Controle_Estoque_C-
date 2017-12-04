@@ -135,18 +135,18 @@ namespace ControlX
 
         private void detalhes()
         {
-            CV.FormHistoricoComprasView form = new CV.FormHistoricoComprasView();
+            CV.formHistoricoComprasView form = new CV.formHistoricoComprasView();
             //Enviando informacões para os labels e bottons.
             form.txId.Text = (dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[0].Value.ToString());
             form.txUser.Text = (dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[1].Value.ToString());
             form.txValor.Text = Convert.ToDouble(dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[4].Value.ToString()).ToString("C");
             if (dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[5].Value.ToString() == "Pendente")
             {
-                form.txStatus.Text = (dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[5].Value.ToString());
+                form.txDataRecebido.Text = (dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[5].Value.ToString());
             }
             else
             {
-                form.txStatus.Text = (dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[6].Value.ToString());
+                form.txDataRecebido.Text = (dgvComprasAguardando.Rows[dgvComprasAguardando.CurrentRow.Index].Cells[6].Value.ToString());
             }
 
 

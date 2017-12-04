@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ControlX.CV
 {
-    public partial class FormHistoricoComprasView : Form
+    public partial class formHistoricoComprasView : Form
     {
-        public FormHistoricoComprasView()
+        public formHistoricoComprasView()
         {
             InitializeComponent();
         }

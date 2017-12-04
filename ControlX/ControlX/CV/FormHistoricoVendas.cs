@@ -16,6 +16,9 @@ namespace ControlX
         {
             InitializeComponent();
             Fill();
+            checaFiltros();
+            dtInicio.MaxDate = DateTime.Now;
+            dtFim.MaxDate = DateTime.Now;
         }
 
         public void Fill()
@@ -84,10 +87,57 @@ namespace ControlX
 
         private void txPesquisar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && rbId.Checked)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 e.Handled = true;
             if (e.KeyChar == '\'')
                 e.Handled = true;
+        }
+
+        private void rbId_CheckedChanged(object sender, EventArgs e)
+        {
+            txPesquisar.Text = "";
+            Fill();
+            checaFiltros();
+        }
+
+        private void checaFiltros()
+        {
+            if (rbDataVenda.Checked)
+            {
+                dtInicio.Enabled = true;
+                dtFim.Enabled = true;
+                txPesquisar.Enabled = false;
+            }
+            else if (rbId.Checked)
+            {
+                dtInicio.Enabled = false;
+                dtFim.Enabled = false;
+                txPesquisar.Enabled = true;
+            }
+        }
+
+        private void txPesquisar_KeyUp(object sender, KeyEventArgs e)
+        {
+            pesquisaFiltro();
+        }
+
+        private void pesquisaFiltro()
+        {
+            VenderDao db = new VenderDao();
+            List<Object> vs = (rbDataVenda.Checked) ? db.ListByDate(dtInicio.Value, dtFim.Value) : (txPesquisar.Text.Trim() == "") ? db.ListAll() : db.ListById(int.Parse(txPesquisar.Text));
+
+            dgvHistVendas.Rows.Clear();
+            foreach (Vender v in vs)
+            {
+                string dataVenda = v.Data.ToString("dd-MM-yyyy");
+                dgvHistVendas.Rows.Add(v.Id, v.Nome_usuario, v.Valor, dataVenda);
+            }
+
+        }
+
+        private void dtInicio_ValueChanged(object sender, EventArgs e)
+        {
+            pesquisaFiltro();
         }
     }
 }

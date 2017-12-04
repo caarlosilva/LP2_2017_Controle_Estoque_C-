@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace ControlX.CV
 {
-    public partial class FormDataRelatorio : Form
+    public partial class formDataRelatorio : Form
     {
         public int tipoRelatorio;
         Usuario user = new Usuario();
 
-        public FormDataRelatorio()
+        public formDataRelatorio()
         {
             InitializeComponent();
         }
 
-        public FormDataRelatorio(Usuario u)
+        public formDataRelatorio(Usuario u)
         {
             InitializeComponent();
             user = u;
@@ -29,8 +29,8 @@ namespace ControlX.CV
         private void btGerar_Click(object sender, EventArgs e)
         {
 
-            DateTime dataIni1 = DateTime.Parse(dtInicio.Value.ToString("dd-MM-yyyy, HH:mm:ss"));
-            DateTime dataFim1 = DateTime.Parse(dtFim.Value.ToString("dd-MM-yyyy, HH:mm:ss"));
+            DateTime dataIni1 = DateTime.Parse(dtInicio.Value.ToString("dd-MM-yyyy"));
+            DateTime dataFim1 = DateTime.Parse(dtFim.Value.ToString("dd-MM-yyyy"));
 
             FormRelatorios relatorio = new FormRelatorios(user.Nome, dataIni1, dataFim1);
 

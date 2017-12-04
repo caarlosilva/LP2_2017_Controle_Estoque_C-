@@ -28,7 +28,7 @@ namespace ControlX.DAO
             }
 
             string local = p.LocalPic;
-            if (local.Contains(@"/"))
+            if (local != null)
             {
                 local = local.Replace(@"/", @"//");
             }
@@ -54,7 +54,7 @@ namespace ControlX.DAO
             }
 
             string local = p.LocalPic;
-            if (local.Contains(@"/"))
+            if (local != null)
             {
                 local = local.Replace(@"/", @"//");
             }
@@ -250,6 +250,39 @@ namespace ControlX.DAO
 
             return idProduto;
         }
+
+        public Produto Ler(int id)
+        {
+            string qry = string.Format("SELECT * FROM produtos WHERE id = {0} AND deleted_at is null", id);
+
+            DataSet ds = db.ExecuteQuery(qry);
+
+            Produto p = null;
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                p = new Produto();
+                p.Id = int.Parse(dr["id"].ToString());
+                p.Nome = dr["nome"].ToString();
+                p.Preco = double.Parse(dr["preco"].ToString());
+                p.Qntd = double.Parse(dr["qntd"].ToString());
+                p.TipoUn = dr["tipoUn"].ToString();
+                p.EstoqueMin = double.Parse(dr["estoqueMin"].ToString());
+                p.Fornecedor.Id = int.Parse(dr["idFornecedor"].ToString());
+                p.Cat.Id = int.Parse(dr["idCategoria"].ToString());
+                p.LocalPic = dr["localPic"].ToString();
+
+                FornecedorDao fdao = new FornecedorDao();
+                Fornecedor f = fdao.Ler(p.Fornecedor.Id);
+                p.Fornecedor = f;
+
+                CategoriaDao cdao = new CategoriaDao();
+                Modelo.Categoria c = cdao.Ler(p.Cat.Id);
+                p.Cat = c;
+            }
+            return p;
+        }
+
         //FIM METODOS PRODUTO
     }
 }

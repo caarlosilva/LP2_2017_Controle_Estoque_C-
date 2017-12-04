@@ -1,6 +1,6 @@
 ﻿namespace ControlX.CV
 {
-    partial class FormDataRelatorio
+    partial class formDataRelatorio
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDataRelatorio));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formDataRelatorio));
             this.dtInicio = new System.Windows.Forms.DateTimePicker();
             this.dtFim = new System.Windows.Forms.DateTimePicker();
             this.lbDataInicio = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.dtInicio.Name = "dtInicio";
             this.dtInicio.Size = new System.Drawing.Size(112, 21);
             this.dtInicio.TabIndex = 0;
-            this.dtInicio.Value = new System.DateTime(2017, 12, 2, 0, 0, 0, 0);
+            this.dtInicio.Value = new System.DateTime(2017, 12, 4, 0, 0, 0, 0);
             // 
             // dtFim
             // 
@@ -56,7 +56,7 @@
             this.dtFim.Name = "dtFim";
             this.dtFim.Size = new System.Drawing.Size(112, 21);
             this.dtFim.TabIndex = 0;
-            this.dtFim.Value = new System.DateTime(2017, 12, 2, 0, 0, 0, 0);
+            this.dtFim.Value = new System.DateTime(2017, 12, 4, 0, 0, 0, 0);
             // 
             // lbDataInicio
             // 

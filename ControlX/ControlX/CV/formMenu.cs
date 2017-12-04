@@ -110,7 +110,7 @@ namespace ControlX
 
         private void menuRelCompras_Click(object sender, EventArgs e)
         {
-            CV.FormDataRelatorio form = new CV.FormDataRelatorio(user);
+            CV.formDataRelatorio form = new CV.formDataRelatorio(user);
             form.tipoRelatorio = 1;
             form.Show();
         }
@@ -131,7 +131,7 @@ namespace ControlX
 
         private void porPeriodoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CV.FormDataRelatorio form = new CV.FormDataRelatorio(user);
+            CV.formDataRelatorio form = new CV.formDataRelatorio(user);
             form.tipoRelatorio = 2;
             form.Show();
         }
@@ -173,6 +173,22 @@ namespace ControlX
         {
             this.Hide();
             new formFornecedores(cargo).ShowDialog();
+            this.Show();
+        }
+
+        private void menuSobre_Click(object sender, EventArgs e)
+        {
+            formSobre sobre = new formSobre();
+            this.Hide();
+            sobre.ShowDialog();
+            this.Show();
+        }
+
+        private void menuAjuda_Click(object sender, EventArgs e)
+        {
+            CV.formAjuda ajuda = new CV.formAjuda();
+            this.Hide();
+            ajuda.ShowDialog();
             this.Show();
         }
     }

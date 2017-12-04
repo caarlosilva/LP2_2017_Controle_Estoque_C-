@@ -43,7 +43,7 @@ namespace ControlX
                    }
                 string dataCompra = c.DataCompra.ToString("dd-MM-yyyy");
                 string dataEntrega = c.DataEntrega.ToString("dd-MM-yyyy");
-                dgvHistCompras.Rows.Add(c.Id, c.Nome_usuario, dataCompra, dataEntrega, c.Valor, status, c.DataFinal.ToString("dd-MM-yyyy"));
+                dgvHistCompras.Rows.Add(c.Id, c.Nome_usuario, dataCompra, dataEntrega, c.Valor, status);
                 }
             buttonEnable();
         }
@@ -63,7 +63,7 @@ namespace ControlX
 
         private void detalhes()
         {
-            CV.FormHistoricoComprasView form = new CV.FormHistoricoComprasView();
+            CV.formHistoricoComprasView form = new CV.formHistoricoComprasView();
             //Enviando informacões para os labels e bottons.
             int id = int.Parse((dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[0].Value.ToString()));
             ComprarDao db = new ComprarDao();
@@ -76,11 +76,11 @@ namespace ControlX
             form.txValor.Text = Convert.ToDouble(dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[4].Value.ToString()).ToString("C");
             if (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[5].Value.ToString() == "Pendente")
             {
-                form.txStatus.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[5].Value.ToString());
+                form.txDataRecebido.Text = "Pendente";//(dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[5].Value.ToString());
             }
             else
-            {
-                form.txStatus.Text = (dgvHistCompras.Rows[dgvHistCompras.CurrentRow.Index].Cells[6].Value.ToString());
+            {          
+                form.txDataRecebido.Text = compra.DataFinal.ToString("dd/MM/yyyy hh:mm");
             }
 
 
@@ -115,11 +115,13 @@ namespace ControlX
             if (rbDataCompra.Checked)
             {
                 dtInicio.Enabled = true;
+                dtFim.Enabled = true;
                 txPesquisar.Enabled = false;
             }
             else if (rbId.Checked)
             {
                 dtInicio.Enabled = false;
+                dtFim.Enabled = false;
                 txPesquisar.Enabled = true;
             }
         }
@@ -166,7 +168,7 @@ namespace ControlX
                     status = "Entregue";
                 }
                 string dataCompra = c.DataCompra.ToString("dd-MM-yyyy");
-                string dataEntrega = c.DataFinal.ToString("dd-MM-yyyy");
+                string dataEntrega = c.DataEntrega.ToString("dd-MM-yyyy");
                 dgvHistCompras.Rows.Add(c.Id, c.Nome_usuario, dataCompra, dataEntrega, c.Valor, status);
             }
 

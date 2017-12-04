@@ -1,6 +1,6 @@
 ﻿namespace ControlX.CV
 {
-    partial class FormHistoricoComprasView
+    partial class formHistoricoComprasView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHistoricoComprasView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formHistoricoComprasView));
             this.txValor = new System.Windows.Forms.TextBox();
-            this.txStatus = new System.Windows.Forms.TextBox();
+            this.txDataRecebido = new System.Windows.Forms.TextBox();
             this.txId = new System.Windows.Forms.TextBox();
             this.dateEntrega = new System.Windows.Forms.DateTimePicker();
             this.dateCompra = new System.Windows.Forms.DateTimePicker();
@@ -50,9 +50,9 @@
             this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDetalhes = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.gbItens = new System.Windows.Forms.GroupBox();
             this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notaFiscalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gbItens = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.gbDetalhes.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -63,7 +63,7 @@
             // 
             this.txValor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txValor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txValor.Location = new System.Drawing.Point(364, 46);
+            this.txValor.Location = new System.Drawing.Point(343, 46);
             this.txValor.Name = "txValor";
             this.txValor.ReadOnly = true;
             this.txValor.Size = new System.Drawing.Size(98, 21);
@@ -71,16 +71,16 @@
             this.txValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txValor.TextChanged += new System.EventHandler(this.txValor_TextChanged);
             // 
-            // txStatus
+            // txDataRecebido
             // 
-            this.txStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txStatus.Location = new System.Drawing.Point(529, 46);
-            this.txStatus.Name = "txStatus";
-            this.txStatus.ReadOnly = true;
-            this.txStatus.Size = new System.Drawing.Size(98, 21);
-            this.txStatus.TabIndex = 10;
-            this.txStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txDataRecebido.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txDataRecebido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txDataRecebido.Location = new System.Drawing.Point(471, 46);
+            this.txDataRecebido.Name = "txDataRecebido";
+            this.txDataRecebido.ReadOnly = true;
+            this.txDataRecebido.Size = new System.Drawing.Size(193, 21);
+            this.txDataRecebido.TabIndex = 10;
+            this.txDataRecebido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txId
             // 
@@ -89,7 +89,7 @@
             this.txId.Location = new System.Drawing.Point(25, 46);
             this.txId.Name = "txId";
             this.txId.ReadOnly = true;
-            this.txId.Size = new System.Drawing.Size(98, 21);
+            this.txId.Size = new System.Drawing.Size(70, 21);
             this.txId.TabIndex = 8;
             this.txId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -117,10 +117,10 @@
             // 
             this.txUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txUser.Location = new System.Drawing.Point(166, 46);
+            this.txUser.Location = new System.Drawing.Point(113, 46);
             this.txUser.Name = "txUser";
             this.txUser.ReadOnly = true;
-            this.txUser.Size = new System.Drawing.Size(151, 21);
+            this.txUser.Size = new System.Drawing.Size(192, 21);
             this.txUser.TabIndex = 7;
             this.txUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -128,11 +128,11 @@
             // 
             this.lbEntrega.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbEntrega.AutoSize = true;
-            this.lbEntrega.Location = new System.Drawing.Point(401, 76);
+            this.lbEntrega.Location = new System.Drawing.Point(379, 76);
             this.lbEntrega.Name = "lbEntrega";
-            this.lbEntrega.Size = new System.Drawing.Size(105, 13);
+            this.lbEntrega.Size = new System.Drawing.Size(155, 13);
             this.lbEntrega.TabIndex = 5;
-            this.lbEntrega.Text = "Data da entrega:";
+            this.lbEntrega.Text = "Data prevista da entrega:";
             // 
             // lbDataCompra
             // 
@@ -148,17 +148,17 @@
             // 
             this.lbStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbStatus.AutoSize = true;
-            this.lbStatus.Location = new System.Drawing.Point(514, 30);
+            this.lbStatus.Location = new System.Drawing.Point(518, 30);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(126, 13);
+            this.lbStatus.Size = new System.Drawing.Size(86, 13);
             this.lbStatus.TabIndex = 3;
-            this.lbStatus.Text = "Status/Entregue em:";
+            this.lbStatus.Text = "Recebido em:";
             // 
             // lbValor
             // 
             this.lbValor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbValor.AutoSize = true;
-            this.lbValor.Location = new System.Drawing.Point(393, 30);
+            this.lbValor.Location = new System.Drawing.Point(367, 30);
             this.lbValor.Name = "lbValor";
             this.lbValor.Size = new System.Drawing.Size(42, 13);
             this.lbValor.TabIndex = 2;
@@ -168,7 +168,7 @@
             // 
             this.lbUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbUsuario.AutoSize = true;
-            this.lbUsuario.Location = new System.Drawing.Point(213, 30);
+            this.lbUsuario.Location = new System.Drawing.Point(160, 30);
             this.lbUsuario.Name = "lbUsuario";
             this.lbUsuario.Size = new System.Drawing.Size(55, 13);
             this.lbUsuario.TabIndex = 1;
@@ -178,7 +178,7 @@
             // 
             this.lbIdCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbIdCompra.AutoSize = true;
-            this.lbIdCompra.Location = new System.Drawing.Point(63, 30);
+            this.lbIdCompra.Location = new System.Drawing.Point(51, 30);
             this.lbIdCompra.Name = "lbIdCompra";
             this.lbIdCompra.Size = new System.Drawing.Size(24, 13);
             this.lbIdCompra.TabIndex = 0;
@@ -262,7 +262,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbDetalhes.Controls.Add(this.txValor);
             this.gbDetalhes.Controls.Add(this.lbIdCompra);
-            this.gbDetalhes.Controls.Add(this.txStatus);
+            this.gbDetalhes.Controls.Add(this.txDataRecebido);
             this.gbDetalhes.Controls.Add(this.lbUsuario);
             this.gbDetalhes.Controls.Add(this.txId);
             this.gbDetalhes.Controls.Add(this.lbValor);
@@ -291,19 +291,6 @@
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // gbItens
-            // 
-            this.gbItens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbItens.Controls.Add(this.dgvProdutos);
-            this.gbItens.Location = new System.Drawing.Point(3, 167);
-            this.gbItens.Name = "gbItens";
-            this.gbItens.Size = new System.Drawing.Size(673, 297);
-            this.gbItens.TabIndex = 8;
-            this.gbItens.TabStop = false;
-            this.gbItens.Text = "Itens da Compra";
-            // 
             // voltarToolStripMenuItem
             // 
             this.voltarToolStripMenuItem.Image = global::ControlX.Properties.Resources.left_arrow;
@@ -320,6 +307,19 @@
             this.notaFiscalToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
             this.notaFiscalToolStripMenuItem.Text = "Nota Fiscal";
             this.notaFiscalToolStripMenuItem.Click += new System.EventHandler(this.notaFiscalToolStripMenuItem_Click);
+            // 
+            // gbItens
+            // 
+            this.gbItens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbItens.Controls.Add(this.dgvProdutos);
+            this.gbItens.Location = new System.Drawing.Point(3, 167);
+            this.gbItens.Name = "gbItens";
+            this.gbItens.Size = new System.Drawing.Size(673, 297);
+            this.gbItens.TabIndex = 8;
+            this.gbItens.TabStop = false;
+            this.gbItens.Text = "Itens da Compra";
             // 
             // FormHistoricoComprasView
             // 
@@ -355,7 +355,7 @@
         private System.Windows.Forms.Label lbUsuario;
         private System.Windows.Forms.Label lbIdCompra;
         public System.Windows.Forms.TextBox txValor;
-        public System.Windows.Forms.TextBox txStatus;
+        public System.Windows.Forms.TextBox txDataRecebido;
         public System.Windows.Forms.TextBox txId;
         public System.Windows.Forms.DateTimePicker dateEntrega;
         public System.Windows.Forms.DateTimePicker dateCompra;

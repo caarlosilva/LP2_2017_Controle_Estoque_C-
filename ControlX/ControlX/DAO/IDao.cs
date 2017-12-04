@@ -21,5 +21,6 @@ namespace ControlX
                 List<Object> ListById(int id);
 
                 int GetId();
+                
     }
 }
