@@ -89,7 +89,6 @@ namespace ControlX
             formMenu form = new formMenu();
             string dataI = dataInicio.ToString("dd-MM-yyyy");
             string dataF = dataFim.ToString("dd-MM-yyyy");
-            double total = 0;
 
             CV.formDataRelatorio data = new CV.formDataRelatorio();
 

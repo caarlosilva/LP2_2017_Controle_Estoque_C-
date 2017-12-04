@@ -32,19 +32,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRelatorios));
             this.crvRelatorio = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.Vendas_Rel1 = new Relatorios.Vendas_Rel();
-            this.EstoqueMin_Rel1 = new Relatorios.EstoqueMin_Rel();
-            this.Compras_Rel1 = new Relatorios.Compras_Rel();
-            this.NotaFiscal1 = new Relatorios.NotaFiscal();
-            this.Func_Rel1 = new Relatorios.Func_Rel();
-            this.Inventario_Rel1 = new Relatorios.Inventario_Rel();
-            this.Compras_NF1 = new Relatorios.Compras_NF();
-
+            this.Compras_Rel1 = new ControlX.Relatorios.Compras_Rel();
+            this.Vendas_Rel1 = new ControlX.Relatorios.Vendas_Rel();
+            this.EstoqueMin_Rel1 = new ControlX.Relatorios.EstoqueMin_Rel();
+            this.NotaFiscal1 = new ControlX.Relatorios.NotaFiscal();
+            this.Func_Rel1 = new ControlX.Relatorios.Func_Rel();
+            this.Inventario_Rel1 = new ControlX.Relatorios.Inventario_Rel();
+            this.Compras_NF1 = new ControlX.Relatorios.Compras_NF();
             this.SuspendLayout();
             // 
             // crvRelatorio
             // 
-            this.crvRelatorio.ActiveViewIndex = -1;
+            this.crvRelatorio.ActiveViewIndex = 0;
             this.crvRelatorio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crvRelatorio.Cursor = System.Windows.Forms.Cursors.Default;
             this.crvRelatorio.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -61,9 +60,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 521);
             this.Controls.Add(this.crvRelatorio);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRelatorios";
             this.Text = "ControlX - Relatorios";
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Load += new System.EventHandler(this.RelatorioCompras_Load);
             this.ResumeLayout(false);
 

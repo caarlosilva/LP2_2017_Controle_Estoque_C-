@@ -109,7 +109,7 @@ namespace ControlX
                     lbQntdEstoqueShow.Text = Convert.ToString(p.Qntd) + " " + p.TipoUn;
                     txQntdVenda.Text = "1";
                     qntdEstoque = p.Qntd;
-                    if (p.LocalPic == "" || p.LocalPic == null)
+                    if (p.LocalPic == null)
                         pbImagemProd.Image = Properties.Resources.product;
                     else
                         pbImagemProd.ImageLocation = p.LocalPic;
